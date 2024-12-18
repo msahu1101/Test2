@@ -1,0 +1,432 @@
+{
+	"header": {
+		"sourceId": "mgmgrandlv-2995a1f0-333b-11e9-b95c-acde48001122",
+		"sessionId": "630ad823-8344-4029-9241-9703b7928593",
+		"transactionId": "e8508970-333b-11e9-b95c-acde48001122",
+		"requestId": "e8508970-333b-11e9-b95c-acde48001122",
+		"senderVersion": {
+			"majorVersion": 3,
+			"minorVersion": 4,
+			"_xFieldBitmask_": [
+				0
+			]
+		},
+		"_xFieldBitmask_": [
+			0
+		]
+	},
+	"itinerary": {
+		"customerId": 47421128961,
+		"createdAt": 1550466805094,
+		"updatedAt": 1550466807623,
+		"id": "390109185",
+		"tripParams": {
+			"arrivalDate": "2019-03-26T07:00:00.000",
+			"departureDate": "2019-03-28T07:00:00.000",
+			"numAdults": 2,
+			"numChildren": 0,
+			"_xFieldBitmask_": [
+				0
+			]
+		},
+		"roomReservations": [
+			{
+				"instance": 1,
+				"numRooms": 1,
+				"bookDate": "2019-02-18T05:13:25.183",
+				"checkInDate": "2019-03-26T07:00:00.000",
+				"checkOutDate": "2019-03-28T07:00:00.000",
+				"numAdults": 2,
+				"numChildren": 0,
+				"billingType": "CustomerCreditCard",
+				"state": "Booked",
+				"postingFlow": "Make",
+				"postingState": "Queued",
+				"postingStartedAt": 0,
+				"postingEndedAt": 0,
+				"amountDue": 5624.02,
+				"createdAt": 1550466807619,
+				"updatedAt": 1550466807619,
+				"syncFromOperaAt": 0,
+				"pointCharges": 0,
+				"nrgStatus": false,
+				"id": "390109953",
+				"itineraryId": "390109185",
+				"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+				"roomTypeId": "f44d10c3-aeaa-4aa1-8d94-1d0df9017437",
+				"guaranteeCode": "CC",
+				"profile": {
+					"id": 47421128961,
+					"mlifeNo": 0,
+					"modifiable": false,
+					"createdAt": 0,
+					"updatedAt": 0,
+					"refreshedAt": 0,
+					"stale": false,
+					"externalSyncAt": 0,
+					"caslOptin": false,
+					"firstName": "Ravi Kiran",
+					"lastName": "Ganji",
+					"emailAddress1": "testgen@mailinator.com",
+					"phoneNumbers": [
+						{
+							"type": "Home",
+							"number": "7023264108",
+							"_xFieldBitmask_": [
+								0
+							]
+						}
+					],
+					"addresses": [
+						{
+							"type": "Home",
+							"preferred": true,
+							"street1": "2715 W P R",
+							"city": "LV",
+							"state": "NV",
+							"country": "US",
+							"postalCode": "89123",
+							"_xFieldBitmask_": [
+								0
+							]
+						}
+					],
+					"_xFieldBitmask_": [
+						0
+					]
+				},
+				"bookings": [
+					{
+						"date": "2019-03-26T07:00:00.000",
+						"basePrice": 10024.99,
+						"customerPrice": 5513.7445,
+						"price": 5513.7445,
+						"programIdIsRateTable": false,
+						"overridePrice": -1.0,
+						"overrideProgramIdIsRateTable": false,
+						"isComp": false,
+						"resortFeeIsSpecified": false,
+						"resortFee": 0.0,
+						"programId": "89364848-c326-4319-a083-d5665df90349",
+						"pricingRuleId": "0c5b7e1c-fc40-4d1c-b41a-5d36c9ef1fe6",
+						"_xFieldBitmask_": [
+							0
+						]
+					},
+					{
+						"date": "2019-03-27T07:00:00.000",
+						"basePrice": 10024.99,
+						"customerPrice": 5513.7445,
+						"price": 5513.7445,
+						"programIdIsRateTable": false,
+						"overridePrice": -1.0,
+						"overrideProgramIdIsRateTable": false,
+						"isComp": false,
+						"resortFeeIsSpecified": false,
+						"resortFee": 0.0,
+						"programId": "89364848-c326-4319-a083-d5665df90349",
+						"pricingRuleId": "0c5b7e1c-fc40-4d1c-b41a-5d36c9ef1fe6",
+						"_xFieldBitmask_": [
+							0
+						]
+					}
+				],
+				"markets": [
+					{
+						"date": "2019-03-26T07:00:00.000",
+						"marketCode": "TFIT",
+						"sourceCode": "TFITIC",
+						"_xFieldBitmask_": [
+							0
+						]
+					},
+					{
+						"date": "2019-03-27T07:00:00.000",
+						"marketCode": "TFIT",
+						"sourceCode": "TFITIC",
+						"_xFieldBitmask_": [
+							0
+						]
+					}
+				],
+				"chargesAndTaxesCalc": {
+					"charges": [
+						{
+							"date": "2019-03-26T07:00:00.000",
+							"amount": 5548.7445,
+							"pointsUsed": 0,
+							"itemized": [
+								{
+									"itemType": "RoomCharge",
+									"amount": 5513.7445,
+									"pointsUsed": 0,
+									"item": "Room Charge",
+									"_xFieldBitmask_": [
+										0
+									]
+								},
+								{
+									"itemType": "ExtraGuestCharge",
+									"amount": 0.0,
+									"pointsUsed": 0,
+									"item": "Extra Guest Charge",
+									"_xFieldBitmask_": [
+										0
+									]
+								},
+								{
+									"itemType": "ResortFee",
+									"amount": 35.0,
+									"pointsUsed": -1,
+									"item": "Resort Fee",
+									"_xFieldBitmask_": [
+										0
+									]
+								}
+							],
+							"_xFieldBitmask_": [
+								0
+							]
+						},
+						{
+							"date": "2019-03-27T07:00:00.000",
+							"amount": 5548.7445,
+							"pointsUsed": 0,
+							"itemized": [
+								{
+									"itemType": "RoomCharge",
+									"amount": 5513.7445,
+									"pointsUsed": 0,
+									"item": "Room Charge",
+									"_xFieldBitmask_": [
+										0
+									]
+								},
+								{
+									"itemType": "ExtraGuestCharge",
+									"amount": 0.0,
+									"pointsUsed": 0,
+									"item": "Extra Guest Charge",
+									"_xFieldBitmask_": [
+										0
+									]
+								},
+								{
+									"itemType": "ResortFee",
+									"amount": 35.0,
+									"pointsUsed": -1,
+									"item": "Resort Fee",
+									"_xFieldBitmask_": [
+										0
+									]
+								}
+							],
+							"_xFieldBitmask_": [
+								0
+							]
+						}
+					],
+					"taxesAndFees": [
+						{
+							"date": "2019-03-26T07:00:00.000",
+							"amount": 111.32489,
+							"pointsUsed": -1,
+							"itemized": [
+								{
+									"itemType": "RoomChargeTax",
+									"amount": 110.27489,
+									"pointsUsed": -1,
+									"item": "Room Tax",
+									"_xFieldBitmask_": [
+										0
+									]
+								},
+								{
+									"itemType": "ExtraGuestChargeTax",
+									"amount": 0.0,
+									"pointsUsed": -1,
+									"item": "Extra Guest Tax",
+									"_xFieldBitmask_": [
+										0
+									]
+								},
+								{
+									"itemType": "ResortFeeTax",
+									"amount": 1.05,
+									"pointsUsed": -1,
+									"item": "Resort Fee Tax",
+									"_xFieldBitmask_": [
+										0
+									]
+								}
+							],
+							"_xFieldBitmask_": [
+								0
+							]
+						},
+						{
+							"date": "2019-03-27T07:00:00.000",
+							"amount": 111.32489,
+							"pointsUsed": -1,
+							"itemized": [
+								{
+									"itemType": "RoomChargeTax",
+									"amount": 110.27489,
+									"pointsUsed": -1,
+									"item": "Room Tax",
+									"_xFieldBitmask_": [
+										0
+									]
+								},
+								{
+									"itemType": "ExtraGuestChargeTax",
+									"amount": 0.0,
+									"pointsUsed": -1,
+									"item": "Extra Guest Tax",
+									"_xFieldBitmask_": [
+										0
+									]
+								},
+								{
+									"itemType": "ResortFeeTax",
+									"amount": 1.05,
+									"pointsUsed": -1,
+									"item": "Resort Fee Tax",
+									"_xFieldBitmask_": [
+										0
+									]
+								}
+							],
+							"_xFieldBitmask_": [
+								0
+							]
+						}
+					],
+					"_xFieldBitmask_": [
+						0
+					]
+				},
+				"depositPolicyCalc": {
+					"depositRequired": true,
+					"creditCardRequired": true,
+					"_xFieldBitmask_": [
+						0
+					]
+				},
+				"depositCalc": {
+					"dueDate": "2019-02-18T05:13:25.202",
+					"amountPolicy": "Nights",
+					"amount": 5624.0193899999995,
+					"forfeitDate": "2019-03-23T07:00:00.000",
+					"forfeitAmount": 5624.0193899999995,
+					"overrideAmount": -1.0,
+					"depositRuleCode": "1NT",
+					"cancellationRuleCode": "72H",
+					"itemized": [
+						{
+							"itemType": "RoomCharge",
+							"amount": 5513.7445,
+							"pointsUsed": 0,
+							"item": "Room Charge",
+							"_xFieldBitmask_": [
+								0
+							]
+						},
+						{
+							"itemType": "RoomChargeTax",
+							"amount": 110.27489,
+							"pointsUsed": -1,
+							"item": "Room Tax",
+							"_xFieldBitmask_": [
+								0
+							]
+						}
+					],
+					"pointAmount": {
+						"dollarValue": 5624.0193899999995,
+						"pointValue": 0,
+						"_xFieldBitmask_": [
+							0
+						]
+					},
+					"_xFieldBitmask_": [
+						0
+					]
+				},
+				"creditCardCharges": [
+					{
+						"expiry": "2021-12-18T05:13:20.318",
+						"amount": 5624.0193899999995,
+						"holder": "Ravi Kiran Ganji",
+						"number": "PzVhdrik09yxCN60HBtb80aVylF+DOeJpW5yVs0doleOj57yloEaLK4zPUAcMmTLaB0jpL8Yt+4FCXIsYePmzA==",
+						"maskedNumber": "XXXXXXXXXXXX4444",
+						"type": "Mastercard",
+						"holderProfile": {
+							"firstName": "Ravi Kiran",
+							"lastName": "Ganji",
+							"address": {
+								"type": "Home",
+								"preferred": true,
+								"street1": "2715 W P R",
+								"city": "LV",
+								"state": "NV",
+								"country": "US",
+								"postalCode": "89123",
+								"_xFieldBitmask_": [
+									0
+								]
+							},
+							"_xFieldBitmask_": [
+								0
+							]
+						},
+						"_xFieldBitmask_": [
+							0
+						]
+					}
+				],
+				"channelId": "28d4c708-51c0-4998-9601-e1c7890380ba",
+				"origin": "mgmgrandlv",
+				"source": "mgmgrandlv",
+				"confirmationNumber": "M00AE5151",
+				"payments": [
+					{
+						"reservationInstance": 1,
+						"chargeAmount": 5624.02,
+						"chargeCardExpiry": "2021-12-18T05:13:20.318",
+						"dccChecked": true,
+						"dccEligible": false,
+						"dccTransDate": "2019-02-17T17:13:25.000",
+						"dccAmount": 0.0,
+						"dccRate": 0.0,
+						"dccSettleAmount": 5624.02,
+						"status": "Settled",
+						"isDeposit": true,
+						"isExternal": false,
+						"chargeCardHolder": "Ravi Kiran Ganji",
+						"chargeCurrencyCode": "USD",
+						"chargeCardType": "Mastercard",
+						"chargeCardMaskedNumber": "XXXXXXXXXXXX4444",
+						"chargeCardNumber": "PzVhdrik09yxCN60HBtb80aVylF+DOeJpW5yVs0doleOj57yloEaLK4zPUAcMmTLaB0jpL8Yt+4FCXIsYePmzA==",
+						"dccCurrencyCode": "USD",
+						"dccAcceptMessage": "Approved",
+						"dccAuthApprovalCode": "142000",
+						"_xFieldBitmask_": [
+							0
+						]
+					}
+				],
+				"_xFieldBitmask_": [
+					0,
+					0
+				]
+			}
+		],
+		"_xFieldBitmask_": [
+			0
+		]
+	},
+	"_xFieldBitmask_": [
+		0
+	]
+}

@@ -1,0 +1,15 @@
+{
+  "altCustId": "ADA0555952BAEA2001CE5855074B12094.01",
+  "customerInfo": {
+    "name": {
+      "surname": "Ghorai",
+      "givenName": "Uttam",
+      "middleName": ""
+    },
+    "eliteLevel": {
+      "id": "R",
+      "type": "MRD",
+      "description": "Member"
+    }
+  }
+}

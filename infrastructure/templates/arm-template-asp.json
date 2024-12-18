@@ -1,0 +1,67 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "aspName": {
+			"type": "string",
+			"metadata": {
+				"description": "The name of the app service plan to host the function apps."
+			}
+        },     
+        "environment": {
+			"type": "string",
+			"metadata": {
+				"description": "Application Environment"
+			}
+		},
+		"appServiceSkuName": {
+			"type": "string",
+			"metadata": {
+				"description": "App Service Sku Name"
+			}
+		},
+		"location": {
+			"type": "string",
+			"defaultValue": "East US",
+			"metadata": {
+				"description": "Location of the resource group."
+			}
+		}
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2018-02-01",
+            "name": "[parameters('aspName')]",
+            "location": "[parameters('location')]",
+            "tags": {
+                "creator": "Booking Team",
+                "application": "booking-refdata-service",
+                "businessSponsor": "Kemen Penev",
+                "businessCostCenter": "516-800-80182 Digital Engineering",
+                "environment": "[parameters('environment')]"
+            },
+            "sku": {
+                "name": "[parameters('appServiceSkuName')]",
+                "tier": "PremiumV2",
+                "size": "[parameters('appServiceSkuName')]",
+                "family": "Pv2",
+                "capacity": 2
+            },
+            "kind": "app",
+            "properties": {
+                "perSiteScaling": false,
+                "elasticScaleEnabled": false,
+                "maximumElasticWorkerCount": 2,
+                "isSpot": false,
+                "reserved": false,
+                "isXenon": false,
+                "hyperV": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0,
+                "zoneRedundant": false
+            }
+        }
+    ]
+}

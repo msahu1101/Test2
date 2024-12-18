@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 sp2 (x64) (http://www.altova.com) by Abha Kulkarni (AMADEUS) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://xml.amadeus.com/ahp/rates" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns:ama="http://xml.amadeus.com/2010/06/Types_v3" xmlns:ota="http://www.opentravel.org/OTA/2003/05/OTA2011A" targetNamespace="http://xml.amadeus.com/ahp/rates" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="AMA_HotelRateAndTaxCommonTypesOTA2011A.xsd"/>
+	<xs:import namespace="http://xml.amadeus.com/2010/06/Types_v3" schemaLocation="AMA/2015A/AMA_CommonTypes_Proxy.xsd"/>
+	<xs:element name="AMA_HotelRatePlanSearchRS">
+		<xs:annotation>
+			<xs:documentation>Search response based on the request criterion</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="Success">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Warnings" type="ama:WarningsType" minOccurs="0"/>
+							<xs:element name="RatePlanList" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="RatePlan" type="RatePlanRetrieveType" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Results returned upon success</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+									<xs:attributeGroup ref="SearchResultGroup"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ExtraDataList" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>This branch is used for extra data that is related to the Rate Plan but is NOT part of the Rate Plan.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ExtraData" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Results returned upon success</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="CorporateDetails" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Element to hold Corporate related data.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="CorporateID_List">
+																	<xs:annotation>
+																		<xs:documentation>The List size will always be limited to 1 currently</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="CorporateID" type="CorporateID_Type" maxOccurs="unbounded">
+																				<xs:annotation>
+																					<xs:documentation>Corporate ID to be associated with Rate Plan. Rate Plan can be associate with only 1 Corp ID.</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="AdvanceBookingDetails" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="BookingPeriodList">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="BookingPeriod" maxOccurs="unbounded">
+																				<xs:annotation>
+																					<xs:documentation>Sell (Absolute) period in which the the user is allowed to sell/book the product. A booking period is mapped to a check in period</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="CheckInPeriod" type="PolicyPeriodType" minOccurs="0">
+																							<xs:annotation>
+																								<xs:documentation>Relative periods are defined in relation to the check-in date </xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																					</xs:sequence>
+																					<xs:attribute name="StartDate" type="StartDateType" use="required">
+																						<xs:annotation>
+																							<xs:documentation>If undefined, then the Start Date defaults to the Stay Period Start Date.</xs:documentation>
+																						</xs:annotation>
+																					</xs:attribute>
+																					<xs:attribute name="EndDate" type="EndDateType">
+																						<xs:annotation>
+																							<xs:documentation>If undefined, then the End Date, then the Rate Plan can be booked at any point in the future.</xs:documentation>
+																						</xs:annotation>
+																					</xs:attribute>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="DerivedRatePlanDetails" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="IsDerived">
+																	<xs:annotation>
+																		<xs:documentation> the BaseRatePlanCode can and must exist ONLY when this flag is set to true.</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:simpleContent>
+																			<xs:extension base="xs:boolean">
+																				<xs:attribute name="BaseRatePlanCode" type="RatePlanCodeType">
+																					<xs:annotation>
+																						<xs:documentation>Applicable Base Rate Plan for this rate plan</xs:documentation>
+																					</xs:annotation>
+																				</xs:attribute>
+																			</xs:extension>
+																		</xs:simpleContent>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="TagDetails" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="TagDetail" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:attribute name="TagCode" type="FunctionalCode" use="required">
+																			<xs:annotation>
+																				<xs:documentation>Autogenerated Unique code at the chain level that identifies the tag</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																		<xs:attribute name="TagType" type="xs:string" use="required">
+																			<xs:annotation>
+																				<xs:documentation>Type of Tag</xs:documentation>
+																				<xs:appinfo>
+																					<altova:exampleValues>
+																						<altova:example value="Theme"/>
+																						<altova:example value="Element"/>
+																					</altova:exampleValues>
+																				</xs:appinfo>
+																			</xs:annotation>
+																		</xs:attribute>
+																		<xs:attribute name="Name" type="xs:string" use="required">
+																			<xs:annotation>
+																				<xs:documentation>Name of the tag unique per tag type</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																		<xs:attribute name="Description" type="xs:string">
+																			<xs:annotation>
+																				<xs:documentation>Description of the tag</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																		<xs:attribute name="ExternalCode" use="required">
+																			<xs:annotation>
+																				<xs:documentation>Unique Code identifying the tag that would be used by the shopping</xs:documentation>
+																			</xs:annotation>
+																			<xs:simpleType>
+																				<xs:restriction base="xs:int">
+																					<xs:maxInclusive value="9999"/>
+																					<xs:minInclusive value="1"/>
+																				</xs:restriction>
+																			</xs:simpleType>
+																		</xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="VersionNumber" type="VersionTimeStampType" use="required">
+																<xs:annotation>
+																	<xs:documentation>Latest version of the tag </xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="RateConfigurationRules" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>RateConfigurationRules element defines the rate configuration rules of the Rate Plan.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="RateConfigurationRule" type="RateConfigRuleSearchType" minOccurs="0" maxOccurs="unbounded">
+																	<xs:annotation>
+																		<xs:documentation>RateConfigurationRule defines a single rate configuration rule.</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="AllowedTierSetup" type="xs:boolean">
+																<xs:annotation>
+																	<xs:documentation>AllowTierSetup defines whether the rate configuration rules will be tiered or not. This attribute is returned in the response only for Tiered Hotels</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="PerformPriceGridAutoBuild" type="xs:boolean">
+																<xs:annotation>
+																	<xs:documentation>PerformPriceGridAutoBuild defines whether the systerm will go through the "Auto Build" process at property level. It is a process to assign a price grid code to the rate plan by updating/matching/activating a price grid. such that the price grid will satisfy the rate configuration rules.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="IsApplicableToAllRoomTypes" type="xs:boolean">
+																<xs:annotation>
+																	<xs:documentation>It enforces whether the price grid must be applicable to all room types or not.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="VersionNumber" type="VersionNumberType" use="optional">
+																<xs:annotation>
+																	<xs:documentation>Version Number specific to RateConfigurationRules </xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="BlackoutDetails" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>BlackoutDetails element returns the blackout data on the Rate Plan. It includes both the settings and the blackout dates data.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Settings" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Settings element defines the blackout settings on the rate plan. </xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Setting" maxOccurs="unbounded">
+																				<xs:annotation>
+																					<xs:documentation>It defines a single blackout setting.</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:attribute name="Year">
+																						<xs:annotation>
+																							<xs:appinfo>
+																								<altova:exampleValues>
+																									<altova:example value="2015"/>
+																									<altova:example value="2016"/>
+																								</altova:exampleValues>
+																							</xs:appinfo>
+																							<xs:documentation>Setting for given year. Can only be current or future years. Undefined means it is a default setting</xs:documentation>
+																						</xs:annotation>
+																						<xs:simpleType>
+																							<xs:restriction base="xs:int">
+																								<xs:totalDigits value="4"/>
+																							</xs:restriction>
+																						</xs:simpleType>
+																					</xs:attribute>
+																					<xs:attribute name="MaximumDays" use="required">
+																						<xs:annotation>
+																							<xs:appinfo>
+																								<altova:exampleValues>
+																									<altova:example value="60"/>
+																									<altova:example value="30"/>
+																									<altova:example value="50"/>
+																								</altova:exampleValues>
+																							</xs:appinfo>
+																							<xs:documentation>Maximum number of days allowed for the given year on the Rate Plan.</xs:documentation>
+																						</xs:annotation>
+																						<xs:simpleType>
+																							<xs:restriction base="xs:int">
+																								<xs:minInclusive value="0"/>
+																								<xs:maxInclusive value="366"/>
+																							</xs:restriction>
+																						</xs:simpleType>
+																					</xs:attribute>
+																					<xs:attribute name="IsFollowHouse" type="xs:boolean">
+																						<xs:annotation>
+																							<xs:appinfo>
+																								<altova:exampleValues>
+																									<altova:example value="true"/>
+																									<altova:example value="false"/>
+																								</altova:exampleValues>
+																							</xs:appinfo>
+																							<xs:documentation>It defines whether the Rate Plan will include property level dates for the given year. </xs:documentation>
+																						</xs:annotation>
+																					</xs:attribute>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="Dates" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Multiple blackout period(s) of this Rate Plan</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Date" maxOccurs="unbounded">
+																				<xs:annotation>
+																					<xs:documentation>Single blackout period of this Rate Plan. If a date is at two levels (e.g. House and rate configuration), then the date will appear twice.</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:attribute name="StartDate" type="xs:date" use="required">
+																						<xs:annotation>
+																							<xs:appinfo>
+																								<altova:exampleValues>
+																									<altova:example value="2015-06-01"/>
+																									<altova:example value="2015-07-01"/>
+																								</altova:exampleValues>
+																							</xs:appinfo>
+																							<xs:documentation>Start date of the blackout period. </xs:documentation>
+																						</xs:annotation>
+																					</xs:attribute>
+																					<xs:attribute name="EndDate" type="xs:date" use="required">
+																						<xs:annotation>
+																							<xs:appinfo>
+																								<altova:exampleValues>
+																									<altova:example value="2015-06-01"/>
+																									<altova:example value="2015-07-01"/>
+																								</altova:exampleValues>
+																							</xs:appinfo>
+																							<xs:documentation>End date of the blackout period. Set StartDate = EndDate for one date</xs:documentation>
+																						</xs:annotation>
+																					</xs:attribute>
+																					<xs:attribute name="Description" type="xs:string">
+																						<xs:annotation>
+																							<xs:documentation>Description of the blackout date/period</xs:documentation>
+																						</xs:annotation>
+																					</xs:attribute>
+																					<xs:attribute name="Source" use="required">
+																						<xs:annotation>
+																							<xs:documentation>Association defines the level of the blackout date. A blackout date can be at property level when IsFollowHouse is true, at rate plan level or at rate configuration level. </xs:documentation>
+																						</xs:annotation>
+																						<xs:simpleType>
+																							<xs:restriction base="xs:string">
+																								<xs:enumeration value="RatePlan"/>
+																								<xs:enumeration value="House"/>
+																								<xs:enumeration value="RateConfiguration"/>
+																							</xs:restriction>
+																						</xs:simpleType>
+																					</xs:attribute>
+																					<xs:attribute name="ActivationStatus">
+																						<xs:annotation>
+																							<xs:documentation>Indicates the status of the Blackout dates, Return "Active" or "Inactive". Property level blackout date is always active. Rate plan level and Rate configuration levels can be active or inactive. </xs:documentation>
+																						</xs:annotation>
+																						<xs:simpleType>
+																							<xs:restriction base="xs:string">
+																								<xs:enumeration value="Active"/>
+																								<xs:enumeration value="Inactive"/>
+																							</xs:restriction>
+																						</xs:simpleType>
+																					</xs:attribute>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="PriceGridGroup" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>This element is returned only when the rate plan has LOS Price Grid Group structure</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Scope">
+																	<xs:complexType>
+																		<xs:attribute name="PriceGridGroupCode" type="FunctionalCode" use="required">
+																			<xs:annotation>
+																				<xs:documentation>Unique identifier generated by the system</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="Content" type="PriceGridGroupContentRetrieveType"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="HotelDetails" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="Currency" type="CurrencyCodeType" use="required">
+																<xs:annotation>
+																	<xs:documentation>Currency code of the hotel</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="FeaturesInUse" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>A list of Features used as part of this Price Grid Data.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Feature" type="xs:string" maxOccurs="unbounded"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attributeGroup ref="RatePlanIdentifierOptionalGroup"/>
+												<xs:attribute name="RateID" use="optional">
+													<xs:annotation>
+														<xs:documentation>Unique ID to identify Rate Plan at Hotel for Shopping computation purpose</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string"/>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Failure">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Warnings" type="ama:GenericWarningsType" minOccurs="0"/>
+							<xs:element name="Errors" type="ama:GenericErrorsType" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+			<xs:attributeGroup ref="OTA_PayloadStdAttributes"/>
+			<xs:attribute name="SearchMode" use="required">
+				<xs:annotation>
+					<xs:documentation>This determines the type of search and the amount of information returned in the response</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

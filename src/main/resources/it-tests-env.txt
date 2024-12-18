@@ -1,0 +1,8 @@
+develop=yes|pwMx16AxuJ1kJogKVIjJG9YUelpyK2Cy6LKCdBLg|1.0|https://dev-api.mgmresorts.com/booking
+develop-5=yes|pwMx16AxuJ1kJogKVIjJG9YUelpyK2Cy6LKCdBLg|1.0|https://dev-api.mgmresorts.com/booking
+qa=yes|pwMx16AxuJ1kJogKVIjJG9YUelpyK2Cy6LKCdBLg|1.0|https://uat-api.mgmresorts.com/booking
+qa4=yes|pwMx16AxuJ1kJogKVIjJG9YUelpyK2Cy6LKCdBLg|1.0|https://qa4-api.mgmresorts.com/booking
+preprod=yes|pwMx16AxuJ1kJogKVIjJG9YUelpyK2Cy6LKCdBLg|1.0|https://preprod-api.mgmresorts.com/booking
+staging=yes|0LW4iIVlaW60Jncxx4FRv7ftNnKOa3Zi1yIfraXv|1.0|https://staging-api.mgmresorts.com/booking
+prod=<secured-as-prod-set-in-circleci-env>
+default=yes|pwMx16AxuJ1kJogKVIjJG9YUelpyK2Cy6LKCdBLg|1.0|https://dev-api.mgmresorts.com/booking

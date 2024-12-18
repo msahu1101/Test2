@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns:xi="http://www.w3.org/2001/XInclude" packages="com.mgm.services" status="WARN">
+	<Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>%d %p Metadata[rid:%X{REQUESTID},client_txid:%X{CLIENT_TRANSACTIONID},cust:%X{MLIFENO},api_correlationid:%X{API_CORRELATIONID}] [%t] %C{1.} %m %throwable%n</pattern>
+            </PatternLayout>
+        </Console>
+        <File name="MyFile" fileName="../../LogFiles/applicationlog.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <Console name="MaskConsole" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>%d %p Metadata[rid:%X{REQUESTID},client_txid:%X{CLIENT_TRANSACTIONID},cust:%X{MLIFENO},api_correlationid:%X{API_CORRELATIONID}] [%t] %C{1.} %m %throwable%n</pattern>
+            </PatternLayout>
+        </Console>
+        <AppInsightsMaskingAppender name="appInsightsAppender"/>
+    </Appenders>
+ 
+    <Loggers>
+        <Logger name="com.mgm.services.booking.room.dao.impl" level="debug"  additivity="false">
+            <AppenderRef ref="appInsightsAppender" />
+        </Logger>
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="MyFile" level="debug"/>
+            <AppenderRef ref="appInsightsAppender" />
+        </Root>
+    </Loggers>
+	<!--Loggers>
+        <Logger name="com.mgm.services.booking.room.dao.impl" level="info"  additivity="false">
+            <AppenderRef ref="appInsightsAppender" />
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="MyFile" level="debug"/>
+            <AppenderRef ref="appInsightsAppender" />
+        </Root>
+    </Loggers-->
+ 
+</Configuration>

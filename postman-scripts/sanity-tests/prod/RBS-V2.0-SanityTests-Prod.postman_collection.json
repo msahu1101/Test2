@@ -1,0 +1,654 @@
+{
+	"info": {
+		"_postman_id": "047c5509-572f-4439-a283-fd01260d6645",
+		"name": "RBS-V2.0-SanityTests-Prod",
+		"description": "This collection will contain V2 services of Room Booking Services APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Availability Calendar V2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2f7d6722-d6ff-4fc4-9f60-8101c097ac53",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "7716c9df-4107-457f-b13f-4f3b35b493fb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-mgm-source",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "x-mgm-channel",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"value": "rbs-sanity-{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/availability/calendar?startDate={{todayPlus30}}&endDate={{todayPlus45}}&propertyId={{propertyId}}&numAdults={{numAdults}}&numChildren={{numChildren}}&roomTypeIds={{roomTypeId}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"availability",
+						"calendar"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "{{todayPlus30}}"
+						},
+						{
+							"key": "endDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "numAdults",
+							"value": "{{numAdults}}"
+						},
+						{
+							"key": "numChildren",
+							"value": "{{numChildren}}"
+						},
+						{
+							"key": "programId",
+							"value": "{{partialProgramId}}",
+							"disabled": true
+						},
+						{
+							"key": "ignoreChannelMargins",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "numRooms",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "customerDominantPlay",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "customerRank",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "excludeNonOffer",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "operaConfirmationNumber",
+							"value": "790291063",
+							"disabled": true
+						},
+						{
+							"key": "roomTypeIds",
+							"value": "{{roomTypeId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Availability Trip V2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c66b5d23-b604-4fc0-8069-2f299c504d07",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e947dc61-6571-4eaf-8779-bbbc9f067469",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.environment.set(\"programId\", pm.response.json().availability[0].price.itemized[0].programId);\r",
+							"pm.environment.set(\"pricingRuleId\", pm.response.json().availability[0].price.itemized[0].pricingRuleId);\r",
+							"pm.environment.set(\"programIdIsRateTable\", pm.response.json().availability[0].price.itemized[0].programIdIsRateTable);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-mgm-source",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "x-mgm-channel",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"value": "rbs-sanity-{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/availability/trip?propertyId={{propertyId}}&numAdults={{numAdults}}&numChildren={{numChildren}}&includeSoldOutRooms=true&ignoreChannelMargins=true&checkInDate={{todayPlus45}}&checkOutDate={{todayPlus47}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"availability",
+						"trip"
+					],
+					"query": [
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "numAdults",
+							"value": "{{numAdults}}"
+						},
+						{
+							"key": "numChildren",
+							"value": "{{numChildren}}"
+						},
+						{
+							"key": "programId",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "includeSoldOutRooms",
+							"value": "true"
+						},
+						{
+							"key": "enableMrd",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "mlifeNumber",
+							"value": "79950292",
+							"description": "tlntest3@yopmail.com's mlifeNumber",
+							"disabled": true
+						},
+						{
+							"key": "customerId",
+							"value": "923600551937",
+							"description": "tlntest3@yopmail.com's customerId",
+							"disabled": true
+						},
+						{
+							"key": "excludeNonOffer",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "customerRank",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "customerDominantPlay",
+							"value": "Slot",
+							"disabled": true
+						},
+						{
+							"key": "ignoreChannelMargins",
+							"value": "true"
+						},
+						{
+							"key": "checkInDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "checkOutDate",
+							"value": "{{todayPlus47}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Offers API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1b829b1f-9b89-4749-a51b-0678c5c9a37c",
+						"exec": [
+							"pm.globals.get(\"variable_key\");\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Authorization}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-mgm-channel",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "x-mgm-source",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"value": "rbs-sanity-{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/v2/customer/offers?propertyId={{propertyId}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"customer",
+						"offers"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "908132354",
+							"disabled": true
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "notRolledToSegments",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "notSorted",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Applicable Program API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dd1da945-d325-4ce1-84df-e92c8c6fc5a4",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-mgm-source",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "x-mgm-channel",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"value": "rbs-sanity-{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/programs/applicable?propertyId={{propertyId}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"programs",
+						"applicable"
+					],
+					"query": [
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "customerId",
+							"value": "{{customerId}}",
+							"disabled": true
+						},
+						{
+							"key": "bookDate",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "travelDate",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "filterBookable",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "filterViewable",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "checkInDate",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "checkOutDate",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "numAdults",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "numChildren",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Reservation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dd57b1bb-e602-4047-ad71-4206e37950b3",
+						"exec": [
+							"pm.test(\"findReservationWithNoConfNumThrowsBadRequest\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-mgm-source",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "x-mgm-channel",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"value": "rbs-sanity-{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/reservation?confirmationNumber=&cacheOnly=true",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"reservation"
+					],
+					"query": [
+						{
+							"key": "confirmationNumber",
+							"value": ""
+						},
+						{
+							"key": "cacheOnly",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel room reservation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8c9cfad2-a8cb-492e-81a8-65c39d087dde",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-mgm-source",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "x-mgm-channel",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"value": "rbs-sanity-{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": \"{{customerId}}\",\r\n  \"overrideDepositForfeit\": true,\r\n  \"itineraryId\": \"{{itineraryId}}\",\r\n  \"reservationId\": \"{{reservationId}}\",\r\n  \"confirmationNumber\": \"{{confirmationNumber}}\",\r\n  \"cancellationReason\": \"Test Cancel\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/v2/reservation/cancel",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"reservation",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{Authorization}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "37779ee9-7e06-4363-95f6-3a3a38f3b5a8",
+				"type": "text/javascript",
+				"exec": [
+					"const moment = require('moment')",
+					"// setting global variables",
+					"pm.globals.set(\"propertyId\", \"66964e2b-2550-4476-84c3-1a4c0c5c067f\");",
+					"pm.globals.set(\"partialProgramId\", \"5467d989-24f5-4188-a177-daa715763c59\")",
+					"// dates",
+					"pm.globals.set(\"todayMinus3\", moment().subtract(3, 'day').format(\"YYYY-MM-DD\")) //pastDate",
+					"pm.globals.set(\"today\", moment().format(\"YYYY-MM-DD\")) //presentDate",
+					"pm.globals.set(\"todayPlus2\", moment().add(2, 'day').format(\"YYYY-MM-DD\")) //futureDate",
+					"pm.globals.set(\"todayPlus5\", moment().add(5, 'day').format(\"YYYY-MM-DD\"))",
+					"pm.globals.set(\"todayPlus30\", moment().add(30, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus30",
+					"pm.globals.set(\"todayPlus45\", moment().add(45, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus45",
+					"pm.globals.set(\"todayPlus46\", moment().add(46, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus46",
+					"pm.globals.set(\"todayPlus47\", moment().add(47, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus47",
+					"pm.globals.set(\"todayPlus48\", moment().add(48, 'day').format(\"YYYY-MM-DD\"))",
+					"pm.globals.set(\"numAdults\", 2)",
+					"pm.globals.set(\"numChildren\", 1)",
+					"",
+					"let getAccessTokenRequest = {",
+					"  ",
+					"  method: 'POST',",
+					"  url: pm.variables.get(\"idmsUrl\"),",
+					"  header: [",
+					"      {key: 'Content-Type', value: 'application/x-www-form-urlencoded'}      ",
+					"      ],",
+					"      ",
+					"  body: {",
+					"     mode: 'urlencoded',",
+					"     urlencoded: [",
+					"          {key: 'grant_type', value: pm.variables.get(\"grantType\")},",
+					"          {key: 'client_id', value: pm.variables.get(\"clientId\")},",
+					"          {key: 'client_secret', value: pm.variables.get(\"clientSecret\")},",
+					"          {key: 'scope', value: pm.variables.get(\"scope\")}",
+					"         ],   ",
+					"      ",
+					"  },",
+					"      ",
+					"  };",
+					"",
+					"pm.sendRequest(getAccessTokenRequest, function (err, response) {",
+					"    console.log(response.json());",
+					"    ",
+					"    let jsonResponse = response.json(),",
+					"        newAuthHeaderToken = jsonResponse.access_token;",
+					"        ",
+					"    console.log({ err, jsonResponse, newAuthHeaderToken });",
+					"    ",
+					"    pm.environment.set(\"Authorization\", newAuthHeaderToken);   ",
+					"    ",
+					"    console.log('Authorization token..['+ pm.environment.get(\"Authorization\") +']');",
+					"    ",
+					"});",
+					"",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "adf97df1-7a27-474c-8afe-a1453f9a0323",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

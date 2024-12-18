@@ -1,0 +1,791 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.4.0",
+    "title": "1A_REST_JSON_Calendar_Availability",
+    "description": "Allows to search for multiple hotels and return the lowest rate and available offers",
+    "x-release-note": {
+      "1.0.2": [
+        "Start Date Description updated to support Current Date minus one."
+      ],
+      "1.0.1": [
+        "Delete wrong example for productTypeCode."
+      ],
+      "1.1.0": [
+        "Support for Perpetual Offer"
+      ],
+      "1.2.0": [
+        "########## Other Changes ###################",
+        "extension of rateplancode length"
+      ],
+      "1.3.0": [
+        "########## New in Request ###################",
+        "options.includePublicRates",
+        "bodyParameterCalendar.guestCounts array",
+        "rates.promoCode",
+        "########## New in Response ###################",
+        "data.guestCounts array",
+        "hotels[].ratePlans[].promoCode",
+        "########## Other Changes ###################",
+        "fix of 1.2.0 release note"
+      ],
+      "1.3.1": [
+        "########## Other Changes ###################",
+        "rates.promoCode, products[].productCode - fix of max length to 50 in the request",
+        "data.hotels[].ratePlans[].promoCode - fix of max length to 50 in the response"
+      ],
+      "1.3.2": [
+        "########## Other Changes ###################",
+        "Name updates"
+      ],
+      "1.4.0": [
+        "########## New in Response ################",
+        "data.hotels[].ratePlans[].areAmtsConfidential"
+      ]
+    },
+    "termsOfService": "https://developers.amadeus.com",
+    "contact": {
+      "name": "Amadeus Hospitality Systems Integration Support"
+    },
+    "license": {
+      "name": "Amadeus IT Group SA",
+      "url": "http://www.amadeus.com/"
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "basePath": "/V1/hotel",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/offers/calendar-searches/{chain_code}": {
+      "post": {
+        "tags": [
+          "Request Calendar availability"
+        ],
+        "operationId": "postCalendarAvailabilityRequest",
+        "summary": "search",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ama-pos"
+          },
+          {
+            "$ref": "#/parameters/ama-channel-identifiers"
+          },
+          {
+            "$ref": "#/parameters/chainCode"
+          },
+          {
+            "$ref": "#/parameters/start"
+          },
+          {
+            "$ref": "#/parameters/end"
+          },
+          {
+            "$ref": "#/parameters/durationCalendar"
+          },
+          {
+            "$ref": "#/parameters/propertyCodes"
+          },
+          {
+            "$ref": "#/parameters/bodyParameterCalendar"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/successfulCalendarAvailability"
+          },
+          "400": {
+            "$ref": "#/responses/responseError"
+          },
+          "401": {
+            "$ref": "#/responses/responseError"
+          },
+          "403": {
+            "$ref": "#/responses/responseError"
+          },
+          "404": {
+            "$ref": "#/responses/responseError"
+          },
+          "406": {
+            "$ref": "#/responses/responseError"
+          },
+          "500": {
+            "$ref": "#/responses/responseError"
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "ama-pos": {
+      "name": "Ama-Pos",
+      "in": "header",
+      "required": false,
+      "type": "string",
+      "description": "Schema must match with Ama-Pos definition. Whereas mutually exclusive with ama-channel-identifiers, one or the other needs to be filled."
+    },
+    "ama-channel-identifiers": {
+      "name": "Ama-Channel-Identifiers",
+      "in": "header",
+      "required": false,
+      "type": "string",
+      "description": "Schema must match with Ama-Channel-Identifiers definition. Whereas mutually exclusive with ama-pos, one or the other needs to be filled."
+    },
+    "chainCode": {
+      "name": "chain_code",
+      "in": "path",
+      "required": true,
+      "description": "3 characters chain code",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 3
+    },
+    "start": {
+      "name": "start_date",
+      "in": "query",
+      "required": true,
+      "description": "First Check-in date of the availability.  The earliest accepted value is current day (in hotel local time) minus one.",
+      "type": "string",
+      "format": "date"
+    },
+    "propertyCodes": {
+      "name": "property_codes",
+      "in": "query",
+      "required": true,
+      "description": "A list of hotel internal codes.  Maximum 50 properties per request.  The list of codes has the following syntax: property_codes=PROP1,PROP2,PROP3",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 8
+      }
+    },
+    "end": {
+      "name": "end_date",
+      "in": "query",
+      "required": true,
+      "description": "Last check-in date of the availability.  This value should not exceed the start_date plus 62 days",
+      "type": "string",
+      "format": "date"
+    },
+    "durationCalendar": {
+      "name": "duration",
+      "in": "query",
+      "required": false,
+      "description": "Length of the stay. Number of days required followed by letter D. For instance, 2D for 2 days. Default value is 1 day.",
+      "type": "string",
+      "default": "1D"
+    },
+    "bodyParameterCalendar": {
+      "name": "Body",
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/bodyParameterCalendar"
+      }
+    }
+  },
+  "definitions": {
+    "bodyParameterCalendar": {
+      "description": "All data needed for the calendar search",
+      "type": "object",
+      "properties": {
+        "guestCounts": {
+          "type": "array",
+          "description": "GuestCount details.",
+          "items": {
+            "$ref": "#/definitions/requestedGuestCounts"
+          }
+        },
+        "rates": {
+          "$ref": "#/definitions/requestedRatesCalendar"
+        },
+        "options": {
+          "$ref": "#/definitions/optionsCalendar"
+        },
+        "products": {
+          "type": "array",
+          "description": "List of requested products",
+          "items": {
+            "$ref": "#/definitions/requestedProductCalendar"
+          }
+        }
+      }
+    },
+    "includeSellStrategyMulti": {
+      "type": "string",
+      "default": "followChannel",
+      "enum": [
+        "never",
+        "followChannel"
+      ],
+      "example": "followChannel",
+      "description": "Indicates if the sell strategy has to be added to the candidate list\n  'never' the rate plan sell strategy should not be included in the response\n  'followChannel' the channel settings should be checked in order to determine if the rate plan sell strategy should be included in the response.\n"
+    },
+    "chainCode": {
+      "description": "unique identifier of a Chain in the CRS",
+      "type": "string",
+      "pattern": "[A-Z0-9]{2,3}",
+      "example": "INT"
+    },
+    "brandCode": {
+      "description": "unique identifier of a Brand in a Chain",
+      "type": "string",
+      "pattern": "[A-Z0-9]{2,3}",
+      "example": "BRD"
+    },
+    "propertyCode": {
+      "description": "the property code",
+      "type": "string",
+      "pattern": "[A-Z0-9]{1,8}",
+      "minLength": 1,
+      "maxLength": 8
+    },
+    "requestedRatesCalendar": {
+      "type": "object",
+      "description": "requested rates (Rate plan codes). Up to 17 code supported, any code beyond this limit will be ignored",
+      "properties": {
+        "ratePlanCodes": {
+          "description": "list of requested rate plan codes",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ratePlanCode"
+          }
+        },
+        "promoCode": {
+          "description": "promotion code",
+          "type": "string",
+          "maxLength": 50
+        }
+      }
+    },
+    "optionsCalendar": {
+      "type": "object",
+      "description": "Requested options for the request (duration, house sell through/flow through products)",
+      "properties": {
+        "includeROCandROHProductsOnly": {
+          "description": "Boolean to request only run of house and run of class products to be included in the response",
+          "type": "boolean",
+          "example": false,
+          "default": false
+        },
+        "includeSellStrategy": {
+          "$ref": "#/definitions/includeSellStrategyMulti"
+        },
+        "includePublicRates": {
+          "type": "string",
+          "default": "followChannel",
+          "enum": [
+            "never",
+            "ifNoAvail",
+            "followChannel"
+          ],
+          "description": "Drives the inclusion of the public rates and can take three values. Only applicable when Distribution Rules functionality is active:\n  'never' the public rates should not be included in the response\n  'ifNoAvail' the public rates should be included in the response if the requested rate plans are not available and the channel settings are set to include the rate plan public rates\n  'followChannel' the channel settings should be checked in order to determine if the public rates should be included in the response.\n"
+        },
+        "perpetualOffer": {
+          "description": "Boolean to request the perpetual offer. If true, the loyaltyId must be provided",
+          "type": "boolean",
+          "example": false,
+          "default": false
+        },
+        "loyalty": {
+          "$ref": "#/definitions/loyalty"
+        }
+      }
+    },
+    "requestedProductCalendar": {
+      "type": "object",
+      "description": "it can contain the elements which are the same as common-all",
+      "properties": {
+        "productTypeCode": {
+          "$ref": "#/definitions/productTypeCode"
+        },
+        "productCode": {
+          "$ref": "#/definitions/productCode"
+        }
+      }
+    },
+    "loyalty": {
+      "type": "object",
+      "description": "loyalty information of the customer",
+      "properties": {
+        "loyaltyId": {
+          "description": "Loyalty program identifier",
+          "type": "string"
+        },
+        "programName": {
+          "description": "Loyalty program name. For example, Ambassador - 'AMB'",
+          "type": "string",
+          "enum": [
+            "AMB"
+          ]
+        },
+        "programLevel": {
+          "description": "Loyalty level of a program",
+          "type": "string",
+          "enum": [
+            "AMB",
+            "RAM"
+          ]
+        },
+        "valueTierOverride": {
+          "description": "value tier for the guest",
+          "type": "string",
+          "example": "10"
+        },
+        "playDominanceOverride": {
+          "description": "play dominance for the guest",
+          "type": "string",
+          "enum": [
+            "Poker",
+            "Slots",
+            "Table",
+            "Tickets",
+            "Rail",
+            "General"
+          ],
+          "example": "Table"
+        }
+      }
+    },
+    "requestedGuestCounts": {
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "otaCode": {
+          "description": "OTA Age Qualifier Code, either age or otaCode or both must be provided",
+          "type": "string",
+          "example": "AQC8"
+        },
+        "count": {
+          "description": "Number of guest. Applicable for SR product. Not applicable for NR product (ignored if sent)",
+          "type": "integer",
+          "default": 1
+        },
+        "age": {
+          "description": "age of the guest(s), either age or otaCode or both must be provided",
+          "type": "integer"
+        }
+      }
+    },
+    "productCode": {
+      "description": "Business code representing an inventory type",
+      "type": "string",
+      "pattern": "[A-Z0-9]{1,50}",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "productTypeCode": {
+      "type": "string",
+      "description": "Code defining the product type (Sleeping room, meeting room or any service)"
+    },
+    "ratePlanCode": {
+      "description": "rate plan code",
+      "type": "string",
+      "pattern": "[A-Z0-9]{1,50}",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "successfulCalendarAvailability": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "required": [
+            "start",
+            "end"
+          ],
+          "properties": {
+            "start": {
+              "description": "First check-in date requested, echo-ed from the request",
+              "type": "string",
+              "format": "date"
+            },
+            "end": {
+              "description": "Last check-in date requested, echo-ed from the request, except if check-in date range requested exceeds 62 days, in which case this date is capped so that the range does not exceed 62 days.",
+              "type": "string",
+              "format": "date"
+            },
+            "guestCounts": {
+              "description": "GuestCount details.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/guestCounts"
+              }
+            },
+            "lowestRate": {
+              "$ref": "#/definitions/lowestRate"
+            },
+            "hotels": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/hotelCalendar"
+              }
+            }
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/warning"
+          }
+        }
+      }
+    },
+    "lowestRate": {
+      "type": "object",
+      "required": [
+        "ttlAmt",
+        "currency",
+        "refIds"
+      ],
+      "description": "Lowest rate (amount with associated currency) among all requested hotels",
+      "properties": {
+        "ttlAmt": {
+          "description": "Lowest total base amount returned among all requested hotels, in property's default currency",
+          "type": "string"
+        },
+        "currency": {
+          "description": "Total base amount currency using the ISO 4217 currency codes",
+          "type": "string",
+          "example": "USD"
+        },
+        "refIds": {
+          "description": "Reference IDs that refers to the id defined at the offer level. Refrence IDs will return array/list of ids of the lowest rate (amount with associated currency)either among all the hotels or among all the available offers",
+          "$ref": "#/definitions/refIds"
+        }
+      }
+    },
+    "responseError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "description": "error information",
+          "$ref": "#/definitions/error"
+        }
+      }
+    },
+    "hotelCommon": {
+      "description": "The common part of object hotel in response",
+      "type": "object",
+      "required": [
+        "chainCode",
+        "brandCode",
+        "propertyCode",
+        "propertyCurrency"
+      ],
+      "properties": {
+        "chainCode": {
+          "$ref": "#/definitions/chainCode"
+        },
+        "brandCode": {
+          "$ref": "#/definitions/brandCode"
+        },
+        "propertyCode": {
+          "$ref": "#/definitions/propertyCode"
+        },
+        "propertyCurrency": {
+          "description": "Hotel currency using the ISO 4217 currency codes",
+          "type": "string",
+          "example": "USD"
+        }
+      }
+    },
+    "hotelCalendar": {
+      "description": "Hotel list",
+      "type": "object",
+      "required": [
+        "hotel"
+      ],
+      "properties": {
+        "hotel": {
+          "$ref": "#/definitions/hotelCommon"
+        },
+        "ratePlans": {
+          "type": "array",
+          "description": "List of returned ratePlans",
+          "items": {
+            "$ref": "#/definitions/ratePlanCalendar"
+          }
+        },
+        "calendar": {
+          "type": "array",
+          "description": "List of offers returned by range of check-in dates",
+          "items": {
+            "$ref": "#/definitions/offerPlanning"
+          }
+        },
+        "warningRefs": {
+          "description": "Reference to link warning(s) returned",
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "ratePlanCalendar": {
+      "type": "object",
+      "description": "List of available rate plans",
+      "required": [
+        "code",
+        "isFreeNight"
+      ],
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/ratePlanCode"
+        },
+        "isFreeNight": {
+          "description": "Indicates if the rate plan is a free night rate plan",
+          "type": "boolean"
+        },
+        "promoCode": {
+          "description": "Promotion code",
+          "type": "string",
+          "maxLength": 50
+        },
+        "areAmtsConfidential": {
+          "description": "Indicates if amounts defined in the rate plan are confidential.",
+          "type": "boolean"
+        }
+      }
+    },
+    "productAvail": {
+      "type": "object",
+      "required": [
+        "pdtCode"
+      ],
+      "properties": {
+        "pdtCode": {
+          "description": "Code representing an inventory type or a more generic combination of products and optionally attributes",
+          "type": "string",
+          "example": "SGL"
+        },
+        "nbAvlPdts": {
+          "description": "Availability counter of the product code for the duration requested",
+          "type": "integer"
+        }
+      }
+    },
+    "id": {
+      "type": "integer",
+      "description": "Unique ID, which is associated to the offer. This id, will be unique to each offer among all the hotels."
+    },
+    "refIds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/id"
+      }
+    },
+    "offerPlanning": {
+      "type": "object",
+      "description": "Offers available per range of check-in date",
+      "required": [
+        "start",
+        "end",
+        "lowestRate",
+        "offers"
+      ],
+      "properties": {
+        "start": {
+          "description": "Start check-in date",
+          "type": "string",
+          "format": "date"
+        },
+        "end": {
+          "description": "End check-in date",
+          "type": "string",
+          "format": "date"
+        },
+        "lowestRate": {
+          "description": "lowest rate (amount with associated currency)among all the available offers at the hotel level",
+          "$ref": "#/definitions/lowestRate"
+        },
+        "offers": {
+          "type": "array",
+          "description": "Available offers for the given check-in date range",
+          "items": {
+            "$ref": "#/definitions/offerCalendar"
+          }
+        }
+      }
+    },
+    "guestCounts": {
+      "type": "object",
+      "minProperties": 1,
+      "description": "GuestCount details",
+      "properties": {
+        "guestType": {
+          "type": "string",
+          "description": "Guest Type Code",
+          "pattern": "[A-Z0-9_]{2,8}",
+          "example": "CHILD"
+        },
+        "otaCode": {
+          "description": "OTA Age Qualifier Code",
+          "type": "string",
+          "example": "AQC8"
+        },
+        "count": {
+          "description": "Number of guest",
+          "type": "integer",
+          "default": 1
+        },
+        "age": {
+          "description": "age of the guest(s)",
+          "type": "integer"
+        }
+      }
+    },
+    "offerCalendar": {
+      "type": "object",
+      "description": "Offer details",
+      "required": [
+        "rpCode",
+        "pdtAvl",
+        "chkAmt",
+        "ttlAmt",
+        "id"
+      ],
+      "properties": {
+        "dailyApplicableRatePlan": {
+          "description": "List of rate plans that constitute the offer, day by day. Only returned if a perpetual offer is requested.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ratePlanCode"
+          },
+          "example": [
+            "RATE1",
+            "RATE2",
+            "RATE3"
+          ]
+        },
+        "rpCode": {
+          "$ref": "#/definitions/ratePlanCode"
+        },
+        "pdtAvl": {
+          "description": "List of products part of the offer",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productAvail"
+          }
+        },
+        "chkAmt": {
+          "description": "Base amount (defined in the CRS including all included taxes/service charges and excluding excluded taxes/service charges) at check-in date, in the property's default currency",
+          "type": "string"
+        },
+        "ttlAmt": {
+          "description": "Total base amount (defined in the CRS including all included taxes/service charges and excluding excluded taxes/service charges) for the duration requested, in the property's default currency.",
+          "type": "string"
+        },
+        "id": {
+          "$ref": "#/definitions/id"
+        }
+      }
+    },
+    "error": {
+      "type": "object",
+      "description": "error information",
+      "required": [
+        "httpStatus",
+        "message",
+        "code",
+        "origin",
+        "path"
+      ],
+      "properties": {
+        "httpStatus": {
+          "description": "http status code",
+          "type": "integer"
+        },
+        "message": {
+          "description": "error description message",
+          "type": "string"
+        },
+        "code": {
+          "description": "error code",
+          "type": "integer"
+        },
+        "origin": {
+          "description": "identifies the originator of the error",
+          "type": "string",
+          "example": "Backend"
+        },
+        "path": {
+          "description": "identifies the faulty path",
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "description": "list of sub error codes (internal)",
+          "items": {
+            "$ref": "#/definitions/detailType"
+          }
+        }
+      }
+    },
+    "warning": {
+      "type": "object",
+      "required": [
+        "message",
+        "code"
+      ],
+      "properties": {
+        "id": {
+          "description": "id of the warning, used to link the warning to a specific element in the response",
+          "type": "integer"
+        },
+        "httpStatus": {
+          "description": "http status code",
+          "type": "integer"
+        },
+        "message": {
+          "description": "warning description message",
+          "type": "string"
+        },
+        "code": {
+          "description": "warning code",
+          "type": "integer"
+        },
+        "details": {
+          "type": "array",
+          "description": "list of sub warning codes (internal)",
+          "items": {
+            "$ref": "#/definitions/detailType"
+          }
+        }
+      }
+    },
+    "detailType": {
+      "type": "object",
+      "required": [
+        "code"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "description": "sub error or warning code"
+        }
+      }
+    }
+  },
+  "responses": {
+    "successfulCalendarAvailability": {
+      "description": "Successful operation",
+      "schema": {
+        "$ref": "#/definitions/successfulCalendarAvailability"
+      }
+    },
+    "responseError": {
+      "description": "Operation rejected",
+      "schema": {
+        "$ref": "#/definitions/responseError"
+      }
+    }
+  }
+}

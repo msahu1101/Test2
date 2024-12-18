@@ -1,0 +1,32 @@
+{
+	"patronPrograms": [
+		{
+			"programId": "patron-program-1",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f"
+		},
+		{
+			"programId": "patron-program-2",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f"
+		}
+	],
+	"poPrograms": [
+		{
+			"programId": "po-program-1",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f"
+		},
+		{
+			"programId": "po-program-2",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f"
+		}
+	],
+	"iceChannelPrograms": [
+		{
+			"programId": "ice-program-1",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f"
+		},
+		{
+			"programId": "ice-program-1",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f"
+		}
+	]
+}

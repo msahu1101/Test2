@@ -1,0 +1,295 @@
+{
+    "roomReservation": {
+        "instance": 0,
+        "customerId": 846558855426,
+        "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+        "itineraryId": "1234",
+        "roomTypeId": "ROOMCD-v-DPRK-d-PROP-v-MV021",
+        "programId": "RPCD-v-BAR-d-PROP-v-MV021",
+        "state": "Booked",
+        "nrgStatus": false,
+        "specialRequests": [
+            "COMPONENTCD-v-CFBP2-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-CFBP2"
+        ],
+        "thirdParty": false,
+        "confirmationNumber": "7XU1U0Y3XO",
+        "partyConfirmationNumber": "PRTY_3NKRTJPKDP",
+        "operaHotelCode": "021",
+        "bookDate": "2024-09-06",
+        "profile": {
+            "id": 1434797277441,
+            "mlifeNo": 0,
+            "firstName": "John",
+            "lastName": "Doe",
+            "emailAddress1": "johndoe@mail.com",
+            "phoneNumbers": [
+                {
+                    "type": "Home",
+                    "number": "12345678901"
+                }
+            ],
+            "addresses": [
+                {
+                    "type": "Home",
+                    "preferred": true,
+                    "street1": "100 St",
+                    "street2": null,
+                    "city": "Las Vegas",
+                    "state": "NV",
+                    "country": "US",
+                    "postalCode": "89102"
+                }
+            ]
+        },
+        "billing": [],
+        "tripDetails": {
+            "checkInDate": "2024-09-19",
+            "checkOutDate": "2024-09-21",
+            "numAdults": 2,
+            "numChildren": 0,
+            "numRooms": 1
+        },
+        "bookings": [
+            {
+                "date": "2024-09-19",
+                "basePrice": 0.00,
+                "customerPrice": 0.00,
+                "price": 79.00,
+                "programIdIsRateTable": false,
+                "overridePrice": -1.00,
+                "overrideProgramIdIsRateTable": false,
+                "resortFeeIsSpecified": false,
+                "resortFee": 42.00,
+                "programId": "RPCD-v-BAR-d-PROP-v-MV021",
+                "isComp": false
+            },
+            {
+                "date": "2024-09-20",
+                "basePrice": 0.00,
+                "customerPrice": 0.00,
+                "price": 329.00,
+                "programIdIsRateTable": false,
+                "overridePrice": -1.00,
+                "overrideProgramIdIsRateTable": false,
+                "resortFeeIsSpecified": false,
+                "resortFee": 42.00,
+                "programId": "RPCD-v-BAR-d-PROP-v-MV021",
+                "isComp": false
+            }
+        ],
+        "chargesAndTaxes": {
+            "charges": [
+                {
+                    "date": "2024-09-19",
+                    "amount": 279.00,
+                    "itemized": [
+                        {
+                            "itemType": "RoomCharge",
+                            "amount": 79.00,
+                            "item": "RoomCharge"
+                        },
+                        {
+                            "itemType": "ComponentCharge",
+                            "amount": 50.00,
+                            "item": "RoomCharge"
+                        },
+                        {
+                            "itemType": "ComponentCharge",
+                            "amount": 50.00,
+                            "item": "RoomCharge"
+                        },
+                        {
+                            "itemType": "ComponentCharge",
+                            "amount": 50.00,
+                            "item": "RoomCharge"
+                        },
+                        {
+                            "itemType": "ComponentCharge",
+                            "amount": 50.00,
+                            "item": "RoomCharge"
+                        }
+                    ]
+                },
+                {
+                    "date": "2024-09-20",
+                    "amount": 529.00,
+                    "itemized": [
+                        {
+                            "itemType": "RoomCharge",
+                            "amount": 329.00,
+                            "item": "RoomCharge"
+                        },
+                        {
+                            "itemType": "ComponentCharge",
+                            "amount": 50.00,
+                            "item": "RoomCharge"
+                        },
+                        {
+                            "itemType": "ComponentCharge",
+                            "amount": 50.00,
+                            "item": "RoomCharge"
+                        },
+                        {
+                            "itemType": "ComponentCharge",
+                            "amount": 50.00,
+                            "item": "RoomCharge"
+                        },
+                        {
+                            "itemType": "ComponentCharge",
+                            "amount": 50.00,
+                            "item": "RoomCharge"
+                        }
+                    ]
+                }
+            ],
+            "taxesAndFees": [
+                {
+                    "date": "2024-09-19",
+                    "amount": 26.76,
+                    "itemized": [
+                        {
+                            "shortDescription": "[Non Room Product 0 Tax]",
+                            "pricingApplied": "NIGHTLY",
+                            "itemType": "ComponentChargeTax",
+                            "amount": 6.69,
+                            "item": "Non Room Product 0 Tax"
+                        },
+                        {
+                            "shortDescription": "[Non Room Product 0 Tax]",
+                            "pricingApplied": "NIGHTLY",
+                            "itemType": "ComponentChargeTax",
+                            "amount": 6.69,
+                            "item": "Non Room Product 0 Tax"
+                        },
+                        {
+                            "shortDescription": "[Non Room Product 0 Tax]",
+                            "pricingApplied": "NIGHTLY",
+                            "itemType": "ComponentChargeTax",
+                            "amount": 6.69,
+                            "item": "Non Room Product 0 Tax"
+                        },
+                        {
+                            "shortDescription": "[Non Room Product 0 Tax]",
+                            "pricingApplied": "NIGHTLY",
+                            "itemType": "ComponentChargeTax",
+                            "amount": 6.69,
+                            "item": "Non Room Product 0 Tax"
+                        }
+                    ]
+                },
+                {
+                    "date": "2024-09-20",
+                    "amount": 26.76,
+                    "itemized": [
+                        {
+                            "shortDescription": "[Non Room Product 0 Tax]",
+                            "pricingApplied": "NIGHTLY",
+                            "itemType": "ComponentChargeTax",
+                            "amount": 6.69,
+                            "item": "Non Room Product 0 Tax"
+                        },
+                        {
+                            "shortDescription": "[Non Room Product 0 Tax]",
+                            "pricingApplied": "NIGHTLY",
+                            "itemType": "ComponentChargeTax",
+                            "amount": 6.69,
+                            "item": "Non Room Product 0 Tax"
+                        },
+                        {
+                            "shortDescription": "[Non Room Product 0 Tax]",
+                            "pricingApplied": "NIGHTLY",
+                            "itemType": "ComponentChargeTax",
+                            "amount": 6.69,
+                            "item": "Non Room Product 0 Tax"
+                        },
+                        {
+                            "shortDescription": "[Non Room Product 0 Tax]",
+                            "pricingApplied": "NIGHTLY",
+                            "itemType": "ComponentChargeTax",
+                            "amount": 6.69,
+                            "item": "Non Room Product 0 Tax"
+                        }
+                    ]
+                }
+            ]
+        },
+        "ratesSummary": {
+            "roomSubtotal": 0.00,
+            "programDiscount": -408.00,
+            "discountedSubtotal": 408.00,
+            "discountedAveragePrice": 204.00,
+            "roomRequestsTotal": 400.00,
+            "adjustedRoomSubtotal": 808.00,
+            "resortFee": 0.00,
+            "resortFeePerNight": 0.00,
+            "tripSubtotal": 408.00,
+            "resortFeeAndTax": 0.00,
+            "roomChargeTax": 53.52,
+            "occupancyFee": 0.00,
+            "tourismFee": 0.00,
+            "tourismFeeAndTax": 0.00,
+            "casinoSurcharge": 0.00,
+            "casinoSurchargeAndTax": 0.00,
+            "reservationTotal": 861.52,
+            "depositDue": 316.33,
+            "balanceUponCheckIn": 545.19,
+            "previousDeposit": 0.00,
+            "changeInDeposit": 316.33
+        },
+        "depositDetails": {
+            "dueDate": "2024-09-05",
+            "amount": 316.33,
+            "forfeitDate": "2024-09-16",
+            "forfeitAmount": 316.33,
+            "overrideAmount": -1.00
+        },
+        "depositPolicy": {
+            "depositRequired": true,
+            "creditCardRequired": false
+        },
+        "purchasedComponents": [
+            {
+                "id": "COMPONENTCD-v-CFBP2-d-TYP-v-COMPONENT-d-PROP-v-MV930-d-NRPCD-v-CFBP2",
+                "code": "CFBP2",
+                "shortDescription": "Dog Friendly Fee",
+                "longDescription": "New York-New York Hotel ",
+                "active": true,
+                "pricingApplied": "NIGHTLY",
+                "tripPrice": 100.00,
+                "tripTax": 13.38,
+                "price": 50.00,
+                "prices": [
+                    {
+                        "date": "2024-09-19",
+                        "amount": 50.00,
+                        "tax": 6.69
+                    },
+                    {
+                        "date": "2024-09-20",
+                        "amount": 50.00,
+                        "tax": 6.69
+                    }
+                ],
+                "depositAmount": 56.69,
+                "isDepositRequired": true,
+                "nonEditable": false,
+                "ratePlanName": "CFBP2",
+                "ratePlanCode": "CFBP2",
+                "isPkgComponent": true
+            }
+		],
+        "amountDue": 0.00,
+        "guaranteeCode": "DD",
+        "customerRank": 0,
+        "customerSegment": 0,
+        "routingInstructions": [],
+        "perpetualPricing": false,
+        "isGroupCode": false,
+        "f1Package": false,
+        "isCreditCardExpired": false,
+        "isStayDateModifiable": false,
+        "hdePackage": false,
+        "depositForfeit": false,
+        "isCancellable": false
+    }
+}

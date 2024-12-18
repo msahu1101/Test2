@@ -1,0 +1,162 @@
+{
+  "instance": 0,
+  "customerId": 1030590038273,
+  "numRooms": 1,
+  "checkInDate": "2022-08-15",
+  "checkOutDate": "2022-08-16",
+  "numAdults": 2,
+  "postingStartedAt": 0,
+  "postingEndedAt": 0,
+  "amountDue": 0,
+  "createdAt": 0,
+  "updatedAt": 0,
+  "syncFromOperaAt": 0,
+  "nrgStatus": false,
+  "id": "f96f3114-ae5c-428d-bd21-8b0613383100",
+  "itineraryId": "10502308353",
+  "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+  "programId": "RPCD-v-PREVL-d-PROP-v-MV021",
+  "roomTypeId": "ROOMCD-v-DPVQ-d-PROP-v-MV021",
+  "guaranteeCode": "CC",
+  "profile": {
+    "id": 1030590038273,
+    "mlifeNo": 0,
+    "modifiable": false,
+    "createdAt": 0,
+    "updatedAt": 0,
+    "refreshedAt": 0,
+    "stale": false,
+    "externalSyncAt": 0,
+    "caslOptin": false,
+    "firstName": "Uttam",
+    "lastName": "Ghorai",
+    "emailAddress1": "uttamu2812@gmail.com",
+    "phoneNumbers": [
+      {
+        "type": "Home",
+        "number": "4317264481"
+      }
+    ],
+    "addresses": [
+      {
+        "type": "Home",
+        "preferred": false,
+        "street1": "4090 Living Atrs Dr",
+        "street2": "Rm-2201",
+        "city": "Mississauga",
+        "state": "ON",
+        "country": "CA",
+        "postalCode": "L5B4M8"
+      }
+    ]
+  },
+  "bookings": [
+    {
+      "date": "2022-08-15",
+      "basePrice": 25,
+      "customerPrice": 0,
+      "price": 25,
+      "programIdIsRateTable": false,
+      "overridePrice": -1,
+      "overrideProgramIdIsRateTable": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 0,
+      "programId": "RPCD-v-PREVL-d-PROP-v-MV021",
+      "isComp": false
+    }
+  ],
+  "chargesAndTaxesCalc": {
+    "charges": [
+      {
+        "date": "2022-08-15",
+        "amount": 62,
+        "itemized": [
+          {
+            "active": false,
+            "itemType": "RoomCharge",
+            "amount": 25
+          },
+          {
+            "active": false,
+            "itemType": "ResortFee",
+            "amount": 37,
+            "item": "RSFEE"
+          }
+        ]
+      }
+    ],
+    "taxesAndFees": [
+      {
+        "date": "2022-08-15",
+        "amount": 8.3,
+        "itemized": [
+          {
+            "active": false,
+            "itemType": "RoomChargeTax",
+            "amount": 3.35,
+            "item": "OCTAX"
+          },
+          {
+            "active": false,
+            "itemType": "ResortFeeTax",
+            "amount": 4.95,
+            "item": "RSFTX"
+          }
+        ]
+      }
+    ]
+  },
+  "depositCalc": {
+    "dueDate": "2022-08-03",
+    "amount": 65.35,
+    "forfeitDate": "2022-08-02",
+    "forfeitAmount": 65.35,
+    "overrideAmount": 80
+  },
+  "source": "ice",
+  "specialRequests": [],
+  "creditCardCharges": [
+    {
+      "amount": 80,
+      "cvv": "123",
+      "ccToken": "5555550A001BFU5LI0URCAM94444",
+      "expiry": "2022-10-01",
+      "holder": "uttam ghorai",
+      "number": "5555550A001BFU5LI0URCAM94444",
+      "type": "Mastercard",
+      "holderProfile": {
+        "firstName": "Uttam",
+        "lastName": "Ghorai",
+        "address": {
+          "type": "Home",
+          "preferred": true,
+          "street1": "4090 Living Atrs Dr",
+          "street2": "Rm-2201",
+          "city": "Mississauga",
+          "state": "ON",
+          "country": "CA",
+          "postalCode": "L5B4M8"
+        }
+      },
+      "fxAmount": 0,
+      "fxExchangeRate": 0
+    }
+  ],
+  "confirmationNumber": "",
+  "additionalComments": [
+    "admin:overridden deposit"
+  ],
+  "customerRank": 0,
+  "customerSegment": 0,
+  "operaState": "",
+  "operaConfirmationNumber": "",
+  "rrUpSell": "",
+  "numChildren": 0,
+  "routingInstructions": [],
+  "isGroupCode": false,
+  "perpetualPricing": false,
+  "ignoreChannelMargins": false,
+  "excludeNonOffer": false,
+  "thirdParty": false,
+  "pendingReservation": false
+}

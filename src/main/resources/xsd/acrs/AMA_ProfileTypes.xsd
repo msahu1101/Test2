@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (x64) (http://www.altova.com) by ﻿AMADEUS s.a.s. (AMADEUS s.a.s.) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.000" id="AMA2011A">
+	<xs:complexType name="AMA_ProfileType">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Channel profile identifies the party making the request.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence minOccurs="0">
+			<xs:element name="Properties" type="AMA_ProfilePropertiesType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="VendorID" use="required">
+			<xs:annotation>
+				<xs:documentation>MasterID - Identifier of the vendor</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="7"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="SubChannelCode">
+			<xs:annotation>
+				<xs:documentation>Subchannel code, only defined for reservation services</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="2"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="AMA_ProfilePropertiesType">
+		<xs:sequence>
+			<xs:element name="Property" maxOccurs="10">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="AMA_ProfilePropertyType">
+							<xs:sequence>
+								<xs:element name="Rates" type="AMA_ProfileRatesType" minOccurs="0"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AMA_ProfilePropertyType">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Defines Channel Profile property details.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="PropertyCode" use="required">
+			<xs:annotation>
+				<xs:documentation>The property code value is the structure that will convey the channel identifiers for this property.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="8"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="ChannelID" use="required">
+			<xs:annotation>
+				<xs:documentation>MasterID - External User System identifier. It defines a set of channels connected to the GRS.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="7"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="RateDescriptionsProfileID" use="required">
+			<xs:annotation>
+				<xs:documentation>MasterID - Rate Descriptions identifier needed to retrieve the rate description customized by vendor.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="7"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="AMA_ProfileRatesType">
+		<xs:sequence>
+			<xs:element name="Rate" type="AMA_ProfileRateType" maxOccurs="17"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AMA_ProfileRateType">
+		<xs:annotation>
+			<xs:documentation>Defines Channel profile rate details.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="RatePlanCode" use="required">
+			<xs:annotation>
+				<xs:documentation>Rate plan code.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="5"/>
+					<xs:maxLength value="8"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="RatePlanProfileID" use="required">
+			<xs:annotation>
+				<xs:documentation>MasterID - Rate Plan Profile identifier contains some configurable setups at channel level used by the GRS to govern the system’s behavior while processing Shop and Book transactions coming from the external channels.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="7"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

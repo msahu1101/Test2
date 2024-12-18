@@ -1,0 +1,597 @@
+{
+    "instance": 0,
+    "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+    "roomTypeId": "ROOMCD-v-L1PL-d-PROP-v-MV021",
+    "programId": "RPCD-v-ADNYNY-d-PROP-v-MV021",
+    "customerId": "0",
+    "guaranteeCode": null,
+    "specialRequests": [],
+    "profile": null,
+    "tripDetails": {
+        "checkInDate": "2024-09-12",
+        "checkOutDate": "2024-09-14",
+        "numAdults": 1,
+        "numChildren": 0,
+        "numRooms": 1
+    },
+    "chargesAndTaxes": {
+        "charges": [
+            {
+                "date": "2024-09-12",
+                "amount": 246.99,
+                "itemized": [
+                    {
+                        "itemType": "RoomCharge",
+                        "amount": 204.99
+                    },
+                    {
+                        "itemType": "ResortFee",
+                        "amount": 42.00,
+                        "item": "RSFEE"
+                    }
+                ]
+            },
+            {
+                "date": "2024-09-13",
+                "amount": 246.99,
+                "itemized": [
+                    {
+                        "itemType": "RoomCharge",
+                        "amount": 204.99
+                    },
+                    {
+                        "itemType": "ResortFee",
+                        "amount": 42.00,
+                        "item": "RSFEE"
+                    }
+                ]
+            }
+        ],
+        "taxesAndFees": [
+            {
+                "date": "2024-09-12",
+                "amount": 33.05,
+                "itemized": [
+                    {
+                        "itemType": "RoomChargeTax",
+                        "amount": 27.43,
+                        "item": "OCTAX"
+                    },
+                    {
+                        "itemType": "ResortFeeTax",
+                        "amount": 5.62,
+                        "item": "RSFTX"
+                    }
+                ]
+            },
+            {
+                "date": "2024-09-13",
+                "amount": 33.05,
+                "itemized": [
+                    {
+                        "itemType": "RoomChargeTax",
+                        "amount": 27.43,
+                        "item": "OCTAX"
+                    },
+                    {
+                        "itemType": "ResortFeeTax",
+                        "amount": 5.62,
+                        "item": "RSFTX"
+                    }
+                ]
+            }
+        ]
+    },
+    "bookings": [
+        {
+            "date": "2024-09-12",
+            "basePrice": 204.99,
+            "customerPrice": 0.00,
+            "price": 204.99,
+            "programIdIsRateTable": false,
+            "overridePrice": -1.00,
+            "overrideProgramIdIsRateTable": false,
+            "resortFeeIsSpecified": false,
+            "resortFee": 0.00,
+            "programId": "RPCD-v-ADNYNY-d-PROP-v-MV021",
+            "isComp": false
+        },
+        {
+            "date": "2024-09-13",
+            "basePrice": 204.99,
+            "customerPrice": 0.00,
+            "price": 204.99,
+            "programIdIsRateTable": false,
+            "overridePrice": -1.00,
+            "overrideProgramIdIsRateTable": false,
+            "resortFeeIsSpecified": false,
+            "resortFee": 0.00,
+            "programId": "RPCD-v-ADNYNY-d-PROP-v-MV021",
+            "isComp": false
+        }
+    ],
+    "ratesSummary": {
+        "roomSubtotal": 409.98,
+        "programDiscount": 0.00,
+        "discountedSubtotal": 409.98,
+        "discountedAveragePrice": 204.99,
+        "roomRequestsTotal": 0.00,
+        "adjustedRoomSubtotal": 409.98,
+        "resortFee": 84.00,
+        "resortFeePerNight": 42.00,
+        "tripSubtotal": 493.98,
+        "resortFeeAndTax": 95.24,
+        "roomChargeTax": 54.86,
+        "occupancyFee": 0.00,
+        "tourismFee": 0.00,
+        "tourismFeeAndTax": 0.00,
+        "casinoSurcharge": 0.00,
+        "casinoSurchargeAndTax": 0.00,
+        "reservationTotal": 560.08,
+        "depositDue": 232.42,
+        "balanceUponCheckIn": 327.66
+    },
+    "depositDetails": {
+        "dueDate": "2024-08-19",
+        "amount": 232.42,
+        "forfeitDate": "2024-09-09",
+        "forfeitAmount": 232.42,
+        "overrideAmount": -1.00
+    },
+    "amountDue": 0.00,
+    "depositPolicy": {
+        "depositRequired": true,
+        "creditCardRequired": false
+    },
+    "perpetualPricing": false,
+    "markets": null,
+    "confirmationNumber": null,
+    "availableComponents": [
+        {
+            "id": "COMPONENTCD-v-DOGFEE-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-DOGFRIENDLY",
+            "code": "DOGFEE",
+            "shortDescription": "Dog Friendly Fee USD100 - Short desc",
+            "longDescription": "Dog Friendly Fee USD100 - long desc",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 56.69,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 50.00,
+                    "tax": 6.69
+                },
+                {
+                    "date": "2024-09-13",
+                    "amount": 50.00,
+                    "tax": 6.69
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-DOGFEE-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-DOGFRIENDLYSTE",
+            "code": "DOGFEE",
+            "shortDescription": "Dog Friendly Fee USD150\n",
+            "longDescription": "Dog Friendly Fee USD150\n",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 113.38,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 100.00,
+                    "tax": 13.38
+                },
+                {
+                    "date": "2024-09-13",
+                    "amount": 100.00,
+                    "tax": 13.38
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-EARLYCI-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-EARLYCI",
+            "code": "EARLYCI",
+            "shortDescription": "This is the Short Description of Early Check-In",
+            "longDescription": "This is the Long Description of Early Check-in",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 56.69,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 50.00,
+                    "tax": 6.69
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-TICKETS-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-F124Q2BFC3DATIX",
+            "code": "F124Q2BFC3DATIX",
+            "shortDescription": "Pair of 3 Day Bellagio Fountain Club",
+            "longDescription": "Pair of 3 Day Bellagio Fountain Club",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 20000.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 20000.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-TICKETS-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-F1N23Q1BGSATIX1",
+            "code": "F1N23Q1BGSATIX1",
+            "shortDescription": "F1 23 Bellagio Tix 1\n",
+            "longDescription": "F1 23 Bellagio Tix 1\n",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-TICKETS-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-F1N23Q1BGSATIX2",
+            "code": "F1N23Q1BGSATIX2",
+            "shortDescription": "F1 23 Bellagio Tix 2\n",
+            "longDescription": "F1 23 Bellagio Tix 2\n",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-TICKETS-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-F1N23Q1PGSATIX1",
+            "code": "F1N23Q1PGSATIX1",
+            "shortDescription": "F1 23 Paddock Tix 1\n",
+            "longDescription": "F1 23 Paddock Tix 1\n",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-TICKETS-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-F1N23Q1PGSATIX2",
+            "code": "F1N23Q1PGSATIX2",
+            "shortDescription": "F1 23 Paddock Tix 2",
+            "longDescription": "F1 23 Paddock Tix 2",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-TICKETS-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-HDNF124Q2PGS2DAT01",
+            "code": "HDNF124Q2PGS2DAT01",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 3000.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 3000.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-09-13",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-TICKETS-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-HDNF124Q2PGS2DAT02",
+            "code": "HDNF124Q2PGS2DAT02",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 3000.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 3000.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-09-13",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-TICKETS-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-HDNF1N23Q2BGSAT01",
+            "code": "HDNF1N23Q2BGSAT01",
+            "shortDescription": "Comp F1 23 BLGIO Tix\n",
+            "longDescription": "Comp F1 23 BLGIO Tix\n",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-TICKETS-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-HDNF1N23Q2PGSAT01",
+            "code": "HDNF1N23Q2PGSAT01",
+            "shortDescription": "CmpF1 23 Paddock Tix\n",
+            "longDescription": "CmpF1 23 Paddock Tix\n",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-ICEFEE-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-ICEFEE",
+            "code": "ICEFEE",
+            "shortDescription": "ICE Contact Center Fee Short Description",
+            "longDescription": "ICE Contact Center Fee Long Description",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 19.58,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 17.27,
+                    "tax": 2.31
+                },
+                {
+                    "date": "2024-09-13",
+                    "amount": 17.27,
+                    "tax": 2.31
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-LATECO-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-LATECO",
+            "code": "LATECO",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKOUT",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": false,
+            "prices": [
+                {
+                    "date": "2024-09-13",
+                    "amount": 30.00,
+                    "tax": 4.01
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-EARLYCI-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MECI",
+            "code": "EARLYCI",
+            "shortDescription": "Guaranteed Early CheckIn 9am Mobile\n",
+            "longDescription": "Guaranteed Early CheckIn 9am Mobile\n",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 22.68,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 20.00,
+                    "tax": 2.68
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-EARLYCI-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MECIA11",
+            "code": "EARLYCI",
+            "shortDescription": "Guaranteed Early CheckIn 11am Mobile\n\n",
+            "longDescription": "Guaranteed Early CheckIn 11am Mobile\n\n",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 22.68,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 20.00,
+                    "tax": 2.68
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-EARLYCI-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MECIP01",
+            "code": "EARLYCI",
+            "shortDescription": "Guaranteed Early CheckIn 1pm Mobile\n",
+            "longDescription": "Guaranteed Early CheckIn 1pm Mobile\n",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 22.68,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-12",
+                    "amount": 20.00,
+                    "tax": 2.68
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-LATECO-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MLCO",
+            "code": "LATECO",
+            "shortDescription": "Guaranteed Late CheckOut 1pm Mobile\n",
+            "longDescription": "Guaranteed Late CheckOut 1pm Mobile\n",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKOUT",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-13",
+                    "amount": 30.00,
+                    "tax": 4.01
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-LATECO-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MLCOP03",
+            "code": "LATECO",
+            "shortDescription": "Guaranteed Late CheckOut 3pm Mobile\n",
+            "longDescription": "Guaranteed Late CheckOut 3pm Mobile\n",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKOUT",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-13",
+                    "amount": 30.00,
+                    "tax": 4.01
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-LATECO-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MLCOP06",
+            "code": "LATECO",
+            "shortDescription": "Guaranteed Late Check Out 6pm Mobile\n",
+            "longDescription": "Guaranteed Late Check Out 6pm Mobile\n",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKOUT",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-09-13",
+                    "amount": 30.00,
+                    "tax": 4.01
+                }
+            ]
+        }
+    ],
+    "promo": null
+}

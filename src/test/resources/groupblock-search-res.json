@@ -1,0 +1,29 @@
+[
+    {
+        "activeFlag": false,
+        "id": "GRPCD-v-CASINO2024-d-PROP-v-MV021",
+        "name": "Casino Block 2024",
+        "sunday": true,
+        "monday": true,
+        "tuesday": true,
+        "wednesday": true,
+        "thursday": true,
+        "friday": true,
+        "saturday": true,
+        "shortDescription": "Casino Block 2024",
+        "category": "Group",
+        "operaBlockCode": "CASINO2024",
+        "operaBlockName": "Casino Block 2024",
+        "operaGuaranteeCode": "CG",
+        "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+        "travelPeriodEnd": "2025-01-03",
+        "travelPeriodStart": "2024-01-01",
+        "periodEndDate": "2025-01-03",
+        "periodStartDate": "2024-01-01",
+        "rooms": [],
+        "publicName": "Casino Block 2024",
+        "groupCode": "CASINO2024",
+        "isElastic": true,
+        "saleStatus": "Cancelled"
+    }
+]

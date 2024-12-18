@@ -1,0 +1,51 @@
+{
+  "source": null,
+  "channel": null,
+  "customerId": 0,
+  "mlifeNumber": null,
+  "customerTier": null,
+  "perpetualPricing": false,
+  "perpetualEligiblePropertyIds": null,
+  "profileId": null,
+  "ecid": null,
+  "emr": null,
+  "overrideDepositForfeit": false,
+  "confirmationNumber": "15T3R6HP40",
+  "cancellationReason": "Program Cancelled",
+  "propertyId": null,
+  "firstName": "Uttam",
+  "lastName": "Ghorai",
+  "inAuthTransactionId": null,
+  "billing": [
+    {
+      "payment": {
+        "cardHolder": "Uttam Ghorai",
+        "firstName": "Uttam",
+        "lastName": "Ghorai",
+        "cardNumber": null,
+        "ccToken": "5555550A0017Y0M59GYH3G7X4444",
+        "maskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX4444",
+        "amount": 0,
+        "cvv": null,
+        "expiry": "01/2025",
+        "type": "Diners Club",
+        "fxAmount": 0,
+        "fxCurrencyISOCode": null,
+        "fxCurrencyCode": null,
+        "fxExchangeRate": 0,
+        "fxFlag": null,
+        "authId": "abcd",
+        "authIds": null,
+        "txnDateAndTime": null
+      },
+      "address": {
+        "street1": "5353 W Desert Inn",
+        "street2": null,
+        "city": "Las Vegas",
+        "state": "NV",
+        "postalCode": "89146",
+        "country": "US"
+      }
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+	"customerId": 0,
+	"inSessionReservationId": null,
+	"numRooms": 1,
+	"bookDate": 1617980997328,
+	"checkInDate": "2021-05-24",
+	"checkOutDate": "2021-05-25",
+	"numAdults": 2,
+	"billingType": "CustomerCreditCard",
+	"state": "Booked",
+	"postingFlow": "Make",
+	"postingState": "Success",
+	"postingStartedAt": 1617980998824,
+	"postingEndedAt": 0,
+	"amountDue": 6802.79,
+	"createdAt": 1617980998820,
+	"updatedAt": 1618205241553,
+	"syncFromOperaAt": 0,
+	"nrgStatus": false,
+	"id": "1617980994",
+	"itineraryId": "7865775617",
+	"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+	"programId": null,
+	"roomTypeId": "23f5bef8-63ea-4ba9-a290-13b5a3056595",
+	"guaranteeCode": "CC",
+	"profile": {
+		"id": 923600551937,
+		"mlifeNo": 0,
+		"title": null,
+		"dateOfBirth": null,
+		"modifiable": false,
+		"createdAt": 0,
+		"updatedAt": 0,
+		"refreshedAt": 1618205239884,
+		"stale": false,
+		"externalSyncAt": 0,
+		"caslOptin": false,
+		"operaId": "815846872",
+		"tier": null,
+		"firstName": "RBSv2",
+		"lastName": "UnitTest",
+		"emailAddress1": null,
+		"emailAddress2": null,
+		"hgpNo": null,
+		"swrrNo": null,
+		"phoneNumbers": null,
+		"addresses": [
+			{
+				"type": "Home",
+				"preferred": false,
+				"street1": "234 W Main St",
+				"street2": "Unit 415",
+				"city": "Las Vegas",
+				"state": "NV",
+				"country": "US",
+				"postalCode": "12345"
+			}
+		]
+	},
+	"bookings": [
+		{
+			"date": "2021-05-24",
+			"basePrice": 9999.99,
+			"customerPrice": 5999.994000000001,
+			"price": 5999.994000000001,
+			"programIdIsRateTable": false,
+			"overridePrice": -1.0,
+			"overrideProgramIdIsRateTable": false,
+			"resortFeeIsSpecified": false,
+			"resortFee": 0.0,
+			"programId": "7cbd1975-8c9d-4c1f-9f40-355e1f02179b",
+			"pricingRuleId": "7e9367a5-fa5b-488f-9296-469aec95be9c",
+			"isComp": false
+		}
+	],
+	"markets": [
+		{
+			"date": "2021-05-24",
+			"marketCode": "TFIT",
+			"sourceCode": "TFITIC"
+		}
+	],
+	"chargesAndTaxesCalc": {
+		"charges": [
+			{
+				"date": "2021-05-24",
+				"amount": 6036.994000000001,
+				"itemized": [
+					{
+						"itemType": "RoomCharge",
+						"amount": 5999.994000000001,
+						"item": "Room Charge"
+					},
+					{
+						"itemType": "ExtraGuestCharge",
+						"amount": 40.0,
+						"item": "Extra Guest Charge"
+					},
+					{
+						"itemType": "ResortFee",
+						"amount": 37.0,
+						"item": "Resort Fee"
+					}
+				]
+			}
+		],
+		"taxesAndFees": [
+			{
+				"date": "2021-05-24",
+				"amount": 807.7497972000002,
+				"itemized": [
+					{
+						"itemType": "RoomChargeTax",
+						"amount": 802.7991972000002,
+						"item": "Room Tax"
+					},
+					{
+						"itemType": "ExtraGuestChargeTax",
+						"amount": 5.352,
+						"item": "Extra Guest Tax"
+					},
+					{
+						"itemType": "ResortFeeTax",
+						"amount": 4.9506,
+						"item": "Resort Fee Tax"
+					}
+				]
+			}
+		]
+	},
+	"depositPolicyCalc": {
+		"depositRequired": true,
+		"creditCardRequired": true
+	},
+	"depositCalc": {
+		"dueDate": "2021-04-15",
+		"amountPolicy": "Nights",
+		"amount": 6802.793197200001,
+		"forfeitDate": "2021-05-21",
+		"forfeitAmount": 6802.793197200001,
+		"overrideAmount": -1.0,
+		"depositRuleCode": "1NT",
+		"cancellationRuleCode": "72H",
+		"itemized": [
+			{
+				"itemType": "RoomCharge",
+				"amount": 5999.994000000001,
+				"item": "Room Charge"
+			},
+			{
+				"itemType": "RoomChargeTax",
+				"amount": 802.7991972000002,
+				"item": "Room Tax"
+			}
+		]
+	},
+	"channelId": "5525aed4-cb83-4e81-b13e-6f1ae4c5e28c",
+	"origin": "ice",
+	"source": "ice",
+	"specialRequests": [],
+	"creditCardCharges": [
+		{
+			"amount": 6802.793197200001,
+			"cvv": null,
+			"expiry": 1696172997128,
+			"holder": "John doe",
+			"number": "JQh4YjIGyvwFT1YjOXazcwuLIrIuuydnig67Dp9i0l3uPnmDcHXrIdJLLzwoHCEB8jetEePxuXA/pKh7i5e3zw==",
+			"decryptedNumber": null,
+			"maskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX1111",
+			"type": "Visa",
+			"currencyCode": null,
+			"holderProfile": {
+				"firstName": "RBSv2",
+				"lastName": "UnitTest",
+				"address": {
+					"type": "Home",
+					"preferred": true,
+					"street1": "234 W Main St",
+					"street2": "Unit 415",
+					"city": "Las Vegas",
+					"state": "NV",
+					"country": "US",
+					"postalCode": "12345"
+				}
+			},
+			"fxAmount": 0.0,
+			"fxCurrencyISOCode": null,
+			"fxExchangeRate": 0.0,
+			"fxFlag": null
+		}
+	],
+	"confirmationNumber": "M03D5C0E1",
+	"payments": [
+		{
+			"reservationInstance": 1,
+			"id": 0,
+			"chargeAmount": 6802.79,
+			"chargeCardExpiry": "2023-10-01",
+			"status": "Settled",
+			"chargeCardHolder": "John doe",
+			"chargeCurrencyCode": "USD",
+			"chargeCardType": "Visa",
+			"chargeCardMaskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX1111",
+			"chargeCardNumber": "JQh4YjIGyvwFT1YjOXazcwuLIrIuuydnig67Dp9i0l3uPnmDcHXrIdJLLzwoHCEB8jetEePxuXA/pKh7i5e3zw==",
+			"fxChecked": true,
+			"fxEligible": false,
+			"fxTransDate": "2021-04-09",
+			"fxAmount": 0.0,
+			"fxRate": 0.0,
+			"fxSettleAmount": 6802.79,
+			"fxCurrencyCode": "USD",
+			"fxAcceptMessage": "Approved",
+			"fxAuthApprovalCode": "045379",
+			"isExternal": false,
+			"isDeposit": false
+		},
+		{
+			"reservationInstance": 0,
+			"id": 0,
+			"chargeAmount": 6802.79,
+			"chargeCardType": "Visa",
+			"chargeCardMaskedNumber": "XXXXXXXXXXXX1111",
+			"fxChecked": false,
+			"fxEligible": false,
+			"fxTransDate": "2019-12-02",
+			"fxAmount": 0.0,
+			"fxRate": 0.0,
+			"fxSettleAmount": 0.0,
+			"isExternal": true,
+			"isDeposit": true
+		}
+	],
+	"comments": null,
+	"additionalComments": null,
+	"shoppedItineraryIds": null,
+	"customerRank": 0,
+	"customerSegment": 0,
+	"customerDominantPlay": null,
+	"agentInfo": null,
+	"shareWiths": null,
+	"shareWithType": null,
+	"upgradeRoomTypeId": null,
+	"operaState": "RESERVED",
+	"roomNumber": null,
+	"partyConfirmationNumber": null,
+	"extConfirmationNumber": null,
+	"otaConfirmationNumber": null,
+	"primarySharerConfirmationNumber": null,
+	"operaConfirmationNumber": "798152609",
+	"rrUpSell": null,
+	"numChildren": 1,
+	"cancellationReason": null,
+	"cancellationPolicyInfo": null,
+	"cancellationNumber": null,
+	"alerts": null,
+	"routingInstructions": null,
+	"traces": null,
+	"shareWithCustomers": null,
+	"crsWarnings": null,
+	"isGroupCode": false,
+	"perpetualPricing": false,
+	"pricingMode": null,
+	"availableComponents": null,
+	"promoCode": null,
+	"ignoreChannelMargins": false,
+	"excludeNonOffer": false
+}

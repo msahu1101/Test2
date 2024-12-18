@@ -1,0 +1,306 @@
+{
+  "instance": 0,
+  "customerId": -1,
+  "numRooms": 1,
+  "bookDate": "2024-06-27",
+  "checkInDate": "2024-07-26",
+  "checkOutDate": "2024-07-30",
+  "numAdults": 1,
+  "state": "Booked",
+  "postingStartedAt": 0,
+  "postingEndedAt": 0,
+  "amountDue": 239.8,
+  "createdAt": 1719490176000,
+  "updatedAt": 1720437805000,
+  "syncFromOperaAt": 0,
+  "nrgStatus": false,
+  "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+  "programId": "RPCD-v-TFRSA-d-PROP-v-MV021",
+  "roomTypeId": "ROOMCD-v-L1PL-d-PROP-v-MV021",
+  "guaranteeCode": "CC",
+  "profile": {
+    "id": -1,
+    "mlifeNo": 0,
+    "modifiable": false,
+    "createdAt": 0,
+    "updatedAt": 0,
+    "refreshedAt": 0,
+    "stale": false,
+    "externalSyncAt": 0,
+    "caslOptin": false,
+    "firstName": "Uttam",
+    "lastName": "Ghorai",
+    "addresses": [
+      {
+        "type": "Home",
+        "preferred": true,
+        "street1": "100 St",
+        "city": "Las Vegas",
+        "state": "NV",
+        "country": "US",
+        "postalCode": "89102"
+      }
+    ]
+  },
+  "bookings": [
+    {
+      "date": "2024-07-26",
+      "basePrice": 0.0,
+      "customerPrice": 0.0,
+      "price": 211.5,
+      "programIdIsRateTable": false,
+      "overridePrice": -1.0,
+      "overrideProgramIdIsRateTable": false,
+      "comp": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 42.0,
+      "programId": "RPCD-v-TFRSA-d-PROP-v-MV021"
+    },
+    {
+      "date": "2024-07-27",
+      "basePrice": 0.0,
+      "customerPrice": 0.0,
+      "price": 211.5,
+      "programIdIsRateTable": false,
+      "overridePrice": -1.0,
+      "overrideProgramIdIsRateTable": false,
+      "comp": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 42.0,
+      "programId": "RPCD-v-TFRSA-d-PROP-v-MV021"
+    },
+    {
+      "date": "2024-07-28",
+      "basePrice": 0.0,
+      "customerPrice": 0.0,
+      "price": 211.5,
+      "programIdIsRateTable": false,
+      "overridePrice": -1.0,
+      "overrideProgramIdIsRateTable": false,
+      "comp": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 42.0,
+      "programId": "RPCD-v-TFRSA-d-PROP-v-MV021"
+    },
+    {
+      "date": "2024-07-29",
+      "basePrice": 0.0,
+      "customerPrice": 0.0,
+      "price": 211.5,
+      "programIdIsRateTable": false,
+      "overridePrice": -1.0,
+      "overrideProgramIdIsRateTable": false,
+      "comp": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 42.0,
+      "programId": "RPCD-v-TFRSA-d-PROP-v-MV021"
+    }
+  ],
+  "markets": [
+    {
+      "date": "2024-07-26",
+      "marketCode": "TPKG",
+      "sourceCode": "CC"
+    },
+    {
+      "date": "2024-07-27",
+      "marketCode": "TPKG",
+      "sourceCode": "CC"
+    },
+    {
+      "date": "2024-07-28",
+      "marketCode": "TPKG",
+      "sourceCode": "CC"
+    },
+    {
+      "date": "2024-07-29",
+      "marketCode": "TPKG",
+      "sourceCode": "CC"
+    }
+  ],
+  "chargesAndTaxesCalc": {
+    "charges": [
+      {
+        "date": "2024-07-26",
+        "amount": 211.5,
+        "itemized": [
+          {
+            "itemType": "RoomCharge",
+            "amount": 211.5,
+            "item": "RoomCharge"
+          }
+        ]
+      },
+      {
+        "date": "2024-07-27",
+        "amount": 211.5,
+        "itemized": [
+          {
+            "itemType": "RoomCharge",
+            "amount": 211.5,
+            "item": "RoomCharge"
+          }
+        ]
+      },
+      {
+        "date": "2024-07-28",
+        "amount": 211.5,
+        "itemized": [
+          {
+            "itemType": "RoomCharge",
+            "amount": 211.5,
+            "item": "RoomCharge"
+          }
+        ]
+      },
+      {
+        "date": "2024-07-29",
+        "amount": 211.5,
+        "itemized": [
+          {
+            "itemType": "RoomCharge",
+            "amount": 211.5,
+            "item": "RoomCharge"
+          }
+        ]
+      }
+    ],
+    "taxesAndFees": [
+      {
+        "date": "2024-07-26",
+        "amount": 0.0,
+        "itemized": []
+      },
+      {
+        "date": "2024-07-27",
+        "amount": 0.0,
+        "itemized": []
+      },
+      {
+        "date": "2024-07-28",
+        "amount": 0.0,
+        "itemized": []
+      },
+      {
+        "date": "2024-07-29",
+        "amount": 0.0,
+        "itemized": []
+      }
+    ]
+  },
+  "depositPolicyCalc": {
+    "depositRequired": true,
+    "creditCardRequired": false
+  },
+  "depositCalc": {
+    "dueDate": "2024-06-27",
+    "amount": 239.8,
+    "forfeitDate": "2024-07-23",
+    "forfeitAmount": 239.8,
+    "overrideAmount": -1.0
+  },
+  "origin": "Contact Center",
+  "specialRequests": [],
+  "creditCardCharges": [
+    {
+      "amount": -56.69,
+      "ccToken": "5555550A0017Y0M59GYH3G7X4444",
+      "expiry": "2025-01-01",
+      "holder": "Uttam Ghorai",
+      "number": "5555550A0017Y0M59GYH3G7X4444",
+      "maskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX4444",
+      "type": "Diners Club",
+      "holderProfile": {
+        "firstName": "Uttam",
+        "lastName": "Ghorai",
+        "address": {
+          "type": "Home",
+          "preferred": true,
+          "street1": "5353 W Desert Inn",
+          "city": "Las Vegas",
+          "state": "NV",
+          "country": "US",
+          "postalCode": "89146"
+        }
+      },
+      "fxAmount": 0.0,
+      "fxExchangeRate": 0.0,
+      "authId": "abcd"
+    }
+  ],
+  "confirmationNumber": "3OWSIOL3V4",
+  "payments": [
+    {
+      "reservationInstance": 0,
+      "chargeAmount": 239.8,
+      "chargeCardExpiry": "2025-01-01",
+      "dccChecked": false,
+      "dccEligible": false,
+      "dccTransDate": "2024-06-27",
+      "dccAmount": 0.0,
+      "dccRate": 0.0,
+      "dccSettleAmount": 0.0,
+      "status": "Settled",
+      "isDeposit": true,
+      "isExternal": false,
+      "chargeCardHolder": "Uttam Ghorai",
+      "chargeCardType": "Diners Club",
+      "chargeCardMaskedNumber": "XXXXXXXXXXXX4444",
+      "chargeCardNumber": "555555qCgDU34444",
+      "paymentTxnId": "abcd"
+    },
+    {
+      "reservationInstance": 0,
+      "chargeAmount": 56.69,
+      "chargeCardExpiry": "2025-01-01",
+      "dccChecked": false,
+      "dccEligible": false,
+      "dccTransDate": "2024-07-08",
+      "dccAmount": 0.0,
+      "dccRate": 0.0,
+      "dccSettleAmount": 0.0,
+      "status": "Settled",
+      "isDeposit": true,
+      "isExternal": false,
+      "chargeCardHolder": "Uttam Ghorai",
+      "chargeCardType": "Diners Club",
+      "chargeCardMaskedNumber": "XXXXXXXXXXXX4444",
+      "chargeCardNumber": "555555qCgDU34444",
+      "paymentTxnId": "abcd"
+    },
+    {
+      "reservationInstance": 0,
+      "chargeAmount": -56.69,
+      "chargeCardExpiry": "2025-01-01",
+      "dccChecked": false,
+      "dccEligible": false,
+      "dccTransDate": "2024-07-08",
+      "dccAmount": 0.0,
+      "dccRate": 0.0,
+      "dccSettleAmount": 0.0,
+      "isDeposit": false,
+      "isExternal": false,
+      "chargeCardHolder": "Uttam Ghorai",
+      "chargeCardType": "Diners Club",
+      "chargeCardMaskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX4444",
+      "chargeCardNumber": "5555550A0017Y0M59GYH3G7X4444",
+      "paymentTxnId": "abcd"
+    }
+  ],
+  "customerRank": 0,
+  "customerSegment": 0,
+  "operaState": "RESERVED",
+  "operaConfirmationNumber": "914209782",
+  "numChildren": 0,
+  "routingInstructions": [],
+  "isGroupCode": false,
+  "perpetualPricing": false,
+  "purchasedComponents": [],
+  "ignoreChannelMargins": false,
+  "excludeNonOffer": false,
+  "isPendingReservation": false,
+  "thirdParty": false,
+  "f1Package": false,
+  "skipFraudCheck": false,
+  "skipPaymentProcess": false
+}

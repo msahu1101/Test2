@@ -1,0 +1,859 @@
+{
+    "data": {
+        "start": "2021-06-13",
+        "end": "2021-06-15",
+        "guestCounts": [
+            {
+                "guestType": "ADULT",
+                "count": 1
+            }
+        ],
+        "lowestRate": {
+            "ttlAmt": "84.00",
+            "currency": "USD",
+            "refIds": [
+                4,
+                5,
+                11,
+                19,
+                20,
+                26,
+                34,
+                35,
+                41
+            ]
+        },
+        "hotels": [
+            {
+                "hotel": {
+                    "chainCode": "MGM",
+                    "brandCode": "MV",
+                    "propertyCode": "MV021",
+                    "propertyCurrency": "USD"
+                },
+                "ratePlans": [
+                    {
+                        "code": "CAS01",
+                        "isFreeNight": false
+                    },
+                    {
+                        "code": "MLIFE",
+                        "isFreeNight": false
+                    }
+                ],
+                "calendar": [
+                    {
+                        "start": "2021-06-13",
+                        "end": "2021-06-13",
+                        "lowestRate": {
+                            "ttlAmt": "84.00",
+                            "currency": "USD",
+                            "refIds": [
+                                4,
+                                5,
+                                11
+                            ]
+                        },
+                        "offers": [
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMAD",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "39.00",
+                                "ttlAmt": "117.00",
+                                "id": 0
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "39.00",
+                                "ttlAmt": "117.00",
+                                "id": 1
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "50.00",
+                                "ttlAmt": "150.00",
+                                "id": 2
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "57.00",
+                                "ttlAmt": "171.00",
+                                "id": 3
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "28.00",
+                                "ttlAmt": "84.00",
+                                "id": 4
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "28.00",
+                                "ttlAmt": "84.00",
+                                "id": 5
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "46.00",
+                                "ttlAmt": "138.00",
+                                "id": 6
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "39.00",
+                                "ttlAmt": "117.00",
+                                "id": 7
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "MLIFE",
+                                    "MLIFE",
+                                    "MLIFE"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 8
+                                    }
+                                ],
+                                "chkAmt": "524.00",
+                                "ttlAmt": "1572.00",
+                                "id": 8
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "442.00",
+                                "ttlAmt": "1326.00",
+                                "id": 9
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "MLIFE",
+                                    "MLIFE",
+                                    "MLIFE"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "816.00",
+                                "ttlAmt": "2448.00",
+                                "id": 10
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "S1PC",
+                                        "nbAvlPdts": 3
+                                    }
+                                ],
+                                "chkAmt": "28.00",
+                                "ttlAmt": "84.00",
+                                "id": 11
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "128.00",
+                                "ttlAmt": "384.00",
+                                "id": 12
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "142.00",
+                                "ttlAmt": "426.00",
+                                "id": 13
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "103.00",
+                                "ttlAmt": "309.00",
+                                "id": 14
+                            }
+                        ]
+                    },
+                    {
+                        "start": "2021-06-14",
+                        "end": "2021-06-14",
+                        "lowestRate": {
+                            "ttlAmt": "84.00",
+                            "currency": "USD",
+                            "refIds": [
+                                19,
+                                20,
+                                26
+                            ]
+                        },
+                        "offers": [
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMAD",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "39.00",
+                                "ttlAmt": "117.00",
+                                "id": 15
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "39.00",
+                                "ttlAmt": "117.00",
+                                "id": 16
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "50.00",
+                                "ttlAmt": "150.00",
+                                "id": 17
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "57.00",
+                                "ttlAmt": "171.00",
+                                "id": 18
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "28.00",
+                                "ttlAmt": "84.00",
+                                "id": 19
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "28.00",
+                                "ttlAmt": "84.00",
+                                "id": 20
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "46.00",
+                                "ttlAmt": "138.00",
+                                "id": 21
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "39.00",
+                                "ttlAmt": "117.00",
+                                "id": 22
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "MLIFE",
+                                    "MLIFE",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 8
+                                    }
+                                ],
+                                "chkAmt": "524.00",
+                                "ttlAmt": "1605.00",
+                                "id": 23
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "442.00",
+                                "ttlAmt": "1326.00",
+                                "id": 24
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "MLIFE",
+                                    "MLIFE",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "816.00",
+                                "ttlAmt": "2499.00",
+                                "id": 25
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "S1PC",
+                                        "nbAvlPdts": 3
+                                    }
+                                ],
+                                "chkAmt": "28.00",
+                                "ttlAmt": "84.00",
+                                "id": 26
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "128.00",
+                                "ttlAmt": "384.00",
+                                "id": 27
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "142.00",
+                                "ttlAmt": "426.00",
+                                "id": 28
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "103.00",
+                                "ttlAmt": "309.00",
+                                "id": 29
+                            }
+                        ]
+                    },
+                    {
+                        "start": "2021-06-15",
+                        "end": "2021-06-15",
+                        "lowestRate": {
+                            "ttlAmt": "84.00",
+                            "currency": "USD",
+                            "refIds": [
+                                34,
+                                35,
+                                41
+                            ]
+                        },
+                        "offers": [
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMAD",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "39.00",
+                                "ttlAmt": "117.00",
+                                "id": 30
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "39.00",
+                                "ttlAmt": "117.00",
+                                "id": 31
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "50.00",
+                                "ttlAmt": "150.00",
+                                "id": 32
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "57.00",
+                                "ttlAmt": "171.00",
+                                "id": 33
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "28.00",
+                                "ttlAmt": "84.00",
+                                "id": 34
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "28.00",
+                                "ttlAmt": "84.00",
+                                "id": 35
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "46.00",
+                                "ttlAmt": "138.00",
+                                "id": 36
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "39.00",
+                                "ttlAmt": "117.00",
+                                "id": 37
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "MLIFE",
+                                    "CAS01",
+                                    "MLIFE"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 8
+                                    }
+                                ],
+                                "chkAmt": "524.00",
+                                "ttlAmt": "1605.00",
+                                "id": 38
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "442.00",
+                                "ttlAmt": "1326.00",
+                                "id": 39
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "MLIFE",
+                                    "CAS01",
+                                    "MLIFE"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "816.00",
+                                "ttlAmt": "2499.00",
+                                "id": 40
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "S1PC",
+                                        "nbAvlPdts": 4
+                                    }
+                                ],
+                                "chkAmt": "28.00",
+                                "ttlAmt": "84.00",
+                                "id": 41
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "128.00",
+                                "ttlAmt": "384.00",
+                                "id": 42
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "142.00",
+                                "ttlAmt": "426.00",
+                                "id": 43
+                            },
+                            {
+                                "dailyApplicableRatePlan": [
+                                    "CAS01",
+                                    "CAS01",
+                                    "CAS01"
+                                ],
+                                "rpCode": "PERPT",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "103.00",
+                                "ttlAmt": "309.00",
+                                "id": 44
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

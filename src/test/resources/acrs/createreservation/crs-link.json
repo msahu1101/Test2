@@ -1,0 +1,16 @@
+{
+	"data": {
+		"hotelLinkReservation": {
+			"cfNumbers": [
+				{"cfNumber":"5815443155"},
+				{"cfNumber":"7323388591"}
+			],
+			"type": "Share",
+			"sharePricingMethod": "Full",
+			"link": {
+				"type": "Share",
+				"id": "5R7DQO2B9B"
+			}
+		}
+	}
+}

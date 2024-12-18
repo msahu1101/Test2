@@ -1,0 +1,62 @@
+package com.mgm.services.booking.room.model;
+
+import lombok.Data;
+
+public @Data class TestData {
+
+    private String programId;
+    private String partialProgramId;
+    private String propertyId;
+    private String mlifeNumber;
+    private String myVegasRedemptionCode;
+    private String myVegasProgramId;
+    private String myVegasProgramId2;
+    private String myVegasMlifeNumber;
+    private String rotatingMyVegasRedemptionCode;
+    private String myVegasCustomerId;
+    private String patronProgramId;
+    private String patronMlifeNumber;
+    private String roomTypeId;
+    private String promoCode;
+    private String firstName;
+    private String lastName;
+    private String customerId;
+    private String v2CustomerId;
+    private String perpetualCustomerId;
+    private String perpetualMlifeNumber;
+    private String source;
+    private String roomId;
+    private String transientProgramId;
+    private String transientPropertyId;
+    private String transientPromoCode;
+    private String casinoProgramId;
+    private String casinoPropertyId;
+    private String casinoPromoCode;
+    private String checkInDate;
+    private String checkOutDate;
+    private String invalidCreditCard;
+    private String iataCode;
+    private String oktaUserMlifeNumber;
+    private long oktaUserCustomerId;
+    private String testItineraryId;
+    private String programPartOfSegment;
+    private ProgramEligibilityChecks programEligibility;
+    private int numAdults;
+    private int numChildren;
+    private int numRooms;
+    private String operaConfirmationNumber;
+    private String customerDominantPlay;
+    private String specialRequests;
+    private String tokenDetails;
+    private String foreignCCTokenDetails;
+    private int totalNights;
+    private String segmentId;
+    private String segmentCode;
+    private String perpetualEmailId;
+    private String perpetualEmailPass;
+    private String nonPerpetualEmailId;
+    private String nonPerpetualEmailPass;
+    private String resvWithMgmId;
+    private String partyReservation;
+    private ShareWithReservation shareWithReservation;
+}

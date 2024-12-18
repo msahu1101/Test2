@@ -1,0 +1,160 @@
+{
+  "data": {
+    "groupCount": 1,
+    "groupReservations": [
+      {
+        "status": "MY",
+        "groupIds": {
+          "groupCfNumber": "3TS1D2NT20",
+          "imageId": 3,
+          "committedSequenceNumber": 4,
+          "groupCode": "MockGroupCode"
+        },
+        "hotel": {
+          "chainCode": "MGM",
+          "propertyCode": "MV290",
+          "propertyCurrency": "USD"
+        },
+        "groupContract": {
+          "name": "Mock Group Name",
+          "isAllotment": false,
+          "saleStatus": "Definite",
+          "corporateMarketSegment": "VCOR",
+          "policyTypeCode": "MA",
+          "isElastic": true,
+          "period": {
+            "start": "2023-07-12",
+            "end": "2023-07-16"
+          }
+        },
+        "businessSource": "VRMLIST",
+        "reservationMethod": "RL",
+        "offer": {
+          "productUses": [
+            {
+              "id": 28,
+              "period": {
+                "start": "2023-07-12",
+                "end": "2023-07-13"
+              },
+              "inventoryTypeCode": "LNMK",
+              "productCode": "SR"
+            },
+            {
+              "id": 29,
+              "period": {
+                "start": "2023-07-13",
+                "end": "2023-07-14"
+              },
+              "inventoryTypeCode": "LNMK",
+              "productCode": "SR"
+            },
+            {
+              "id": 30,
+              "period": {
+                "start": "2023-07-14",
+                "end": "2023-07-15"
+              },
+              "inventoryTypeCode": "LNMK",
+              "productCode": "SR"
+            },
+            {
+              "id": 31,
+              "period": {
+                "start": "2023-07-15",
+                "end": "2023-07-16"
+              },
+              "inventoryTypeCode": "LNMK",
+              "productCode": "SR"
+            },
+            {
+              "id": 32,
+              "period": {
+                "start": "2023-07-12",
+                "end": "2023-07-13"
+              },
+              "inventoryTypeCode": "SGSK",
+              "productCode": "SR"
+            },
+            {
+              "id": 33,
+              "period": {
+                "start": "2023-07-13",
+                "end": "2023-07-14"
+              },
+              "inventoryTypeCode": "SGSK",
+              "productCode": "SR"
+            },
+            {
+              "id": 34,
+              "period": {
+                "start": "2023-07-14",
+                "end": "2023-07-15"
+              },
+              "inventoryTypeCode": "SGSK",
+              "productCode": "SR"
+            },
+            {
+              "id": 35,
+              "period": {
+                "start": "2023-07-15",
+                "end": "2023-07-16"
+              },
+              "inventoryTypeCode": "SGSK",
+              "productCode": "SR"
+            },
+            {
+              "id": 36,
+              "period": {
+                "start": "2023-07-12",
+                "end": "2023-07-13"
+              },
+              "inventoryTypeCode": "SNHK",
+              "productCode": "SR"
+            },
+            {
+              "id": 37,
+              "period": {
+                "start": "2023-07-13",
+                "end": "2023-07-14"
+              },
+              "inventoryTypeCode": "SNHK",
+              "productCode": "SR"
+            },
+            {
+              "id": 38,
+              "period": {
+                "start": "2023-07-14",
+                "end": "2023-07-15"
+              },
+              "inventoryTypeCode": "SNHK",
+              "productCode": "SR"
+            },
+            {
+              "id": 39,
+              "period": {
+                "start": "2023-07-15",
+                "end": "2023-07-16"
+              },
+              "inventoryTypeCode": "SNHK",
+              "productCode": "SR"
+            }
+          ]
+        },
+        "creationDateTimeHotelLocalTime": "2022-12-28T12:38:49",
+        "creator": {
+          "vendorCode": "OPERA",
+          "reportingData": {
+            "code": "VRMLIST"
+          }
+        },
+        "requestor": {
+          "vendorCode": "OPERA",
+          "reportingData": {
+            "code": "VRMLIST"
+          }
+        }
+      }
+    ]
+  }
+}

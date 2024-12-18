@@ -1,0 +1,742 @@
+{
+  "warnings": [
+    {
+      "status": 200,
+      "code": 15500,
+      "id": 1,
+      "title": "The requested product is not available."
+    }
+  ],
+  "data": {
+    "creator": {
+      "hotelSource": "MV021",
+      "vendorCode": "ICECC",
+      "vendorName": "ICE Call center",
+      "vendorTypes": [
+        2
+      ],
+      "channelCode": "CC",
+      "metricsCode": "M02",
+      "metricsName": "ICE metrics",
+      "reportingData": {
+        "channelClass": "Voice",
+        "channelType": "Branded",
+        "channel": "Contact Center",
+        "subChannel": "Contact Center"
+      }
+    },
+    "requestor": {
+      "hotelSource": "MV021",
+      "vendorCode": "ICECC",
+      "vendorName": "ICE Call center",
+      "vendorTypes": [
+        2
+      ],
+      "channelCode": "CC",
+      "metricsCode": "M02",
+      "metricsName": "ICE metrics"
+    },
+    "hotelReservation": {
+      "status": "BK",
+      "type": "INDIVIDUAL",
+      "imageStatus": "COMMITTED",
+      "creationDateTime": "2024-07-24T07:19:33",
+      "lastUpdateDateTime": "2024-07-24T07:46:52",
+      "lastUpdateDateTimeHotelLocalTime": "2024-07-24T00:46:52",
+      "authenticatedUser": {
+        "userId": "WSMGM00ICE",
+        "userLastName": "WSMGM00ICE",
+        "userFirstName": "Robotic user for ICE"
+      },
+      "reservationIds": {
+        "cfNumber": "86FVWTY47C",
+        "imageId": 1,
+        "committedSequenceNumber": 1
+      },
+      "hotels": [
+        {
+          "chainCode": "MGM",
+          "brandCode": "MV",
+          "propertyCode": "MV021",
+          "propertyCurrency": "USD",
+          "propertyName": "New York New York Hotel Casino",
+          "cityCode": "LAS",
+          "countryCode": "US",
+          "regionCode": "01",
+          "guestTypeDefinitions": [
+            {
+              "code": "CHILD",
+              "startAge": 0,
+              "endAge": 20
+            },
+            {
+              "code": "ADULT",
+              "startAge": 21
+            }
+          ]
+        }
+      ],
+      "products": [
+        {
+          "inventoryTypeCode": "L1PL",
+          "inventoryTypeName": {
+            "en": [
+              "1 Bedroom Penthouse Accessible RL"
+            ]
+          },
+          "yieldClass": "06",
+          "maximumNumberParticipant": 3,
+          "description": {
+            "en": [
+              "\u003cp\u003eExperience the ultimate in VIP living in this incredible suite at New York-New York.\u003c/p\u003e\u003cul\u003e\u003cli\u003e1,100 Square Feet\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003cb\u003eAccessible Amenities:\u003c/b\u003e\u003c/p\u003e\u003cul\u003e\u003cli\u003eAccessible bedroom includes 1 King bed\u003c/li\u003e\u003cli\u003eAccessible bed height\u003c/li\u003e\u003cli\u003eRoll-in shower with retractable shower bench, grab bars, etc.\u003c/li\u003e\u003cli\u003eLowered toilet with grab bars\u003c/li\u003e\u003cli\u003eLowered towel bars and amenity holders\u003c/li\u003e\u003cli\u003eLowered bathroom countertops with appropriate clearance underneath\u003c/li\u003e\u003cli\u003eAccessible bathroom fixtures\u003c/li\u003e\u003cli\u003eAccessible drapery and thermostat controls\u003c/li\u003e\u003cli\u003eLowered peep holes in guestroom doors\u003c/li\u003e\u003cli\u003eLowered closet rods\u003c/li\u003e\u003cli\u003eFire alarm with strobe flasher\u003c/li\u003e\u003cli\u003eAccessible light fixtures\u003cbr\u003e\u003c/li\u003e\u003c/ul\u003e"
+            ]
+          },
+          "productCode": "SR",
+          "pacCode": "G746",
+          "attributeCodes": [
+            "1100SQFT",
+            "1KING",
+            "MAX3",
+            "NSMK",
+            "PENTSUIT",
+            "SROLLIN",
+            "VARYVW"
+          ]
+        }
+      ],
+      "attributes": [
+        {
+          "code": "1100SQFT",
+          "name": {
+            "en": [
+              "1100 square feet"
+            ]
+          },
+          "description": {
+            "en": [
+              "1100 square feet"
+            ]
+          }
+        },
+        {
+          "code": "1KING",
+          "name": {
+            "en": [
+              "1 King bed type"
+            ]
+          },
+          "description": {
+            "en": [
+              "1 King bed type"
+            ]
+          }
+        },
+        {
+          "code": "MAX3",
+          "name": {
+            "en": [
+              "Max occupancy of 3"
+            ]
+          },
+          "description": {
+            "en": [
+              "Max occupancy of 3"
+            ]
+          }
+        },
+        {
+          "code": "NSMK",
+          "name": {
+            "en": [
+              "Non-Smoking"
+            ]
+          },
+          "description": {
+            "en": [
+              "Non-Smoking Attribute"
+            ]
+          }
+        },
+        {
+          "code": "PENTSUIT",
+          "name": {
+            "en": [
+              "Penthouse Suite"
+            ]
+          },
+          "description": {
+            "en": [
+              "Penthouse Suite"
+            ]
+          }
+        },
+        {
+          "code": "SROLLIN",
+          "name": {
+            "en": [
+              "Roll in shower"
+            ]
+          },
+          "description": {
+            "en": [
+              "Roll in shower"
+            ]
+          }
+        },
+        {
+          "code": "VARYVW",
+          "name": {
+            "en": [
+              "Various Views"
+            ]
+          },
+          "description": {
+            "en": [
+              "Various Views"
+            ]
+          }
+        }
+      ],
+      "ratePlans": [
+        {
+          "bookingMessage": {
+            "en": [
+              "Booking Message - AD Testing NYNY"
+            ]
+          },
+          "isCommissionable": false,
+          "priceGridCode": "ADNYNY",
+          "isHouseUse": false,
+          "isComplimentary": false,
+          "code": "ADNYNY",
+          "name": {
+            "en": [
+              "AD Testing NYNY"
+            ]
+          },
+          "description": {
+            "en": [
+              "Short - AD Testing NYNY"
+            ]
+          },
+          "longDescription": {
+            "en": [
+              "Long - AD Testing NYNY"
+            ]
+          },
+          "isFreeNight": false,
+          "isGroupRatePlan": false,
+          "areAmountsConfidential": false,
+          "isTentativeAllowed": true,
+          "isLoyaltyIdRequired": false,
+          "isPackage": false,
+          "isVoucherRequired": false,
+          "isRewardEarned": true,
+          "isIdRequired": false,
+          "isAwardAccepted": false
+        }
+      ],
+      "userProfiles": [
+        {
+          "id": 1,
+          "personName": {
+            "givenName": "Akash",
+            "surname": "Raturi"
+          },
+          "addresses": [
+            {
+              "type": 1,
+              "cityName": "Mississauga",
+              "postalCode": "l5b4m5",
+              "stateProv": "NV",
+              "countryCode": "CA"
+            }
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "id": 1,
+          "warningIds": [
+            1
+          ],
+          "start": "2024-08-16",
+          "end": "2024-08-18",
+          "synchroNumber": 1,
+          "segmentStatus": "BK",
+          "consolidatedSegmentStatus": "GUARANTEED",
+          "actionStatus": "NS",
+          "segmentHolderId": 1,
+          "bookerId": 1,
+          "creationDateTime": "2024-07-24T07:19:33",
+          "creationDateTimeHotelLocalTime": "2024-07-24T00:19:33",
+          "lastUpdateDateTime": "2024-07-24T07:46:52",
+          "lastUpdateDateTimeHotelLocalTime": "2024-07-24T00:46:52",
+          "indicators": {
+            "isConfirmed": true,
+            "isPaidByPoints": false
+          },
+          "propertyCode": "MV021",
+          "creator": {
+            "hotelSource": "MV021",
+            "vendorCode": "ICECC",
+            "vendorName": "ICE Call center",
+            "vendorTypes": [
+              2
+            ],
+            "channelCode": "CC",
+            "metricsCode": "M02",
+            "metricsName": "ICE metrics",
+            "reportingData": {
+              "channelClass": "Voice",
+              "channelType": "Branded",
+              "channel": "Contact Center",
+              "subChannel": "Contact Center"
+            }
+          },
+          "requestor": {
+            "hotelSource": "MV021",
+            "vendorCode": "ICECC",
+            "vendorName": "ICE Call center",
+            "vendorTypes": [
+              2
+            ],
+            "channelCode": "CC",
+            "metricsCode": "M02",
+            "metricsName": "ICE metrics"
+          },
+          "channelPreferredRate": "CHECK_IN",
+          "channelExtraPersonChargeIncluded": true,
+          "cancelByHotelOnly": false,
+          "lateArrivalTime": "23:59:59",
+          "offer": {
+            "policies": {
+              "deposit": {
+                "isRequired": true,
+                "feeType": "FIRSTNIGHT",
+                "amount": "227.88",
+                "deadline": {
+                  "dateTime": "2024-07-24T00:19:33",
+                  "deadlineType": "ATBOOKING"
+                },
+                "acceptedDeposits": {
+                  "acceptedFops": [
+                    "TRAVELAGENCYIATA",
+                    "PAYMENTCARD"
+                  ],
+                  "creditCards": [
+                    "AX",
+                    "CU",
+                    "DC",
+                    "DS",
+                    "JC",
+                    "MC",
+                    "VI"
+                  ]
+                }
+              },
+              "cancellationNoShow": {
+                "feeType": "FIRSTNIGHT",
+                "amount": "227.88",
+                "deadline": {
+                  "dateTime": "2024-08-13T23:59:59",
+                  "deadlineType": "NUMBEROFDAYSBEFORECHECKIN",
+                  "deadlineValue": 3
+                },
+                "isGracePeriod": true
+              },
+              "checkinTime": "15:00:00",
+              "checkoutTime": "11:00:00"
+            },
+            "productUses": [
+              {
+                "id": 1,
+                "period": {
+                  "start": "2024-08-16",
+                  "end": "2024-08-18"
+                },
+                "ratePlanCode": "ADNYNY",
+                "inventoryTypeCode": "L1PL",
+                "isMainProduct": true,
+                "quantity": 1,
+                "guestCounts": [
+                  {
+                    "otaCode": "AQC10",
+                    "count": 1,
+                    "guestType": "ADULT"
+                  }
+                ],
+                "totalGuestCounts": [
+                  {
+                    "otaCode": "AQC10",
+                    "count": 1,
+                    "guestType": "ADULT"
+                  }
+                ],
+                "productRates": {
+                  "dailyRates": [
+                    {
+                      "start": "2024-08-16",
+                      "end": "2024-08-18",
+                      "dailyTotalRate": {
+                        "amtBfTx": "200.99",
+                        "bsAmt": "200.99",
+                        "amtAfTx": "275.50",
+                        "taxList": [
+                          {
+                            "amount": "26.89",
+                            "taxCode": "OCTAX",
+                            "isIncludedInRate": false,
+                            "otaCode": "FTT10",
+                            "taxDefIds": [
+                              0
+                            ]
+                          },
+                          {
+                            "amount": "5.62",
+                            "taxCode": "RSFTX",
+                            "isIncludedInRate": false,
+                            "otaCode": "FTT10",
+                            "taxDefIds": [
+                              2
+                            ]
+                          },
+                          {
+                            "amount": "42.00",
+                            "taxCode": "RSFEE",
+                            "isIncludedInRate": false,
+                            "otaCode": "FTT12",
+                            "taxDefIds": [
+                              1
+                            ]
+                          }
+                        ],
+                        "totalTaxes": "74.51",
+                        "rateDefId": 0,
+                        "subTotalServiceCharges": [
+                          {
+                            "payHotelAmount": "42.00",
+                            "amount": "42.00",
+                            "isIncludedInRate": false
+                          }
+                        ],
+                        "subTotalTaxes": [
+                          {
+                            "payableAmount": "26.89",
+                            "payHotelAmount": "5.62",
+                            "amount": "32.51",
+                            "isIncludedInRate": false
+                          }
+                        ],
+                        "payableAmtAfTx": "227.88"
+                      }
+                    }
+                  ],
+                  "totalRate": {
+                    "payableAmtAfTx": "455.76",
+                    "taxGroups": [
+                      {
+                        "amount": "53.78",
+                        "taxCode": "OCTAX",
+                        "isIncludedInRate": false,
+                        "otaCode": "FTT10",
+                        "taxDefIds": [
+                          0
+                        ]
+                      },
+                      {
+                        "amount": "11.24",
+                        "taxCode": "RSFTX",
+                        "isIncludedInRate": false,
+                        "otaCode": "FTT10",
+                        "taxDefIds": [
+                          2
+                        ]
+                      },
+                      {
+                        "amount": "84.00",
+                        "taxCode": "RSFEE",
+                        "isIncludedInRate": false,
+                        "otaCode": "FTT12",
+                        "taxDefIds": [
+                          1
+                        ]
+                      }
+                    ],
+                    "totalTaxes": "149.02",
+                    "daily": [
+                      {
+                        "amtType": "AVERAGE",
+                        "amtBfTx": "200.99",
+                        "bsAmt": "200.99",
+                        "amtAfTx": "275.50",
+                        "payableAmtAfTx": "227.88"
+                      },
+                      {
+                        "amtType": "CHECKIN",
+                        "amtBfTx": "200.99",
+                        "bsAmt": "200.99",
+                        "amtAfTx": "275.50",
+                        "payableAmtAfTx": "227.88"
+                      }
+                    ],
+                    "subTotalServiceCharges": [
+                      {
+                        "payHotelAmount": "84.00",
+                        "amount": "84.00",
+                        "isIncludedInRate": false
+                      }
+                    ],
+                    "subTotalTaxes": [
+                      {
+                        "payableAmount": "53.78",
+                        "payHotelAmount": "11.24",
+                        "amount": "65.02",
+                        "isIncludedInRate": false
+                      }
+                    ],
+                    "payableTotalTaxes": "53.78",
+                    "payHotelTotalTaxes": "95.24",
+                    "amtBfTx": "401.98",
+                    "bsAmt": "401.98",
+                    "amtAfTx": "551.00"
+                  },
+                  "pricingFrequency": "PERNIGHT",
+                  "pricingMethod": "PERPRODUCTPEROCC",
+                  "taxInclusionMode": "FOLLOWHOUSE",
+                  "hasRateChange": false,
+                  "ratesDefinition": {
+                    "rateChanges": [
+                      {
+                        "id": 0,
+                        "start": "2024-08-16",
+                        "end": "2024-08-18",
+                        "amount": "200.99"
+                      }
+                    ]
+                  },
+                  "requestedRates": [
+                    {
+                      "start": "2024-08-16",
+                      "end": "2024-08-18",
+                      "base": {
+                        "amount": "200.99"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "totalRate": {
+              "payableAmtAfTx": "455.76",
+              "taxGroups": [
+                {
+                  "amount": "53.78",
+                  "taxCode": "OCTAX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT10",
+                  "taxDefIds": [
+                    0
+                  ]
+                },
+                {
+                  "amount": "11.24",
+                  "taxCode": "RSFTX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT10",
+                  "taxDefIds": [
+                    2
+                  ]
+                },
+                {
+                  "amount": "84.00",
+                  "taxCode": "RSFEE",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT12",
+                  "taxDefIds": [
+                    1
+                  ]
+                }
+              ],
+              "totalTaxes": "149.02",
+              "daily": [
+                {
+                  "amtType": "AVERAGE",
+                  "amtBfTx": "200.99",
+                  "bsAmt": "200.99",
+                  "amtAfTx": "275.50",
+                  "payableAmtAfTx": "227.88"
+                },
+                {
+                  "amtType": "CHECKIN",
+                  "amtBfTx": "200.99",
+                  "bsAmt": "200.99",
+                  "amtAfTx": "275.50",
+                  "payableAmtAfTx": "227.88"
+                }
+              ],
+              "subTotalServiceCharges": [
+                {
+                  "payHotelAmount": "84.00",
+                  "amount": "84.00",
+                  "isIncludedInRate": false
+                }
+              ],
+              "subTotalTaxes": [
+                {
+                  "payableAmount": "53.78",
+                  "payHotelAmount": "11.24",
+                  "amount": "65.02",
+                  "isIncludedInRate": false
+                }
+              ],
+              "payableTotalTaxes": "53.78",
+              "payHotelTotalTaxes": "95.24",
+              "amtBfTx": "401.98",
+              "bsAmt": "401.98",
+              "amtAfTx": "551.00"
+            },
+            "nightlyCorpMarketSegments": [
+              {
+                "start": "2024-08-16",
+                "end": "2024-08-18",
+                "value": "TFIT"
+              }
+            ],
+            "corpMarketSegment": "TFIT",
+            "policyTypeCode": "SH"
+          },
+          "totalSegment": {
+            "finalPriceAmt": "455.76"
+          },
+          "formOfPayment": {
+            "paymentInfo": {
+              "paymentType": 1,
+              "paymentIntent": "Guarantee"
+            }
+          },
+          "taxDefinitions": [
+            {
+              "description": {
+                "en": [
+                  "Occupancy Tax"
+                ]
+              },
+              "longDescription": {
+                "en": [
+                  "Occupancy Tax"
+                ]
+              },
+              "id": 0,
+              "code": "OCTAX",
+              "taxTypeCode": "FTT10",
+              "name": "Occupancy Tax",
+              "isIncluded": false,
+              "computationType": "PERCENTAGE",
+              "computationMode": "TAXONRATE",
+              "chargeUnit": "PERPRODUCT",
+              "chargeFrequency": "PERDAY",
+              "start": "2024-08-16",
+              "end": "2024-08-18",
+              "values": [
+                {
+                  "value": "13.38"
+                }
+              ]
+            },
+            {
+              "description": {
+                "en": [
+                  "Resort Fee"
+                ]
+              },
+              "longDescription": {
+                "en": [
+                  "Resort Fee"
+                ]
+              },
+              "id": 1,
+              "code": "RSFEE",
+              "taxTypeCode": "FTT12",
+              "name": "Resort Fee",
+              "isIncluded": false,
+              "currency": "USD",
+              "computationType": "FLAT",
+              "computationMode": "TAXONRATE",
+              "chargeUnit": "PERPRODUCT",
+              "chargeFrequency": "PERDAY",
+              "start": "2024-08-16",
+              "end": "2024-08-18",
+              "values": [
+                {
+                  "value": "42.00"
+                }
+              ],
+              "isPaidAtHotel": true
+            },
+            {
+              "description": {
+                "en": [
+                  "Resort Fee Tax"
+                ]
+              },
+              "longDescription": {
+                "en": [
+                  "Resort Fee Tax"
+                ]
+              },
+              "id": 2,
+              "code": "RSFTX",
+              "taxTypeCode": "FTT10",
+              "name": "Resort Fee Tax",
+              "isIncluded": false,
+              "computationType": "PERCENTAGE",
+              "computationMode": "TAXONTAX",
+              "chargeUnit": "PERPRODUCT",
+              "chargeFrequency": "PERDAY",
+              "start": "2024-08-16",
+              "end": "2024-08-18",
+              "values": [
+                {
+                  "value": "13.38"
+                }
+              ],
+              "isPaidAtHotel": true,
+              "relatedTaxIds": [
+                1
+              ]
+            }
+          ],
+          "customData": {
+            "parentProgram": "ADNYNY"
+          }
+        }
+      ],
+      "totalReservation": [
+        {
+          "currency": "USD",
+          "amtBfTx": "401.98",
+          "bsAmt": "401.98",
+          "amtAfTx": "551.00",
+          "finalPriceAmt": "455.76",
+          "totalTaxes": "149.02",
+          "payableTotalTaxes": "53.78",
+          "payHotelTotalTaxes": "95.24"
+        }
+      ],
+      "totalOfActiveSegments": [
+        {
+          "currency": "USD",
+          "amtBfTx": "401.98",
+          "bsAmt": "401.98",
+          "amtAfTx": "551.00",
+          "finalPriceAmt": "455.76",
+          "totalTaxes": "149.02",
+          "payableTotalTaxes": "53.78",
+          "payHotelTotalTaxes": "95.24"
+        }
+      ],
+      "printRate": true
+    }
+  }
+}

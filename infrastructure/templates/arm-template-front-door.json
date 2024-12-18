@@ -1,0 +1,347 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "frontDoorName": {
+            "type": "String",
+            "metadata": {
+                "description": "The name of the front door instance that you wish to create."
+            }
+        },
+        "wafResourceGroup": {
+            "type": "String",
+            "metadata": {
+                "description": "The id of the resource group where webApplicationFirewall is created."
+            }
+        },
+		"wafPolicy": {
+            "type": "String",
+            "metadata": {
+                "description": "The name of the webApplicationFirewall."
+            }
+        },
+		"wafSubscriptionId": {
+            "type": "String",
+            "metadata": {
+                "description": "The subscription Id of the webApplicationFirewall."
+            }
+        },
+        "rbsWestWebApp": {
+            "type": "String",
+            "metadata": {
+                "description": "RBS West Web App Name in this environment."
+            }
+        },
+        "rbsEastWebApp": {
+            "type": "String",
+            "metadata": {
+                "description": "RBS East Web App Name in this environment."
+            }
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Network/frontdoors",
+            "apiVersion": "2020-05-01",
+            "name": "[parameters('frontDoorName')]",
+            "location": "Global",
+            "tags": {
+                "BusinessCostCenter": "516-800-80182",
+                "compliance": "Unknown",
+                "Environment": "Deployment",
+                "ExpiredBy": "Unknown",
+                "GroupEmail": "Unknown",
+                "ProductName": "Unknown",
+                "ResourceType": "Unknown",
+                "ServiceName": "Unknown",
+                "Uptime": "Unknown",
+                "BusinessSponsor": "Hemant Salvi",
+                "CreatedDateTime": "07/12/2022 21:04:08",
+                "LastUpdatedDateTime": "07/13/2022 02:38:16"
+            },
+            "properties": {
+                "routingRules": [
+                    {
+                        "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/RoutingRules/rbs-services')]",
+                        "name": "rbs-services",
+                        "properties": {
+                            "routeConfiguration": {
+                                "customForwardingPath": "/",
+                                "forwardingProtocol": "HttpsOnly",
+                                "backendPool": {
+                                    "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/BackendPools/rbs-services')]"
+                                },
+                                "@odata.type": "#Microsoft.Azure.FrontDoor.Models.FrontdoorForwardingConfiguration"
+                            },
+                            "resourceState": "Enabled",
+                            "frontendEndpoints": [
+                                {
+                                    "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), concat('/FrontendEndpoints/', parameters('frontDoorName'), '-azurefd-net'))]"
+                                }
+                            ],
+                            "acceptedProtocols": [
+                                "Https"
+                            ],
+                            "patternsToMatch": [
+                                "/booking/room/*",
+								"/fd/booking/room/*"
+                            ],
+                            "enabledState": "Enabled"
+                        }
+                    }
+                ],
+                "resourceState": "Enabled",
+                "loadBalancingSettings": [
+                    {
+                        "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/LoadBalancingSettings/loadBalancingSettings-1')]",
+                        "name": "loadBalancingSettings-1",
+                        "properties": {
+                            "resourceState": "Enabled",
+                            "sampleSize": 4,
+                            "successfulSamplesRequired": 2,
+                            "additionalLatencyMilliseconds": 1000
+                        }
+                    },
+                    {
+                        "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/LoadBalancingSettings/loadBalancingSettings-2')]",
+                        "name": "loadBalancingSettings-2",
+                        "properties": {
+                            "resourceState": "Enabled",
+                            "sampleSize": 4,
+                            "successfulSamplesRequired": 2,
+                            "additionalLatencyMilliseconds": 1000
+                        }
+                    },
+                    {
+                        "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/LoadBalancingSettings/loadBalancingSettings-3')]",
+                        "name": "loadBalancingSettings-3",
+                        "properties": {
+                            "resourceState": "Enabled",
+                            "sampleSize": 4,
+                            "successfulSamplesRequired": 2,
+                            "additionalLatencyMilliseconds": 1000
+                        }
+                    }
+                ],
+                "healthProbeSettings": [
+                    {
+                        "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/HealthProbeSettings/healthProbeSettings-1')]",
+                        "name": "healthProbeSettings-1",
+                        "properties": {
+                            "resourceState": "Enabled",
+                            "path": "/",
+                            "protocol": "Https",
+                            "intervalInSeconds": 30,
+                            "enabledState": "Enabled",
+                            "healthProbeMethod": "Head"
+                        }
+                    },
+                    {
+                        "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/HealthProbeSettings/healthProbeSettings-2')]",
+                        "name": "healthProbeSettings-2",
+                        "properties": {
+                            "resourceState": "Enabled",
+                            "path": "/",
+                            "protocol": "Https",
+                            "intervalInSeconds": 30,
+                            "enabledState": "Enabled",
+                            "healthProbeMethod": "Head"
+                        }
+                    },
+                    {
+                        "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/HealthProbeSettings/healthProbeSettings-3')]",
+                        "name": "healthProbeSettings-3",
+                        "properties": {
+                            "resourceState": "Enabled",
+                            "path": "/",
+                            "protocol": "Https",
+                            "intervalInSeconds": 30,
+                            "enabledState": "Enabled",
+                            "healthProbeMethod": "Head"
+                        }
+                    }
+                ],
+                "backendPools": [
+                    {
+                        "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/BackendPools/rbs-services')]",
+                        "name": "rbs-services",
+                        "properties": {
+                            "backends": [
+                                {
+                                    "address": "[concat(parameters('rbsWestWebApp'), '.azurewebsites.net')]",
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "priority": 1,
+                                    "weight": 50,
+                                    "backendHostHeader": "[concat(parameters('rbsWestWebApp'), '.azurewebsites.net')]",
+                                    "enabledState": "Enabled"
+                                },
+                                {
+                                    "address": "[concat(parameters('rbsEastWebApp'), '.azurewebsites.net')]",
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "priority": 1,
+                                    "weight": 50,
+                                    "backendHostHeader": "[concat(parameters('rbsEastWebApp'), '.azurewebsites.net')]",
+                                    "enabledState": "Enabled"
+                                }
+                            ],
+                            "resourceState": "Enabled",
+                            "loadBalancingSettings": {
+                                "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/LoadBalancingSettings/loadBalancingSettings-1')]"
+                            },
+                            "healthProbeSettings": {
+                                "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/HealthProbeSettings/healthProbeSettings-1')]"
+                            }
+                        }
+                    },
+                    {
+                        "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/BackendPools/rbs-services-west')]",
+                        "name": "rbs-services-west",
+                        "properties": {
+                            "backends": [
+                                {
+                                    "address": "[concat(parameters('rbsWestWebApp'), '.azurewebsites.net')]",
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "priority": 1,
+                                    "weight": 50,
+                                    "backendHostHeader": "[concat(parameters('rbsWestWebApp'), '.azurewebsites.net')]",
+                                    "enabledState": "Enabled"
+                                }
+                            ],
+                            "resourceState": "Enabled",
+                            "loadBalancingSettings": {
+                                "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/LoadBalancingSettings/loadBalancingSettings-2')]"
+                            },
+                            "healthProbeSettings": {
+                                "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/HealthProbeSettings/healthProbeSettings-2')]"
+                            }
+                        }
+                    },
+                    {
+                        "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/BackendPools/rbs-services-east')]",
+                        "name": "rbs-services-east",
+                        "properties": {
+                            "backends": [
+                                {
+                                    "address": "[concat(parameters('rbsEastWebApp'), '.azurewebsites.net')]",
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "priority": 1,
+                                    "weight": 50,
+                                    "backendHostHeader": "[concat(parameters('rbsEastWebApp'), '.azurewebsites.net')]",
+                                    "enabledState": "Enabled"
+                                }
+                            ],
+                            "resourceState": "Enabled",
+                            "loadBalancingSettings": {
+                                "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/LoadBalancingSettings/loadBalancingSettings-3')]"
+                            },
+                            "healthProbeSettings": {
+                                "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/HealthProbeSettings/healthProbeSettings-3')]"
+                            }
+                        }
+                    }
+                ],
+                "frontendEndpoints": [
+                    {
+                        "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), concat('/FrontendEndpoints/', parameters('frontDoorName'), '-azurefd-net'))]",
+                        "name": "[concat(parameters('frontDoorName'), '-azurefd-net')]",
+                        "properties": {
+                            "resourceState": "Enabled",
+                            "hostName": "[concat(parameters('frontDoorName'), '.azurefd.net')]",
+                            "sessionAffinityEnabledState": "Disabled",
+                            "sessionAffinityTtlSeconds": 0,
+                            "webApplicationFirewallPolicyLink": {
+                                "id": "[concat('/subscriptions/',parameters('wafSubscriptionId'),'/resourceGroups/', parameters('wafResourceGroup'),'/providers/Microsoft.Network/frontdoorWebApplicationFirewallPolicies/',parameters('wafPolicy'))]"
+                            }
+                        }
+                    }
+                ],
+                "backendPoolsSettings": {
+                    "enforceCertificateNameCheck": "Enabled",
+                    "sendRecvTimeoutSeconds": 30
+                },
+                "enabledState": "Enabled",
+                "friendlyName": "[parameters('frontDoorName')]"
+            }
+        },
+        {
+            "type": "Microsoft.Network/frontdoors/rulesengines",
+            "apiVersion": "2020-05-01",
+            "name": "[concat(parameters('frontDoorName'), '/regionaffinityenforcedrulesenginerbs')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName'))]"
+            ],
+            "properties": {
+                "resourceState": "Enabled",
+                "rules": [
+                    {
+                        "name": "rbswestenforcedrule",
+                        "priority": 0,
+                        "action": {
+                            "routeConfigurationOverride": {
+                            	"customForwardingPath": "/",
+                                "forwardingProtocol": "HttpsOnly",
+                                "backendPool": {
+                                    "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/BackendPools/rbs-services-west')]"
+                                },
+                                "@odata.type": "#Microsoft.Azure.FrontDoor.Models.FrontdoorForwardingConfiguration"
+                            },
+                            "requestHeaderActions": [],
+                            "responseHeaderActions": []
+                        },
+                        "matchConditions": [
+                            {
+                                "selector": "x-region-affinity",
+                                "rulesEngineMatchValue": [
+                                    "us-west"
+                                ],
+                                "negateCondition": false,
+                                "rulesEngineMatchVariable": "RequestHeader",
+                                "rulesEngineOperator": "Equal",
+                                "transforms": [
+                                    "Lowercase"
+                                ]
+                            }
+                        ],
+                        "matchProcessingBehavior": "Stop"
+                    },
+                    {
+                        "name": "rbseastenforcedrule",
+                        "priority": 2,
+                        "action": {
+                            "routeConfigurationOverride": {
+                            	"customForwardingPath": "/",
+                                "forwardingProtocol": "HttpsOnly",
+                                "backendPool": {
+                                    "id": "[concat(resourceId('Microsoft.Network/frontdoors', parameters('frontDoorName')), '/BackendPools/rbs-services-east')]"
+                                },
+                                "@odata.type": "#Microsoft.Azure.FrontDoor.Models.FrontdoorForwardingConfiguration"
+                            },
+                            "requestHeaderActions": [],
+                            "responseHeaderActions": []
+                        },
+                        "matchConditions": [
+                            {
+                                "selector": "x-region-affinity",
+                                "rulesEngineMatchValue": [
+                                    "us-east"
+                                ],
+                                "negateCondition": false,
+                                "rulesEngineMatchVariable": "RequestHeader",
+                                "rulesEngineOperator": "Equal",
+                                "transforms": [
+                                    "Lowercase"
+                                ]
+                            }
+                        ],
+                        "matchProcessingBehavior": "Continue"
+                    }
+                ]
+            }
+        }
+    ]
+}

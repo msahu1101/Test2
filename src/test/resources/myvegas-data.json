@@ -1,0 +1,10 @@
+{
+	"guestIdentityUrl": "https://mgmdmp.oktapreview.com/oauth2/ausph7ezp3Gkkk8WN0h7/v1/token",
+	"basicAuthToken": "Basic MG9hZzVxeHl0cU00SHZKSHUwaDc6eWhuLUlqMF82QWpidk9lN3JZN2lwamdtQUJwaGkydnN1b2xCSUJUMQ==",
+	"redeemedToken": "26F828",
+	"nonMatchingRedemptionCode": "DHSR3G",
+	"redemptionCodeWithUnavailableDates": "5BBZGK",
+	"myvegasGuestIdentityUsername": "rkganji@mgmresorts.com",
+	"myvegasGuestIdentityPassword": "Sapient@123",
+	"grantTypePassword": "password"
+}

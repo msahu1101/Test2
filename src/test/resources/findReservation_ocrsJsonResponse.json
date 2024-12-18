@@ -1,0 +1,108 @@
+[
+  {
+    "hotelReference": {
+      "hotelCode": "021"
+    },
+    "reservationID": "914088576",
+    "resGuests": {
+      "resGuest": [
+        {
+          "profileRPHs": "0",
+          "reservationID": "914088576",
+          "reservationReferences": {
+            "reservationReference": [
+              {
+                "type": "GUESTID",
+                "referenceNumber": "1WPK23GNZR"
+              },
+              {
+                "type": "MGMACRS3",
+                "referenceNumber": "1WPK23GNZR"
+              },
+              {
+                "type": "PMSID",
+                "referenceNumber": "914088576"
+              }
+            ]
+          },
+          "arrivalTime": 1709510400000,
+          "departureTime": 1709683200000
+        }
+      ]
+    },
+    "resProfiles": {
+      "resProfile": [
+        {
+          "profile": {
+            "mfResortProfileID": "907322386",
+            "profileType": "GUEST",
+            "individualName": {
+              "nameFirst": "Uttam",
+              "nameSur": "Ghorai"
+            },
+            "phoneNumbers": {
+              "phoneNumber": []
+            },
+            "electronicAddresses": {
+              "electronicAddress": []
+            },
+            "postalAddresses": {
+              "postalAddress": [
+                {
+                  "addressType": "HOME",
+                  "mfPrimaryYN": "Y",
+                  "address1": "100 St",
+                  "city": "Las Vegas",
+                  "stateCode": "NV",
+                  "countryCode": "US",
+                  "postalCode": "89102"
+                }
+              ]
+            },
+            "memberships": {
+              "membership": [
+              	{
+              		"accountID":"1233",
+              		"programCode":"TEST-PROGRAM-CODE",
+              		"levelCode":"LEVEL-CODE"
+              	}
+              ]
+            }
+          },
+          "resProfileRPH": 0,
+          "mfInactiveDate": 0
+        }
+      ]
+    },
+    "mgmProfile": {
+      "additionalGuests": []
+    },
+    "roomStays": {
+      "roomStay": [
+        {
+          "roomInventoryCode": "L1PL",
+          "reservationStatusType": "RESERVED",
+          "guestCounts": {
+            "guestCount": [
+              {
+                "ageQualifyingCode": "ADULT",
+                "mfCount": 1
+              },
+              {
+                "ageQualifyingCode": "CHILD",
+                "mfCount": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "originalBookingDate": "02/03/2024",
+    "mfImage": {
+      "numRooms": 1
+    },
+    "selectedMemberships": {
+      "selectedMembership": []
+    }
+  }
+]

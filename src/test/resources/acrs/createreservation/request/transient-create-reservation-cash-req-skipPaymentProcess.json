@@ -1,0 +1,231 @@
+{
+  "instance": 0,
+  "customerId": 852308197634,
+  "numRooms": 1,
+  "checkInDate": "2022-08-15",
+  "checkOutDate": "2022-08-18",
+  "numAdults": 2,
+  "postingStartedAt": 0,
+  "postingEndedAt": 0,
+  "amountDue": 0,
+  "createdAt": 0,
+  "updatedAt": 0,
+  "syncFromOperaAt": 0,
+  "nrgStatus": false,
+  "id": "0167dd2a-d90c-48a7-be52-d9d9f4d90c2d",
+  "itineraryId": "9660295170",
+  "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+  "programId": "RPCD-v-PREVL-d-PROP-v-MV021",
+  "roomTypeId": "ROOMCD-v-DWVK-d-PROP-v-MV021",
+  "guaranteeCode": "CC",
+  "profile": {
+    "id": 852308197634,
+    "mlifeNo": 0,
+    "modifiable": false,
+    "createdAt": 0,
+    "updatedAt": 0,
+    "refreshedAt": 0,
+    "stale": false,
+    "externalSyncAt": 0,
+    "caslOptin": false,
+    "firstName": "Uttam",
+    "lastName": "Ghorai",
+    "emailAddress1": "uttamu2812@gmail.com",
+    "phoneNumbers": [
+      {
+        "type": "Home",
+        "number": "4317264481"
+      }
+    ],
+    "addresses": [
+      {
+        "type": "Home",
+        "preferred": false,
+        "street1": "4090 Living Atrs Dr",
+        "street2": "Rm-2201",
+        "city": "Mississauga",
+        "state": "ON",
+        "country": "CA",
+        "postalCode": "L5B4M8"
+      }
+    ]
+  },
+  "skipFraudCheck":true,
+  "skipPaymentProcess":true,
+  "bookings": [
+    {
+      "date": "2022-08-15",
+      "basePrice": 25,
+      "customerPrice": 0,
+      "price": 25,
+      "programIdIsRateTable": false,
+      "overridePrice": -1,
+      "overrideProgramIdIsRateTable": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 0,
+      "programId": "RPCD-v-PREVL-d-PROP-v-MV021",
+      "isComp": false
+    },
+    {
+      "date": "2022-08-16",
+      "basePrice": 25,
+      "customerPrice": 0,
+      "price": 25,
+      "programIdIsRateTable": false,
+      "overridePrice": -1,
+      "overrideProgramIdIsRateTable": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 0,
+      "programId": "RPCD-v-PREVL-d-PROP-v-MV021",
+      "isComp": false
+    },
+    {
+      "date": "2022-08-17",
+      "basePrice": 25,
+      "customerPrice": 0,
+      "price": 25,
+      "programIdIsRateTable": false,
+      "overridePrice": -1,
+      "overrideProgramIdIsRateTable": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 0,
+      "programId": "RPCD-v-PREVL-d-PROP-v-MV021",
+      "isComp": false
+    }
+  ],
+  "chargesAndTaxesCalc": {
+    "charges": [
+      {
+        "date": "2022-08-15",
+        "amount": 62,
+        "itemized": [
+          {
+            "active": false,
+            "itemType": "RoomCharge",
+            "amount": 25
+          },
+          {
+            "active": false,
+            "itemType": "ResortFee",
+            "amount": 37,
+            "item": "RSFEE"
+          }
+        ]
+      },
+      {
+        "date": "2022-08-16",
+        "amount": 62,
+        "itemized": [
+          {
+            "active": false,
+            "itemType": "RoomCharge",
+            "amount": 25
+          },
+          {
+            "active": false,
+            "itemType": "ResortFee",
+            "amount": 37,
+            "item": "RSFEE"
+          }
+        ]
+      },
+      {
+        "date": "2022-08-17",
+        "amount": 62,
+        "itemized": [
+          {
+            "active": false,
+            "itemType": "RoomCharge",
+            "amount": 25
+          },
+          {
+            "active": false,
+            "itemType": "ResortFee",
+            "amount": 37,
+            "item": "RSFEE"
+          }
+        ]
+      }
+    ],
+    "taxesAndFees": [
+      {
+        "date": "2022-08-15",
+        "amount": 8.3,
+        "itemized": [
+          {
+            "active": false,
+            "itemType": "RoomChargeTax",
+            "amount": 3.35,
+            "item": "OCTAX"
+          },
+          {
+            "active": false,
+            "itemType": "ResortFeeTax",
+            "amount": 4.95,
+            "item": "RSFTX"
+          }
+        ]
+      },
+      {
+        "date": "2022-08-16",
+        "amount": 8.3,
+        "itemized": [
+          {
+            "active": false,
+            "itemType": "RoomChargeTax",
+            "amount": 3.35,
+            "item": "OCTAX"
+          },
+          {
+            "active": false,
+            "itemType": "ResortFeeTax",
+            "amount": 4.95,
+            "item": "RSFTX"
+          }
+        ]
+      },
+      {
+        "date": "2022-08-17",
+        "amount": 8.3,
+        "itemized": [
+          {
+            "active": false,
+            "itemType": "RoomChargeTax",
+            "amount": 3.35,
+            "item": "OCTAX"
+          },
+          {
+            "active": false,
+            "itemType": "ResortFeeTax",
+            "amount": 4.95,
+            "item": "RSFTX"
+          }
+        ]
+      }
+    ]
+  },
+  "depositCalc": {
+    "dueDate": "2022-08-02",
+    "amount": 65.35,
+    "forfeitDate": "2022-08-01",
+    "forfeitAmount": 65.35,
+    "overrideAmount": -1
+  },
+  "source": "ice",
+  "specialRequests": [],
+  "creditCardCharges": [],
+  "confirmationNumber": "",
+  "additionalComments": [],
+  "customerRank": 0,
+  "customerSegment": 0,
+  "operaState": "",
+  "operaConfirmationNumber": "",
+  "rrUpSell": "",
+  "numChildren": 0,
+  "isGroupCode": false,
+  "perpetualPricing": false,
+  "ignoreChannelMargins": false,
+  "excludeNonOffer": false,
+  "thirdParty": false,
+  "pendingReservation": false
+}

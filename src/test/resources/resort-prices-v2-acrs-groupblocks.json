@@ -1,0 +1,23 @@
+{
+  "mrdPricing": true,
+  "auroraPrices": [
+    {
+      "date": 1605945600000,
+      "comp": false,
+      "status": "AVAILABLE",
+      "closeToArrival": false,
+      "propertyId": "e0f70eb3-7e27-4c33-8bcd-f30bf3b1103a",
+      "roomTypeId": "ROOMCD-v-DRST-d-PROP-v-MV275",
+      "basePrice": 0,
+      "discountedPrice": 100.0,
+      "baseMemberPrice": 0,
+      "discountedMemberPrice": 0,
+      "programId": "GRPCD-v-ZAERO614P1HDE-d-PROP-v-MV275",
+      "memberProgramId": null,
+      "resortFee": 50.0,
+      "unavailabilityReason": null,
+      "pricingRuleId": null,
+      "programIdIsRateTable": false
+    }
+  ]
+}

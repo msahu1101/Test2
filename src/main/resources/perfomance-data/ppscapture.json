@@ -1,0 +1,17 @@
+{
+  "workflowResponse": [
+    {
+      "functionName": "PPSCapture",
+      "statusCode": 200,
+      "statusDesc": "OK",
+      "body": {
+        "statusMessage": "APPROVED",
+        "decision": "APPROVED",
+        "amount": "82.77",
+        "requestID": "01Z6JCTLJD01U6A39PSK4FSU2SOTUAPE",
+        "reasonCode": "100",
+        "reconciliationId": "146826055"
+      }
+    }
+  ]
+}

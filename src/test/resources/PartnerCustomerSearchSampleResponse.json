@@ -1,0 +1,92 @@
+{
+  "resultCount": 1,
+  "limitApplied": false,
+  "customers": [
+    {
+      "customerType": "NON-LOYALTY",
+      "profile": {
+        "name": {
+          "title": "MR",
+          "firstName": "TESTFIRSTNAME",
+          "middleName": "TESTMIDDLENAME",
+          "lastName": "TESTLASTNAME",
+          "suffix": "JR"
+        },
+        "address": {
+          "addresses": [
+            {
+              "type": "H",
+              "addressDetail": {
+                "primary": true,
+                "line1": "NO. 168",
+                "line2": "DONGSHENG ROAD",
+                "line3": "INTERSECTION OF BAILI KAIHANG ROAD",
+                "city": "BIJIE",
+                "stateProvinceCode": "GZ",
+                "countryCode": "CN",
+                "postalCode": "551700"
+              }
+            },
+            {
+              "type": "B",
+              "addressDetail": {
+                "primary": false,
+                "line1": "NO.9",
+                "line2": "HUAGUANG ROAD",
+                "line3": "HIGH-TECH DEVELOPMENT ZONE",
+                "city": "BAODING",
+                "stateProvinceCode": "HE",
+                "countryCode": "CN",
+                "postalCode": "071000"
+              }
+            }
+          ]
+        },
+        "email": {
+          "address": "TEST.TEST@MARRIOTT-TEST.COM"
+        },
+        "phone": {
+          "phones": [
+            {
+              "type": "HT",
+              "phoneDetail": {
+                "countryCode": "US",
+                "number": "1113802141"
+              }
+            },
+            {
+              "type": "MT",
+              "phoneDetail": {
+                "countryCode": "US",
+                "number": "2225336782"
+              }
+            },
+            {
+              "type": "BT",
+              "phoneDetail": {
+                "countryCode": "US",
+                "number": "3337274003",
+                "extension": "2345"
+              }
+            },
+            {
+              "type": "F",
+              "phoneDetail": {
+                "countryCode": "US",
+                "number": "4447274004"
+              }
+            }
+          ]
+        },
+        "profileStatus": {
+          "profileStatusCode": "B",
+          "active": true
+        }
+      },
+      "customerIdentifiers": {
+        "customerId": "345123789",
+        "altCustomerId": "ASDFGH1234455DSEHJYG54.U1"
+      }
+    }
+  ]
+}

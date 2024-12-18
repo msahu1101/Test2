@@ -1,0 +1,83 @@
+trigger:
+  branches:
+    include:
+    - master
+    - preprod
+    - qa
+    - qa4
+    - develop
+  paths:
+    exclude:
+    - infrastructure/*
+    
+pr:
+  branches:
+    include:
+    - master
+    - preprod
+    - qa
+    - qa4
+    - develop
+  paths:
+    exclude:
+    - infrastructure/*
+
+pool:
+  vmImage: "windows-latest"
+
+variables:
+  MAVEN_CACHE_FOLDER: $(Pipeline.Workspace)/.m2/repository
+  MAVEN_OPTS: "-Dmaven.repo.local=$(MAVEN_CACHE_FOLDER) -Xmx3072m"
+
+steps:
+  - script: npm i -g azure-functions-core-tools@4.0.5801 --unsafe-perm true
+  - task: MavenAuthenticate@0
+    displayName: "Maven Authenticate"
+    inputs:
+      artifactsFeeds: Booking-Artifacts-Feed
+
+
+
+  - task: Maven@3
+    inputs:
+      mavenPomFile: "pom.xml"
+      mavenOptions: "$(MAVEN_OPTS)"
+      javaHomeOption: "JDKVersion"
+      jdkVersionOption: "1.8"
+      jdkArchitectureOption: "x64"
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      codeCoverageToolOption: 'jaCoCo'
+      checkStyleRunAnalysis: true
+      pmdRunAnalysis: true
+      findBugsRunAnalysis: true
+      goals: "clean package"
+
+  - task: PublishCodeCoverageResults@1
+    inputs:
+      codeCoverageTool: "JaCoCo"
+      summaryFileLocation: "$(system.defaultworkingdirectory)/target/jacoco-ut/jacoco.xml"
+      reportDirectory: "$(system.defaultworkingdirectory)/target/jacoco-ut/index.html"
+
+  - task: PowerShell@2
+    inputs:
+      targetType: "inline"
+      script: |
+        Get-ChildItem -Path '$(system.defaultworkingdirectory)\target\*.jar', '$(system.defaultworkingdirectory)\src\main\resources\*.key' |
+        Compress-Archive -Force -DestinationPath '$(system.defaultworkingdirectory)\Archive1.zip';
+        Remove-Item $(system.defaultworkingdirectory)\target -Recurse -Force
+
+  - task: CopyFiles@2
+    displayName: Copy artifacts to stage location for develop/qa/preprod/master branches
+    condition: or(eq(variables['Build.SourceBranchName'], 'develop'), eq(variables['Build.SourceBranchName'], 'qa4'), eq(variables['Build.SourceBranchName'], 'qa'), eq(variables['Build.SourceBranchName'], 'preprod'), eq(variables['Build.SourceBranchName'], 'master'))
+    inputs:
+      SourceFolder: "$(system.defaultworkingdirectory)"
+      Contents: "**"
+      TargetFolder: "$(Build.ArtifactStagingDirectory)"
+      OverWrite: true
+
+  - task: PublishBuildArtifacts@1
+    displayName: Publish artifacts from develop/qa/preprod/master branches
+    condition: or(eq(variables['Build.SourceBranchName'], 'develop'), eq(variables['Build.SourceBranchName'], 'qa4'), eq(variables['Build.SourceBranchName'], 'qa'), eq(variables['Build.SourceBranchName'], 'preprod'), eq(variables['Build.SourceBranchName'], 'master'))
+    inputs:
+      PathtoPublish: "$(Build.ArtifactStagingDirectory)"

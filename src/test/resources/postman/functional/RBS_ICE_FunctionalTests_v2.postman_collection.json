@@ -1,0 +1,1234 @@
+{
+	"info": {
+		"_postman_id": "3096ff74-dcc8-4787-8e24-4d2b149c2d6c",
+		"name": "RBS_ICE_FunctionalTests_v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "token",
+			"item": [
+				{
+					"name": "JWT auth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "72ef2fb7-13d2-4597-959f-9670b1240cf9",
+								"exec": [
+									"pm.test(\"JWT auth | Status code is 200 with valid response body\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.response.to.have.status(200);",
+									"    pm.expect(jsonData).to.have.property(\"token_type\");",
+									"    pm.expect(jsonData).to.have.property(\"access_token\");",
+									"});",
+									"",
+									"postman.setEnvironmentVariable(\"JWT_Token\", \"Bearer \" + pm.response.json().access_token);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cf08d45e-559c-43c7-ae4b-92151ff03985",
+								"exec": [
+									"var moment = require('moment');\r",
+									"\r",
+									"/*Construct Random Dates [for availability] from 60 days to 360*/\r",
+									"start = new Date(moment().add(60, 'days'));\r",
+									"end = new Date(moment().add(360, 'days'));\r",
+									"\r",
+									"options = { day: '2-digit', month: '2-digit', year: 'numeric' };\r",
+									"//setting options to overcome single digit for dates/month.\r",
+									"\r",
+									"checkInDate = randomDate(start, end).toLocaleDateString(\"en-US\", options);\r",
+									"checkOutDate = moment(checkInDate).add(2, 'days').format('MM/DD/YYYY');\r",
+									"\r",
+									"postman.setEnvironmentVariable('checkInDate',  checkInDate);\r",
+									"postman.setEnvironmentVariable('checkOutDate',  checkOutDate);\r",
+									"\r",
+									"postman.setEnvironmentVariable('invalidCheckInDate',   moment().add(-1, 'days').format('MM/DD/YYYY'));\r",
+									"postman.setEnvironmentVariable('invalidCheckOutDate',  moment().add(-2, 'days').format('MM/DD/YYYY'));\r",
+									"\r",
+									"checkInDate_v2 = randomDate(start, end).toLocaleDateString(\"fr-CA\", options);\r",
+									"checkInDate_v2_format = moment(checkInDate_v2).format('YYYY-MM-DD');\r",
+									"checkOutDate_v2 = moment(checkInDate_v2_format).add(2, 'days').format('YYYY-MM-DD');\r",
+									"\r",
+									"postman.setEnvironmentVariable('checkInDate_v2',  checkInDate_v2_format);\r",
+									"postman.setEnvironmentVariable('checkOutDate_v2',  checkOutDate_v2);\r",
+									"\r",
+									"postman.setEnvironmentVariable('invalidCheckInDate_v2',   moment().add(-1, 'days').format('YYYY-MM-DD'));\r",
+									"postman.setEnvironmentVariable('invalidCheckOutDate_v2',  moment().add(-2, 'days').format('YYYY-MM-DD'));\r",
+									"\r",
+									"function randomDate(start, end) {\r",
+									"    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))\r",
+									"}\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "{{IDMS_grantType}}",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{IDMS_clientId}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{IDMS_clientSecret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "{{IDMS_scopes}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{APIM_Endpoint}}{{IDMS_authEndpoint}}",
+							"protocol": "https",
+							"host": [
+								"{{APIM_Endpoint}}{{IDMS_authEndpoint}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2968a0ee-2100-40c1-bfb0-96a38f38e633",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe1abdda-6b64-4f30-b3d7-aa513c76deed",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "reservations",
+			"item": [
+				{
+					"name": "RoomCharges",
+					"item": [
+						{
+							"name": "RoomCharges-BeforeCreate-Transient_ICE",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e0ec4afb-1008-4357-a0e5-78b0f6029e4a",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V2_ICE | Test case 01 : RoomCharge for transient, Booking, TripDetails, Billing \", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"    pm.globals.set(\"validItemId\", jsonData.itemId);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "b92cf421-8d05-4129-b45f-afd22fd9d0d3",
+										"exec": [
+											"var moment = require('moment');\r",
+											"\r",
+											"preModifyCheckInDate = moment(pm.variables.get(\"checkInDate\")).format('YYYY-MM-DD');\r",
+											"preModifyCheckOutDate = moment(pm.variables.get(\"checkOutDate\")).format('YYYY-MM-DD');\r",
+											"\r",
+											"postman.setEnvironmentVariable('preModifyCheckInDate',  preModifyCheckInDate);\r",
+											"postman.setEnvironmentVariable('preModifyCheckOutDate',  preModifyCheckOutDate);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-mgm-source",
+										"value": "{{x-mgm-source}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-channel",
+										"value": "{{x-mgm-channel}}",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{JWT_Token}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-transaction-id",
+										"value": "rbs-v2-functional-{{$timestamp}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"source\": null,\n  \"customerId\": -1,\n  \"mlifeNumber\": null,\n  \"propertyId\": \"dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad\",\n  \"roomTypeId\": \"74559601-6fbb-4444-ab12-04f5722116bd\",\n  \"programId\": null,\n  \"guaranteeCode\": \"CC\",\n  \"specialRequests\": [],\n  \"profile\": null,\n  \"tripDetails\": {\n    \"checkInDate\": \"2020-12-26\",\n    \"checkOutDate\": \"2020-12-29\",\n    \"numAdults\": 2,\n    \"numChildren\": 0,\n    \"numRooms\": 1,\n    \"numAdultsValid\": true\n  },\n  \"billing\": [\n    {\n      \"payment\": {\n        \"cardHolder\": \"Saugata Moitra\",\n        \"firstName\": \"Saugata\",\n        \"lastName\": \"Moitra\",\n        \"cardNumber\": null,\n        \"ccToken\": \"5555550A001AOKIN3D2BRLU54444\",\n        \"maskedNumber\": \"XXXXXXXXXXXXXXXXXXXXXXXX4444\",\n        \"amount\": 0,\n        \"cvv\": \"\",\n        \"expiry\": \"01/2021\",\n        \"type\": \"Mastercard\",\n        \"fxAmount\": 0,\n        \"fxCurrencyISOCode\": null,\n        \"fxCurrencyCode\": null,\n        \"fxExchangeRate\": 0,\n        \"fxFlag\": null\n      },\n      \"address\": {\n        \"street1\": \"5353 W Desert Inn\",\n        \"street2\": \"\",\n        \"city\": \"Las Vegas\",\n        \"state\": \"NV\",\n        \"postalCode\": \"89146\",\n        \"country\": \"US\"\n      }\n    }\n  ],\n  \"bookings\": [\n    {\n      \"date\": \"2020-12-02\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    },\n    {\n      \"date\": \"2020-12-01\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    },\n    {\n      \"date\": \"2020-12-03\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    }\n  ],\n  \"depositDetails\": null,\n  \"markets\": null,\n  \"confirmationNumber\": null,\n  \"priceOverride\": false,\n  \"roomValid\": true,\n  \"propertyValid\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{APIM_Endpoint}}{{Function_Environment}}/v2/reservation/charges",
+									"protocol": "https",
+									"host": [
+										"{{APIM_Endpoint}}{{Function_Environment}}"
+									],
+									"path": [
+										"v2",
+										"reservation",
+										"charges"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RoomCharges-BeforeCreate-Mlife_ICE",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1669fbb2-8828-4637-8d5a-e6d25788a129",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V2_ICE | Test case 01 : PreModify Reservation with Profile, Booking, TripDetails, Billing and AgentInfo\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"    pm.globals.set(\"validItemId\", jsonData.itemId);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "92e01291-2f75-4722-8ce1-6e848613bb39",
+										"exec": [
+											"var moment = require('moment');\r",
+											"\r",
+											"preModifyCheckInDate = moment(pm.variables.get(\"checkInDate\")).format('YYYY-MM-DD');\r",
+											"preModifyCheckOutDate = moment(pm.variables.get(\"checkOutDate\")).format('YYYY-MM-DD');\r",
+											"\r",
+											"postman.setEnvironmentVariable('preModifyCheckInDate',  preModifyCheckInDate);\r",
+											"postman.setEnvironmentVariable('preModifyCheckOutDate',  preModifyCheckOutDate);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-mgm-source",
+										"value": "{{x-mgm-source}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-channel",
+										"value": "{{x-mgm-channel}}",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{JWT_Token}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-transaction-id",
+										"value": "rbs-v2-functional-{{$timestamp}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"source\": null,\n  \"customerId\": 0,\n  \"mlifeNumber\": null,\n  \"propertyId\": \"dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad\",\n  \"roomTypeId\": \"74559601-6fbb-4444-ab12-04f5722116bd\",\n  \"programId\": null,\n  \"guaranteeCode\": \"CC\",\n  \"specialRequests\": [],\n  \"profile\": null,\n  \"tripDetails\": {\n    \"checkInDate\": \"2020-12-26\",\n    \"checkOutDate\": \"2020-12-29\",\n    \"numAdults\": 2,\n    \"numChildren\": 0,\n    \"numRooms\": 1,\n    \"numAdultsValid\": true\n  },\n  \"billing\": [\n    {\n      \"payment\": {\n        \"cardHolder\": \"Saugata Moitra\",\n        \"firstName\": \"Saugata\",\n        \"lastName\": \"Moitra\",\n        \"cardNumber\": null,\n        \"ccToken\": \"5555550A001AOKIN3D2BRLU54444\",\n        \"maskedNumber\": \"XXXXXXXXXXXXXXXXXXXXXXXX4444\",\n        \"amount\": 0,\n        \"cvv\": \"\",\n        \"expiry\": \"01/2021\",\n        \"type\": \"Mastercard\",\n        \"fxAmount\": 0,\n        \"fxCurrencyISOCode\": null,\n        \"fxCurrencyCode\": null,\n        \"fxExchangeRate\": 0,\n        \"fxFlag\": null\n      },\n      \"address\": {\n        \"street1\": \"5353 W Desert Inn\",\n        \"street2\": \"\",\n        \"city\": \"Las Vegas\",\n        \"state\": \"NV\",\n        \"postalCode\": \"89146\",\n        \"country\": \"US\"\n      }\n    }\n  ],\n  \"bookings\": [\n    {\n      \"date\": \"2020-12-02\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    },\n    {\n      \"date\": \"2020-12-01\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    },\n    {\n      \"date\": \"2020-12-03\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    }\n  ],\n  \"depositDetails\": null,\n  \"markets\": null,\n  \"confirmationNumber\": null,\n  \"priceOverride\": false,\n  \"roomValid\": true,\n  \"propertyValid\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{APIM_Endpoint}}{{Function_Environment}}/v2/reservation/charges",
+									"protocol": "https",
+									"host": [
+										"{{APIM_Endpoint}}{{Function_Environment}}"
+									],
+									"path": [
+										"v2",
+										"reservation",
+										"charges"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Calendar price",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e478cd63-330d-4141-ad37-7f4684f8eead",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V2 | Test case 01 : Calendar Price with Start Date, End Date, Property Id, Number of Adults and Number of Rooms\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "f68f1c4f-25f8-4f11-8b12-afcb6cbcca11",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-mgm-source",
+										"value": "{{x-mgm-source}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-channel",
+										"value": "{{x-mgm-channel}}",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{JWT_Token}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-transaction-id",
+										"value": "rbs-v2-functional-{{$timestamp}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"source\": null,\r\n\t\"customerId\": -1,\r\n\t\"mlifeNumber\": null,\r\n\t\"propertyId\": \"dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad\",\r\n\t\"programId\": null,\r\n\t\"promoCode\": null,\r\n\t\"myVegasRedemptionItems\": null,\r\n\t\"customer\": null,\r\n\t\"validMyVegasProgram\": false,\r\n\t\"auroraItineraryIds\": null,\r\n\t\"excludeNonOffer\": false,\r\n\t\"startDate\": {\r\n\t\t\"year\": 2020,\r\n\t\t\"month\": \"DECEMBER\",\r\n\t\t\"monthValue\": 12,\r\n\t\t\"dayOfMonth\": 15,\r\n\t\t\"dayOfYear\": 350,\r\n\t\t\"dayOfWeek\": \"TUESDAY\",\r\n\t\t\"chronology\": {\r\n\t\t\t\"id\": \"ISO\",\r\n\t\t\t\"calendarType\": \"iso8601\"\r\n\t\t},\r\n\t\t\"era\": \"CE\",\r\n\t\t\"leapYear\": true\r\n\t},\r\n\t\"endDate\": {\r\n\t\t\"year\": 2021,\r\n\t\t\"month\": \"MARCH\",\r\n\t\t\"monthValue\": 3,\r\n\t\t\"dayOfMonth\": 15,\r\n\t\t\"dayOfYear\": 74,\r\n\t\t\"dayOfWeek\": \"MONDAY\",\r\n\t\t\"chronology\": {\r\n\t\t\t\"id\": \"ISO\",\r\n\t\t\t\"calendarType\": \"iso8601\"\r\n\t\t},\r\n\t\t\"era\": \"CE\",\r\n\t\t\"leapYear\": false\r\n\t},\r\n\t\"numAdults\": 2,\r\n\t\"numChildren\": 0,\r\n\t\"roomTypeIds\": [\r\n\t\t\"74559601-6fbb-4444-ab12-04f5722116bd\"\r\n\t],\r\n\t\"ignoreChannelMargins\": true,\r\n\t\"numRooms\": 2,\r\n\t\"operaConfirmationNumber\": null,\r\n\t\"customerDominantPlay\": null,\r\n\t\"customerRank\": 0,\r\n\t\"isGroupCode\": false,\r\n\t\"myVegasUnavailableDates\": null,\r\n\t\"datesValid\": true,\r\n\t\"propertyValid\": true,\r\n\t\"numAdultsValid\": true,\r\n\t\"itineraryIds\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{APIM_Endpoint}}{{Function_Environment}}/v2/availability/calendar?startDate={{checkInDate_v2}}&endDate={{checkOutDate_v2}}&propertyId={{propertyId}}&numAdults=2",
+									"protocol": "https",
+									"host": [
+										"{{APIM_Endpoint}}{{Function_Environment}}"
+									],
+									"path": [
+										"v2",
+										"availability",
+										"calendar"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "{{checkInDate_v2}}"
+										},
+										{
+											"key": "endDate",
+											"value": "{{checkOutDate_v2}}"
+										},
+										{
+											"key": "propertyId",
+											"value": "{{propertyId}}"
+										},
+										{
+											"key": "numAdults",
+											"value": "2"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Single Availability",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7f8ce2e9-62f1-4089-8400-941198d49cf2",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V2 | Test case 01 : Single Availability with Checkin Date, Checkout Date, Property Id and Number of Adults\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"  pm.response.to.have.header(\"Content-Type\");\r",
+											"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"  var jsonData = JSON.parse(pm.response.stream);\r",
+											"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"  pm.expect(null).not.eq(jsonData);\r",
+											"  pm.expect(0).not.equal(jsonData.length);\r",
+											"  pm.expect(null).not.eq(jsonData.availability[0]);\r",
+											"  pm.expect(0).not.equal(jsonData.availability[0].price.itemized.length);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "f1d21379-e232-4091-af5c-815749b5dfa7",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-mgm-source",
+										"value": "{{x-mgm-source}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-channel",
+										"value": "{{x-mgm-channel}}",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{JWT_Token}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-transaction-id",
+										"value": "rbs-v2-functional-{{$timestamp}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"source\": null,\r\n\t\"customerId\": -1,\r\n\t\"mlifeNumber\": null,\r\n\t\"propertyId\": \"dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad\",\r\n\t\"programId\": null,\r\n\t\"promoCode\": null,\r\n\t\"myVegasRedemptionItems\": null,\r\n\t\"customer\": null,\r\n\t\"validMyVegasProgram\": false,\r\n\t\"auroraItineraryIds\": null,\r\n\t\"checkInDate\": {\r\n\t\t\"year\": 2020,\r\n\t\t\"month\": \"DECEMBER\",\r\n\t\t\"monthValue\": 12,\r\n\t\t\"dayOfMonth\": 25,\r\n\t\t\"dayOfYear\": 360,\r\n\t\t\"dayOfWeek\": \"FRIDAY\",\r\n\t\t\"chronology\": {\r\n\t\t\t\"id\": \"ISO\",\r\n\t\t\t\"calendarType\": \"iso8601\"\r\n\t\t},\r\n\t\t\"era\": \"CE\",\r\n\t\t\"leapYear\": true\r\n\t},\r\n\t\"checkOutDate\": {\r\n\t\t\"year\": 2020,\r\n\t\t\"month\": \"DECEMBER\",\r\n\t\t\"monthValue\": 12,\r\n\t\t\"dayOfMonth\": 27,\r\n\t\t\"dayOfYear\": 362,\r\n\t\t\"dayOfWeek\": \"SUNDAY\",\r\n\t\t\"chronology\": {\r\n\t\t\t\"id\": \"ISO\",\r\n\t\t\t\"calendarType\": \"iso8601\"\r\n\t\t},\r\n\t\t\"era\": \"CE\",\r\n\t\t\"leapYear\": true\r\n\t},\r\n\t\"numAdults\": 2,\r\n\t\"numChildren\": 0,\r\n\t\"enableMrd\": true,\r\n\t\"ignoreChannelMargins\": true,\r\n\t\"numRooms\": 1,\r\n\t\"operaConfirmationNumber\": null,\r\n\t\"customerDominantPlay\": null,\r\n\t\"customerRank\": 0,\r\n\t\"includeSoldOutRooms\": true,\r\n\t\"excludeNonOffer\": false,\r\n\t\"isGroupCode\": false,\r\n\t\"datesValid\": true,\r\n\t\"propertyValid\": true,\r\n\t\"numAdultsValid\": true,\r\n\t\"itineraryIds\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{APIM_Endpoint}}{{Function_Environment}}/v2/availability/trip?checkInDate={{checkInDate_v2}}&checkOutDate={{checkOutDate_v2}}&propertyId={{propertyId}}&numAdults=2",
+									"protocol": "https",
+									"host": [
+										"{{APIM_Endpoint}}{{Function_Environment}}"
+									],
+									"path": [
+										"v2",
+										"availability",
+										"trip"
+									],
+									"query": [
+										{
+											"key": "checkInDate",
+											"value": "{{checkInDate_v2}}"
+										},
+										{
+											"key": "checkOutDate",
+											"value": "{{checkOutDate_v2}}"
+										},
+										{
+											"key": "propertyId",
+											"value": "{{propertyId}}"
+										},
+										{
+											"key": "numAdults",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "Create Reservation V2-Transient_No_IATA_ICE",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6c2f99c9-8ecc-4fc9-9063-03654a8bed34",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V2_ICE | Test case 01 : Create Reservation with Profile, Booking, TripDetails, Billing and AgentInfo\", function () {\r",
+											"    pm.globals.set(\"variable_key\", \"variable_value\");  \r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"    pm.expect(null).not.eq(jsonData.booked);    \r",
+											"    var confirmationNumber = jsonData.roomReservation.confirmationNumber;\r",
+											"    var itineraryId = jsonData.roomReservation.itineraryId;\r",
+											"    var reservationId = jsonData.roomReservation.id;\r",
+											"    pm.expect(confirmationNumber).not.eq(null);\r",
+											"    pm.expect(itineraryId).not.eq(null);\r",
+											"    pm.expect(reservationId).not.eq(null);\r",
+											"    postman.setEnvironmentVariable('bookedConfirmationNumber',  confirmationNumber);\r",
+											"    postman.setEnvironmentVariable('bookedItineraryId',  itineraryId);\r",
+											"    postman.setEnvironmentVariable('bookedReservationId',  reservationId);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "183eef17-8221-46b5-86e0-e6e0ffacb941",
+										"exec": [
+											"firstName = \"functionaltest\" + Math.random().toString(36).substring(5);",
+											"postman.setEnvironmentVariable('firstName',  firstName);",
+											"postman.setEnvironmentVariable('lastName',  \"pman\");",
+											"",
+											"phone = Math.floor(Math.random() * 9000000000) + 1000000000;",
+											"postman.setEnvironmentVariable('phone',  phone);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mgm-source",
+										"value": "{{x-mgm-source}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-channel",
+										"value": "{{x-mgm-channel}}",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{JWT_Token}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-transaction-id",
+										"value": "rbs-v2-functional-{{$timestamp}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"roomReservation\":\n{\n  \"source\": null,\n  \"customerId\": 156499970,\n  \"mlifeNumber\": null,\n  \"inAuthTransactionId\": null,\n  \"id\": \"c7ce7b85-78c9-4418-9bd8-4fcfab59ea10\",\n  \"propertyId\": \"dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad\",\n  \"itineraryId\": \"6905550338\",\n  \"roomTypeId\": \"74559601-6fbb-4444-ab12-04f5722116bd\",\n  \"programId\": null,\n  \"upgradeRoomTypeId\": null,\n  \"operaState\": \"\",\n  \"state\": null,\n  \"nrgStatus\": false,\n  \"specialRequests\": [],\n  \"roomNumber\": null,\n  \"confirmationNumber\": \"\",\n  \"partyConfirmationNumber\": null,\n  \"otaConfirmationNumber\": null,\n  \"primarySharerConfirmationNumber\": null,\n  \"operaConfirmationNumber\": \"\",\n  \"bookDate\": null,\n  \"profile\": {\n    \"id\": 156499970,\n    \"mlifeNo\": 79145357,\n    \"title\": \"Mr\",\n    \"dateOfBirth\": \"1960-07-27\",\n    \"operaId\": \"814787961\",\n    \"tier\": null,\n    \"firstName\": \"Saugata\",\n    \"lastName\": \"Moitra\",\n    \"emailAddress1\": \"smoitra@mgmresorts.com\",\n    \"emailAddress2\": null,\n    \"hgpNo\": null,\n    \"swrrNo\": null,\n    \"phoneNumbers\": [\n      {\n        \"type\": \"Mobile\",\n        \"number\": \"7029138039\"\n      }\n    ],\n    \"addresses\": [\n      {\n        \"type\": \"Home\",\n        \"preferred\": false,\n        \"street1\": \"5353 W Desert Inn\",\n        \"street2\": null,\n        \"city\": \"Las Vegas\",\n        \"state\": \"NV\",\n        \"country\": \"US\",\n        \"postalCode\": \"89146\"\n      }\n    ]\n  },\n  \"billing\": [\n    {\n      \"payment\": {\n        \"cardHolder\": \"Saugata Moitra\",\n        \"firstName\": \"Saugata\",\n        \"lastName\": \"Moitra\",\n        \"cardNumber\": null,\n        \"ccToken\": \"4444330A001E6O3TNRIO607R1111\",\n        \"maskedNumber\": null,\n        \"amount\": 192.39,\n        \"cvv\": \"123\",\n        \"expiry\": \"01/2021\",\n        \"type\": \"Mastercard\",\n        \"fxAmount\": 0,\n        \"fxCurrencyISOCode\": null,\n        \"fxCurrencyCode\": null,\n        \"fxExchangeRate\": 0,\n        \"fxFlag\": null\n      },\n      \"address\": {\n        \"street1\": \"5353 W Desert Inn\",\n        \"street2\": \"\",\n        \"city\": \"Las Vegas\",\n        \"state\": \"NV\",\n        \"postalCode\": \"89146\",\n        \"country\": \"US\"\n      }\n    }\n  ],\n  \"tripDetails\": {\n    \"checkInDate\": \"{{preModifyCheckInDate}}\",\n    \"checkOutDate\": \"{{preModifyCheckOutDate}}\",\n    \"numAdults\": 2,\n    \"numChildren\": 0,\n    \"numRooms\": 1,\n    \"numAdultsValid\": true\n  },\n  \"bookings\": [\n    {\n      \"date\": \"2020-12-02\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    },\n    {\n      \"date\": \"2020-12-01\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    }\n  ],\n  \"chargesAndTaxes\": {\n    \"charges\": [\n      {\n        \"date\": \"2020-12-01\",\n        \"amount\": 136,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomCharge\",\n            \"amount\": 99,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFee\",\n            \"amount\": 37,\n            \"item\": null\n          }\n        ]\n      },\n      {\n        \"date\": \"2020-12-02\",\n        \"amount\": 136,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomCharge\",\n            \"amount\": 99,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFee\",\n            \"amount\": 37,\n            \"item\": null\n          }\n        ]\n      }\n    ],\n    \"taxesAndFees\": [\n      {\n        \"date\": \"2020-12-01\",\n        \"amount\": 18.2,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomChargeTax\",\n            \"amount\": 13.24,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFeeTax\",\n            \"amount\": 4.95,\n            \"item\": null\n          }\n        ]\n      },\n      {\n        \"date\": \"2020-12-02\",\n        \"amount\": 18.2,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomChargeTax\",\n            \"amount\": 13.24,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFeeTax\",\n            \"amount\": 4.95,\n            \"item\": null\n          }\n        ]\n      }\n    ]\n  },\n  \"depositDetails\": {\n    \"dueDate\": \"2020-11-07\",\n    \"amountPolicy\": null,\n    \"amount\": 172.39,\n    \"forfeitDate\": null,\n    \"forfeitAmount\": 0,\n    \"overrideAmount\": 0,\n    \"depositRuleCode\": null,\n    \"cancellationRuleCode\": null,\n    \"itemized\": null\n  },\n  \"amountDue\": 0,\n  \"guaranteeCode\": \"CC\",\n  \"customerRank\": 0,\n  \"customerSegment\": 0,\n  \"customerDominantPlay\": null,\n  \"rrUpsell\": \"\",\n  \"alerts\": null,\n  \"routingInstructions\": null,\n  \"traces\": null,\n  \"shareWithCustomers\": null,\n  \"comments\": null,\n  \"additionalComments\": [],\n  \"agentInfo\": null,\n  \"isGroupCode\": false\n}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{APIM_Endpoint}}{{Function_Environment}}/v2/reservation",
+									"protocol": "https",
+									"host": [
+										"{{APIM_Endpoint}}{{Function_Environment}}"
+									],
+									"path": [
+										"v2",
+										"reservation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Reservation V2-Mlife_ IATA_ICE",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "76b099f3-8f9d-4729-835e-5fe4beb97111",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V2_ICE | Test case 01 : Create Reservation with Profile, Booking, TripDetails, Billing and AgentInfo\", function () {\r",
+											"    pm.globals.set(\"variable_key\", \"variable_value\");  \r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"    pm.expect(null).not.eq(jsonData.booked);    \r",
+											"    var confirmationNumber = jsonData.roomReservation.confirmationNumber;\r",
+											"    var itineraryId = jsonData.roomReservation.itineraryId;\r",
+											"    var reservationId = jsonData.roomReservation.id;\r",
+											"    pm.expect(confirmationNumber).not.eq(null);\r",
+											"    pm.expect(itineraryId).not.eq(null);\r",
+											"    pm.expect(reservationId).not.eq(null);\r",
+											"    postman.setEnvironmentVariable('bookedConfirmationNumber',  confirmationNumber);\r",
+											"    postman.setEnvironmentVariable('bookedItineraryId',  itineraryId);\r",
+											"    postman.setEnvironmentVariable('bookedReservationId',  reservationId);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "e7f2e933-53af-409b-aeb1-dda49457caba",
+										"exec": [
+											"firstName = \"functionaltest\" + Math.random().toString(36).substring(5);",
+											"postman.setEnvironmentVariable('firstName',  firstName);",
+											"postman.setEnvironmentVariable('lastName',  \"pman\");",
+											"",
+											"phone = Math.floor(Math.random() * 9000000000) + 1000000000;",
+											"postman.setEnvironmentVariable('phone',  phone);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mgm-source",
+										"type": "text",
+										"value": "{{x-mgm-source}}"
+									},
+									{
+										"key": "x-mgm-channel",
+										"type": "text",
+										"value": "{{x-mgm-channel}}"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{JWT_Token}}"
+									},
+									{
+										"key": "x-mgm-transaction-id",
+										"type": "text",
+										"value": "rbs-v2-functional-{{$timestamp}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"roomReservation\":\n{\n  \"source\": null,\n  \"customerId\": 156499970,\n  \"mlifeNumber\": null,\n  \"inAuthTransactionId\": null,\n  \"id\": \"97e32ad5-be43-47a3-8082-3e2776654726\",\n  \"propertyId\": \"dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad\",\n  \"itineraryId\": \"6906005506\",\n  \"roomTypeId\": \"74559601-6fbb-4444-ab12-04f5722116bd\",\n  \"programId\": null,\n  \"upgradeRoomTypeId\": null,\n  \"operaState\": \"\",\n  \"state\": null,\n  \"nrgStatus\": false,\n  \"specialRequests\": [ ],\n  \"roomNumber\": null,\n  \"confirmationNumber\": \"\",\n  \"partyConfirmationNumber\": null,\n  \"otaConfirmationNumber\": null,\n  \"primarySharerConfirmationNumber\": null,\n  \"operaConfirmationNumber\": \"\",\n  \"bookDate\": null,\n  \"profile\": {\n    \"id\": 156499970,\n    \"mlifeNo\": 79145357,\n    \"title\": \"Mr\",\n    \"dateOfBirth\": \"1960-07-27\",\n    \"operaId\": \"814787961\",\n    \"tier\": null,\n    \"firstName\": \"Saugata\",\n    \"lastName\": \"Moitra\",\n    \"emailAddress1\": \"smoitra@mgmresorts.com\",\n    \"emailAddress2\": null,\n    \"hgpNo\": null,\n    \"swrrNo\": null,\n    \"phoneNumbers\": [\n      {\n        \"type\": \"Mobile\",\n        \"number\": \"7029138039\"\n      }\n    ],\n    \"addresses\": [\n      {\n        \"type\": \"Home\",\n        \"preferred\": false,\n        \"street1\": \"5353 W Desert Inn\",\n        \"street2\": null,\n        \"city\": \"Las Vegas\",\n        \"state\": \"NV\",\n        \"country\": \"US\",\n        \"postalCode\": \"89146\"\n      }\n    ]\n  },\n  \"billing\": [\n    {\n      \"payment\": {\n        \"cardHolder\": \"Saugata Moitra\",\n        \"firstName\": \"Saugata\",\n        \"lastName\": \"Moitra\",\n        \"cardNumber\": null,\n        \"ccToken\": \"5555550A001AOKIN3D2BRLU54444\",\n        \"maskedNumber\": \"XXXXXXXXXXXXXXXXXXXXXXXX4444\",\n        \"amount\": 190.59,\n        \"cvv\": \"123\",\n        \"expiry\": \"01/2021\",\n        \"type\": \"Mastercard\",\n        \"fxAmount\": 0,\n        \"fxCurrencyISOCode\": null,\n        \"fxCurrencyCode\": null,\n        \"fxExchangeRate\": 0,\n        \"fxFlag\": null\n      },\n      \"address\": {\n        \"street1\": \"5353 W Desert Inn\",\n        \"street2\": \"\",\n        \"city\": \"Las Vegas\",\n        \"state\": \"NV\",\n        \"postalCode\": \"89146\",\n        \"country\": \"US\"\n      }\n    }\n  ],\n  \"tripDetails\": {\n    \"checkInDate\": \"{{preModifyCheckInDate}}\",\n    \"checkOutDate\": \"{{preModifyCheckOutDate}}\",\n    \"numAdults\": 2,\n    \"numChildren\": 0,\n    \"numRooms\": 1,\n    \"numAdultsValid\": true\n  },\n  \"bookings\": [\n    {\n      \"date\": \"2020-12-02\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    },\n    {\n      \"date\": \"2020-12-01\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    },\n    {\n      \"date\": \"2020-12-03\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    }\n  ],\n  \"chargesAndTaxes\": {\n    \"charges\": [\n      {\n        \"date\": \"2020-12-01\",\n        \"amount\": 136,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomCharge\",\n            \"amount\": 99,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFee\",\n            \"amount\": 37,\n            \"item\": null\n          }\n        ]\n      },\n      {\n        \"date\": \"2020-12-02\",\n        \"amount\": 136,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomCharge\",\n            \"amount\": 99,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFee\",\n            \"amount\": 37,\n            \"item\": null\n          }\n        ]\n      },\n      {\n        \"date\": \"2020-12-03\",\n        \"amount\": 136,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomCharge\",\n            \"amount\": 99,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFee\",\n            \"amount\": 37,\n            \"item\": null\n          }\n        ]\n      }\n    ],\n    \"taxesAndFees\": [\n      {\n        \"date\": \"2020-12-01\",\n        \"amount\": 18.2,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomChargeTax\",\n            \"amount\": 13.25,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFeeTax\",\n            \"amount\": 4.95,\n            \"item\": null\n          }\n        ]\n      },\n      {\n        \"date\": \"2020-12-02\",\n        \"amount\": 18.2,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomChargeTax\",\n            \"amount\": 13.25,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFeeTax\",\n            \"amount\": 4.95,\n            \"item\": null\n          }\n        ]\n      },\n      {\n        \"date\": \"2020-12-03\",\n        \"amount\": 18.2,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomChargeTax\",\n            \"amount\": 13.25,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFeeTax\",\n            \"amount\": 4.95,\n            \"item\": null\n          }\n        ]\n      }\n    ]\n  },\n  \"depositDetails\": {\n    \"dueDate\": \"2020-11-13\",\n    \"amountPolicy\": null,\n    \"amount\": 190.59,\n    \"forfeitDate\": null,\n    \"forfeitAmount\": 0,\n    \"overrideAmount\": 0,\n    \"depositRuleCode\": null,\n    \"cancellationRuleCode\": null,\n    \"itemized\": null\n  },\n  \"amountDue\": 0,\n  \"guaranteeCode\": \"CC\",\n  \"customerRank\": 0,\n  \"customerSegment\": 0,\n  \"customerDominantPlay\": null,\n  \"rrUpsell\": \"32523\",\n  \"alerts\": null,\n  \"routingInstructions\": null,\n  \"traces\": null,\n  \"shareWithCustomers\": null,\n  \"comments\": null,\n  \"additionalComments\": [\n    \"admin:testing\"\n  ],\n  \"agentInfo\": {\n    \"agentType\": \"IATA\",\n    \"agentId\": \"05801806\"\n  },\n  \"isGroupCode\": false\n}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{APIM_Endpoint}}{{Function_Environment}}/v2/reservation",
+									"protocol": "https",
+									"host": [
+										"{{APIM_Endpoint}}{{Function_Environment}}"
+									],
+									"path": [
+										"v2",
+										"reservation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Party Info V2 - Success",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"RBS_ACRS_V2 | Test case 01 : Create Reservation with Profile, Booking, TripDetails, Billing and AgentInfo\", function () {\r",
+											"    pm.globals.set(\"variable_key\", \"variable_value\");  \r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"    pm.expect(null).not.eq(jsonData.booked);    \r",
+											"    var confirmationNumber = jsonData.roomReservation.confirmationNumber;\r",
+											"    var itineraryId = jsonData.roomReservation.itineraryId;\r",
+											"    var reservationId = jsonData.roomReservation.id;\r",
+											"    pm.expect(confirmationNumber).not.eq(null);\r",
+											"    pm.expect(itineraryId).not.eq(null);\r",
+											"    pm.expect(reservationId).not.eq(null);\r",
+											"    postman.setEnvironmentVariable('bookedConfirmationNumber',  confirmationNumber);\r",
+											"    postman.setEnvironmentVariable('bookedItineraryId',  itineraryId);\r",
+											"    postman.setEnvironmentVariable('bookedReservationId',  reservationId);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"firstName = \"functionaltest\" + Math.random().toString(36).substring(5);",
+											"postman.setEnvironmentVariable('firstName',  firstName);",
+											"postman.setEnvironmentVariable('lastName',  \"pman\");",
+											"",
+											"phone = Math.floor(Math.random() * 9000000000) + 1000000000;",
+											"postman.setEnvironmentVariable('phone',  phone);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mgm-source",
+										"type": "text",
+										"value": "{{x-mgm-source}}"
+									},
+									{
+										"key": "x-mgm-channel",
+										"type": "text",
+										"value": "{{x-mgm-channel}}"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{JWT_Token}}"
+									},
+									{
+										"key": "x-mgm-transaction-id",
+										"type": "text",
+										"value": "rbs-v2-functional-{{$timestamp}}"
+									},
+									{
+										"key": "source",
+										"value": "ice",
+										"type": "text"
+									},
+									{
+										"key": "channel",
+										"value": "ice",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"splitCreditCardDetails\": false,\r\n    \"roomReservation\": {\r\n        \"nrgStatus\": false,\r\n        \"id\": \"ea286400-b9c3-40b7-927c-dfb2ca29605c\",\r\n        \"propertyId\": \"dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad\",\r\n        \"itineraryId\": \"6897908226\",\r\n        \"roomTypeId\": \"d850d095-dc06-481f-8f69-6fe2eab8c815\",\r\n        \"operaState\": \"\",\r\n        \"customerId\": \"11582243074\",\r\n        \"rrUpsell\": \"\",\r\n        \"confirmationNumber\": \"\",\r\n        \"operaConfirmationNumber\": \"\",\r\n        \"guaranteeCode\": \"CC\",\r\n        \"customerRank\": 0,\r\n        \"customerSegment\": 0,\r\n        \"amountDue\": 0.0,\r\n        \"additionalComments\": [],\r\n        \"specialRequests\": [],\r\n        \"bookings\": [\r\n            {\r\n                \"overrideProgramIdIsRateTable\": false,\r\n                \"resortFeeIsSpecified\": false,\r\n                \"programIdIsRateTable\": false,\r\n                \"customerPrice\": 0.0,\r\n                \"resortFee\": 0.0,\r\n                \"basePrice\": 0.0,\r\n                \"price\": 99.0,\r\n                \"overridePrice\": -1.0,\r\n                \"programId\": \"f115f057-0b8e-4a7c-a183-e0e37a8441c6\",\r\n                \"pricingRuleId\": null,\r\n                \"overrideProgramId\": null,\r\n                \"overridePricingRuleId\": null,\r\n                \"date\": \"2021-05-14\",\r\n                \"isComp\": false\r\n            },\r\n            {\r\n                \"overrideProgramIdIsRateTable\": false,\r\n                \"resortFeeIsSpecified\": false,\r\n                \"programIdIsRateTable\": false,\r\n                \"customerPrice\": 0.0,\r\n                \"resortFee\": 0.0,\r\n                \"basePrice\": 0.0,\r\n                \"price\": 99.0,\r\n                \"overridePrice\": -1.0,\r\n                \"programId\": \"f115f057-0b8e-4a7c-a183-e0e37a8441c6\",\r\n                \"pricingRuleId\": null,\r\n                \"overrideProgramId\": null,\r\n                \"overridePricingRuleId\": null,\r\n                \"date\": \"2021-05-14\",\r\n                \"isComp\": false\r\n            },\r\n            {\r\n                \"overrideProgramIdIsRateTable\": false,\r\n                \"resortFeeIsSpecified\": false,\r\n                \"programIdIsRateTable\": false,\r\n                \"customerPrice\": 0.0,\r\n                \"resortFee\": 0.0,\r\n                \"basePrice\": 0.0,\r\n                \"price\": 99.0,\r\n                \"overridePrice\": -1.0,\r\n                \"programId\": \"f115f057-0b8e-4a7c-a183-e0e37a8441c6\",\r\n                \"pricingRuleId\": null,\r\n                \"overrideProgramId\": null,\r\n                \"overridePricingRuleId\": null,\r\n                \"date\": \"2021-05-14\",\r\n                \"isComp\": false\r\n            }\r\n        ],\r\n        \"tripDetails\": {\r\n            \"numAdults\": 2,\r\n            \"numChildren\": 0,\r\n            \"checkInDate\": \"2021-05-14\",\r\n            \"checkOutDate\": \"2021-05-15\",\r\n            \"numRooms\": 4\r\n        },\r\n        \"profile\": {\r\n            \"id\": 11582243074,\r\n            \"operaId\": null,\r\n            \"firstName\": \"Lets\",\r\n            \"lastName\": \"Tryagain\",\r\n            \"phoneNumbers\": null,\r\n            \"emailAddress1\": null,\r\n            \"emailAddress2\": null,\r\n            \"dateOfBirth\": null,\r\n            \"hgpNo\": null,\r\n            \"swrrNo\": null,\r\n            \"addresses\": [\r\n                {\r\n                    \"preferred\": false,\r\n                    \"street1\": \"123 Main St\",\r\n                    \"street2\": \"Suite@123\",\r\n                    \"city\": \"Las Vegas\",\r\n                    \"state\": \"NV\",\r\n                    \"country\": \"US\",\r\n                    \"postalCode\": \"89118\",\r\n                    \"type\": \"Home\"\r\n                }\r\n            ],\r\n            \"title\": \"Mr\",\r\n            \"mlifeNo\": 0\r\n        },\r\n        \"billing\": [\r\n            {\r\n                \"payment\": {\r\n                    \"amount\": 1138.74,\r\n                    \"fxAmount\": 0.0,\r\n                    \"fxExchangeRate\": 0.0,\r\n                    \"cardHolder\": \"lets tryagain\",\r\n                    \"maskedNumber\": null,\r\n                    \"fxCurrencyISOCode\": null,\r\n                    \"fxCurrencyCode\": null,\r\n                    \"fxFlag\": null,\r\n                    \"cvv\": \"111\",\r\n                    \"type\": \"Mastercard\",\r\n                    \"ccToken\": \"5555550A001C7ZON5DRYV7UB4444\",\r\n                    \"firstName\": \"Lets\",\r\n                    \"lastName\": \"Tryagain\",\r\n                    \"expiry\": \"12/2021\"\r\n                },\r\n                \"address\": {\r\n                    \"street1\": \"123 Main St\",\r\n                    \"street2\": \"Suite@123\",\r\n                    \"city\": \"Las Vegas\",\r\n                    \"state\": \"NV\",\r\n                    \"postalCode\": \"89118\",\r\n                    \"country\": \"US\"\r\n                }\r\n            }\r\n        ],\r\n        \"chargesAndTaxes\": {\r\n            \"charges\": [\r\n                {\r\n                    \"amount\": 99.0,\r\n                    \"date\": \"2021-05-14\",\r\n                    \"itemized\": [\r\n                        {\r\n                            \"amount\": 99.0,\r\n                            \"item\": null,\r\n                            \"itemType\": \"RoomCharge\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"amount\": 99.0,\r\n                    \"date\": \"2021-05-14\",\r\n                    \"itemized\": [\r\n                        {\r\n                            \"amount\": 99.0,\r\n                            \"item\": null,\r\n                            \"itemType\": \"RoomCharge\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"amount\": 99.0,\r\n                    \"date\": \"2021-05-14\",\r\n                    \"itemized\": [\r\n                        {\r\n                            \"amount\": 99.0,\r\n                            \"item\": null,\r\n                            \"itemType\": \"RoomCharge\"\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"taxesAndFees\": [\r\n                {\r\n                    \"amount\": 39.74,\r\n                    \"date\": \"2021-05-14\",\r\n                    \"itemized\": [\r\n                        {\r\n                            \"amount\": 6.95,\r\n                            \"item\": null,\r\n                            \"itemType\": \"ResortFeeTax\"\r\n                        },\r\n                        {\r\n                            \"amount\": 35.0,\r\n                            \"item\": null,\r\n                            \"itemType\": \"RoomChargeTax\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"amount\": 0.0,\r\n                    \"date\": \"2021-05-14\",\r\n                    \"itemized\": [\r\n                        {\r\n                            \"amount\": 6.95,\r\n                            \"item\": null,\r\n                            \"itemType\": \"ResortFeeTax\"\r\n                        },\r\n                        {\r\n                            \"amount\": 35.0,\r\n                            \"item\": null,\r\n                            \"itemType\": \"RoomChargeTax\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"amount\": 0.0,\r\n                    \"date\": \"2021-05-14\",\r\n                    \"itemized\": [\r\n                        {\r\n                            \"amount\": 6.95,\r\n                            \"item\": null,\r\n                            \"itemType\": \"ResortFeeTax\"\r\n                        },\r\n                        {\r\n                            \"amount\": 35.0,\r\n                            \"item\": null,\r\n                            \"itemType\": \"RoomChargeTax\"\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        },\r\n        \"depositDetails\": {\r\n            \"amount\": 138.74,\r\n            \"forfeitAmount\": 0.0,\r\n            \"overrideAmount\": 0.0,\r\n            \"depositRuleCode\": null,\r\n            \"cancellationRuleCode\": null,\r\n            \"dueDate\": \"2021-05-14\",\r\n            \"forfeitDate\": null,\r\n            \"amountPolicy\": null,\r\n            \"itemized\": null\r\n        },\r\n        \"isGroupCode\": false\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{env}}/v2/reservation/party",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v2",
+										"reservation",
+										"party"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Modify",
+					"item": [
+						{
+							"name": "RoomCharges-BeforeModify_ICE",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d09613-4a01-48ed-a7d4-dc2b2aa77e49",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V2_ICE | Test case 01 : PreModify Reservation with Profile, Booking, TripDetails, Billing and AgentInfo\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"    var value = pm.variables.get(\"bookedConfirmationNumber\");\r",
+											"    pm.expect(value).eq(jsonData.confirmationNumber);\r",
+											"    pm.globals.set(\"validItemId\", jsonData.itemId);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "b669647d-d393-409c-bb96-938578af75b9",
+										"exec": [
+											"var moment = require('moment');\r",
+											"\r",
+											"preModifyCheckInDate = moment(pm.variables.get(\"checkInDate\")).format('YYYY-MM-DD');\r",
+											"preModifyCheckOutDate =moment(pm.variables.get(\"checkOutDate\")).add(1, 'days').format('YYYY-MM-DD');\r",
+											"postman.setEnvironmentVariable('preModifyCheckInDate',  preModifyCheckInDate);\r",
+											"postman.setEnvironmentVariable('preModifyCheckOutDate',  preModifyCheckOutDate);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-mgm-source",
+										"value": "{{x-mgm-source}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-channel",
+										"value": "{{x-mgm-channel}}",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{JWT_Token}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-transaction-id",
+										"value": "rbs-v2-functional-{{$timestamp}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"source\": null,\n  \"customerId\": 156499970,\n  \"mlifeNumber\": null,\n  \"propertyId\": \"dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad\",\n  \"roomTypeId\": \"74559601-6fbb-4444-ab12-04f5722116bd\",\n  \"programId\": null,\n  \"guaranteeCode\": \"CC\",\n  \"specialRequests\": [],\n  \"profile\": {\n    \"id\": 156499970,\n    \"mlifeNo\": 79145357,\n    \"title\": \"Mr\",\n    \"dateOfBirth\": \"1960-07-27\",\n    \"operaId\": \"814787961\",\n    \"tier\": null,\n    \"firstName\": \"Saugata\",\n    \"lastName\": \"Moitra\",\n    \"emailAddress1\": \"smoitra@mgmresorts.com\",\n    \"emailAddress2\": null,\n    \"hgpNo\": null,\n    \"swrrNo\": null,\n    \"phoneNumbers\": [\n      {\n        \"type\": \"Mobile\",\n        \"number\": \"7029138039\"\n      }\n    ],\n    \"addresses\": [\n      {\n        \"type\": \"Home\",\n        \"preferred\": false,\n        \"street1\": \"5353 W Desert Inn\",\n        \"street2\": null,\n        \"city\": \"Las Vegas\",\n        \"state\": \"NV\",\n        \"country\": \"US\",\n        \"postalCode\": \"89146\"\n      }\n    ]\n  },\n  \"tripDetails\": {\n    \"checkInDate\": \"{{preModifyCheckInDate}}\",\n    \"checkOutDate\": \"{{preModifyCheckOutDate}}\",\n    \"numAdults\": 2,\n    \"numChildren\": 0,\n    \"numRooms\": 1,\n    \"numAdultsValid\": true\n  },\n  \"billing\": [\n    {\n      \"payment\": {\n        \"cardHolder\": \"Saugata Moitra\",\n        \"firstName\": \"Saugata\",\n        \"lastName\": \"Moitra\",\n        \"cardNumber\": null,\n        \"ccToken\": \"5555550A001AOKIN3D2BRLU54444\",\n        \"maskedNumber\": \"XXXXXXXXXXXXXXXXXXXXXXXX4444\",\n        \"amount\": 190.59,\n        \"cvv\": \"\",\n        \"expiry\": \"01/2021\",\n        \"type\": \"Mastercard\",\n        \"fxAmount\": 0,\n        \"fxCurrencyISOCode\": null,\n        \"fxCurrencyCode\": null,\n        \"fxExchangeRate\": 0,\n        \"fxFlag\": null\n      },\n      \"address\": {\n        \"street1\": \"5353 W Desert Inn\",\n        \"street2\": \"\",\n        \"city\": \"Las Vegas\",\n        \"state\": \"NV\",\n        \"postalCode\": \"89146\",\n        \"country\": \"US\"\n      }\n    }\n  ],\n  \"bookings\": [\n    {\n      \"date\": \"2020-12-02\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    },\n    {\n      \"date\": \"2020-12-01\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    },\n    {\n      \"date\": \"2020-12-03\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    }\n  ],\n  \"depositDetails\": {\n    \"dueDate\": \"2020-11-14\",\n    \"amountPolicy\": null,\n    \"amount\": 161.86,\n    \"forfeitDate\": \"2020-11-27\",\n    \"forfeitAmount\": 161.86,\n    \"overrideAmount\": -1,\n    \"depositRuleCode\": null,\n    \"cancellationRuleCode\": null,\n    \"itemized\": null\n  },\n  \"markets\": [\n    {\n      \"date\": \"2020-12-01\",\n      \"marketCode\": \"TPKG\",\n      \"sourceCode\": \"CC\"\n    },\n    {\n      \"date\": \"2020-12-02\",\n      \"marketCode\": \"TPKG\",\n      \"sourceCode\": \"CC\"\n    },\n    {\n      \"date\": \"2020-12-03\",\n      \"marketCode\": \"TPKG\",\n      \"sourceCode\": \"CC\"\n    }\n  ],\n  \"confirmationNumber\": \"{{bookedConfirmationNumber}}\",\n  \"priceOverride\": false,\n  \"roomValid\": true,\n  \"propertyValid\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{APIM_Endpoint}}{{Function_Environment}}/v2/reservation/charges",
+									"protocol": "https",
+									"host": [
+										"{{APIM_Endpoint}}{{Function_Environment}}"
+									],
+									"path": [
+										"v2",
+										"reservation",
+										"charges"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ModifyReservation V2: modify date,room_ICE",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "756415a3-35be-4ebb-8472-7bbceb462d77",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V2_ICE | Test case 01 : Create Reservation with Profile, Booking, TripDetails, Billing and AgentInfo\", function () {\r",
+											"    pm.globals.set(\"variable_key\", \"variable_value\");  \r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"    pm.expect(null).not.eq(jsonData.booked);    \r",
+											"    var confirmationNumber = jsonData.roomReservation.confirmationNumber;\r",
+											"    var itineraryId = jsonData.roomReservation.itineraryId;\r",
+											"    var reservationId = jsonData.roomReservation.id;\r",
+											"    pm.expect(confirmationNumber).not.eq(null);\r",
+											"    pm.expect(itineraryId).not.eq(null);\r",
+											"    pm.expect(reservationId).not.eq(null);\r",
+											"    postman.setEnvironmentVariable('bookedConfirmationNumber',  confirmationNumber);\r",
+											"    postman.setEnvironmentVariable('bookedItineraryId',  itineraryId);\r",
+											"    postman.setEnvironmentVariable('bookedReservationId',  reservationId);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "731dd565-35ba-4cce-8d11-39bbc002a54f",
+										"exec": [
+											"firstName = \"functionaltest\" + Math.random().toString(36).substring(5);",
+											"postman.setEnvironmentVariable('firstName',  firstName);",
+											"postman.setEnvironmentVariable('lastName',  \"pman\");",
+											"",
+											"phone = Math.floor(Math.random() * 9000000000) + 1000000000;",
+											"postman.setEnvironmentVariable('phone',  phone);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-mgm-source",
+										"type": "text",
+										"value": "{{x-mgm-source}}"
+									},
+									{
+										"key": "x-mgm-channel",
+										"type": "text",
+										"value": "{{x-mgm-channel}}"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{JWT_Token}}"
+									},
+									{
+										"key": "x-mgm-transaction-id",
+										"type": "text",
+										"value": "rbs-v2-functional-{{$timestamp}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"roomReservation\":\n{\n  \"source\": null,\n  \"customerId\": 156499970,\n  \"mlifeNumber\": null,\n  \"inAuthTransactionId\": null,\n  \"id\": \"97e32ad5-be43-47a3-8082-3e2776654726\",\n  \"propertyId\": \"dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad\",\n  \"itineraryId\": \"6906005506\",\n  \"roomTypeId\": \"01e69973-4a3a-4bba-8e97-f96d6de209a8\",\n  \"programId\": null,\n  \"upgradeRoomTypeId\": null,\n  \"operaState\": null,\n  \"state\": \"Booked\",\n  \"nrgStatus\": false,\n  \"specialRequests\": [],\n  \"roomNumber\": null,\n  \"confirmationNumber\": \"{{bookedConfirmationNumber}}\",\n  \"partyConfirmationNumber\": null,\n  \"otaConfirmationNumber\": null,\n  \"primarySharerConfirmationNumber\": null,\n  \"operaConfirmationNumber\": null,\n  \"bookDate\": \"2020-11-16\",\n  \"profile\": {\n    \"id\": 156499970,\n    \"mlifeNo\": 79145357,\n    \"title\": \"Mr\",\n    \"dateOfBirth\": \"1960-07-27\",\n    \"operaId\": \"814787961\",\n    \"tier\": null,\n    \"firstName\": \"Saugata\",\n    \"lastName\": \"Moitra\",\n    \"emailAddress1\": \"smoitra@mgmresorts.com\",\n    \"emailAddress2\": null,\n    \"hgpNo\": null,\n    \"swrrNo\": null,\n    \"phoneNumbers\": [\n      {\n        \"type\": \"Mobile\",\n        \"number\": \"7029138039\"\n      }\n    ],\n    \"addresses\": [\n      {\n        \"type\": \"Home\",\n        \"preferred\": false,\n        \"street1\": \"5353 W Desert Inn\",\n        \"street2\": null,\n        \"city\": \"Las Vegas\",\n        \"state\": \"NV\",\n        \"country\": \"US\",\n        \"postalCode\": \"89146\"\n      }\n    ]\n  },\n  \"billing\": [\n    {\n      \"payment\": {\n        \"cardHolder\": \"Saugata Moitra\",\n        \"firstName\": \"Saugata\",\n        \"lastName\": \"Moitra\",\n        \"cardNumber\": null,\n        \"ccToken\": \"5555550A001AOKIN3D2BRLU54444\",\n        \"maskedNumber\": \"XXXXXXXXXXXXXXXXXXXXXXXX4444\",\n        \"amount\": 228.73,\n        \"cvv\": \"123\",\n        \"expiry\": \"01/2021\",\n        \"type\": \"Mastercard\",\n        \"fxAmount\": 0,\n        \"fxCurrencyISOCode\": null,\n        \"fxCurrencyCode\": null,\n        \"fxExchangeRate\": 0,\n        \"fxFlag\": null\n      },\n      \"address\": {\n        \"street1\": \"5353 W Desert Inn\",\n        \"street2\": \"\",\n        \"city\": \"Las Vegas\",\n        \"state\": \"NV\",\n        \"postalCode\": \"89146\",\n        \"country\": \"US\"\n      }\n    }\n  ],\n  \"tripDetails\": {\n    \"checkInDate\": \"2021-01-14\",\n    \"checkOutDate\": \"2021-01-17\",\n    \"numAdults\": 2,\n    \"numChildren\": 0,\n    \"numRooms\": 1,\n    \"numAdultsValid\": true\n  },\n  \"bookings\": [\n    {\n      \"date\": \"2020-12-02\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    },\n    {\n      \"date\": \"2020-12-01\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    },\n    {\n      \"date\": \"2020-12-03\",\n      \"basePrice\": 0,\n      \"customerPrice\": 0,\n      \"price\": 89.1,\n      \"programIdIsRateTable\": false,\n      \"overridePrice\": -1,\n      \"overrideProgramIdIsRateTable\": false,\n      \"resortFeeIsSpecified\": false,\n      \"resortFee\": 0,\n      \"programId\": \"c1ce212c-f935-46e6-9b27-9e60385dc365\",\n      \"isComp\": false\n    }\n  ],\n  \"chargesAndTaxes\": {\n    \"charges\": [\n      {\n        \"date\": \"2020-12-01\",\n        \"amount\": 89.1,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomCharge\",\n            \"amount\": 52.1,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFee\",\n            \"amount\": 37,\n            \"item\": null\n          }\n        ]\n      },\n      {\n        \"date\": \"2020-12-02\",\n        \"amount\": 89.1,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomCharge\",\n            \"amount\": 52.1,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFee\",\n            \"amount\": 37,\n            \"item\": null\n          }\n        ]\n      },\n      {\n        \"date\": \"2020-12-03\",\n        \"amount\": 89.1,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomCharge\",\n            \"amount\": 52.1,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFee\",\n            \"amount\": 37,\n            \"item\": null\n          }\n        ]\n      }\n    ],\n    \"taxesAndFees\": [\n      {\n        \"date\": \"2020-12-01\",\n        \"amount\": 35.76,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomChargeTax\",\n            \"amount\": 20.91,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFeeTax\",\n            \"amount\": 14.85,\n            \"item\": null\n          }\n        ]\n      },\n      {\n        \"date\": \"2020-12-02\",\n        \"amount\": 0,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomChargeTax\",\n            \"amount\": 0,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFeeTax\",\n            \"amount\": 0,\n            \"item\": null\n          }\n        ]\n      },\n      {\n        \"date\": \"2020-12-03\",\n        \"amount\": 0,\n        \"itemized\": [\n          {\n            \"itemType\": \"RoomChargeTax\",\n            \"amount\": 0,\n            \"item\": null\n          },\n          {\n            \"itemType\": \"ResortFeeTax\",\n            \"amount\": 0,\n            \"item\": null\n          }\n        ]\n      }\n    ]\n  },\n  \"depositDetails\": {\n    \"dueDate\": \"2020-11-14\",\n    \"amountPolicy\": null,\n    \"amount\": 161.86,\n    \"forfeitDate\": \"2020-11-27\",\n    \"forfeitAmount\": 161.86,\n    \"overrideAmount\": -1,\n    \"depositRuleCode\": null,\n    \"cancellationRuleCode\": null,\n    \"itemized\": null\n  },\n  \"amountDue\": 190.59,\n  \"guaranteeCode\": \"CC\",\n  \"customerRank\": 0,\n  \"customerSegment\": 0,\n  \"customerDominantPlay\": null,\n  \"rrUpsell\": \"32523\",\n  \"alerts\": null,\n  \"routingInstructions\": null,\n  \"traces\": null,\n  \"shareWithCustomers\": null,\n  \"comments\": null,\n  \"additionalComments\": [\n    \"admin:testing\"\n  ],\n  \"agentInfo\": {\n    \"agentType\": \"IATA\",\n    \"agentId\": \"05801806\"\n  },\n  \"isGroupCode\": false\n}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{APIM_Endpoint}}{{Function_Environment}}/v2/reservation",
+									"protocol": "https",
+									"host": [
+										"{{APIM_Endpoint}}{{Function_Environment}}"
+									],
+									"path": [
+										"v2",
+										"reservation"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Cancel",
+					"item": [
+						{
+							"name": "Cancel Reservation - Success_ICE",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "df029c51-cd17-40b0-98ae-7184ddc41f41",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V2 | Test case 01 : Cancel Reservation by confirmationNumber\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"    var value = pm.variables.get(\"bookedConfirmationNumber\");\r",
+											"    pm.expect(value).eq(jsonData.roomReservation.confirmationNumber);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mgm-source",
+										"value": "{{x-mgm-source}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-channel",
+										"value": "{{x-mgm-channel}}",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{JWT_Token}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-transaction-id",
+										"value": "rbs-v2-functional-{{$timestamp}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"source\": null,\n  \"customerId\": 156499970,\n  \"mlifeNumber\": null,\n  \"itineraryId\": \"6906005506\",\n  \"overrideDepositForfeit\": false,\n  \"reservationId\": \"97e32ad5-be43-47a3-8082-3e2776654726\",\n  \"confirmationNumber\": \"{{bookedConfirmationNumber}}\",\n  \"cancellationReason\": \"GUEST\",\n  \"propertyId\": null,\n  \"validRequest\": true,\n  \"validCustomerId\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{APIM_Endpoint}}{{Function_Environment}}/v2/reservation/cancel",
+									"protocol": "https",
+									"host": [
+										"{{APIM_Endpoint}}{{Function_Environment}}"
+									],
+									"path": [
+										"v2",
+										"reservation",
+										"cancel"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Find",
+					"item": [
+						{
+							"name": "Find Reservation V2 - Success",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7903bd61-6a32-47d8-b10b-532d214e523d",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V2 | Test case 01 : Create Reservation with Profile, Booking, TripDetails, Billing and AgentInfo\", function () {\r",
+											"    pm.globals.set(\"variable_key\", \"variable_value\");  \r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"    pm.expect(null).not.eq(jsonData.booked);    \r",
+											"    var confirmationNumber = jsonData.roomReservation.confirmationNumber;\r",
+											"    pm.expect(confirmationNumber).not.eq(null);\r",
+											"    postman.setEnvironmentVariable('validConfirmationNumber',  confirmationNumber);\r",
+											"    pm.globals.set(\"bookedConfirmationNumber\", confirmationNumber);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d5dd2187-ba6f-4c24-8082-e5365dbd0886",
+										"exec": [
+											"firstName = \"functionaltest\" + Math.random().toString(36).substring(5);",
+											"postman.setEnvironmentVariable('firstName',  firstName);",
+											"postman.setEnvironmentVariable('lastName',  \"pman\");",
+											"",
+											"phone = Math.floor(Math.random() * 9000000000) + 1000000000;",
+											"postman.setEnvironmentVariable('phone',  phone);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-mgm-source",
+										"value": "{{x-mgm-source}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-channel",
+										"value": "{{x-mgm-channel}}",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{JWT_Token}}",
+										"type": "text"
+									},
+									{
+										"key": "x-mgm-transaction-id",
+										"value": "rbs-v2-functional-{{$timestamp}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{APIM_Endpoint}}{{Function_Environment}}/v2/reservation?confirmationNumber=6616941179",
+									"protocol": "https",
+									"host": [
+										"{{APIM_Endpoint}}{{Function_Environment}}"
+									],
+									"path": [
+										"v2",
+										"reservation"
+									],
+									"query": [
+										{
+											"key": "confirmationNumber",
+											"value": "6616941179"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

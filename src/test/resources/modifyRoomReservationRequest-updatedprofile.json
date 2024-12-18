@@ -1,0 +1,192 @@
+{
+    "roomReservation": {
+        "id": "1596709229",
+        "customerId": 923600551937,
+        "propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+        "itineraryId": "7847517697",
+        "roomTypeId": "23f5bef8-63ea-4ba9-a290-13b5a3056595",
+        "state": "Booked",
+        "confirmationNumber": "M03CF1781",
+        "profile": {
+            "id": 923600551937,
+            "dateOfBirth": "1985-01-01",
+            "firstName": "Varun",
+            "lastName": "Test",
+            "emailAddress1": "tlntest3@yopmail.com",
+            "emailAddress2": "tlntest3@yopmail.com",
+            "phoneNumbers": [
+                {
+                    "type": "Home",
+                    "number": "9611877004"
+                }
+            ],
+            "addresses": [
+                {
+                    "type": "Home",
+                    "preferred": true,
+                    "street1": "234 W Main St",
+                    "street2": "Unit 415",
+                    "city": "Las Vegas",
+                    "state": "NV",
+                    "country": "US",
+                    "postalCode": "12345"
+                }
+            ],
+            "mlifeNo": 79950292
+        },
+        "billing": [
+            {
+                "payment": {
+                    "cardHolder": "John doe",
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "ccToken": "5555550A001C7ZON5DRYV7UB4444",
+                    "maskedNumber": "XXXXXXXXXXXX4444",
+                    "amount": 0,
+                    "expiry": "10/2023",
+                    "type": "Mastercard"
+                },
+                "address": {
+                    "street1": "234 W Main St",
+                    "street2": "Unit 415",
+                    "city": "Las Vegas",
+                    "state": "NV",
+                    "postalCode": "12345",
+                    "country": "US"
+                }
+            }
+        ],
+        "tripDetails": {
+            "checkInDate": "2020-08-15",
+            "checkOutDate": "2020-08-16",
+            "numAdults": 2,
+            "numChildren": 2,
+            "numRooms": 1
+        },
+        "markets": [
+            {
+                "date": "2020-08-15",
+                "marketCode": "TFIT",
+                "sourceCode": "TFITIC"
+            }
+        ],
+        "bookings": [
+            {
+                "date": "2020-08-15",
+                "basePrice": 10024.99,
+                "customerPrice": 5513.74,
+                "price": 5513.74,
+                "programIdIsRateTable": false,
+                "overridePrice": -1,
+                "overrideProgramIdIsRateTable": false,
+                "resortFeeIsSpecified": false,
+                "resortFee": 0,
+                "programId": "4eccc742-8a65-4ef9-9a35-03fead2c3833",
+                "pricingRuleId": "a39efac3-9d9a-450a-9639-22c7c3b78347",
+                "isComp": false
+            }
+        ],
+        "chargesAndTaxes": {
+            "charges": [
+                {
+                    "date": "2020-08-15",
+                    "amount": 5550.74,
+                    "itemized": [
+                        {
+                            "itemType": "RoomCharge",
+                            "amount": 5513.74,
+                            "item": "Room Charge"
+                        },
+                        {
+                            "itemType": "ExtraGuestCharge",
+                            "amount": 80,
+                            "item": "Extra Guest Charge"
+                        },
+                        {
+                            "itemType": "ResortFee",
+                            "amount": 37,
+                            "item": "Resort Fee"
+                        }
+                    ]
+                }
+            ],
+            "taxesAndFees": [
+                {
+                    "date": "2020-08-15",
+                    "amount": 742.69,
+                    "itemized": [
+                        {
+                            "itemType": "RoomChargeTax",
+                            "amount": 737.74,
+                            "item": "Room Tax"
+                        },
+                        {
+                            "itemType": "ExtraGuestChargeTax",
+                            "amount": 10.7,
+                            "item": "Extra Guest Tax"
+                        },
+                        {
+                            "itemType": "ResortFeeTax",
+                            "amount": 4.95,
+                            "item": "Resort Fee Tax"
+                        }
+                    ]
+                }
+            ]
+        },
+        "depositDetails": {
+            "dueDate": "2020-08-06",
+            "amountPolicy": "Nights",
+            "amount": 6251.48,
+            "forfeitDate": "2020-08-12",
+            "forfeitAmount": 6251.48,
+            "overrideAmount": 0,
+            "depositRuleCode": "1NT",
+            "cancellationRuleCode": "72H",
+            "itemized": [
+                {
+                    "itemType": "RoomCharge",
+                    "amount": 5513.74,
+                    "item": "Room Charge"
+                },
+                {
+                    "itemType": "RoomChargeTax",
+                    "amount": 737.74,
+                    "item": "Room Tax"
+                }
+            ]
+        },
+        "depositPolicy": {
+            "depositRequired": true,
+            "creditCardRequired": true
+        },
+        "payments": [
+            {
+                "reservationInstance": 1,
+                "chargeAmount": 0,
+                "chargeCardExpiry": "2022-10-01",
+                "status": "DCCChecked",
+                "chargeCardHolder": "John doe",
+                "chargeCurrencyCode": "USD",
+                "chargeCardType": "Mastercard",
+                "chargeCardMaskedNumber": "XXXXXXXXXXXX4444",
+                "chargeCardNumber": "LXM8dmG5n4Q/vcxr2RI3INxrHJkyRbwncs7AhDGc+YC/uXGHoatACqkVWNTUuRKoSBReazxuYfCpsGDeO0ydsA==",
+                "fxChecked": true,
+                "fxEligible": false,
+                "fxTransDate": "2020-08-06",
+                "fxAmount": 0,
+                "fxRate": 0,
+                "fxSettleAmount": 0,
+                "fxCurrencyCode": "USD",
+                "fxAcceptMessage": "Approved",
+                "fxAuthApprovalCode": null,
+                "isExternal": false,
+                "isDeposit": false
+            }
+        ],
+        "amountDue": 0,
+        "guaranteeCode": "CC",
+        "customerRank": 0,
+        "customerSegment": 0
+    }
+}

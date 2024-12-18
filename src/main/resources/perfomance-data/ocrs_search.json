@@ -1,0 +1,95 @@
+{
+    "hotelReference": {
+      "hotelCode": "021"
+    },
+    "reservationID": "890100979",
+    "resGuests": {
+      "resGuest": [
+        {
+          "profileRPHs": "0",
+          "reservationID": "890100979",
+          "reservationReferences": {
+            "reservationReference": [
+              {
+                "type": "AMADEUSCRS",
+                "referenceNumber": "7587965648"
+              },
+              {
+                "type": "GUESTID",
+                "referenceNumber": "7587965648"
+              },
+              {
+                "type": "PMSID",
+                "referenceNumber": "890100979"
+              }
+            ]
+          },
+          "arrivalTime": 1629936000000,
+          "departureTime": 1630108800000
+        }
+      ]
+    },
+    "resProfiles": {
+      "resProfile": [
+        {
+          "profile": {
+            "mfResortProfileID": "890957367",
+            "profileType": "GUEST",
+            "individualName": {
+              "nameFirst": "First",
+              "nameSur": "Last"
+            },
+            "phoneNumbers": {
+              "phoneNumber": [
+                
+              ]
+            },
+            "electronicAddresses": {
+              "electronicAddress": [
+                
+              ]
+            },
+            "postalAddresses": {
+              "postalAddress": [
+                
+              ]
+            }​
+          },
+          "resProfileRPH": 0,
+          "mfInactiveDate": 0
+        }
+      ]
+    },
+    "mgmProfile": {
+      
+    },
+    "roomStays": {
+      "roomStay": [
+        {
+          "roomInventoryCode": "DPRQ",
+          "reservationStatusType": "RESERVED",
+          "guestCounts": {
+            "guestCount": [
+              {
+                "ageQualifyingCode": "ADULT",
+                "mfCount": 2
+              },
+              {
+                "ageQualifyingCode": "CHILD",
+                "mfCount": 0
+              }
+            ]
+          }​
+        }
+      ]
+    },
+    "originalBookingDate": "06/17/2021",
+    "mfImage": {
+      "numRooms": 1
+    },
+    "selectedMemberships": {
+      "selectedMembership": [
+        
+      ]
+    }​
+  }

@@ -1,0 +1,6 @@
+develop=java -jar -Xms6G -Xmx10G application.jar
+qa=java -javaagent:/opt/appdynamics/appagent/javaagent.jar -Dappdynamics.agent.reuse.nodeName="booking" -Dappdynamics.agent.tierName="rooms" -jar -Xms6G -Xmx10G application.jar
+qa4=java -jar -Xms6G -Xmx10G application.jar
+preprod=java -javaagent:/opt/appdynamics/appagent/javaagent.jar -Dappdynamics.agent.reuse.nodeName="booking" -Dappdynamics.agent.tierName="rooms" -jar -Xms6G -Xmx10G application.jar
+prod=java -javaagent:/opt/appdynamics/appagent/javaagent.jar -Dappdynamics.agent.reuse.nodeName="booking" -Dappdynamics.agent.tierName="rooms" -jar -Xms6G -Xmx10G application.jar
+default=java -jar -Xms6G -Xmx10G application.jar

@@ -1,0 +1,351 @@
+{
+    "instance": 3,
+    "numRooms": 1,
+    "bookDate": "2021-09-15T01:27:38.067",
+    "checkInDate": "2021-10-23T07:00:00.000",
+    "checkOutDate": "2021-10-24T07:00:00.000",
+    "numAdults": 2,
+    "numChildren": 0,
+    "billingType": "CustomerCreditCard",
+    "state": "Booked",
+    "postingFlow": "Modify",
+    "postingState": "Success",
+    "postingStartedAt": 1631669296471,
+    "postingEndedAt": 0,
+    "amountDue": 373.3,
+    "createdAt": 1631669260453,
+    "updatedAt": 1631669298834,
+    "syncFromOperaAt": 0,
+    "pointCharges": 0,
+    "nrgStatus": false,
+    "customerRank": 0,
+    "customerSegment": 0,
+    "id": "9a2960b3-d6a3-4706-8a51-975bd04858ae",
+    "itineraryId": "11066531842",
+    "propertyId": "e0f70eb3-7e27-4c33-8bcd-f30bf3b1103a",
+    "roomTypeId": "cea9de34-6b04-4f6b-9534-1e5d5c7a6e93",
+    "guaranteeCode": "CC",
+    "additionalComments": [
+        "cdiliwilli:cxl pol, ci/co, 21+ id &amp; cc. b2b 893157174 . okay per jared to modify to 1 night for myvegas b2b"
+    ],
+    "profile": {
+        "id": 907007426562,
+        "mlifeNo": 95706694,
+        "dateOfBirth": "1996-12-20T08:00:00.000",
+        "modifiable": false,
+        "createdAt": 0,
+        "updatedAt": 0,
+        "refreshedAt": 0,
+        "stale": false,
+        "externalSyncAt": 0,
+        "caslOptin": false,
+        "operaId": "894500394",
+        "firstName": "--REDACTED--",
+        "lastName": "--REDACTED--",
+        "emailAddress1": "--REDACTED--",
+        "phoneNumbers": [
+            {
+                "type": "Home",
+                "number": "--REDACTED--",
+                "_xFieldBitmask_": [
+                    0
+                ]
+            }
+        ],
+        "addresses": [
+            {
+                "type": "Home",
+                "preferred": false,
+                "street1": "--REDACTED--",
+                "city": "Liberty Lake",
+                "state": "WA",
+                "country": "US",
+                "postalCode": "--REDACTED--",
+                "_xFieldBitmask_": [
+                    0
+                ]
+            }
+        ],
+        "_xFieldBitmask_": [
+            0
+        ]
+    },
+    "bookings": [
+        {
+            "date": "2021-10-23T07:00:00.000",
+            "basePrice": -1,
+            "customerPrice": 0,
+            "price": -1,
+            "programIdIsRateTable": false,
+            "overridePrice": 329.25,
+            "overrideProgramIdIsRateTable": false,
+            "isComp": false,
+            "resortFeeIsSpecified": false,
+            "resortFee": 0,
+            "overrideProgramId": "b84e8d54-7ac4-4a17-b81e-a39b8cba8173",
+            "overridePricingRuleId": "f0f99695-09dd-4133-81c2-dd33a42d51bd",
+            "_xFieldBitmask_": [
+                0
+            ]
+        }
+    ],
+    "markets": [
+        {
+            "date": "2021-10-23T07:00:00.000",
+            "marketCode": "TPKG",
+            "sourceCode": "TFITIWB",
+            "_xFieldBitmask_": [
+                0
+            ]
+        }
+    ],
+    "chargesAndTaxesCalc": {
+        "charges": [
+            {
+                "date": "2021-10-23T07:00:00.000",
+                "amount": 368.25,
+                "pointsUsed": 0,
+                "itemized": [
+                    {
+                        "itemType": "RoomCharge",
+                        "amount": 329.25,
+                        "pointsUsed": 0,
+                        "item": "Room Charge",
+                        "_xFieldBitmask_": [
+                            0
+                        ]
+                    },
+                    {
+                        "itemType": "ExtraGuestCharge",
+                        "amount": 0,
+                        "pointsUsed": 0,
+                        "item": "Extra Guest Charge",
+                        "_xFieldBitmask_": [
+                            0
+                        ]
+                    },
+                    {
+                        "itemType": "ResortFee",
+                        "amount": 39,
+                        "pointsUsed": -1,
+                        "item": "Resort Fee",
+                        "_xFieldBitmask_": [
+                            0
+                        ]
+                    }
+                ],
+                "_xFieldBitmask_": [
+                    0
+                ]
+            }
+        ],
+        "taxesAndFees": [
+            {
+                "date": "2021-10-23T07:00:00.000",
+                "amount": 49.27185000000001,
+                "pointsUsed": -1,
+                "itemized": [
+                    {
+                        "itemType": "RoomChargeTax",
+                        "amount": 44.053650000000005,
+                        "pointsUsed": -1,
+                        "item": "Room Tax",
+                        "_xFieldBitmask_": [
+                            0
+                        ]
+                    },
+                    {
+                        "itemType": "ExtraGuestChargeTax",
+                        "amount": 0,
+                        "pointsUsed": -1,
+                        "item": "Extra Guest Tax",
+                        "_xFieldBitmask_": [
+                            0
+                        ]
+                    },
+                    {
+                        "itemType": "ResortFeeTax",
+                        "amount": 5.2182,
+                        "pointsUsed": -1,
+                        "item": "Resort Fee Tax",
+                        "_xFieldBitmask_": [
+                            0
+                        ]
+                    }
+                ],
+                "_xFieldBitmask_": [
+                    0
+                ]
+            }
+        ],
+        "_xFieldBitmask_": [
+            0
+        ]
+    },
+    "depositPolicyCalc": {
+        "depositRequired": true,
+        "creditCardRequired": true,
+        "_xFieldBitmask_": [
+            0
+        ]
+    },
+    "depositCalc": {
+        "dueDate": "2021-09-15T01:28:15.440",
+        "amountPolicy": "Nights",
+        "amount": 373.30365,
+        "forfeitDate": "2021-10-21T07:00:00.000",
+        "forfeitAmount": 373.30365,
+        "overrideAmount": -1,
+        "depositRuleCode": "1NT",
+        "cancellationRuleCode": "48H",
+        "itemized": [
+            {
+                "itemType": "RoomCharge",
+                "amount": 329.25,
+                "pointsUsed": 0,
+                "item": "Room Charge",
+                "_xFieldBitmask_": [
+                    0
+                ]
+            },
+            {
+                "itemType": "RoomChargeTax",
+                "amount": 44.053650000000005,
+                "pointsUsed": -1,
+                "item": "Room Tax",
+                "_xFieldBitmask_": [
+                    0
+                ]
+            }
+        ],
+        "pointAmount": {
+            "dollarValue": 373.30365,
+            "pointValue": 0,
+            "_xFieldBitmask_": [
+                0
+            ]
+        },
+        "_xFieldBitmask_": [
+            0
+        ]
+    },
+    "creditCardCharges": [
+        {
+            "expiry": "2024-01-01",
+            "amount": 0,
+            "holder": "Jorge Chavez",
+            "number": "--REDACTED--",
+            "maskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX1814",
+            "type": "Visa",
+            "holderProfile": {
+                "firstName": "--REDACTED--",
+                "lastName": "--REDACTED--",
+                "address": {
+                    "type": "Home",
+                    "preferred": true,
+                    "street1": "--REDACTED--",
+                    "street2": "",
+                    "city": "Liberty Lake",
+                    "state": "WA",
+                    "country": "US",
+                    "postalCode": "--REDACTED--",
+                    "_xFieldBitmask_": [
+                        0
+                    ]
+                },
+                "_xFieldBitmask_": [
+                    0
+                ]
+            },
+            "_xFieldBitmask_": [
+                0
+            ]
+        }
+    ],
+    "rrUpSell": "",
+    "operaState": "RESERVED",
+    "channelId": "5525aed4-cb83-4e81-b13e-6f1ae4c5e28c",
+    "origin": "ice",
+    "source": "ice",
+    "confirmationNumber": "M059F4CD2",
+    "operaConfirmationNumber": "893198319",
+    "payments": [
+        {
+            "reservationInstance": 1,
+            "chargeAmount": 373.3,
+            "chargeCardExpiry": "2023-01-01",
+            "dccChecked": true,
+            "dccEligible": false,
+            "dccTransDate": "2021-09-14T13:27:38.000",
+            "dccAmount": 0,
+            "dccRate": 0,
+            "dccSettleAmount": 373.3,
+            "status": "Settled",
+            "isDeposit": true,
+            "isExternal": false,
+            "chargeCardHolder": "--REDACTED--",
+            "chargeCurrencyCode": "USD",
+            "chargeCardType": "Visa",
+            "chargeCardMaskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX1814",
+            "chargeCardNumber": "--REDACTED--",
+            "dccCurrencyCode": "USD",
+            "dccAcceptMessage": "Approved",
+            "dccAuthApprovalCode": "029412",
+            "_xFieldBitmask_": [
+                0
+            ]
+        },
+        {
+            "reservationInstance": 2,
+            "chargeAmount": 0,
+            "chargeCardExpiry": "2023-01-01",
+            "dccChecked": true,
+            "dccEligible": false,
+            "dccTransDate": "2021-09-14T13:28:05.000",
+            "dccAmount": 0,
+            "dccRate": 0,
+            "dccSettleAmount": 0,
+            "status": "DCCChecked",
+            "isDeposit": false,
+            "isExternal": false,
+            "chargeCardHolder": "--REDACTED--",
+            "chargeCurrencyCode": "USD",
+            "chargeCardType": "Visa",
+            "chargeCardMaskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX1814",
+            "chargeCardNumber": "--REDACTED--",
+            "dccCurrencyCode": "USD",
+            "dccAcceptMessage": "Approved",
+            "_xFieldBitmask_": [
+                0
+            ]
+        },
+        {
+            "reservationInstance": 3,
+            "chargeAmount": 0,
+            "chargeCardExpiry": "2023-01-01",
+            "dccChecked": true,
+            "dccEligible": false,
+            "dccTransDate": "2021-09-14T13:28:15.000",
+            "dccAmount": 0,
+            "dccRate": 0,
+            "dccSettleAmount": 0,
+            "status": "DCCChecked",
+            "isDeposit": false,
+            "isExternal": false,
+            "chargeCardHolder": "--REDACTED--",
+            "chargeCurrencyCode": "USD",
+            "chargeCardType": "Visa",
+            "chargeCardMaskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX1814",
+            "chargeCardNumber": "--REDACTED--",
+            "dccCurrencyCode": "USD",
+            "dccAcceptMessage": "Approved",
+            "_xFieldBitmask_": [
+                0
+            ]
+        }
+    ],
+    "_xFieldBitmask_": [
+        0,
+        0
+    ]
+}

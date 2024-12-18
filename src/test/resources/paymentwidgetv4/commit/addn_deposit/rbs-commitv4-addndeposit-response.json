@@ -1,0 +1,390 @@
+{
+  "roomReservation": {
+    "instance": 0,
+    "customerId": -1,
+    "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+    "roomTypeId": "ROOMCD-v-L1PL-d-PROP-v-MV021",
+    "programId": "RPCD-v-TFRSA-d-PROP-v-MV021",
+    "operaState": "RESERVED",
+    "state": "Booked",
+    "nrgStatus": false,
+    "specialRequests": [
+      "COMPONENTCD-v-DOGFEE-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-DOGFRIENDLY"
+    ],
+    "thirdParty": false,
+    "confirmationNumber": "3OWSIOL3V4",
+    "operaConfirmationNumber": "914209782",
+    "operaHotelCode": "021",
+    "bookDate": "2024-06-27",
+    "profile": {
+      "id": -1,
+      "mlifeNo": 0,
+      "firstName": "Uttam",
+      "lastName": "Ghorai",
+      "addresses": [
+        {
+          "type": "Home",
+          "preferred": true,
+          "street1": "100 St",
+          "city": "Las Vegas",
+          "state": "NV",
+          "country": "US",
+          "postalCode": "89102"
+        }
+      ]
+    },
+    "billing": [
+      {
+        "payment": {
+          "cardHolder": "Uttam Ghorai",
+          "firstName": "Uttam",
+          "lastName": "Ghorai",
+          "ccToken": "5555550A0017Y0M59GYH3G7X4444",
+          "encryptedccToken": "5555550A0017Y0M59GYH3G7X4444",
+          "maskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX4444",
+          "amount": 56.69,
+          "expiry": "01/2025",
+          "type": "Diners Club"
+        },
+        "address": {
+          "street1": "5353 W Desert Inn",
+          "city": "Las Vegas",
+          "state": "NV",
+          "postalCode": "89146",
+          "country": "US"
+        }
+      }
+    ],
+    "tripDetails": {
+      "checkInDate": "2024-07-26",
+      "checkOutDate": "2024-07-30",
+      "numAdults": 1,
+      "numChildren": 0,
+      "numRooms": 1
+    },
+    "markets": [
+      {
+        "date": "2024-07-26",
+        "marketCode": "TPKG",
+        "sourceCode": "CC"
+      },
+      {
+        "date": "2024-07-27",
+        "marketCode": "TPKG",
+        "sourceCode": "CC"
+      },
+      {
+        "date": "2024-07-28",
+        "marketCode": "TPKG",
+        "sourceCode": "CC"
+      },
+      {
+        "date": "2024-07-29",
+        "marketCode": "TPKG",
+        "sourceCode": "CC"
+      }
+    ],
+    "bookings": [
+      {
+        "date": "2024-07-26",
+        "basePrice": 0.0,
+        "customerPrice": 0.0,
+        "price": 211.5,
+        "programIdIsRateTable": false,
+        "overridePrice": -1.0,
+        "overrideProgramIdIsRateTable": false,
+        "comp": false,
+        "resortFeeIsSpecified": false,
+        "resortFee": 42.0,
+        "programId": "RPCD-v-TFRSA-d-PROP-v-MV021"
+      },
+      {
+        "date": "2024-07-27",
+        "basePrice": 0.0,
+        "customerPrice": 0.0,
+        "price": 211.5,
+        "programIdIsRateTable": false,
+        "overridePrice": -1.0,
+        "overrideProgramIdIsRateTable": false,
+        "comp": false,
+        "resortFeeIsSpecified": false,
+        "resortFee": 42.0,
+        "programId": "RPCD-v-TFRSA-d-PROP-v-MV021"
+      },
+      {
+        "date": "2024-07-28",
+        "basePrice": 0.0,
+        "customerPrice": 0.0,
+        "price": 211.5,
+        "programIdIsRateTable": false,
+        "overridePrice": -1.0,
+        "overrideProgramIdIsRateTable": false,
+        "comp": false,
+        "resortFeeIsSpecified": false,
+        "resortFee": 42.0,
+        "programId": "RPCD-v-TFRSA-d-PROP-v-MV021"
+      },
+      {
+        "date": "2024-07-29",
+        "basePrice": 0.0,
+        "customerPrice": 0.0,
+        "price": 211.5,
+        "programIdIsRateTable": false,
+        "overridePrice": -1.0,
+        "overrideProgramIdIsRateTable": false,
+        "comp": false,
+        "resortFeeIsSpecified": false,
+        "resortFee": 42.0,
+        "programId": "RPCD-v-TFRSA-d-PROP-v-MV021"
+      }
+    ],
+    "chargesAndTaxes": {
+      "charges": [
+        {
+          "date": "2024-07-26",
+          "amount": 261.5,
+          "itemized": [
+            {
+              "itemType": "RoomCharge",
+              "amount": 211.5,
+              "item": "RoomCharge"
+            },
+            {
+              "itemType": "ComponentCharge",
+              "amount": 50.0,
+              "item": "RoomCharge"
+            }
+          ]
+        },
+        {
+          "date": "2024-07-27",
+          "amount": 261.5,
+          "itemized": [
+            {
+              "itemType": "RoomCharge",
+              "amount": 211.5,
+              "item": "RoomCharge"
+            },
+            {
+              "itemType": "ComponentCharge",
+              "amount": 50.0,
+              "item": "RoomCharge"
+            }
+          ]
+        },
+        {
+          "date": "2024-07-28",
+          "amount": 261.5,
+          "itemized": [
+            {
+              "itemType": "RoomCharge",
+              "amount": 211.5,
+              "item": "RoomCharge"
+            },
+            {
+              "itemType": "ComponentCharge",
+              "amount": 50.0,
+              "item": "RoomCharge"
+            }
+          ]
+        },
+        {
+          "date": "2024-07-29",
+          "amount": 261.5,
+          "itemized": [
+            {
+              "itemType": "RoomCharge",
+              "amount": 211.5,
+              "item": "RoomCharge"
+            },
+            {
+              "itemType": "ComponentCharge",
+              "amount": 50.0,
+              "item": "RoomCharge"
+            }
+          ]
+        }
+      ],
+      "taxesAndFees": [
+        {
+          "date": "2024-07-26",
+          "amount": 6.69,
+          "itemized": [
+            {
+              "shortDescription": "[Non Room Product 0 Tax]",
+              "pricingApplied": "NIGHTLY",
+              "itemType": "ComponentChargeTax",
+              "amount": 6.69,
+              "item": "Non Room Product 0 Tax"
+            }
+          ]
+        },
+        {
+          "date": "2024-07-27",
+          "amount": 6.69,
+          "itemized": [
+            {
+              "shortDescription": "[Non Room Product 0 Tax]",
+              "pricingApplied": "NIGHTLY",
+              "itemType": "ComponentChargeTax",
+              "amount": 6.69,
+              "item": "Non Room Product 0 Tax"
+            }
+          ]
+        },
+        {
+          "date": "2024-07-28",
+          "amount": 6.69,
+          "itemized": [
+            {
+              "shortDescription": "[Non Room Product 0 Tax]",
+              "pricingApplied": "NIGHTLY",
+              "itemType": "ComponentChargeTax",
+              "amount": 6.69,
+              "item": "Non Room Product 0 Tax"
+            }
+          ]
+        },
+        {
+          "date": "2024-07-29",
+          "amount": 6.69,
+          "itemized": [
+            {
+              "shortDescription": "[Non Room Product 0 Tax]",
+              "pricingApplied": "NIGHTLY",
+              "itemType": "ComponentChargeTax",
+              "amount": 6.69,
+              "item": "Non Room Product 0 Tax"
+            }
+          ]
+        }
+      ]
+    },
+    "ratesSummary": {
+      "roomSubtotal": 0.0,
+      "programDiscount": -846.0,
+      "discountedSubtotal": 846.0,
+      "discountedAveragePrice": 211.5,
+      "roomRequestsTotal": 200.0,
+      "adjustedRoomSubtotal": 1046.0,
+      "resortFee": 0.0,
+      "resortFeePerNight": 0.0,
+      "tripSubtotal": 846.0,
+      "resortFeeAndTax": 0.0,
+      "roomChargeTax": 26.76,
+      "occupancyFee": 0.0,
+      "tourismFee": 0.0,
+      "tourismFeeAndTax": 0.0,
+      "casinoSurcharge": 0.0,
+      "casinoSurchargeAndTax": 0.0,
+      "reservationTotal": 1072.76,
+      "depositDue": 296.49,
+      "balanceUponCheckIn": 776.27
+    },
+    "depositDetails": {
+      "dueDate": "2024-06-27",
+      "amount": 296.49,
+      "forfeitDate": "2024-07-23",
+      "forfeitAmount": 296.49,
+      "overrideAmount": -1.0
+    },
+    "depositPolicy": {
+      "depositRequired": true,
+      "creditCardRequired": false
+    },
+    "payments": [
+      {
+        "reservationInstance": 0,
+        "chargeAmount": 239.8,
+        "chargeCardExpiry": "2025-01-01",
+        "dccChecked": false,
+        "dccEligible": false,
+        "dccTransDate": "2024-06-27",
+        "dccAmount": 0.0,
+        "dccRate": 0.0,
+        "dccSettleAmount": 0.0,
+        "status": "Settled",
+        "isDeposit": true,
+        "isExternal": false,
+        "chargeCardHolder": "Uttam Ghorai",
+        "chargeCardType": "Diners Club",
+        "chargeCardMaskedNumber": "XXXXXXXXXXXX4444",
+        "chargeCardNumber": "555555lgPx104444",
+        "paymentTxnId": "abcd"
+      },
+      {
+        "reservationInstance": 0,
+        "chargeAmount": 56.69,
+        "chargeCardExpiry": "2025-01-01",
+        "dccChecked": false,
+        "dccEligible": false,
+        "dccTransDate": "2024-07-08",
+        "dccAmount": 0.0,
+        "dccRate": 0.0,
+        "dccSettleAmount": 0.0,
+        "isDeposit": false,
+        "isExternal": false,
+        "chargeCardHolder": "Uttam Ghorai",
+        "chargeCardType": "Diners Club",
+        "chargeCardMaskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX4444",
+        "chargeCardNumber": "5555550A0017Y0M59GYH3G7X4444",
+        "paymentTxnId": "abcd"
+      }
+    ],
+    "purchasedComponents": [
+      {
+        "id": "COMPONENTCD-v-DOGFEE-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-DOGFRIENDLY",
+        "code": "DOGFEE",
+        "shortDescription": "Dog Friendly Fee USD100 - Short desc",
+        "longDescription": "Dog Friendly Fee USD100 - long desc",
+        "active": true,
+        "pricingApplied": "NIGHTLY",
+        "tripPrice": 200.0,
+        "tripTax": 26.760000228881836,
+        "price": 50.0,
+        "prices": [
+          {
+            "date": "2024-07-26",
+            "amount": 50.0,
+            "tax": 6.69
+          },
+          {
+            "date": "2024-07-27",
+            "amount": 50.0,
+            "tax": 6.69
+          },
+          {
+            "date": "2024-07-28",
+            "amount": 50.0,
+            "tax": 6.69
+          },
+          {
+            "date": "2024-07-29",
+            "amount": 50.0,
+            "tax": 6.69
+          }
+        ],
+        "depositAmount": 56.69,
+        "isDepositRequired": true,
+        "nonEditable": false,
+        "ratePlanName": "Dog Friendly Fee USD100",
+        "ratePlanCode": "DOGFRIENDLY"
+      }
+    ],
+    "amountDue": 296.49,
+    "guaranteeCode": "CC",
+    "customerRank": 0,
+    "customerSegment": 0,
+    "routingInstructions": [],
+    "perpetualPricing": false,
+    "isGroupCode": false,
+    "f1Package": false,
+    "isCreditCardExpired": false,
+    "isStayDateModifiable": false,
+    "notifyCustomer": false,
+    "ratesFormat": "0.00#",
+    "hdePackage": false,
+    "isCancellable": false,
+    "depositForfeit": false
+  }
+}

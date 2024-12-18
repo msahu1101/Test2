@@ -1,0 +1,2903 @@
+{
+	"info": {
+		"_postman_id": "eb0675eb-fa22-445b-9d64-91f42ae266a4",
+		"name": "Room Booking Services - V2",
+		"description": "This collection will contain V2 services of Room Booking Services APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Availability Calendar V2 tests",
+			"item": [
+				{
+					"name": "source header missing",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"'source' header missing\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    var responseText = pm.response.text();\r",
+									"    pm.expect(responseText).to.include(\"error\");\r",
+									"    pm.expect(responseText).to.include(\"_invalid_source_header\");\r",
+									"    pm.expect(responseText).to.include(\"Required source attribute is empty or invalid\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{channelHeaderKey}}",
+								"value": "{{channel}}",
+								"type": "text"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/availability/calendar?startDate={{todayPlus45}}&endDate={{todayPlus48}}&propertyId={{propertyId}}&numAdults={{numAdults}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"availability",
+								"calendar"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "{{todayPlus45}}"
+								},
+								{
+									"key": "endDate",
+									"value": "{{todayPlus48}}"
+								},
+								{
+									"key": "propertyId",
+									"value": "{{propertyId}}"
+								},
+								{
+									"key": "numAdults",
+									"value": "{{numAdults}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "channel header missing",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"'channel' header missing\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    var responseText = pm.response.text();\r",
+									"    pm.expect(responseText).to.include(\"error\");\r",
+									"    pm.expect(responseText).to.include(\"_invalid_channel_header\");\r",
+									"    pm.expect(responseText).to.include(\"Channel header is invalid or empty\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"value": "{{source}}",
+								"type": "text"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/availability/calendar?startDate={{todayPlus45}}&endDate={{todayPlus48}}&propertyId={{propertyId}}&numAdults={{numAdults}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"availability",
+								"calendar"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "{{todayPlus45}}"
+								},
+								{
+									"key": "endDate",
+									"value": "{{todayPlus48}}"
+								},
+								{
+									"key": "propertyId",
+									"value": "{{propertyId}}"
+								},
+								{
+									"key": "numAdults",
+									"value": "{{numAdults}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "No dates",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"propertyId missing\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    var responseText = pm.response.text();\r",
+									"    pm.expect(responseText).to.include(\"error\");\r",
+									"    pm.expect(responseText).to.include(\"632-1-107\");\r",
+									"    pm.expect(responseText).to.include(\"CheckIn/Start or CheckOut/end date is invalid\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/availability/calendar?propertyId={{propertyId}}&numAdults={{numAdults}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"availability",
+								"calendar"
+							],
+							"query": [
+								{
+									"key": "propertyId",
+									"value": "{{propertyId}}"
+								},
+								{
+									"key": "numAdults",
+									"value": "{{numAdults}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid property",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"propertyId missing\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    var responseText = pm.response.text();\r",
+									"    pm.expect(responseText).to.include(\"error\");\r",
+									"    pm.expect(responseText).to.include(\"632-1-109\");\r",
+									"    pm.expect(responseText).to.include(\"No property id or invalid property id to retrieve prices\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/availability/calendar?startDate={{todayPlus45}}&endDate={{todayPlus48}}&numAdults={{numAdults}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"availability",
+								"calendar"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "{{todayPlus45}}"
+								},
+								{
+									"key": "endDate",
+									"value": "{{todayPlus48}}"
+								},
+								{
+									"key": "numAdults",
+									"value": "{{numAdults}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid dates",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Invalid dates\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    var responseText = pm.response.text();\r",
+									"    pm.expect(responseText).to.include(\"error\");\r",
+									"    pm.expect(responseText).to.include(\"632-1-107\");\r",
+									"    pm.expect(responseText).to.include(\"CheckIn/Start or CheckOut/end date is invalid\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/availability/calendar?startDate={{todayMinus3}}&endDate={{todayPlus48}}&propertyId={{propertyId}}&numAdults={{numAdults}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"availability",
+								"calendar"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "{{todayMinus3}}"
+								},
+								{
+									"key": "endDate",
+									"value": "{{todayPlus48}}"
+								},
+								{
+									"key": "propertyId",
+									"value": "{{propertyId}}"
+								},
+								{
+									"key": "numAdults",
+									"value": "{{numAdults}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partial program",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"const body = responseBody && JSON.parse(responseBody);\r",
+									"pm.test(\"Response is an Array\", function () {\r",
+									"    // console.log(Array.isArray(body))\r",
+									"    pm.expect(Array.isArray(body)).to.be.true;\r",
+									"});\r",
+									"const availableRoomsArray = body.filter(item => item.status === `AVAILABLE`);\r",
+									"pm.test(\"'AVAILABLE' rooms\", function () {\r",
+									"    pm.expect(Array.isArray(availableRoomsArray)).to.be.true;\r",
+									"    pm.expect(availableRoomsArray[0]).to.have.property('date');\r",
+									"    pm.expect(availableRoomsArray[0]).to.have.property('status');\r",
+									"});\r",
+									"const offerRoomsArray = body.filter(item => item.status === `OFFER`);\r",
+									"pm.test(\"'OFFER' rooms\", function () {\r",
+									"    pm.expect(Array.isArray(offerRoomsArray)).to.be.true;\r",
+									"    pm.expect(offerRoomsArray[0]).to.have.property('date');\r",
+									"    pm.expect(offerRoomsArray[0]).to.have.property('status');\r",
+									"    pm.expect(offerRoomsArray[0]).to.have.property('price');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/availability/calendar?startDate={{todayPlus30}}&endDate={{todayPlus45}}&propertyId={{propertyId}}&programId={{partialProgramId}}&numAdults={{numAdults}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"availability",
+								"calendar"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "{{todayPlus30}}"
+								},
+								{
+									"key": "endDate",
+									"value": "{{todayPlus45}}"
+								},
+								{
+									"key": "propertyId",
+									"value": "{{propertyId}}"
+								},
+								{
+									"key": "programId",
+									"value": "{{partialProgramId}}"
+								},
+								{
+									"key": "numAdults",
+									"value": "{{numAdults}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partial program - Exclude non offer dates",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"const body = responseBody && JSON.parse(responseBody);\r",
+									"pm.test(\"Response is an Array\", function () {\r",
+									"    // console.log(Array.isArray(body))\r",
+									"    pm.expect(Array.isArray(body)).to.be.true;\r",
+									"});\r",
+									"const offerRoomsArray = body.filter(item => item.status === `OFFER`);\r",
+									"pm.test(\"'OFFER' rooms\", function () {\r",
+									"    pm.expect(Array.isArray(offerRoomsArray)).to.be.true;\r",
+									"    pm.expect(offerRoomsArray[0]).to.have.property('date');\r",
+									"    pm.expect(offerRoomsArray[0]).to.have.property('status');\r",
+									"});\r",
+									"const soldoutRoomsArray = body.filter(item => item.status === `SOLDOUT`);\r",
+									"pm.test(\"'SOLDOUT' rooms\", function () {\r",
+									"    pm.expect(Array.isArray(soldoutRoomsArray)).to.be.true;\r",
+									"    pm.expect(soldoutRoomsArray[0]).to.have.property('date');\r",
+									"    pm.expect(soldoutRoomsArray[0]).to.have.property('status');\r",
+									"});\r",
+									"const availableRoomsArray = body.filter(item => item.status === `AVAILABLE`);\r",
+									"pm.test(\"No 'AVAILABLE' rooms\", function () {\r",
+									"    pm.expect(availableRoomsArray).to.be.empty;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "skipMyVegasConfirm",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/availability/calendar?startDate={{todayPlus30}}&endDate={{todayPlus45}}&propertyId={{propertyId}}&programId={{partialProgramId}}&numAdults={{numAdults}}&excludeNonOffer=true",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"availability",
+								"calendar"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "{{todayPlus30}}"
+								},
+								{
+									"key": "endDate",
+									"value": "{{todayPlus45}}"
+								},
+								{
+									"key": "propertyId",
+									"value": "{{propertyId}}"
+								},
+								{
+									"key": "programId",
+									"value": "{{partialProgramId}}"
+								},
+								{
+									"key": "numAdults",
+									"value": "{{numAdults}}"
+								},
+								{
+									"key": "excludeNonOffer",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Availability without programId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"const body = responseBody && JSON.parse(responseBody);\r",
+									"pm.test(\"Response is an Array\", function () {\r",
+									"    // console.log(Array.isArray(body))\r",
+									"    pm.expect(Array.isArray(body)).to.be.true;\r",
+									"});\r",
+									"const availableRoomsArray = body.filter(item => item.status === `AVAILABLE`);\r",
+									"pm.test(\"'AVAILABLE' rooms\", function () {\r",
+									"    pm.expect(Array.isArray(availableRoomsArray)).to.be.true;\r",
+									"    pm.expect(availableRoomsArray[0]).to.have.property('date');\r",
+									"    pm.expect(availableRoomsArray[0]).to.have.property('status');\r",
+									"});\r",
+									"const offerRoomsArray = body.filter(item => item.status === `OFFER`);\r",
+									"pm.test(\"No 'OFFER' rooms\", function () {\r",
+									"    pm.expect(offerRoomsArray).to.be.empty;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/availability/calendar?startDate={{todayPlus30}}&endDate={{todayPlus45}}&propertyId={{propertyId}}&numAdults={{numAdults}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"availability",
+								"calendar"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "{{todayPlus30}}"
+								},
+								{
+									"key": "endDate",
+									"value": "{{todayPlus45}}"
+								},
+								{
+									"key": "propertyId",
+									"value": "{{propertyId}}"
+								},
+								{
+									"key": "numAdults",
+									"value": "{{numAdults}}"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Calendar availability - Transient",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"const body = responseBody && JSON.parse(responseBody);\r",
+									"pm.test(\"Response is an Array\", function () {\r",
+									"    // console.log(Array.isArray(body))\r",
+									"    pm.expect(Array.isArray(body)).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/availability/calendar?startDate={{todayPlus30}}&endDate={{todayPlus45}}&propertyId={{propertyId}}&numAdults={{numAdults}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"availability",
+								"calendar"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "{{todayPlus30}}"
+								},
+								{
+									"key": "endDate",
+									"value": "{{todayPlus45}}"
+								},
+								{
+									"key": "propertyId",
+									"value": "{{propertyId}}"
+								},
+								{
+									"key": "numAdults",
+									"value": "{{numAdults}}"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "All the Availability Calendar related integration test cases will be kept here.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Room Pricing & Availability",
+			"item": [
+				{
+					"name": "Availability Calendar V2",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/availability/calendar?startDate={{todayPlus30}}&endDate={{todayPlus45}}&propertyId={{propertyId}}&numAdults={{numAdults}}&numChildren={{numChildren}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"availability",
+								"calendar"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "{{todayPlus30}}"
+								},
+								{
+									"key": "endDate",
+									"value": "{{todayPlus45}}"
+								},
+								{
+									"key": "propertyId",
+									"value": "{{propertyId}}"
+								},
+								{
+									"key": "numAdults",
+									"value": "{{numAdults}}"
+								},
+								{
+									"key": "numChildren",
+									"value": "{{numChildren}}"
+								},
+								{
+									"key": "programId",
+									"value": "{{partialProgramId}}",
+									"disabled": true
+								},
+								{
+									"key": "ignoreChannelMargins",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "numRooms",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "customerDominantPlay",
+									"value": "Slot",
+									"disabled": true
+								},
+								{
+									"key": "customerRank",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "excludeNonOffer",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "operaConfirmationNumber",
+									"value": "790291063",
+									"disabled": true
+								},
+								{
+									"key": "auroraItineraryIds",
+									"value": "7850908673,7850909185",
+									"disabled": true
+								},
+								{
+									"key": "customerId",
+									"value": "923342929921",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Availability Calendar V3",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "ICE"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "ICE"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"type": "text",
+								"value": "{{$timestamp}}"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v3/availability/calendar?startDate={{todayPlus45}}&endDate={{todayPlus46}}&propertyId={{propertyId}}&numAdults={{numAdults}}&totalNights=2",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v3",
+								"availability",
+								"calendar"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "{{todayPlus45}}"
+								},
+								{
+									"key": "endDate",
+									"value": "{{todayPlus46}}"
+								},
+								{
+									"key": "propertyId",
+									"value": "{{propertyId}}"
+								},
+								{
+									"key": "numAdults",
+									"value": "{{numAdults}}"
+								},
+								{
+									"key": "totalNights",
+									"value": "2"
+								},
+								{
+									"key": "programId",
+									"value": "{{partialProgramId}}",
+									"disabled": true
+								},
+								{
+									"key": "ignoreChannelMargins",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "numRooms",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "customerDominantPlay",
+									"value": "Slot",
+									"disabled": true
+								},
+								{
+									"key": "customerRank",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "operaConfirmationNumber",
+									"value": "790291063",
+									"disabled": true
+								},
+								{
+									"key": "auroraItineraryIds",
+									"value": "7850908673,7850909185",
+									"disabled": true
+								},
+								{
+									"key": "customerId",
+									"value": "931428499457",
+									"disabled": true
+								},
+								{
+									"key": "programId",
+									"value": "5467d989-24f5-4188-a177-daa715763c59",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Availability Trip V2",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/availability/trip?checkInDate={{todayPlus45}}&checkOutDate={{todayPlus48}}&propertyId={{propertyId}}&numAdults={{numAdults}}&customerId=923391623169&numRooms=1&isGroupCode=true",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"availability",
+								"trip"
+							],
+							"query": [
+								{
+									"key": "checkInDate",
+									"value": "{{todayPlus45}}"
+								},
+								{
+									"key": "checkOutDate",
+									"value": "{{todayPlus48}}"
+								},
+								{
+									"key": "propertyId",
+									"value": "{{propertyId}}"
+								},
+								{
+									"key": "numAdults",
+									"value": "{{numAdults}}"
+								},
+								{
+									"key": "customerId",
+									"value": "923391623169",
+									"description": "tlntest3@yopmail.com's customerId"
+								},
+								{
+									"key": "numRooms",
+									"value": "1"
+								},
+								{
+									"key": "isGroupCode",
+									"value": "true"
+								},
+								{
+									"key": "perpetualPricing",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "numChildren",
+									"value": "{{numChildren}}",
+									"disabled": true
+								},
+								{
+									"key": "programId",
+									"value": "255460e6-881e-435a-b30d-f669e82d067e",
+									"description": "5467d989-24f5-4188-a177-daa715763c59",
+									"disabled": true
+								},
+								{
+									"key": "includeSoldOutRooms",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "enableMrd",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "mlifeNumber",
+									"value": "79950292",
+									"description": "tlntest3@yopmail.com's mlifeNumber",
+									"disabled": true
+								},
+								{
+									"key": "excludeNonOffer",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "customerRank",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "customerDominantPlay",
+									"value": "Slot",
+									"disabled": true
+								},
+								{
+									"key": "ignoreChannelMargins",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Availability Trip V3",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v3/availability/trip?checkInDate={{todayPlus45}}&checkOutDate={{todayPlus48}}&propertyId={{propertyId}}&numAdults={{numAdults}}&includeSoldOutRooms=true&numRooms=1",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v3",
+								"availability",
+								"trip"
+							],
+							"query": [
+								{
+									"key": "checkInDate",
+									"value": "{{todayPlus45}}"
+								},
+								{
+									"key": "checkOutDate",
+									"value": "{{todayPlus48}}"
+								},
+								{
+									"key": "propertyId",
+									"value": "{{propertyId}}"
+								},
+								{
+									"key": "numAdults",
+									"value": "{{numAdults}}"
+								},
+								{
+									"key": "includeSoldOutRooms",
+									"value": "true"
+								},
+								{
+									"key": "numRooms",
+									"value": "1"
+								},
+								{
+									"key": "numChildren",
+									"value": "{{numChildren}}",
+									"disabled": true
+								},
+								{
+									"key": "perpetualPricing",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "programId",
+									"value": "255460e6-881e-435a-b30d-f669e82d067e",
+									"description": "5467d989-24f5-4188-a177-daa715763c59",
+									"disabled": true
+								},
+								{
+									"key": "mlifeNumber",
+									"value": "79950292",
+									"description": "tlntest3@yopmail.com's mlifeNumber\n79950292//85407598",
+									"disabled": true
+								},
+								{
+									"key": "customerId",
+									"value": "923391623169",
+									"description": "tlntest3@yopmail.com's customerId\n923391623169//1024235601921",
+									"disabled": true
+								},
+								{
+									"key": "isGroupCode",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "customerRank",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "customerDominantPlay",
+									"value": "Slot",
+									"disabled": true
+								},
+								{
+									"key": "ignoreChannelMargins",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Availability components",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"type": "text",
+								"value": "{{$timestamp}}"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/availability/components?checkInDate={{todayPlus45}}&checkOutDate={{todayPlus48}}&propertyId={{propertyId}}&roomTypeId=23f5bef8-63ea-4ba9-a290-13b5a3056595",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"availability",
+								"components"
+							],
+							"query": [
+								{
+									"key": "checkInDate",
+									"value": "{{todayPlus45}}"
+								},
+								{
+									"key": "checkOutDate",
+									"value": "{{todayPlus48}}"
+								},
+								{
+									"key": "propertyId",
+									"value": "{{propertyId}}"
+								},
+								{
+									"key": "roomTypeId",
+									"value": "23f5bef8-63ea-4ba9-a290-13b5a3056595"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resorts Price V2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{mgmresorts}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{web}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/availability/resorts?checkInDate={{todayPlus45}}&checkOutDate={{todayPlus46}}&numAdults={{numAdults}}&propertyIds=bee81f88-286d-43dd-91b5-3917d9d62a68",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"availability",
+								"resorts"
+							],
+							"query": [
+								{
+									"key": "checkInDate",
+									"value": "{{todayPlus45}}"
+								},
+								{
+									"key": "checkOutDate",
+									"value": "{{todayPlus46}}"
+								},
+								{
+									"key": "customerId",
+									"value": "923342929921",
+									"description": "QA2: 1347616769",
+									"disabled": true
+								},
+								{
+									"key": "perpetualPricing",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "numAdults",
+									"value": "{{numAdults}}"
+								},
+								{
+									"key": "propertyIds",
+									"value": "bee81f88-286d-43dd-91b5-3917d9d62a68",
+									"description": "full-list: 66964e2b-2550-4476-84c3-1a4c0c5c067f,dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad,8bf670c2-3e89-412b-9372-6c87a215e442,44e610ab-c209-4232-8bb4-51f7b9b13a75,2159252c-60d3-47db-bbae-b1db6bb15072,13b178b0-8beb-43d5-af25-1738b7267e63,6c5cff3f-f01a-4f9b-87ab-8395ae8108db,e0f70eb3-7e27-4c33-8bcd-f30bf3b1103a,4a65a92a-962b-433e-841c-37e18dc5d68d,e2704b04-d515-45b0-8afd-4fa1424ff0a8,607c07e7-3e31-4e4c-a4e1-f55dca66fea2,1f3ed672-3f8f-44d8-9215-81da3c845d83,f8d6a944-7816-412f-a39a-9a63aad26833,0990fdce-7fc8-41b1-b8b6-9a25dce3db55,bee81f88-286d-43dd-91b5-3917d9d62a68,40b61feb-750a-45df-ae68-e23e6272b16b"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room Programs & Offers",
+			"item": [
+				{
+					"name": "Applicable Program API",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"value": "{{source}}",
+								"type": "text"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"value": "{{channel}}",
+								"type": "text"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/programs/applicable?customerId=150082879490&propertyId={{propertyId}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"programs",
+								"applicable"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "150082879490"
+								},
+								{
+									"key": "propertyId",
+									"value": "{{propertyId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Offers API",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{channelHeaderKey}}",
+								"value": "{{channel}}",
+								"type": "text"
+							},
+							{
+								"key": "{{sourceHeaderKey}}",
+								"value": "{{source}}",
+								"type": "text"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{env}}/v2/customer/offers",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"customer",
+								"offers"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "propertyId",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "notRolledToSegments",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "notSorted",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Perpetual Offers API",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}",
+								"disabled": true
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}",
+								"disabled": true
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer jwt",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "channel",
+								"value": "web",
+								"type": "text"
+							},
+							{
+								"key": "source",
+								"value": "mgmresorts",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/programs/default-perpetual?propertyIds=66964e2b-2550-4476-84c3-1a4c0c5c067f,dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad,8bf670c2-3e89-412b-9372-6c87a215e442,44e610ab-c209-4232-8bb4-51f7b9b13a75,2159252c-60d3-47db-bbae-b1db6bb15072,13b178b0-8beb-43d5-af25-1738b7267e63,6c5cff3f-f01a-4f9b-87ab-8395ae8108db,e0f70eb3-7e27-4c33-8bcd-f30bf3b1103a,4a65a92a-962b-433e-841c-37e18dc5d68d,e2704b04-d515-45b0-8afd-4fa1424ff0a8,607c07e7-3e31-4e4c-a4e1-f55dca66fea2,1f3ed672-3f8f-44d8-9215-81da3c845d83,f8d6a944-7816-412f-a39a-9a63aad26833,0990fdce-7fc8-41b1-b8b6-9a25dce3db55,bee81f88-286d-43dd-91b5-3917d9d62a68,40b61feb-750a-45df-ae68-e23e6272b16b&customerId=923391623169",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"programs",
+								"default-perpetual"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "923342929921",
+									"disabled": true
+								},
+								{
+									"key": "propertyIds",
+									"value": "66964e2b-2550-4476-84c3-1a4c0c5c067f,dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad,8bf670c2-3e89-412b-9372-6c87a215e442,44e610ab-c209-4232-8bb4-51f7b9b13a75,2159252c-60d3-47db-bbae-b1db6bb15072,13b178b0-8beb-43d5-af25-1738b7267e63,6c5cff3f-f01a-4f9b-87ab-8395ae8108db,e0f70eb3-7e27-4c33-8bcd-f30bf3b1103a,4a65a92a-962b-433e-841c-37e18dc5d68d,e2704b04-d515-45b0-8afd-4fa1424ff0a8,607c07e7-3e31-4e4c-a4e1-f55dca66fea2,1f3ed672-3f8f-44d8-9215-81da3c845d83,f8d6a944-7816-412f-a39a-9a63aad26833,0990fdce-7fc8-41b1-b8b6-9a25dce3db55,bee81f88-286d-43dd-91b5-3917d9d62a68,40b61feb-750a-45df-ae68-e23e6272b16b"
+								},
+								{
+									"key": "customerId",
+									"value": "923391623169"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Offer V2 API",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"value": "{{source}}",
+								"type": "text"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"value": "{{channel}}",
+								"type": "text"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/offer/validate?customerId=923342929921&programId=5c629ee4-ec38-4a07-a8d8-b435e0ef4069&propertyId=2159252c-60d3-47db-bbae-b1db6bb15072",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"offer",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "923342929921"
+								},
+								{
+									"key": "programId",
+									"value": "5c629ee4-ec38-4a07-a8d8-b435e0ef4069"
+								},
+								{
+									"key": "propertyId",
+									"value": "2159252c-60d3-47db-bbae-b1db6bb15072"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Offers API",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{channelHeaderKey}}",
+								"value": "{{channel}}",
+								"type": "text"
+							},
+							{
+								"key": "{{sourceHeaderKey}}",
+								"value": "{{source}}",
+								"type": "text"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{env}}/v2/offers?programIds={{partialProgramId}}&startDate={{todayPlus45}}&endDate={{todayPlus48}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"offers"
+							],
+							"query": [
+								{
+									"key": "programIds",
+									"value": "{{partialProgramId}}"
+								},
+								{
+									"key": "startDate",
+									"value": "{{todayPlus45}}"
+								},
+								{
+									"key": "endDate",
+									"value": "{{todayPlus48}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room Booking",
+			"item": [
+				{
+					"name": "Save Basic member Reservation",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"roomReservation\": {\r\n\t\t\"id\": {{$timestamp}},\r\n\t\t\"customerId\": 923600551937,\r\n\t\t\"propertyId\": \"{{propertyId}}\",\r\n\t\t\"itineraryId\": \"7861073921\",\r\n\t\t\"roomTypeId\": \"23f5bef8-63ea-4ba9-a290-13b5a3056595\",\r\n\t\t\"profile\": {\r\n\t\t\t\"id\": 923600551937,\r\n\t\t\t\"mlifeNo\": 79950292,\r\n            \"title\": \"DR\",\r\n\t\t\t\"firstName\": \"Lakshmi\",\r\n\t\t\t\"lastName\": \"Test\",\r\n\t\t\t\"phoneNumbers\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"type\": \"Home\",\r\n\t\t\t\t\t\"number\": \"9611877004\"\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"emailAddress1\": \"tlntest3@yopmail.com\",\r\n\t\t\t\"emailAddress2\": \"tlntest3@yopmail.com\",\r\n\t\t\t\"dateOfBirth\": \"1985-01-01\",\r\n\t\t\t\"addresses\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"type\": \"Home\",\r\n\t\t\t\t\t\"preferred\": true,\r\n\t\t\t\t\t\"street1\": \"234 W Main St\",\r\n\t\t\t\t\t\"street2\": \"Unit 415\",\r\n\t\t\t\t\t\"city\": \"Las Vegas\",\r\n\t\t\t\t\t\"state\": \"NV\",\r\n\t\t\t\t\t\"postalCode\": \"12345\",\r\n\t\t\t\t\t\"country\": \"US\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t\"billing\": [\r\n\t\t\t{\r\n\t\t\t\t\"payment\": {\r\n\t\t\t\t\t\"amount\": 0,\r\n\t\t\t\t\t\"cardHolder\": \"John doe\",\r\n\t\t\t\t\t\"firstName\": \"John\",\r\n\t\t\t\t\t\"lastName\": \"Doe\",\r\n\t\t\t\t\t\"maskedNumber\": \"XXXXXXXXXXXX1111\",\r\n\t\t\t\t\t\"ccToken\": \"4111110A001DQXFHY79D9XCZ1111\",\r\n\t\t\t\t\t\"cvv\": 123,\r\n\t\t\t\t\t\"type\": \"Visa\",\r\n\t\t\t\t\t\"expiry\": \"10/2023\"\r\n\t\t\t\t},\r\n\t\t\t\t\"address\": {\r\n\t\t\t\t\t\"street1\": \"234 W Main St\",\r\n\t\t\t\t\t\"street2\": \"Unit 415\",\r\n\t\t\t\t\t\"city\": \"Las Vegas\",\r\n\t\t\t\t\t\"state\": \"NV\",\r\n\t\t\t\t\t\"postalCode\": \"12345\",\r\n\t\t\t\t\t\"country\": \"US\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"tripDetails\": {\r\n\t\t\t\"checkInDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"checkOutDate\": \"{{todayPlus46}}\",\r\n\t\t\t\"numAdults\": 2,\r\n\t\t\t\"numChildren\": 2,\r\n\t\t\t\"numRooms\": 1\r\n\t\t},\r\n\t\t\"bookings\": [\r\n\t\t\t{\r\n\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\"basePrice\": 10024.99,\r\n\t\t\t\t\"customerPrice\": 5513.7445,\r\n\t\t\t\t\"price\": 5513.7445,\r\n\t\t\t\t\"programIdIsRateTable\": false,\r\n\t\t\t\t\"overridePrice\": -1.0,\r\n\t\t\t\t\"overrideProgramIdIsRateTable\": false,\r\n\t\t\t\t\"isComp\": false,\r\n\t\t\t\t\"resortFeeIsSpecified\": false,\r\n\t\t\t\t\"resortFee\": 0.0,\r\n\t\t\t\t\"programId\": \"3664901f-ca40-4a68-a1d9-41d2e3fe8877\",\r\n                \"pricingRuleId\": \"861f212f-f2e8-4408-bce7-7b41dfe0fbeb\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"chargesAndTaxes\": {\r\n\t\t\t\"charges\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\t\"amount\": 5548.7445,\r\n\t\t\t\t\t\"itemized\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"RoomCharge\",\r\n\t\t\t\t\t\t\t\"amount\": 5548.7445,\r\n\t\t\t\t\t\t\t\"item\": \"Room Charge\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"taxesAndFees\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\t\"amount\": 111.32489,\r\n\t\t\t\t\t\"itemized\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"RoomChargeTax\",\r\n\t\t\t\t\t\t\t\"amount\": 110.27489,\r\n\t\t\t\t\t\t\t\"item\": \"Room Tax\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t\"depositDetails\": {\r\n\t\t\t\"dueDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"amountPolicy\": \"PercentAmount\",\r\n\t\t\t\"amount\": 0,\r\n\t\t\t\"forfeitDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"forfeitAmount\": 0,\r\n\t\t\t\"overrideAmount\": 0,\r\n\t\t\t\"depositRuleCode\": \"string\",\r\n\t\t\t\"cancellationRuleCode\": \"string\",\r\n\t\t\t\"itemized\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"itemType\": \"RoomCharge\",\r\n\t\t\t\t\t\"amount\": 0,\r\n\t\t\t\t\t\"item\": \"string\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t\"amountDue\": 5624.02,\r\n\t\t\"guaranteeCode\": \"CC\"\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/v2/reservation/save",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Basic transient reservation",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"roomReservation\": {\r\n\t\t\"id\": {{$timestamp}},\r\n\t\t\"customerId\": 923600551937,\r\n\t\t\"propertyId\": \"66964e2b-2550-4476-84c3-1a4c0c5c067f\",\r\n\t\t\"itineraryId\": \"7869393409\",\r\n\t\t\"roomTypeId\": \"23f5bef8-63ea-4ba9-a290-13b5a3056595\",\r\n        \"profile\": {\r\n            \"id\": 923600551937,\r\n\t\t\t\"firstName\": \"Lakshmi\",\r\n\t\t\t\"lastName\": \"Test\"\r\n            },\r\n\t\t\"billing\": [\r\n\t\t\t{\r\n\t\t\t\t\"payment\": {\r\n\t\t\t\t\t\"amount\": 6802.793197200001,\r\n\t\t\t\t\t\"cardHolder\": \"John doe\",\r\n\t\t\t\t\t\"firstName\": \"John\",\r\n\t\t\t\t\t\"lastName\": \"Doe\",\r\n\t\t\t\t\t\"maskedNumber\": \"XXXXXXXXXXXX4444\",\r\n\t\t\t\t\t\"ccToken\": \"LXM8dmG5n4Q/vcxr2RI3INxrHJkyRbwncs7AhDGc+YC/uXGHoatACqkVWNTUuRKoSBReazxuYfCpsGDeO0ydsA==\",\r\n\t\t\t\t\t\"cvv\": 123,\r\n\t\t\t\t\t\"type\": \"Mastercard\",\r\n\t\t\t\t\t\"expiry\": \"10/2022\"\r\n\t\t\t\t},\r\n\t\t\t\t\"address\": {\r\n\t\t\t\t\t\"street1\": \"234 W Main St\",\r\n\t\t\t\t\t\"street2\": \"Unit 415\",\r\n\t\t\t\t\t\"city\": \"Las Vegas\",\r\n\t\t\t\t\t\"state\": \"NV\",\r\n\t\t\t\t\t\"postalCode\": \"12345\",\r\n\t\t\t\t\t\"country\": \"US\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"tripDetails\": {\r\n\t\t\t\"checkInDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"checkOutDate\": \"{{todayPlus46}}\",\r\n\t\t\t\"numAdults\": {{numAdults}},\r\n\t\t\t\"numChildren\": {{numChildren}},\r\n\t\t\t\"numRooms\": 1\r\n\t\t},\r\n\t\t\"bookings\": [\r\n\t\t\t{\r\n\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\"basePrice\": 9999.99,\r\n\t\t\t\t\"customerPrice\": 5999.994000000001,\r\n\t\t\t\t\"price\": 5999.994000000001,\r\n\t\t\t\t\"programIdIsRateTable\": false,\r\n\t\t\t\t\"overridePrice\": -1.0,\r\n\t\t\t\t\"overrideProgramIdIsRateTable\": false,\r\n\t\t\t\t\"isComp\": false,\r\n\t\t\t\t\"resortFeeIsSpecified\": false,\r\n\t\t\t\t\"resortFee\": 0.0,\r\n\t\t\t\t\"programId\": \"7cbd1975-8c9d-4c1f-9f40-355e1f02179b\",\r\n\t\t\t\t\"pricingRuleId\": \"7e9367a5-fa5b-488f-9296-469aec95be9c\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"chargesAndTaxes\": {\r\n\t\t\t\"charges\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\t\"amount\": 6036.994000000001,\r\n\t\t\t\t\t\"itemized\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"RoomCharge\",\r\n\t\t\t\t\t\t\t\"amount\": 5999.994000000001,\r\n\t\t\t\t\t\t\t\"item\": \"Room Charge\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"ExtraGuestCharge\",\r\n\t\t\t\t\t\t\t\"amount\": 0.0,\r\n\t\t\t\t\t\t\t\"item\": \"Extra Guest Charge\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"ResortFee\",\r\n\t\t\t\t\t\t\t\"amount\": 37.0,\r\n\t\t\t\t\t\t\t\"item\": \"Resort Fee\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"taxesAndFees\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\t\"amount\": 807.7497972000002,\r\n\t\t\t\t\t\"itemized\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"RoomChargeTax\",\r\n\t\t\t\t\t\t\t\"amount\": 802.7991972000002,\r\n\t\t\t\t\t\t\t\"item\": \"Room Tax\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"ExtraGuestChargeTax\",\r\n\t\t\t\t\t\t\t\"amount\": 0.0,\r\n\t\t\t\t\t\t\t\"item\": \"Extra Guest Tax\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"ResortFeeTax\",\r\n\t\t\t\t\t\t\t\"amount\": 4.9506,\r\n\t\t\t\t\t\t\t\"item\": \"Resort Fee Tax\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t\"depositDetails\": {\r\n\t\t\t\"dueDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"amountPolicy\": \"Nights\",\r\n\t\t\t\"amount\": 6802.793197200001,\r\n\t\t\t\"forfeitDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"forfeitAmount\": 6802.793197200001,\r\n\t\t\t\"overrideAmount\": -1.0,\r\n\t\t\t\"depositRuleCode\": \"1NT\",\r\n\t\t\t\"cancellationRuleCode\": \"72H\",\r\n\t\t\t\"itemized\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"itemType\": \"RoomCharge\",\r\n\t\t\t\t\t\"amount\": 5999.994000000001,\r\n\t\t\t\t\t\"item\": \"Room Charge\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"itemType\": \"RoomChargeTax\",\r\n\t\t\t\t\t\"amount\": 802.7991972000002,\r\n\t\t\t\t\t\"item\": \"Room Tax\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t\"amountDue\": 0.0,\r\n\t\t\"guaranteeCode\": \"CC\"\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/v2/reservation",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transient reservation with multiple CC",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"type": "text",
+								"value": "{{$timestamp}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"roomReservation\": {\r\n\t\t\"id\": {{$timestamp}},\r\n\t\t\"customerId\": 923600551937,\r\n\t\t\"propertyId\": \"66964e2b-2550-4476-84c3-1a4c0c5c067f\",\r\n\t\t\"itineraryId\": \"7857808385\",\r\n\t\t\"roomTypeId\": \"23f5bef8-63ea-4ba9-a290-13b5a3056595\",\r\n        \"profile\": {\r\n\t\t\t\"firstName\": \"Lakshmi\",\r\n\t\t\t\"lastName\": \"Test\"\r\n            },\r\n\t\t\"billing\": [\r\n\t\t\t{\r\n\t\t\t\t\"payment\": {\r\n\t\t\t\t\t\"amount\": 0,\r\n\t\t\t\t\t\"cardHolder\": \"John doe\",\r\n\t\t\t\t\t\"firstName\": \"John\",\r\n\t\t\t\t\t\"lastName\": \"Doe\",\r\n\t\t\t\t\t\"maskedNumber\": \"XXXXXXXXXXXX1111\",\r\n\t\t\t\t\t\"ccToken\": \"4111110A001DQXFHY79D9XCZ1111\",\r\n\t\t\t\t\t\"cvv\": 234,\r\n\t\t\t\t\t\"type\": \"Visa\",\r\n\t\t\t\t\t\"expiry\": \"11/2023\"\r\n\t\t\t\t},\r\n\t\t\t\t\"address\": {\r\n\t\t\t\t\t\"street1\": \"235 W Main St\",\r\n\t\t\t\t\t\"street2\": \"Unit 416\",\r\n\t\t\t\t\t\"city\": \"Las Vegas\",\r\n\t\t\t\t\t\"state\": \"NV\",\r\n\t\t\t\t\t\"postalCode\": \"12346\",\r\n\t\t\t\t\t\"country\": \"US\"\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"payment\": {\r\n\t\t\t\t\t\"amount\": 0,\r\n\t\t\t\t\t\"cardHolder\": \"John doe\",\r\n\t\t\t\t\t\"firstName\": \"John\",\r\n\t\t\t\t\t\"lastName\": \"Doe\",\r\n\t\t\t\t\t\"maskedNumber\": \"XXXXXXXXXXXX1111\",\r\n\t\t\t\t\t\"ccToken\": \"4111110A001DQXFHY79D9XCZ1111\",\r\n\t\t\t\t\t\"cvv\": 234,\r\n\t\t\t\t\t\"type\": \"Visa\",\r\n\t\t\t\t\t\"expiry\": \"11/2022\"\r\n\t\t\t\t},\r\n\t\t\t\t\"address\": {\r\n\t\t\t\t\t\"street1\": \"234 W Main St\",\r\n\t\t\t\t\t\"street2\": \"Unit 415\",\r\n\t\t\t\t\t\"city\": \"Las Vegas\",\r\n\t\t\t\t\t\"state\": \"NV\",\r\n\t\t\t\t\t\"postalCode\": \"12345\",\r\n\t\t\t\t\t\"country\": \"US\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"tripDetails\": {\r\n\t\t\t\"checkInDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"checkOutDate\": \"{{todayPlus46}}\",\r\n\t\t\t\"numAdults\": {{numAdults}},\r\n\t\t\t\"numChildren\": {{numChildren}},\r\n\t\t\t\"numRooms\": 1\r\n\t\t},\r\n\t\t\"bookings\": [\r\n\t\t\t{\r\n\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\"basePrice\": 10024.99,\r\n\t\t\t\t\"customerPrice\": 5513.7445,\r\n\t\t\t\t\"price\": 5513.7445,\r\n\t\t\t\t\"programIdIsRateTable\": false,\r\n\t\t\t\t\"overridePrice\": -1.0,\r\n\t\t\t\t\"overrideProgramIdIsRateTable\": false,\r\n\t\t\t\t\"isComp\": false,\r\n\t\t\t\t\"resortFeeIsSpecified\": false,\r\n\t\t\t\t\"resortFee\": 0.0,\r\n\t\t\t\t\"programId\": \"3664901f-ca40-4a68-a1d9-41d2e3fe8877\",\r\n                \"pricingRuleId\": \"861f212f-f2e8-4408-bce7-7b41dfe0fbeb\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"chargesAndTaxes\": {\r\n\t\t\t\"charges\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\t\"amount\": 5548.7445,\r\n\t\t\t\t\t\"itemized\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"RoomCharge\",\r\n\t\t\t\t\t\t\t\"amount\": 5548.7445,\r\n\t\t\t\t\t\t\t\"item\": \"Room Charge\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"taxesAndFees\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\t\"amount\": 111.32489,\r\n\t\t\t\t\t\"itemized\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"RoomChargeTax\",\r\n\t\t\t\t\t\t\t\"amount\": 110.27489,\r\n\t\t\t\t\t\t\t\"item\": \"Room Tax\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t\"depositDetails\": {\r\n\t\t\t\"dueDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"amountPolicy\": \"PercentAmount\",\r\n\t\t\t\"amount\": 0,\r\n\t\t\t\"forfeitDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"forfeitAmount\": 0,\r\n\t\t\t\"overrideAmount\": 0,\r\n\t\t\t\"depositRuleCode\": \"string\",\r\n\t\t\t\"cancellationRuleCode\": \"string\",\r\n\t\t\t\"itemized\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"itemType\": \"RoomCharge\",\r\n\t\t\t\t\t\"amount\": 0,\r\n\t\t\t\t\t\"item\": \"string\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t\"amountDue\": 5624.02,\r\n\t\t\"guaranteeCode\": \"CC\"\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/v2/reservation",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Basic member Reservation",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"roomReservation\": {\r\n\t\t\"id\": {{$timestamp}},\r\n\t\t\"customerId\": 923600551937,\r\n\t\t\"propertyId\": \"{{propertyId}}\",\r\n\t\t\"itineraryId\": \"7865775617\",\r\n\t\t\"roomTypeId\": \"23f5bef8-63ea-4ba9-a290-13b5a3056595\",\r\n\t\t\"specialRequests\": [\r\n\t\t\t\"03ca81ad-b895-4e04-8993-aaed5b80c605\",\r\n\t\t\t\"a8f0b450-dcf2-46e5-b06e-4006d4f619d1\"\r\n\t\t],\r\n\t\t\"profile\": {\r\n\t\t\t\"id\": 923600551937,\r\n\t\t\t\"mlifeNo\": 79950292,\r\n            \"title\": \"DR\",\r\n\t\t\t\"firstName\": \"RBSv2\",\r\n\t\t\t\"lastName\": \"UnitTest\",\r\n\t\t\t\"phoneNumbers\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"type\": \"Home\",\r\n\t\t\t\t\t\"number\": \"9611877004\"\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"emailAddress1\": \"tlntest3@yopmail.com\",\r\n\t\t\t\"emailAddress2\": \"tlntest3@yopmail.com\",\r\n\t\t\t\"dateOfBirth\": \"1985-01-01\",\r\n\t\t\t\"addresses\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"type\": \"Home\",\r\n\t\t\t\t\t\"preferred\": true,\r\n\t\t\t\t\t\"street1\": \"234 W Main St\",\r\n\t\t\t\t\t\"street2\": \"Unit 415\",\r\n\t\t\t\t\t\"city\": \"Las Vegas\",\r\n\t\t\t\t\t\"state\": \"NV\",\r\n\t\t\t\t\t\"postalCode\": \"12345\",\r\n\t\t\t\t\t\"country\": \"US\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t\"billing\": [\r\n\t\t\t{\r\n\t\t\t\t\"payment\": {\r\n\t\t\t\t\t\"amount\": 6802.793197200001,\r\n\t\t\t\t\t\"cardHolder\": \"John doe\",\r\n\t\t\t\t\t\"firstName\": \"RBSv2\",\r\n\t\t\t\t\t\"lastName\": \"UnitTest\",\r\n\t\t\t\t\t\"maskedNumber\": \"XXXXXXXXXXXX1111\",\r\n\t\t\t\t\t\"ccToken\": \"4111110A001DQXFHY79D9XCZ1111\",\r\n\t\t\t\t\t\"cvv\": 123,\r\n\t\t\t\t\t\"type\": \"Visa\",\r\n\t\t\t\t\t\"expiry\": \"10/2023\"\r\n\t\t\t\t},\r\n\t\t\t\t\"address\": {\r\n\t\t\t\t\t\"street1\": \"234 W Main St\",\r\n\t\t\t\t\t\"street2\": \"Unit 415\",\r\n\t\t\t\t\t\"city\": \"Las Vegas\",\r\n\t\t\t\t\t\"state\": \"NV\",\r\n\t\t\t\t\t\"postalCode\": \"12345\",\r\n\t\t\t\t\t\"country\": \"US\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"tripDetails\": {\r\n\t\t\t\"checkInDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"checkOutDate\": \"{{todayPlus46}}\",\r\n\t\t\t\"numAdults\": {{numAdults}},\r\n\t\t\t\"numChildren\": {{numChildren}},\r\n\t\t\t\"numRooms\": 1\r\n\t\t},\r\n\t\t\"bookings\": [\r\n\t\t\t{\r\n\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\"basePrice\": 9999.99,\r\n\t\t\t\t\"customerPrice\": 5999.994000000001,\r\n\t\t\t\t\"price\": 5999.994000000001,\r\n\t\t\t\t\"programIdIsRateTable\": false,\r\n\t\t\t\t\"overridePrice\": -1.0,\r\n\t\t\t\t\"overrideProgramIdIsRateTable\": false,\r\n\t\t\t\t\"isComp\": false,\r\n\t\t\t\t\"resortFeeIsSpecified\": false,\r\n\t\t\t\t\"resortFee\": 0.0,\r\n\t\t\t\t\"programId\": \"7cbd1975-8c9d-4c1f-9f40-355e1f02179b\",\r\n                \"pricingRuleId\": \"7e9367a5-fa5b-488f-9296-469aec95be9c\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"chargesAndTaxes\": {\r\n\t\t\t\"charges\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\t\"amount\": 6036.994000000001,\r\n\t\t\t\t\t\"itemized\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"RoomCharge\",\r\n\t\t\t\t\t\t\t\"amount\": 5999.994000000001,\r\n\t\t\t\t\t\t\t\"item\": \"Room Charge\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"ExtraGuestCharge\",\r\n\t\t\t\t\t\t\t\"amount\": 0.0,\r\n\t\t\t\t\t\t\t\"item\": \"Extra Guest Charge\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"ResortFee\",\r\n\t\t\t\t\t\t\t\"amount\": 37.0,\r\n\t\t\t\t\t\t\t\"item\": \"Resort Fee\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"taxesAndFees\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\t\"amount\": 807.7497972000002,\r\n\t\t\t\t\t\"itemized\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"RoomChargeTax\",\r\n\t\t\t\t\t\t\t\"amount\": 802.7991972000002,\r\n\t\t\t\t\t\t\t\"item\": \"Room Tax\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"ExtraGuestChargeTax\",\r\n\t\t\t\t\t\t\t\"amount\": 0.0,\r\n\t\t\t\t\t\t\t\"item\": \"Extra Guest Tax\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"ResortFeeTax\",\r\n\t\t\t\t\t\t\t\"amount\": 4.9506,\r\n\t\t\t\t\t\t\t\"item\": \"Resort Fee Tax\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t\"depositPolicyCalc\": {\r\n\t\t\t\"depositRequired\": true,\r\n\t\t\t\"creditCardRequired\": true\r\n\t\t},\r\n\t\t\"depositDetails\": {\r\n\t\t\t\"dueDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"amountPolicy\": \"Nights\",\r\n\t\t\t\"amount\": 6802.793197200001,\r\n\t\t\t\"forfeitDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"forfeitAmount\": 6802.793197200001,\r\n\t\t\t\"overrideAmount\": -1.0,\r\n\t\t\t\"depositRuleCode\": \"1NT\",\r\n\t\t\t\"cancellationRuleCode\": \"72H\",\r\n\t\t\t\"itemized\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"itemType\": \"RoomCharge\",\r\n\t\t\t\t\t\"amount\": 5999.994000000001,\r\n\t\t\t\t\t\"item\": \"Room Charge\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"itemType\": \"RoomChargeTax\",\r\n\t\t\t\t\t\"amount\": 802.7991972000002,\r\n\t\t\t\t\t\"item\": \"Room Tax\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t\"amountDue\": 0.0,\r\n\t\t\"guaranteeCode\": \"CC\"\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/v2/reservation",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Reservation API",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"value": "{{source}}",
+								"type": "text"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"value": "{{channel}}",
+								"type": "text"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/reservation?confirmationNumber=M03D53E91&cacheOnly=true",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation"
+							],
+							"query": [
+								{
+									"key": "confirmationNumber",
+									"value": "M03D53E91"
+								},
+								{
+									"key": "cacheOnly",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Basic transient Party Reservation",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"type": "text",
+								"value": "{{$timestamp}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"splitCreditCardDetails\": true,\r\n\t\"roomReservation\": {\r\n\t\t\"id\": {{$timestamp}},\r\n\t\t\"customerId\": 923600551937,\r\n\t\t\"propertyId\": \"{{propertyId}}\",\r\n\t\t\"itineraryId\": \"7857808385\",\r\n\t\t\"roomTypeId\": \"23f5bef8-63ea-4ba9-a290-13b5a3056595\",\r\n\t\t\"billing\": [\r\n\t\t\t{\r\n\t\t\t\t\"payment\": {\r\n\t\t\t\t\t\"amount\": 0,\r\n\t\t\t\t\t\"cardHolder\": \"John doe\",\r\n\t\t\t\t\t\"firstName\": \"John\",\r\n\t\t\t\t\t\"lastName\": \"Doe\",\r\n\t\t\t\t\t\"maskedNumber\": \"XXXXXXXXXXXX4444\",\r\n\t\t\t\t\t\"ccToken\": \"LXM8dmG5n4Q/vcxr2RI3INxrHJkyRbwncs7AhDGc+YC/uXGHoatACqkVWNTUuRKoSBReazxuYfCpsGDeO0ydsA==\",\r\n\t\t\t\t\t\"cvv\": 123,\r\n\t\t\t\t\t\"type\": \"Mastercard\",\r\n\t\t\t\t\t\"expiry\": \"10/2022\"\r\n\t\t\t\t},\r\n\t\t\t\t\"address\": {\r\n\t\t\t\t\t\"street1\": \"234 W Main St\",\r\n\t\t\t\t\t\"street2\": \"Unit 415\",\r\n\t\t\t\t\t\"city\": \"Las Vegas\",\r\n\t\t\t\t\t\"state\": \"NV\",\r\n\t\t\t\t\t\"postalCode\": \"12345\",\r\n\t\t\t\t\t\"country\": \"US\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"tripDetails\": {\r\n\t\t\t\"checkInDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"checkOutDate\": \"{{todayPlus46}}\",\r\n\t\t\t\"numAdults\": {{numAdults}},\r\n\t\t\t\"numChildren\": {{numChildren}},\r\n\t\t\t\"numRooms\": 2\r\n\t\t},\r\n\t\t\"bookings\": [\r\n\t\t\t{\r\n\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\"basePrice\": 10024.99,\r\n\t\t\t\t\"customerPrice\": 5513.7445,\r\n\t\t\t\t\"price\": 5513.7445,\r\n\t\t\t\t\"programIdIsRateTable\": false,\r\n\t\t\t\t\"overridePrice\": -1.0,\r\n\t\t\t\t\"overrideProgramIdIsRateTable\": false,\r\n\t\t\t\t\"isComp\": false,\r\n\t\t\t\t\"resortFeeIsSpecified\": false,\r\n\t\t\t\t\"resortFee\": 0.0,\r\n\t\t\t\t\"programId\": \"3664901f-ca40-4a68-a1d9-41d2e3fe8877\",\r\n                \"pricingRuleId\": \"861f212f-f2e8-4408-bce7-7b41dfe0fbeb\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"chargesAndTaxes\": {\r\n\t\t\t\"charges\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\t\"amount\": 5548.7445,\r\n\t\t\t\t\t\"itemized\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"RoomCharge\",\r\n\t\t\t\t\t\t\t\"amount\": 5548.7445,\r\n\t\t\t\t\t\t\t\"item\": \"Room Charge\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"taxesAndFees\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\t\"amount\": 111.32489,\r\n\t\t\t\t\t\"itemized\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"RoomChargeTax\",\r\n\t\t\t\t\t\t\t\"amount\": 110.27489,\r\n\t\t\t\t\t\t\t\"item\": \"Room Tax\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t\"depositDetails\": {\r\n\t\t\t\"dueDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"amountPolicy\": \"PercentAmount\",\r\n\t\t\t\"amount\": 0,\r\n\t\t\t\"forfeitDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"forfeitAmount\": 0,\r\n\t\t\t\"overrideAmount\": 0,\r\n\t\t\t\"depositRuleCode\": \"string\",\r\n\t\t\t\"cancellationRuleCode\": \"string\",\r\n\t\t\t\"itemized\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"itemType\": \"RoomCharge\",\r\n\t\t\t\t\t\"amount\": 0,\r\n\t\t\t\t\t\"item\": \"string\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t\"amountDue\": 5624.02,\r\n\t\t\"guaranteeCode\": \"CC\"\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/v2/reservation/party",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation",
+								"party"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Basic member Party Reservation",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"type": "text",
+								"value": "{{$timestamp}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"splitCreditCardDetails\": false,\r\n\t\"roomReservation\": {\r\n        \"skipAFSCheck\": true,\r\n\t\t\"id\": {{$timestamp}},\r\n\t\t\"customerId\": 923600551937,\r\n\t\t\"propertyId\": \"{{propertyId}}\",\r\n\t\t\"itineraryId\": \"7844520961\",\r\n\t\t\"roomTypeId\": \"23f5bef8-63ea-4ba9-a290-13b5a3056595\",\r\n\t\t\"profile\": {\r\n\t\t\t\"id\": 923600551937,\r\n\t\t\t\"mLifeNo\": 79950292,\r\n            \"title\": \"DR\",\r\n\t\t\t\"firstName\": \"Lakshmi\",\r\n\t\t\t\"lastName\": \"Test\",\r\n\t\t\t\"phoneNumbers\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"type\": \"Home\",\r\n\t\t\t\t\t\"number\": \"9611877004\"\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"emailAddress1\": \"tlntest3@yopmail.com\",\r\n\t\t\t\"emailAddress2\": \"tlntest3@yopmail.com\",\r\n\t\t\t\"dateOfBirth\": \"1985-01-01\",\r\n\t\t\t\"addresses\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"type\": \"Home\",\r\n\t\t\t\t\t\"preferred\": true,\r\n\t\t\t\t\t\"street1\": \"234 W Main St\",\r\n\t\t\t\t\t\"street2\": \"Unit 415\",\r\n\t\t\t\t\t\"city\": \"Las Vegas\",\r\n\t\t\t\t\t\"state\": \"NV\",\r\n\t\t\t\t\t\"postalCode\": \"12345\",\r\n\t\t\t\t\t\"country\": \"US\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t\"billing\": [\r\n\t\t\t{\r\n\t\t\t\t\"payment\": {\r\n\t\t\t\t\t\"amount\": 0,\r\n\t\t\t\t\t\"cardHolder\": \"John doe\",\r\n\t\t\t\t\t\"firstName\": \"John\",\r\n\t\t\t\t\t\"lastName\": \"Doe\",\r\n                    \"maskedNumber\": \"XXXXXXXXXXXX1111\",\r\n                    \"ccToken\": \"4111110A001DQXFHY79D9XCZ1111\",\r\n\t\t\t\t\t\"cvv\": 123,\r\n\t\t\t\t\t\"type\": \"Visa\",\r\n\t\t\t\t\t\"expiry\": \"10/22\"\r\n\t\t\t\t},\r\n\t\t\t\t\"address\": {\r\n\t\t\t\t\t\"street1\": \"234 W Main St\",\r\n\t\t\t\t\t\"street2\": \"Unit 415\",\r\n\t\t\t\t\t\"city\": \"Las Vegas\",\r\n\t\t\t\t\t\"state\": \"NV\",\r\n\t\t\t\t\t\"postalCode\": \"12345\",\r\n\t\t\t\t\t\"country\": \"US\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"tripDetails\": {\r\n\t\t\t\"checkInDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"checkOutDate\": \"{{todayPlus46}}\",\r\n\t\t\t\"numAdults\": {{numAdults}},\r\n\t\t\t\"numChildren\": {{numChildren}},\r\n\t\t\t\"numRooms\": 2\r\n\t\t},\r\n\t\t\"bookings\": [\r\n\t\t\t{\r\n\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\"basePrice\": 10024.99,\r\n\t\t\t\t\"customerPrice\": 5513.7445,\r\n\t\t\t\t\"price\": 5513.7445,\r\n\t\t\t\t\"programIdIsRateTable\": false,\r\n\t\t\t\t\"overridePrice\": -1.0,\r\n\t\t\t\t\"overrideProgramIdIsRateTable\": false,\r\n\t\t\t\t\"isComp\": false,\r\n\t\t\t\t\"resortFeeIsSpecified\": false,\r\n\t\t\t\t\"resortFee\": 0.0,\r\n\t\t\t\t\"programId\": \"3664901f-ca40-4a68-a1d9-41d2e3fe8877\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"chargesAndTaxes\": {\r\n\t\t\t\"charges\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\t\"amount\": 5548.7445,\r\n\t\t\t\t\t\"itemized\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"RoomCharge\",\r\n\t\t\t\t\t\t\t\"amount\": 5548.7445,\r\n\t\t\t\t\t\t\t\"item\": \"Room Charge\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"taxesAndFees\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"date\": \"{{todayPlus45}}\",\r\n\t\t\t\t\t\"amount\": 111.32489,\r\n\t\t\t\t\t\"itemized\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"itemType\": \"RoomChargeTax\",\r\n\t\t\t\t\t\t\t\"amount\": 110.27489,\r\n\t\t\t\t\t\t\t\"item\": \"Room Tax\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t\"depositDetails\": {\r\n\t\t\t\"dueDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"amountPolicy\": \"PercentAmount\",\r\n\t\t\t\"amount\": 0,\r\n\t\t\t\"forfeitDate\": \"{{todayPlus45}}\",\r\n\t\t\t\"forfeitAmount\": 0,\r\n\t\t\t\"overrideAmount\": 0,\r\n\t\t\t\"depositRuleCode\": \"string\",\r\n\t\t\t\"cancellationRuleCode\": \"string\",\r\n\t\t\t\"itemized\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"itemType\": \"RoomCharge\",\r\n\t\t\t\t\t\"amount\": 0,\r\n\t\t\t\t\t\"item\": \"string\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t\"amountDue\": 5624.02,\r\n\t\t\"guaranteeCode\": \"CC\"\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/v2/reservation/party",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation",
+								"party"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Party Reservation API",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"value": "{{source}}",
+								"type": "text"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"value": "{{channel}}",
+								"type": "text"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/reservation/party/info?confirmationNumber=M03D53EB1&cacheOnly=true",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation",
+								"party",
+								"info"
+							],
+							"query": [
+								{
+									"key": "confirmationNumber",
+									"value": "M03D53EB1",
+									"description": "Opera Conf: 798132413"
+								},
+								{
+									"key": "cacheOnly",
+									"value": "true"
+								},
+								{
+									"key": "operaPartyCode",
+									"value": "798132413",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transient Reservation Hold",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-mgm-source",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "x-mgm-channel",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "x-mgm-transaction-id",
+								"type": "text",
+								"value": "rbs-v2-lakshmi-{{$timestamp}}"
+							},
+							{
+								"key": "source",
+								"value": "{{source}}",
+								"type": "text"
+							},
+							{
+								"key": "channel",
+								"value": "{{channel}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nrgStatus\": false,\r\n        \"id\": \"{{$timestamp}}\",\r\n        \"propertyId\": \"{{propertyId}}\",\r\n        \"itineraryId\": \"7876295169\",\r\n        \"roomTypeId\": \"{{roomTypeId}}\",\r\n        \"programId\": \"7cbd1975-8c9d-4c1f-9f40-355e1f02179b\",\r\n        \"operaState\": \"\",\r\n        \"perpetualPricing\": true,\r\n        \"rrUpsell\": \"\",\r\n        \"operaConfirmationNumber\": \"\",\r\n        \"guaranteeCode\": \"CC\",\r\n        \"customerRank\": 0,\r\n        \"customerSegment\": 0,\r\n        \"amountDue\": 0.0,\r\n        \"additionalComments\": [],\r\n        \"specialRequests\": [],\r\n         \"state\": \"Booked\",\r\n        \"tripDetails\": {\r\n            \"numAdults\": 2,\r\n            \"numChildren\": 0,\r\n            \"checkInDate\": \"{{todayPlus45}}\",\r\n            \"checkOutDate\": \"{{todayPlus46}}\",\r\n            \"numRooms\": 1\r\n        },\r\n        \"profile\": {\r\n            \"firstName\": \"Lakshmi\",\r\n            \"lastName\": \"T\",\r\n            \"phoneNumbers\": [\r\n                {\r\n                    \"number\": \"9611877004\",\r\n                    \"type\": \"Home\"\r\n                }\r\n            ],\r\n            \"emailAddress1\": \"tlntest3@yopmail.com\",\r\n            \"emailAddress2\": null,\r\n            \"dateOfBirth\": \"1985-01-01\",\r\n            \"hgpNo\": null,\r\n            \"swrrNo\": null,\r\n            \"addresses\": [\r\n                {\r\n                    \"preferred\": false,\r\n                    \"street1\": \"1837 Butter St\",\r\n                    \"street2\": null,\r\n                    \"city\": \"Las Vegas\",\r\n                    \"state\": \"NV\",\r\n                    \"country\": \"US\",\r\n                    \"postalCode\": \"89115\",\r\n                    \"type\": \"Home\"\r\n                }\r\n            ],\r\n            \"title\": null\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/v2/reservation/hold",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation",
+								"hold"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manage Room Booking",
+			"item": [
+				{
+					"name": "Modify reservation",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roomReservation\": {\r\n        \"skipAFSCheck\": true,\r\n        \"id\": \"1616682735\",\r\n        \"customerId\": 923600551937,\r\n        \"propertyId\": \"{{propertyId}}\",\r\n        \"itineraryId\": \"7865775617\",\r\n        \"roomTypeId\": \"23f5bef8-63ea-4ba9-a290-13b5a3056595\",\r\n        \"operaState\": \"RESERVED\",\r\n        \"state\": \"Booked\",\r\n        \"nrgStatus\": false,\r\n        \"specialRequests\": [],\r\n        \"confirmationNumber\": \"M03D53E91\",\r\n        \"operaConfirmationNumber\": \"798142640\",\r\n        \"bookDate\": \"2021-03-25\",\r\n        \"profile\": {\r\n            \"id\": 923600551937,\r\n            \"mlifeNo\": 79950292,\r\n            \"title\": \"DR\",\r\n            \"dateOfBirth\": \"1985-01-01\",\r\n            \"operaId\": \"815726747\",\r\n            \"firstName\": \"Lakshmi\",\r\n            \"lastName\": \"Test\",\r\n            \"emailAddress1\": \"tlntest3@yopmail.com\",\r\n            \"emailAddress2\": \"tlntest3@yopmail.com\",\r\n            \"phoneNumbers\": [\r\n                {\r\n                    \"type\": \"Home\",\r\n                    \"number\": \"9611877004\"\r\n                }\r\n            ],\r\n            \"addresses\": [\r\n                {\r\n                    \"type\": \"Home\",\r\n                    \"preferred\": true,\r\n                    \"street1\": \"234 W Main St\",\r\n                    \"street2\": \"Unit 415\",\r\n                    \"city\": \"Las Vegas\",\r\n                    \"state\": \"NV\",\r\n                    \"country\": \"US\",\r\n                    \"postalCode\": \"12345\"\r\n                }\r\n            ]\r\n        },\r\n        \"billing\": [\r\n            {\r\n                \"payment\": {\r\n                    \"cardHolder\": \"John doe\",\r\n                    \"firstName\": \"John\",\r\n                    \"lastName\": \"Doe\",\r\n                    \"ccToken\": \"Uvj/Nwjdxh8t8CaMwBGIRrmbF5r9xl3m5ZqPTtn+DsBPQj0f55DskBjOmovgXSjCkfBSS5lZUMem8gwb8/i3Ug==\",\r\n                    \"encryptedccToken\": \"Uvj/Nwjdxh8t8CaMwBGIRrmbF5r9xl3m5ZqPTtn+DsBPQj0f55DskBjOmovgXSjCkfBSS5lZUMem8gwb8/i3Ug==\",\r\n                    \"maskedNumber\": \"XXXXXXXXXXXXXXXXXXXXXXXX1111\",\r\n                    \"amount\": 0,\r\n                    \"expiry\": \"10/2023\",\r\n                    \"type\": \"Visa\"\r\n                },\r\n                \"address\": {\r\n                    \"street1\": \"234 W Main St\",\r\n                    \"street2\": \"Unit 415\",\r\n                    \"city\": \"Las Vegas\",\r\n                    \"state\": \"NV\",\r\n                    \"postalCode\": \"12345\",\r\n                    \"country\": \"US\"\r\n                }\r\n            }\r\n        ],\r\n        \"tripDetails\": {\r\n            \"checkInDate\": \"{{todayPlus45}}\",\r\n            \"checkOutDate\": \"{{todayPlus47}}\",\r\n            \"numAdults\": {{numAdults}},\r\n            \"numChildren\": {{numChildren}},\r\n            \"numRooms\": 1\r\n        },\r\n        \"markets\": [\r\n            {\r\n                \"date\": \"{{todayPlus45}}\",\r\n                \"marketCode\": \"TFIT\",\r\n                \"sourceCode\": \"TFITIC\"\r\n            },\r\n            {\r\n                \"date\": \"{{todayPlus46}}\",\r\n                \"marketCode\": \"TFIT\",\r\n                \"sourceCode\": \"TFITIC\"\r\n            }\r\n        ],\r\n        \"bookings\": [\r\n            {\r\n                \"date\": \"{{todayPlus45}}\",\r\n                \"basePrice\": 10024.99,\r\n                \"customerPrice\": 5513.74,\r\n                \"price\": 5513.74,\r\n                \"programIdIsRateTable\": false,\r\n                \"overridePrice\": -1,\r\n                \"overrideProgramIdIsRateTable\": false,\r\n                \"resortFeeIsSpecified\": false,\r\n                \"resortFee\": 0,\r\n                \"programId\": \"4eccc742-8a65-4ef9-9a35-03fead2c3833\",\r\n                \"pricingRuleId\": \"a39efac3-9d9a-450a-9639-22c7c3b78347\",\r\n                \"isComp\": false\r\n            },\r\n            {\r\n                \"date\": \"{{todayPlus46}}\",\r\n                \"basePrice\": 10024.99,\r\n                \"customerPrice\": 5513.74,\r\n                \"price\": 5513.74,\r\n                \"programIdIsRateTable\": false,\r\n                \"overridePrice\": -1,\r\n                \"overrideProgramIdIsRateTable\": false,\r\n                \"resortFeeIsSpecified\": false,\r\n                \"resortFee\": 0,\r\n                \"programId\": \"4eccc742-8a65-4ef9-9a35-03fead2c3833\",\r\n                \"pricingRuleId\": \"a39efac3-9d9a-450a-9639-22c7c3b78347\",\r\n                \"isComp\": false\r\n            }\r\n        ],\r\n        \"chargesAndTaxes\": {\r\n            \"charges\": [\r\n                {\r\n                    \"date\": \"{{todayPlus45}}\",\r\n                    \"amount\": 5550.74,\r\n                    \"itemized\": [\r\n                        {\r\n                            \"itemType\": \"RoomCharge\",\r\n                            \"amount\": 5513.74,\r\n                            \"item\": \"Room Charge\"\r\n                        },\r\n                        {\r\n                            \"itemType\": \"ExtraGuestCharge\",\r\n                            \"amount\": 80,\r\n                            \"item\": \"Extra Guest Charge\"\r\n                        },\r\n                        {\r\n                            \"itemType\": \"ResortFee\",\r\n                            \"amount\": 37,\r\n                            \"item\": \"Resort Fee\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"date\": \"{{todayPlus46}}\",\r\n                    \"amount\": 5550.74,\r\n                    \"itemized\": [\r\n                        {\r\n                            \"itemType\": \"RoomCharge\",\r\n                            \"amount\": 5513.74,\r\n                            \"item\": \"Room Charge\"\r\n                        },\r\n                        {\r\n                            \"itemType\": \"ExtraGuestCharge\",\r\n                            \"amount\": 80,\r\n                            \"item\": \"Extra Guest Charge\"\r\n                        },\r\n                        {\r\n                            \"itemType\": \"ResortFee\",\r\n                            \"amount\": 37,\r\n                            \"item\": \"Resort Fee\"\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"taxesAndFees\": [\r\n                {\r\n                    \"date\": \"{{todayPlus45}}\",\r\n                    \"amount\": 742.69,\r\n                    \"itemized\": [\r\n                        {\r\n                            \"itemType\": \"RoomChargeTax\",\r\n                            \"amount\": 737.74,\r\n                            \"item\": \"Room Tax\"\r\n                        },\r\n                        {\r\n                            \"itemType\": \"ExtraGuestChargeTax\",\r\n                            \"amount\": 10.7,\r\n                            \"item\": \"Extra Guest Tax\"\r\n                        },\r\n                        {\r\n                            \"itemType\": \"ResortFeeTax\",\r\n                            \"amount\": 4.95,\r\n                            \"item\": \"Resort Fee Tax\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"date\": \"{{todayPlus46}}\",\r\n                    \"amount\": 742.69,\r\n                    \"itemized\": [\r\n                        {\r\n                            \"itemType\": \"RoomChargeTax\",\r\n                            \"amount\": 737.74,\r\n                            \"item\": \"Room Tax\"\r\n                        },\r\n                        {\r\n                            \"itemType\": \"ExtraGuestChargeTax\",\r\n                            \"amount\": 10.7,\r\n                            \"item\": \"Extra Guest Tax\"\r\n                        },\r\n                        {\r\n                            \"itemType\": \"ResortFeeTax\",\r\n                            \"amount\": 4.95,\r\n                            \"item\": \"Resort Fee Tax\"\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        },\r\n        \"depositDetails\": {\r\n            \"dueDate\": \"{{todayPlus45}}\",\r\n            \"amountPolicy\": \"Nights\",\r\n            \"amount\": 6251.48,\r\n            \"forfeitDate\": \"{{todayPlus45}}\",\r\n            \"forfeitAmount\": 6251.48,\r\n            \"overrideAmount\": 6251.48,\r\n            \"depositRuleCode\": \"1NT\",\r\n            \"cancellationRuleCode\": \"72H\",\r\n            \"itemized\": [\r\n                {\r\n                    \"itemType\": \"RoomCharge\",\r\n                    \"amount\": 5513.74,\r\n                    \"item\": \"Room Charge\"\r\n                },\r\n                {\r\n                    \"itemType\": \"RoomChargeTax\",\r\n                    \"amount\": 737.74,\r\n                    \"item\": \"Room Tax\"\r\n                }\r\n            ]\r\n        },\r\n        \"depositPolicy\": {\r\n            \"depositRequired\": true,\r\n            \"creditCardRequired\": true\r\n        },\r\n        \"payments\": [\r\n            {\r\n                \"reservationInstance\": 1,\r\n                \"chargeAmount\": 0,\r\n                \"chargeCardExpiry\": \"2023-10-01\",\r\n                \"status\": \"DCCChecked\",\r\n                \"chargeCardHolder\": \"John doe\",\r\n                \"chargeCurrencyCode\": \"USD\",\r\n                \"chargeCardType\": \"Visa\",\r\n                \"chargeCardMaskedNumber\": \"XXXXXXXXXXXXXXXXXXXXXXXX1111\",\r\n                \"chargeCardNumber\": \"Uvj/Nwjdxh8t8CaMwBGIRrmbF5r9xl3m5ZqPTtn+DsBPQj0f55DskBjOmovgXSjCkfBSS5lZUMem8gwb8/i3Ug==\",\r\n                \"fxChecked\": true,\r\n                \"fxEligible\": false,\r\n                \"fxTransDate\": \"2021-03-25\",\r\n                \"fxAmount\": 0,\r\n                \"fxRate\": 0,\r\n                \"fxSettleAmount\": 0,\r\n                \"fxCurrencyCode\": \"USD\",\r\n                \"fxAcceptMessage\": \"Approved\",\r\n                \"isExternal\": false,\r\n                \"isDeposit\": false\r\n            }\r\n        ],\r\n        \"amountDue\": 6251.48,\r\n        \"guaranteeCode\": \"CC\",\r\n        \"customerRank\": 0,\r\n        \"customerSegment\": 0,\r\n        \"isGroupCode\": false\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/v2/reservation",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation"
+							]
+						},
+						"description": "All the Ids should match the request and confirmation number should match the response of the original create room reservation request."
+					},
+					"response": []
+				},
+				{
+					"name": "Associate reservation",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							},
+							{
+								"key": "x-mgm-channel",
+								"value": "{{channel}}",
+								"type": "text"
+							},
+							{
+								"key": "x-mgm-source",
+								"value": "{{source}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"confirmationNumber\": \"M03D68C81\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/v2/reservation/associate",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation",
+								"associate"
+							]
+						},
+						"description": "All the Ids should match the request and confirmation number should match the response of the original create room reservation request."
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Reservation V2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"value": "{{source}}",
+								"type": "text"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"value": "{{channel}}",
+								"type": "text"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 923600551937,\r\n    \"itineraryId\": \"7857808385\",\r\n    \"confirmationNumber\": \"M03D53F11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/v2/reservation/cancel",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Reservation V3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"value": "{{source}}",
+								"type": "text"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"value": "{{channel}}",
+								"type": "text"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"confirmationNumber\": \"M03D6F0D1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/v3/reservation/cancel",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v3",
+								"reservation",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Preview room reservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"value": "{{source}}",
+								"type": "text"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"value": "{{channel}}",
+								"type": "text"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"confirmationNumber\": \"M03D6BAC1\",\n    \"firstName\": \"Lakshmi\",\n    \"lastName\": \"Test\",\n\t\"tripDetails\": {\n\t\t\"checkInDate\": \"2021-06-22\",\n\t\t\"checkOutDate\": \"2021-06-25\",\n        \"numAdults\": 2,\n        \"numRooms\": 1\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/v2/reservation/preview",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation",
+								"preview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Commit Preview reservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"value": "{{source}}",
+								"type": "text"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"value": "{{channel}}",
+								"type": "text"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"confirmationNumber\": \"M03D6BAC1\",\n    \"firstName\": \"Lakshmi\",\n    \"lastName\": \"Test\",\n\t\"tripDetails\": {\n\t\t\"checkInDate\": \"2021-06-22\",\n\t\t\"checkOutDate\": \"2021-06-25\",\n        \"numAdults\": 2,\n        \"numRooms\": 1\n\t},\n    \"previewReservationTotal\": 431.98,\n    \"previewReservationDeposit\": 102.04,\n    \"cvv\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/v2/reservation/commit",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation",
+								"commit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify reservation profile",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"type": "text",
+								"value": "{{source}}"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"type": "text",
+								"value": "{{channel}}"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reservationId\": \"1616682735\",\r\n    \"propertyId\": \"{{propertyId}}\",\r\n    \"itineraryId\": \"7865775617\",\r\n    \"confirmationNumber\": \"M03D53E91\",\r\n    \"userProfile\": {\r\n        \"id\": 923600551937,\r\n        \"mlifeNo\": 79950292,\r\n        \"title\": \"MR\",\r\n        \"dateOfBirth\": \"1985-01-01\",\r\n        \"operaId\": \"815726747\",\r\n        \"firstName\": \"Lakshmi\",\r\n        \"lastName\": \"Test\",\r\n        \"emailAddress1\": \"tlntest3@yopmail.com\",\r\n        \"emailAddress2\": \"tlntest3@yopmail.com\",\r\n        \"phoneNumbers\": [\r\n            {\r\n                \"type\": \"Home\",\r\n                \"number\": \"9611877000\"\r\n            }\r\n        ],\r\n        \"addresses\": [\r\n            {\r\n                \"type\": \"Home\",\r\n                \"preferred\": true,\r\n                \"street1\": \"234 W Main St\",\r\n                \"street2\": \"Unit 415\",\r\n                \"city\": \"Las Vegas\",\r\n                \"state\": \"NV\",\r\n                \"country\": \"US\",\r\n                \"postalCode\": \"12345\"\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/v2/reservation/profile",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation",
+								"profile"
+							]
+						},
+						"description": "All the Ids should match the request and confirmation number should match the response of the original create room reservation request."
+					},
+					"response": []
+				},
+				{
+					"name": "Calculate room reservation charges",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"value": "{{source}}",
+								"type": "text"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"value": "{{channel}}",
+								"type": "text"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"stage\": \"Checkout\",\n    \"calcsOnly\": false,\n    \"propertyId\": \"{{propertyId}}\",\n    \"roomTypeId\": \"{{roomTypeId}}\",\n    \"programId\": \"{{programId}}\",\n    \"customerId\": null,\n    \"guaranteeCode\": \"CC\",\n    \"specialRequests\": [],\n    \"profile\": null,\n    \"tripDetails\": {\n        \"numAdults\": {{numAdults}},\n        \"numChildren\": {{numChildren}},\n        \"checkInDate\": \"{{todayPlus45}}\",\n        \"checkOutDate\": \"{{todayPlus46}}\",\n        \"numGuests\": 2,\n        \"nights\": 3,\n        \"numRooms\": 1\n    },\n    \"billing\": [\n        {\n            \"payment\": {\n                \"amount\": 0.0,\n                \"cardHolder\": null,\n                \"cardNumber\": null,\n                \"maskedNumber\": null,\n                \"cvv\": 0,\n                \"type\": \"Mastercard\",\n                \"ccToken\": null,\n                \"firstname\": null,\n                \"lastname\": null,\n                \"expiry\": \"09/2023\"\n            },\n            \"address\": {\n                \"street1\": null,\n                \"street2\": null,\n                \"city\": null,\n                \"state\": null,\n                \"postalCode\": null,\n                \"country\": null\n            }\n        }\n    ],\n    \"bookings\": [\n        {\n            \"overrideProgramIdIsRateTable\": false,\n            \"resortFeeIsSpecified\": false,\n            \"programIdIsRateTable\": false,\n            \"customerPrice\": 0.0,\n            \"resortFee\": 0.0,\n            \"basePrice\": 199.0,\n            \"price\": 234.0,\n            \"overridePrice\": -1.0,\n            \"programId\": \"{{programId}}\",\n            \"pricingRuleId\": null,\n            \"overrideProgramId\": null,\n            \"overridePricingRuleId\": null,\n            \"date\": \"{{todayPlus45}}\",\n            \"comp\": false\n        }\n    ],\n    \"depositDetails\": null,\n    \"markets\": null,\n    \"priceOverride\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/v2/reservation/charges",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation",
+								"charges"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reservation party info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"value": "{{source}}",
+								"type": "text"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"value": "{{channel}}",
+								"type": "text"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/reservation/party/info?confirmationNumber=M03D53EB1",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation",
+								"party",
+								"info"
+							],
+							"query": [
+								{
+									"key": "confirmationNumber",
+									"value": "M03D53EB1",
+									"description": "Opera Conf: 798132413"
+								},
+								{
+									"key": "operaPartyCode",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Release pending reservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "{{sourceHeaderKey}}",
+								"value": "{{source}}",
+								"type": "text"
+							},
+							{
+								"key": "{{channelHeaderKey}}",
+								"value": "{{channel}}",
+								"type": "text"
+							},
+							{
+								"key": "{{transactionIdHeaderKey}}",
+								"value": "{{$timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{env}}/v2/reservation/release?confirmationNumber=M03D53EE1&propertyId={{propertyId}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v2",
+								"reservation",
+								"release"
+							],
+							"query": [
+								{
+									"key": "confirmationNumber",
+									"value": "M03D53EE1"
+								},
+								{
+									"key": "propertyId",
+									"value": "{{propertyId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Okta access token Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"okta-access-token\", jsonData.access_token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/plain",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "{{clientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{clientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "{{grantType}}",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "{{scope}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{idmsEnv}}/identity/authorization/v1/mgmsvc/token",
+					"host": [
+						"{{idmsEnv}}"
+					],
+					"path": [
+						"identity",
+						"authorization",
+						"v1",
+						"mgmsvc",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Re-initialize TPS connection",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v1/initialize",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v1",
+						"initialize"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{okta-access-token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const moment = require('moment')",
+					"// setting global variables",
+					"pm.globals.set(\"propertyId\", \"66964e2b-2550-4476-84c3-1a4c0c5c067f\");",
+					"pm.globals.set(\"partialProgramId\", \"5467d989-24f5-4188-a177-daa715763c59\");",
+					"pm.globals.set(\"roomTypeId\", \"ddeca6cb-894d-4325-9c26-782b4f11e39c\");",
+					"pm.globals.set(\"programId\", \"55204b8f-6d58-4dab-894c-e79dda626c85\");",
+					"// dates",
+					"pm.globals.set(\"todayMinus3\", moment().subtract(3, 'day').format(\"YYYY-MM-DD\")) //pastDate",
+					"pm.globals.set(\"today\", moment().format(\"YYYY-MM-DD\")) //presentDate",
+					"pm.globals.set(\"todayPlus2\", moment().add(2, 'day').format(\"YYYY-MM-DD\")) //futureDatePlus2",
+					"pm.globals.set(\"todayPlus5\", moment().add(5, 'day').format(\"YYYY-MM-DD\")) //futureDatePlus5",
+					"pm.globals.set(\"todayPlus30\", moment().add(30, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus30",
+					"pm.globals.set(\"todayPlus42\", moment().add(42, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus42",
+					"pm.globals.set(\"todayPlus45\", moment().add(45, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus45",
+					"pm.globals.set(\"todayPlus46\", moment().add(46, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus46",
+					"pm.globals.set(\"todayPlus47\", moment().add(47, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus47",
+					"pm.globals.set(\"todayPlus48\", moment().add(48, 'day').format(\"YYYY-MM-DD\"))",
+					"pm.globals.set(\"numAdults\", 2)",
+					"pm.globals.set(\"numChildren\", 1)"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "transactionIdHeaderKey",
+			"value": "x-mgm-transaction-id"
+		}
+	]
+}

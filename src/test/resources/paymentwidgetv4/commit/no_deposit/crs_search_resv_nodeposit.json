@@ -1,0 +1,190 @@
+{
+  "data": {
+    "reservationCount": 1,
+    "hotelReservations": [
+      {
+        "status": "MY",
+        "type": "INDIVIDUAL",
+        "reservationIds": {
+          "cfNumber": "3OWSIOL3V4",
+          "imageId": 2,
+          "committedSequenceNumber": 2,
+          "pmsCfNumber": "914209782"
+        },
+        "creator": {
+          "vendorCode": "ICECC",
+          "vendorName": "ICE Call center",
+          "reportingData": {
+            "channelClass": "Voice",
+            "channelType": "Branded",
+            "channel": "Contact Center",
+            "subChannel": "Contact Center"
+          },
+          "metricsName": "ICE metrics"
+        },
+        "requestor": {
+          "vendorCode": "OPERA",
+          "vendorName": "OPERA PMS",
+          "metricsName": "PMS metrics"
+        },
+        "creationDateTime": "2024-06-27T12:09:36",
+        "lastUpdateDateTime": "2024-06-27T12:09:47",
+        "hotels": [
+          {
+            "chainCode": "MGM",
+            "brandCode": "MV",
+            "propertyCode": "MV021",
+            "propertyCurrency": "USD"
+          }
+        ],
+        "userProfiles": [
+          {
+            "id": 1,
+            "personName": {
+              "givenName": "Uttam",
+              "surname": "Ghorai"
+            }
+          }
+        ],
+        "segments": [
+          {
+            "id": 1,
+            "matchedSearchCriteria": true,
+            "start": "2024-07-26",
+            "end": "2024-07-28",
+            "synchroNumber": 1,
+            "segmentStatus": "BK",
+            "consolidatedSegmentStatus": "GUARANTEED",
+            "segmentHolderId": 1,
+            "bookerId": 1,
+            "hasAddOns": false,
+            "creationDateTime": "2024-06-27T12:09:36",
+            "creationDateTimeHotelLocalTime": "2024-06-27T05:09:36",
+            "lastUpdateDateTime": "2024-06-27T12:09:37",
+            "propertyCode": "MV021",
+            "creator": {
+              "vendorCode": "ICECC",
+              "vendorName": "ICE Call center",
+              "reportingData": {
+                "channelClass": "Voice",
+                "channelType": "Branded",
+                "channel": "Contact Center",
+                "subChannel": "Contact Center"
+              },
+              "metricsName": "ICE metrics"
+            },
+            "requestor": {
+              "vendorCode": "ICECC",
+              "vendorName": "ICE Call center",
+              "metricsName": "ICE metrics"
+            },
+            "areAmountsConfidential": false,
+            "isAccessibleByWeb": true,
+            "checkInRate": "211.50",
+            "offer": {
+              "productUses": [
+                {
+                  "id": 1,
+                  "period": {
+                    "start": "2024-07-26",
+                    "end": "2024-07-28"
+                  },
+                  "ratePlanCode": "TFRSA",
+                  "inventoryTypeCode": "L1PL",
+                  "isOptional": true,
+                  "isMainProduct": true,
+                  "inventoryTypeName": {
+                    "en": [
+                      "1 Bedroom Penthouse Accessible RL"
+                    ]
+                  },
+                  "quantity": 1,
+                  "guestCounts": [
+                    {
+                      "otaCode": "AQC10",
+                      "count": 1,
+                      "guestType": "ADULT"
+                    }
+                  ],
+                  "totalGuestCounts": [
+                    {
+                      "otaCode": "AQC10",
+                      "count": 1,
+                      "guestType": "ADULT"
+                    }
+                  ],
+                  "productCode": "SR"
+                }
+              ],
+              "nightlyCorpMarketSegments": [
+                {
+                  "start": "2024-07-26",
+                  "end": "2024-07-28",
+                  "value": "TPKG"
+                }
+              ],
+              "corpMarketSegment": "TPKG",
+              "policyTypeCode": "CC"
+            },
+            "formOfPayment": {
+              "paymentInfo": {
+                "amount": "239.80",
+                "paymentStatus": "PAYMENT_RECEIVED",
+                "paymentType": 5,
+                "paymentIntent": "Guarantee"
+              }
+            }
+          }
+        ],
+        "products": [
+          {
+            "inventoryTypeCode": "L1PL",
+            "inventoryTypeName": {
+              "en": [
+                "1 Bedroom Penthouse Accessible RL"
+              ]
+            },
+            "maximumNumberParticipant": 3,
+            "description": {
+              "en": [
+                "\u003cp\u003eExperience the ultimate in VIP living in this incredible suite at New York-New York.\u003c/p\u003e\u003cul\u003e\u003cli\u003e1,100 Square Feet\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003cb\u003eAccessible Amenities:\u003c/b\u003e\u003c/p\u003e\u003cul\u003e\u003cli\u003eAccessible bedroom includes 1 King bed\u003c/li\u003e\u003cli\u003eAccessible bed height\u003c/li\u003e\u003cli\u003eRoll-in shower with retractable shower bench, grab bars, etc.\u003c/li\u003e\u003cli\u003eLowered toilet with grab bars\u003c/li\u003e\u003cli\u003eLowered towel bars and amenity holders\u003c/li\u003e\u003cli\u003eLowered bathroom countertops with appropriate clearance underneath\u003c/li\u003e\u003cli\u003eAccessible bathroom fixtures\u003c/li\u003e\u003cli\u003eAccessible drapery and thermostat controls\u003c/li\u003e\u003cli\u003eLowered peep holes in guestroom doors\u003c/li\u003e\u003cli\u003eLowered closet rods\u003c/li\u003e\u003cli\u003eFire alarm with strobe flasher\u003c/li\u003e\u003cli\u003eAccessible light fixtures\u003cbr\u003e\u003c/li\u003e\u003c/ul\u003e"
+              ]
+            },
+            "productCode": "SR",
+            "pacCode": "G746",
+            "attributeCodes": [
+              "1100SQFT",
+              "1KING",
+              "MAX3",
+              "NSMK",
+              "PENTSUIT",
+              "SROLLIN",
+              "VARYVW"
+            ]
+          }
+        ],
+        "ratePlans": [
+          {
+            "isCommissionable": true,
+            "code": "TFRSA",
+            "name": {
+              "en": [
+                "Enjoy 10% off....."
+              ]
+            },
+            "description": {
+              "en": [
+                "Program Name:Military, Nurses, First Responder Discount - TFRSA - NYNY - AgentText:  - LearnMore: \u003cp\u003eProper Military ID must be presented at check-in.\u0026nbsp;Offer code: TFRSA\u003c/p\u003e"
+              ]
+            },
+            "longDescription": {
+              "en": [
+                "Enjoy 10% off. Test _FREEPLAY®_ Tuesday Test 021324"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

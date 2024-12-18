@@ -1,0 +1,179 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "7.6.0",
+		"title": "1A_REST_JSON_Reservation",
+		"description": "The Reservations API of the Amadeus Hospitality CRS application.\nIt comprises how to create, modify, reinstate, cancel, migrate, retrieve, commit and ignore reservations\n"
+	  
+	},
+	   "paths": {},
+	"definitions": {
+		"partnerCustomerSearchRequest": {
+			"type": "object",
+			"properties": {
+				"limit": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"profileSearchCriteria": {
+					"type": "object",
+					"properties": {
+						"customerTypeCriteria": {
+							"type": "object",
+							"properties": {
+								"customerTypes": {
+									"type": "array",
+									"items": {
+										"type": "string"
+									}
+								}
+							}
+						},
+						"profileStatusCriteria": {
+							"type": "object",
+							"properties": {
+								"profileStatusCodes": {
+									"type": "array",
+									"items": {
+										"type": "string"
+									}
+								},
+								"profileStatusTypes": {
+									"type": "array",
+									"items": {
+										"type": "string"
+									}
+								}
+							}
+						},
+						"emailCriteria": {
+							"type": "object",
+							"properties": {
+								"emailAddresses": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"address": {
+												"type": "object",
+												"properties": {
+													"value": {
+														"type": "string"
+													}
+												}
+											}
+										}
+									}
+								},
+								"searchHistory": {
+									"type": "boolean"
+								}
+							}
+						},
+						"phoneCriteria": {
+							"type": "object",
+							"properties": {
+								"phoneNumbers": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"countryCode": {
+												"type": "string"
+											},
+											"number": {
+												"type": "object",
+												"properties": {
+													"value": {
+														"type": "string"
+													}
+												}
+											}
+										}
+									}
+								},
+								"searchHistory": {
+									"type": "boolean"
+								}
+							}
+						},
+						"addressCriteria": {
+							"type": "object",
+							"properties": {
+								"addresses": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"stateProvinceCode": {
+												"type": "string"
+											},
+											"postalCode": {
+												"type": "object",
+												"properties": {
+													"value": {
+														"type": "string"
+													},
+													"searchType": {
+														"type": "array",
+														"items": {
+															"type": "string"
+														}
+													}
+												}
+											},
+											"countryCode": {
+												"type": "string"
+											}
+										}
+									}
+								}
+							}
+						},
+						"nameCriteria": {
+							"type": "object",
+							"properties": {
+								"names": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"firstName": {
+												"type": "object",
+												"properties": {
+													"value": {
+														"type": "string"
+													},
+													"searchType": {
+														"type": "array",
+														"items": {
+															"type": "string"
+														}
+													}
+												}
+											},
+											"lastName": {
+												"type": "object",
+												"properties": {
+													"value": {
+														"type": "string"
+													},
+													"searchType": {
+														"type": "array",
+														"items": {
+															"type": "string"
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	}

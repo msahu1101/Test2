@@ -1,0 +1,35 @@
+[
+	{
+		"id": "d97668a7-a710-4be3-91c9-907528a2c16e",
+		"price": 25.00,
+		"taxRate": 9.00,
+		"componentType": "ROOM_REQUEST",
+		"pricingApplied": "NIGHTLY",
+		"activeFlag": true,
+		"shortDescription": "Dog Friendly",
+		"description": "Dog Friendly",
+		"learnMoreDescription": "Dog Friendly"
+	},
+	{
+		"id": "13c0f7cf-e371-415f-961c-1dcc384f6031",
+		"price": 24.00,
+		"taxRate": 9.00,
+		"componentType": "ROOM_REQUEST",
+		"pricingApplied": "NIGHTLY",
+		"activeFlag": true,
+		"shortDescription": "Dog Friendly",
+		"description": "Dog Friendly",
+		"learnMoreDescription": "Dog Friendly"
+	},
+	{
+		"id": "5837df45-fcaf-4c43-a14f-412fb69fafc9",
+		"price": 24.00,
+		"taxRate": 0.00,
+		"componentType": "ROOM_REQUEST",
+		"pricingApplied": "NIGHTLY",
+		"activeFlag": true,
+		"shortDescription": "Dog Friendly",
+		"description": "Dog Friendly",
+		"learnMoreDescription": "Dog Friendly"
+	}
+]

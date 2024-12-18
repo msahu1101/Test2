@@ -1,0 +1,496 @@
+{
+    "data": {
+        "creator": {
+            "hotelSource": "ARIA1",
+            "vendorCode": "MGMWB",
+            "vendorTypes": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "channelCode": "CC",
+            "metricsCode": "M02"
+        },
+        "requestor": {
+            "hotelSource": "ARIA1",
+            "vendorCode": "MGMWB",
+            "vendorTypes": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "channelCode": "CC",
+            "metricsCode": "M02"
+        },
+        "hotelReservation": {
+            "authenticatedUser": {
+                "userId": "WSMGM00ICE",
+                "userFirstName": "Robotic user for ICE",
+                "userLastName": "WSMGM00ICE"
+            },
+            "resStatus": "BK",
+            "lastUpdateDateTime": "2020-06-19T11:37:01",
+            "lastUpdateDateTimeHotelLocalTime": "2020-06-19T04:37:01",
+            "imageStatus": "Committed",
+            "createDateTime": "wrongformat",
+            "reservationIds": {
+                "cfNumber": "6757961212",
+                "imageId": 0,
+                "committedSequenceNumber": 1
+            },
+            "hotels": [
+                {
+                    "chainCode": "MGM",
+                    "brandCode": "MR",
+                    "propertyCode": "ARIA1",
+                    "propertyName": "Aria",
+                    "countryCode": "US",
+                    "cityCode": "LAS",
+                    "regionCode": "01",
+                    "propertyCurrency": "USD"
+                }
+            ],
+            "reservationType": "Individual",
+            "ratePlans": [
+                {
+                    "code": "CATST",
+                    "name": {
+                        "en": [
+                            "FLAT REFERENCE RATE"
+                        ]
+                    },
+                    "areAmountsConfidential": false,
+                    "isIdRequired": false,
+                    "isLoyaltyIdRequired": false,
+                    "isVoucherRequired": false,
+                    "isRewardEarned": true,
+                    "isTentativeAllowed": false,
+                    "isGroupRatePlan": false,
+                    "isFreeNight": false,
+                    "isAwardAccepted": false,
+                    "isPackage": false,
+                    "isCommissionable": false,
+                    "isHouseUse": false,
+                    "isComplimentary": false,
+                    "sellStrategyCode": "BRA",
+                    "priceGridCode": "FLAT0"
+                }
+            ],
+            "products": [
+                {
+                    "productCode": "KNGN",
+                    "productTypeCode": "SR",
+                    "maximumNumberParticipant": 2,
+                    "yieldClass": "02",
+                    "productName": {
+                        "en": [
+                            "King Room Non Smoking"
+                        ]
+                    },
+                    "pacCode": "OJF9"
+                }
+            ],
+            "segments": [
+                {
+                    "propertyCode": "ARIA1",
+                    "synchroNumber": 1,
+                    "id": 1,
+                    "bookerId": 2,
+                    "createDateTime": "2020-06-19T11:36:32",
+                    "createDateTimeHotelLocalTime": "2020-06-19T04:36:32",
+                    "lastUpdateDateTime": "2020-06-19T11:37:01",
+                    "lastUpdateDateTimeHotelLocalTime": "2020-06-19T04:37:01",
+                    "start": "2021-03-06",
+                    "end": "2021-03-07",
+                    "segmentHolderId": 1,
+                    "actionStatus": "NS",
+                    "offer": {
+                        "productUses": [
+                            {
+                                "id": 1,
+                                "period": {
+                                    "start": "2021-03-06",
+                                    "end": "2021-03-07"
+                                },
+                                "productCode": "KNGN",
+                                "productRates": {
+                                    "hasRateChange": false,
+                                    "dailyRates": [
+                                        {
+                                            "start": "2021-03-06",
+                                            "end": "2021-03-07",
+                                            "dailyBaseOccRate": {
+                                                "bsAmt": "150.00",
+                                                "amtBfTx": "150.00",
+                                                "amtAfTx": "170.07"
+                                            },
+                                            "dailyExtraOccRate": {
+                                                "bsAmt": "0.00",
+                                                "amtBfTx": "0.00",
+                                                "amtAfTx": "0.00"
+                                            },
+                                            "dailyTotalRate": {
+                                                "bsAmt": "150.00",
+                                                "amtBfTx": "150.00",
+                                                "amtAfTx": "170.07",
+                                                "totalTaxes": "20.07",
+                                                "taxList": [
+                                                    {
+                                                        "amount": "20.07",
+                                                        "taxCode": "BOOCT",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT19",
+                                                        "taxDefIds": [
+                                                            0
+                                                        ]
+                                                    }
+                                                ],
+                                                "rateDefId": 0
+                                            }
+                                        }
+                                    ],
+                                    "requestedRates": [
+                                        {
+                                            "start": "2021-03-06",
+                                            "end": "2021-03-07",
+                                            "base": {
+                                                "amount": "150.00"
+                                            }
+                                        }
+                                    ],
+                                    "ratesDefinition": {
+                                        "rateChanges": [
+                                            {
+                                                "id": 0,
+                                                "start": "2021-03-06",
+                                                "end": "2021-03-07",
+                                                "amount": "150.00"
+                                            }
+                                        ]
+                                    },
+                                    "taxInclusionMode": "followHouse",
+                                    "pricingFrequency": "PerNight",
+                                    "pricingMethod": "PerProduct",
+                                    "totalRate": {
+                                        "daily": [
+                                            {
+                                                "amtBfTx": "150.00",
+                                                "amtAfTx": "170.07",
+                                                "bsAmt": "150.00",
+                                                "amtType": "Average"
+                                            },
+                                            {
+                                                "amtBfTx": "150.00",
+                                                "amtAfTx": "170.07",
+                                                "bsAmt": "150.00",
+                                                "amtType": "Checkin"
+                                            }
+                                        ],
+                                        "payableAmtAfTx": "170.07",
+                                        "amtBfTx": "150.00",
+                                        "amtAfTx": "170.07",
+                                        "bsAmt": "150.00",
+                                        "totalTaxes": "20.07",
+                                        "taxGroups": [
+                                            {
+                                                "amount": "20.07",
+                                                "taxCode": "BOOCT",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT19",
+                                                "taxDefIds": [
+                                                    0
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "totalBaseOccRate": {
+                                        "daily": [
+                                            {
+                                                "amtBfTx": "150.00",
+                                                "amtAfTx": "170.07",
+                                                "bsAmt": "150.00",
+                                                "amtType": "Average"
+                                            },
+                                            {
+                                                "amtBfTx": "150.00",
+                                                "amtAfTx": "170.07",
+                                                "bsAmt": "150.00",
+                                                "amtType": "Checkin"
+                                            }
+                                        ],
+                                        "payableAmtAfTx": "170.07",
+                                        "amtAfTx": "170.07",
+                                        "amtBfTx": "150.00",
+                                        "totalTaxes": "20.07",
+                                        "taxGroups": [
+                                            {
+                                                "amount": "20.07",
+                                                "taxCode": "BOOCT",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT19",
+                                                "taxDefIds": [
+                                                    0
+                                                ]
+                                            }
+                                        ],
+                                        "bsAmt": "150.00"
+                                    },
+                                    "totalExtraOccRate": {
+                                        "payableAmtAfTx": "0.00",
+                                        "amtAfTx": "0.00",
+                                        "amtBfTx": "0.00",
+                                        "totalTaxes": "0.00",
+                                        "taxGroups": [
+                                            {
+                                                "amount": "0.00",
+                                                "taxCode": "BOOCT",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT19",
+                                                "taxDefIds": [
+                                                    0
+                                                ]
+                                            }
+                                        ],
+                                        "bsAmt": "0.00"
+                                    }
+                                },
+                                "quantity": 1,
+                                "guestCounts": {
+                                    "AQC10": 1
+                                },
+                                "totalGuestCounts": {
+                                    "AQC10": 1
+                                },
+                                "guestOccIds": [
+                                    1
+                                ],
+                                "isMainProduct": true
+                            }
+                        ],
+                        "ratePlanCode": "CATST",
+                        "policies": {
+                            "checkinTime": "00:00:00",
+                            "checkoutTime": "00:00:00",
+                            "guarantee": {
+                                "time": "00:00:00",
+                                "isRequired": false
+                            },
+                            "cancellationNoShow": {
+                                "deadline": {
+                                    "dateTime": "2021-03-06T00:00:00",
+                                    "deadlineType": "numberOfDaysBeforeCheckin",
+                                    "deadlineValue": 0
+                                },
+                                "isGracePeriod": true,
+                                "amount": "170.07",
+                                "feeType": "Nights",
+                                "feeValue": "1"
+                            }
+                        },
+                        "totalRate": {
+                            "daily": [
+                                {
+                                    "amtBfTx": "150.00",
+                                    "amtAfTx": "170.07",
+                                    "bsAmt": "150.00",
+                                    "amtType": "Average"
+                                },
+                                {
+                                    "amtBfTx": "150.00",
+                                    "amtAfTx": "170.07",
+                                    "bsAmt": "150.00",
+                                    "amtType": "Checkin"
+                                }
+                            ],
+                            "payableAmtAfTx": "170.07",
+                            "amtBfTx": "150.00",
+                            "amtAfTx": "170.07",
+                            "bsAmt": "150.00",
+                            "totalTaxes": "20.07",
+                            "taxGroups": [
+                                {
+                                    "amount": "20.07",
+                                    "taxCode": "BOOCT",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT19",
+                                    "taxDefIds": [
+                                        0
+                                    ]
+                                }
+                            ]
+                        },
+                        "totalBaseOccRate": {
+                            "daily": [
+                                {
+                                    "amtBfTx": "150.00",
+                                    "amtAfTx": "170.07",
+                                    "bsAmt": "150.00",
+                                    "amtType": "Average"
+                                },
+                                {
+                                    "amtBfTx": "150.00",
+                                    "amtAfTx": "170.07",
+                                    "bsAmt": "150.00",
+                                    "amtType": "Checkin"
+                                }
+                            ],
+                            "payableAmtAfTx": "170.07",
+                            "amtAfTx": "170.07",
+                            "amtBfTx": "150.00",
+                            "totalTaxes": "20.07",
+                            "taxGroups": [
+                                {
+                                    "amount": "20.07",
+                                    "taxCode": "BOOCT",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT19",
+                                    "taxDefIds": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "bsAmt": "150.00"
+                        },
+                        "totalExtraOccRate": {
+                            "payableAmtAfTx": "0.00",
+                            "amtAfTx": "0.00",
+                            "amtBfTx": "0.00",
+                            "totalTaxes": "0.00",
+                            "taxGroups": [
+                                {
+                                    "amount": "0.00",
+                                    "taxCode": "BOOCT",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT19",
+                                    "taxDefIds": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "bsAmt": "0.00"
+                        }
+                    },
+                    "creator": {
+                        "hotelSource": "ARIA1",
+                        "vendorCode": "MGMWB",
+                        "vendorTypes": [
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ],
+                        "channelCode": "CC",
+                        "metricsCode": "M02"
+                    },
+                    "requestor": {
+                        "hotelSource": "ARIA1",
+                        "vendorCode": "MGMWB",
+                        "vendorTypes": [
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ],
+                        "channelCode": "CC",
+                        "metricsCode": "M02"
+                    },
+                    "indicators": {
+                        "isConfirmed": true,
+                        "isPaidByPoints": false
+                    },
+                    "owner": {
+                        "agencyDetails": {
+                            "identifiers": [
+                                {
+                                    "id": "12345675",
+                                    "type": "IATA"
+                                }
+                            ],
+                            "isValid": true,
+                            "isTrusted": true,
+                            "email": {
+                                "address": "travelagent@bcdtravel.com",
+                                "type": 2
+                            },
+                            "agencyProfileId": "99976a53-99a-7bc6-81ce-9a88a777c666"
+                        }
+                    },
+                    "lateArrivalTime": "00:00:00",
+                    "consolidatedSegmentStatus": "NonGuaranteedHold",
+                    "segmentStatus": "BK",
+                    "channelPreferredRate": "Check-in",
+                    "channelExtraPersonChargeIncluded": false,
+                    "taxDefinitions": [
+                        {
+                            "id": 0,
+                            "otaCode": "FTT19",
+                            "description": {
+                                "en": [
+                                    "Breakfast tax"
+                                ]
+                            },
+                            "chargeUnit": "PerPerson",
+                            "chargeFrequency": "PerNight",
+                            "value": "13.38",
+                            "valueType": "Percent",
+                            "isInclusive": false,
+                            "name": "Occupancy Tax",
+                            "start": "2021-03-06",
+                            "end": "2021-03-07",
+                            "taxCode": "BOOCT",
+                            "taxOn": "Rate"
+                        }
+                    ],
+                    "cancelByHotelOnly": false,
+                    "totalSegment": {
+                        "finalPriceAmt": "170.07"
+                    }
+                }
+            ],
+            "userProfiles": [
+                {
+                    "id": 1,
+                    "personName": {
+                        "surname": "Doe",
+                        "givenName": "Jane",
+                        "namePrefix": "Ms"
+                    }
+                },
+                {
+                    "id": 2,
+                    "personName": {
+                        "surname": "Doe",
+                        "givenName": "John",
+                        "namePrefix": "Mr"
+                    }
+                }
+            ],
+            "totalReservation": [
+                {
+                    "bsAmt": "150.00",
+                    "finalPriceAmt": "170.07",
+                    "amtBfTx": "150.00",
+                    "amtAfTx": "170.07",
+                    "totalTaxes": "20.07",
+                    "currency": "USD"
+                }
+            ],
+            "totalOfActiveSegments": [
+                {
+                    "bsAmt": "150.00",
+                    "finalPriceAmt": "170.07",
+                    "amtBfTx": "150.00",
+                    "amtAfTx": "170.07",
+                    "totalTaxes": "20.07",
+                    "currency": "USD"
+                }
+            ]
+        }
+    }
+}

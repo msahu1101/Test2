@@ -1,0 +1,1115 @@
+{
+	"info": {
+		"_postman_id": "8e28bf1f-8a92-44fe-899b-fe8466ee322b",
+		"name": "Room Booking Services - Prod Sanity",
+		"description": "This collection will contain V2 services of Room Booking Services APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Service Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"okta-access-token\", jsonData.access_token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/plain",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "{{clientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{clientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "{{grantType}}",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "{{scope}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{idmsEnv}}/identity/authorization/v1/mgmsvc/token",
+					"host": [
+						"{{idmsEnv}}"
+					],
+					"path": [
+						"identity",
+						"authorization",
+						"v1",
+						"mgmsvc",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Availability Calendar V2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/availability/calendar?startDate={{todayPlus30}}&endDate={{todayPlus45}}&propertyId={{propertyId}}&numAdults={{numAdults}}&numChildren={{numChildren}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"availability",
+						"calendar"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "{{todayPlus30}}"
+						},
+						{
+							"key": "endDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "numAdults",
+							"value": "{{numAdults}}"
+						},
+						{
+							"key": "numChildren",
+							"value": "{{numChildren}}"
+						},
+						{
+							"key": "programId",
+							"value": "{{programId}}",
+							"disabled": true
+						},
+						{
+							"key": "customerId",
+							"value": "{{customerId}}",
+							"disabled": true
+						},
+						{
+							"key": "ignoreChannelMargins",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "numRooms",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "customerDominantPlay",
+							"value": "Slot",
+							"disabled": true
+						},
+						{
+							"key": "customerRank",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "excludeNonOffer",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Availability Calendar V3",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"type": "text",
+						"value": "ICE"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"type": "text",
+						"value": "ICE"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"type": "text",
+						"value": "{{$timestamp}}"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v3/availability/calendar?startDate={{todayPlus45}}&endDate={{todayPlus48}}&propertyId={{propertyId}}&numAdults={{numAdults}}&totalNights=2",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v3",
+						"availability",
+						"calendar"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "endDate",
+							"value": "{{todayPlus48}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "numAdults",
+							"value": "{{numAdults}}"
+						},
+						{
+							"key": "totalNights",
+							"value": "2"
+						},
+						{
+							"key": "programId",
+							"value": "{{programId}}",
+							"disabled": true
+						},
+						{
+							"key": "customerId",
+							"value": "{{customerId}}",
+							"disabled": true
+						},
+						{
+							"key": "ignoreChannelMargins",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "numRooms",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "customerDominantPlay",
+							"value": "Slot",
+							"disabled": true
+						},
+						{
+							"key": "customerRank",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Availability Trip V2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/availability/trip?checkInDate={{todayPlus45}}&checkOutDate={{todayPlus48}}&propertyId={{propertyId}}&numAdults={{numAdults}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"availability",
+						"trip"
+					],
+					"query": [
+						{
+							"key": "checkInDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "checkOutDate",
+							"value": "{{todayPlus48}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "numAdults",
+							"value": "{{numAdults}}"
+						},
+						{
+							"key": "customerId",
+							"value": "{{customerId}}",
+							"disabled": true
+						},
+						{
+							"key": "programId",
+							"value": "{{programId}}",
+							"disabled": true
+						},
+						{
+							"key": "isGroupCode",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "perpetualPricing",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "includeSoldOutRooms",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "enableMrd",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "excludeNonOffer",
+							"value": "false",
+							"disabled": true
+						},
+						{
+							"key": "customerRank",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "customerDominantPlay",
+							"value": "Slot",
+							"disabled": true
+						},
+						{
+							"key": "ignoreChannelMargins",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Availability Trip V3",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v3/availability/trip?checkInDate={{todayPlus45}}&checkOutDate={{todayPlus48}}&propertyId={{propertyId}}&numAdults={{numAdults}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v3",
+						"availability",
+						"trip"
+					],
+					"query": [
+						{
+							"key": "checkInDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "checkOutDate",
+							"value": "{{todayPlus48}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "numAdults",
+							"value": "{{numAdults}}"
+						},
+						{
+							"key": "customerId",
+							"value": "{{customerId}}",
+							"disabled": true
+						},
+						{
+							"key": "programId",
+							"value": "{{programId}}",
+							"disabled": true
+						},
+						{
+							"key": "includeSoldOutRooms",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "perpetualPricing",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "isGroupCode",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "customerRank",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "customerDominantPlay",
+							"value": "Slot",
+							"disabled": true
+						},
+						{
+							"key": "ignoreChannelMargins",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resorts Price V2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"type": "text",
+						"value": "{{mgmresorts}}"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"type": "text",
+						"value": "{{web}}"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/availability/resorts?checkInDate={{todayPlus45}}&checkOutDate={{todayPlus48}}&numAdults={{numAdults}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"availability",
+						"resorts"
+					],
+					"query": [
+						{
+							"key": "checkInDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "checkOutDate",
+							"value": "{{todayPlus48}}"
+						},
+						{
+							"key": "numAdults",
+							"value": "{{numAdults}}"
+						},
+						{
+							"key": "customerId",
+							"value": "{{customerId}}",
+							"disabled": true
+						},
+						{
+							"key": "programId",
+							"value": "{{programId}}",
+							"disabled": true
+						},
+						{
+							"key": "segment",
+							"value": "ZAAART",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Availability components",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"type": "text",
+						"value": "{{$timestamp}}"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/availability/components?checkInDate={{todayPlus45}}&checkOutDate={{todayPlus48}}&propertyId={{propertyId}}&roomTypeId=23f5bef8-63ea-4ba9-a290-13b5a3056595",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"availability",
+						"components"
+					],
+					"query": [
+						{
+							"key": "checkInDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "checkOutDate",
+							"value": "{{todayPlus48}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "roomTypeId",
+							"value": "23f5bef8-63ea-4ba9-a290-13b5a3056595"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Applicable Program API",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/programs/applicable?customerId={{customerId}}&propertyId={{propertyId}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"programs",
+						"applicable"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "{{customerId}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Offers API",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{env}}/v2/customer/offers?customerId={{customerId}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"customer",
+						"offers"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "{{customerId}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}",
+							"disabled": true
+						},
+						{
+							"key": "notRolledToSegments",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "notSorted",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Offers API V3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{env}}/v3/customer/offers?customerId={{customerId}}&perpetualPricing=true",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v3",
+						"customer",
+						"offers"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "{{customerId}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}",
+							"disabled": true
+						},
+						{
+							"key": "perpetualPricing",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Perpetual Offers API",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/programs/default-perpetual?customerId={{customerId}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"programs",
+						"default-perpetual"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "{{customerId}}"
+						},
+						{
+							"key": "propertyIds",
+							"value": "66964e2b-2550-4476-84c3-1a4c0c5c067f,dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad,8bf670c2-3e89-412b-9372-6c87a215e442,44e610ab-c209-4232-8bb4-51f7b9b13a75,2159252c-60d3-47db-bbae-b1db6bb15072,13b178b0-8beb-43d5-af25-1738b7267e63,6c5cff3f-f01a-4f9b-87ab-8395ae8108db,e0f70eb3-7e27-4c33-8bcd-f30bf3b1103a,4a65a92a-962b-433e-841c-37e18dc5d68d,e2704b04-d515-45b0-8afd-4fa1424ff0a8,607c07e7-3e31-4e4c-a4e1-f55dca66fea2,1f3ed672-3f8f-44d8-9215-81da3c845d83,f8d6a944-7816-412f-a39a-9a63aad26833,0990fdce-7fc8-41b1-b8b6-9a25dce3db55,bee81f88-286d-43dd-91b5-3917d9d62a68,40b61feb-750a-45df-ae68-e23e6272b16b",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Offer V2 API",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/offer/validate?customerId={{customerId}}&programId=5c629ee4-ec38-4a07-a8d8-b435e0ef4069&propertyId=2159252c-60d3-47db-bbae-b1db6bb15072",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"offer",
+						"validate"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "{{customerId}}"
+						},
+						{
+							"key": "programId",
+							"value": "5c629ee4-ec38-4a07-a8d8-b435e0ef4069"
+						},
+						{
+							"key": "propertyId",
+							"value": "2159252c-60d3-47db-bbae-b1db6bb15072"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Offers API",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{env}}/v2/offers?programIds={{programId}}&startDate={{todayPlus45}}&endDate={{todayPlus48}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"offers"
+					],
+					"query": [
+						{
+							"key": "programIds",
+							"value": "{{programId}}"
+						},
+						{
+							"key": "startDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "endDate",
+							"value": "{{todayPlus48}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Reservation API",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/reservation?confirmationNumber=M05446733&firstName=Ravi Kiran&lastName=Ganji",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"reservation"
+					],
+					"query": [
+						{
+							"key": "confirmationNumber",
+							"value": "M05446733"
+						},
+						{
+							"key": "firstName",
+							"value": "Ravi Kiran"
+						},
+						{
+							"key": "lastName",
+							"value": "Ganji"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Group Blocks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/groupblocks?propertyId={{propertyId}}&startDate={{todayPlus30}}&endDate={{todayPlus45}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"groupblocks"
+					],
+					"query": [
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "startDate",
+							"value": "{{todayPlus30}}"
+						},
+						{
+							"key": "endDate",
+							"value": "{{todayPlus45}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{okta-access-token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const moment = require('moment')",
+					"// setting global variables",
+					"pm.globals.set(\"propertyId\", \"66964e2b-2550-4476-84c3-1a4c0c5c067f\");",
+					"pm.globals.set(\"partialProgramId\", \"5467d989-24f5-4188-a177-daa715763c59\");",
+					"pm.globals.set(\"roomTypeId\", \"b46361e9-e3dc-4fbf-8a66-d3dbd9fa74cd\");",
+					"pm.globals.set(\"programId\", \"af34d6c7-a348-4fa4-aeb3-8dc1fe7c897c\");",
+					"pm.globals.set(\"pricingRuleId\", \"b530f312-912c-45ec-8470-48ca8f8cb8b2\");",
+					"pm.globals.set(\"customerId\", \"168597258243\");",
+					"pm.globals.set(\"itineraryId\", \"7073818114\");",
+					"pm.globals.set(\"mlifeNumber\", \"68484176\");",
+					"",
+					"// dates",
+					"pm.globals.set(\"todayMinus3\", moment().subtract(3, 'day').format(\"YYYY-MM-DD\")) //pastDate",
+					"pm.globals.set(\"today\", moment().format(\"YYYY-MM-DD\")) //presentDate",
+					"pm.globals.set(\"todayPlus2\", moment().add(2, 'day').format(\"YYYY-MM-DD\")) //futureDate",
+					"pm.globals.set(\"todayPlus5\", moment().add(5, 'day').format(\"YYYY-MM-DD\"))",
+					"pm.globals.set(\"todayPlus30\", moment().add(30, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus30",
+					"pm.globals.set(\"todayPlus45\", moment().add(45, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus45",
+					"pm.globals.set(\"todayPlus46\", moment().add(46, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus46",
+					"pm.globals.set(\"todayPlus47\", moment().add(47, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus47",
+					"pm.globals.set(\"todayPlus48\", moment().add(48, 'day').format(\"YYYY-MM-DD\"))",
+					"pm.globals.set(\"numAdults\", 2)",
+					"pm.globals.set(\"numChildren\", 1)"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "transactionIdHeaderKey",
+			"value": "x-mgm-transaction-id"
+		}
+	]
+}

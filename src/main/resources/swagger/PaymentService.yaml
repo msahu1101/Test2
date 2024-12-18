@@ -1,0 +1,598 @@
+openapi: 3.0.0
+servers:
+  - url: https://mgm-nonprod-dev.apigee.net/pps/v1/payment
+    description: dev
+  - url: https://mgm-nonprod-qa.apigee.net/pps/v1/payment
+    description: qa
+  - url: https://mgm-nonprod-preprod.apigee.net/pps/v1/payment
+    description: preprod
+  - url: https://mgm-prod-prod.apigee.net/pps/v1/payment
+    description: prod
+info:
+  title: MGM - Payment Processing Services (PPS)
+  description: 'This is a Swagger for Authorize, Capture, DCC Check and Refund Payment APIs'
+  version: 1.0.0
+  termsOfService: 'https://www.mgmresorts.com/en/terms-of-use.html'
+  contact:
+    email: PaymentDev@MGMResorts.onmicrosoft.com
+  license:
+    name: MGM Copyright 2019
+    url: 'https://www.mgmresorts.com/en/terms-of-use.html'
+tags:
+  - name: MGM - Payment Processing Services (PPS)
+    description: 'APIs to do Authorize, DCC Check, Capture and Refund'
+paths:
+  /v1/payment/authorize:
+    post:
+      tags:
+        - authorize
+      summary: Authorize Payment API
+      description: API to Authorize Payment
+      parameters:
+        - $ref: '#/components/parameters/param2'
+        - $ref: '#/components/parameters/apikey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/authRequest'
+        description: API to Authorize Payment
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/authResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:                
+                  statusMessage:
+                    type: string
+                    description: 'Messaging explaining the response code.'
+                    example: 'ERROR: Bad Request: Merchant Reference Code required'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:                
+                  statusMessage:
+                    type: string
+                    description: 'Messaging explaining the response code.'
+                    example: 'ERROR:: Unexpected character encountered while parsing value'
+        '502':
+          description: Gateway Failure Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:                
+                  statusMessage:
+                    type: string
+                    description: 'Messaging explaining the response code.'
+                    example: 'FAILURE Failure'                    
+      security:
+        - oauth2:
+          - payments.processor:payment
+  /v1/payment/dcc:
+    post:
+      tags:
+        - dcc
+      summary: DCCCheck API
+      description: API for Foriegn Exhange Rates
+      parameters:
+        - $ref: '#/components/parameters/param2'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/dccRequest'
+        description: API for Foriegn Exhange Rates
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/dccResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/dccResponseError'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:                
+                  statusMessage:
+                    type: string
+                    description: 'Messaging explaining the response code.'
+                    example: 'ERROR:: Unexpected character encountered while parsing value'
+        '502':
+          description: Gateway Failure Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:                
+                  statusMessage:
+                    type: string
+                    description: 'Messaging explaining the response code.'
+                    example: 'FAILURE Failure'                     
+      security:
+        - oauth2:
+          - payments.processor:payment
+  /v1/payment/capture:
+    post:
+      tags:
+        - capture
+      summary: Capture Payment API
+      description: API for Capturing Authorized Amount
+      parameters:
+        - $ref: '#/components/parameters/param2'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/captureRequest'
+        description: API for Foriegn Exhange Rates
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/captureResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/captureResponseError'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:                
+                  statusMessage:
+                    type: string
+                    description: 'Messaging explaining the response code.'
+                    example: 'ERROR:: Unexpected character encountered while parsing value'
+        '502':
+          description: Gateway Failure Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:                
+                  statusMessage:
+                    type: string
+                    description: 'Messaging explaining the response code.'
+                    example: 'FAILURE Failure'                     
+      security:
+        - oauth2:
+          - payments.processor:payment
+  /v1/payment/refund:
+    post:
+      tags:
+        - refund
+      summary: Refund Payment API
+      description: API for Refund Authorized and Captured Amount
+      parameters:
+        - $ref: '#/components/parameters/param2'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/refundRequest'
+        description: API for Foriegn Exhange Rates
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/refundResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:                
+                  statusMessage:
+                    type: string
+                    description: 'Messaging explaining the response code.'
+                    example: 'ERROR: Bad Request: Merchant Reference Code required'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:                
+                  statusMessage:
+                    type: string
+                    description: 'Messaging explaining the response code.'
+                    example: 'ERROR:: Unexpected character encountered while parsing value'
+        '502':
+          description: Gateway Failure Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:                
+                  statusMessage:
+                    type: string
+                    description: 'Messaging explaining the response code.'
+                    example: 'FAILURE Failure'                     
+      security:
+        - oauth2:
+          - payments.processor:refund
+  /v1/payment/health:
+    get:
+      summary: Payments Proccessing Health Check
+      description: Health Check for Payments Proccessing svc
+      tags:
+        - Health Check
+      responses:
+        '200':
+          description: Success Response
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "success"
+components:
+  parameters:
+    param2:
+      name: x-correlation-id
+      in: header
+      description: Id for current trasaction
+      required: false
+      schema:
+        type: string
+    apikey:
+      name: x-functions-key
+      in: header
+      description: api-key to access PPS authorize
+      required: true
+      schema:
+        type: string
+  schemas:
+    authRequest:
+      allOf:
+        - $ref: '#/components/schemas/CommonRequestParameters'
+        - type: object
+      type: object
+      properties:
+        dcc:
+          $ref: '#/components/schemas/dccInfo'
+        billTo:
+          $ref: '#/components/schemas/billTo'
+        hotelData:
+          $ref: '#/components/schemas/hotelData'
+        paymentMethods:
+          $ref: '#/components/schemas/paymentMethods'
+        amount:
+          $ref: '#/components/schemas/amount'
+    authResponse:
+      allOf:
+        - $ref: '#/components/schemas/CommonResponseParameters'
+        - type: object
+      type: object
+      properties:
+        authRequestId:
+          $ref: '#/components/schemas/authRequestId'
+        amount:
+          $ref: '#/components/schemas/amount'       
+    dccRequest:
+      allOf:
+        - $ref: '#/components/schemas/CommonRequestParameters'
+        - type: object
+      type: object
+      properties:
+        bin:
+          type: string
+          description: >-
+            Bin number (6 digit prefix) of the account number. Used to determine
+            if DCC is applicable
+          example: 0
+        amount:
+          $ref: '#/components/schemas/amount'
+        hotelData:
+          $ref: '#/components/schemas/hotelData'          
+    dccResponse:
+      allOf:
+        - $ref: '#/components/schemas/CommonResponseParameters'
+        - type: object
+      type: object
+      properties:
+        foreignAmount:
+          type: number
+          description: Required if DCC is Opted In
+          example: 135.25
+        foreignCurrency:
+          type: string
+          description: The currency type of the amount specified. ISO 4217 3-digit code
+          example: 702
+        exchangeRate:
+          type: string
+          description: Exchange rate that was agreed to by the customer
+          example: 7.8109
+        foreignCurrencyAlpha:
+          type: string
+          description: The currency type of the amount specified. ISO 4217 3-digit code
+          example: SGD
+        requestID:
+          $ref: '#/components/schemas/requestID'
+    dccResponseError:
+      allOf:
+        - $ref: '#/components/schemas/CommonErrorResponseParameters'
+        - type: object
+      type: object
+      properties:
+        requestID:
+          $ref: '#/components/schemas/authRequestId'
+    captureRequest:
+      allOf:
+        - $ref: '#/components/schemas/CommonRequestParameters'
+        - type: object
+      type: object
+      properties:
+        amount:
+          $ref: '#/components/schemas/amount'      
+        authRequestId:
+          $ref: '#/components/schemas/authRequestId'
+        hotelData:
+          $ref: '#/components/schemas/hotelData'
+        paymentMethodsNameOnCardOnly:
+          $ref: '#/components/schemas/paymentMethodsNameOnCardOnly'
+    captureResponse:
+      allOf:
+        - $ref: '#/components/schemas/CommonResponseParameters'
+        - type: object
+      type: object
+      properties:
+        amount:
+          $ref: '#/components/schemas/amount'
+        reconciliationId:
+          $ref: '#/components/schemas/reconciliationId'
+        requestID:
+          $ref: '#/components/schemas/requestID'
+    captureResponseError:
+      allOf:
+        - $ref: '#/components/schemas/CommonErrorResponseParameters'
+        - type: object
+      type: object
+      properties:
+        requestID:
+          $ref: '#/components/schemas/authRequestId'            
+    refundRequest:
+      allOf:
+        - $ref: '#/components/schemas/CommonRequestParameters'
+        - type: object
+      type: object
+      properties:
+        amount:
+          $ref: '#/components/schemas/amount'
+        authRequestId:
+          $ref: '#/components/schemas/authRequestId'
+        paymentMethods:
+          $ref: '#/components/schemas/paymentMethods'
+        dcc:
+          $ref: '#/components/schemas/dccInfo'
+        hotelData:
+          $ref: '#/components/schemas/hotelData'             
+      required:
+        - amount
+        - authRequestId
+        - paymentMethods
+    refundResponse:
+      allOf:
+        - $ref: '#/components/schemas/CommonResponseParameters'
+        - type: object
+      type: object
+      properties:
+        amount:
+          $ref: '#/components/schemas/amount'
+        reconciliationId:
+          $ref: '#/components/schemas/reconciliationId'
+        requestID:
+          $ref: '#/components/schemas/requestID'
+    reconciliationId:
+      type: string
+      description: Freeway reconciliation ID
+      example: 68366496
+    authRequestId:
+      type: string
+      description: authRequest Id returned in Auth Response
+      example: 01Z6HCKVMT01U65UL80U1STITE4M164Z
+    amount:
+      type: string
+      example: 123.58
+    billTo:
+      type: object
+      properties:
+        firstName:
+          type: string
+          example: Vinay
+          description: First name used for billing address
+        lastName:
+          type: string
+          example: Tawale
+          description: Last name used for billing address
+        street1:
+          type: string
+          example: 8059 Earlsboro St
+          description: Street used for billing address
+        city:
+          type: string
+          example: Las Vegas
+          description: Billing address city
+        state:
+          type: string
+          example: NV
+          description: Billing address state
+        postalCode:
+          type: string
+          example: '89139'
+          description: Billing address postal code
+    paymentMethods:
+      type: object
+      properties:
+        card:
+          type: object
+          properties:
+            paymentToken:
+              type: string
+              example: 6282000A0018Z03YOZRN84V72342
+              description: tokenized payment number
+            cvv:
+              type: integer
+              example: 123
+              description: Card verification value
+            expirationMonth:
+              type: integer
+              example: 9
+              description: Expiration month of payment method
+            expirationYear:
+              type: integer
+              example: 2022
+              description: Expiration year of payment method
+            nameOnCard:
+              type: string
+              example: Vinay P Tawale
+              description: Name as it appears on the actual card
+    paymentMethodsNameOnCardOnly:
+      type: object
+      properties:
+        card:
+          type: object
+          properties:
+            nameOnCard:
+              type: string
+              example: Vinay P Tawale
+              description: Name as it appears on the actual card
+    hotelData:
+      type: object
+      properties:
+        folioNumber:
+          type: string
+          example: 2342342387
+          description: Reference number linking refund to original transaction
+        checkinDate:
+          type: string
+          example: 2021-08-18T14:30
+          description: Guest check-in date
+        checkoutDate:
+          type: string
+          example: 2021-08-19T14:30
+          description: Guest check-out date
+        roomRate:
+          type: string
+          example: 75.51
+          description: The daily room rate up to two decimal places. If room rate varies each day use average daily room rate.
+    dccInfo:
+      type: object
+      properties:
+        flag:
+          type: string
+          description: ‘Y’ = Opted In ‘N’ = Opted Out ‘E’ = Not Convertible
+          example: 'Y'
+        foreignAmount:
+          type: number
+          description: Required if DCC is Opted In
+          example: 135.25
+        foreignCurrency:
+          type: string
+          description: The currency type of the amount specified. ISO 4217 3-digit code
+          example: 344
+        exchangeRate:
+          type: string
+          description: Exchange rate that was agreed to by the customer
+          example: 7.8109
+    requestID:
+          type: string
+          description: requestId returned from Freedom Pay
+          example: 01Z6HCKVMT01U65UL80U1STITE4M164Z
+    CommonRequestParameters:
+      type: object
+      required:
+        - merchantID
+      properties:
+        merchantID:
+          type: string
+          description: Required to get StoreId and TerminalId
+          example: Bellagio2
+        transactionRefCode:
+          type: string
+          description: >-
+            Client Application to supply Transaction Reference Code for
+            Merchant Reference Code
+          example: M03D46301
+    CommonResponseParameters:
+      type: object
+      properties:
+        statusMessage:
+          type: string
+          example: Approved
+          description: Message describing the result of the request
+        decision:
+          type: string
+          example: APPROVED
+          description: The decision of whether this transaction was approved, rejected, etc.
+        reasonCode:
+          type: integer
+          example: 100
+          description: Code explaining reason for decision
+    CommonErrorResponseParameters:
+      type: object
+      properties:
+        statusMessage:
+          type: string
+          example: ERROR processorResponseCode:15
+          description: Message describing the result of the request
+        decision:
+          type: string
+          example: ERROR
+          description: The decision of whether this transaction was approved, rejected, etc.
+        reasonCode:
+          type: integer
+          example: 208
+          description: Code explaining reason for decision
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://azdeapi-dev.mgmresorts.com/int/identity/authorization/v1/mgmsvc/token
+          scopes: 
+            payments.processor:payment  : access to Authorize, DCC, Capture in Payment Processor service
+            payments.processor:refund : access to Refund in Payment Processor service

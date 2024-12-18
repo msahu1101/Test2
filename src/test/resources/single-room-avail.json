@@ -1,0 +1,825 @@
+{
+	"data": {
+		"hotel": {
+			"chainCode": "MGM",
+			"brandCode": "MR",
+			"propertyCode": "ARIA1",
+			"propertyCurrency": "USD",
+			"responseCurrency": "USD",
+			"taxDefinitions": [
+				{
+					"id": 0,
+					"code": "BOOCT",
+					"name": "Occupancy Tax",
+					"OTAcode": "FTT19",
+					"chargeFrequency": "PerNight",
+					"chargeUnit": "PerPerson",
+					"description": {
+						"en": [
+							"Breakfast tax"
+						]
+					},
+					"value": "13.38",
+					"valueType": "Percent",
+					"taxOn": "Rate",
+					"dow": "MTWTFSS",
+					"isInclusive": false,
+					"start": "2021-03-06",
+					"end": "2021-03-07"
+				}
+			]
+		},
+		"start": "2021-03-06",
+		"duration": "1D",
+		"ratePlans": [
+			{
+				"code": "CATST",
+				"name": {
+					"en": [
+						"FLAT REFERENCE RATE"
+					]
+				},
+				"isCommissionable": false,
+				"isFreeNight": false,
+				"isLoyaltyIdRequired": false,
+				"isRewardEarned": true,
+				"isAwardAccepted": false,
+				"isVoucherRequired": false,
+				"isIdRequired": false,
+				"areAmtsConfidential": false,
+				"isTentativeAllowed": false,
+				"advanceBooking": {
+					"isAdvancePurchase": false
+				}
+			},
+			{
+				"code": "CANR9",
+				"name": {
+					"en": [
+						"NR FLAT RATE"
+					]
+				},
+				"isCommissionable": false,
+				"isFreeNight": false,
+				"isLoyaltyIdRequired": false,
+				"isRewardEarned": true,
+				"isAwardAccepted": false,
+				"isVoucherRequired": false,
+				"isIdRequired": false,
+				"areAmtsConfidential": false,
+				"isTentativeAllowed": false,
+				"advanceBooking": {
+					"isAdvancePurchase": false
+				}
+			}
+		],
+		"products": [
+			{
+				"productCode": "KNGN",
+				"productTypeCode": "SR",
+				"availStatus": "sold out",
+				"pacCode": "OJF9",
+				"productTypeName": "Sleeping Room",
+				"otaCode": "GRI42",
+				"productName": "King Room Non Smoking",
+				"maximumNumberParticipant": 2,
+				"isDisplayable": true,
+				"isPremium": false,
+				"isFlowThrough": true
+			},
+			{
+				"productCode": "DBSN",
+				"productTypeCode": "SR",
+				"availStatus": "sold out",
+				"pacCode": "M4KU",
+				"productTypeName": "Sleeping Room",
+				"otaCode": "GRI42",
+				"productName":"Double Room",
+				"maximumNumberParticipant": 2,
+				"attributeCodes": [
+					"NSMK"
+				],
+				"isDisplayable": true,
+				"isPremium": true
+			},
+			{
+				"productCode": "BREAK",
+				"productTypeCode": "001",
+				"availStatus": "sold out",
+				"pacCode": "XSJQ",
+				"productTypeName": "Breakfast",
+				"otaCode": "RAT95",
+				"productName": "Breakfast",
+				"maximumNumberParticipant": 2
+			}
+		],
+		"attributes": [
+			{
+				"code": "NSMK",
+				"name": {
+					"en": [
+						"Non-Smoking"
+					]
+				}
+			}
+		],
+		"offers": [
+			{
+				"availStatus": "available",
+				"policies": {
+					"isRefundable": false,
+					"cancellationNoShow": {
+						"feeType": "Nights",
+						"amount": "170.07",
+						"amountCurrency": "USD",
+						"feeValue": "1",
+						"feeCurrency": "USD",
+						"deadline": {
+							"deadlineType": "numberOfDaysBeforeCheckin",
+							"deadlineValue": 0,
+							"dateTime": "2021-03-06T00:00:00"
+						},
+						"isGracePeriod": true
+					},
+					"checkinTime": "00:00:00",
+					"checkoutTime": "00:00:00"
+				},
+				"ratePlanCode": "CATST",
+				"bookingCode": "0000000",
+				"productUses": [
+					{
+						"period": {
+							"start": "2021-03-06",
+							"end": "2021-03-07"
+						},
+						"inventoryTypeCode": "KNGN",
+						"isMainProduct": true,
+						"quantity": 1,
+						"numberOfAvailableProducts": 3,
+									"guestCounts": [{
+									"otaCode":"AQC10",
+									"count":1
+									}],
+						"rates": {
+							"pricingFrequency": "PerNight",
+							"pricingMethod": "PerProduct",
+							"taxInclusionMode": "followHouse",
+							"totalRate": {
+								"bsAmt": "150.00",
+								"amtBfTx": "150.00",
+								"amtAfTx": "170.07",
+								"daily": [
+									{
+										"amtAfTx": "170.07",
+										"bsAmt": "150.00",
+										"amtType": "avg"
+									},
+									{
+										"bsAmt": "150.00",
+										"amtType": "Checkin"
+									}
+								],
+								"taxGroups": [
+									{
+										"taxDefIds": [
+											0
+										],
+										"code": "BOOCT",
+										"OTAcode": "FTT19",
+										"amount": "20.07",
+										"isIncludedInRate": false
+									}
+								],
+								"totalTaxes": "20.07"
+							},
+							"totalBaseOccRate": {
+								"bsAmt": "150.00",
+								"amtBfTx": "150.00",
+								"amtAfTx": "170.07",
+								"daily": [
+									{
+										"amtAfTx": "170.07",
+										"bsAmt": "150.00",
+										"amtType": "avg"
+									},
+									{
+										"bsAmt": "150.00",
+										"amtType": "Checkin"
+									}
+								],
+								"taxGroups": [
+									{
+										"taxDefIds": [
+											0
+										],
+										"code": "BOOCT",
+										"OTAcode": "FTT19",
+										"amount": "20.07",
+										"isIncludedInRate": false
+									}
+								],
+								"totalTaxes": "20.07"
+							},
+							"totalExtraOccRate": {
+								"bsAmt": "0.00",
+								"amtBfTx": "0.00",
+								"amtAfTx": "0.00",
+								"daily": [
+									{
+										"amtAfTx": "0.00",
+										"bsAmt": "0.00",
+										"amtType": "avg"
+									},
+									{
+										"bsAmt": "0.00",
+										"amtType": "Checkin"
+									}
+								],
+								"taxGroups": [
+									{
+										"taxDefIds": [
+											0
+										],
+										"code": "BOOCT",
+										"OTAcode": "FTT19",
+										"amount": "0.00",
+										"isIncludedInRate": false
+									}
+								],
+								"totalTaxes": "0.00"
+							},
+							"hasRateChange": false,
+							"ratesDef": {
+								"rateChanges": [
+									{
+										"id": 0,
+										"start": "2021-03-06",
+										"end": "2021-03-07",
+										"amount": "150.00"
+									}
+								],
+								"avg": "150.00",
+								"checkin": "150.00"
+							},
+							"dailyRates": [
+								{
+									"start": "2021-03-06",
+									"end": "2021-03-07",
+									"dailyTotalRate": {
+										"bsAmt": "150.00",
+										"amtBfTx": "150.00",
+										"amtAfTx": "170.07",
+										"rateDefId": 0,
+										"taxList": [
+                                            {
+                                                "taxDefIds": [
+                                                    0
+                                                ],
+                                                "code": "OCTAX",
+                                                "otaCode": "FTT10",
+                                                "amt": "9.53",
+                                                "isIncludedInRate": false,
+                                                "isPaidAtHotel": false
+                                            },
+                                            {
+                                                "taxDefIds": [
+                                                    1
+                                                ],
+                                                "code": "RSFTX",
+                                                "otaCode": "FTT10",
+                                                "amt": "6.02",
+                                                "isIncludedInRate": false,
+                                                "isPaidAtHotel": false
+                                            },
+                                            {
+                                                "taxDefIds": [
+                                                    2
+                                                ],
+                                                "code": "RSFEE",
+                                                "otaCode": "FTT12",
+                                                "amt": "45.00",
+                                                "isIncludedInRate": false,
+                                                "isPaidAtHotel": false
+                                            }
+                                        ]
+									}
+								}
+							]
+						}
+					}
+				],
+				"totalRate": {
+					"bsAmt": "150.00",
+					"amtBfTx": "150.00",
+					"amtAfTx": "170.07",
+					"daily": [
+						{
+							"amtAfTx": "170.07",
+							"bsAmt": "150.00",
+							"amtType": "avg"
+						},
+						{
+							"bsAmt": "150.00",
+							"amtType": "Checkin"
+						}
+					],
+					"taxGroups": [
+						{
+							"taxDefIds": [
+								0
+							],
+							"code": "BOOCT",
+							"OTAcode": "FTT19",
+							"amount": "20.07",
+							"isIncludedInRate": false
+						}
+					],
+					"totalTaxes": "20.07"
+				},
+				"totalBaseOccRate": {
+					"bsAmt": "150.00",
+					"amtBfTx": "150.00",
+					"amtAfTx": "170.07",
+					"daily": [
+						{
+							"amtAfTx": "170.07",
+							"bsAmt": "150.00",
+							"amtType": "avg"
+						},
+						{
+							"bsAmt": "150.00",
+							"amtType": "Checkin"
+						}
+					],
+					"taxGroups": [
+						{
+							"taxDefIds": [
+								0
+							],
+							"code": "BOOCT",
+							"OTAcode": "FTT19",
+							"amount": "20.07",
+							"isIncludedInRate": false
+						}
+					],
+					"totalTaxes": "20.07"
+				},
+				"totalExtraOccRate": {
+					"bsAmt": "0.00",
+					"amtBfTx": "0.00",
+					"amtAfTx": "0.00",
+					"daily": [
+						{
+							"amtAfTx": "0.00",
+							"bsAmt": "0.00",
+							"amtType": "avg"
+						},
+						{
+							"bsAmt": "0.00",
+							"amtType": "Checkin"
+						}
+					],
+					"taxGroups": [
+						{
+							"taxDefIds": [
+								0
+							],
+							"code": "BOOCT",
+							"OTAcode": "FTT19",
+							"amount": "0.00",
+							"isIncludedInRate": false
+						}
+					],
+					"totalTaxes": "0.00"
+				}
+			},
+			{
+				"availStatus": "available",
+				"policies": {
+					"isRefundable": false,
+					"cancellationNoShow": {
+						"feeType": "Nights",
+						"amount": "113.38",
+						"amountCurrency": "USD",
+						"feeValue": "1",
+						"feeCurrency": "USD",
+						"deadline": {
+							"deadlineType": "numberOfDaysBeforeCheckin",
+							"deadlineValue": 0,
+							"dateTime": "2021-03-06T00:00:00"
+						},
+						"isGracePeriod": true
+					},
+					"checkinTime": "00:00:00",
+					"checkoutTime": "00:00:00"
+				},
+				"ratePlanCode": "CATST",
+				"bookingCode": "0010000",
+				"productUses": [
+					{
+						"period": {
+							"start": "2021-03-06",
+							"end": "2021-03-07"
+						},
+						"inventoryTypeCode": "DBSN",
+						"isMainProduct": true,
+						"quantity": 1,
+						"numberOfAvailableProducts": 3,
+									"guestCounts": [{
+									"otaCode":"AQC10",
+									"count":1
+									}],
+						"rates": {
+							"pricingFrequency": "PerNight",
+							"pricingMethod": "PerProduct",
+							"taxInclusionMode": "followHouse",
+							"totalRate": {
+								"bsAmt": "100.00",
+								"amtBfTx": "100.00",
+								"amtAfTx": "113.38",
+								"daily": [
+									{
+										"amtAfTx": "113.38",
+										"bsAmt": "100.00",
+										"amtType": "avg"
+									},
+									{
+										"bsAmt": "100.00",
+										"amtType": "Checkin"
+									}
+								],
+								"taxGroups": [
+									{
+										"taxDefIds": [
+											0
+										],
+										"code": "BOOCT",
+										"OTAcode": "FTT19",
+										"amount": "13.38",
+										"isIncludedInRate": false
+									}
+								],
+								"totalTaxes": "13.38"
+							},
+							"totalBaseOccRate": {
+								"bsAmt": "100.00",
+								"amtBfTx": "100.00",
+								"amtAfTx": "113.38",
+								"daily": [
+									{
+										"amtAfTx": "113.38",
+										"bsAmt": "100.00",
+										"amtType": "avg"
+									},
+									{
+										"bsAmt": "100.00",
+										"amtType": "Checkin"
+									}
+								],
+								"taxGroups": [
+									{
+										"taxDefIds": [
+											0
+										],
+										"code": "BOOCT",
+										"OTAcode": "FTT19",
+										"amount": "13.38",
+										"isIncludedInRate": false
+									}
+								],
+								"totalTaxes": "13.38"
+							},
+							"totalExtraOccRate": {
+								"bsAmt": "0.00",
+								"amtBfTx": "0.00",
+								"amtAfTx": "0.00",
+								"daily": [
+									{
+										"amtAfTx": "0.00",
+										"bsAmt": "0.00",
+										"amtType": "avg"
+									},
+									{
+										"bsAmt": "0.00",
+										"amtType": "Checkin"
+									}
+								],
+								"taxGroups": [
+									{
+										"taxDefIds": [
+											0
+										],
+										"code": "BOOCT",
+										"OTAcode": "FTT19",
+										"amount": "0.00",
+										"isIncludedInRate": false
+									}
+								],
+								"totalTaxes": "0.00"
+							},
+							"hasRateChange": false,
+							"ratesDef": {
+								"rateChanges": [
+									{
+										"id": 0,
+										"start": "2021-03-06",
+										"end": "2021-03-07",
+										"amount": "100.00"
+									}
+								],
+								"avg": "100.00",
+								"checkin": "100.00"
+							},
+							"dailyRates": [
+								{
+									"start": "2021-03-06",
+									"end": "2021-03-07",
+									"dailyTotalRate": {
+										"bsAmt": "100.00",
+										"amtBfTx": "100.00",
+										"amtAfTx": "113.38",
+										"rateDefId": 0,
+										"taxList": [
+                                            {
+                                                "taxDefIds": [
+                                                    0
+                                                ],
+                                                "code": "OCTAX",
+                                                "otaCode": "FTT10",
+                                                "amt": "9.53",
+                                                "isIncludedInRate": false,
+                                                "isPaidAtHotel": false
+                                            },
+                                            {
+                                                "taxDefIds": [
+                                                    1
+                                                ],
+                                                "code": "RSFTX",
+                                                "otaCode": "FTT10",
+                                                "amt": "6.02",
+                                                "isIncludedInRate": false,
+                                                "isPaidAtHotel": false
+                                            },
+                                            {
+                                                "taxDefIds": [
+                                                    2
+                                                ],
+                                                "code": "RSFEE",
+                                                "otaCode": "FTT12",
+                                                "amt": "45.00",
+                                                "isIncludedInRate": false,
+                                                "isPaidAtHotel": false
+                                            }
+                                        ]
+									}
+								}
+							]
+						}
+					}
+				],
+				"totalRate": {
+					"bsAmt": "100.00",
+					"amtBfTx": "100.00",
+					"amtAfTx": "113.38",
+					"daily": [
+						{
+							"amtAfTx": "113.38",
+							"bsAmt": "100.00",
+							"amtType": "avg"
+						},
+						{
+							"bsAmt": "100.00",
+							"amtType": "Checkin"
+						}
+					],
+					"taxGroups": [
+						{
+							"taxDefIds": [
+								0
+							],
+							"code": "BOOCT",
+							"OTAcode": "FTT19",
+							"amount": "13.38",
+							"isIncludedInRate": false
+						}
+					],
+					"totalTaxes": "13.38"
+				},
+				"totalBaseOccRate": {
+					"bsAmt": "100.00",
+					"amtBfTx": "100.00",
+					"amtAfTx": "113.38",
+					"daily": [
+						{
+							"amtAfTx": "113.38",
+							"bsAmt": "100.00",
+							"amtType": "avg"
+						},
+						{
+							"bsAmt": "100.00",
+							"amtType": "Checkin"
+						}
+					],
+					"taxGroups": [
+						{
+							"taxDefIds": [
+								0
+							],
+							"code": "BOOCT",
+							"OTAcode": "FTT19",
+							"amount": "13.38",
+							"isIncludedInRate": false
+						}
+					],
+					"totalTaxes": "13.38"
+				},
+				"totalExtraOccRate": {
+					"bsAmt": "0.00",
+					"amtBfTx": "0.00",
+					"amtAfTx": "0.00",
+					"daily": [
+						{
+							"amtAfTx": "0.00",
+							"bsAmt": "0.00",
+							"amtType": "avg"
+						},
+						{
+							"bsAmt": "0.00",
+							"amtType": "Checkin"
+						}
+					],
+					"taxGroups": [
+						{
+							"taxDefIds": [
+								0
+							],
+							"code": "BOOCT",
+							"OTAcode": "FTT19",
+							"amount": "0.00",
+							"isIncludedInRate": false
+						}
+					],
+					"totalTaxes": "0.00"
+				}
+			},
+			{
+				"availStatus": "notAvailable",
+				"policies": {
+					"isRefundable": false,
+					"cancellationNoShow": {
+						"feeType": "Nights",
+						"amount": "15.00",
+						"amountCurrency": "USD",
+						"feeValue": "1",
+						"feeCurrency": "USD",
+						"deadline": {
+							"deadlineType": "numberOfDaysBeforeCheckin",
+							"deadlineValue": 0,
+							"dateTime": "2021-03-06T00:00:00"
+						},
+						"isGracePeriod": true
+					},
+					"checkinTime": "00:00:00",
+					"checkoutTime": "00:00:00"
+				},
+				"ratePlanCode": "CANR9",
+				"productUses": [
+					{
+						"period": {
+							"start": "2021-03-06",
+							"end": "2021-03-07"
+						},
+						"inventoryTypeCode": "BREAK",
+						"isMainProduct": true,
+									"guestCounts": [{
+									"otaCode":"AQC10",
+									"count":1
+									}],
+						"rates": {
+							"pricingFrequency": "PerNight",
+							"pricingMethod": "PerProduct",
+							"taxInclusionMode": "followHouse",
+							"totalRate": {
+								"bsAmt": "15.00",
+								"amtAfTx": "15.00",
+								"daily": [
+									{
+										"amtAfTx": "15.00",
+										"bsAmt": "15.00",
+										"amtType": "avg"
+									},
+									{
+										"bsAmt": "15.00",
+										"amtType": "Checkin"
+									}
+								]
+							},
+							"totalBaseOccRate": {
+								"bsAmt": "15.00",
+								"amtAfTx": "15.00",
+								"daily": [
+									{
+										"amtAfTx": "15.00",
+										"bsAmt": "15.00",
+										"amtType": "avg"
+									},
+									{
+										"bsAmt": "15.00",
+										"amtType": "Checkin"
+									}
+								]
+							},
+							"hasRateChange": false,
+							"ratesDef": {
+								"rateChanges": [
+									{
+										"id": 0,
+										"start": "2021-03-06",
+										"end": "2021-03-07",
+										"amount": "15.00"
+									}
+								],
+								"avg": "15.00",
+								"checkin": "15.00"
+							},
+							"dailyRates": [
+								{
+									"start": "2021-03-06",
+									"end": "2021-03-07",
+									"dailyTotalRate": {
+										"bsAmt": "15.00",
+										"amtAfTx": "15.00",
+										"rateDefId": 0,
+										"taxList": [
+                                            {
+                                                "taxDefIds": [
+                                                    0
+                                                ],
+                                                "code": "OCTAX",
+                                                "otaCode": "FTT10",
+                                                "amt": "9.53",
+                                                "isIncludedInRate": false,
+                                                "isPaidAtHotel": false
+                                            },
+                                            {
+                                                "taxDefIds": [
+                                                    1
+                                                ],
+                                                "code": "RSFTX",
+                                                "otaCode": "FTT10",
+                                                "amt": "6.02",
+                                                "isIncludedInRate": false,
+                                                "isPaidAtHotel": false
+                                            },
+                                            {
+                                                "taxDefIds": [
+                                                    2
+                                                ],
+                                                "code": "RSFEE",
+                                                "otaCode": "FTT12",
+                                                "amt": "45.00",
+                                                "isIncludedInRate": false,
+                                                "isPaidAtHotel": false
+                                            }
+                                        ]
+									}
+								}
+							]
+						}
+					}
+				],
+				"totalRate": {
+					"bsAmt": "15.00",
+					"amtAfTx": "15.00",
+					"daily": [
+						{
+							"amtAfTx": "15.00",
+							"bsAmt": "15.00",
+							"amtType": "avg"
+						},
+						{
+							"bsAmt": "15.00",
+							"amtType": "Checkin"
+						}
+					]
+				},
+				"totalBaseOccRate": {
+					"bsAmt": "15.00",
+					"amtAfTx": "15.00",
+					"daily": [
+						{
+							"amtAfTx": "15.00",
+							"bsAmt": "15.00",
+							"amtType": "avg"
+						},
+						{
+							"bsAmt": "15.00",
+							"amtType": "Checkin"
+						}
+					]
+				}
+			}
+		]
+	},
+	"keepPricingInformation": false
+}

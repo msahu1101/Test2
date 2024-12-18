@@ -1,0 +1,236 @@
+{
+  "inSessionReservationId" : null,
+  "numRooms" : 1,
+  "bookDate" : 1550466805183,
+  "checkInDate" : 1553583600000,
+  "checkOutDate" : 1553756400000,
+  "numAdults" : 2,
+  "billingType" : "CustomerCreditCard",
+  "state" : "Cancelled",
+  "postingFlow" : "Make",
+  "postingState" : "Queued",
+  "postingStartedAt" : 0,
+  "postingEndedAt" : 0,
+  "amountDue" : 5624.02,
+  "createdAt" : 1550466807619,
+  "updatedAt" : 1550466807619,
+  "syncFromOperaAt" : 0,
+  "pointCharges" : 0,
+  "nrgStatus" : false,
+  "id" : "390109953",
+  "itineraryId" : "390109185",
+  "propertyId" : "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+  "programId" : null,
+  "roomTypeId" : "f44d10c3-aeaa-4aa1-8d94-1d0df9017437",
+  "guaranteeCode" : "CC",
+  "profile" : {
+    "id" : 47421128961,
+    "mlifeNo" : 0,
+    "title" : null,
+    "dateOfBirth" : null,
+    "modifiable" : false,
+    "createdAt" : 0,
+    "updatedAt" : 0,
+    "refreshedAt" : 0,
+    "stale" : false,
+    "externalSyncAt" : 0,
+    "caslOptin" : false,
+    "operaId" : null,
+    "tier" : null,
+    "firstName" : "Ravi Kiran",
+    "lastName" : "Ganji",
+    "emailAddress1" : "testgen@mailinator.com",
+    "phoneNumbers" : [ {
+      "type" : "Home",
+      "number" : "7023264108"
+    } ],
+    "addresses" : [ {
+      "type" : "Home",
+      "preferred" : true,
+      "street1" : "2715 W P R",
+      "street2" : null,
+      "city" : "LV",
+      "state" : "NV",
+      "country" : "US",
+      "postalCode" : "89123"
+    } ]
+  },
+  "bookings" : [ {
+    "date" : 1553583600000,
+    "basePrice" : 10024.99,
+    "customerPrice" : 5513.7445,
+    "price" : 5513.7445,
+    "programIdIsRateTable" : false,
+    "overridePrice" : -1.0,
+    "overrideProgramIdIsRateTable" : false,
+    "resortFeeIsSpecified" : false,
+    "resortFee" : 0.0,
+    "programId" : "89364848-c326-4319-a083-d5665df90349",
+    "pricingRuleId" : "0c5b7e1c-fc40-4d1c-b41a-5d36c9ef1fe6",
+    "isComp" : false
+  }, {
+    "date" : 1553670000000,
+    "basePrice" : 10024.99,
+    "customerPrice" : 5513.7445,
+    "price" : 5513.7445,
+    "programIdIsRateTable" : false,
+    "overridePrice" : -1.0,
+    "overrideProgramIdIsRateTable" : false,
+    "resortFeeIsSpecified" : false,
+    "resortFee" : 0.0,
+    "programId" : "89364848-c326-4319-a083-d5665df90349",
+    "pricingRuleId" : "0c5b7e1c-fc40-4d1c-b41a-5d36c9ef1fe6",
+    "isComp" : false
+  } ],
+  "markets" : [ {
+    "date" : 1553583600000,
+    "marketCode" : "TFIT",
+    "sourceCode" : "TFITIC"
+  }, {
+    "date" : 1553670000000,
+    "marketCode" : "TFIT",
+    "sourceCode" : "TFITIC"
+  } ],
+  "chargesAndTaxesCalc" : {
+    "charges" : [ {
+      "date" : 1553583600000,
+      "amount" : 5548.7445,
+      "itemized" : [ {
+        "itemType" : "RoomCharge",
+        "amount" : 5513.7445,
+        "item" : "Room Charge"
+      }, {
+        "itemType" : "ExtraGuestCharge",
+        "amount" : 0.0,
+        "item" : "Extra Guest Charge"
+      }, {
+        "itemType" : "ResortFee",
+        "amount" : 35.0,
+        "item" : "Resort Fee"
+      } ]
+    }, {
+      "date" : 1553670000000,
+      "amount" : 5548.7445,
+      "itemized" : [ {
+        "itemType" : "RoomCharge",
+        "amount" : 5513.7445,
+        "item" : "Room Charge"
+      }, {
+        "itemType" : "ExtraGuestCharge",
+        "amount" : 0.0,
+        "item" : "Extra Guest Charge"
+      }, {
+        "itemType" : "ResortFee",
+        "amount" : 35.0,
+        "item" : "Resort Fee"
+      } ]
+    } ],
+    "taxesAndFees" : [ {
+      "date" : 1553583600000,
+      "amount" : 111.32489,
+      "itemized" : [ {
+        "itemType" : "RoomChargeTax",
+        "amount" : 110.27489,
+        "item" : "Room Tax"
+      }, {
+        "itemType" : "ExtraGuestChargeTax",
+        "amount" : 0.0,
+        "item" : "Extra Guest Tax"
+      }, {
+        "itemType" : "ResortFeeTax",
+        "amount" : 1.05,
+        "item" : "Resort Fee Tax"
+      } ]
+    }, {
+      "date" : 1553670000000,
+      "amount" : 111.32489,
+      "itemized" : [ {
+        "itemType" : "RoomChargeTax",
+        "amount" : 110.27489,
+        "item" : "Room Tax"
+      }, {
+        "itemType" : "ExtraGuestChargeTax",
+        "amount" : 0.0,
+        "item" : "Extra Guest Tax"
+      }, {
+        "itemType" : "ResortFeeTax",
+        "amount" : 1.05,
+        "item" : "Resort Fee Tax"
+      } ]
+    } ]
+  },
+  "depositPolicyCalc" : {
+    "depositRequired" : true,
+    "creditCardRequired" : true
+  },
+  "depositDetails" : { },
+  "depositCalc" : {
+    "dueDate" : 1550466805202,
+    "amountPolicy" : "Nights",
+    "amount" : 5624.0193899999995,
+    "forfeitDate" : 1553324400000,
+    "forfeitAmount" : 5624.0193899999995,
+    "overrideAmount" : -1.0,
+    "depositRuleCode" : "1NT",
+    "cancellationRuleCode" : "72H",
+    "itemized" : [ {
+      "itemType" : "RoomCharge",
+      "amount" : 5513.7445,
+      "item" : "Room Charge"
+    }, {
+      "itemType" : "RoomChargeTax",
+      "amount" : 110.27489,
+      "item" : "Room Tax"
+    } ]
+  },
+  "channelId" : "28d4c708-51c0-4998-9601-e1c7890380ba",
+  "origin" : "mgmgrandlv",
+  "source" : "mgmgrandlv",
+  "specialRequests" : [ ],
+  "creditCardCharges" : [ {
+    "amount" : 5624.0193899999995,
+    "cvv" : null,
+    "expiry" : 1639804400318,
+    "holder" : "Ravi Kiran Ganji",
+    "number" : "PzVhdrik09yxCN60HBtb80aVylF+DOeJpW5yVs0doleOj57yloEaLK4zPUAcMmTLaB0jpL8Yt+4FCXIsYePmzA==",
+    "maskedNumber" : "XXXXXXXXXXXX4444",
+    "type" : "Mastercard",
+    "holderProfile" : {
+      "firstName" : "Ravi Kiran",
+      "lastName" : "Ganji",
+      "address" : {
+        "type" : "Home",
+        "preferred" : true,
+        "street1" : "2715 W P R",
+        "street2" : null,
+        "city" : "LV",
+        "state" : "NV",
+        "country" : "US",
+        "postalCode" : "89123"
+      }
+    }
+  } ],
+  "confirmationNumber" : "M00AE5151",
+  "payments" : [ {
+    "reservationInstance" : 1,
+    "chargeAmount" : 5624.02,
+    "chargeCardExpiry" : 1639804400318,
+    "fxChecked" : true,
+    "fxEligible" : false,
+    "fxTransDate" : 1550423605000,
+    "fxAmount" : 0.0,
+    "fxRate" : 0.0,
+    "fxSettleAmount" : 5624.02,
+    "status" : "Settled",
+    "chargeCardHolder" : "Ravi Kiran Ganji",
+    "chargeCurrencyCode" : "USD",
+    "chargeCardType" : "Mastercard",
+    "chargeCardMaskedNumber" : "XXXXXXXXXXXX4444",
+    "chargeCardNumber" : "PzVhdrik09yxCN60HBtb80aVylF+DOeJpW5yVs0doleOj57yloEaLK4zPUAcMmTLaB0jpL8Yt+4FCXIsYePmzA==",
+    "fxCurrencyCode" : "USD",
+    "fxAcceptMessage" : "Approved",
+    "fxAuthApprovalCode" : "142000",
+    "isDeposit" : true,
+    "isExternal" : false
+  } ]
+}

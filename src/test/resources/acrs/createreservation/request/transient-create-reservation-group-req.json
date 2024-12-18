@@ -1,0 +1,159 @@
+{
+  "instance": 0,
+  "customerId": 1031580614913,
+  "numRooms": 1,
+  "checkInDate": "2022-10-04",
+  "checkOutDate": "2022-10-05",
+  "numAdults": 2,
+  "postingStartedAt": 0,
+  "postingEndedAt": 0,
+  "amountDue": 0,
+  "createdAt": 0,
+  "updatedAt": 0,
+  "syncFromOperaAt": 0,
+  "nrgStatus": false,
+  "id": "b77905db-4dc6-41a0-97a0-413ca33d39fc",
+  "itineraryId": "10507112449",
+  "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+  "programId": "GRPCD-v-NYNYTEST03-d-PROP-v-MV021",
+  "roomTypeId": "ROOMCD-v-DPRK-d-PROP-v-MV021",
+  "guaranteeCode": "CC",
+  "profile": {
+    "id": 1031580614913,
+    "mlifeNo": 0,
+    "modifiable": false,
+    "createdAt": 0,
+    "updatedAt": 0,
+    "refreshedAt": 0,
+    "stale": false,
+    "externalSyncAt": 0,
+    "caslOptin": false,
+    "firstName": "Temp111",
+    "lastName": "Temp222",
+    "emailAddress1": "hjghg@gmail.com",
+    "phoneNumbers": [
+      {
+        "type": "Home",
+        "number": "8888888888"
+      }
+    ],
+    "addresses": [
+      {
+        "type": "Home",
+        "preferred": false,
+        "street1": "409yyy",
+        "street2": "Gada",
+        "city": "Murrieta",
+        "state": "CA",
+        "country": "CA",
+        "postalCode": "L5B4M8"
+      }
+    ]
+  },
+  "bookings": [
+    {
+      "date": "2022-10-04",
+      "basePrice": 0,
+      "customerPrice": 0,
+      "price": 60,
+      "programIdIsRateTable": false,
+      "overridePrice": -1,
+      "overrideProgramIdIsRateTable": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 0,
+      "programId": "GRPCD-v-NYNYTEST03-d-PROP-v-MV021",
+      "isComp": false
+    }
+  ],
+  "chargesAndTaxesCalc": {
+    "charges": [
+      {
+        "date": "2022-10-04",
+        "amount": 90,
+        "itemized": [
+          {
+            "active": false,
+            "itemType": "RoomCharge",
+            "amount": 60
+          },
+          {
+            "active": false,
+            "itemType": "ResortFee",
+            "amount": 30,
+            "item": "RSFEE"
+          }
+        ]
+      }
+    ],
+    "taxesAndFees": [
+      {
+        "date": "2022-10-04",
+        "amount": 16.06,
+        "itemized": [
+          {
+            "active": false,
+            "itemType": "RoomChargeTax",
+            "amount": 8.03,
+            "item": "OCTAX"
+          },
+          {
+            "active": false,
+            "itemType": "ResortFeeTax",
+            "amount": 8.03,
+            "item": "RSFTX"
+          }
+        ]
+      }
+    ]
+  },
+  "depositCalc": {
+    "amount": 0,
+    "forfeitAmount": 0,
+    "overrideAmount": -1
+  },
+  "source": "ice",
+  "specialRequests": [],
+  "creditCardCharges": [
+    {
+      "amount": 0,
+      "cvv": "123",
+      "ccToken": "5555550A001ICT2KV6C06P4A4444",
+      "expiry": "2022-12-01",
+      "holder": "temp111 temp222",
+      "number": "5555550A001ICT2KV6C06P4A4444",
+      "type": "Mastercard",
+      "holderProfile": {
+        "firstName": "Temp111",
+        "lastName": "Temp222",
+        "address": {
+          "type": "Home",
+          "preferred": true,
+          "street1": "409yyy",
+          "street2": "Gada",
+          "city": "Murrieta",
+          "state": "CA",
+          "country": "CA",
+          "postalCode": "L5B4M8"
+        }
+      },
+      "fxAmount": 0,
+      "fxExchangeRate": 0
+    }
+  ],
+  "confirmationNumber": "",
+  "additionalComments": [],
+  "customerRank": 0,
+  "customerSegment": 0,
+  "operaState": "",
+  "operaConfirmationNumber": "",
+  "rrUpSell": "",
+  "numChildren": 0,
+  "routingInstructions": [],
+  "isGroupCode": false,
+  "perpetualPricing": false,
+  "ignoreChannelMargins": false,
+  "excludeNonOffer": false,
+  "thirdParty": false,
+  "f1Package": false,
+  "pendingReservation": false
+}

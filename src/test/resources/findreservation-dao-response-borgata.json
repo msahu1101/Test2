@@ -1,0 +1,269 @@
+{
+	"customerId": 923600551937,
+	"inSessionReservationId": null,
+	"numRooms": 1,
+	"bookDate": 1614931200000,
+	"checkInDate": "2021-03-20",
+	"checkOutDate": "2021-03-21",
+	"numAdults": 2,
+	"billingType": null,
+	"state": "Booked",
+	"postingFlow": null,
+	"postingState": "Success",
+	"postingStartedAt": 0,
+	"postingEndedAt": 0,
+	"amountDue": 0.0,
+	"createdAt": 1614967791580,
+	"updatedAt": 1615226811338,
+	"syncFromOperaAt": 1615226803787,
+	"nrgStatus": false,
+	"id": "1614967754",
+	"itineraryId": "7863215105",
+	"propertyId": "773000cc-468a-4d86-a38f-7ae78ecfa6aa",
+	"programId": null,
+	"roomTypeId": "14ebf50a-c104-49c3-828c-c49221ebb50a",
+	"guaranteeCode": "CC",
+	"profile": {
+		"id": 923600551937,
+		"mlifeNo": 79950292,
+		"title": null,
+		"dateOfBirth": null,
+		"modifiable": false,
+		"createdAt": 0,
+		"updatedAt": 0,
+		"refreshedAt": 1615226803793,
+		"stale": false,
+		"externalSyncAt": 0,
+		"caslOptin": false,
+		"operaId": "815726747",
+		"tier": null,
+		"firstName": "Lakshmi",
+		"lastName": "T",
+		"emailAddress1": "tlntest3@yopmail.com",
+		"emailAddress2": null,
+		"hgpNo": null,
+		"swrrNo": null,
+		"phoneNumbers": [
+			{
+				"type": "Home",
+				"number": "9611877004"
+			}
+		],
+		"addresses": [
+			{
+				"type": "Home",
+				"preferred": false,
+				"street1": "Add1",
+				"street2": "Unit 415",
+				"city": "Las Vegas",
+				"state": "NV",
+				"country": "US",
+				"postalCode": "89103"
+			}
+		]
+	},
+	"bookings": [
+		{
+			"date": "2021-03-20",
+			"basePrice": -1.0,
+			"customerPrice": -1.0,
+			"price": 5513.7445,
+			"programIdIsRateTable": false,
+			"overridePrice": 5513.74,
+			"overrideProgramIdIsRateTable": false,
+			"resortFeeIsSpecified": true,
+			"resortFee": 15.0,
+			"programId": "34a27a98-c367-4732-a059-c7ead4b1ec9b",
+			"pricingRuleId": "da682b56-ee40-426a-a771-85d082e29605",
+			"overrideProgramId": "34a27a98-c367-4732-a059-c7ead4b1ec9b",
+			"overridePricingRuleId": "da682b56-ee40-426a-a771-85d082e29605",
+			"isComp": false
+		}
+	],
+	"markets": [
+		{
+			"date": "2021-03-20",
+			"marketCode": "TFIT",
+			"sourceCode": "TFITIC"
+		}
+	],
+	"chargesAndTaxesCalc": {
+		"charges": [
+			{
+				"date": "2021-03-20",
+				"amount": 5533.74,
+				"itemized": [
+					{
+						"itemType": "RoomCharge",
+						"amount": 5513.74,
+						"item": "Room Charge"
+					},
+					{
+						"itemType": "ExtraGuestCharge",
+						"amount": 0.0,
+						"item": "Extra Guest Charge"
+					},
+					{
+						"itemType": "ResortFee",
+						"amount": 15.0,
+						"item": "Resort Fee"
+					},
+					{
+						"id": "78e56314-8aba-4107-b376-59a148f23b34",
+						"shortDescription": "Occupancy Fee",
+						"active": true,
+						"pricingApplied": "NIGHTLY",
+						"itemType": "ComponentCharge",
+						"amount": 3.0,
+						"item": "OCC"
+					},
+					{
+						"id": "3e205a63-84f7-41b6-a7e8-b83be9b72e80",
+						"shortDescription": "Tourism Fee",
+						"active": true,
+						"pricingApplied": "NIGHTLY",
+						"itemType": "ComponentCharge",
+						"amount": 2.0,
+						"item": "TOR"
+					}
+				]
+			}
+		],
+		"taxesAndFees": [
+			{
+				"date": "2021-03-20",
+				"amount": 753.5633250000001,
+				"itemized": [
+					{
+						"itemType": "RoomChargeTax",
+						"amount": 751.247075,
+						"item": "Room Tax"
+					},
+					{
+						"itemType": "ExtraGuestChargeTax",
+						"amount": 0.0,
+						"item": "Extra Guest Tax"
+					},
+					{
+						"itemType": "ResortFeeTax",
+						"amount": 2.04375,
+						"item": "Resort Fee Tax"
+					},
+					{
+						"id": "78e56314-8aba-4107-b376-59a148f23b34",
+						"shortDescription": "Occupancy Fee",
+						"active": true,
+						"pricingApplied": "NIGHTLY",
+						"itemType": "ComponentChargeTax",
+						"amount": 0.0,
+						"item": "OCC"
+					},
+					{
+						"id": "3e205a63-84f7-41b6-a7e8-b83be9b72e80",
+						"shortDescription": "Tourism Fee",
+						"active": true,
+						"pricingApplied": "NIGHTLY",
+						"itemType": "ComponentChargeTax",
+						"amount": 0.2725,
+						"item": "TOR"
+					}
+				]
+			}
+		]
+	},
+	"depositPolicyCalc": {
+		"depositRequired": true,
+		"creditCardRequired": true
+	},
+	"depositCalc": {
+		"dueDate": "2021-03-05",
+		"amountPolicy": "Nights",
+		"amount": 6264.9922,
+		"forfeitDate": "2021-03-18",
+		"forfeitAmount": 6264.9922,
+		"overrideAmount": -1.0,
+		"depositRuleCode": "1NT",
+		"cancellationRuleCode": "48H"
+	},
+	"channelId": null,
+	"origin": "ice",
+	"source": null,
+	"specialRequests": [
+		"78e56314-8aba-4107-b376-59a148f23b34",
+		"3e205a63-84f7-41b6-a7e8-b83be9b72e80"
+	],
+	"creditCardCharges": [
+		{
+			"amount": 0.0,
+			"cvv": null,
+			"expiry": 1698735600000,
+			"holder": "John doe",
+			"number": "mUSmtlmyNJ8A/3pBGjEvh9h4Mt8fWYhUDVOlBymqxl8etM2oe/3ggSI4k4Io8h/FkzP+qqhV5rnCcmwcVBORdA==",
+			"decryptedNumber": "4111111111111111",
+			"maskedNumber": "XXXXXXXXXXXX1111",
+			"type": "Visa",
+			"currencyCode": null,
+			"holderProfile": null,
+			"fxAmount": 0.0,
+			"fxCurrencyISOCode": null,
+			"fxExchangeRate": 0.0,
+			"fxFlag": null
+		}
+	],
+	"confirmationNumber": "M03D45C61",
+	"payments": [
+		{
+			"reservationInstance": 1,
+			"chargeAmount": 0.0,
+			"chargeCardExpiry": "2023-10-01",
+			"status": "DCCChecked",
+			"chargeCardHolder": "John doe",
+			"chargeCurrencyCode": "USD",
+			"chargeCardType": "Visa",
+			"chargeCardMaskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX1111",
+			"chargeCardNumber": "MdyZgs5xFHw2TfmGTmQDbYAJNPZwUVYU93oBZ1AqMK6KU3NoXUROVZEPU5E9yuL+vS5QkXFx2aE8xoR+yVejZg==",
+			"fxChecked": true,
+			"fxEligible": false,
+			"fxTransDate": "2021-03-05",
+			"fxAmount": 0.0,
+			"fxRate": 0.0,
+			"fxSettleAmount": 0.0,
+			"fxCurrencyCode": "USD",
+			"fxAcceptMessage": "Approved",
+			"isExternal": false,
+			"isDeposit": false
+		}
+	],
+	"comments": null,
+	"additionalComments": null,
+	"customerRank": 0,
+	"customerSegment": 0,
+	"customerDominantPlay": null,
+	"agentInfo": null,
+	"shareWiths": null,
+	"shareWithType": null,
+	"upgradeRoomTypeId": null,
+	"operaState": "RESERVED",
+	"roomNumber": null,
+	"partyConfirmationNumber": null,
+	"extConfirmationNumber": null,
+	"otaConfirmationNumber": null,
+	"primarySharerConfirmationNumber": null,
+	"operaConfirmationNumber": "798136234",
+	"rrUpSell": null,
+	"numChildren": 2,
+	"cancellationReason": null,
+	"cancellationPolicyInfo": "48 Hour Cancellation",
+	"cancellationNumber": null,
+	"alerts": null,
+	"routingInstructions": null,
+	"traces": null,
+	"shareWithCustomers": null,
+	"crsWarnings": null,
+	"isGroupCode": false,
+	"perpetualPricing": false,
+	"availableComponents": null,
+	"promoCode": null,
+	"ignoreChannelMargins": false,
+	"excludeNonOffer": false
+}

@@ -1,0 +1,1015 @@
+{
+    "data": {
+        "start": "2021-08-11",
+        "duration": "1D",
+        "hotels": [
+            {
+                "hotel": {
+                    "chainCode": "MGM",
+                    "brandCode": "MV",
+                    "propertyCode": "MV021",
+                    "propertyCurrency": "USD",
+                    "responseCurrency": "USD"
+                },
+                "ratePlans": [
+                    {
+                        "code": "string",
+                        "types": [
+                            "RPT4",
+                            "RPT9"
+                        ],
+                        "availStatus": "available",
+                        "isFreeNight": true,
+                        "cdNumbers": [
+                            "string"
+                        ],
+                        "isAwardAccepted": true,
+                        "desc": {
+                            "en": [
+                                "line 1",
+                                "line 2",
+                                "line 3"
+                            ],
+                            "fr": [
+                                "ligne 1",
+                                "ligne 2",
+                                "ligne 3"
+                            ]
+                        },
+                        "longDesc": {
+                            "en": [
+                                "line 1",
+                                "line 2",
+                                "line 3"
+                            ],
+                            "fr": [
+                                "ligne 1",
+                                "ligne 2",
+                                "ligne 3"
+                            ]
+                        },
+                        "promoCode": "ZNVLCLS"
+                    }
+                ],
+                "isCommissionable": "No",
+                "channelPreferredRate": "Check-in",
+                "arePackageRatesReturned": false,
+                "products": [
+                    {
+                        "inventoryTypeCode": "DPRK",
+                        "productCode": "SR",
+                        "availStatus": "available",
+                        "pacCode": "6GGS",
+                        "productName": "Sleeping Room",
+                        "otaCode": "GRI42",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Park Avenue King"
+                            ]
+                        },
+                        "maxNbParticipant": 3,
+                        "attCodes": [
+                            "1KING",
+                            "MAX3"
+                        ],
+                        "isDisplayable": true,
+                        "isPremium": true
+                    },
+                    {
+                        "inventoryTypeCode": "DPRQ",
+                        "productCode": "SR",
+                        "availStatus": "available",
+                        "pacCode": "KM8F",
+                        "productName": "Sleeping Room",
+                        "otaCode": "GRI42",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Park Avenue Two Queen"
+                            ]
+                        },
+                        "maxNbParticipant": 4,
+                        "attCodes": [
+                            "2QUEEN",
+                            "MAX4"
+                        ],
+                        "isDisplayable": true,
+                        "isPremium": false
+                    },
+                    {
+                        "inventoryTypeCode": "DPSV",
+                        "productCode": "SR",
+                        "availStatus": "available",
+                        "pacCode": "I80G",
+                        "productName": "Sleeping Room",
+                        "otaCode": "GRI42",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Park Avenue Strip View"
+                            ]
+                        },
+                        "maxNbParticipant": 3,
+                        "attCodes": [
+                            "1KING",
+                            "MAX3",
+                            "STRIPV"
+                        ],
+                        "isDisplayable": true,
+                        "isPremium": false
+                    },
+                    {
+                        "inventoryTypeCode": "DPSQ",
+                        "productCode": "SR",
+                        "availStatus": "available",
+                        "pacCode": "YQ49",
+                        "productName": "Sleeping Room",
+                        "otaCode": "GRI42",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Park Avenue Two Queen Strip View"
+                            ]
+                        },
+                        "maxNbParticipant": 4,
+                        "attCodes": [
+                            "2QUEEN",
+                            "MAX4",
+                            "STRIPV"
+                        ],
+                        "isDisplayable": true,
+                        "isPremium": false
+                    },
+                    {
+                        "inventoryTypeCode": "DMAD",
+                        "productCode": "SR",
+                        "availStatus": "available",
+                        "pacCode": "OVJW",
+                        "productName": "Sleeping Room",
+                        "otaCode": "GRI42",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Madison Avenue King"
+                            ]
+                        },
+                        "maxNbParticipant": 3,
+                        "attCodes": [
+                            "1KING",
+                            "450SQFT",
+                            "MAX3"
+                        ],
+                        "isDisplayable": true,
+                        "isPremium": true
+                    },
+                    {
+                        "inventoryTypeCode": "DMDQ",
+                        "productCode": "SR",
+                        "availStatus": "available",
+                        "pacCode": "HB8O",
+                        "productName": "Sleeping Room",
+                        "otaCode": "GRI42",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Madison Avenue Two Queen"
+                            ]
+                        },
+                        "maxNbParticipant": 4,
+                        "attCodes": [
+                            "2QUEEN",
+                            "450SQFT",
+                            "MAX4"
+                        ],
+                        "isDisplayable": true,
+                        "isPremium": false
+                    },
+                    {
+                        "inventoryTypeCode": "DMVK",
+                        "productCode": "SR",
+                        "availStatus": "available",
+                        "pacCode": "W9TH",
+                        "productName": "Sleeping Room",
+                        "otaCode": "GRI42",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Madison Avenue King with View CIT"
+                            ]
+                        },
+                        "maxNbParticipant": 5,
+                        "attCodes": [
+                            "1KING",
+                            "450SQFT",
+                            "MAX3",
+                            "STRIPV"
+                        ],
+                        "isDisplayable": true,
+                        "isPremium": false
+                    },
+                    {
+                        "inventoryTypeCode": "DMVQ",
+                        "productCode": "SR",
+                        "availStatus": "available",
+                        "pacCode": "6S4N",
+                        "productName": "Sleeping Room",
+                        "otaCode": "GRI42",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Madison Avenue Two Queen with View"
+                            ]
+                        },
+                        "maxNbParticipant": 4,
+                        "attCodes": [
+                            "2QUEEN",
+                            "450SQFT",
+                            "MAX4",
+                            "STRIPV"
+                        ],
+                        "isDisplayable": true,
+                        "isPremium": false
+                    },
+                    {
+                        "inventoryTypeCode": "SSPA",
+                        "productCode": "SR",
+                        "availStatus": "available",
+                        "pacCode": "EELB",
+                        "productName": "Sleeping Room",
+                        "otaCode": "GRI42",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Spa Suite"
+                            ]
+                        },
+                        "maxNbParticipant": 3,
+                        "attCodes": [
+                            "1KING",
+                            "500SQFT",
+                            "MAX3",
+                            "SUITE"
+                        ],
+                        "isDisplayable": true,
+                        "isPremium": false
+                    },
+                    {
+                        "inventoryTypeCode": "S1PC",
+                        "productCode": "SR",
+                        "availStatus": "available",
+                        "pacCode": "71LR",
+                        "productName": "Sleeping Room",
+                        "otaCode": "GRI42",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Spa Penthouse Connector"
+                            ]
+                        },
+                        "maxNbParticipant": 3,
+                        "attCodes": [
+                            "1KING",
+                            "500SQFT",
+                            "CONNECT",
+                            "MAX3",
+                            "PENTSUIT"
+                        ],
+                        "isDisplayable": true,
+                        "isPremium": false
+                    },
+                    {
+                        "inventoryTypeCode": "SMAR",
+                        "productCode": "SR",
+                        "availStatus": "available",
+                        "pacCode": "QQEU",
+                        "productName": "Sleeping Room",
+                        "otaCode": "GRI42",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Marquis Suite"
+                            ]
+                        },
+                        "maxNbParticipant": 3,
+                        "attCodes": [
+                            "1KING",
+                            "700SQFT",
+                            "MAX3",
+                            "SUITE"
+                        ],
+                        "isDisplayable": true,
+                        "isPremium": false
+                    },
+                    {
+                        "inventoryTypeCode": "SPLY",
+                        "productCode": "SR",
+                        "availStatus": "available",
+                        "pacCode": "V99M",
+                        "productName": "Sleeping Room",
+                        "otaCode": "GRI42",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Players Suite"
+                            ]
+                        },
+                        "maxNbParticipant": 4,
+                        "attCodes": [
+                            "2QUEEN",
+                            "800SQFT",
+                            "MAX4",
+                            "SUITE"
+                        ],
+                        "isDisplayable": true,
+                        "isPremium": false
+                    },
+                    {
+                        "inventoryTypeCode": "L1XS",
+                        "productCode": "SR",
+                        "availStatus": "available",
+                        "pacCode": "8XBK",
+                        "productName": "Sleeping Room",
+                        "otaCode": "GRI42",
+                        "inventoryTypeName": {
+                            "en": [
+                                "One Bedroom Luxury Suite"
+                            ]
+                        },
+                        "maxNbParticipant": 3,
+                        "attCodes": [
+                            "1100SQFT",
+                            "1BEDROOM",
+                            "1KING",
+                            "MAX3"
+                        ],
+                        "isDisplayable": true,
+                        "isPremium": false
+                    },
+                    {
+                        "inventoryTypeCode": "L1PE",
+                        "productCode": "SR",
+                        "availStatus": "available",
+                        "pacCode": "9NZD",
+                        "productName": "Sleeping Room",
+                        "otaCode": "GRI42",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Penthouse"
+                            ]
+                        },
+                        "maxNbParticipant": 3,
+                        "attCodes": [
+                            "1100SQFT",
+                            "1KING",
+                            "MAX3",
+                            "PENTSUIT"
+                        ],
+                        "isDisplayable": true,
+                        "isPremium": false
+                    },
+                    {
+                        "inventoryTypeCode": "L2PE",
+                        "productCode": "SR",
+                        "availStatus": "available",
+                        "pacCode": "RYE8",
+                        "productName": "Sleeping Room",
+                        "otaCode": "GRI42",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Two Bedroom Penthouse Suite"
+                            ]
+                        },
+                        "maxNbParticipant": 5,
+                        "attCodes": [
+                            "2500SQFT",
+                            "2BEDROOM",
+                            "2QUEEN",
+                            "MAX5",
+                            "PENTSUIT"
+                        ],
+                        "isDisplayable": true,
+                        "isPremium": false
+                    }
+                ],
+                "attributes": [
+                    {
+                        "code": "1100SQFT",
+                        "name": {
+                            "en": [
+                                "1100 square feet"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "1BEDROOM",
+                        "name": {
+                            "en": [
+                                "1 bedroom"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "1KING",
+                        "name": {
+                            "en": [
+                                "1 King bed type"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "2500SQFT",
+                        "name": {
+                            "en": [
+                                "2500 square feet"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "2BEDROOM",
+                        "name": {
+                            "en": [
+                                "2 bedrooms"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "2QUEEN",
+                        "name": {
+                            "en": [
+                                "2 Queen bed type"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "450SQFT",
+                        "name": {
+                            "en": [
+                                "450 square feet"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "500SQFT",
+                        "name": {
+                            "en": [
+                                "500 square feet"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "700SQFT",
+                        "name": {
+                            "en": [
+                                "700 square feet"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "800SQFT",
+                        "name": {
+                            "en": [
+                                "800 square feet"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "CONNECT",
+                        "name": {
+                            "en": [
+                                "connecting room"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "MAX3",
+                        "name": {
+                            "en": [
+                                "Max occupancy of 3"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "MAX4",
+                        "name": {
+                            "en": [
+                                "Max occupancy of 4"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "MAX5",
+                        "name": {
+                            "en": [
+                                "Max occupancy of 5"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "PENTSUIT",
+                        "name": {
+                            "en": [
+                                "Penthouse Suite"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "STRIPV",
+                        "name": {
+                            "en": [
+                                "Strip View"
+                            ]
+                        }
+                    },
+                    {
+                        "code": "SUITE",
+                        "name": {
+                            "en": [
+                                "Suite"
+                            ]
+                        }
+                    }
+                ],
+                "rateRange": {
+                    "highestRate": {
+                        "dailyTotalOccRate": [
+                            "89.10",
+                            "108.00"
+                        ],
+                        "dailyBaseOccRate": [
+                            "89.10",
+                            "108.00"
+                        ],
+                        "rateType": [
+                            "RPT14",
+                            ""
+                        ]
+                    },
+                    "checkinRate": {
+                        "dailyTotalOccRate": [
+                            "89.10",
+                            "108.00"
+                        ],
+                        "dailyBaseOccRate": [
+                            "89.10",
+                            "108.00"
+                        ],
+                        "rateType": [
+                            "RPT14",
+                            ""
+                        ]
+                    },
+                    "avgRate": {
+                        "dailyTotalOccRate": [
+                            "89.10",
+                            "108.00"
+                        ],
+                        "dailyBaseOccRate": [
+                            "89.10",
+                            "108.00"
+                        ],
+                        "rateType": [
+                            "RPT14",
+                            ""
+                        ]
+                    }
+                },
+                "rateDetails": {
+                    "offers": [
+                        {
+                            "availStatus": "available",
+                            "ratePlanCode": "TSTPREVL",
+                            "bookingCodes": [
+                                {
+                                    "bookingCode": "009"
+                                }
+                            ],
+                            "productUses": [
+                                {
+                                    "period": {
+                                        "start": "2021-11-19",
+                                        "end": "2021-11-29"
+                                    },
+                                    "inventoryTypeCode": "DWVQ",
+                                    "isMainProduct": true,
+                                    "quantity": 1,
+                                    "numberOfAvailableProducts": 9,
+                                    "guestCounts": [
+                                        {
+                                            "guestType": "ADULT",
+                                            "otaCode": "AQC10",
+                                            "count": 1
+                                        }
+                                    ],
+                                    "rates": {
+                                        "pricingFrequency": "PerNight",
+                                        "pricingMethod": "PerProductPerOcc",
+                                        "taxInclusionMode": "followHouse",
+                                        "ratesDef": {
+                                            "rateChanges": [
+                                                {
+                                                    "id": 0,
+                                                    "start": "2021-11-19",
+                                                    "end": "2021-11-29",
+                                                    "amt": "19.00"
+                                                }
+                                            ],
+                                            "avg": "19.00",
+                                            "checkin": "19.00"
+                                        }
+                                    }
+                                }
+                            ],
+                            "avg": {
+                                "amtAfTx": "63.49",
+                                "bsAmt": "19.00",
+                                "subTtlTxExc": "7.49",
+                                "subTtlSvcChgExc": "37.00",
+                                "taxGroups": [
+                                    {
+                                        "taxDefIds": [
+                                            0
+                                        ],
+                                        "code": "OCTAX",
+                                        "otaCode": "FTT10",
+                                        "amt": "2.54",
+                                        "isIncludedInRate": false,
+                                        "isPaidAtHotel": false
+                                    },
+                                    {
+                                        "taxDefIds": [
+                                            2
+                                        ],
+                                        "code": "RSFTX",
+                                        "otaCode": "FTT10",
+                                        "amt": "4.95",
+                                        "isIncludedInRate": false,
+                                        "isPaidAtHotel": false
+                                    },
+                                    {
+                                        "taxDefIds": [
+                                            1
+                                        ],
+                                        "code": "RSFEE",
+                                        "otaCode": "FTT12",
+                                        "amt": "37.00",
+                                        "isIncludedInRate": false,
+                                        "isPaidAtHotel": false
+                                    }
+                                ]
+                            },
+                            "checkin": {
+                                "amtAfTx": "63.49",
+                                "bsAmt": "19.00",
+                                "subTtlTxExc": "7.49",
+                                "subTtlSvcChgExc": "37.00"
+                            }
+                        },
+                        {
+                            "availStatus": "available",
+                            "ratePlanCode": "ADVP",
+                            "bookingCodes": [
+                                {
+                                    "bookingCode": "013000F"
+                                }
+                            ],
+                            "productUses": [
+                                {
+                                    "period": {
+                                        "start": "2021-11-19",
+                                        "end": "2021-11-29"
+                                    },
+                                    "inventoryTypeCode": "L2PE",
+                                    "isMainProduct": true,
+                                    "quantity": 1,
+                                    "numberOfAvailableProducts": 2,
+                                    "guestCounts": [
+                                        {
+                                            "guestType": "ADULT",
+                                            "otaCode": "AQC10",
+                                            "count": 1
+                                        }
+                                    ],
+                                    "rates": {
+                                        "pricingFrequency": "PerNight",
+                                        "pricingMethod": "PerProductPerOcc",
+                                        "taxInclusionMode": "followHouse",
+                                        "ratesDef": {
+                                            "rateChanges": [
+                                                {
+                                                    "id": 0,
+                                                    "start": "2021-11-19",
+                                                    "end": "2021-11-21",
+                                                    "amt": "1000.00"
+                                                },
+                                                {
+                                                    "id": 1,
+                                                    "start": "2021-11-21",
+                                                    "end": "2021-11-22",
+                                                    "amt": "901.00"
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "start": "2021-11-22",
+                                                    "end": "2021-11-23",
+                                                    "amt": "850.00"
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "start": "2021-11-23",
+                                                    "end": "2021-11-26",
+                                                    "amt": "848.00"
+                                                },
+                                                {
+                                                    "id": 4,
+                                                    "start": "2021-11-26",
+                                                    "end": "2021-11-28",
+                                                    "amt": "1200.00"
+                                                },
+                                                {
+                                                    "id": 5,
+                                                    "start": "2021-11-28",
+                                                    "end": "2021-11-29",
+                                                    "amt": "848.00"
+                                                }
+                                            ],
+                                            "avg": "954.30",
+                                            "checkin": "1000.00"
+                                        }
+                                    }
+                                }
+                            ],
+                            "avg": {
+                                "amtAfTx": "1123.93",
+                                "bsAmt": "954.30",
+                                "subTtlTxExc": "132.63",
+                                "subTtlSvcChgExc": "37.00",
+                                "taxGroups": [
+                                    {
+                                        "taxDefIds": [
+                                            0
+                                        ],
+                                        "code": "OCTAX",
+                                        "otaCode": "FTT10",
+                                        "amt": "127.68",
+                                        "isIncludedInRate": false,
+                                        "isPaidAtHotel": false
+                                    },
+                                    {
+                                        "taxDefIds": [
+                                            2
+                                        ],
+                                        "code": "RSFTX",
+                                        "otaCode": "FTT10",
+                                        "amt": "4.95",
+                                        "isIncludedInRate": false,
+                                        "isPaidAtHotel": false
+                                    },
+                                    {
+                                        "taxDefIds": [
+                                            1
+                                        ],
+                                        "code": "RSFEE",
+                                        "otaCode": "FTT12",
+                                        "amt": "37.00",
+                                        "isIncludedInRate": false,
+                                        "isPaidAtHotel": false
+                                    }
+                                ]
+                            },
+                            "checkin": {
+                                "amtAfTx": "1175.75",
+                                "bsAmt": "1000.00",
+                                "subTtlTxExc": "138.75",
+                                "subTtlSvcChgExc": "37.00"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "hotel": {
+                    "chainCode": "MGM",
+                    "propertyCode": "ARIA1",
+                    "propertyCurrency": ""
+                },
+                "availStatus": "notAvailable",
+                "warningRefs": [
+                    0
+                ],
+                "rateDetails": {
+                    "offers": [
+                        {
+                            "availStatus": "available",
+                            "ratePlanCode": "TSTPREVL",
+                            "bookingCodes": [
+                                {
+                                    "bookingCode": "009"
+                                }
+                            ],
+                            "productUses": [
+                                {
+                                    "period": {
+                                        "start": "2021-11-19",
+                                        "end": "2021-11-29"
+                                    },
+                                    "inventoryTypeCode": "DWVQ",
+                                    "isMainProduct": true,
+                                    "quantity": 1,
+                                    "numberOfAvailableProducts": 9,
+                                    "guestCounts": [
+                                        {
+                                            "guestType": "ADULT",
+                                            "otaCode": "AQC10",
+                                            "count": 1
+                                        }
+                                    ],
+                                    "rates": {
+                                        "pricingFrequency": "PerNight",
+                                        "pricingMethod": "PerProductPerOcc",
+                                        "taxInclusionMode": "followHouse",
+                                        "ratesDef": {
+                                            "rateChanges": [
+                                                {
+                                                    "id": 0,
+                                                    "start": "2021-11-19",
+                                                    "end": "2021-11-29",
+                                                    "amt": "19.00"
+                                                }
+                                            ],
+                                            "avg": "19.00",
+                                            "checkin": "19.00"
+                                        }
+                                    }
+                                }
+                            ],
+                            "avg": {
+                                "amtAfTx": "63.49",
+                                "bsAmt": "19.00",
+                                "subTtlTxExc": "7.49",
+                                "subTtlSvcChgExc": "37.00",
+                                "taxGroups": [
+                                    {
+                                        "taxDefIds": [
+                                            0
+                                        ],
+                                        "code": "OCTAX",
+                                        "otaCode": "FTT10",
+                                        "amt": "2.54",
+                                        "isIncludedInRate": false,
+                                        "isPaidAtHotel": false
+                                    },
+                                    {
+                                        "taxDefIds": [
+                                            2
+                                        ],
+                                        "code": "RSFTX",
+                                        "otaCode": "FTT10",
+                                        "amt": "4.95",
+                                        "isIncludedInRate": false,
+                                        "isPaidAtHotel": false
+                                    },
+                                    {
+                                        "taxDefIds": [
+                                            1
+                                        ],
+                                        "code": "RSFEE",
+                                        "otaCode": "FTT12",
+                                        "amt": "37.00",
+                                        "isIncludedInRate": false,
+                                        "isPaidAtHotel": false
+                                    }
+                                ]
+                            },
+                            "checkin": {
+                                "amtAfTx": "63.49",
+                                "bsAmt": "19.00",
+                                "subTtlTxExc": "7.49",
+                                "subTtlSvcChgExc": "37.00"
+                            }
+                        },
+                        {
+                            "availStatus": "available",
+                            "ratePlanCode": "ADVP",
+                            "bookingCodes": [
+                                {
+                                    "bookingCode": "013000F"
+                                }
+                            ],
+                            "productUses": [
+                                {
+                                    "period": {
+                                        "start": "2021-11-19",
+                                        "end": "2021-11-29"
+                                    },
+                                    "inventoryTypeCode": "L2PE",
+                                    "isMainProduct": true,
+                                    "quantity": 1,
+                                    "numberOfAvailableProducts": 2,
+                                    "guestCounts": [
+                                        {
+                                            "guestType": "ADULT",
+                                            "otaCode": "AQC10",
+                                            "count": 1
+                                        }
+                                    ],
+                                    "rates": {
+                                        "pricingFrequency": "PerNight",
+                                        "pricingMethod": "PerProductPerOcc",
+                                        "taxInclusionMode": "followHouse",
+                                        "ratesDef": {
+                                            "rateChanges": [
+                                                {
+                                                    "id": 0,
+                                                    "start": "2021-11-19",
+                                                    "end": "2021-11-21",
+                                                    "amt": "1000.00"
+                                                },
+                                                {
+                                                    "id": 1,
+                                                    "start": "2021-11-21",
+                                                    "end": "2021-11-22",
+                                                    "amt": "901.00"
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "start": "2021-11-22",
+                                                    "end": "2021-11-23",
+                                                    "amt": "850.00"
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "start": "2021-11-23",
+                                                    "end": "2021-11-26",
+                                                    "amt": "848.00"
+                                                },
+                                                {
+                                                    "id": 4,
+                                                    "start": "2021-11-26",
+                                                    "end": "2021-11-28",
+                                                    "amt": "1200.00"
+                                                },
+                                                {
+                                                    "id": 5,
+                                                    "start": "2021-11-28",
+                                                    "end": "2021-11-29",
+                                                    "amt": "848.00"
+                                                }
+                                            ],
+                                            "avg": "954.30",
+                                            "checkin": "1000.00"
+                                        }
+                                    }
+                                }
+                            ],
+                            "avg": {
+                                "amtAfTx": "1123.93",
+                                "bsAmt": "954.30",
+                                "subTtlTxExc": "132.63",
+                                "subTtlSvcChgExc": "37.00",
+                                "taxGroups": [
+                                    {
+                                        "taxDefIds": [
+                                            0
+                                        ],
+                                        "code": "OCTAX",
+                                        "otaCode": "FTT10",
+                                        "amt": "127.68",
+                                        "isIncludedInRate": false,
+                                        "isPaidAtHotel": false
+                                    },
+                                    {
+                                        "taxDefIds": [
+                                            2
+                                        ],
+                                        "code": "RSFTX",
+                                        "otaCode": "FTT10",
+                                        "amt": "4.95",
+                                        "isIncludedInRate": false,
+                                        "isPaidAtHotel": false
+                                    },
+                                    {
+                                        "taxDefIds": [
+                                            1
+                                        ],
+                                        "code": "RSFEE",
+                                        "otaCode": "FTT12",
+                                        "amt": "37.00",
+                                        "isIncludedInRate": false,
+                                        "isPaidAtHotel": false
+                                    }
+                                ]
+                            },
+                            "checkin": {
+                                "amtAfTx": "1175.75",
+                                "bsAmt": "1000.00",
+                                "subTtlTxExc": "138.75",
+                                "subTtlSvcChgExc": "37.00"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "warnings": [
+        {
+            "message": "Invalid property code",
+            "code": 50010,
+            "id": 0,
+            "details": [
+                {
+                    "code": 144
+                }
+            ]
+        }
+    ]
+}

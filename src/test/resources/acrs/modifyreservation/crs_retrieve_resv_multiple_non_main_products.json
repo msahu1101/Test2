@@ -1,0 +1,976 @@
+{
+  "data": {
+    "creator": {
+      "hotelSource": "MV280",
+      "vendorCode": "ICECC",
+      "vendorName": "ICE Call center",
+      "vendorTypes": [2],
+      "channelCode": "CC",
+      "metricsCode": "M02",
+      "metricsName": "ICE metrics",
+      "reportingData": {
+        "channelClass": "Voice",
+        "channelType": "Branded",
+        "channel": "Contact Center",
+        "subChannel": "Contact Center",
+        "code": "TFITIC"
+      }
+    },
+    "requestor": {
+      "vendorCode": "OPERA",
+      "vendorName": "OPERA PMS",
+      "vendorTypes": [1],
+      "channelCode": "PM",
+      "metricsCode": "M01",
+      "metricsName": "PMS metrics",
+      "reportingData": {
+        "code": "TFITIC"
+      }
+    },
+    "hotelReservation": {
+      "status": "MY",
+      "type": "Individual",
+      "imageStatus": "Committed",
+      "creationDateTime": "2024-09-12T20:22:21",
+      "lastUpdateDateTime": "2024-09-12T20:22:30",
+      "lastUpdateDateTimeHotelLocalTime": "2024-09-12T13:22:30",
+      "authenticatedUser": {
+        "userId": "WSMGM00OPA",
+        "userLastName": "Customer",
+        "userFirstName": "Mock"
+      },
+      "reservationIds": {
+        "cfNumber": "3MMV7MIKH8",
+        "imageId": 2,
+        "committedSequenceNumber": 2,
+        "pmsCfNumber": "968782029"
+      },
+      "hotels": [{
+        "chainCode": "MGM",
+        "brandCode": "MV",
+        "propertyCode": "MV280",
+        "propertyCurrency": "USD",
+        "propertyName": "Luxor Hotel & Casino",
+        "cityCode": "LAS",
+        "countryCode": "US",
+        "regionCode": "01",
+        "guestTypeDefinitions": [{
+          "code": "CHILD",
+          "startAge": 0,
+          "endAge": 20
+        }, {
+          "code": "ADULT",
+          "startAge": 21
+        }
+        ]
+      }
+      ],
+      "products": [{
+        "inventoryTypeCode": "DPNK",
+        "inventoryTypeName": {
+          "en": ["Pyramid Premier King"]
+        },
+        "yieldClass": "02",
+        "maximumNumberParticipant": 3,
+        "description": {
+          "en": ["Going bold all day calls for the perfect place to escape to. (Good thing our relaxing Pyramid Premier King Room is ready when you are.) Considering it features updated decor and furniture, comfortable king-sized bed, large armoire, spacious workspace, and remodeled bathroom you may never want to leave."]
+        },
+        "productCode": "SR",
+        "pacCode": "XCFH",
+        "attributeCodes": ["1KING", "420SQFT", "MAX3", "NSMK", "VARYVW"]
+      }, {
+        "inventoryTypeCode": "FDBEV",
+        "inventoryTypeName": {
+          "en": ["FDBEV"]
+        },
+        "productClass": "CREDIT",
+        "description": {
+          "en": ["FDBEV"]
+        },
+        "productCode": "FDBEV",
+        "pacCode": "JVJO"
+      }, {
+        "inventoryTypeCode": "FDBEVTX",
+        "inventoryTypeName": {
+          "en": ["FDBEVTX"]
+        },
+        "productClass": "CREDIT",
+        "description": {
+          "en": ["FDBEVTX"]
+        },
+        "productCode": "FDBEVTX",
+        "pacCode": "6BIZ"
+      }
+      ],
+      "attributes": [{
+        "code": "1KING",
+        "name": {
+          "en": ["1 King bed type"]
+        },
+        "description": {
+          "en": ["1 King bed type"]
+        }
+      }, {
+        "code": "420SQFT",
+        "name": {
+          "en": ["420 Square Feet"]
+        },
+        "description": {
+          "en": ["420 Square Feet"]
+        }
+      }, {
+        "code": "MAX3",
+        "name": {
+          "en": ["Max occupancy of 3"]
+        },
+        "description": {
+          "en": ["Max occupancy of 3"]
+        }
+      }, {
+        "code": "NSMK",
+        "name": {
+          "en": ["Non-Smoking"]
+        },
+        "description": {
+          "en": ["Non-Smoking Attribute"]
+        }
+      }, {
+        "code": "VARYVW",
+        "name": {
+          "en": ["Various Views"]
+        },
+        "description": {
+          "en": ["Various Views"]
+        }
+      }
+      ],
+      "ratePlans": [{
+        "code": "TDFBP",
+        "types": ["RPT11"],
+        "name": {
+          "en": ["$30 Daily F&B Credit"]
+        },
+        "description": {
+          "en": ["Treat yourself with $30 in food and beverage credit, per night."]
+        },
+        "longDescription": {
+          "en": ["Whatever you're craving, MGM Resorts has you covered. Enjoy $30 in food and beverage credit for each night of your stay. Use your credit at select participating outlets across MGM Resorts Las Vegas destinations. For full details on where to use your credit, [click here](https://www.mgmresorts.com/en/offers/participating-outlets.html). See terms & conditions below for details.* Offer Code: TDFBP"]
+        },
+        "isFreeNight": false,
+        "maxLOS": 14,
+        "isGroupRatePlan": false,
+        "areAmountsConfidential": false,
+        "isTentativeAllowed": false,
+        "isLoyaltyIdRequired": false,
+        "isPackage": false,
+        "isVoucherRequired": false,
+        "isRewardEarned": false,
+        "isIdRequired": false,
+        "isAwardAccepted": false,
+        "bookingMessage": {
+          "en": ["Offer limited to a daily $30 food and beverage credit per room, for each night of your stay. Food & Beverage credit is valid only towards food and drink at select and/or designated MGM Resorts Las Vegas destinations. Outlets and outlet hours of operation are subject to availability and/or closures. The daily Food & Beverage credit becomes available upon check-in. Daily Food & Beverage credit will not be given and is not valid for use on the day of your checkout. A daily Food & Beverage credit is valid only for a calendar day subject to these Terms and Conditions. Unused daily Food & Beverage credit for a calendar day does not accumulate or carry-over to a subsequent calendar day. Unused daily Food & Beverage credit will be forfeited. To redeem your Food & Beverage credit, a valid major credit card must be presented upon check-in and, at the outlet, you will be required to charge food and beverage to your room during your stay. Any additional charges will be the responsibility of the guest at check-out and will be applied to the credit card on file. Daily Food & Beverage credit has no cash value and will only be applied to applicable charges on the room folio at time of check-out. Early departures forfeit offer inclusions for non-stay nights. The Food & Beverage credit can be used towards food and beverage and applicable sales tax, but cannot be used toward gratuities. Blackout dates may apply. Hotel reservations made by phone are subject to higher rate. A daily resort fee will be added to your room account, which includes select hotel amenities. Your deposit is refundable if reservation is cancelled prior to the deadline set forth in the reservation summary on the booking page. Guests must be at least 21 years of age to check in. Offers are subject to promotional availability; blackout dates apply and are not available to groups or persons attending meetings or conventions. Not available for existing or consecutive reservations. Nightly rates (excluding nightly rates for cancelled or no show reservations) are 10% commissionable to valid IATA, ARC, CLIA, and TRUE/OSSN travel agency. This offer is non-transferable and may not be used in conjunction with any other promotion. We are unable to guarantee certain room requests and locations; however, a sincere effort will be made to accommodate your needs. Management reserves the right to cancel or change this promotion at its discretion without prior notice. MGM Resorts International offers GameSense information to its patrons to encourage responsible gaming at mgmresorts.com/gamesense (in MA at gamesensema.com). If you or someone you know has a gambling problem or concerns with gambling responsibly, please call the 24-hour National Problem Gambling Helpline at 1.800.GAMBLER (in Maryland, Michigan, Mississippi, Nevada, New Jersey, and Ohio), 1.800.327.5050 (in Massachusetts), 1.877.8HopeNY or text HOPENY (467369) [Standard Text Rates May Apply] (in New York). Or visit mdgamblinghelp.org (in MD), gamblinghelplinema.org (in MA), OASAS.ny.gov/problem-gambling [or click here to talk with someone now about your gambling] (in New York), or org.ohio.gov (in Ohio) for help. Please play responsibly. If you bet more than you can afford to lose, you've got a problem. All rights reserved."]
+        },
+        "isCommissionable": true,
+        "priceGridCode": "BARPLUS8USD",
+        "isHouseUse": false,
+        "isComplimentary": false
+      }
+      ],
+      "userProfiles": [{
+        "id": 1,
+        "age": "35",
+        "personName": {
+          "surname": "Customer",
+          "givenName": "Mock"
+        },
+        "guestProfileId": "1658014",
+        "addresses": [{
+          "type": 1,
+          "addressLines": ["123 Mock St."],
+          "cityName": "Henderson",
+          "postalCode": "89123",
+          "stateProv": "NV",
+          "countryCode": "US"
+        }
+        ],
+        "telephones": [{
+          "number": "7025554444",
+          "locationType": 6,
+          "deviceType": 1
+        }],
+        "emails": [{
+          "address": "mock@mockemail.com",
+          "type": 1
+        }],
+        "loyaltyProgram": {
+          "loyaltyId": "12345678",
+          "programs": [{
+            "programName": "PC"
+          }
+          ]
+        }
+      }
+      ],
+      "segments": [{
+        "id": 1,
+        "start": "2024-12-17",
+        "end": "2024-12-20",
+        "synchroNumber": 1,
+        "segmentStatus": "BK",
+        "consolidatedSegmentStatus": "Guaranteed",
+        "actionStatus": "NS",
+        "segmentHolderId": 1,
+        "bookerId": 1,
+        "creationDateTime": "2024-09-12T20:22:21",
+        "creationDateTimeHotelLocalTime": "2024-09-12T13:22:21",
+        "lastUpdateDateTime": "2024-09-12T20:22:24",
+        "lastUpdateDateTimeHotelLocalTime": "2024-09-12T13:22:24",
+        "indicators": {
+          "isConfirmed": true,
+          "isPaidByPoints": false
+        },
+        "propertyCode": "MV280",
+        "creator": {
+          "hotelSource": "MV280",
+          "vendorCode": "ICECC",
+          "vendorName": "ICE Call center",
+          "vendorTypes": [2],
+          "channelCode": "CC",
+          "metricsCode": "M02",
+          "metricsName": "ICE metrics",
+          "reportingData": {
+            "channelClass": "Voice",
+            "channelType": "Branded",
+            "channel": "Contact Center",
+            "subChannel": "Contact Center",
+            "code": "TFITIC"
+          }
+        },
+        "requestor": {
+          "hotelSource": "MV280",
+          "vendorCode": "ICECC",
+          "vendorName": "ICE Call center",
+          "vendorTypes": [2],
+          "channelCode": "CC",
+          "metricsCode": "M02",
+          "metricsName": "ICE metrics",
+          "reportingData": {
+            "code": "TFITIC"
+          }
+        },
+        "channelPreferredRate": "Check-in",
+        "channelExtraPersonChargeIncluded": true,
+        "cancelByHotelOnly": false,
+        "lateArrivalTime": "23:59:59",
+        "offer": {
+          "policies": {
+            "deposit": {
+              "isRequired": true,
+              "feeType": "FirstNight",
+              "amount": "40.82",
+              "deadline": {
+                "dateTime": "2024-09-12T13:22:21",
+                "deadlineType": "atBooking"
+              },
+              "acceptedDeposits": {
+                "acceptedFops": ["travelAgencyIata", "paymentCard"],
+                "creditCards": ["AX", "CU", "DC", "DS", "JC", "MC", "VI"]
+              }
+            },
+            "cancellationNoShow": {
+              "feeType": "FirstNight",
+              "amount": "40.82",
+              "deadline": {
+                "dateTime": "2024-12-14T23:59:59",
+                "deadlineType": "numberOfDaysBeforeCheckin",
+                "deadlineValue": 3
+              },
+              "isGracePeriod": true
+            },
+            "checkinTime": "15:00:00",
+            "checkoutTime": "11:00:00"
+          },
+          "productUses": [{
+            "id": 1,
+            "period": {
+              "start": "2024-12-17",
+              "end": "2024-12-20"
+            },
+            "ratePlanCode": "TDFBP",
+            "inventoryTypeCode": "DPNK",
+            "isMainProduct": true,
+            "quantity": 1,
+            "guestCounts": [{
+              "otaCode": "AQC10",
+              "count": 2,
+              "guestType": "ADULT"
+            }
+            ],
+            "totalGuestCounts": [{
+              "otaCode": "AQC10",
+              "count": 2,
+              "guestType": "ADULT"
+            }
+            ],
+            "productRates": {
+              "dailyRates": [{
+                "dailyTotalRate": {
+                  "amtBfTx": "36.00",
+                  "bsAmt": "36.00",
+                  "amtAfTx": "82.77",
+                  "taxList": [{
+                    "amount": "4.82",
+                    "taxCode": "OCTAX",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT10",
+                    "taxDefIds": [2]
+                  }, {
+                    "amount": "4.95",
+                    "taxCode": "RSFTX",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT10",
+                    "taxDefIds": [1]
+                  }, {
+                    "amount": "37.00",
+                    "taxCode": "RSFEE",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT12",
+                    "taxDefIds": [0]
+                  }
+                  ],
+                  "totalTaxes": "46.77",
+                  "rateDefId": 0,
+                  "subTotalServiceCharges": [{
+                    "amount": "37.00",
+                    "isIncludedInRate": false,
+                    "payHotelAmount": "37.00"
+                  }
+                  ],
+                  "subTotalTaxes": [{
+                    "amount": "9.77",
+                    "isIncludedInRate": false,
+                    "payableAmount": "4.82",
+                    "payHotelAmount": "4.95"
+                  }
+                  ],
+                  "payableAmtAfTx": "40.82"
+                },
+                "start": "2024-12-17",
+                "end": "2024-12-20"
+              }
+              ],
+              "totalRate": {
+                "amtBfTx": "108.00",
+                "bsAmt": "108.00",
+                "amtAfTx": "248.31",
+                "payableAmtAfTx": "122.46",
+                "taxGroups": [{
+                  "amount": "14.46",
+                  "taxCode": "OCTAX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT10",
+                  "taxDefIds": [2]
+                }, {
+                  "amount": "14.85",
+                  "taxCode": "RSFTX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT10",
+                  "taxDefIds": [1]
+                }, {
+                  "amount": "111.00",
+                  "taxCode": "RSFEE",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT12",
+                  "taxDefIds": [0]
+                }
+                ],
+                "totalTaxes": "140.31",
+                "daily": [{
+                  "amtType": "Average",
+                  "amtBfTx": "36.00",
+                  "bsAmt": "36.00",
+                  "amtAfTx": "82.77",
+                  "payableAmtAfTx": "40.82"
+                }, {
+                  "amtType": "Checkin",
+                  "amtBfTx": "36.00",
+                  "bsAmt": "36.00",
+                  "amtAfTx": "82.77",
+                  "payableAmtAfTx": "40.82"
+                }
+                ],
+                "subTotalServiceCharges": [{
+                  "amount": "111.00",
+                  "isIncludedInRate": false,
+                  "payHotelAmount": "111.00"
+                }
+                ],
+                "subTotalTaxes": [{
+                  "amount": "29.31",
+                  "isIncludedInRate": false,
+                  "payableAmount": "14.46",
+                  "payHotelAmount": "14.85"
+                }
+                ],
+                "payableTotalTaxes": "14.46",
+                "payHotelTotalTaxes": "125.85"
+              },
+              "pricingFrequency": "PerNight",
+              "pricingMethod": "PerProductPerOcc",
+              "taxInclusionMode": "followHouse",
+              "hasRateChange": false,
+              "ratesDefinition": {
+                "rateChanges": [{
+                  "id": 0,
+                  "start": "2024-12-17",
+                  "end": "2024-12-20",
+                  "amount": "36.00"
+                }
+                ]
+              },
+              "requestedRates": [{
+                "start": "2024-12-17",
+                "end": "2024-12-20",
+                "base": {
+                  "amount": "36.00"
+                }
+              }
+              ]
+            },
+            "packageRates": {
+              "dailyRates": [{
+                "dailyTotalRate": {
+                  "amtBfTx": "36.00",
+                  "bsAmt": "36.00",
+                  "amtAfTx": "82.77",
+                  "taxList": [{
+                    "amount": "0.00",
+                    "taxCode": "NRTX0",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT27",
+                    "taxDefIds": [3]
+                  }, {
+                    "amount": "4.82",
+                    "taxCode": "OCTAX",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT10",
+                    "taxDefIds": [2]
+                  }, {
+                    "amount": "4.95",
+                    "taxCode": "RSFTX",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT10",
+                    "taxDefIds": [1]
+                  }, {
+                    "amount": "37.00",
+                    "taxCode": "RSFEE",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT12",
+                    "taxDefIds": [0]
+                  }
+                  ],
+                  "rateDefId": 0,
+                  "subTotalServiceCharges": [{
+                    "amount": "37.00",
+                    "isIncludedInRate": false,
+                    "payHotelAmount": "37.00"
+                  }
+                  ],
+                  "subTotalTaxes": [{
+                    "amount": "9.77",
+                    "isIncludedInRate": false,
+                    "payableAmount": "4.82",
+                    "payHotelAmount": "4.95"
+                  }
+                  ],
+                  "payableAmtAfTx": "40.82"
+                },
+                "start": "2024-12-17",
+                "end": "2024-12-20"
+              }
+              ],
+              "totalRate": {
+                "amtBfTx": "108.00",
+                "bsAmt": "108.00",
+                "amtAfTx": "248.31",
+                "payableAmtAfTx": "122.46",
+                "taxGroups": [{
+                  "amount": "14.46",
+                  "taxCode": "OCTAX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT10",
+                  "taxDefIds": [2]
+                }, {
+                  "amount": "14.85",
+                  "taxCode": "RSFTX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT10",
+                  "taxDefIds": [1]
+                }, {
+                  "amount": "111.00",
+                  "taxCode": "RSFEE",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT12",
+                  "taxDefIds": [0]
+                }, {
+                  "amount": "0.00",
+                  "taxCode": "NRTX0",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT27",
+                  "taxDefIds": [3]
+                }
+                ],
+                "totalTaxes": "140.31",
+                "daily": [{
+                  "amtType": "Average",
+                  "amtBfTx": "36.00",
+                  "bsAmt": "36.00",
+                  "amtAfTx": "82.77",
+                  "payableAmtAfTx": "40.82"
+                }, {
+                  "amtType": "Checkin",
+                  "amtBfTx": "36.00",
+                  "bsAmt": "36.00",
+                  "amtAfTx": "82.77",
+                  "payableAmtAfTx": "40.82"
+                }
+                ],
+                "subTotalServiceCharges": [{
+                  "amount": "111.00",
+                  "isIncludedInRate": false,
+                  "payHotelAmount": "111.00"
+                }
+                ],
+                "subTotalTaxes": [{
+                  "amount": "29.31",
+                  "isIncludedInRate": false,
+                  "payableAmount": "14.46",
+                  "payHotelAmount": "14.85"
+                }
+                ],
+                "payableTotalTaxes": "14.46",
+                "payHotelTotalTaxes": "125.85"
+              },
+              "mainWithIncludedProducts": [{
+                "start": "2024-12-17",
+                "end": "2024-12-20",
+                "bsAmt": "36.00"
+              }
+              ],
+              "pricingFrequency": "PerNight",
+              "taxInclusionMode": "followHouse",
+              "hasRateChange": false,
+              "ratesDefinition": {
+                "rateChanges": [{
+                  "id": 0,
+                  "start": "2024-12-17",
+                  "end": "2024-12-20",
+                  "amount": "36.00"
+                }
+                ]
+              },
+              "requestedRates": [{
+                "start": "2024-12-17",
+                "end": "2024-12-20",
+                "base": {
+                  "amount": "36.00"
+                }
+              }
+              ]
+            }
+          }, {
+            "id": 2,
+            "period": {
+              "start": "2024-12-17",
+              "end": "2024-12-20"
+            },
+            "ratePlanCode": "TDFBP",
+            "inventoryTypeCode": "FDBEV",
+            "quantity": 1,
+            "guestCounts": [{
+              "otaCode": "AQC10",
+              "count": 2
+            }
+            ],
+            "totalGuestCounts": [],
+            "isProductIncludedInOffer": true,
+            "productRates": {
+              "dailyRates": [{
+                "dailyTotalRate": {
+                  "amtBfTx": "0.00",
+                  "bsAmt": "0.00",
+                  "amtAfTx": "0.00",
+                  "taxList": [{
+                    "amount": "0.00",
+                    "taxCode": "NRTX0",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT27",
+                    "taxDefIds": [3]
+                  }
+                  ],
+                  "rateDefId": 0
+                },
+                "start": "2024-12-17",
+                "end": "2024-12-20"
+              }
+              ],
+              "totalRate": {
+                "amtBfTx": "0.00",
+                "bsAmt": "0.00",
+                "amtAfTx": "0.00",
+                "payableAmtAfTx": "0.00",
+                "taxGroups": [{
+                  "amount": "0.00",
+                  "taxCode": "NRTX0",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT27",
+                  "taxDefIds": [3]
+                }
+                ],
+                "totalTaxes": "0.00",
+                "daily": [{
+                  "amtType": "Average",
+                  "amtBfTx": "0.00",
+                  "bsAmt": "0.00",
+                  "amtAfTx": "0.00"
+                }, {
+                  "amtType": "Checkin",
+                  "amtBfTx": "0.00",
+                  "bsAmt": "0.00",
+                  "amtAfTx": "0.00"
+                }
+                ]
+              },
+              "pricingFrequency": "PerNight",
+              "pricingMethod": "PerProduct",
+              "hasRateChange": false,
+              "ratesDefinition": {
+                "rateChanges": [{
+                  "id": 0,
+                  "start": "2024-12-17",
+                  "end": "2024-12-20",
+                  "amount": "0.00"
+                }
+                ]
+              },
+              "requestedRates": [{
+                "start": "2024-12-17",
+                "end": "2024-12-20",
+                "base": {
+                  "amount": "0.00"
+                }
+              }
+              ]
+            },
+            "priceGridCode": "FDBEV"
+          }, {
+            "id": 3,
+            "period": {
+              "start": "2024-12-17",
+              "end": "2024-12-20"
+            },
+            "ratePlanCode": "TDFBP",
+            "inventoryTypeCode": "FDBEVTX",
+            "quantity": 1,
+            "guestCounts": [{
+              "otaCode": "AQC10",
+              "count": 2
+            }
+            ],
+            "totalGuestCounts": [],
+            "isProductIncludedInOffer": true,
+            "productRates": {
+              "dailyRates": [{
+                "dailyTotalRate": {
+                  "amtBfTx": "0.00",
+                  "bsAmt": "0.00",
+                  "amtAfTx": "0.00",
+                  "taxList": [{
+                    "amount": "0.00",
+                    "taxCode": "NRTX0",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT27",
+                    "taxDefIds": [3]
+                  }
+                  ],
+                  "rateDefId": 0
+                },
+                "start": "2024-12-17",
+                "end": "2024-12-20"
+              }
+              ],
+              "totalRate": {
+                "amtBfTx": "0.00",
+                "bsAmt": "0.00",
+                "amtAfTx": "0.00",
+                "payableAmtAfTx": "0.00",
+                "taxGroups": [{
+                  "amount": "0.00",
+                  "taxCode": "NRTX0",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT27",
+                  "taxDefIds": [3]
+                }
+                ],
+                "totalTaxes": "0.00",
+                "daily": [{
+                  "amtType": "Average",
+                  "amtBfTx": "0.00",
+                  "bsAmt": "0.00",
+                  "amtAfTx": "0.00"
+                }, {
+                  "amtType": "Checkin",
+                  "amtBfTx": "0.00",
+                  "bsAmt": "0.00",
+                  "amtAfTx": "0.00"
+                }
+                ]
+              },
+              "pricingFrequency": "PerNight",
+              "pricingMethod": "PerProduct",
+              "hasRateChange": false,
+              "ratesDefinition": {
+                "rateChanges": [{
+                  "id": 0,
+                  "start": "2024-12-17",
+                  "end": "2024-12-20",
+                  "amount": "0.00"
+                }
+                ]
+              },
+              "requestedRates": [{
+                "start": "2024-12-17",
+                "end": "2024-12-20",
+                "base": {
+                  "amount": "0.00"
+                }
+              }
+              ]
+            },
+            "priceGridCode": "FDBEVTX"
+          }
+          ],
+          "totalRate": {
+            "amtBfTx": "108.00",
+            "bsAmt": "108.00",
+            "amtAfTx": "248.31",
+            "payableAmtAfTx": "122.46",
+            "taxGroups": [{
+              "amount": "14.46",
+              "taxCode": "OCTAX",
+              "isIncludedInRate": false,
+              "otaCode": "FTT10",
+              "taxDefIds": [2]
+            }, {
+              "amount": "14.85",
+              "taxCode": "RSFTX",
+              "isIncludedInRate": false,
+              "otaCode": "FTT10",
+              "taxDefIds": [1]
+            }, {
+              "amount": "111.00",
+              "taxCode": "RSFEE",
+              "isIncludedInRate": false,
+              "otaCode": "FTT12",
+              "taxDefIds": [0]
+            }, {
+              "amount": "0.00",
+              "taxCode": "NRTX0",
+              "isIncludedInRate": false,
+              "otaCode": "FTT27",
+              "taxDefIds": [3]
+            }
+            ],
+            "totalTaxes": "140.31",
+            "daily": [{
+              "amtType": "Average",
+              "amtBfTx": "36.00",
+              "bsAmt": "36.00",
+              "amtAfTx": "82.77",
+              "payableAmtAfTx": "40.82"
+            }, {
+              "amtType": "Checkin",
+              "amtBfTx": "36.00",
+              "bsAmt": "36.00",
+              "amtAfTx": "82.77",
+              "payableAmtAfTx": "40.82"
+            }
+            ],
+            "subTotalServiceCharges": [{
+              "amount": "111.00",
+              "isIncludedInRate": false,
+              "payHotelAmount": "111.00"
+            }
+            ],
+            "subTotalTaxes": [{
+              "amount": "29.31",
+              "isIncludedInRate": false,
+              "payableAmount": "14.46",
+              "payHotelAmount": "14.85"
+            }
+            ],
+            "payableTotalTaxes": "14.46",
+            "payHotelTotalTaxes": "125.85"
+          },
+          "commission": {
+            "percent": "10.00"
+          },
+          "nightlyCorpMarketSegments": [{
+            "start": "2024-12-17",
+            "end": "2024-12-20",
+            "value": "TPKG"
+          }
+          ],
+          "corpMarketSegment": "TPKG",
+          "policyTypeCode": "CG"
+        },
+        "totalSegment": {
+          "finalPriceAmt": "122.46"
+        },
+        "formOfPayment": {
+          "paymentInfo": {
+            "paymentType": 5,
+            "paymentCard": {
+              "cardCode": "MC",
+              "expireDate": "1223",
+              "cardNumber": {
+                "token": "5555555555554444"
+              },
+              "cardHolderName": "Mock Customer",
+              "isCNP": false,
+              "billingAddress": {
+                "addressLines": [ "123 Mock St." ],
+                "cityName": "Henderson",
+                "postalCode": "89123",
+                "stateProv": "NV",
+                "countryCode": "US"
+              }
+            },
+            "paymentIntent": "Guarantee"
+          }
+        },
+        "taxDefinitions": [{
+          "id": 0,
+          "code": "RSFEE",
+          "taxTypeCode": "FTT12",
+          "name": "ResortFee",
+          "isIncluded": false,
+          "currency": "USD",
+          "computationType": "Flat",
+          "computationMode": "TaxOnRate",
+          "chargeUnit": "PerProduct",
+          "chargeFrequency": "PerDay",
+          "start": "2024-12-17",
+          "end": "2024-12-20",
+          "values": [{
+            "value": "37.00"
+          }
+          ],
+          "isPaidAtHotel": true,
+          "description": {
+            "en": ["Resort Fee"]
+          },
+          "longDescription": {
+            "en": ["Resort Fee"]
+          }
+        }, {
+          "id": 1,
+          "code": "RSFTX",
+          "taxTypeCode": "FTT10",
+          "name": "ResortFeeTax",
+          "isIncluded": false,
+          "computationType": "Percentage",
+          "computationMode": "TaxOnTax",
+          "chargeUnit": "PerProduct",
+          "chargeFrequency": "PerDay",
+          "start": "2024-12-17",
+          "end": "2024-12-20",
+          "values": [{
+            "value": "4.95"
+          }
+          ],
+          "isPaidAtHotel": true,
+          "relatedTaxIds": [0],
+          "description": {
+            "en": ["Resort Fee Tax"]
+          },
+          "longDescription": {
+            "en": ["Resort Fee Tax"]
+          }
+        }, {
+          "id": 2,
+          "code": "OCTAX",
+          "taxTypeCode": "FTT10",
+          "name": "OccupancyTax",
+          "isIncluded": false,
+          "computationType": "Percentage",
+          "computationMode": "TaxOnRate",
+          "chargeUnit": "PerProduct",
+          "chargeFrequency": "PerDay",
+          "start": "2024-12-17",
+          "end": "2024-12-20",
+          "values": [{
+            "value": "4.82"
+          }
+          ],
+          "description": {
+            "en": ["Occupancy Tax"]
+          },
+          "longDescription": {
+            "en": ["Occupancy Tax"]
+          }
+        }, {
+          "id": 3,
+          "code": "NRTX0",
+          "taxTypeCode": "FTT27",
+          "name": "NRTax0",
+          "isIncluded": false,
+          "computationType": "Percentage",
+          "computationMode": "TaxOnRate",
+          "chargeUnit": "PerProduct",
+          "chargeFrequency": "PerDay",
+          "start": "2024-12-17",
+          "end": "2024-12-20",
+          "values": [{
+            "value": "0.00"
+          }
+          ],
+          "description": {
+            "en": ["Non Room Product 0 Tax"]
+          },
+          "longDescription": {
+            "en": ["Non Room Product 0 Tax"]
+          }
+        }
+        ],
+        "customData": {
+          "pp": "TDFBP"
+        }
+      }
+      ],
+      "totalReservation": [{
+        "currency": "USD",
+        "amtBfTx": "108.00",
+        "bsAmt": "108.00",
+        "amtAfTx": "248.31",
+        "finalPriceAmt": "122.46",
+        "totalTaxes": "140.31",
+        "payableTotalTaxes": "14.46",
+        "payHotelTotalTaxes": "125.85"
+      }
+      ],
+      "totalOfActiveSegments": [{
+        "currency": "USD",
+        "amtBfTx": "108.00",
+        "bsAmt": "108.00",
+        "amtAfTx": "248.31",
+        "finalPriceAmt": "122.46",
+        "totalTaxes": "140.31",
+        "payableTotalTaxes": "14.46",
+        "payHotelTotalTaxes": "125.85"
+      }
+      ],
+      "printRate": true
+    }
+  }
+}

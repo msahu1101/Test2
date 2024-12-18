@@ -1,0 +1,3 @@
+# No. of Worker connections for nginx
+preprod=4096
+prod=4096

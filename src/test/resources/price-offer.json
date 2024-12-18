@@ -1,0 +1,1291 @@
+{
+    "data": {
+        "hotel": {
+            "chainCode": "MGM",
+            "brandCode": "MV",
+            "propertyCode": "MV021",
+            "propertyCurrency": "USD",
+            "responseCurrency": "USD",
+            "taxDefinitions": [
+                {
+                    "id": 4,
+                    "code": "RSFEE",
+                    "name": "ResortFee",
+                    "taxTypeCode": "FTT12",
+                    "chargeFrequency": "PerDay",
+                    "chargeUnit": "PerProduct",
+                    "desc": {
+                        "en": [
+                            "Resort Fee Tax"
+                        ]
+                    },
+                    "values": [
+                        {
+                            "value": "37.00"
+                        }
+                    ],
+                    "computationType": "Flat",
+                    "currency": "USD",
+                    "computationMode": "TaxOnRate",
+                    "dow": "MTWTFSS",
+                    "isIncluded": false,
+                    "start": "2021-05-06",
+                    "end": "2021-05-08"
+                },
+                {
+                    "id": 6,
+                    "code": "STTAX",
+                    "name": "New York State Tax",
+                    "taxTypeCode": "FTT15",
+                    "chargeFrequency": "PerDay",
+                    "chargeUnit": "PerProduct",
+                    "desc": {
+                        "en": [
+                            "New York State Tax"
+                        ]
+                    },
+                    "values": [
+                        {
+                            "value": "4.33"
+                        }
+                    ],
+                    "computationType": "Percent",
+                    "computationMode": "TaxOnRate",
+                    "dow": "MTWTFSS",
+                    "isIncluded": false,
+                    "start": "2021-05-06",
+                    "end": "2021-05-08"
+                },
+                {
+                    "id": 0,
+                    "code": "CTTAX",
+                    "name": "NYC City Tax",
+                    "taxTypeCode": "FTT3",
+                    "chargeFrequency": "PerDay",
+                    "chargeUnit": "PerProduct",
+                    "desc": {
+                        "en": [
+                            "New York City Tax"
+                        ]
+                    },
+                    "values": [
+                        {
+                            "value": "4.5"
+                        }
+                    ],
+                    "computationType": "Percent",
+                    "computationMode": "TaxOnRate",
+                    "dow": "MTWTFSS",
+                    "isIncluded": false,
+                    "start": "2021-05-06",
+                    "end": "2021-05-08"
+                },
+                {
+                    "id": 1,
+                    "code": "OCTAX",
+                    "name": "NYC Occupancy Flat Tax",
+                    "taxTypeCode": "FTT10",
+                    "chargeFrequency": "PerDay",
+                    "chargeUnit": "PerProduct",
+                    "desc": {
+                        "en": [
+                            "Flat rate of Occupancy Tax per stay"
+                        ]
+                    },
+                    "values": [
+                        {
+                            "value": "3.50"
+                        }
+                    ],
+                    "computationType": "Flat",
+                    "currency": "USD",
+                    "computationMode": "TaxOnRate",
+                    "dow": "MTWTFSS",
+                    "isIncluded": false,
+                    "start": "2021-05-06",
+                    "end": "2021-05-08"
+                },
+                {
+                    "id": 2,
+                    "code": "OCPTX",
+                    "name": "Occupancy Percent Tax",
+                    "taxTypeCode": "FTT10",
+                    "chargeFrequency": "PerDay",
+                    "chargeUnit": "PerProduct",
+                    "desc": {
+                        "en": [
+                            "Occupancy Percent Tax"
+                        ]
+                    },
+                    "values": [
+                        {
+                            "value": "5.875"
+                        }
+                    ],
+                    "computationType": "Percent",
+                    "computationMode": "TaxOnRate",
+                    "dow": "MTWTFSS",
+                    "isIncluded": false,
+                    "start": "2021-05-06",
+                    "end": "2021-05-08"
+                },
+                {
+                    "id": 3,
+                    "code": "RSTAX",
+                    "name": "Tax on Resort fee",
+                    "taxTypeCode": "FTT10",
+                    "chargeFrequency": "PerDay",
+                    "chargeUnit": "PerProduct",
+                    "desc": {
+                        "en": [
+                            "Tax on Resort Fee"
+                        ]
+                    },
+                    "values": [
+                        {
+                            "value": "8.875"
+                        }
+                    ],
+                    "computationType": "Percent",
+                    "computationMode": "TaxOnTax",
+                    "dow": "MTWTFSS",
+                    "isIncluded": false,
+                    "start": "2021-05-06",
+                    "end": "2021-05-08"
+                },
+                {
+                    "id": 5,
+                    "code": "RXFEE",
+                    "name": "Resort fee 20",
+                    "taxTypeCode": "FTT12",
+                    "chargeFrequency": "PerDay",
+                    "chargeUnit": "PerProduct",
+                    "values": [
+                        {
+                            "value": "20.00"
+                        }
+                    ],
+                    "computationType": "Flat",
+                    "currency": "USD",
+                    "computationMode": "TaxOnRate",
+                    "dow": "MTWTFSS",
+                    "isIncluded": false,
+                    "start": "2021-05-06",
+                    "end": "2021-05-08"
+                },
+                {
+                    "id": 7,
+                    "code": "SALTX",
+                    "name": "Non Room Sales Tax",
+                    "taxTypeCode": "FTT13",
+                    "chargeFrequency": "PerDay",
+                    "chargeUnit": "PerProduct",
+                    "desc": {
+                        "en": [
+                            "Non-Room Hotel Sales Tax"
+                        ]
+                    },
+                    "values": [
+                        {
+                            "value": "8.375"
+                        }
+                    ],
+                    "computationType": "Percent",
+                    "computationMode": "TaxOnRate",
+                    "dow": "MTWTFSS",
+                    "isIncluded": false,
+                    "start": "2021-05-06",
+                    "end": "2021-05-08"
+                }
+            ]
+        },
+        "start": "2021-05-06",
+        "duration": "2D",
+        "ratePlans": [
+            {
+                "code": "PREVL",
+                "isCommissionable": false,
+                "isFreeNight": false,
+                "isLoyaltyIdRequired": false,
+                "isRewardEarned": false,
+                "isAwardAccepted": false,
+                "isVoucherRequired": false,
+                "isIdRequired": false,
+                "areAmtsConfidential": false,
+                "isTentativeAllowed": false,
+                "policyTypeCode": "GT",
+                "advanceBooking": {
+                    "isAdvancePurchase": false
+                }
+            },
+            {
+                "code": "RP001",
+                "name": {
+                    "en": [
+                        "TEST SPA RATE"
+                    ]
+                },
+                "isCommissionable": false,
+                "isFreeNight": false,
+                "isLoyaltyIdRequired": false,
+                "isRewardEarned": true,
+                "isAwardAccepted": false,
+                "isVoucherRequired": false,
+                "isIdRequired": false,
+                "areAmtsConfidential": false,
+                "isTentativeAllowed": false,
+                "policyTypeCode": "40",
+                "advanceBooking": {
+                    "isAdvancePurchase": false
+                }
+            },
+            {
+                "code": "RP002",
+                "name": {
+                    "en": [
+                        "TEST BRK LUN RATE"
+                    ]
+                },
+                "isCommissionable": false,
+                "isFreeNight": false,
+                "isLoyaltyIdRequired": false,
+                "isRewardEarned": true,
+                "isAwardAccepted": false,
+                "isVoucherRequired": false,
+                "isIdRequired": false,
+                "areAmtsConfidential": false,
+                "isTentativeAllowed": false,
+                "policyTypeCode": "40",
+                "advanceBooking": {
+                    "isAdvancePurchase": false
+                }
+            }
+        ],
+        "products": [
+            {
+                "inventoryTypeCode": "DPRK",
+                "productCode": "SR",
+                "pacCode": "LKBG",
+                "productName": "Sleeping Room",
+                "otaCode": "GRI42",
+                "inventoryTypeName": {
+                    "en": [
+                        "Park Avenue King"
+                    ]
+                },
+                "maxNbParticipant": 3,
+                "attCodes": [
+                    "1KING",
+                    "MAX3"
+                ],
+                "isDisplayable": true,
+                "isPremium": true
+            },
+            {
+                "inventoryTypeCode": "LCO1PM",
+                "productCode": "LCO1PM",
+                "pacCode": "L9C3",
+                "productName": "Late Check-Out - 1pm",
+                "productClass": "CICO",
+                "inventoryTypeName": {
+                    "en": [
+                        "Late Check-Out - 1pm"
+                    ]
+                }
+            },
+            {
+                "inventoryTypeCode": "LCO3PM",
+                "productCode": "LCO3PM",
+                "pacCode": "XPO9",
+                "productName": "Late Check-Out - 3pm",
+                "productClass": "CICO",
+                "inventoryTypeName": {
+                    "en": [
+                        "Late Check-Out - 3pm"
+                    ]
+                }
+            },
+            {
+                "inventoryTypeCode": "SPF",
+                "productCode": "2SPA",
+                "pacCode": "O95B",
+                "productName": "2 Spa Services",
+                "productClass": "SPA",
+                "inventoryTypeName": {
+                    "en": [
+                        "2 Spa Services"
+                    ]
+                }
+            },
+            {
+                "inventoryTypeCode": "BUFDAY",
+                "productCode": "BUFDAY",
+                "pacCode": "XRWK",
+                "productName": "Buffet Breakfast & Lunch ",
+                "otaCode": "MPT23",
+                "productClass": "FNB",
+                "inventoryTypeName": {
+                    "en": [
+                        "Buffet Breakfast & Lunch Per Day - Transient "
+                    ]
+                }
+            }
+        ],
+        "attributes": [
+            {
+                "code": "1KING",
+                "name": {
+                    "en": [
+                        "1 King bed type"
+                    ]
+                }
+            },
+            {
+                "code": "MAX3",
+                "name": {
+                    "en": [
+                        "Max occupancy of 3"
+                    ]
+                }
+            }
+        ],
+        "requestedOffer": {
+            "availStatus": "available",
+            "policies": {
+                "isPrepaid": false,
+                "deposit": {
+                    "isRequired": true,
+                    "feeType": "FirstNight",
+                    "amt": "177.35",
+                    "amtCurrency": "USD",
+                    "feeCurrency": "USD",
+                    "deadline": {
+                        "deadlineType": "atBooking",
+                        "dateTime": "2021-02-16T01:48:35"
+                    }
+                },
+                "cancellation": {
+                    "feeType": "FirstNight",
+                    "amt": "177.35",
+                    "amtCurrency": "USD",
+                    "feeCurrency": "USD",
+                    "deadline": {
+                        "deadlineType": "numberOfDaysBeforeCheckin",
+                        "deadlineValue": 2,
+                        "dateTime": "2021-05-04T00:00:00"
+                    },
+                    "isGracePeriod": true
+                },
+                "isRefundable": false,
+                "cancellationNoShow": {
+                    "feeType": "FirstLast",
+                    "amt": "354.70",
+                    "amtCurrency": "USD",
+                    "feeCurrency": "USD",
+                    "deadline": {
+                        "deadlineType": "numberOfDaysBeforeCheckin",
+                        "deadlineValue": 0,
+                        "dateTime": "2021-05-06T00:00:00"
+                    },
+                    "isGracePeriod": true
+                },
+                "checkinTime": "15:00:00",
+                "checkoutTime": "11:00:00"
+            },
+            "ratePlanCode": "PREVL",
+            "productUses": [
+                {
+                    "period": {
+                        "start": "2021-05-06",
+                        "end": "2021-05-08"
+                    },
+                    "inventoryTypeCode": "DPRK",
+                    "isMainProduct": true,
+                    "quantity": 1,
+                    "numberOfAvailableProducts": 99,
+                    "guestCounts": [
+                        {
+                            "guestType": "ADULT",
+                            "otaCode": "AQC10",
+                            "count": 1
+                        }
+                    ],
+                    "rates": {
+                        "pricingFrequency": "PerNight",
+                        "pricingMethod": "PerProduct",
+                        "taxInclusionMode": "followHouse",
+                        "totalRate": {
+                            "bsAmt": "198.00",
+                            "amtBfTx": "198.00",
+                            "amtAfTx": "354.70",
+                            "avg": {
+                                "amtAfTx": "177.35",
+                                "bsAmt": "99.00",
+                                "subTtlTxExc": "21.35",
+                                "subTtlSvcChgExc": "57.00"
+                            },
+                            "taxGroups": [
+                                {
+                                    "taxDefIds": [
+                                        0
+                                    ],
+                                    "code": "CTTAX",
+                                    "otaCode": "FTT3",
+                                    "amt": "8.92",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        1
+                                    ],
+                                    "code": "OCTAX",
+                                    "otaCode": "FTT10",
+                                    "amt": "7.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        2
+                                    ],
+                                    "code": "OCPTX",
+                                    "otaCode": "FTT10",
+                                    "amt": "11.64",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        3
+                                    ],
+                                    "code": "RSTAX",
+                                    "otaCode": "FTT10",
+                                    "amt": "6.56",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        4
+                                    ],
+                                    "code": "RSFEE",
+                                    "otaCode": "FTT12",
+                                    "amt": "74.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        5
+                                    ],
+                                    "code": "RXFEE",
+                                    "otaCode": "FTT12",
+                                    "amt": "40.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        6
+                                    ],
+                                    "code": "STTAX",
+                                    "otaCode": "FTT15",
+                                    "amt": "8.58",
+                                    "isIncludedInRate": false
+                                }
+                            ],
+                            "totalTaxes": "156.70",
+                            "subTtlSvcChgExc": "114.00",
+                            "subTtlTxExc": "42.70"
+                        },
+                        "totalBaseOccRate": {
+                            "bsAmt": "198.00",
+                            "amtBfTx": "198.00",
+                            "amtAfTx": "354.70",
+                            "avg": {
+                                "amtAfTx": "177.35",
+                                "bsAmt": "99.00",
+                                "subTtlTxExc": "21.35",
+                                "subTtlSvcChgExc": "57.00"
+                            },
+                            "taxGroups": [
+                                {
+                                    "taxDefIds": [
+                                        0
+                                    ],
+                                    "code": "CTTAX",
+                                    "otaCode": "FTT3",
+                                    "amt": "8.92",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        1
+                                    ],
+                                    "code": "OCTAX",
+                                    "otaCode": "FTT10",
+                                    "amt": "7.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        2
+                                    ],
+                                    "code": "OCPTX",
+                                    "otaCode": "FTT10",
+                                    "amt": "11.64",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        3
+                                    ],
+                                    "code": "RSTAX",
+                                    "otaCode": "FTT10",
+                                    "amt": "6.56",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        4
+                                    ],
+                                    "code": "RSFEE",
+                                    "otaCode": "FTT12",
+                                    "amt": "74.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        5
+                                    ],
+                                    "code": "RXFEE",
+                                    "otaCode": "FTT12",
+                                    "amt": "40.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        6
+                                    ],
+                                    "code": "STTAX",
+                                    "otaCode": "FTT15",
+                                    "amt": "8.58",
+                                    "isIncludedInRate": false
+                                }
+                            ],
+                            "totalTaxes": "156.70",
+                            "subTtlSvcChgExc": "114.00",
+                            "subTtlTxExc": "42.70"
+                        },
+                        "hasRateChange": false,
+                        "ratesDef": {
+                            "rateChanges": [
+                                {
+                                    "id": 0,
+                                    "start": "2021-05-06",
+                                    "end": "2021-05-08",
+                                    "amt": "99.00"
+                                }
+                            ],
+                            "avg": "99.00"
+                        },
+                        "dailyRates": [
+                            {
+                                "start": "2021-05-06",
+                                "end": "2021-05-08",
+                                "dailyTotalRate": {
+                                    "bsAmt": "99.00",
+                                    "amtBfTx": "99.00",
+                                    "amtAfTx": "177.35",
+                                    "rateDefId": 0,
+                                    "taxList": [
+                                        {
+                                            "taxDefIds": [
+                                                0
+                                            ],
+                                            "code": "CTTAX",
+                                            "otaCode": "FTT3",
+                                            "amt": "4.46",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                1
+                                            ],
+                                            "code": "OCTAX",
+                                            "otaCode": "FTT10",
+                                            "amt": "3.50",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                2
+                                            ],
+                                            "code": "OCPTX",
+                                            "otaCode": "FTT10",
+                                            "amt": "5.82",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                3
+                                            ],
+                                            "code": "RSTAX",
+                                            "otaCode": "FTT10",
+                                            "amt": "3.28",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                4
+                                            ],
+                                            "code": "RSFEE",
+                                            "otaCode": "FTT12",
+                                            "amt": "37.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                5
+                                            ],
+                                            "code": "RXFEE",
+                                            "otaCode": "FTT12",
+                                            "amt": "20.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                6
+                                            ],
+                                            "code": "STTAX",
+                                            "otaCode": "FTT15",
+                                            "amt": "4.29",
+                                            "isIncludedInRate": false
+                                        }
+                                    ],
+                                    "totalTaxes": "78.35",
+                                    "subTtlSvcChgExc": "57.00",
+                                    "subTtlTxExc": "21.35"
+                                },
+                                "dailyBaseOccRate": {
+                                    "bsAmt": "99.00",
+                                    "amtBfTx": "99.00",
+                                    "amtAfTx": "177.35",
+                                    "taxList": [
+                                        {
+                                            "taxDefIds": [
+                                                0
+                                            ],
+                                            "code": "CTTAX",
+                                            "otaCode": "FTT3",
+                                            "amt": "4.46",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                1
+                                            ],
+                                            "code": "OCTAX",
+                                            "otaCode": "FTT10",
+                                            "amt": "3.50",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                2
+                                            ],
+                                            "code": "OCPTX",
+                                            "otaCode": "FTT10",
+                                            "amt": "5.82",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                3
+                                            ],
+                                            "code": "RSTAX",
+                                            "otaCode": "FTT10",
+                                            "amt": "3.28",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                4
+                                            ],
+                                            "code": "RSFEE",
+                                            "otaCode": "FTT12",
+                                            "amt": "37.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                5
+                                            ],
+                                            "code": "RXFEE",
+                                            "otaCode": "FTT12",
+                                            "amt": "20.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                6
+                                            ],
+                                            "code": "STTAX",
+                                            "otaCode": "FTT15",
+                                            "amt": "4.29",
+                                            "isIncludedInRate": false
+                                        }
+                                    ],
+                                    "totalTaxes": "78.35",
+                                    "subTtlSvcChgExc": "57.00",
+                                    "subTtlTxExc": "21.35"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "totalRate": {
+                "bsAmt": "198.00",
+                "amtBfTx": "198.00",
+                "amtAfTx": "354.70",
+                "avg": {
+                    "amtAfTx": "177.35",
+                    "bsAmt": "99.00",
+                    "subTtlTxExc": "21.35",
+                    "subTtlSvcChgExc": "57.00"
+                },
+                "taxGroups": [
+                    {
+                        "taxDefIds": [
+                            0
+                        ],
+                        "code": "CTTAX",
+                        "otaCode": "FTT3",
+                        "amt": "8.92",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            1
+                        ],
+                        "code": "OCTAX",
+                        "otaCode": "FTT10",
+                        "amt": "7.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            2
+                        ],
+                        "code": "OCPTX",
+                        "otaCode": "FTT10",
+                        "amt": "11.64",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            3
+                        ],
+                        "code": "RSTAX",
+                        "otaCode": "FTT10",
+                        "amt": "6.56",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            4
+                        ],
+                        "code": "RSFEE",
+                        "otaCode": "FTT12",
+                        "amt": "74.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            5
+                        ],
+                        "code": "RXFEE",
+                        "otaCode": "FTT12",
+                        "amt": "40.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            6
+                        ],
+                        "code": "STTAX",
+                        "otaCode": "FTT15",
+                        "amt": "8.58",
+                        "isIncludedInRate": false
+                    }
+                ],
+                "totalTaxes": "156.70",
+                "subTtlSvcChgExc": "114.00",
+                "subTtlTxExc": "42.70"
+            },
+            "totalBaseOccRate": {
+                "bsAmt": "198.00",
+                "amtBfTx": "198.00",
+                "amtAfTx": "354.70",
+                "avg": {
+                    "amtAfTx": "177.35",
+                    "bsAmt": "99.00",
+                    "subTtlTxExc": "21.35",
+                    "subTtlSvcChgExc": "57.00"
+                },
+                "taxGroups": [
+                    {
+                        "taxDefIds": [
+                            0
+                        ],
+                        "code": "CTTAX",
+                        "otaCode": "FTT3",
+                        "amt": "8.92",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            1
+                        ],
+                        "code": "OCTAX",
+                        "otaCode": "FTT10",
+                        "amt": "7.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            2
+                        ],
+                        "code": "OCPTX",
+                        "otaCode": "FTT10",
+                        "amt": "11.64",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            3
+                        ],
+                        "code": "RSTAX",
+                        "otaCode": "FTT10",
+                        "amt": "6.56",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            4
+                        ],
+                        "code": "RSFEE",
+                        "otaCode": "FTT12",
+                        "amt": "74.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            5
+                        ],
+                        "code": "RXFEE",
+                        "otaCode": "FTT12",
+                        "amt": "40.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            6
+                        ],
+                        "code": "STTAX",
+                        "otaCode": "FTT15",
+                        "amt": "8.58",
+                        "isIncludedInRate": false
+                    }
+                ],
+                "totalTaxes": "156.70",
+                "subTtlSvcChgExc": "114.00",
+                "subTtlTxExc": "42.70"
+            }
+        },
+        "additionalOffers": [
+            {
+                "ratePlanCode": "PREVL",
+                "productUses": [
+                    {
+                        "period": {
+                            "start": "2021-05-06",
+                            "end": "2021-05-08"
+                        },
+                        "inventoryTypeCode": "LCO1PM",
+                        "isMainProduct": true,
+                        "quantity": 1,
+                        "guestCounts": [
+                            {
+                                "guestType": "ADULT",
+                                "otaCode": "AQC10",
+                                "count": 1
+                            }
+                        ],
+                        "rates": {
+                            "pricingFrequency": "PerNight",
+                            "pricingMethod": "PerProduct",
+                            "taxInclusionMode": "followHouse",
+                            "hasRateChange": false,
+                            "ratesDef": {
+                                "rateChanges": [
+                                    {
+                                        "id": 0,
+                                        "start": "2021-05-06",
+                                        "end": "2021-05-08",
+                                        "amt": "25.00"
+                                    }
+                                ],
+                                "avg": "25.00"
+                            },
+                            "dailyRates": [
+                                {
+                                    "start": "2021-05-06",
+                                    "end": "2021-05-08",
+                                    "dailyTotalRate": {
+                                        "bsAmt": "25.00",
+                                        "amtAfTx": "25.00",
+                                        "rateDefId": 0
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "totalRate": {
+                    "bsAmt": "50.00",
+                    "amtAfTx": "50.00",
+                    "avg": {
+                        "amtAfTx": "25.00",
+                        "bsAmt": "25.00",
+                        "subTtlTxExc": "21.35",
+                        "subTtlSvcChgExc": "57.00"
+                    }
+                }
+            },
+            {
+                "ratePlanCode": "PREVL",
+                "productUses": [
+                    {
+                        "period": {
+                            "start": "2021-05-06",
+                            "end": "2021-05-08"
+                        },
+                        "inventoryTypeCode": "LCO3PM",
+                        "isMainProduct": true,
+                        "quantity": 1,
+                        "guestCounts": [
+                            {
+                                "guestType": "ADULT",
+                                "otaCode": "AQC10",
+                                "count": 1
+                            }
+                        ],
+                        "rates": {
+                            "pricingFrequency": "PerNight",
+                            "pricingMethod": "PerProduct",
+                            "taxInclusionMode": "followHouse",
+                            "hasRateChange": false,
+                            "ratesDef": {
+                                "rateChanges": [
+                                    {
+                                        "id": 0,
+                                        "start": "2021-05-06",
+                                        "end": "2021-05-08",
+                                        "amt": "75.00"
+                                    }
+                                ],
+                                "avg": "75.00"
+                            },
+                            "dailyRates": [
+                                {
+                                    "start": "2021-05-06",
+                                    "end": "2021-05-08",
+                                    "dailyTotalRate": {
+                                        "bsAmt": "75.00",
+                                        "amtAfTx": "75.00",
+                                        "rateDefId": 0
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "totalRate": {
+                    "bsAmt": "150.00",
+                    "amtAfTx": "150.00",
+                    "avg": {
+                        "amtAfTx": "75.00",
+                        "bsAmt": "75.00",
+                        "subTtlTxExc": "21.35",
+                        "subTtlSvcChgExc": "57.00"
+                    }
+                }
+            },
+            {
+                "policies": {
+                    "isPrepaid": false,
+                    "deposit": {
+                        "isRequired": true,
+                        "feeType": "FirstNight",
+                        "amt": "29.26",
+                        "amtCurrency": "USD",
+                        "feeCurrency": "USD",
+                        "deadline": {
+                            "deadlineType": "atBooking",
+                            "dateTime": "2021-02-16T01:48:35"
+                        }
+                    },
+                    "cancellation": {
+                        "feeType": "FirstNight",
+                        "amt": "29.26",
+                        "amtCurrency": "USD",
+                        "feeCurrency": "USD",
+                        "deadline": {
+                            "deadlineType": "numberOfDaysBeforeCheckin",
+                            "deadlineValue": 2,
+                            "dateTime": "2021-05-04T00:00:00"
+                        },
+                        "isGracePeriod": true
+                    },
+                    "isRefundable": false,
+                    "cancellationNoShow": {
+                        "feeType": "FirstLast",
+                        "amt": "58.52",
+                        "amtCurrency": "USD",
+                        "feeCurrency": "USD",
+                        "deadline": {
+                            "deadlineType": "numberOfDaysBeforeCheckin",
+                            "deadlineValue": 0,
+                            "dateTime": "2021-05-06T00:00:00"
+                        },
+                        "isGracePeriod": true
+                    },
+                    "checkinTime": "15:00:00",
+                    "checkoutTime": "11:00:00"
+                },
+                "ratePlanCode": "RP001",
+                "productUses": [
+                    {
+                        "period": {
+                            "start": "2021-05-06",
+                            "end": "2021-05-08"
+                        },
+                        "inventoryTypeCode": "SPF",
+                        "isMainProduct": true,
+                        "quantity": 1,
+                        "guestCounts": [
+                            {
+                                "guestType": "ADULT",
+                                "otaCode": "AQC10",
+                                "count": 1
+                            }
+                        ],
+                        "rates": {
+                            "pricingFrequency": "PerNight",
+                            "pricingMethod": "PerProduct",
+                            "taxInclusionMode": "followHouse",
+                            "hasRateChange": false,
+                            "ratesDef": {
+                                "rateChanges": [
+                                    {
+                                        "id": 0,
+                                        "start": "2021-05-06",
+                                        "end": "2021-05-08",
+                                        "amt": "27.00"
+                                    }
+                                ],
+                                "avg": "27.00"
+                            },
+                            "dailyRates": [
+                                {
+                                    "start": "2021-05-06",
+                                    "end": "2021-05-08",
+                                    "dailyTotalRate": {
+                                        "bsAmt": "27.00",
+                                        "amtBfTx": "27.00",
+                                        "amtAfTx": "29.26",
+                                        "rateDefId": 0,
+                                        "taxList": [
+                                            {
+                                                "taxDefIds": [
+                                                    7
+                                                ],
+                                                "code": "SALTX",
+                                                "otaCode": "FTT13",
+                                                "amt": "2.26",
+                                                "isIncludedInRate": false
+                                            }
+                                        ],
+                                        "totalTaxes": "2.26",
+                                        "subTtlTxExc": "2.26"
+                                    }
+                                }
+                            ]
+                        },
+                        "availablePeriods": [
+                            {
+                                "start": "2021-05-06",
+                                "end": "2021-05-07"
+                            }
+                        ]
+                    }
+                ],
+                "totalRate": {
+                    "bsAmt": "54.00",
+                    "amtBfTx": "54.00",
+                    "amtAfTx": "58.52",
+                    "avg": {
+                        "amtAfTx": "29.26",
+                        "bsAmt": "27.00",
+                        "subTtlTxExc": "21.35",
+                        "subTtlSvcChgExc": "57.00"
+                    },
+                    "taxGroups": [
+                        {
+                            "taxDefIds": [
+                                7
+                            ],
+                            "code": "SALTX",
+                            "otaCode": "FTT13",
+                            "amt": "4.52",
+                            "isIncludedInRate": false
+                        }
+                    ],
+                    "subTtlTxExc": "4.52",
+                    "totalTaxes": "4.52"
+                }
+            },
+            {
+                "policies": {
+                    "isPrepaid": false,
+                    "deposit": {
+                        "isRequired": true,
+                        "feeType": "FirstNight",
+                        "amt": "43.35",
+                        "amtCurrency": "USD",
+                        "feeCurrency": "USD",
+                        "deadline": {
+                            "deadlineType": "atBooking",
+                            "dateTime": "2021-02-16T01:48:35"
+                        }
+                    },
+                    "cancellation": {
+                        "feeType": "FirstNight",
+                        "amt": "43.35",
+                        "amtCurrency": "USD",
+                        "feeCurrency": "USD",
+                        "deadline": {
+                            "deadlineType": "numberOfDaysBeforeCheckin",
+                            "deadlineValue": 2,
+                            "dateTime": "2021-05-04T00:00:00"
+                        },
+                        "isGracePeriod": true
+                    },
+                    "isRefundable": false,
+                    "cancellationNoShow": {
+                        "feeType": "FirstLast",
+                        "amt": "86.70",
+                        "amtCurrency": "USD",
+                        "feeCurrency": "USD",
+                        "deadline": {
+                            "deadlineType": "numberOfDaysBeforeCheckin",
+                            "deadlineValue": 0,
+                            "dateTime": "2021-05-06T00:00:00"
+                        },
+                        "isGracePeriod": true
+                    },
+                    "checkinTime": "15:00:00",
+                    "checkoutTime": "11:00:00"
+                },
+                "ratePlanCode": "RP002",
+                "productUses": [
+                    {
+                        "period": {
+                            "start": "2021-05-06",
+                            "end": "2021-05-08"
+                        },
+                        "inventoryTypeCode": "BUFDAY",
+                        "isMainProduct": true,
+                        "quantity": 1,
+                        "guestCounts": [
+                            {
+                                "guestType": "ADULT",
+                                "otaCode": "AQC10",
+                                "count": 1
+                            }
+                        ],
+                        "rates": {
+                            "pricingFrequency": "PerNight",
+                            "pricingMethod": "PerProduct",
+                            "taxInclusionMode": "followHouse",
+                            "hasRateChange": false,
+                            "ratesDef": {
+                                "rateChanges": [
+                                    {
+                                        "id": 0,
+                                        "start": "2021-05-06",
+                                        "end": "2021-05-08",
+                                        "amt": "40.00"
+                                    }
+                                ],
+                                "avg": "40.00"
+                            },
+                            "dailyRates": [
+                                {
+                                    "start": "2021-05-06",
+                                    "end": "2021-05-08",
+                                    "dailyTotalRate": {
+                                        "bsAmt": "40.00",
+                                        "amtBfTx": "40.00",
+                                        "amtAfTx": "43.35",
+                                        "rateDefId": 0,
+                                        "taxList": [
+                                            {
+                                                "taxDefIds": [
+                                                    7
+                                                ],
+                                                "code": "SALTX",
+                                                "otaCode": "FTT13",
+                                                "amt": "3.35",
+                                                "isIncludedInRate": false
+                                            }
+                                        ],
+                                        "totalTaxes": "3.35",
+                                        "subTtlTxExc": "3.35"
+                                    }
+                                }
+                            ]
+                        },
+                        "availablePeriods": [
+                            {
+                                "start": "2021-05-06",
+                                "end": "2021-05-07"
+                            }
+                        ]
+                    }
+                ],
+                "totalRate": {
+                    "bsAmt": "80.00",
+                    "amtBfTx": "80.00",
+                    "amtAfTx": "86.70",
+                    "avg": {
+                        "amtAfTx": "43.35",
+                        "bsAmt": "40.00",
+                        "subTtlTxExc": "21.35",
+                        "subTtlSvcChgExc": "57.00"
+                    },
+                    "taxGroups": [
+                        {
+                            "taxDefIds": [
+                                7
+                            ],
+                            "code": "SALTX",
+                            "otaCode": "FTT13",
+                            "amt": "6.70",
+                            "isIncludedInRate": false
+                        }
+                    ],
+                    "subTtlTxExc": "6.70",
+                    "totalTaxes": "6.70"
+                }
+            }
+        ]
+    }
+}

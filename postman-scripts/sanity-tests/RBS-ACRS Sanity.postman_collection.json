@@ -1,0 +1,1380 @@
+{
+	"info": {
+		"_postman_id": "4f15ec80-c9f6-4710-819a-368f17ba5b6e",
+		"name": "RBS-ACRS Sanity",
+		"description": "This collection will contain V2 services of Room Booking Services APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26609323"
+	},
+	"item": [
+		{
+			"name": "Create Service Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"okta-access-token\", jsonData.access_token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/plain",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "{{clientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{clientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "{{grantType}}",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "{{scope}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{idmsEnv}}/identity/authorization/v1/mgmsvc/token",
+					"host": [
+						"{{idmsEnv}}"
+					],
+					"path": [
+						"identity",
+						"authorization",
+						"v1",
+						"mgmsvc",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Availability Calendar V3",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity | Calendar Price with Start Date, End Date, Property Id, Number of Adults and Number of Rooms\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"    var jsonData = JSON.parse(pm.response.stream);\r",
+							"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"    pm.expect(null).not.eq(jsonData);\r",
+							"    pm.expect(0).not.equal(jsonData.length);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"type": "text",
+						"value": "ICE"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"type": "text",
+						"value": "ICE"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"type": "text",
+						"value": "{{$timestamp}}"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v3/availability/calendar?startDate={{todayPlus45}}&endDate={{todayPlus48}}&propertyId={{propertyId}}&numAdults={{numAdults}}&totalNights=2&programId={{programId}}&customerId={{customerId}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v3",
+						"availability",
+						"calendar"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "endDate",
+							"value": "{{todayPlus48}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "numAdults",
+							"value": "{{numAdults}}"
+						},
+						{
+							"key": "totalNights",
+							"value": "2"
+						},
+						{
+							"key": "programId",
+							"value": "{{programId}}"
+						},
+						{
+							"key": "customerId",
+							"value": "{{customerId}}"
+						},
+						{
+							"key": "ignoreChannelMargins",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "numRooms",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "customerDominantPlay",
+							"value": "Slot",
+							"disabled": true
+						},
+						{
+							"key": "customerRank",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Availability Trip V3",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity | Single Availability with Checkin Date, Checkout Date, Property Id and Number of Adults\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"  pm.expect(null).not.eq(jsonData.ratePlans[0]);\r",
+							" \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v3/availability/trip?checkInDate={{todayPlus45}}&checkOutDate={{todayPlus48}}&propertyId={{propertyId}}&numAdults={{numAdults}}&customerId={{customerId}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v3",
+						"availability",
+						"trip"
+					],
+					"query": [
+						{
+							"key": "checkInDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "checkOutDate",
+							"value": "{{todayPlus48}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "numAdults",
+							"value": "{{numAdults}}"
+						},
+						{
+							"key": "customerId",
+							"value": "{{customerId}}"
+						},
+						{
+							"key": "programId",
+							"value": "{{programId}}",
+							"disabled": true
+						},
+						{
+							"key": "includeSoldOutRooms",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "perpetualPricing",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "isGroupCode",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "customerRank",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "customerDominantPlay",
+							"value": "Slot",
+							"disabled": true
+						},
+						{
+							"key": "ignoreChannelMargins",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resorts Price V2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity | Resort Pricing with Checkin Date, Checkout Date, Number of Adults, CustomerId and programId\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"type": "text",
+						"value": "{{mgmresorts}}"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"type": "text",
+						"value": "{{web}}"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/availability/resorts?checkInDate={{todayPlus45}}&checkOutDate={{todayPlus48}}&numAdults={{numAdults}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"availability",
+						"resorts"
+					],
+					"query": [
+						{
+							"key": "checkInDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "checkOutDate",
+							"value": "{{todayPlus48}}"
+						},
+						{
+							"key": "numAdults",
+							"value": "{{numAdults}}"
+						},
+						{
+							"key": "customerId",
+							"value": "{{customerId}}",
+							"disabled": true
+						},
+						{
+							"key": "programId",
+							"value": "{{programId}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resorts Price with Tax",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity | Resort Pricing with Checkin Date, Checkout Date, Number of Adults, CustomerId and programId\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"type": "text",
+						"value": "{{mgmresorts}}"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"type": "text",
+						"value": "{{web}}"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{{reqResortWithTax}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/v2/availability/resortswithtax",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"availability",
+						"resortswithtax"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Availability components",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity | Get component list\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"type": "text",
+						"value": "{{ice}}"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"type": "text",
+						"value": "{{ice}}"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"type": "text",
+						"value": "{{$timestamp}}"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/availability/components?checkInDate={{todayPlus45}}&checkOutDate={{todayPlus48}}&propertyId={{propertyId}}&roomTypeId={{roomTypeId}}&programId={{programId}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"availability",
+						"components"
+					],
+					"query": [
+						{
+							"key": "checkInDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "checkOutDate",
+							"value": "{{todayPlus48}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "roomTypeId",
+							"value": "{{roomTypeId}}"
+						},
+						{
+							"key": "programId",
+							"value": "{{programId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Applicable Program API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity | is Applicable Program with CustomerId and propertyId\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"  pm.expect(jsonData.programIds.length).not.equal(0);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/programs/applicable?customerId={{customerId}}&propertyId={{propertyId}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"programs",
+						"applicable"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "{{customerId}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Offers API V3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity | Customer Offer with Property Id and CustomerId\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{env}}/v3/customer/offers?customerId={{customerId}}&perpetualPricing=true",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v3",
+						"customer",
+						"offers"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "{{customerId}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}",
+							"disabled": true
+						},
+						{
+							"key": "perpetualPricing",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Perpetual Offers API",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity | Perpetual offer with CustomerId\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/programs/default-perpetual?customerId={{customerId}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"programs",
+						"default-perpetual"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "{{customerId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Offer V2 API",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity | Offer validate with ProgramId, PropertyId and CustomerId\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/offer/validate?customerId={{customerId}}&programId={{programId}}&propertyId={{propertyId}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"offer",
+						"validate"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "{{customerId}}"
+						},
+						{
+							"key": "programId",
+							"value": "{{programId}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Offers API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity | Program Search by Program Id, startDate and endDate\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{env}}/v2/offers?programIds={{programId}}&startDate={{todayPlus45}}&endDate={{todayPlus48}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"offers"
+					],
+					"query": [
+						{
+							"key": "programIds",
+							"value": "{{programId}}"
+						},
+						{
+							"key": "startDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "endDate",
+							"value": "{{todayPlus48}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Reservation API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity | ICE-LasVegas-Transient User Success : Find reservation with cnfNumber\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/reservation?confirmationNumber={{confirmationNo}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"reservation"
+					],
+					"query": [
+						{
+							"key": "confirmationNumber",
+							"value": "{{confirmationNo}}"
+						},
+						{
+							"key": "firstName",
+							"value": "John",
+							"disabled": true
+						},
+						{
+							"key": "lastName",
+							"value": "Mark",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Party Reservation API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity | Reservation Party : Find reservation with party primary cnf number\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/reservation/party/info?confirmationNumber={{confirmationNo_party}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"reservation",
+						"party",
+						"info"
+					],
+					"query": [
+						{
+							"key": "operaPartyCode",
+							"value": "PRTY_0WGAZ7DQC7",
+							"disabled": true
+						},
+						{
+							"key": "confirmationNumber",
+							"value": "{{confirmationNo_party}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Group Blocks",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity | Group Block  PropertyId, startDate and endDate\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/groupblocks?propertyId={{propertyId}}&startDate={{todayPlus30}}&endDate={{todayPlus45}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"groupblocks"
+					],
+					"query": [
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "startDate",
+							"value": "{{todayPlus30}}"
+						},
+						{
+							"key": "endDate",
+							"value": "{{todayPlus45}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search IATA Organization",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity |  Search IATA organization by orgName and iataCode\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/iata/organizations?orgName={{orgName}}&iataCode={{iataCode}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"iata",
+						"organizations"
+					],
+					"query": [
+						{
+							"key": "orgName",
+							"value": "{{orgName}}"
+						},
+						{
+							"key": "iataCode",
+							"value": "{{iataCode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Partner Account API - with email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity | Search Partner Account with partnerAccNo\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/partner/accounts?firstName={{customerFirstName}}&lastName={{customerLastName}}&emailAddress={{customerEmailId}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"partner",
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "{{customerFirstName}}"
+						},
+						{
+							"key": "lastName",
+							"value": "{{customerLastName}}"
+						},
+						{
+							"key": "emailAddress",
+							"value": "{{customerEmailId}}"
+						},
+						{
+							"key": "partnerAccountNo",
+							"value": "{{partnerAccNo}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Partner Account API - with partnerAccNo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sanity | Search Partner Account with partnerAccNo\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{sourceHeaderKey}}",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "{{channelHeaderKey}}",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "{{transactionIdHeaderKey}}",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/v2/partner/accounts?firstName={{customerFirstName}}&lastName={{customerLastName}}&partnerAccountNo={{partnerAccNo}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v2",
+						"partner",
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "{{customerFirstName}}"
+						},
+						{
+							"key": "lastName",
+							"value": "{{customerLastName}}"
+						},
+						{
+							"key": "emailAddress",
+							"value": "{{customerEmailId}}",
+							"disabled": true
+						},
+						{
+							"key": "partnerAccountNo",
+							"value": "{{partnerAccNo}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{okta-access-token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const moment = require('moment')",
+					"",
+					"// dates",
+					"pm.globals.set(\"todayMinus3\", moment().subtract(3, 'day').format(\"YYYY-MM-DD\")) //pastDate",
+					"pm.globals.set(\"today\", moment().format(\"YYYY-MM-DD\")) //presentDate",
+					"pm.globals.set(\"todayPlus2\", moment().add(2, 'day').format(\"YYYY-MM-DD\")) //futureDate",
+					"pm.globals.set(\"todayPlus5\", moment().add(5, 'day').format(\"YYYY-MM-DD\"))",
+					"pm.globals.set(\"todayPlus30\", moment().add(30, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus30",
+					"pm.globals.set(\"todayPlus45\", moment().add(45, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus45",
+					"pm.globals.set(\"todayPlus46\", moment().add(46, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus46",
+					"pm.globals.set(\"todayPlus47\", moment().add(47, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus47",
+					"pm.globals.set(\"todayPlus48\", moment().add(48, 'day').format(\"YYYY-MM-DD\"))",
+					"pm.globals.set(\"numAdults\", 2)",
+					"pm.globals.set(\"numChildren\", 1)"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "transactionIdHeaderKey",
+			"value": "x-mgm-transaction-id"
+		}
+	]
+}

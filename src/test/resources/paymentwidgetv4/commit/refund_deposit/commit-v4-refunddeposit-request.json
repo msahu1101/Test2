@@ -1,0 +1,33 @@
+{
+  "confirmationNumber": "3OWSIOL3V4",
+  "firstName": "Uttam",
+  "lastName": "Ghorai",
+  "billing": [
+    {
+      "payment": {
+        "cardHolder": "Uttam Ghorai",
+        "firstName": "Uttam",
+        "lastName": "Ghorai",
+        "ccToken": "5555550A0017Y0M59GYH3G7X4444",
+        "maskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX4444",
+        "amount": -56.69,
+        "expiry": "01/2025",
+        "type": "Diners Club",
+        "fxAmount": 0.0,
+        "fxExchangeRate": 0.0,
+        "authId": "abcd"
+      },
+      "address": {
+        "street1": "5353 W Desert Inn",
+        "city": "Las Vegas",
+        "state": "NV",
+        "postalCode": "89146",
+        "country": "US"
+      }
+    }
+  ],
+  "noChangesInReservation": false,
+  "source": "ice",
+  "customerId": -1,
+  "perpetualPricing": false
+}

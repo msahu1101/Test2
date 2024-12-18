@@ -1,0 +1,3288 @@
+{
+    "data": {
+        "start": "2021-02-13",
+        "end": "2021-02-18",
+        "lowestRate": {
+            "ttlAmt": "99.00",
+            "currency": "USD",
+            "refIds": [
+                0,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                78,
+                84,
+                85,
+                86,
+                87,
+                88,
+                89,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                162,
+                168,
+                169,
+                170,
+                171,
+                172,
+                173,
+                174,
+                175,
+                176,
+                177,
+                178,
+                179
+            ]
+        },
+        "hotels": [
+            {
+                "hotel": {
+                    "chainCode": "MGM",
+                    "brandCode": "MV",
+                    "propertyCode": "MV021",
+                    "propertyCurrency": "USD"
+                },
+                "ratePlans": [
+                    {
+                        "code": "PREVL",
+                        "isFreeNight": false
+                    },
+                    {
+                        "code": "TBBAR",
+                        "isFreeNight": false
+                    },
+                    {
+                        "code": "TUADV",
+                        "isFreeNight": false
+                    },
+                    {
+                        "code": "TDAAA",
+                        "isFreeNight": false
+                    },
+                    {
+                        "code": "TUMIL",
+                        "isFreeNight": false
+                    },
+                    {
+                        "code": "TDSEN",
+                        "isFreeNight": false
+                    }
+                ],
+                "calendar": [
+                    {
+                        "start": "2021-02-13",
+                        "end": "2021-02-13",
+                        "lowestRate": {
+                            "ttlAmt": "99.00",
+                            "currency": "USD",
+                            "refIds": [
+                                0,
+                                6,
+                                7,
+                                8,
+                                9,
+                                10,
+                                11,
+                                12,
+                                13,
+                                14,
+                                15,
+                                16,
+                                17
+                            ]
+                        },
+                        "offers": [
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 0
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "377.00",
+                                "ttlAmt": "377.00",
+                                "id": 1
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "377.00",
+                                "ttlAmt": "377.00",
+                                "id": 2
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "305.37",
+                                "ttlAmt": "305.37",
+                                "id": 3
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "305.37",
+                                "ttlAmt": "305.37",
+                                "id": 4
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "358.15",
+                                "ttlAmt": "358.15",
+                                "id": 5
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 6
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 7
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 8
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 9
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 10
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 11
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 12
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 13
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 14
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 15
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 16
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 17
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "399.00",
+                                "ttlAmt": "399.00",
+                                "id": 18
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "399.00",
+                                "ttlAmt": "399.00",
+                                "id": 19
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "359.00",
+                                "ttlAmt": "359.00",
+                                "id": 20
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "374.00",
+                                "ttlAmt": "374.00",
+                                "id": 21
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "384.00",
+                                "ttlAmt": "384.00",
+                                "id": 22
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "384.00",
+                                "ttlAmt": "384.00",
+                                "id": 23
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "834.00",
+                                "ttlAmt": "834.00",
+                                "id": 24
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "609.00",
+                                "ttlAmt": "609.00",
+                                "id": 25
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "1500.00",
+                                "ttlAmt": "1500.00",
+                                "id": 26
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "509.00",
+                                "ttlAmt": "509.00",
+                                "id": 27
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "534.00",
+                                "ttlAmt": "534.00",
+                                "id": 28
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "444.00",
+                                "ttlAmt": "444.00",
+                                "id": 29
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "399.00",
+                                "ttlAmt": "399.00",
+                                "id": 30
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "399.00",
+                                "ttlAmt": "399.00",
+                                "id": 31
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "359.00",
+                                "ttlAmt": "359.00",
+                                "id": 32
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "374.00",
+                                "ttlAmt": "374.00",
+                                "id": 33
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "384.00",
+                                "ttlAmt": "384.00",
+                                "id": 34
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "384.00",
+                                "ttlAmt": "384.00",
+                                "id": 35
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "834.00",
+                                "ttlAmt": "834.00",
+                                "id": 36
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "609.00",
+                                "ttlAmt": "609.00",
+                                "id": 37
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "1500.00",
+                                "ttlAmt": "1500.00",
+                                "id": 38
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "509.00",
+                                "ttlAmt": "509.00",
+                                "id": 39
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "534.00",
+                                "ttlAmt": "534.00",
+                                "id": 40
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "444.00",
+                                "ttlAmt": "444.00",
+                                "id": 41
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "323.19",
+                                "ttlAmt": "323.19",
+                                "id": 42
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "323.19",
+                                "ttlAmt": "323.19",
+                                "id": 43
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "290.79",
+                                "ttlAmt": "290.79",
+                                "id": 44
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "302.94",
+                                "ttlAmt": "302.94",
+                                "id": 45
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "311.04",
+                                "ttlAmt": "311.04",
+                                "id": 46
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "311.04",
+                                "ttlAmt": "311.04",
+                                "id": 47
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "675.54",
+                                "ttlAmt": "675.54",
+                                "id": 48
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "493.29",
+                                "ttlAmt": "493.29",
+                                "id": 49
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "1215.00",
+                                "ttlAmt": "1215.00",
+                                "id": 50
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "412.29",
+                                "ttlAmt": "412.29",
+                                "id": 51
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "432.54",
+                                "ttlAmt": "432.54",
+                                "id": 52
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "359.64",
+                                "ttlAmt": "359.64",
+                                "id": 53
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "323.19",
+                                "ttlAmt": "323.19",
+                                "id": 54
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "323.19",
+                                "ttlAmt": "323.19",
+                                "id": 55
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "290.79",
+                                "ttlAmt": "290.79",
+                                "id": 56
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "302.94",
+                                "ttlAmt": "302.94",
+                                "id": 57
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "311.04",
+                                "ttlAmt": "311.04",
+                                "id": 58
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "311.04",
+                                "ttlAmt": "311.04",
+                                "id": 59
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "675.54",
+                                "ttlAmt": "675.54",
+                                "id": 60
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "493.29",
+                                "ttlAmt": "493.29",
+                                "id": 61
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "1215.00",
+                                "ttlAmt": "1215.00",
+                                "id": 62
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "412.29",
+                                "ttlAmt": "412.29",
+                                "id": 63
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "432.54",
+                                "ttlAmt": "432.54",
+                                "id": 64
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "359.64",
+                                "ttlAmt": "359.64",
+                                "id": 65
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "379.05",
+                                "ttlAmt": "379.05",
+                                "id": 66
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "379.05",
+                                "ttlAmt": "379.05",
+                                "id": 67
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "341.05",
+                                "ttlAmt": "341.05",
+                                "id": 68
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "355.30",
+                                "ttlAmt": "355.30",
+                                "id": 69
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "364.80",
+                                "ttlAmt": "364.80",
+                                "id": 70
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "364.80",
+                                "ttlAmt": "364.80",
+                                "id": 71
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "792.30",
+                                "ttlAmt": "792.30",
+                                "id": 72
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "578.55",
+                                "ttlAmt": "578.55",
+                                "id": 73
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "1425.00",
+                                "ttlAmt": "1425.00",
+                                "id": 74
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "483.55",
+                                "ttlAmt": "483.55",
+                                "id": 75
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "507.30",
+                                "ttlAmt": "507.30",
+                                "id": 76
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "421.80",
+                                "ttlAmt": "421.80",
+                                "id": 77
+                            }
+                        ]
+                    },
+                    {
+                        "start": "2021-02-14",
+                        "end": "2021-02-14",
+                        "lowestRate": {
+                            "ttlAmt": "99.00",
+                            "currency": "USD",
+                            "refIds": [
+                                78,
+                                84,
+                                85,
+                                86,
+                                87,
+                                88,
+                                89,
+                                90,
+                                91,
+                                92,
+                                93,
+                                94,
+                                95,
+                                96
+                            ]
+                        },
+                        "offers": [
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 78
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "371.00",
+                                "ttlAmt": "371.00",
+                                "id": 79
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "371.00",
+                                "ttlAmt": "371.00",
+                                "id": 80
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "300.51",
+                                "ttlAmt": "300.51",
+                                "id": 81
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "300.51",
+                                "ttlAmt": "300.51",
+                                "id": 82
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "352.45",
+                                "ttlAmt": "352.45",
+                                "id": 83
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 84
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 85
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 86
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 87
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 88
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 89
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 90
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 91
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 92
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "S1PC",
+                                        "nbAvlPdts": 6
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 93
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 94
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 95
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 96
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "384.00",
+                                "ttlAmt": "384.00",
+                                "id": 97
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "386.00",
+                                "ttlAmt": "386.00",
+                                "id": 98
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "359.00",
+                                "ttlAmt": "359.00",
+                                "id": 99
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "369.00",
+                                "ttlAmt": "369.00",
+                                "id": 100
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "379.00",
+                                "ttlAmt": "379.00",
+                                "id": 101
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "377.00",
+                                "ttlAmt": "377.00",
+                                "id": 102
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "679.00",
+                                "ttlAmt": "679.00",
+                                "id": 103
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "529.00",
+                                "ttlAmt": "529.00",
+                                "id": 104
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "750.00",
+                                "ttlAmt": "750.00",
+                                "id": 105
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "S1PC",
+                                        "nbAvlPdts": 6
+                                    }
+                                ],
+                                "chkAmt": "414.00",
+                                "ttlAmt": "414.00",
+                                "id": 106
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "459.00",
+                                "ttlAmt": "459.00",
+                                "id": 107
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "479.00",
+                                "ttlAmt": "479.00",
+                                "id": 108
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "414.00",
+                                "ttlAmt": "414.00",
+                                "id": 109
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "384.00",
+                                "ttlAmt": "384.00",
+                                "id": 110
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "386.00",
+                                "ttlAmt": "386.00",
+                                "id": 111
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "359.00",
+                                "ttlAmt": "359.00",
+                                "id": 112
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "369.00",
+                                "ttlAmt": "369.00",
+                                "id": 113
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "379.00",
+                                "ttlAmt": "379.00",
+                                "id": 114
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "377.00",
+                                "ttlAmt": "377.00",
+                                "id": 115
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "679.00",
+                                "ttlAmt": "679.00",
+                                "id": 116
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "529.00",
+                                "ttlAmt": "529.00",
+                                "id": 117
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "750.00",
+                                "ttlAmt": "750.00",
+                                "id": 118
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "S1PC",
+                                        "nbAvlPdts": 6
+                                    }
+                                ],
+                                "chkAmt": "414.00",
+                                "ttlAmt": "414.00",
+                                "id": 119
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "459.00",
+                                "ttlAmt": "459.00",
+                                "id": 120
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "479.00",
+                                "ttlAmt": "479.00",
+                                "id": 121
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "414.00",
+                                "ttlAmt": "414.00",
+                                "id": 122
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "311.04",
+                                "ttlAmt": "311.04",
+                                "id": 123
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "312.66",
+                                "ttlAmt": "312.66",
+                                "id": 124
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "290.79",
+                                "ttlAmt": "290.79",
+                                "id": 125
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "298.89",
+                                "ttlAmt": "298.89",
+                                "id": 126
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "306.99",
+                                "ttlAmt": "306.99",
+                                "id": 127
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "305.37",
+                                "ttlAmt": "305.37",
+                                "id": 128
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "549.99",
+                                "ttlAmt": "549.99",
+                                "id": 129
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "428.49",
+                                "ttlAmt": "428.49",
+                                "id": 130
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "607.50",
+                                "ttlAmt": "607.50",
+                                "id": 131
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "S1PC",
+                                        "nbAvlPdts": 6
+                                    }
+                                ],
+                                "chkAmt": "335.34",
+                                "ttlAmt": "335.34",
+                                "id": 132
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "371.79",
+                                "ttlAmt": "371.79",
+                                "id": 133
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "387.99",
+                                "ttlAmt": "387.99",
+                                "id": 134
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "335.34",
+                                "ttlAmt": "335.34",
+                                "id": 135
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "311.04",
+                                "ttlAmt": "311.04",
+                                "id": 136
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "312.66",
+                                "ttlAmt": "312.66",
+                                "id": 137
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "290.79",
+                                "ttlAmt": "290.79",
+                                "id": 138
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "298.89",
+                                "ttlAmt": "298.89",
+                                "id": 139
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "306.99",
+                                "ttlAmt": "306.99",
+                                "id": 140
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "305.37",
+                                "ttlAmt": "305.37",
+                                "id": 141
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "549.99",
+                                "ttlAmt": "549.99",
+                                "id": 142
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "428.49",
+                                "ttlAmt": "428.49",
+                                "id": 143
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "607.50",
+                                "ttlAmt": "607.50",
+                                "id": 144
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "S1PC",
+                                        "nbAvlPdts": 6
+                                    }
+                                ],
+                                "chkAmt": "335.34",
+                                "ttlAmt": "335.34",
+                                "id": 145
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "371.79",
+                                "ttlAmt": "371.79",
+                                "id": 146
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "387.99",
+                                "ttlAmt": "387.99",
+                                "id": 147
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "335.34",
+                                "ttlAmt": "335.34",
+                                "id": 148
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "364.80",
+                                "ttlAmt": "364.80",
+                                "id": 149
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "366.70",
+                                "ttlAmt": "366.70",
+                                "id": 150
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "341.05",
+                                "ttlAmt": "341.05",
+                                "id": 151
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "350.55",
+                                "ttlAmt": "350.55",
+                                "id": 152
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "360.05",
+                                "ttlAmt": "360.05",
+                                "id": 153
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "358.15",
+                                "ttlAmt": "358.15",
+                                "id": 154
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "645.05",
+                                "ttlAmt": "645.05",
+                                "id": 155
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "502.55",
+                                "ttlAmt": "502.55",
+                                "id": 156
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "712.50",
+                                "ttlAmt": "712.50",
+                                "id": 157
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "S1PC",
+                                        "nbAvlPdts": 6
+                                    }
+                                ],
+                                "chkAmt": "393.30",
+                                "ttlAmt": "393.30",
+                                "id": 158
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "436.05",
+                                "ttlAmt": "436.05",
+                                "id": 159
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "455.05",
+                                "ttlAmt": "455.05",
+                                "id": 160
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "393.30",
+                                "ttlAmt": "393.30",
+                                "id": 161
+                            }
+                        ]
+                    },
+                    {
+                        "start": "2021-02-15",
+                        "end": "2021-02-18",
+                        "lowestRate": {
+                            "ttlAmt": "99.00",
+                            "currency": "USD",
+                            "refIds": [
+                                162,
+                                168,
+                                169,
+                                170,
+                                171,
+                                172,
+                                173,
+                                174,
+                                175,
+                                176,
+                                177,
+                                178,
+                                179
+                            ]
+                        },
+                        "offers": [
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 162
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "171.00",
+                                "ttlAmt": "171.00",
+                                "id": 163
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "171.00",
+                                "ttlAmt": "171.00",
+                                "id": 164
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "138.51",
+                                "ttlAmt": "138.51",
+                                "id": 165
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "138.51",
+                                "ttlAmt": "138.51",
+                                "id": 166
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMDQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "162.45",
+                                "ttlAmt": "162.45",
+                                "id": 167
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 168
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 169
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 170
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 171
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 172
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 173
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 174
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 175
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 176
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 177
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 178
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "PREVL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "99.00",
+                                "ttlAmt": "99.00",
+                                "id": 179
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "184.00",
+                                "ttlAmt": "184.00",
+                                "id": 180
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "186.00",
+                                "ttlAmt": "186.00",
+                                "id": 181
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "159.00",
+                                "ttlAmt": "159.00",
+                                "id": 182
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "169.00",
+                                "ttlAmt": "169.00",
+                                "id": 183
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "179.00",
+                                "ttlAmt": "179.00",
+                                "id": 184
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "177.00",
+                                "ttlAmt": "177.00",
+                                "id": 185
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "479.00",
+                                "ttlAmt": "479.00",
+                                "id": 186
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "329.00",
+                                "ttlAmt": "329.00",
+                                "id": 187
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "750.00",
+                                "ttlAmt": "750.00",
+                                "id": 188
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "259.00",
+                                "ttlAmt": "259.00",
+                                "id": 189
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "279.00",
+                                "ttlAmt": "279.00",
+                                "id": 190
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TBBAR",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "214.00",
+                                "ttlAmt": "214.00",
+                                "id": 191
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "184.00",
+                                "ttlAmt": "184.00",
+                                "id": 192
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1", "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "186.00",
+                                "ttlAmt": "186.00",
+                                "id": 193
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "159.00",
+                                "ttlAmt": "159.00",
+                                "id": 194
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "169.00",
+                                "ttlAmt": "169.00",
+                                "id": 195
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "179.00",
+                                "ttlAmt": "179.00",
+                                "id": 196
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "177.00",
+                                "ttlAmt": "177.00",
+                                "id": 197
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "479.00",
+                                "ttlAmt": "479.00",
+                                "id": 198
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "329.00",
+                                "ttlAmt": "329.00",
+                                "id": 199
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "750.00",
+                                "ttlAmt": "750.00",
+                                "id": 200
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "259.00",
+                                "ttlAmt": "259.00",
+                                "id": 201
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "279.00",
+                                "ttlAmt": "279.00",
+                                "id": 202
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUADV",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "214.00",
+                                "ttlAmt": "214.00",
+                                "id": 203
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "149.04",
+                                "ttlAmt": "149.04",
+                                "id": 204
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "150.66",
+                                "ttlAmt": "150.66",
+                                "id": 205
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "128.79",
+                                "ttlAmt": "128.79",
+                                "id": 206
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "136.89",
+                                "ttlAmt": "136.89",
+                                "id": 207
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "144.99",
+                                "ttlAmt": "144.99",
+                                "id": 208
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "143.37",
+                                "ttlAmt": "143.37",
+                                "id": 209
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "387.99",
+                                "ttlAmt": "387.99",
+                                "id": 210
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "266.49",
+                                "ttlAmt": "266.49",
+                                "id": 211
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "607.50",
+                                "ttlAmt": "607.50",
+                                "id": 212
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "209.79",
+                                "ttlAmt": "209.79",
+                                "id": 213
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "225.99",
+                                "ttlAmt": "225.99",
+                                "id": 214
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDAAA",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "173.34",
+                                "ttlAmt": "173.34",
+                                "id": 215
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "149.04",
+                                "ttlAmt": "149.04",
+                                "id": 216
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "150.66",
+                                "ttlAmt": "150.66",
+                                "id": 217
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "128.79",
+                                "ttlAmt": "128.79",
+                                "id": 218
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "136.89",
+                                "ttlAmt": "136.89",
+                                "id": 219
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "144.99",
+                                "ttlAmt": "144.99",
+                                "id": 220
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "143.37",
+                                "ttlAmt": "143.37",
+                                "id": 221
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "387.99",
+                                "ttlAmt": "387.99",
+                                "id": 222
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "266.49",
+                                "ttlAmt": "266.49",
+                                "id": 223
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "607.50",
+                                "ttlAmt": "607.50",
+                                "id": 224
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "209.79",
+                                "ttlAmt": "209.79",
+                                "id": 225
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "225.99",
+                                "ttlAmt": "225.99",
+                                "id": 226
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TUMIL",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "173.34",
+                                "ttlAmt": "173.34",
+                                "id": 227
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "174.80",
+                                "ttlAmt": "174.80",
+                                "id": 228
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DMVQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "176.70",
+                                "ttlAmt": "176.70",
+                                "id": 229
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRK",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "151.05",
+                                "ttlAmt": "151.05",
+                                "id": 230
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPRQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "160.55",
+                                "ttlAmt": "160.55",
+                                "id": 231
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSQ",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "170.05",
+                                "ttlAmt": "170.05",
+                                "id": 232
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "DPSV",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "168.15",
+                                "ttlAmt": "168.15",
+                                "id": 233
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1PE",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "455.05",
+                                "ttlAmt": "455.05",
+                                "id": 234
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L1XS",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "312.55",
+                                "ttlAmt": "312.55",
+                                "id": 235
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "L2PE",
+                                        "nbAvlPdts": 2
+                                    }
+                                ],
+                                "chkAmt": "712.50",
+                                "ttlAmt": "712.50",
+                                "id": 236
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SMAR",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "246.05",
+                                "ttlAmt": "246.05",
+                                "id": 237
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SPLY",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "265.05",
+                                "ttlAmt": "265.05",
+                                "id": 238
+                            },
+                            {
+                                "dailyApplicableRatePlan": ["COMP10", "CASH10", "LOY1" , "LOY2"],
+                                "rpCode": "TDSEN",
+                                "pdtAvl": [
+                                    {
+                                        "pdtCode": "SSPA",
+                                        "nbAvlPdts": 9
+                                    }
+                                ],
+                                "chkAmt": "203.30",
+                                "ttlAmt": "203.30",
+                                "id": 239
+                            }
+                        ]
+                    }
+                ],
+                "warningRefs": null
+            }
+        ]
+    },
+    "warnings": null
+}

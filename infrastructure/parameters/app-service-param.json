@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appServiceName": {
+      "type": "string",
+      "value": "rbs-uw-wa-$(Environment)"
+    },
+    "appServiceSlotName": {
+      "type": "string",
+      "value": "staging"
+    },
+    "location": {
+	  "type": "string",
+	  "value": "West US"
+	},
+    "appInsightsName": {
+      "type": "string",
+      "value": "rbs-uw-ai-$(Environment)"
+    },
+    "appServiceResourceGroupName": {
+      "type": "string",
+      "value": "rbs-uw-rg-$(commonAppEnvironment)"
+    },
+    "appServicePlanName": {
+      "type": "string",
+      "value": "rbs-uw-asp-$(commonAppEnvironment)"
+    },
+    "vnetResourceGroupName": {
+      "type": "string",
+      "value": "bookingvnets-uw-rg-$(commonAppEnvironment)"
+    },
+    "vnetName": {
+      "type": "string",
+      "value": "booking-uw-vnet-$(commonAppEnvironment)"
+    },
+    "subnetName": {
+      "type": "string",
+      "value": "rbs-uw-sn-$(commonAppEnvironment)"
+    },
+    "springProfile": {
+      "type": "string",
+      "value": "azure-$(appProfile)"
+    },
+    "environment": {
+      "type": "string",
+      "value": "$(TagEnvironment)"
+    },
+    "javaContainer": {
+      "type": "string",
+      "value": "JAVA"
+    },
+    "javaContainerVersion": {
+      "type": "string",
+      "value": "SE"
+    },
+    "javaVersion": {
+      "type": "string",
+      "value": "1.8"
+    }
+  }
+}

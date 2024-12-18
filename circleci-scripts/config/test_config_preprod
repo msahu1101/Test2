@@ -1,0 +1,50 @@
+{
+	"executions":{
+		"concurrency":20,
+		"holdFor":"19m",
+		 "executor":"jmeter",
+		 "locations":{
+			"us-west-1":20
+		 },
+		 "locationsPercents":{
+			"us-west-1":100
+		 },
+		 "rampUp":"1m",
+		 "steps":10,
+		 "throughput":10
+	},
+	"overrideExecutions":{
+		"concurrency":20,
+		"holdFor":"19m",
+		 "executor":"jmeter",
+		 "locations":{
+			"us-west-1":20
+		 },
+		 "locationsPercents":{
+			"us-west-1":100
+		 },
+		 "rampUp":"1m",
+		 "steps":10,
+		 "throughput":10
+	},
+	 "remoteControl":[
+		{
+			"key":"config.thread.count",
+			"value":"20"
+		},
+		{
+			"key":"config.test.duration",
+			"value":"20"
+		},
+		{
+			"key":"config.base.url",
+			"value":"preprod-api.mgmresorts.com"
+		},
+		{
+			"key":"config.api.key",
+			"value":"pwMx16AxuJ1kJogKVIjJG9YUelpyK2Cy6LKCdBLg"
+		}
+	]
+	
+}
+	

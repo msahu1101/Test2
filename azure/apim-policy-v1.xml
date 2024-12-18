@@ -1,0 +1,62 @@
+<policies>
+    <inbound>
+        <base />
+        <set-header name="channel" exists-action="skip">
+            <value>@(context.Request.Headers.GetValueOrDefault("x-mgm-channel",""))</value>
+        </set-header>
+        <set-header name="source" exists-action="skip">
+            <value>@(context.Request.Headers.GetValueOrDefault("x-mgm-source",""))</value>
+        </set-header>
+        <set-header name="x-mgm-transaction-id" exists-action="skip">
+            <value>@(context.Request.Headers.GetValueOrDefault("x-mgm-transaction-id","dummy-transaction-id"))</value>
+        </set-header>
+        <set-header name="x-mgm-correlation-id" exists-action="skip">
+            <value>@{
+				var guidBinary = new byte[16];
+				Array.Copy(Guid.NewGuid().ToByteArray(), 0, guidBinary, 0, 10);
+				long
+				time = DateTime.Now.Ticks;
+				byte[] bytes = new byte[6];
+				unchecked
+				{
+				bytes[5] = (byte)(time >> 40);
+				bytes[4] = (byte)(time >> 32);
+				bytes[3] = (byte)(time >> 24);
+				bytes[2] = (byte)(time >> 16);
+				bytes[1] = (byte)(time >> 8);
+				bytes[0] = (byte)(time);
+				}
+				Array.Copy(bytes, 0, guidBinary, 10, 6);
+				return new
+				Guid(guidBinary).ToString();
+				}</value>
+        </set-header>
+    </inbound>
+    <backend>
+        <base />
+    </backend>
+    <outbound>
+        <base />
+    </outbound>
+    <on-error>
+        <base />
+        <choose>
+            <when condition="@(context.Response.StatusCode == 404)">
+                <return-response>
+                    <set-status code="400" reason="Bad Request" />
+                    <set-header name="Content-Type" exists-action="override">
+                        <value>application/json</value>
+                    </set-header>
+                    <set-body>
+						{
+							"error": {
+								"code": "632-1-104",
+								"message": "Required source attribute is empty or invalid."
+							}
+						}
+					</set-body>
+                </return-response>
+            </when>
+        </choose>
+    </on-error>
+</policies>

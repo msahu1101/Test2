@@ -1,0 +1,12 @@
+{
+	"source": "ice",
+	"customerId": 0,
+	"mlifeNumber": null,
+	"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+	"roomTypeId": "",
+	"bookDate": "",
+	"travelDate": "2002/11/30",
+	"filterBookable": false,
+	"filterViewable": false,
+	"numAdults": 1
+}

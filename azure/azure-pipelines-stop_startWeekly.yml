@@ -1,0 +1,33 @@
+schedules:
+- cron: '10 5 * * 6'
+  displayName: Shutdown app service at 10.10 PM every Friday
+  branches:
+    include:
+    - develop
+
+- cron: '10 2 * * 1'
+  displayName: Start app service at 7.10 PM every Sunday
+  branches:
+    include:
+    - develop
+
+  always: true    
+
+pool:
+  vmImage: "windows-latest"
+  
+steps:
+- task: CopyFiles@2
+  displayName: Copy artifacts to stage location
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: |
+        **azure/**
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    OverWrite: true
+    
+- task: PublishBuildArtifacts@1
+  displayName: Publish artifacts  
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/'
+    ArtifactName: 'room-booking-services-weeklyjob'

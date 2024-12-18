@@ -1,0 +1,392 @@
+{
+  "instance": 0,
+  "customerId": 846558855426,
+  "numRooms": 1,
+  "bookDate": "2024-07-24",
+  "checkInDate": "2024-08-16",
+  "checkOutDate": "2024-08-18",
+  "numAdults": 1,
+  "state": "Booked",
+  "postingStartedAt": 0,
+  "postingEndedAt": 0,
+  "amountDue": 227.88,
+  "createdAt": 0,
+  "updatedAt": 0,
+  "syncFromOperaAt": 0,
+  "nrgStatus": false,
+  "itineraryId": "1234",
+  "propertyId": "ARIA1",
+  "programId": "TDAAA",
+  "roomTypeId": "KNGN",
+  "guaranteeCode": "CC",
+  "profile": {
+    "id": 1234,
+    "mlifeNo": 0,
+    "modifiable": false,
+    "createdAt": 0,
+    "updatedAt": 0,
+    "refreshedAt": 0,
+    "stale": false,
+    "externalSyncAt": 0,
+    "caslOptin": false,
+    "firstName": "Akash",
+    "lastName": "Raturi",
+    "addresses": [
+      {
+        "type": "Home",
+        "preferred": false,
+        "city": "Mississauga",
+        "state": "NV",
+        "country": "CA",
+        "postalCode": "l5b4m5"
+      }
+    ]
+  },
+  "bookings": [
+    {
+      "date": "2024-08-16",
+      "basePrice": 0.0,
+      "customerPrice": 0.0,
+      "price": 200.99,
+      "programIdIsRateTable": false,
+      "overridePrice": -1.0,
+      "overrideProgramIdIsRateTable": false,
+      "comp": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 42.0,
+      "programId": "TDAAA"
+    },
+    {
+      "date": "2024-08-17",
+      "basePrice": 0.0,
+      "customerPrice": 0.0,
+      "price": 200.99,
+      "programIdIsRateTable": false,
+      "overridePrice": -1.0,
+      "overrideProgramIdIsRateTable": false,
+      "comp": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 42.0,
+      "programId": "TDAAA"
+    }
+  ],
+  "markets": [
+    {
+      "date": "2024-08-16",
+      "marketCode": "TFIT"
+    },
+    {
+      "date": "2024-08-17",
+      "marketCode": "TFIT"
+    }
+  ],
+  "chargesAndTaxesCalc": {
+    "charges": [
+      {
+        "date": "2024-08-16",
+        "amount": 242.99,
+        "itemized": [
+          {
+            "itemType": "RoomCharge",
+            "amount": 200.99,
+            "item": "RoomCharge"
+          },
+          {
+            "itemType": "ResortFee",
+            "amount": 42.0,
+            "item": "RSFEE"
+          }
+        ]
+      },
+      {
+        "date": "2024-08-17",
+        "amount": 242.99,
+        "itemized": [
+          {
+            "itemType": "RoomCharge",
+            "amount": 200.99,
+            "item": "RoomCharge"
+          },
+          {
+            "itemType": "ResortFee",
+            "amount": 42.0,
+            "item": "RSFEE"
+          }
+        ]
+      }
+    ],
+    "taxesAndFees": [
+      {
+        "date": "2024-08-16",
+        "amount": 32.51,
+        "itemized": [
+          {
+            "itemType": "RoomChargeTax",
+            "amount": 26.89,
+            "item": "OCTAX"
+          },
+          {
+            "itemType": "ResortFeeTax",
+            "amount": 5.62,
+            "item": "RSFTX"
+          }
+        ]
+      },
+      {
+        "date": "2024-08-17",
+        "amount": 32.51,
+        "itemized": [
+          {
+            "itemType": "RoomChargeTax",
+            "amount": 26.89,
+            "item": "OCTAX"
+          },
+          {
+            "itemType": "ResortFeeTax",
+            "amount": 5.62,
+            "item": "RSFTX"
+          }
+        ]
+      }
+    ]
+  },
+  "depositPolicyCalc": {
+    "depositRequired": true,
+    "creditCardRequired": false
+  },
+  "depositCalc": {
+    "dueDate": "2024-07-24",
+    "amount": 227.88,
+    "forfeitDate": "2024-08-13",
+    "forfeitAmount": 227.88,
+    "overrideAmount": -1.0
+  },
+  "source": "ice",
+  "specialRequests": [],
+  "confirmationNumber": "1RK7TP659D",
+  "payments": [
+    {
+      "reservationInstance": 0,
+      "chargeAmount": 227.88,
+      "chargeCardExpiry": "2025-01-01",
+      "dccChecked": false,
+      "dccEligible": false,
+      "dccAmount": 0.0,
+      "dccRate": 0.0,
+      "dccSettleAmount": 0.0,
+      "status": "Settled",
+      "isDeposit": true,
+      "isExternal": false,
+      "chargeCardHolder": "Uttam Ghorai",
+      "chargeCardType": "Diners Club",
+      "chargeCardMaskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX4444",
+      "chargeCardNumber": "5555550A0014E4J0O3VI9CFB4444",
+      "paymentTxnId": "abcd"
+    }
+  ],
+  "customerRank": 0,
+  "customerSegment": 0,
+  "shareWiths": [
+    "86FVWTY47C"
+  ],
+  "shareId": "1209OD3SOW",
+  "operaState": "RESERVED",
+  "primarySharerConfirmationNumber": "1RK7TP659D",
+  "numChildren": 0,
+  "routingInstructions": [],
+  "shareWithCustomers": [
+    {
+      "id": 1234,
+      "mlifeNo": 0,
+      "modifiable": false,
+      "createdAt": 0,
+      "updatedAt": 0,
+      "refreshedAt": 0,
+      "stale": false,
+      "externalSyncAt": 0,
+      "caslOptin": false,
+      "firstName": "Akash",
+      "lastName": "Raturi",
+      "addresses": [
+        {
+          "type": "Home",
+          "preferred": false,
+          "city": "Mississauga",
+          "state": "NV",
+          "country": "CA",
+          "postalCode": "l5b4m5"
+        }
+      ]
+    }
+  ],
+  "isGroupCode": false,
+  "perpetualPricing": false,
+  "ignoreChannelMargins": false,
+  "excludeNonOffer": false,
+  "isPendingReservation": false,
+  "thirdParty": false,
+  "f1Package": false,
+  "shareWithReservations": [
+    {
+      "instance": 0,
+      "customerId": 1234,
+      "numRooms": 1,
+      "bookDate": "2024-07-24",
+      "checkInDate": "2024-08-16",
+      "checkOutDate": "2024-08-18",
+      "numAdults": 1,
+      "state": "Booked",
+      "postingStartedAt": 0,
+      "postingEndedAt": 0,
+      "amountDue": 0.0,
+      "createdAt": 1721805573000,
+      "updatedAt": 1721807212000,
+      "syncFromOperaAt": 0,
+      "nrgStatus": false,
+      "itineraryId": "1234",
+      "propertyId": "MV021",
+      "programId": "RPCD-v-ADNYNY-d-PROP-v-MV021",
+      "roomTypeId": "L1PL",
+      "guaranteeCode": "CC",
+      "profile": {
+        "id": 1234,
+        "mlifeNo": 0,
+        "modifiable": false,
+        "createdAt": 0,
+        "updatedAt": 0,
+        "refreshedAt": 0,
+        "stale": false,
+        "externalSyncAt": 0,
+        "caslOptin": false,
+        "firstName": "Akash",
+        "lastName": "Raturi",
+        "addresses": [
+          {
+            "type": "Home",
+            "preferred": true,
+            "city": "Mississauga",
+            "state": "NV",
+            "country": "CA",
+            "postalCode": "l5b4m5"
+          }
+        ]
+      },
+      "bookings": [
+        {
+          "date": "2024-08-16",
+          "basePrice": 0.0,
+          "customerPrice": 0.0,
+          "price": 200.99,
+          "programIdIsRateTable": false,
+          "overridePrice": -1.0,
+          "overrideProgramIdIsRateTable": false,
+          "comp": false,
+          "resortFeeIsSpecified": false,
+          "resortFee": 42.0,
+          "programId": "ADNYNY"
+        },
+        {
+          "date": "2024-08-17",
+          "basePrice": 0.0,
+          "customerPrice": 0.0,
+          "price": 200.99,
+          "programIdIsRateTable": false,
+          "overridePrice": -1.0,
+          "overrideProgramIdIsRateTable": false,
+          "comp": false,
+          "resortFeeIsSpecified": false,
+          "resortFee": 42.0,
+          "programId": "ADNYNY"
+        }
+      ],
+      "markets": [
+        {
+          "date": "2024-08-16",
+          "marketCode": "TFIT",
+          "sourceCode": "CC"
+        },
+        {
+          "date": "2024-08-17",
+          "marketCode": "TFIT",
+          "sourceCode": "CC"
+        }
+      ],
+      "chargesAndTaxesCalc": {
+        "charges": [
+          {
+            "date": "2024-08-16",
+            "amount": 200.99,
+            "itemized": [
+              {
+                "itemType": "RoomCharge",
+                "amount": 200.99,
+                "item": "RoomCharge"
+              }
+            ]
+          },
+          {
+            "date": "2024-08-17",
+            "amount": 200.99,
+            "itemized": [
+              {
+                "itemType": "RoomCharge",
+                "amount": 200.99,
+                "item": "RoomCharge"
+              }
+            ]
+          }
+        ],
+        "taxesAndFees": [
+          {
+            "date": "2024-08-16",
+            "amount": 0.0,
+            "itemized": []
+          },
+          {
+            "date": "2024-08-17",
+            "amount": 0.0,
+            "itemized": []
+          }
+        ]
+      },
+      "depositPolicyCalc": {
+        "depositRequired": true,
+        "creditCardRequired": false
+      },
+      "depositCalc": {
+        "dueDate": "2024-07-24",
+        "amount": 227.88,
+        "forfeitDate": "2024-08-13",
+        "forfeitAmount": 227.88,
+        "overrideAmount": -1.0
+      },
+      "origin": "Contact Center",
+      "specialRequests": [],
+      "confirmationNumber": "86FVWTY47C",
+      "customerRank": 0,
+      "customerSegment": 0,
+      "numChildren": 0,
+      "routingInstructions": [],
+      "crsWarnings": [
+        {
+          "status": 200,
+          "code": 15500,
+          "id": 1,
+          "title": "The requested product is not available."
+        }
+      ],
+      "isGroupCode": false,
+      "perpetualPricing": false,
+      "purchasedComponents": [],
+      "ignoreChannelMargins": false,
+      "excludeNonOffer": false,
+      "isPendingReservation": false,
+      "thirdParty": false,
+      "f1Package": false,
+      "skipFraudCheck": false,
+      "skipPaymentProcess": false
+    }
+  ],
+  "skipFraudCheck": false,
+  "skipPaymentProcess": false
+}

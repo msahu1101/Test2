@@ -1,0 +1,298 @@
+{
+  "inSessionReservationId" : null,
+  "numRooms" : 1,
+  "bookDate" : 1549599077526,
+  "checkInDate" : 1552374000000,
+  "checkOutDate" : 1552546800000,
+  "numAdults" : 2,
+  "billingType" : "CustomerCreditCard",
+  "state" : "Cancelled",
+  "postingFlow" : "Cancel",
+  "postingState" : "Success",
+  "postingStartedAt" : 1549654054219,
+  "postingEndedAt" : 0,
+  "amountDue" : 0.0,
+  "createdAt" : 1549599079270,
+  "updatedAt" : 1550764821403,
+  "syncFromOperaAt" : 0,
+  "nrgStatus" : false,
+  "id" : "389742337",
+  "itineraryId" : "389741569",
+  "propertyId" : "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+  "programId" : null,
+  "roomTypeId" : "f44d10c3-aeaa-4aa1-8d94-1d0df9017437",
+  "guaranteeCode" : "CC",
+  "profile" : {
+    "id" : 47199354881,
+    "mlifeNo" : 76366880,
+    "title" : null,
+    "dateOfBirth" : null,
+    "modifiable" : false,
+    "createdAt" : 0,
+    "updatedAt" : 0,
+    "refreshedAt" : 1550764820199,
+    "stale" : false,
+    "externalSyncAt" : 0,
+    "caslOptin" : false,
+    "operaId" : "800573747",
+    "tier" : null,
+    "firstName" : "Test",
+    "lastName" : "Test",
+    "emailAddress1" : "mgmtestcomp@mailinator.com",
+    "phoneNumbers" : [ {
+      "type" : "Other",
+      "number" : "5555555555"
+    } ],
+    "addresses" : [ {
+      "type" : "Home",
+      "preferred" : false,
+      "street1" : "2180 E Warm Springs Road",
+      "street2" : "Unit 2152",
+      "city" : "Las Vegas",
+      "state" : "NV",
+      "country" : "US",
+      "postalCode" : "89119"
+    } ]
+  },
+  "bookings" : [ {
+    "date" : 1552374000000,
+    "basePrice" : 10024.99,
+    "customerPrice" : 5012.495,
+    "price" : 5012.495,
+    "programIdIsRateTable" : false,
+    "overridePrice" : -1.0,
+    "overrideProgramIdIsRateTable" : false,
+    "resortFeeIsSpecified" : false,
+    "resortFee" : 0.0,
+    "programId" : "2e44c1cf-097c-4b0b-a86f-7993d239b055",
+    "pricingRuleId" : "57ec1333-c889-4af8-b0b2-dc24dab6163a",
+    "isComp" : false
+  }, {
+    "date" : 1552460400000,
+    "basePrice" : 10024.99,
+    "customerPrice" : 5012.495,
+    "price" : 5012.495,
+    "programIdIsRateTable" : false,
+    "overridePrice" : -1.0,
+    "overrideProgramIdIsRateTable" : false,
+    "resortFeeIsSpecified" : false,
+    "resortFee" : 0.0,
+    "programId" : "2e44c1cf-097c-4b0b-a86f-7993d239b055",
+    "pricingRuleId" : "57ec1333-c889-4af8-b0b2-dc24dab6163a",
+    "isComp" : false
+  } ],
+  "markets" : [ {
+    "date" : 1552374000000,
+    "marketCode" : "CSLI",
+    "sourceCode" : "CSMLIFE"
+  }, {
+    "date" : 1552460400000,
+    "marketCode" : "CSLI",
+    "sourceCode" : "CSMLIFE"
+  } ],
+  "chargesAndTaxesCalc" : {
+    "charges" : [ {
+      "date" : 1552374000000,
+      "amount" : 5047.495,
+      "itemized" : [ {
+        "itemType" : "RoomCharge",
+        "amount" : 5012.495,
+        "item" : "Room Charge"
+      }, {
+        "itemType" : "ExtraGuestCharge",
+        "amount" : 0.0,
+        "item" : "Extra Guest Charge"
+      }, {
+        "itemType" : "ResortFee",
+        "amount" : 35.0,
+        "item" : "Resort Fee"
+      } ]
+    }, {
+      "date" : 1552460400000,
+      "amount" : 5047.495,
+      "itemized" : [ {
+        "itemType" : "RoomCharge",
+        "amount" : 5012.495,
+        "item" : "Room Charge"
+      }, {
+        "itemType" : "ExtraGuestCharge",
+        "amount" : 0.0,
+        "item" : "Extra Guest Charge"
+      }, {
+        "itemType" : "ResortFee",
+        "amount" : 35.0,
+        "item" : "Resort Fee"
+      } ]
+    } ],
+    "taxesAndFees" : [ {
+      "date" : 1552374000000,
+      "amount" : 100.9499,
+      "itemized" : [ {
+        "itemType" : "RoomChargeTax",
+        "amount" : 100.2499,
+        "item" : "Room Tax"
+      }, {
+        "itemType" : "ExtraGuestChargeTax",
+        "amount" : 0.0,
+        "item" : "Extra Guest Tax"
+      }, {
+        "itemType" : "ResortFeeTax",
+        "amount" : 0.7,
+        "item" : "Resort Fee Tax"
+      } ]
+    }, {
+      "date" : 1552460400000,
+      "amount" : 100.9499,
+      "itemized" : [ {
+        "itemType" : "RoomChargeTax",
+        "amount" : 100.2499,
+        "item" : "Room Tax"
+      }, {
+        "itemType" : "ExtraGuestChargeTax",
+        "amount" : 0.0,
+        "item" : "Extra Guest Tax"
+      }, {
+        "itemType" : "ResortFeeTax",
+        "amount" : 0.7,
+        "item" : "Resort Fee Tax"
+      } ]
+    } ]
+  },
+  "depositPolicyCalc" : {
+    "depositRequired" : true,
+    "creditCardRequired" : true
+  },
+  "depositCalc" : {
+    "dueDate" : 1549599077535,
+    "amountPolicy" : "Nights",
+    "amount" : 5112.7449,
+    "forfeitDate" : 1552287600000,
+    "forfeitAmount" : 5112.7449,
+    "overrideAmount" : -1.0,
+    "depositRuleCode" : "1NT",
+    "cancellationRuleCode" : "24H",
+    "itemized" : [ {
+      "itemType" : "RoomCharge",
+      "amount" : 5012.495,
+      "item" : "Room Charge"
+    }, {
+      "itemType" : "RoomChargeTax",
+      "amount" : 100.2499,
+      "item" : "Room Tax"
+    } ]
+  },
+  "depositDetails" : { },
+  "channelId" : "69148d48-41cc-421f-946a-2cbcecd9db2a",
+  "origin" : "mlife",
+  "source" : "mlife",
+  "specialRequests" : [ ],
+  "creditCardCharges" : [ {
+    "amount" : 5112.7449,
+    "cvv" : null,
+    "expiry" : 1583049599000,
+    "holder" : "Test",
+    "number" : "iswmvl4Rx+1DiFC8Yj9FEfA5fN+4YYl+xia7Nfw2AVLW7/Vhv8BQNomnTcaB4Q4bPE6N1rPrAUEwVbUjjuVYwQ==",
+    "maskedNumber" : "XXXXXXXXXXXXXXXXXXXXXXXX4444",
+    "type" : "Mastercard",
+    "holderProfile" : {
+      "firstName" : "Test",
+      "lastName" : "Test",
+      "address" : {
+        "type" : "Home",
+        "preferred" : false,
+        "street1" : "2180 E Warm Springs Road",
+        "street2" : "Unit 2152",
+        "city" : "Las Vegas",
+        "state" : "NV",
+        "country" : "US",
+        "postalCode" : "89119"
+      }
+    }
+  } ],
+  "confirmationNumber" : "M00AE44F1",
+  "payments" : [ {
+    "reservationInstance" : 1,
+    "chargeAmount" : 5112.74,
+    "chargeCardExpiry" : 1583049599000,
+    "fxChecked" : true,
+    "fxEligible" : false,
+    "fxTransDate" : 1549555877000,
+    "fxAmount" : 0.0,
+    "fxRate" : 0.0,
+    "fxSettleAmount" : 5112.74,
+    "status" : "Settled",
+    "chargeCardHolder" : "Test",
+    "chargeCurrencyCode" : "USD",
+    "chargeCardType" : "Mastercard",
+    "chargeCardMaskedNumber" : "XXXXXXXXXXXXXXXXXXXXXXXX4444",
+    "chargeCardNumber" : "iswmvl4Rx+1DiFC8Yj9FEfA5fN+4YYl+xia7Nfw2AVLW7/Vhv8BQNomnTcaB4Q4bPE6N1rPrAUEwVbUjjuVYwQ==",
+    "fxCurrencyCode" : "USD",
+    "fxAcceptMessage" : "Approved",
+    "fxAuthApprovalCode" : "663298",
+    "isDeposit" : false,
+    "isExternal" : false
+  }, {
+    "reservationInstance" : 2,
+    "chargeAmount" : -5112.74,
+    "chargeCardExpiry" : 1583049599000,
+    "fxChecked" : true,
+    "fxEligible" : false,
+    "fxTransDate" : 1549654053000,
+    "fxAmount" : 0.0,
+    "fxRate" : 0.0,
+    "fxSettleAmount" : -5112.74,
+    "status" : "Settled",
+    "chargeCardHolder" : "Test",
+    "chargeCurrencyCode" : "USD",
+    "chargeCardType" : "Mastercard",
+    "chargeCardMaskedNumber" : "XXXXXXXXXXXXXXXXXXXXXXXX4444",
+    "chargeCardNumber" : "iswmvl4Rx+1DiFC8Yj9FEfA5fN+4YYl+xia7Nfw2AVLW7/Vhv8BQNomnTcaB4Q4bPE6N1rPrAUEwVbUjjuVYwQ==",
+    "fxCurrencyCode" : "USD",
+    "fxAcceptMessage" : "Approved",
+    "fxAuthApprovalCode" : null,
+    "isDeposit" : false,
+    "isExternal" : false
+  }, {
+    "reservationInstance" : 0,
+    "chargeAmount" : -5112.74,
+    "chargeCardExpiry" : null,
+    "fxChecked" : false,
+    "fxEligible" : false,
+    "fxTransDate" : 1513584000000,
+    "fxAmount" : 0.0,
+    "fxRate" : 0.0,
+    "fxSettleAmount" : 0.0,
+    "status" : null,
+    "chargeCardHolder" : null,
+    "chargeCurrencyCode" : null,
+    "chargeCardType" : "Mastercard",
+    "chargeCardMaskedNumber" : "XXXXXXXXXXXX4444",
+    "chargeCardNumber" : null,
+    "fxCurrencyCode" : null,
+    "fxAcceptMessage" : null,
+    "fxAuthApprovalCode" : null,
+    "isDeposit" : true,
+    "isExternal" : true
+  }, {
+    "reservationInstance" : 0,
+    "chargeAmount" : 5112.74,
+    "chargeCardExpiry" : null,
+    "fxChecked" : false,
+    "fxEligible" : false,
+    "fxTransDate" : 1513584000000,
+    "fxAmount" : 0.0,
+    "fxRate" : 0.0,
+    "fxSettleAmount" : 0.0,
+    "status" : null,
+    "chargeCardHolder" : null,
+    "chargeCurrencyCode" : null,
+    "chargeCardType" : "Mastercard",
+    "chargeCardMaskedNumber" : "XXXXXXXXXXXX4444",
+    "chargeCardNumber" : null,
+    "fxCurrencyCode" : null,
+    "fxAcceptMessage" : null,
+    "fxAuthApprovalCode" : null,
+    "isDeposit" : true,
+    "isExternal" : true
+  } ]
+}

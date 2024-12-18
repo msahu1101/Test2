@@ -1,0 +1,320 @@
+{
+        "instance": 0,
+        "customerId": 0,
+        "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+        "roomTypeId": "ROOMCD-v-DPRK-d-PROP-v-MV021",
+        "programId": "RPCD-v-TLTMSTN-d-PROP-v-MV021",
+        "operaState": "RESERVED",
+        "state": "Booked",
+        "nrgStatus": false,
+        "specialRequests": [
+            "COMPONENTCD-v-CFBP1-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-CFBP1",
+            "COMPONENTCD-v-EARLYCI-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-EARLYCI"
+        ],
+        "thirdParty": false,
+        "confirmationNumber": "15T3R6HP40",
+        "requestConfirmationNumber": "15T3R6HP40",
+        "operaHotelCode": "021",
+        "bookDate": "2024-08-01",
+        "profile": {
+            "id": -1,
+            "mlifeNo": 0,
+            "firstName": "Uttam",
+            "lastName": "Ghorai",
+            "addresses": [
+                {
+                    "type": "Home",
+                    "preferred": true,
+                    "street1": "100 St",
+                    "street2": null,
+                    "city": "Las Vegas",
+                    "state": "NV",
+                    "country": "US",
+                    "postalCode": "89102"
+                }
+            ]
+        },
+        "billing": [
+            {
+                "payment": {
+                    "cardHolder": "Uttam Ghorai",
+                    "firstName": "Uttam",
+                    "lastName": "Ghorai",
+                    "ccToken": "5555550A0014E4J0O3VI9CFB4444",
+                    "encryptedccToken": "5555550A0014E4J0O3VI9CFB4444",
+                    "maskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX4444",
+                    "amount": 204.08,
+                    "expiry": "01/2025",
+                    "type": "Diners Club"
+                },
+                "address": {
+                    "street1": "5353 W Desert Inn",
+                    "street2": null,
+                    "city": "Las Vegas",
+                    "state": "NV",
+                    "postalCode": "89146",
+                    "country": "US"
+                }
+            }
+        ],
+        "tripDetails": {
+            "checkInDate": "2024-08-28",
+            "checkOutDate": "2024-08-30",
+            "numAdults": 1,
+            "numChildren": 0,
+            "numRooms": 1
+        },
+        "markets": [
+            {
+                "date": "2024-08-28",
+                "marketCode": "TFIT",
+                "sourceCode": null
+            },
+            {
+                "date": "2024-08-29",
+                "marketCode": "TFIT",
+                "sourceCode": null
+            }
+        ],
+        "bookings": [
+            {
+                "date": "2024-08-28",
+                "basePrice": 0.00,
+                "customerPrice": 0.00,
+                "price": 180.00,
+                "programIdIsRateTable": false,
+                "overridePrice": -1.00,
+                "overrideProgramIdIsRateTable": false,
+                "resortFeeIsSpecified": false,
+                "resortFee": 42.00,
+                "programId": "RPCD-v-TLTMSTN-d-PROP-v-MV021",
+                "isComp": false
+            },
+            {
+                "date": "2024-08-29",
+                "basePrice": 0.00,
+                "customerPrice": 0.00,
+                "price": 180.00,
+                "programIdIsRateTable": false,
+                "overridePrice": -1.00,
+                "overrideProgramIdIsRateTable": false,
+                "resortFeeIsSpecified": false,
+                "resortFee": 42.00,
+                "programId": "RPCD-v-TLTMSTN-d-PROP-v-MV021",
+                "isComp": false
+            }
+        ],
+        "chargesAndTaxesCalc": {
+            "charges": [
+                {
+                    "date": "2024-08-28",
+                    "amount": 693.27,
+                    "itemized": [
+                        {
+                            "itemType": "RoomCharge",
+                            "amount": 180.00,
+                            "item": "RoomCharge"
+                        },
+                        {
+                            "itemType": "ComponentCharge",
+                            "amount": 500.00,
+                            "item": "RoomCharge"
+                        },
+                        {
+                            "itemType": "ComponentCharge",
+                            "amount": 13.27,
+                            "item": "RoomCharge"
+                        }
+                    ]
+                },
+                {
+                    "date": "2024-08-29",
+                    "amount": 180.00,
+                    "itemized": [
+                        {
+                            "itemType": "RoomCharge",
+                            "amount": 180.00,
+                            "item": "RoomCharge"
+                        }
+                    ]
+                }
+            ],
+            "taxesAndFees": [
+                {
+                    "date": "2024-08-28",
+                    "amount": 1.78,
+                    "itemized": [
+                        {
+                            "shortDescription": "[Non Room Product 0 Tax]",
+                            "pricingApplied": "CHECKOUT",
+                            "itemType": "ComponentChargeTax",
+                            "amount": 0.00,
+                            "item": "Non Room Product 0 Tax"
+                        },
+                        {
+                            "shortDescription": "[Non Room Product 0 Tax]",
+                            "pricingApplied": "CHECKIN",
+                            "itemType": "ComponentChargeTax",
+                            "amount": 1.78,
+                            "item": "Non Room Product 0 Tax"
+                        }
+                    ]
+                },
+                {
+                    "date": "2024-08-29",
+                    "amount": 0.00,
+                    "itemized": []
+                }
+            ]
+        },
+        "ratesSummary": {
+            "roomSubtotal": 0.00,
+            "programDiscount": -360.00,
+            "discountedSubtotal": 360.00,
+            "discountedAveragePrice": 180.00,
+            "roomRequestsTotal": 513.27,
+            "adjustedRoomSubtotal": 873.27,
+            "resortFee": 0.00,
+            "resortFeePerNight": 0.00,
+            "tripSubtotal": 360.00,
+            "resortFeeAndTax": 0.00,
+            "roomChargeTax": 1.78,
+            "occupancyFee": 0.00,
+            "tourismFee": 0.00,
+            "tourismFeeAndTax": 0.00,
+            "casinoSurcharge": 0.00,
+            "casinoSurchargeAndTax": 0.00,
+            "reservationTotal": 875.05,
+            "depositDue": 204.08,
+            "balanceUponCheckIn": 670.97
+        },
+        "depositDetails": {
+            "dueDate": "2024-07-31",
+            "amount": 719.13,
+            "forfeitDate": "2024-08-25",
+            "forfeitAmount": 719.13,
+            "overrideAmount": 204.08,
+            "refundAmount": 204.08,
+            "calculatedForefeitAmount": 0.00
+        },
+        "depositPolicy": {
+            "depositRequired": true,
+            "creditCardRequired": false
+        },
+        "payments": [
+            {
+                "reservationInstance": 0,
+                "chargeAmount": 204.08,
+                "chargeCardExpiry": "2025-01-01",
+                "status": "Settled",
+                "chargeCardHolder": "Uttam Ghorai",
+                "chargeCardType": "Diners Club",
+                "chargeCardMaskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX4444",
+                "chargeCardNumber": "5555550A0014E4J0O3VI9CFB4444",
+                "paymentTxnId": "abcd",
+                "fxChecked": false,
+                "fxEligible": false,
+                "fxTransDate": "2024-08-01",
+                "fxAmount": 0.00,
+                "fxRate": 0.00,
+                "fxSettleAmount": 0.00,
+                "isDeposit": true,
+                "isExternal": false
+            }
+        ],
+        "purchasedComponents": [
+            {
+                "id": "COMPONENTCD-v-CFBP1-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-CFBP1",
+                "code": "CFBP1",
+                "shortDescription": "CFBP1",
+                "longDescription": "CFBP1",
+                "active": true,
+                "pricingApplied": "CHECKOUT",
+                "tripPrice": 500.00,
+                "tripTax": 0.00,
+                "price": 500.00,
+                "prices": [
+                    {
+                        "date": "2024-08-28",
+                        "amount": 500.00,
+                        "tax": 0.00
+                    }
+                ],
+                "depositAmount": 500.00,
+                "isDepositRequired": true,
+                "nonEditable": true,
+                "ratePlanName": "CFBP1",
+                "ratePlanCode": "CFBP1",
+                "isPkgComponent": true
+            },
+            {
+                "id": "COMPONENTCD-v-EARLYCI-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-EARLYCI",
+                "code": "EARLYCI",
+                "shortDescription": null,
+                "longDescription": null,
+                "active": true,
+                "pricingApplied": "CHECKIN",
+                "tripPrice": 13.27,
+                "tripTax": 1.78,
+                "price": 13.27,
+                "prices": [
+                    {
+                        "date": "2024-08-28",
+                        "amount": 13.27,
+                        "tax": 1.78
+                    }
+                ],
+                "depositAmount": 15.05,
+                "isDepositRequired": true,
+                "nonEditable": false,
+                "ratePlanName": "Guaranteed Early CheckIn",
+                "ratePlanCode": "EARLYCI",
+                "isPkgComponent": false
+            }
+        ],
+        "amountDue": 204.08,
+        "guaranteeCode": "CC",
+        "customerRank": 0,
+        "customerSegment": 0,
+        "routingInstructions": [
+            {
+                "id": null,
+                "name": null,
+                "source": "Program",
+                "startDate": "2024-08-28",
+                "endDate": "2024-08-30",
+                "authorizerId": "ad74f100-3878-4017-a566-0978fa788d3a",
+                "routingCodes": [
+                    "49078"
+                ],
+                "hostAuthorizerAppUserId": "SLT021_ENT_DM",
+                "hostRoutingCodes": [
+                    "ROOM"
+                ],
+                "window": 101,
+                "limitType": "Value",
+                "comments": null,
+                "memberShipNumber": null,
+                "limit": "180",
+                "dailyYN": false,
+                "isSystemRouting": true,
+                "applicableSunday": true,
+                "applicableMonday": true,
+                "applicableTuesday": true,
+                "applicableWednesday": true,
+                "applicableThursday": true,
+                "applicableFriday": true,
+                "applicableSaturday": true
+            }
+        ],
+        "perpetualPricing": false,
+        "bookingSource": "ice",
+        "bookingChannel": "ice",
+        "isGroupCode": false,
+        "f1Package": false,
+        "isCreditCardExpired": false,
+        "isStayDateModifiable": true,
+        "hdePackage": false,
+        "depositForfeit": false,
+        "isCancellable": true
+}

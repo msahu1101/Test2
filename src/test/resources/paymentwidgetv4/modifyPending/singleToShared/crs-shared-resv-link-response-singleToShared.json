@@ -1,0 +1,21 @@
+{
+  "data": {
+    "hotelLinkReservation": {
+      "link": {
+        "id": "1209OD3SOW",
+        "type": "SHARE"
+      },
+      "cfNumbers": [
+        {
+          "cfNumber": "1RK7TP659D",
+          "creationDate": "2024-07-24"
+        },
+        {
+          "cfNumber": "86FVWTY47C",
+          "creationDate": "2024-07-24"
+        }
+      ],
+      "sharePricingMethod": "FULL"
+    }
+  }
+}

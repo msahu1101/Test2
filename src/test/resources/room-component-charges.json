@@ -1,0 +1,895 @@
+{"roomReservation":{
+    "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+    "roomTypeId": "ROOMCD-v-L1PL-d-PROP-v-MV021",
+    "programId": "RPCD-v-COMPS012-d-PROP-v-MV021",
+    "customerId": "0",
+    "guaranteeCode": "GT",
+    "perpetualPricing": true,
+    "pricingMode": "PERPETUAL",
+    "promo": null,
+    "customerDominantPlay": null,
+    "customerRank": 0,
+    "shoppedItineraryId": null,
+    "profile": {
+        "id": -1,
+        "mlifeNo": 79135644,
+        "firstName": "Dale",
+        "lastName": "Steyn",
+        "addresses": [
+            {
+                "type": "Home",
+                "preferred": true,
+                "street1": "100 St",
+                "street2": null,
+                "city": "Las Vegas",
+                "state": "NV",
+                "country": "US",
+                "postalCode": "89102"
+            }
+        ]
+    },
+    "tripDetails": {
+        "checkInDate": "2024-02-25",
+        "checkOutDate": "2024-02-27",
+        "numAdults": 1,
+        "numChildren": 0,
+        "numRooms": 1
+    },
+    "chargesAndTaxes": {
+        "charges": [
+            {
+                "date": "2024-02-25",
+                "amount": 0.00,
+                "itemized": [
+                    {
+                        "itemType": "RoomCharge",
+                        "amount": 0.00,
+                        "item": "RoomCharge"
+                    },
+                    {
+                        "itemType": "ResortFee",
+                        "amount": 0.00,
+                        "item": "RSFEE"
+                    }
+                ]
+            },
+            {
+                "date": "2024-02-26",
+                "amount": 0.00,
+                "itemized": [
+                    {
+                        "itemType": "RoomCharge",
+                        "amount": 0.00,
+                        "item": "RoomCharge"
+                    },
+                    {
+                        "itemType": "ResortFee",
+                        "amount": 0.00,
+                        "item": "RSFEE"
+                    }
+                ]
+            }
+        ],
+        "taxesAndFees": [
+            {
+                "date": "2024-02-25",
+                "amount": 0.00,
+                "itemized": [
+                    {
+                        "itemType": "RoomChargeTax",
+                        "amount": 0.00,
+                        "item": "OCTAX"
+                    },
+                    {
+                        "itemType": "ResortFeeTax",
+                        "amount": 0.00,
+                        "item": "RSFTX"
+                    }
+                ]
+            },
+            {
+                "date": "2024-02-26",
+                "amount": 0.00,
+                "itemized": [
+                    {
+                        "itemType": "RoomChargeTax",
+                        "amount": 0.00,
+                        "item": "OCTAX"
+                    },
+                    {
+                        "itemType": "ResortFeeTax",
+                        "amount": 0.00,
+                        "item": "RSFTX"
+                    }
+                ]
+            }
+        ]
+    },
+    "availableComponents": [
+        {
+            "id": "COMPONENTCD-v-DOGFEE-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-DOGFRIENDLY",
+            "code": "DOGFEE",
+            "shortDescription": "DOGFRIENDLY",
+            "longDescription": "DOGFRIENDLY",
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 64.48,
+            "tripTax": 8.62,
+            "price": 32.24,
+            "depositAmount": 0.00,
+            "isDespsitRequired": false,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 32.24,
+                    "tax": 4.31
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 32.24,
+                    "tax": 4.31
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-DOGFEE-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-DOGFRIENDLYSTE",
+            "code": "DOGFEE",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 127.68,
+            "tripTax": 17.08,
+            "price": 63.84,
+            "depositAmount": 72.38,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 63.84,
+                    "tax": 8.54
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 63.84,
+                    "tax": 8.54
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-3N8EMP0M1U9NQSYK674I-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-DOGTEST",
+            "code": "3N8EMP0M1U9NQSYK674I",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 64.48,
+            "tripTax": 8.62,
+            "price": 32.24,
+            "depositAmount": 36.55,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 32.24,
+                    "tax": 4.31
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 32.24,
+                    "tax": 4.31
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-EARLYCI-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-EARLYCI",
+            "code": "EARLYCI",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 13.27,
+            "tripTax": 1.78,
+            "price": 13.27,
+            "depositAmount": 15.05,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 13.27,
+                    "tax": 1.78
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-EARLYCI-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-EARLYCKIN",
+            "code": "EARLYCI",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 13.27,
+            "tripTax": 1.78,
+            "price": 13.27,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 13.27,
+                    "tax": 1.78
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-LATECO-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-LATECKOUT",
+            "code": "LATECO",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKOUT",
+            "tripPrice": 18.96,
+            "tripTax": 2.54,
+            "price": 9.48,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 0.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 18.96,
+                    "tax": 2.54
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-EARLYCI-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MECI",
+            "code": "EARLYCI",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKOUT",
+            "tripPrice": 41.73,
+            "tripTax": 5.58,
+            "price": 13.91,
+            "depositAmount": 15.77,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 13.91,
+                    "tax": 1.86
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 13.91,
+                    "tax": 1.86
+                },
+                {
+                    "date": "2024-02-27",
+                    "amount": 13.91,
+                    "tax": 1.86
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-EARLYCI-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MECIA11",
+            "code": "EARLYCI",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKOUT",
+            "tripPrice": 37.92,
+            "tripTax": 5.07,
+            "price": 12.64,
+            "depositAmount": 14.33,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 12.64,
+                    "tax": 1.69
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 12.64,
+                    "tax": 1.69
+                },
+                {
+                    "date": "2024-02-27",
+                    "amount": 12.64,
+                    "tax": 1.69
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-EARLYCI-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MECIP01",
+            "code": "EARLYCI",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKOUT",
+            "tripPrice": 37.92,
+            "tripTax": 5.07,
+            "price": 12.64,
+            "depositAmount": 14.33,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 12.64,
+                    "tax": 1.69
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 12.64,
+                    "tax": 1.69
+                },
+                {
+                    "date": "2024-02-27",
+                    "amount": 12.64,
+                    "tax": 1.69
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-LATECO-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MLCO",
+            "code": "LATECO",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKOUT",
+            "tripPrice": 18.96,
+            "tripTax": 2.54,
+            "price": 9.48,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 0.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 18.96,
+                    "tax": 2.54
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-LATECO-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MLCOP03",
+            "code": "LATECO",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKOUT",
+            "tripPrice": 56.88,
+            "tripTax": 7.62,
+            "price": 18.96,
+            "depositAmount": 21.50,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 18.96,
+                    "tax": 2.54
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 18.96,
+                    "tax": 2.54
+                },
+                {
+                    "date": "2024-02-27",
+                    "amount": 18.96,
+                    "tax": 2.54
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-LATECO-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MLCOP06",
+            "code": "LATECO",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKOUT",
+            "tripPrice": 56.88,
+            "tripTax": 7.62,
+            "price": 18.96,
+            "depositAmount": 21.50,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 18.96,
+                    "tax": 2.54
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 18.96,
+                    "tax": 2.54
+                },
+                {
+                    "date": "2024-02-27",
+                    "amount": 18.96,
+                    "tax": 2.54
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-PARKING-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MPSP",
+            "code": "PARKING",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 0.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-DOGFEE-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MYDOG",
+            "code": "DOGFEE",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 63.22,
+            "tripTax": 8.46,
+            "price": 31.61,
+            "depositAmount": 35.84,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 31.61,
+                    "tax": 4.23
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 31.61,
+                    "tax": 4.23
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-MYVEGASFEE-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MYVEGASFEE",
+            "code": "MYVEGASFEE",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-PARKING-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-PP1",
+            "code": "PARKING",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 0.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-PARKING-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-PP2",
+            "code": "PARKING",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 0.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-PARKING-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-PP3",
+            "code": "PARKING",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 0.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-PARKING-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-PP4",
+            "code": "PARKING",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 0.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-PARKING-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-PP5",
+            "code": "PARKING",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 0.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-PARKING-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-PP6",
+            "code": "PARKING",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 0.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-PARKING-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-PP7",
+            "code": "PARKING",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 40.00,
+            "tripTax": 0.00,
+            "price": 20.00,
+            "depositAmount": 20.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 20.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 20.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-PARKING-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-PP8",
+            "code": "PARKING",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 0.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-SPA-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-SPARP",
+            "code": "SPA",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 100.00,
+            "tripTax": 0.00,
+            "price": 50.00,
+            "depositAmount": 50.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 50.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 50.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-SPA-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-SPARP1",
+            "code": "SPA",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 100.00,
+            "tripTax": 0.00,
+            "price": 50.00,
+            "depositAmount": 50.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 50.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 50.00,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-VIP-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-VIPARRIVAL",
+            "code": "VIP",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "CHECKIN",
+            "tripPrice": 62.58,
+            "tripTax": 0.00,
+            "price": 62.58,
+            "depositAmount": 62.58,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 62.58,
+                    "tax": 0.00
+                }
+            ]
+        },
+        {
+            "id": "COMPONENTCD-v-REFUND-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-WIFIEXCL",
+            "code": "REFUND",
+            "shortDescription": null,
+            "longDescription": null,
+            "active": true,
+            "nonEditable": false,
+            "pricingApplied": "NIGHTLY",
+            "tripPrice": 0.00,
+            "tripTax": 0.00,
+            "price": 0.00,
+            "depositAmount": 0.00,
+            "isDespsitRequired": true,
+            "prices": [
+                {
+                    "date": "2024-02-25",
+                    "amount": 0.00,
+                    "tax": 0.00
+                },
+                {
+                    "date": "2024-02-26",
+                    "amount": 0.00,
+                    "tax": 0.00
+                }
+            ]
+        }
+    ],
+    "bookings": [
+        {
+            "date": "2024-02-25",
+            "basePrice": 0.00,
+            "customerPrice": 0.00,
+            "price": 50.00,
+            "programIdIsRateTable": false,
+            "overridePrice": -1.00,
+            "overrideProgramIdIsRateTable": false,
+            "resortFeeIsSpecified": false,
+            "resortFee": 0.00,
+            "programId": "RPCD-v-COMPS012-d-PROP-v-MV021",
+            "isDiscounted": false,
+            "isComp": true
+        },
+        {
+            "date": "2024-02-26",
+            "basePrice": 0.00,
+            "customerPrice": 0.00,
+            "price": 50.00,
+            "programIdIsRateTable": false,
+            "overridePrice": -1.00,
+            "overrideProgramIdIsRateTable": false,
+            "resortFeeIsSpecified": false,
+            "resortFee": 0.00,
+            "programId": "RPCD-v-COMPS012-d-PROP-v-MV021",
+            "isDiscounted": false,
+            "isComp": true
+        }
+    ],
+    "ratesSummary": {
+        "roomSubtotal": 0.00,
+        "programDiscount": 0.00,
+        "discountedSubtotal": 0.00,
+        "discountedAveragePrice": 0.00,
+        "roomRequestsTotal": 0.00,
+        "adjustedRoomSubtotal": 0.00,
+        "resortFee": 0.00,
+        "resortFeePerNight": 0.00,
+        "tripSubtotal": 0.00,
+        "resortFeeAndTax": 0.00,
+        "roomChargeTax": 0.00,
+        "occupancyFee": 0.00,
+        "tourismFee": 0.00,
+        "tourismFeeAndTax": 0.00,
+        "casinoSurcharge": 0.00,
+        "casinoSurchargeAndTax": 0.00,
+        "reservationTotal": 0.00,
+        "depositDue": 0.00,
+        "balanceUponCheckIn": 0.00
+    },
+    "depositDetails": {
+        "amount": 0.00,
+        "forfeitDate": "2024-02-23",
+        "forfeitAmount": 56.69,
+        "overrideAmount": -1.00
+    },
+    "amountDue": 0.00,
+    "depositPolicy": {
+        "depositRequired": false,
+        "creditCardRequired": false
+    },
+    "markets": [
+        {
+            "date": "2024-02-25",
+            "marketCode": "CSLI",
+            "sourceCode": null
+        },
+        {
+            "date": "2024-02-26",
+            "marketCode": "CSLI",
+            "sourceCode": null
+        }
+    ],
+    "id": null,
+    "confirmationNumber": "11NAXKMN38",
+    "f1Package": false,
+    "groupCode": false
+}}

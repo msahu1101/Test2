@@ -1,0 +1,9 @@
+{
+	"confirmationNumber": "M00AE5C91",
+	"firstName": "Test",
+	"lastName": "Test",
+	"tripDetails": {
+		"checkInDate": "12/05/2020",
+		"checkOutDate": "12/07/2020"
+	}
+}

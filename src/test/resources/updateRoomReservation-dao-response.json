@@ -1,0 +1,216 @@
+{
+	"inSessionReservationId": null,
+	"numRooms": 1,
+	"bookDate": null,
+	"checkInDate": 1551168000000,
+	"checkOutDate": 1551340800000,
+	"numAdults": 2,
+	"billingType": null,
+	"state": null,
+	"postingFlow": null,
+	"postingState": null,
+	"postingStartedAt": 0,
+	"postingEndedAt": 0,
+	"amountDue": 0.0,
+	"createdAt": 0,
+	"updatedAt": 0,
+	"syncFromOperaAt": 0,
+	"pointCharges": 0,
+	"nrgStatus": false,
+	"id": null,
+	"itineraryId": null,
+	"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+	"programId": null,
+	"roomTypeId": "f44d10c3-aeaa-4aa1-8d94-1d0df9017437",
+	"guaranteeCode": "CC",
+	"profile": null,
+	"bookings": [
+		{
+			"date": 1551168000000,
+			"basePrice": 99999.99,
+			"customerPrice": 54999.99450000001,
+			"price": 54999.99450000001,
+			"programIdIsRateTable": false,
+			"overridePrice": -1.0,
+			"overrideProgramIdIsRateTable": false,
+			"resortFeeIsSpecified": false,
+			"resortFee": 0.0,
+			"programId": "89364848-c326-4319-a083-d5665df90349",
+			"pricingRuleId": "0c5b7e1c-fc40-4d1c-b41a-5d36c9ef1fe6",
+			"isComp": false
+		},
+		{
+			"date": 1551254400000,
+			"basePrice": 99999.99,
+			"customerPrice": 54999.99450000001,
+			"price": 54999.99450000001,
+			"programIdIsRateTable": false,
+			"overridePrice": -1.0,
+			"overrideProgramIdIsRateTable": false,
+			"resortFeeIsSpecified": false,
+			"resortFee": 0.0,
+			"programId": "89364848-c326-4319-a083-d5665df90349",
+			"pricingRuleId": "0c5b7e1c-fc40-4d1c-b41a-5d36c9ef1fe6",
+			"isComp": false
+		}
+	],
+	"markets": [
+		{
+			"date": 1551168000000,
+			"marketCode": "TFIT",
+			"sourceCode": "TFITIC"
+		},
+		{
+			"date": 1551254400000,
+			"marketCode": "TFIT",
+			"sourceCode": "TFITIC"
+		}
+	],
+	"chargesAndTaxesCalc": {
+		"charges": [
+			{
+				"date": 1551168000000,
+				"amount": 55034.99450000001,
+				"pointsUsed": 0,
+				"itemized": [
+					{
+						"itemType": "RoomCharge",
+						"amount": 54999.99450000001,
+						"pointUsed": -1,
+						"item": "Room Charge"
+					},
+					{
+						"itemType": "ExtraGuestCharge",
+						"amount": 0.0,
+						"pointUsed": -1,
+						"item": "Extra Guest Charge"
+					},
+					{
+						"itemType": "ResortFee",
+						"amount": 35.0,
+						"pointUsed": -1,
+						"item": "Resort Fee"
+					}
+				]
+			},
+			{
+				"date": 1551254400000,
+				"amount": 55034.99450000001,
+				"pointsUsed": 0,
+				"itemized": [
+					{
+						"itemType": "RoomCharge",
+						"amount": 54999.99450000001,
+						"pointUsed": -1,
+						"item": "Room Charge"
+					},
+					{
+						"itemType": "ExtraGuestCharge",
+						"amount": 0.0,
+						"pointUsed": -1,
+						"item": "Extra Guest Charge"
+					},
+					{
+						"itemType": "ResortFee",
+						"amount": 35.0,
+						"pointUsed": -1,
+						"item": "Resort Fee"
+					}
+				]
+			}
+		],
+		"taxesAndFees": [
+			{
+				"date": 1551168000000,
+				"amount": 1101.04989,
+				"pointsUsed": -1,
+				"itemized": [
+					{
+						"itemType": "RoomChargeTax",
+						"amount": 1099.99989,
+						"pointUsed": -1,
+						"item": "Room Tax"
+					},
+					{
+						"itemType": "ExtraGuestChargeTax",
+						"amount": 0.0,
+						"pointUsed": -1,
+						"item": "Extra Guest Tax"
+					},
+					{
+						"itemType": "ResortFeeTax",
+						"amount": 1.05,
+						"pointUsed": -1,
+						"item": "Resort Fee Tax"
+					}
+				]
+			},
+			{
+				"date": 1551254400000,
+				"amount": 1101.04989,
+				"pointsUsed": -1,
+				"itemized": [
+					{
+						"itemType": "RoomChargeTax",
+						"amount": 1099.99989,
+						"pointUsed": -1,
+						"item": "Room Tax"
+					},
+					{
+						"itemType": "ExtraGuestChargeTax",
+						"amount": 0.0,
+						"pointUsed": -1,
+						"item": "Extra Guest Tax"
+					},
+					{
+						"itemType": "ResortFeeTax",
+						"amount": 1.05,
+						"pointUsed": -1,
+						"item": "Resort Fee Tax"
+					}
+				]
+			}
+		]
+	},
+	"depositPolicyCalc": {
+		"depositRequired": true,
+		"creditCardRequired": true
+	},
+	"depositCalc": {
+		"dueDate": 1550784370292,
+		"amountPolicy": "Nights",
+		"amount": 56099.99439000001,
+		"forfeitDate": 1550908800000,
+		"forfeitAmount": 56099.99439000001,
+		"overrideAmount": -1.0,
+		"depositRuleCode": "1NT",
+		"cancellationRuleCode": "72H",
+		"itemized": [
+			{
+				"itemType": "RoomCharge",
+				"amount": 54999.99450000001,
+				"pointUsed": -1,
+				"item": "Room Charge"
+			},
+			{
+				"itemType": "RoomChargeTax",
+				"amount": 1099.99989,
+				"pointUsed": -1,
+				"item": "Room Tax"
+			}
+		],
+		"pointAmount": {
+			"dollarValue": 56099.99439000001,
+			"pointValue": 0
+		}
+	},
+	"channelId": null,
+	"origin": null,
+	"source": "mgmresorts",
+	"specialRequests": [
+		"b1fed3fd-4934-4cab-949d-90575ccfb9de"
+	],
+	"creditCardCharges": null,
+	"confirmationNumber": null,
+	"payments": null
+}

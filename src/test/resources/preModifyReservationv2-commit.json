@@ -1,0 +1,249 @@
+{
+  "instance": 0,
+  "customerId": -1,
+  "numRooms": 1,
+  "bookDate": "2024-08-26",
+  "checkInDate": "2024-09-15",
+  "checkOutDate": "2024-09-17",
+  "numAdults": 2,
+  "state": "Booked",
+  "postingStartedAt": 0,
+  "postingEndedAt": 0,
+  "amountDue": 272.51,
+  "createdAt": 1724666834000,
+  "updatedAt": 1724667794000,
+  "syncFromOperaAt": 0,
+  "nrgStatus": false,
+  "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+  "programId": "RPCD-v-TMDFBA-d-PROP-v-MV021",
+  "roomTypeId": "ROOMCD-v-DPRK-d-PROP-v-MV021",
+  "guaranteeCode": "CC",
+  "profile": {
+    "id": -1,
+    "mlifeNo": 0,
+    "modifiable": false,
+    "createdAt": 0,
+    "updatedAt": 0,
+    "refreshedAt": 0,
+    "stale": false,
+    "externalSyncAt": 0,
+    "caslOptin": false,
+    "firstName": "Uttam",
+    "lastName": "Ghorai",
+    "addresses": [
+      {
+        "type": "Home",
+        "preferred": true,
+        "street1": "100 St",
+        "city": "Las Vegas",
+        "state": "NV",
+        "country": "US",
+        "postalCode": "89102"
+      }
+    ]
+  },
+  "bookings": [
+    {
+      "date": "2024-09-15",
+      "basePrice": 0.0,
+      "customerPrice": 0.0,
+      "price": 240.35,
+      "programIdIsRateTable": false,
+      "overridePrice": -1.0,
+      "overrideProgramIdIsRateTable": false,
+      "comp": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 42.0,
+      "programId": "RPCD-v-TMDFBA-d-PROP-v-MV021"
+    },
+    {
+      "date": "2024-09-16",
+      "basePrice": 0.0,
+      "customerPrice": 0.0,
+      "price": 240.35,
+      "programIdIsRateTable": false,
+      "overridePrice": -1.0,
+      "overrideProgramIdIsRateTable": false,
+      "comp": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 42.0,
+      "programId": "RPCD-v-TMDFBA-d-PROP-v-MV021"
+    }
+  ],
+  "chargesAndTaxesCalc": {
+    "charges": [
+      {
+        "date": "2024-09-15",
+        "amount": 240.35,
+        "itemized": [
+          {
+            "itemType": "RoomCharge",
+            "amount": 240.35,
+            "item": "RoomCharge"
+          }
+        ]
+      },
+      {
+        "date": "2024-09-16",
+        "amount": 270.35,
+        "itemized": [
+          {
+            "itemType": "RoomCharge",
+            "amount": 240.35,
+            "item": "RoomCharge"
+          },
+          {
+            "itemType": "ComponentCharge",
+            "amount": 30.0,
+            "item": "RoomCharge"
+          }
+        ]
+      }
+    ],
+    "taxesAndFees": [
+      {
+        "date": "2024-09-15",
+        "amount": 0.0,
+        "itemized": []
+      },
+      {
+        "date": "2024-09-15",
+        "amount": 4.01,
+        "itemized": [
+          {
+            "shortDescription": "[Non Room Product 0 Tax]",
+            "pricingApplied": "CHECKOUT",
+            "itemType": "ComponentChargeTax",
+            "amount": 4.01,
+            "item": "Non Room Product 0 Tax"
+          }
+        ]
+      }
+    ]
+  },
+  "depositPolicyCalc": {
+    "depositRequired": true,
+    "creditCardRequired": false
+  },
+  "depositCalc": {
+    "dueDate": "2024-08-26",
+    "amount": 272.51,
+    "forfeitDate": "2024-09-12",
+    "forfeitAmount": 272.51,
+    "overrideAmount": -1.0
+  },
+  "specialRequests": [
+    "COMPONENTCD-v-LATECO-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MLCOP06"
+  ],
+  "creditCardCharges": [
+    {
+      "amount": 272.51,
+      "ccToken": "5555550A0014E4J0O3VI9CFB4444",
+      "expiry": "2028-01-01",
+      "holder": "Uttam Ghorai",
+      "number": "5555550A0014E4J0O3VI9CFB4444",
+      "maskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX4444",
+      "type": "Mastercard",
+      "holderProfile": {
+        "firstName": "Uttam",
+        "lastName": "Ghorai",
+        "address": {
+          "preferred": true,
+          "street1": "5353 W Desert Inn",
+          "city": "Las Vegas",
+          "state": "NV",
+          "country": "US",
+          "postalCode": "89146"
+        }
+      },
+      "fxAmount": 0.0,
+      "fxExchangeRate": 0.0
+    }
+  ],
+  "confirmationNumber": "5777VG3W7D",
+  "payments": [
+    {
+      "reservationInstance": 0,
+      "chargeAmount": 272.51,
+      "chargeCardExpiry": "2028-01-01",
+      "dccChecked": false,
+      "dccEligible": false,
+      "dccTransDate": "2024-08-26",
+      "dccAmount": 0.0,
+      "dccRate": 0.0,
+      "dccSettleAmount": 0.0,
+      "status": "Settled",
+      "isDeposit": true,
+      "isExternal": false,
+      "chargeCardHolder": "Uttam Ghorai",
+      "chargeCardType": "Mastercard",
+      "chargeCardMaskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX4444",
+      "chargeCardNumber": "5555550A0014E4J0O3VI9CFB4444",
+      "paymentTxnId": "01Z6M7P2R297U6F6B0OP6GFIR91LD15K"
+    }
+  ],
+  "customerRank": 0,
+  "customerSegment": 0,
+  "operaConfirmationNumber": "914225285",
+  "numChildren": 0,
+  "routingInstructions": [],
+  "crsWarnings": [
+    {
+      "status": 200,
+      "code": 371,
+      "id": 1,
+      "isPreventingCommit": true,
+      "title": "Deposit required."
+    },
+    {
+      "status": 200,
+      "code": 15996,
+      "id": 2,
+      "title": "The guestCounts requested for the non room product segment is not correct and has been ignored in the process.",
+      "source": {
+        "pointer": "data.hotelReservation.segments[*].offer.productUses[*].guestCounts[*].count"
+      }
+    }
+  ],
+  "isGroupCode": false,
+  "perpetualPricing": false,
+  "purchasedComponents": [
+    {
+      "id": "COMPONENTCD-v-LATECO-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MLCOP06",
+      "code": "LATECO",
+      "shortDescription": "Guaranteed Late Check Out 6pm Mobile\n",
+      "longDescription": "Guaranteed Late Check Out 6pm Mobile\n",
+      "active": true,
+      "pricingApplied": "CHECKOUT",
+      "tripPrice": 30.0,
+      "tripTax": 4.010000228881836,
+      "price": 30.0,
+      "prices": [
+        {
+          "date": "2024-09-16",
+          "amount": 30.0,
+          "tax": 4.01
+        }
+      ],
+      "depositAmount": 0.0,
+      "isDepositRequired": true,
+      "nonEditable": false,
+      "ratePlanName": "Guaranteed Late Check Out 6pm Mobile",
+      "ratePlanCode": "MLCOP06",
+      "isPkgComponent": false
+    }
+  ],
+  "ignoreChannelMargins": false,
+  "excludeNonOffer": false,
+  "isPendingReservation": false,
+  "thirdParty": false,
+  "addOnsDeposits": [
+    {
+      "id": 2,
+      "depositAmount": "0.00"
+    }
+  ],
+  "f1Package": false,
+  "skipFraudCheck": false,
+  "skipPaymentProcess": false
+}

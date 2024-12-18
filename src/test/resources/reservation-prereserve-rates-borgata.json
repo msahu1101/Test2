@@ -1,0 +1,354 @@
+{
+	"numRooms": 1,
+	"checkInDate": "2020-07-01T07:00:00.000",
+	"checkOutDate": "2020-07-04T07:00:00.000",
+	"numAdults": 4,
+	"numChildren": 0,
+	"postingStartedAt": 0,
+	"postingEndedAt": 0,
+	"amountDue": 0.0,
+	"createdAt": 0,
+	"updatedAt": 0,
+	"syncFromOperaAt": 0,
+	"nrgStatus": false,
+	"customerRank": 0,
+	"customerSegment": 0,
+	"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+	"roomTypeId": "766c066d-d28e-40cc-8ac3-926bc1f309d5",
+	"programId": "1b143e7a-27af-4666-9aa4-6e13fcd8e049",
+	"guaranteeCode": "CC",
+	"profile": {
+		"id": -1,
+		"mlifeNo": 0,
+		"modifiable": false,
+		"createdAt": 0,
+		"updatedAt": 0,
+		"refreshedAt": 0,
+		"stale": false,
+		"externalSyncAt": 0,
+		"caslOptin": false
+	},
+	"specialRequests": [
+		"f40dd38d-f4f0-4dbf-bd83-bbcd09fa351b"
+	],
+	"bookings": [
+		{
+			"date": "2020-07-01T07:00:00.000",
+			"basePrice": 10079.99,
+			"customerPrice": 9079.991,
+			"price": 9079.991,
+			"programIdIsRateTable": false,
+			"overridePrice": -1.0,
+			"overrideProgramIdIsRateTable": false,
+			"isComp": false,
+			"resortFeeIsSpecified": false,
+			"resortFee": 0.0,
+			"programId": "1b143e7a-27af-4666-9aa4-6e13fcd8e049",
+			"pricingRuleId": "2418a502-58c7-4339-bda6-a7d7da20f013"
+		},
+		{
+			"date": "2020-07-02T07:00:00.000",
+			"basePrice": 10079.99,
+			"customerPrice": 9079.991,
+			"price": 9079.991,
+			"programIdIsRateTable": false,
+			"overridePrice": -1.0,
+			"overrideProgramIdIsRateTable": false,
+			"isComp": false,
+			"resortFeeIsSpecified": false,
+			"resortFee": 0.0,
+			"programId": "1b143e7a-27af-4666-9aa4-6e13fcd8e049",
+			"pricingRuleId": "2418a502-58c7-4339-bda6-a7d7da20f013"
+		},
+		{
+			"date": "2020-07-03T07:00:00.000",
+			"basePrice": 10079.99,
+			"customerPrice": 9079.991,
+			"price": 9079.991,
+			"programIdIsRateTable": false,
+			"overridePrice": -1.0,
+			"overrideProgramIdIsRateTable": false,
+			"isComp": false,
+			"resortFeeIsSpecified": false,
+			"resortFee": 0.0,
+			"programId": "1b143e7a-27af-4666-9aa4-6e13fcd8e049",
+			"pricingRuleId": "2418a502-58c7-4339-bda6-a7d7da20f013"
+		}
+	],
+	"markets": [
+		{
+			"date": "2020-07-01T07:00:00.000",
+			"marketCode": "TPKG",
+			"sourceCode": "TWEBRES"
+		},
+		{
+			"date": "2020-07-02T07:00:00.000",
+			"marketCode": "TPKG",
+			"sourceCode": "TWEBRES"
+		},
+		{
+			"date": "2020-07-03T07:00:00.000",
+			"marketCode": "TPKG",
+			"sourceCode": "TWEBRES"
+		}
+	],
+	"chargesAndTaxesCalc": {
+		"charges": [
+			{
+				"date": "2020-07-01T07:00:00.000",
+				"amount": 9156.991,
+				"itemized": [
+					{
+						"itemType": "RoomCharge",
+						"amount": 9079.991,
+						"item": "Room Charge"
+					},
+					{
+						"itemType": "ExtraGuestCharge",
+						"amount": 80.0,
+						"item": "Extra Guest Charge"
+					},
+					{
+						"itemType": "ResortFee",
+						"amount": 37.0,
+						"item": "Resort Fee"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 40.0,
+						"item": "PKCI30"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 3.0,
+						"item": "OCC"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 2.0,
+						"item": "TOR"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 2.0,
+						"item": "COS"
+					}
+				]
+			},
+			{
+				"date": "2020-07-02T07:00:00.000",
+				"amount": 9116.991,
+				"itemized": [
+					{
+						"itemType": "RoomCharge",
+						"amount": 9079.991,
+						"item": "Room Charge"
+					},
+					{
+						"itemType": "ExtraGuestCharge",
+						"amount": 80.0,
+						"item": "Extra Guest Charge"
+					},
+					{
+						"itemType": "ResortFee",
+						"amount": 37.0,
+						"item": "Resort Fee"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 3.0,
+						"item": "OCC"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 2.0,
+						"item": "TOR"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 2.0,
+						"item": "COS"
+					}
+				]
+			},
+			{
+				"date": "2020-07-03T07:00:00.000",
+				"amount": 9116.991,
+				"itemized": [
+					{
+						"itemType": "RoomCharge",
+						"amount": 9079.991,
+						"item": "Room Charge"
+					},
+					{
+						"itemType": "ExtraGuestCharge",
+						"amount": 80.0,
+						"item": "Extra Guest Charge"
+					},
+					{
+						"itemType": "ResortFee",
+						"amount": 37.0,
+						"item": "Resort Fee"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 3.0,
+						"item": "OCC"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 2.0,
+						"item": "TOR"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 2.0,
+						"item": "COS"
+					}
+				]
+			}
+		],
+		"taxesAndFees": [
+			{
+				"date": "2020-07-01T07:00:00.000",
+				"amount": 1225.2053958,
+				"itemized": [
+					{
+						"itemType": "RoomChargeTax",
+						"amount": 1214.9027958,
+						"item": "Room Tax"
+					},
+					{
+						"itemType": "ExtraGuestChargeTax",
+						"amount": 10.704,
+						"item": "Extra Guest Tax"
+					},
+					{
+						"itemType": "ResortFeeTax",
+						"amount": 4.9506,
+						"item": "Resort Fee Tax"
+					},
+					{
+						"itemType": "ComponentChargeTax",
+						"amount": 5.352,
+						"item": "PKCI30"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 0,
+						"item": "OCC"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 0.2725,
+						"item": "TOR"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 0.2725,
+						"item": "COS"
+					}
+				]
+			},
+			{
+				"date": "2020-07-02T07:00:00.000",
+				"amount": 1219.8533957999998,
+				"itemized": [
+					{
+						"itemType": "RoomChargeTax",
+						"amount": 1214.9027958,
+						"item": "Room Tax"
+					},
+					{
+						"itemType": "ExtraGuestChargeTax",
+						"amount": 10.704,
+						"item": "Extra Guest Tax"
+					},
+					{
+						"itemType": "ResortFeeTax",
+						"amount": 4.9506,
+						"item": "Resort Fee Tax"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 0,
+						"item": "OCC"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 0.2725,
+						"item": "TOR"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 0.2725,
+						"item": "COS"
+					}
+				]
+			},
+			{
+				"date": "2020-07-03T07:00:00.000",
+				"amount": 1219.8533957999998,
+				"itemized": [
+					{
+						"itemType": "RoomChargeTax",
+						"amount": 1214.9027958,
+						"item": "Room Tax"
+					},
+					{
+						"itemType": "ExtraGuestChargeTax",
+						"amount": 10.704,
+						"item": "Extra Guest Tax"
+					},
+					{
+						"itemType": "ResortFeeTax",
+						"amount": 4.9506,
+						"item": "Resort Fee Tax"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 0,
+						"item": "OCC"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 0.2725,
+						"item": "TOR"
+					},
+					{
+						"itemType": "ComponentCharge",
+						"amount": 0.2725,
+						"item": "COS"
+					}
+				]
+			}
+		]
+	},
+	"depositPolicyCalc": {
+		"depositRequired": true,
+		"creditCardRequired": true
+	},
+	"depositCalc": {
+		"dueDate": "2020-06-01T18:14:49.207",
+		"amountPolicy": "Nights",
+		"amount": 10294.8937958,
+		"forfeitDate": "2020-06-28T07:00:00.000",
+		"forfeitAmount": 10294.8937958,
+		"overrideAmount": -1.0,
+		"depositRuleCode": "1NT",
+		"cancellationRuleCode": "72H",
+		"itemized": [
+			{
+				"itemType": "RoomCharge",
+				"amount": 9079.991,
+				"item": "Room Charge"
+			},
+			{
+				"itemType": "RoomChargeTax",
+				"amount": 1214.9027958,
+				"item": "Room Tax"
+			}
+		]
+	},
+	"source": "66964e2b-2550-4476-84c3-1a4c0c5c067f"
+}

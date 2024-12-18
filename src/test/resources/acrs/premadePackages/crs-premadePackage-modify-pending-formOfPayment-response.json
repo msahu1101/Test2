@@ -1,0 +1,887 @@
+{
+  "data": {
+    "creator": {
+      "hotelSource": "MV275",
+      "vendorCode": "ICECC",
+      "vendorName": "ICE Call center",
+      "vendorTypes": [2],
+      "channelCode": "CC",
+      "metricsCode": "M02",
+      "reportingData": {
+        "channelClass": "Voice",
+        "channelType": "Branded",
+        "channel": "Contact Center",
+        "subChannel": "Contact Center"
+      }
+    },
+    "requestor": {
+      "hotelSource": "MV275",
+      "vendorCode": "ICECC",
+      "vendorName": "ICE Call center",
+      "vendorTypes": [2],
+      "channelCode": "CC",
+      "metricsCode": "M02"
+    },
+    "hotelReservation": {
+      "status": "BK",
+      "type": "Individual",
+      "imageStatus": "Pending",
+      "creationDateTime": "2022-05-02T18:08:40",
+      "lastUpdateDateTime": "2022-05-02T18:08:49",
+      "lastUpdateDateTimeHotelLocalTime": "2022-05-02T11:08:49",
+      "authenticatedUser": {
+        "userId": "WSMGM00ICE",
+        "userLastName": "WSMGM00ICE",
+        "userFirstName": "Robotic user for ICE"
+      },
+      "reservationIds": {
+        "cfNumber": "0YOTQQQERG",
+        "imageId": 1,
+        "committedSequenceNumber": 0
+      },
+      "hotels": [{
+        "chainCode": "MGM",
+        "brandCode": "MV",
+        "propertyCode": "MV275",
+        "propertyCurrency": "USD",
+        "propertyName": "Mandalay Bay Resort and Casino",
+        "cityCode": "LAS",
+        "countryCode": "US",
+        "regionCode": "01",
+        "guestTypeDefinitions": [{
+          "code": "ADULT",
+          "startAge": 21
+        }, {
+          "code": "CHILD",
+          "startAge": 0,
+          "endAge": 20
+        }
+        ]
+      }
+      ],
+      "products": [{
+        "inventoryTypeCode": "DRST",
+        "inventoryTypeName": {
+          "en": ["Resort King test123"]
+        },
+        "yieldClass": "01",
+        "maximumNumberParticipant": 4,
+        "description": {
+          "en": ["Resort King"]
+        },
+        "productCode": "SR",
+        "pacCode": "84F7",
+        "attributeCodes": ["1KING", "550SQFT", "MAX3"]
+      }, {
+        "inventoryTypeCode": "BUFDAY",
+        "otaCode": "MPT23",
+        "inventoryTypeName": {
+          "en": ["Buffet Breakfast and Lunch Per Day - Transient"]
+        },
+        "productClass": "FNB",
+        "description": {
+          "en": ["Daily Breakfast or Lunch Buffet Credit for 2"]
+        },
+        "productCode": "BUFDAY",
+        "pacCode": "E1RU"
+      }
+      ],
+      "attributes": [{
+        "code": "1KING",
+        "name": {
+          "en": ["1 King bed type"]
+        },
+        "description": {
+          "en": ["1 King bed type"]
+        }
+      }, {
+        "code": "550SQFT",
+        "name": {
+          "en": ["550 square feet"]
+        },
+        "description": {
+          "en": ["550 square feet"]
+        }
+      }, {
+        "code": "MAX3",
+        "name": {
+          "en": ["Max occupancy of 3"]
+        },
+        "description": {
+          "en": ["Max occupancy of 3"]
+        }
+      }
+      ],
+      "ratePlans": [{
+        "code": "PFABT",
+        "name": {
+          "en": ["Breakfast and Lunch Package PFABT"]
+        },
+        "description": {
+          "en": ["Package Breakfast and Lunch"]
+        },
+        "longDescription": {
+          "en": ["Package Breakfast and Lunch"]
+        },
+        "isFreeNight": false,
+        "isGroupRatePlan": false,
+        "areAmountsConfidential": false,
+        "isTentativeAllowed": false,
+        "isLoyaltyIdRequired": false,
+        "isPackage": false,
+        "isVoucherRequired": false,
+        "isRewardEarned": false,
+        "isIdRequired": false,
+        "isAwardAccepted": false,
+        "isCommissionable": false,
+        "priceGridCode": "RRFBT",
+        "isHouseUse": false,
+        "isComplimentary": false
+      }
+      ],
+      "userProfiles": [{
+        "id": 1,
+        "age": 32,
+        "personName": {
+          "givenName": "Ram",
+          "surname": "MGM20"
+        },
+        "guestProfileId": "80896325",
+        "addresses": [{
+          "type": 1,
+          "addressLines": ["6770 Edmond Street", "Blvd"],
+          "cityName": "Las Vegas",
+          "postalCode": "89118",
+          "stateProv": "NV",
+          "countryCode": "US"
+        }
+        ],
+        "telephones": [{
+          "locationType": 6,
+          "deviceType": 1,
+          "number": "8179081111"
+        }
+        ],
+        "emails": [{
+          "type": 1,
+          "address": "TDS20@mailinator.com"
+        }
+        ],
+        "loyaltyProgram": {
+          "loyaltyId": "80896325",
+          "programs": [{
+            "programName": "PC"
+          }
+          ]
+        }
+      }
+      ],
+      "segments": [{
+        "id": 1,
+        "start": "2022-09-08",
+        "end": "2022-09-11",
+        "synchroNumber": 1,
+        "segmentStatus": "BK",
+        "consolidatedSegmentStatus": "Guaranteed",
+        "actionStatus": "NS",
+        "segmentHolderId": 1,
+        "bookerId": 1,
+        "creationDateTime": "2022-05-02T18:08:40",
+        "creationDateTimeHotelLocalTime": "2022-05-02T11:08:40",
+        "lastUpdateDateTime": "2022-05-02T18:08:49",
+        "lastUpdateDateTimeHotelLocalTime": "2022-05-02T11:08:49",
+        "indicators": {
+          "isConfirmed": true,
+          "isPaidByPoints": false
+        },
+        "propertyCode": "MV275",
+        "creator": {
+          "hotelSource": "MV275",
+          "vendorCode": "ICECC",
+          "vendorName": "ICE Call center",
+          "vendorTypes": [2],
+          "channelCode": "CC",
+          "metricsCode": "M02",
+          "reportingData": {
+            "channelClass": "Voice",
+            "channelType": "Branded",
+            "channel": "Contact Center",
+            "subChannel": "Contact Center"
+          }
+        },
+        "requestor": {
+          "hotelSource": "MV275",
+          "vendorCode": "ICECC",
+          "vendorName": "ICE Call center",
+          "vendorTypes": [2],
+          "channelCode": "CC",
+          "metricsCode": "M02"
+        },
+        "channelPreferredRate": "Check-in",
+        "channelExtraPersonChargeIncluded": true,
+        "cancelByHotelOnly": false,
+        "lateArrivalTime": "00:00:00",
+        "offer": {
+          "policies": {
+            "deposit": {
+              "isRequired": true,
+              "feeType": "FirstNight",
+              "amount": "172.45",
+              "deadline": {
+                "dateTime": "2022-05-02T11:08:40",
+                "deadlineType": "atBooking"
+              },
+              "acceptedDeposits": {
+                "acceptedFops": ["travelAgencyIata", "paymentCard"],
+                "creditCards": ["AX", "CU", "DC", "DS", "JC", "MC", "VI"]
+              }
+            },
+            "cancellationNoShow": {
+              "feeType": "FirstNight",
+              "amount": "172.45",
+              "deadline": {
+                "dateTime": "2022-09-05T00:00:00",
+                "deadlineType": "numberOfDaysBeforeCheckin",
+                "deadlineValue": 3
+              },
+              "isGracePeriod": true
+            },
+            "checkinTime": "15:00:00",
+            "checkoutTime": "11:00:00"
+          },
+          "productUses": [{
+            "id": 1,
+            "period": {
+              "start": "2022-09-08",
+              "end": "2022-09-11"
+            },
+            "ratePlanCode": "PFABT",
+            "inventoryTypeCode": "DRST",
+            "isMainProduct": true,
+            "quantity": 1,
+            "guestCounts": [{
+              "otaCode": "AQC10",
+              "count": 1,
+              "guestType": "ADULT"
+            }
+            ],
+            "totalGuestCounts": [{
+              "otaCode": "AQC10",
+              "count": 1,
+              "guestType": "ADULT"
+            }
+            ],
+            "productRates": {
+              "dailyRates": [{
+                "dailyTotalRate": {
+                  "amtBfTx": "108.00",
+                  "bsAmt": "108.00",
+                  "amtAfTx": "166.67",
+                  "taxList": [{
+                    "amount": "14.45",
+                    "taxCode": "OCTAX",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT10",
+                    "taxDefIds": [0]
+                  }, {
+                    "amount": "5.22",
+                    "taxCode": "RSFTX",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT10",
+                    "taxDefIds": [2]
+                  }, {
+                    "amount": "0.00",
+                    "taxCode": "RSTF0",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT12",
+                    "taxDefIds": [3]
+                  }, {
+                    "amount": "39.00",
+                    "taxCode": "RSFEE",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT12",
+                    "taxDefIds": [1]
+                  }
+                  ],
+                  "totalTaxes": "58.67",
+                  "rateDefId": 0,
+                  "subTotalServiceCharges": [{
+                    "amount": "39.00",
+                    "isIncludedInRate": false,
+                    "payHotelAmount": "39.00"
+                  }
+                  ],
+                  "subTotalTaxes": [{
+                    "amount": "19.67",
+                    "isIncludedInRate": false,
+                    "payableAmount": "14.45",
+                    "payHotelAmount": "5.22"
+                  }
+                  ],
+                  "payableAmtAfTx": "122.45"
+                },
+                "start": "2022-09-08",
+                "end": "2022-09-11"
+              }
+              ],
+              "totalRate": {
+                "amtBfTx": "324.00",
+                "bsAmt": "324.00",
+                "amtAfTx": "500.01",
+                "payableAmtAfTx": "367.35",
+                "taxGroups": [{
+                  "amount": "43.35",
+                  "taxCode": "OCTAX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT10",
+                  "taxDefIds": [0]
+                }, {
+                  "amount": "15.66",
+                  "taxCode": "RSFTX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT10",
+                  "taxDefIds": [2]
+                }, {
+                  "amount": "0.00",
+                  "taxCode": "RSTF0",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT12",
+                  "taxDefIds": [3]
+                }, {
+                  "amount": "117.00",
+                  "taxCode": "RSFEE",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT12",
+                  "taxDefIds": [1]
+                }
+                ],
+                "totalTaxes": "176.01",
+                "daily": [{
+                  "amtType": "Average",
+                  "amtBfTx": "108.00",
+                  "bsAmt": "108.00",
+                  "amtAfTx": "166.67",
+                  "payableAmtAfTx": "122.45"
+                }, {
+                  "amtType": "Checkin",
+                  "amtBfTx": "108.00",
+                  "bsAmt": "108.00",
+                  "amtAfTx": "166.67",
+                  "payableAmtAfTx": "122.45"
+                }
+                ],
+                "subTotalServiceCharges": [{
+                  "amount": "117.00",
+                  "isIncludedInRate": false,
+                  "payHotelAmount": "117.00"
+                }
+                ],
+                "subTotalTaxes": [{
+                  "amount": "59.01",
+                  "isIncludedInRate": false,
+                  "payableAmount": "43.35",
+                  "payHotelAmount": "15.66"
+                }
+                ],
+                "payableTotalTaxes": "43.35",
+                "payHotelTotalTaxes": "132.66"
+              },
+              "pricingFrequency": "PerNight",
+              "pricingMethod": "PerProductPerOcc",
+              "taxInclusionMode": "followHouse",
+              "hasRateChange": false,
+              "ratesDefinition": {
+                "rateChanges": [{
+                  "id": 0,
+                  "start": "2022-09-08",
+                  "end": "2022-09-11",
+                  "amount": "108.00"
+                }
+                ]
+              },
+              "requestedRates": [{
+                "start": "2022-09-08",
+                "end": "2022-09-11",
+                "base": {
+                  "amount": "108.00"
+                }
+              }
+              ]
+            },
+            "packageRates": {
+              "dailyRates": [{
+                "dailyTotalRate": {
+                  "amtBfTx": "158.00",
+                  "bsAmt": "158.00",
+                  "amtAfTx": "216.67",
+                  "taxList": [{
+                    "amount": "14.45",
+                    "taxCode": "OCTAX",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT10",
+                    "taxDefIds": [0]
+                  }, {
+                    "amount": "0.00",
+                    "taxCode": "SALTX",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT13",
+                    "taxDefIds": [4]
+                  }, {
+                    "amount": "5.22",
+                    "taxCode": "RSFTX",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT10",
+                    "taxDefIds": [2]
+                  }, {
+                    "amount": "0.00",
+                    "taxCode": "RSTF0",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT12",
+                    "taxDefIds": [3]
+                  }, {
+                    "amount": "39.00",
+                    "taxCode": "RSFEE",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT12",
+                    "taxDefIds": [1]
+                  }
+                  ],
+                  "rateDefId": 0,
+                  "subTotalServiceCharges": [{
+                    "amount": "39.00",
+                    "isIncludedInRate": false,
+                    "payHotelAmount": "39.00"
+                  }
+                  ],
+                  "subTotalTaxes": [{
+                    "amount": "19.67",
+                    "isIncludedInRate": false,
+                    "payableAmount": "14.45",
+                    "payHotelAmount": "5.22"
+                  }
+                  ],
+                  "payableAmtAfTx": "172.45"
+                },
+                "start": "2022-09-08",
+                "end": "2022-09-11"
+              }
+              ],
+              "totalRate": {
+                "amtBfTx": "474.00",
+                "bsAmt": "474.00",
+                "amtAfTx": "650.01",
+                "payableAmtAfTx": "517.35",
+                "taxGroups": [{
+                  "amount": "43.35",
+                  "taxCode": "OCTAX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT10",
+                  "taxDefIds": [0]
+                }, {
+                  "amount": "15.66",
+                  "taxCode": "RSFTX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT10",
+                  "taxDefIds": [2]
+                }, {
+                  "amount": "0.00",
+                  "taxCode": "RSTF0",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT12",
+                  "taxDefIds": [3]
+                }, {
+                  "amount": "117.00",
+                  "taxCode": "RSFEE",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT12",
+                  "taxDefIds": [1]
+                }, {
+                  "amount": "0.00",
+                  "taxCode": "SALTX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT13",
+                  "taxDefIds": [4]
+                }
+                ],
+                "totalTaxes": "176.01",
+                "daily": [{
+                  "amtType": "Average",
+                  "amtBfTx": "158.00",
+                  "bsAmt": "158.00",
+                  "amtAfTx": "216.67",
+                  "payableAmtAfTx": "172.45"
+                }, {
+                  "amtType": "Checkin",
+                  "amtBfTx": "158.00",
+                  "bsAmt": "158.00",
+                  "amtAfTx": "216.67",
+                  "payableAmtAfTx": "172.45"
+                }
+                ],
+                "subTotalServiceCharges": [{
+                  "amount": "117.00",
+                  "isIncludedInRate": false,
+                  "payHotelAmount": "117.00"
+                }
+                ],
+                "subTotalTaxes": [{
+                  "amount": "59.01",
+                  "isIncludedInRate": false,
+                  "payableAmount": "43.35",
+                  "payHotelAmount": "15.66"
+                }
+                ],
+                "payableTotalTaxes": "43.35",
+                "payHotelTotalTaxes": "132.66"
+              },
+              "taxInclusionMode": "followHouse",
+              "hasRateChange": false,
+              "ratesDefinition": {
+                "rateChanges": [{
+                  "id": 0,
+                  "start": "2022-09-08",
+                  "end": "2022-09-11",
+                  "amount": "158.00"
+                }
+                ]
+              },
+              "requestedRates": [{
+                "start": "2022-09-08",
+                "end": "2022-09-11",
+                "base": {
+                  "amount": "158.00"
+                }
+              }
+              ]
+            }
+          }, {
+            "id": 2,
+            "period": {
+              "start": "2022-09-08",
+              "end": "2022-09-11"
+            },
+            "ratePlanCode": "PFABT",
+            "inventoryTypeCode": "BUFDAY",
+            "quantity": 1,
+            "guestCounts": [{
+              "otaCode": "AQC10",
+              "count": 1
+            }
+            ],
+            "totalGuestCounts": [],
+            "isProductIncludedInOffer": true,
+            "productRates": {
+              "dailyRates": [{
+                "dailyTotalRate": {
+                  "amtBfTx": "50.00",
+                  "bsAmt": "50.00",
+                  "amtAfTx": "50.00",
+                  "taxList": [{
+                    "amount": "0.00",
+                    "taxCode": "SALTX",
+                    "isIncludedInRate": false,
+                    "otaCode": "FTT13",
+                    "taxDefIds": [4]
+                  }
+                  ],
+                  "rateDefId": 0
+                },
+                "start": "2022-09-08",
+                "end": "2022-09-11"
+              }
+              ],
+              "totalRate": {
+                "amtBfTx": "150.00",
+                "bsAmt": "150.00",
+                "amtAfTx": "150.00",
+                "payableAmtAfTx": "150.00",
+                "taxGroups": [{
+                  "amount": "0.00",
+                  "taxCode": "SALTX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT13",
+                  "taxDefIds": [4]
+                }
+                ],
+                "totalTaxes": "0.00",
+                "daily": [{
+                  "amtType": "Average",
+                  "amtBfTx": "50.00",
+                  "bsAmt": "50.00",
+                  "amtAfTx": "50.00"
+                }, {
+                  "amtType": "Checkin",
+                  "amtBfTx": "50.00",
+                  "bsAmt": "50.00",
+                  "amtAfTx": "50.00"
+                }
+                ]
+              },
+              "pricingFrequency": "PerNight",
+              "pricingMethod": "PerProduct",
+              "hasRateChange": false,
+              "ratesDefinition": {
+                "rateChanges": [{
+                  "id": 0,
+                  "start": "2022-09-08",
+                  "end": "2022-09-11",
+                  "amount": "50.00"
+                }
+                ]
+              },
+              "requestedRates": [{
+                "start": "2022-09-08",
+                "end": "2022-09-11",
+                "base": {
+                  "amount": "50.00"
+                }
+              }
+              ]
+            },
+            "priceGridCode": "BDAY0"
+          }
+          ],
+          "totalRate": {
+            "amtBfTx": "474.00",
+            "bsAmt": "474.00",
+            "amtAfTx": "650.01",
+            "payableAmtAfTx": "517.35",
+            "taxGroups": [{
+              "amount": "43.35",
+              "taxCode": "OCTAX",
+              "isIncludedInRate": false,
+              "otaCode": "FTT10",
+              "taxDefIds": [0]
+            }, {
+              "amount": "15.66",
+              "taxCode": "RSFTX",
+              "isIncludedInRate": false,
+              "otaCode": "FTT10",
+              "taxDefIds": [2]
+            }, {
+              "amount": "0.00",
+              "taxCode": "RSTF0",
+              "isIncludedInRate": false,
+              "otaCode": "FTT12",
+              "taxDefIds": [3]
+            }, {
+              "amount": "117.00",
+              "taxCode": "RSFEE",
+              "isIncludedInRate": false,
+              "otaCode": "FTT12",
+              "taxDefIds": [1]
+            }, {
+              "amount": "0.00",
+              "taxCode": "SALTX",
+              "isIncludedInRate": false,
+              "otaCode": "FTT13",
+              "taxDefIds": [4]
+            }
+            ],
+            "totalTaxes": "176.01",
+            "daily": [{
+              "amtType": "Average",
+              "amtBfTx": "158.00",
+              "bsAmt": "158.00",
+              "amtAfTx": "216.67",
+              "payableAmtAfTx": "172.45"
+            }, {
+              "amtType": "Checkin",
+              "amtBfTx": "158.00",
+              "bsAmt": "158.00",
+              "amtAfTx": "216.67",
+              "payableAmtAfTx": "172.45"
+            }
+            ],
+            "subTotalServiceCharges": [{
+              "amount": "117.00",
+              "isIncludedInRate": false,
+              "payHotelAmount": "117.00"
+            }
+            ],
+            "subTotalTaxes": [{
+              "amount": "59.01",
+              "isIncludedInRate": false,
+              "payableAmount": "43.35",
+              "payHotelAmount": "15.66"
+            }
+            ],
+            "payableTotalTaxes": "43.35",
+            "payHotelTotalTaxes": "132.66"
+          },
+          "nightlyCorpMarketSegments": [{
+            "start": "2022-09-08",
+            "end": "2022-09-11",
+            "value": "TPKG"
+          }
+          ],
+          "corpMarketSegment": "TPKG",
+          "policyTypeCode": "CC"
+        },
+        "totalSegment": {
+          "finalPriceAmt": "517.35"
+        },
+        "formOfPayment": {
+          "paymentInfo": {
+            "amount": "172.45",
+            "paymentStatus": "Payment received",
+            "paymentType": 5,
+            "paymentIntent": "Guarantee",
+            "informerVendorCode": "ICECC"
+          },
+          "depositPayments": [{
+            "id": 1,
+            "amount": "172.45",
+            "paymentStatus": "Payment received",
+            "paymentType": 5,
+            "paymentIntent": "Deposit",
+            "informerVendorCode": "ICECC",
+            "channelSubUser": "********",
+            "paymentRecordId": "01Z6K20LDI97U6B30RTQ5J3RCNBQB6EK",
+            "transactionDate": "2022-05-02T18:08:48"
+          }
+          ]
+        },
+        "taxDefinitions": [{
+          "id": 0,
+          "code": "OCTAX",
+          "taxTypeCode": "FTT10",
+          "name": "Occupancy Tax",
+          "isIncluded": false,
+          "computationType": "Percentage",
+          "computationMode": "TaxOnRate",
+          "chargeUnit": "PerProduct",
+          "chargeFrequency": "PerDay",
+          "start": "2022-09-08",
+          "end": "2022-09-11",
+          "values": [{
+            "value": "13.38"
+          }
+          ],
+          "description": {
+            "en": ["Occupancy Tax"]
+          },
+          "longDescription": {
+            "en": ["Occupancy Tax"]
+          }
+        }, {
+          "id": 1,
+          "code": "RSFEE",
+          "taxTypeCode": "FTT12",
+          "name": "Resort Fee",
+          "isIncluded": false,
+          "currency": "USD",
+          "computationType": "Flat",
+          "computationMode": "TaxOnRate",
+          "chargeUnit": "PerProduct",
+          "chargeFrequency": "PerDay",
+          "start": "2022-09-08",
+          "end": "2022-09-11",
+          "values": [{
+            "value": "39.00"
+          }
+          ],
+          "isPaidAtHotel": true,
+          "description": {
+            "en": ["Resort Fee"]
+          },
+          "longDescription": {
+            "en": ["Resort Fee"]
+          }
+        }, {
+          "id": 2,
+          "code": "RSFTX",
+          "taxTypeCode": "FTT10",
+          "name": "Resort Fee Tax",
+          "isIncluded": false,
+          "computationType": "Percentage",
+          "computationMode": "TaxOnTax",
+          "chargeUnit": "PerProduct",
+          "chargeFrequency": "PerDay",
+          "start": "2022-09-08",
+          "end": "2022-09-11",
+          "values": [{
+            "value": "13.38"
+          }
+          ],
+          "isPaidAtHotel": true,
+          "description": {
+            "en": ["Resort Fee Tax"]
+          },
+          "longDescription": {
+            "en": ["Resort Fee Tax"]
+          }
+        }, {
+          "id": 3,
+          "code": "RSTF0",
+          "taxTypeCode": "FTT12",
+          "name": "RSTF0",
+          "isIncluded": false,
+          "currency": "USD",
+          "computationType": "Flat",
+          "computationMode": "TaxOnRate",
+          "chargeUnit": "PerProduct",
+          "chargeFrequency": "PerDay",
+          "start": "2022-09-08",
+          "end": "2022-09-11",
+          "values": [{
+            "value": "0.00"
+          }
+          ],
+          "description": {
+            "en": ["Resort Fee"]
+          },
+          "longDescription": {
+            "en": ["Resort Fee"]
+          }
+        }, {
+          "id": 4,
+          "code": "SALTX",
+          "taxTypeCode": "FTT13",
+          "isIncluded": false,
+          "computationType": "Percentage",
+          "computationMode": "TaxOnRate",
+          "chargeUnit": "PerProduct",
+          "chargeFrequency": "PerDay",
+          "start": "2022-09-08",
+          "end": "2022-09-11",
+          "values": [{
+            "value": "0.00"
+          }
+          ],
+          "description": {
+            "en": ["Non Hotel Sales Tax"]
+          }
+        }
+        ],
+        "customData": {
+          "pp": "PFABT"
+        }
+      }
+      ],
+      "totalReservation": [{
+        "currency": "USD",
+        "amtBfTx": "474.00",
+        "bsAmt": "474.00",
+        "amtAfTx": "650.01",
+        "finalPriceAmt": "517.35",
+        "totalTaxes": "176.01",
+        "payableTotalTaxes": "43.35",
+        "payHotelTotalTaxes": "132.66"
+      }
+      ],
+      "totalOfActiveSegments": [{
+        "currency": "USD",
+        "amtBfTx": "474.00",
+        "bsAmt": "474.00",
+        "amtAfTx": "650.01",
+        "finalPriceAmt": "517.35",
+        "totalTaxes": "176.01",
+        "payableTotalTaxes": "43.35",
+        "payHotelTotalTaxes": "132.66"
+      }
+      ],
+      "printRate": true
+    }
+  }
+}

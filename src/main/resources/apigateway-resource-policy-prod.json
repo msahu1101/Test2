@@ -1,0 +1,18 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": "*",
+        "Action": "execute-api:Invoke",
+        "Resource": [
+                "arn:aws:execute-api:us-west-2:143757183630:n91gwvftrd/prod/*/*" 
+            ],
+        "Condition": {
+          "IpAddress": {
+            "aws:SourceIp": ##ip-list##
+          }
+        }
+      }
+    ]
+  }

@@ -1,0 +1,529 @@
+{
+   "data": {
+      "hotel": {
+         "chainCode": "MGM",
+         "brandCode": "MV",
+         "propertyCode": "MV021",
+         "propertyCurrency": "USD",
+         "responseCurrency": "USD",
+         "taxDefinitions": [
+            {
+               "id": 0,
+               "code": "OCTAX",
+               "name": "Occupancy Tax",
+               "taxTypeCode": "FTT10",
+               "chargeFrequency": "PerDay",
+               "chargeUnit": "PerProduct",
+               "desc": {
+                  "en": [
+                     "Occupancy Tax"
+                  ]
+               },
+               "values": [
+                  {
+                     "value": "13.38"
+                  }
+               ],
+               "computationType": "Percent",
+               "computationMode": "TaxOnRate",
+               "dow": "MTWTFSS",
+               "isIncluded": false,
+               "start": "2022-06-14",
+               "end": "2022-06-15"
+            },
+            {
+               "id": 2,
+               "code": "RSFEE",
+               "name": "Resort Fee",
+               "taxTypeCode": "FTT12",
+               "chargeFrequency": "PerDay",
+               "chargeUnit": "PerProduct",
+               "desc": {
+                  "en": [
+                     "Resort Fee"
+                  ]
+               },
+               "values": [
+                  {
+                     "value": "37.00"
+                  }
+               ],
+               "computationType": "Flat",
+               "currency": "USD",
+               "computationMode": "TaxOnRate",
+               "dow": "MTWTFSS",
+               "isIncluded": false,
+               "start": "2022-06-14",
+               "end": "2022-06-15"
+            },
+            {
+               "id": 1,
+               "code": "RSFTX",
+               "name": "Resort Fee Tax",
+               "taxTypeCode": "FTT10",
+               "chargeFrequency": "PerDay",
+               "chargeUnit": "PerProduct",
+               "desc": {
+                  "en": [
+                     "Resort Fee Tax"
+                  ]
+               },
+               "values": [
+                  {
+                     "value": "13.38"
+                  }
+               ],
+               "computationType": "Percent",
+               "computationMode": "TaxOnTax",
+               "dow": "MTWTFSS",
+               "isIncluded": false,
+               "start": "2022-06-14",
+               "end": "2022-06-15"
+            }
+         ],
+         "guestTypeDefinition": [
+            {
+               "code": "ADULT",
+               "otaCodes": [
+                  "AQC10"
+               ],
+               "startAge": 21,
+               "description": "Adult Guest 21 or older"
+            },
+            {
+               "code": "CHILD",
+               "otaCodes": [
+                  "AQC8"
+               ],
+               "startAge": 0,
+               "endAge": 20,
+               "description": "Child, age 20 or younger"
+            }
+         ]
+      },
+      "start": "2022-06-14",
+      "duration": "1D",
+      "groupContract": {
+         "code": "ZAERO614P1HDE",
+         "name": {
+            "en": [
+               "Aerosmith June14 01"
+            ]
+         },
+         "isCommissionable": false,
+         "areAmtsConfidential": false
+      },
+      "products": [
+         {
+            "inventoryTypeCode": "DPRK",
+            "productCode": "SR",
+            "availStatus": "available",
+            "pacCode": "U6ZB",
+            "productName": "Sleeping Room",
+            "otaCode": "GRI42",
+            "inventoryTypeName": {
+               "en": [
+                  "Park Avenue King"
+               ]
+            },
+            "maxNbParticipant": 3,
+            "attCodes": [
+               "1KING",
+               "MAX3"
+            ],
+            "isDisplayable": true,
+            "isPremium": true
+         }
+      ],
+      "attributes": [
+         {
+            "code": "1KING",
+            "name": {
+               "en": [
+                  "1 King bed type"
+               ]
+            }
+         },
+         {
+            "code": "MAX3",
+            "name": {
+               "en": [
+                  "Max occupancy of 3"
+               ]
+            }
+         }
+      ],
+      "offers": [
+         {
+            "availStatus": "available",
+            "policies": {
+               "guarantee": {
+                  "isRequired": false,
+                  "time": "00:00:00"
+               },
+               "checkinTime": "15:00:00",
+               "checkoutTime": "11:00:00",
+               "policyTypeCode": "FP"
+            },
+            "groupCode": "ZAERO614P1HDE",
+            "bookingCodes": [
+               {
+                  "bookingCode": "002"
+               }
+            ],
+            "productUses": [
+               {
+                  "period": {
+                     "start": "2022-06-14",
+                     "end": "2022-06-15"
+                  },
+                  "inventoryTypeCode": "DPRK",
+                  "isMainProduct": true,
+                  "quantity": 1,
+                  "numberOfAvailableProducts": 9,
+                  "guestCounts": [
+                     {
+                        "guestType": "CHILD",
+                        "otaCode": "AQC8"
+                     },
+                     {
+                        "guestType": "ADULT",
+                        "otaCode": "AQC10",
+                        "count": 1
+                     }
+                  ],
+                  "rates": {
+                     "pricingFrequency": "PerNight",
+                     "pricingMethod": "PerProduct",
+                     "taxInclusionMode": "followHouse",
+                     "totalRate": {
+                        "bsAmt": "100.00",
+                        "amtBfTx": "100.00",
+                        "payableAmtAfTx": "113.38",
+                        "payHotelTotalTaxes": "41.95",
+                        "payableTotalTaxes": "13.38",
+                        "amtAfTx": "155.33",
+                        "avg": {
+                           "amtAfTx": "155.33",
+                           "payableAmtAfTx": "113.38",
+                           "bsAmt": "100.00",
+                           "subTtlTxExc": "18.33",
+                           "payHotelSubTtlTxExc": "4.95",
+                           "payableSubTtlTxExc": "13.38",
+                           "subTtlSvcChgExc": "37.00",
+                           "payHotelSubTtlSvcChgExc": "37.00"
+                        },
+                        "checkin": {
+                           "bsAmt": "100.00",
+                           "subTtlTxExc": "18.33",
+                           "payHotelSubTtlTxExc": "4.95",
+                           "payableSubTtlTxExc": "13.38",
+                           "subTtlSvcChgExc": "37.00",
+                           "payHotelSubTtlSvcChgExc": "37.00"
+                        },
+                        "taxGroups": [
+                           {
+                              "taxDefIds": [
+                                 0
+                              ],
+                              "code": "OCTAX",
+                              "otaCode": "FTT10",
+                              "amt": "13.38",
+                              "isIncludedInRate": false,
+                              "isPaidAtHotel": false
+                           },
+                           {
+                              "taxDefIds": [
+                                 1
+                              ],
+                              "code": "RSFTX",
+                              "otaCode": "FTT10",
+                              "amt": "4.95",
+                              "isIncludedInRate": false,
+                              "isPaidAtHotel": true
+                           },
+                           {
+                              "taxDefIds": [
+                                 2
+                              ],
+                              "code": "RSFEE",
+                              "otaCode": "FTT12",
+                              "amt": "37.00",
+                              "isIncludedInRate": false,
+                              "isPaidAtHotel": true
+                           }
+                        ],
+                        "totalTaxes": "55.33",
+                        "subTtlSvcChgExc": "37.00",
+                        "payHotelSubTtlSvcChgExc": "37.00",
+                        "subTtlTxExc": "18.33",
+                        "payHotelSubTtlTxExc": "4.95",
+                        "payableSubTtlTxExc": "13.38"
+                     },
+                     "totalBaseOccRate": {
+                        "bsAmt": "100.00",
+                        "amtBfTx": "100.00",
+                        "payableAmtAfTx": "113.38",
+                        "payHotelTotalTaxes": "41.95",
+                        "payableTotalTaxes": "13.38",
+                        "amtAfTx": "155.33",
+                        "avg": {
+                           "amtAfTx": "155.33",
+                           "payableAmtAfTx": "113.38",
+                           "bsAmt": "100.00",
+                           "subTtlTxExc": "18.33",
+                           "payHotelSubTtlTxExc": "4.95",
+                           "payableSubTtlTxExc": "13.38",
+                           "subTtlSvcChgExc": "37.00",
+                           "payHotelSubTtlSvcChgExc": "37.00"
+                        },
+                        "checkin": {
+                           "bsAmt": "100.00",
+                           "subTtlTxExc": "18.33",
+                           "payHotelSubTtlTxExc": "4.95",
+                           "payableSubTtlTxExc": "13.38",
+                           "subTtlSvcChgExc": "37.00",
+                           "payHotelSubTtlSvcChgExc": "37.00"
+                        },
+                        "taxGroups": [
+                           {
+                              "taxDefIds": [
+                                 0
+                              ],
+                              "code": "OCTAX",
+                              "otaCode": "FTT10",
+                              "amt": "13.38",
+                              "isIncludedInRate": false,
+                              "isPaidAtHotel": false
+                           },
+                           {
+                              "taxDefIds": [
+                                 1
+                              ],
+                              "code": "RSFTX",
+                              "otaCode": "FTT10",
+                              "amt": "4.95",
+                              "isIncludedInRate": false,
+                              "isPaidAtHotel": true
+                           },
+                           {
+                              "taxDefIds": [
+                                 2
+                              ],
+                              "code": "RSFEE",
+                              "otaCode": "FTT12",
+                              "amt": "37.00",
+                              "isIncludedInRate": false,
+                              "isPaidAtHotel": true
+                           }
+                        ],
+                        "totalTaxes": "55.33",
+                        "subTtlSvcChgExc": "37.00",
+                        "payHotelSubTtlSvcChgExc": "37.00",
+                        "subTtlTxExc": "18.33",
+                        "payHotelSubTtlTxExc": "4.95",
+                        "payableSubTtlTxExc": "13.38"
+                     },
+                     "hasRateChange": false,
+                     "ratesDef": {
+                        "rateChanges": [
+                           {
+                              "id": 0,
+                              "start": "2022-06-14",
+                              "end": "2022-06-15",
+                              "amt": "100.00"
+                           }
+                        ],
+                        "avg": "100.00",
+                        "checkin": "100.00"
+                     },
+                     "dailyRates": [
+                        {
+                           "start": "2022-06-14",
+                           "end": "2022-06-15",
+                           "dailyTotalRate": {
+                              "bsAmt": "100.00",
+                              "amtBfTx": "100.00",
+                              "payableAmtAfTx": "113.38",
+                              "payHotelTotalTaxes": "41.95",
+                              "payableTotalTaxes": "13.38",
+                              "amtAfTx": "155.33",
+                              "rateDefId": 0,
+                              "taxList": [
+                                 {
+                                    "taxDefIds": [
+                                       0
+                                    ],
+                                    "code": "OCTAX",
+                                    "otaCode": "FTT10",
+                                    "amt": "13.38",
+                                    "isIncludedInRate": false,
+                                    "isPaidAtHotel": false
+                                 },
+                                 {
+                                    "taxDefIds": [
+                                       1
+                                    ],
+                                    "code": "RSFTX",
+                                    "otaCode": "FTT10",
+                                    "amt": "4.95",
+                                    "isIncludedInRate": false,
+                                    "isPaidAtHotel": true
+                                 },
+                                 {
+                                    "taxDefIds": [
+                                       2
+                                    ],
+                                    "code": "RSFEE",
+                                    "otaCode": "FTT12",
+                                    "amt": "37.00",
+                                    "isIncludedInRate": false,
+                                    "isPaidAtHotel": true
+                                 }
+                              ],
+                              "totalTaxes": "55.33",
+                              "subTtlSvcChgExc": "37.00",
+                              "payHotelSubTtlSvcChgExc": "37.00",
+                              "subTtlTxExc": "18.33",
+                              "payHotelSubTtlTxExc": "4.95",
+                              "payableSubTtlTxExc": "13.38"
+                           }
+                        }
+                     ]
+                  }
+               }
+            ],
+            "totalRate": {
+               "bsAmt": "100.00",
+               "amtBfTx": "100.00",
+               "payableAmtAfTx": "113.38",
+               "payHotelTotalTaxes": "41.95",
+               "payableTotalTaxes": "13.38",
+               "amtAfTx": "155.33",
+               "avg": {
+                  "amtAfTx": "155.33",
+                  "payableAmtAfTx": "113.38",
+                  "bsAmt": "100.00",
+                  "subTtlTxExc": "18.33",
+                  "payHotelSubTtlTxExc": "4.95",
+                  "payableSubTtlTxExc": "13.38",
+                  "subTtlSvcChgExc": "37.00",
+                  "payHotelSubTtlSvcChgExc": "37.00"
+               },
+               "checkin": {
+                  "bsAmt": "100.00",
+                  "subTtlTxExc": "18.33",
+                  "payHotelSubTtlTxExc": "4.95",
+                  "payableSubTtlTxExc": "13.38",
+                  "subTtlSvcChgExc": "37.00",
+                  "payHotelSubTtlSvcChgExc": "37.00"
+               },
+               "taxGroups": [
+                  {
+                     "taxDefIds": [
+                        0
+                     ],
+                     "code": "OCTAX",
+                     "otaCode": "FTT10",
+                     "amt": "13.38",
+                     "isIncludedInRate": false,
+                     "isPaidAtHotel": false
+                  },
+                  {
+                     "taxDefIds": [
+                        1
+                     ],
+                     "code": "RSFTX",
+                     "otaCode": "FTT10",
+                     "amt": "4.95",
+                     "isIncludedInRate": false,
+                     "isPaidAtHotel": true
+                  },
+                  {
+                     "taxDefIds": [
+                        2
+                     ],
+                     "code": "RSFEE",
+                     "otaCode": "FTT12",
+                     "amt": "37.00",
+                     "isIncludedInRate": false,
+                     "isPaidAtHotel": true
+                  }
+               ],
+               "totalTaxes": "55.33",
+               "subTtlSvcChgExc": "37.00",
+               "payHotelSubTtlSvcChgExc": "37.00",
+               "subTtlTxExc": "18.33",
+               "payHotelSubTtlTxExc": "4.95",
+               "payableSubTtlTxExc": "13.38"
+            },
+            "totalBaseOccRate": {
+               "bsAmt": "100.00",
+               "amtBfTx": "100.00",
+               "payableAmtAfTx": "113.38",
+               "payHotelTotalTaxes": "41.95",
+               "payableTotalTaxes": "13.38",
+               "amtAfTx": "155.33",
+               "avg": {
+                  "amtAfTx": "155.33",
+                  "payableAmtAfTx": "113.38",
+                  "bsAmt": "100.00",
+                  "subTtlTxExc": "18.33",
+                  "payHotelSubTtlTxExc": "4.95",
+                  "payableSubTtlTxExc": "13.38",
+                  "subTtlSvcChgExc": "37.00",
+                  "payHotelSubTtlSvcChgExc": "37.00"
+               },
+               "checkin": {
+                  "bsAmt": "100.00",
+                  "subTtlTxExc": "18.33",
+                  "payHotelSubTtlTxExc": "4.95",
+                  "payableSubTtlTxExc": "13.38",
+                  "subTtlSvcChgExc": "37.00",
+                  "payHotelSubTtlSvcChgExc": "37.00"
+               },
+               "taxGroups": [
+                  {
+                     "taxDefIds": [
+                        0
+                     ],
+                     "code": "OCTAX",
+                     "otaCode": "FTT10",
+                     "amt": "13.38",
+                     "isIncludedInRate": false,
+                     "isPaidAtHotel": false
+                  },
+                  {
+                     "taxDefIds": [
+                        1
+                     ],
+                     "code": "RSFTX",
+                     "otaCode": "FTT10",
+                     "amt": "4.95",
+                     "isIncludedInRate": false,
+                     "isPaidAtHotel": true
+                  },
+                  {
+                     "taxDefIds": [
+                        2
+                     ],
+                     "code": "RSFEE",
+                     "otaCode": "FTT12",
+                     "amt": "37.00",
+                     "isIncludedInRate": false,
+                     "isPaidAtHotel": true
+                  }
+               ],
+               "totalTaxes": "55.33",
+               "subTtlSvcChgExc": "37.00",
+               "payHotelSubTtlSvcChgExc": "37.00",
+               "subTtlTxExc": "18.33",
+               "payHotelSubTtlTxExc": "4.95",
+               "payableSubTtlTxExc": "13.38"
+            }
+         }
+      ],
+      "excludeTaxIndicator": false
+   },
+   "keepPricingInformation": false
+}

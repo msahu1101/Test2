@@ -1,0 +1,741 @@
+{
+  "data": {
+    "creator": {
+      "hotelSource": "MV021",
+      "vendorCode": "ICECC",
+      "vendorTypes": [
+        2
+      ],
+      "channelCode": "CC",
+      "metricsCode": "M02",
+      "reportingData": {
+        "channelClass": "Voice",
+        "channelType": "Branded",
+        "channel": "Contact Center",
+        "subChannel": "Contact Center"
+      }
+    },
+    "requestor": {
+      "hotelSource": "MV021",
+      "vendorCode": "ICECC",
+      "vendorTypes": [
+        2
+      ],
+      "channelCode": "CC",
+      "metricsCode": "M02"
+    },
+    "hotelReservation": {
+      "status": "BK",
+      "type": "Individual",
+      "imageStatus": "Pending",
+      "creationDateTime": "2021-09-15T23:28:06",
+      "lastUpdateDateTime": "2021-09-15T23:30:16",
+      "lastUpdateDateTimeHotelLocalTime": "2021-09-15T16:30:16",
+      "authenticatedUser": {
+        "userId": "WSMGM00ICE",
+        "userLastName": "WSMGM00ICE",
+        "userFirstName": "Robotic user for ICE"
+      },
+      "reservationIds": {
+        "cfNumber": "3643246818",
+        "imageId": 1,
+        "committedSequenceNumber": 0
+      },
+      "hotels": [
+        {
+          "chainCode": "MGM",
+          "brandCode": "MV",
+          "propertyCode": "MV021",
+          "propertyCurrency": "USD",
+          "propertyName": "New York New York Test12",
+          "cityCode": "LAS",
+          "countryCode": "US",
+          "regionCode": "01",
+          "guestTypeDefinitions": [
+            {
+              "code": "ADULT",
+              "startAge": 21
+            },
+            {
+              "code": "CHILD",
+              "startAge": 0,
+              "endAge": 20
+            }
+          ]
+        }
+      ],
+      "products": [
+        {
+          "inventoryTypeCode": "DPRK",
+          "inventoryTypeName": {
+            "en": [
+              "Park Avenue King"
+            ]
+          },
+          "yieldClass": "01",
+          "maximumNumberParticipant": 6,
+          "description": {
+            "en": [
+              "Base King room"
+            ]
+          },
+          "productCode": "SR",
+          "pacCode": "6UDM",
+          "attributeCodes": [
+            "1KING",
+            "MAX6"
+          ]
+        },
+        {
+          "inventoryTypeCode": "BRK",
+          "otaCode": "RMA189",
+          "inventoryTypeName": {
+            "en": [
+              "BRK"
+            ]
+          },
+          "productCode": "BRK"
+        }
+      ],
+      "attributes": [
+        {
+          "code": "1KING",
+          "name": {
+            "en": [
+              "1 King bed type"
+            ]
+          },
+          "description": {
+            "en": [
+              "1 King bed type"
+            ]
+          }
+        },
+        {
+          "code": "MAX6",
+          "name": {
+            "en": [
+              "Max occupancy of 6"
+            ]
+          },
+          "description": {
+            "en": [
+              "Max occupancy of 6"
+            ]
+          }
+        }
+      ],
+      "ratePlans": [
+        {
+          "code": "PREVL",
+          "name": {
+            "en": [
+              "PREVAILING/BAR/BFR 1"
+            ]
+          },
+          "description": {
+            "en": [
+              "Short description for PREVL NYNY"
+            ]
+          },
+          "isFreeNight": false,
+          "isGroupRatePlan": false,
+          "areAmountsConfidential": false,
+          "isTentativeAllowed": false,
+          "isLoyaltyIdRequired": false,
+          "isPackage": false,
+          "isVoucherRequired": false,
+          "isRewardEarned": false,
+          "isIdRequired": false,
+          "isAwardAccepted": false,
+          "bookingMessage": {
+            "en": [
+              "Terms & Conditions for PREVL NYNY"
+            ]
+          },
+          "isCommissionable": false,
+          "priceGridCode": "PREVL",
+          "sellStrategyCode": "MV1",
+          "isHouseUse": false,
+          "isComplimentary": false
+        }
+      ],
+      "userProfiles": [
+        {
+          "id": 1,
+          "age": 61,
+          "personName": {
+            "givenName": "fname",
+            "surname": "lname",
+            "title": "Mr"
+          },
+          "guestProfileId": "79145357",
+          "addresses": [
+            {
+              "type": 1,
+              "addressLines": [
+                "5353 W Desert Inn"
+              ],
+              "cityName": "Las Vegas",
+              "postalCode": "8****",
+              "stateProv": "NV",
+              "countryCode": "US"
+            }
+          ],
+          "telephones": [
+            {
+              "locationType": 6,
+              "deviceType": 5,
+              "number": "7*********"
+            }
+          ],
+          "emails": [
+            {
+              "type": 1,
+              "address": "dummy@mgmresorts.com"
+            }
+          ],
+          "loyaltyProgram": {
+            "loyaltyId": "79145357",
+            "programs": [
+              {
+                "programName": "PC"
+              }
+            ]
+          }
+        }
+      ],
+      "segments": [
+        {
+          "id": 1,
+          "start": "2022-04-25",
+          "end": "2022-04-26",
+          "synchroNumber": 1,
+          "segmentStatus": "BK",
+          "consolidatedSegmentStatus": "Guaranteed",
+          "actionStatus": "FH",
+          "segmentHolderId": 1,
+          "bookerId": 1,
+          "creationDateTime": "2021-09-15T23:28:06",
+          "creationDateTimeHotelLocalTime": "2021-09-15T16:28:06",
+          "lastUpdateDateTime": "2021-09-15T23:30:16",
+          "lastUpdateDateTimeHotelLocalTime": "2021-09-15T16:30:16",
+          "indicators": {
+            "isConfirmed": true,
+            "isPaidByPoints": false,
+            "hasRateOverride": true,
+            "isRateOverrideWithinThreshold": false
+          },
+          "propertyCode": "MV021",
+          "creator": {
+            "hotelSource": "MV021",
+            "vendorCode": "ICECC",
+            "vendorTypes": [
+              2
+            ],
+            "channelCode": "CC",
+            "metricsCode": "M02",
+            "reportingData": {
+              "channelClass": "Voice",
+              "channelType": "Branded",
+              "channel": "Contact Center",
+              "subChannel": "Contact Center"
+            }
+          },
+          "requestor": {
+            "hotelSource": "MV021",
+            "vendorCode": "ICECC",
+            "vendorTypes": [
+              2
+            ],
+            "channelCode": "CC",
+            "metricsCode": "M02"
+          },
+          "channelPreferredRate": "Check-in",
+          "channelExtraPersonChargeIncluded": true,
+          "cancelByHotelOnly": false,
+          "lateArrivalTime": "00:00:00",
+          "offer": {
+            "policies": {
+              "isPrepaid": true,
+              "deposit": {
+                "isRequired": true,
+                "feeType": "Nights",
+                "feeValue": "1",
+                "amount": "210.89",
+                "deadline": {
+                  "dateTime": "2021-09-13T16:28:06",
+                  "deadlineType": "atBooking"
+                },
+                "acceptedDeposits": {
+                  "acceptedFops": [
+                    "travelAgencyIata",
+                    "paymentCard"
+                  ],
+                  "creditCards": [
+                    "AX",
+                    "CU",
+                    "DC",
+                    "DS",
+                    "JC",
+                    "MC",
+                    "VI"
+                  ]
+                }
+              },
+              "cancellationNoShow": {
+                "feeType": "Nights",
+                "feeValue": "1",
+                "amount": "210.89",
+                "deadline": {
+                  "dateTime": "2022-04-22T00:00:00",
+                  "deadlineType": "numberOfDaysBeforeCheckin",
+                  "deadlineValue": 3
+                },
+                "isGracePeriod": true
+              },
+              "checkinTime": "15:00:00",
+              "checkoutTime": "11:00:00"
+            },
+            "productUses": [
+              {
+                "id": 1,
+                "period": {
+                  "start": "2022-04-25",
+                  "end": "2022-04-26"
+                },
+                "ratePlanCode": "PREVL",
+                "inventoryTypeCode": "DPRK",
+                "isMainProduct": true,
+                "quantity": 1,
+                "guestCounts": [
+                  {
+                    "otaCode": "AQC10",
+                    "count": 1,
+                    "guestType": "ADULT"
+                  }
+                ],
+                "totalGuestCounts": [
+                  {
+                    "otaCode": "AQC10",
+                    "count": 1,
+                    "guestType": "ADULT"
+                  }
+                ],
+                "specialRateInd": "R",
+                "productRates": {
+                  "dailyRates": [
+                    {
+                      "dailyTotalRate": {
+                        "amtBfTx": "149.00",
+                        "bsAmt": "149.00",
+                        "amtAfTx": "210.89",
+                        "taxList": [
+                          {
+                            "amount": "19.94",
+                            "taxCode": "OCTAX",
+                            "isIncludedInRate": false,
+                            "otaCode": "FTT10",
+                            "taxDefIds": [
+                              2
+                            ]
+                          },
+                          {
+                            "amount": "4.95",
+                            "taxCode": "RSFTX",
+                            "isIncludedInRate": false,
+                            "otaCode": "FTT12",
+                            "taxDefIds": [
+                              1
+                            ]
+                          },
+                          {
+                            "amount": "37.00",
+                            "taxCode": "RSFEE",
+                            "isIncludedInRate": false,
+                            "otaCode": "FTT12",
+                            "taxDefIds": [
+                              0
+                            ]
+                          }
+                        ],
+                        "totalTaxes": "61.89",
+                        "rateDefId": 0,
+                        "subTotalServiceCharges": [
+                          {
+                            "amount": "41.95",
+                            "isIncludedInRate": false
+                          }
+                        ],
+                        "subTotalTaxes": [
+                          {
+                            "amount": "19.94",
+                            "isIncludedInRate": false
+                          }
+                        ]
+                      },
+                      "start": "2022-04-25",
+                      "end": "2022-04-26"
+                    }
+                  ],
+                  "totalRate": {
+                    "amtBfTx": "149.00",
+                    "bsAmt": "149.00",
+                    "amtAfTx": "210.89",
+                    "payableAmtAfTx": "210.89",
+                    "taxGroups": [
+                      {
+                        "amount": "19.94",
+                        "taxCode": "OCTAX",
+                        "isIncludedInRate": false,
+                        "otaCode": "FTT10",
+                        "taxDefIds": [
+                          2
+                        ]
+                      },
+                      {
+                        "amount": "37.00",
+                        "taxCode": "RSFEE",
+                        "isIncludedInRate": false,
+                        "otaCode": "FTT12",
+                        "taxDefIds": [
+                          0
+                        ]
+                      },
+                      {
+                        "amount": "4.95",
+                        "taxCode": "RSFTX",
+                        "isIncludedInRate": false,
+                        "otaCode": "FTT12",
+                        "taxDefIds": [
+                          1
+                        ]
+                      }
+                    ],
+                    "totalTaxes": "61.89",
+                    "daily": [
+                      {
+                        "amtType": "Average",
+                        "amtBfTx": "149.00",
+                        "bsAmt": "149.00",
+                        "amtAfTx": "210.89"
+                      },
+                      {
+                        "amtType": "Checkin",
+                        "amtBfTx": "149.00",
+                        "bsAmt": "149.00",
+                        "amtAfTx": "210.89"
+                      }
+                    ],
+                    "subTotalServiceCharges": [
+                      {
+                        "amount": "41.95",
+                        "isIncludedInRate": false
+                      }
+                    ],
+                    "subTotalTaxes": [
+                      {
+                        "amount": "19.94",
+                        "isIncludedInRate": false
+                      }
+                    ]
+                  },
+                  "pricingFrequency": "PerNight",
+                  "pricingMethod": "PerProductPerOcc",
+                  "taxInclusionMode": "followHouse",
+                  "hasRateChange": false,
+                  "ratesDefinition": {
+                    "rateChanges": [
+                      {
+                        "id": 0,
+                        "start": "2022-04-25",
+                        "end": "2022-04-26",
+                        "amount": "149.00"
+                      }
+                    ]
+                  },
+                  "requestedRates": [
+                    {
+                      "start": "2022-04-25",
+                      "end": "2022-04-26",
+                      "base": {
+                        "amount": "149.00",
+                        "overrideInd": true,
+                        "originalBaseRates": [
+                          {
+                            "start": "2022-04-25",
+                            "end": "2022-04-26",
+                            "bsAmt": "147.00"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": 2,
+                "period": {
+                  "start": "2022-04-25",
+                  "end": "2022-04-26"
+                },
+                "ratePlanCode": "PREVL",
+                "inventoryTypeCode": "BRK",
+                "quantity": 1,
+                "guestCounts": [],
+                "totalGuestCounts": [],
+                "isProductIncludedInOffer": true,
+                "specialRateInd": "R"
+              }
+            ],
+            "totalRate": {
+              "amtBfTx": "149.00",
+              "bsAmt": "149.00",
+              "amtAfTx": "210.89",
+              "payableAmtAfTx": "210.89",
+              "taxGroups": [
+                {
+                  "amount": "19.94",
+                  "taxCode": "OCTAX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT10",
+                  "taxDefIds": [
+                    2
+                  ]
+                },
+                {
+                  "amount": "37.00",
+                  "taxCode": "RSFEE",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT12",
+                  "taxDefIds": [
+                    0
+                  ]
+                },
+                {
+                  "amount": "4.95",
+                  "taxCode": "RSFTX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT12",
+                  "taxDefIds": [
+                    1
+                  ]
+                }
+              ],
+              "totalTaxes": "61.89",
+              "daily": [
+                {
+                  "amtType": "Average",
+                  "amtBfTx": "149.00",
+                  "bsAmt": "149.00",
+                  "amtAfTx": "210.89"
+                },
+                {
+                  "amtType": "Checkin",
+                  "amtBfTx": "149.00",
+                  "bsAmt": "149.00",
+                  "amtAfTx": "210.89"
+                }
+              ],
+              "subTotalServiceCharges": [
+                {
+                  "amount": "41.95",
+                  "isIncludedInRate": false
+                }
+              ],
+              "subTotalTaxes": [
+                {
+                  "amount": "19.94",
+                  "isIncludedInRate": false
+                }
+              ]
+            },
+            "nightlyCorpMarketSegments": [
+              {
+                "start": "2022-04-25",
+                "end": "2022-04-26",
+                "value": "TFIT"
+              }
+            ],
+            "corpMarketSegment": "TFIT",
+            "policyTypeCode": "CC"
+          },
+          "totalSegment": {
+            "finalPriceAmt": "210.89"
+          },
+          "formOfPayment": {
+            "paymentInfo": {
+              "amount": "210.89",
+              "paymentStatus": "Payment received",
+              "paymentType": 5,
+              "paymentCard": {
+                "cardCode": "VI",
+                "expireDate": "1022",
+                "cardNumber": {
+                  "token": "8778731061100281"
+                },
+                "cardHolderName": "f*********",
+                "isCNP": false,
+                "billingAddress": {
+                  "addressLines": [
+                    "234 W Main St"
+                  ],
+                  "cityName": "Las Vegas",
+                  "postalCode": "8****",
+                  "stateProv": "NV",
+                  "countryCode": "US"
+                }
+              },
+              "paymentIntent": "Guarantee",
+              "informerVendorCode": "ICECC"
+            },
+            "depositPayments": [
+              {
+                "id": 1,
+                "amount": "210.89",
+                "paymentStatus": "Payment received",
+                "paymentType": 5,
+                "paymentCard": {
+                  "cardCode": "VI",
+                  "expireDate": "1022",
+                  "cardNumber": {
+                    "token": "8778731061100281"
+                  },
+                  "cardHolderName": "f*********",
+                  "isCNP": false,
+                  "billingAddress": {
+                    "addressLines": [
+                      "234 W Main St"
+                    ],
+                    "cityName": "Las Vegas",
+                    "postalCode": "8****",
+                    "stateProv": "NV",
+                    "countryCode": "US"
+                  }
+                },
+                "paymentIntent": "Deposit",
+                "informerVendorCode": "ICECC",
+                "channelSubUser": "********",
+                "paymentRecordId": "01Z6JF5EAQ01U6A70J1BT26JSJH1EO4K",
+                "transactionDate": "2021-09-15T16:29:17"
+              }
+            ]
+          },
+          "taxDefinitions": [
+            {
+              "id": 0,
+              "code": "RSFEE",
+              "taxTypeCode": "FTT12",
+              "name": "R*********",
+              "isIncluded": false,
+              "currency": "USD",
+              "computationType": "Flat",
+              "computationMode": "TaxOnRate",
+              "chargeUnit": "PerProduct",
+              "chargeFrequency": "PerDay",
+              "start": "2022-04-25",
+              "end": "2022-04-26",
+              "values": [
+                {
+                  "value": "37.00"
+                }
+              ],
+              "description": {
+                "en": [
+                  "Resort Fee Tax"
+                ]
+              },
+              "longDescription": {
+                "en": [
+                  "Resort Fee Tax"
+                ]
+              }
+            },
+            {
+              "id": 1,
+              "code": "RSFTX",
+              "taxTypeCode": "FTT12",
+              "name": "R*************",
+              "isIncluded": false,
+              "computationType": "Percentage",
+              "computationMode": "TaxOnTax",
+              "chargeUnit": "PerProduct",
+              "chargeFrequency": "PerDay",
+              "start": "2022-04-25",
+              "end": "2022-04-26",
+              "values": [
+                {
+                  "value": "13.38"
+                }
+              ],
+              "description": {
+                "en": [
+                  "Resort Fee Tax"
+                ]
+              },
+              "longDescription": {
+                "en": [
+                  "Resort Fee Tax"
+                ]
+              }
+            },
+            {
+              "id": 2,
+              "code": "OCTAX",
+              "taxTypeCode": "FTT10",
+              "name": "O************",
+              "isIncluded": false,
+              "computationType": "Percentage",
+              "computationMode": "TaxOnRate",
+              "chargeUnit": "PerProduct",
+              "chargeFrequency": "PerDay",
+              "start": "2022-04-25",
+              "end": "2022-04-26",
+              "values": [
+                {
+                  "value": "13.38"
+                }
+              ],
+              "description": {
+                "en": [
+                  "Occupancy Tax"
+                ]
+              },
+              "longDescription": {
+                "en": [
+                  "Occupancy Tax"
+                ]
+              }
+            }
+          ],
+          "customData": {
+            "pp": "PREVL"
+          }
+        }
+      ],
+      "totalReservation": [
+        {
+          "currency": "USD",
+          "amtBfTx": "149.00",
+          "bsAmt": "149.00",
+          "amtAfTx": "210.89",
+          "finalPriceAmt": "210.89",
+          "totalTaxes": "61.89"
+        }
+      ],
+      "totalOfActiveSegments": [
+        {
+          "currency": "USD",
+          "amtBfTx": "149.00",
+          "bsAmt": "149.00",
+          "amtAfTx": "210.89",
+          "finalPriceAmt": "210.89",
+          "totalTaxes": "61.89",
+          "payableTotalTaxes": "0.00",
+          "payHotelTotalTaxes": "0.00"
+        }
+      ],
+      "printRate": true
+    }
+  }
+}

@@ -1,0 +1,50 @@
+[
+    {
+        "status": "AVAILABLE",
+        "date": "2024-04-09",
+        "roomTypeId": "ROOMCD-v-DMAD-d-PROP-v-MV021",
+        "tripDetails": [
+            {
+                "date": "2024-04-09",
+                "programId": "RPCD-v-LEBSTDA-d-PROP-v-MV021",
+                "isComp": true
+            },
+            {
+                "date": "2024-04-10",
+                "programId": "RPCD-v-LEBSTDA-d-PROP-v-MV021",
+                "isComp": true
+            }
+        ],
+        "pricingMode": "PROGRAM",
+        "totalCompNights": 2,
+        "totalNightlyTripBasePrice": 318.00,
+        "averageNightlyTripBasePrice": 159.00,
+        "totalNightlyTripPrice": 0.00,
+        "averageNightlyTripPrice": 0.00,
+        "isPOApplicable": true
+    },
+    {
+        "status": "AVAILABLE",
+        "date": "2024-04-10",
+        "roomTypeId": "ROOMCD-v-DMAD-d-PROP-v-MV021",
+        "tripDetails": [
+            {
+                "date": "2024-04-10",
+                "programId": "RPCD-v-LEBSTDA-d-PROP-v-MV021",
+                "isComp": true
+            },
+            {
+                "date": "2024-04-11",
+                "programId": "RPCD-v-LEBSTDA-d-PROP-v-MV021",
+                "isComp": true
+            }
+        ],
+        "pricingMode": "PROGRAM",
+        "totalCompNights": 2,
+        "totalNightlyTripBasePrice": 258.00,
+        "averageNightlyTripBasePrice": 129.00,
+        "totalNightlyTripPrice": 0.00,
+        "averageNightlyTripPrice": 0.00,
+        "isPOApplicable": true
+    }
+]

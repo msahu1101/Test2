@@ -1,0 +1,8 @@
+{
+  "customerId": "-1",
+  "overrideDepositForfeit": true,
+  "itineraryId": "7844830721",
+  "reservationId": "1234567890",
+  "confirmationNumber": "M12345678",
+  "cancellationReason": "Test Cancel"
+}

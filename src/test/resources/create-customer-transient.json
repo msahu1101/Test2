@@ -1,0 +1,8 @@
+{
+  "customer": {
+    "profile": {
+      "firstName": "Test-Transient-Fname",
+      "lastName": "Test-Transient-Lname"
+    }
+  }
+}

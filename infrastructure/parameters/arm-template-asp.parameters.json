@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "aspName": {
+			"type": "string",
+			"value": "rbs-ue-asp-$(Environment)"
+		},
+		"environment": {
+	      "type": "string",
+	      "value": "$(TagEnvironment)"
+    	},
+		"appServiceSkuName": {
+	      "type": "string",
+	      "value": "P3v2"
+    	},
+		"location": {
+	      "type": "string",
+	      "value": "East US"
+    	}
+    }
+}

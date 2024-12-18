@@ -1,0 +1,14 @@
+{
+  "valid": true,
+  "eligible": true,
+  "expired": false,
+  "programId": "RPCD-v-TFRSA-d-PROP-v-MV021",
+  "segment": false,
+  "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+  "myvegas": false,
+  "patronProgram": false,
+  "hdePackage": false,
+  "ratePlanCode": "TFRSA",
+  "f1Package": false,
+  "loyaltyNumberRequired": false
+}

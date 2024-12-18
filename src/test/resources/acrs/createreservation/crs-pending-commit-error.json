@@ -1,0 +1,9 @@
+{
+    "error": {
+        "code": 13011,
+        "message": "There is no pending image to be committed.",
+        "origin": "Backend",
+        "httpStatus": 403,
+        "path": "hotel/reservations/MGM/6757961212/commit"
+    }
+}

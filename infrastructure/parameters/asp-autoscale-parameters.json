@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"svcPlanName": {
+			"value": "rbs-uw-asp-d"
+		},
+		"sku": {
+			"value": "PremiumV2"
+		},
+		"svcPlanSize": {
+			"value": "P3v2"
+		},
+		"skuFamily": {
+			"value": "Pv2"
+		},
+		"appName": {
+			"value": "rbs-uw-wa-d"
+		},
+		"autoscaleName": {
+			"value": "rbs-uw-asp-d-autoscale"
+		},
+		"autoscaleEnabled": {
+			"value": true
+		},
+		"minimumCapacity": {
+			"value": 2
+		},
+		"maximumCapacity": {
+			"value": 8
+		},
+		"defaultCapacity": {
+			"value": 2
+		}
+	}
+}

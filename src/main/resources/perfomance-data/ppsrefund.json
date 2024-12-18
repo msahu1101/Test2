@@ -1,0 +1,17 @@
+{
+  "workflowResponse": [
+    {
+      "functionName": "PPSRefund",
+      "statusCode": 200,
+      "statusDesc": "OK",
+      "body": {
+        "statusMessage": "APPROVED",
+        "decision": "APPROVED",
+        "amount": "82.77",
+        "requestID": "01Z6JCSTRO01U6A38PGPVGM2JM8M8KM3",
+        "reasonCode": "100",
+        "reconciliationId": "146819068"
+      }
+    }
+  ]
+}

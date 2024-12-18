@@ -1,0 +1,12 @@
+{
+	"source": "ice",
+	"customerId": 0,
+	"mlifeNumber": null,
+	"propertyId": "111-2222-333",
+	"roomTypeId": null,
+	"bookDate": "",
+	"travelDate": "",
+	"filterBookable": false,
+	"filterViewable": false,
+	"numAdults": 1
+}

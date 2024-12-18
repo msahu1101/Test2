@@ -1,0 +1,23 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "7.6.0",
+		"title": "1A_REST_JSON_Reservation",
+		"description": "The Reservations API of the Amadeus Hospitality CRS application.\nIt comprises how to create, modify, reinstate, cancel, migrate, retrieve, commit and ignore reservations\n"
+	  
+	},
+	   "paths": {},
+	"definitions": {
+	"partnerCustomerBasicInfoRequest": {
+		"type": "object",
+		"properties": {
+			"id": {
+				"type": "string"
+			},
+			"value": {
+				"type": "string"
+			}
+		}
+	}
+}
+	}

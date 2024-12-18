@@ -1,0 +1,9 @@
+{
+    "error": {
+        "code": 398,
+        "message": "Number of guests can't exceed 99 per type",
+        "origin": "Backend",
+        "httpStatus": 400,
+        "path": "hotel/reservations/MGM/pending"
+    }
+}

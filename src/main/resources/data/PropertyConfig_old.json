@@ -1,0 +1,146 @@
+[
+ {
+   "PropertyID": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+   "ACRSPropertyCode":"unknown_NY",
+   "PropertyName": "New York - New York",
+   "GSEMerchantID": "NYNY2",
+   "FPStoreID": 1455498013,
+   "FPTerminalID": 2458474014
+ },
+ {
+   "PropertyID": "8bf670c2-3e89-412b-9372-6c87a215e442",
+   "ACRSPropertyCode":"unknown_DL",
+   "PropertyName": "Delano Las Vegas",
+   "GSEMerchantID": "MBAY2",
+   "FPStoreID": 1455503016,
+   "FPTerminalID": 2458489017
+ },
+ {
+   "PropertyID": "44e610ab-c209-4232-8bb4-51f7b9b13a75",
+   "ACRSPropertyCode":"unknown_BL",
+   "PropertyName": "Bellagio",
+   "GSEMerchantID": "Bellagio2",
+   "FPStoreID": 1455510017,
+   "FPTerminalID": 2458498016
+ },
+ {
+   "PropertyID": "bee81f88-286d-43dd-91b5-3917d9d62a68",
+   "ACRSPropertyCode":"unknown_MC",
+   "PropertyName": "Monte Carlo",
+   "GSEMerchantID": "MCARLO2",
+   "FPStoreID": 1455521014,
+   "FPTerminalID": 2458503019
+ },
+ {
+   "PropertyID": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+   "ACRSPropertyCode":"unknown_MG",
+   "PropertyName": "MGM Grand Las Vegas",
+   "GSEMerchantID": "MGMGRAND2",
+   "FPStoreID": 1455535018,
+   "FPTerminalID": 2458514016
+ },
+ {
+   "PropertyID": "13b178b0-8beb-43d5-af25-1738b7267e63",
+   "ACRSPropertyCode":"unknown_BR",
+   "PropertyName": "Beau Rivage",
+   "GSEMerchantID": "Beau2",
+   "FPStoreID": 1455546015,
+   "FPTerminalID": 2458528010
+ },
+ {
+   "PropertyID": "6c5cff3f-f01a-4f9b-87ab-8395ae8108db",
+   "ACRSPropertyCode":"unknown_VH",
+   "PropertyName": "Vdara",
+   "GSEMerchantID": "Vdara2",
+   "FPStoreID": 1455565011,
+   "FPTerminalID": 2458542012
+ },
+ {
+   "PropertyID": "e0f70eb3-7e27-4c33-8bcd-f30bf3b1103a",
+   "ACRSPropertyCode":"unknown_MB",
+   "PropertyName": "Mandalay Bay",
+   "GSEMerchantID": "MBAY2",
+   "FPStoreID": 1455577017,
+   "FPTerminalID": 2458555016
+ },
+ {
+   "PropertyID": "e2704b04-d515-45b0-8afd-4fa1424ff0a8",
+   "ACRSPropertyCode": "ARIA1",
+   "PropertyName": "ARIA",
+   "GSEMerchantID": "ARIA2",
+   "FPStoreID": 1455583019,
+   "FPTerminalID": 2458561018
+ },
+ {
+   "PropertyID": "b52d1e32-d9f7-4626-8c3e-e9e5de926595",
+   "ACRSPropertyCode":"unknown_ASky",
+   "PropertyName": "ARIA",
+   "GSEMerchantID": "ARIA2",
+   "FPStoreID": 1455583019,
+   "FPTerminalID": 2458561018
+ },
+ {
+   "PropertyID": "607c07e7-3e31-4e4c-a4e1-f55dca66fea2",
+   "ACRSPropertyCode":"unknown_LX",
+   "PropertyName": "Luxor",
+   "GSEMerchantID": "Luxor2",
+   "FPStoreID": 1455601017,
+   "FPTerminalID": 2458588017
+ },
+ {
+   "PropertyID": "1f3ed672-3f8f-44d8-9215-81da3c845d83",
+   "ACRSPropertyCode":"unknown_SM",
+   "PropertyName": "The Signature at MGM Grand",
+   "GSEMerchantID": "Signature2",
+   "FPStoreID": 1455614012,
+   "FPTerminalID": 2458595018
+ },
+ {
+   "PropertyID": "f8d6a944-7816-412f-a39a-9a63aad26833",
+   "ACRSPropertyCode":"unknown_EX",
+   "PropertyName": "Excalibur",
+   "GSEMerchantID": "Excalibur2",
+   "FPStoreID": 1455622012,
+   "FPTerminalID": 2458601010
+ },
+ {
+   "PropertyID": "160cdf9b-ccdc-40ce-b0ac-1a58b69dcf4f",
+   "ACRSPropertyCode":"unknown_CB",
+   "PropertyName": "MGM Resorts Cabanas",
+   "GSEMerchantID": "MBCAB2",
+   "FPStoreID": 1455635017,
+   "FPTerminalID": 2458610019
+ },
+ {
+   "PropertyID": "0990fdce-7fc8-41b1-b8b6-9a25dce3db55",
+   "ACRSPropertyCode":"unknown_NH",
+   "PropertyName": "MGM National Harbor",
+   "GSEMerchantID": "NH2",
+   "FPStoreID": 1455644016,
+   "FPTerminalID": 2458626011
+ },
+ {
+   "PropertyID": "unknown_ID",
+   "ACRSPropertyCode":"unknown_TD",
+   "PropertyName": "TIBCO Default",
+   "GSEMerchantID": "TIBCO Default",
+   "FPStoreID": 1424563019,
+   "FPTerminalID": 1
+ },
+ {
+   "PropertyID": "773000cc-468a-4d86-a38f-7ae78ecfa6aa",
+   "ACRSPropertyCode":"unknown_BO",
+   "PropertyName": "Borgata",
+   "GSEMerchantID": "BORGATA2",
+   "FPStoreID": 1455659018,
+   "FPTerminalID": 2458636019
+ },
+ {
+   "PropertyID": "40b61feb-750a-45df-ae68-e23e6272b16b",
+   "ACRSPropertyCode":"unknown_SF",
+   "PropertyName": "Springfield",
+   "GSEMerchantID": "SPRINGFIELD2",
+   "FPStoreID": 1455667018,
+   "FPTerminalID": 2458642011
+ }
+]

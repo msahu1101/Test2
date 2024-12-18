@@ -1,0 +1,223 @@
+{
+    "roomReservation": {
+        "instance": 0,
+        "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+        "roomTypeId": "ROOMCD-v-DPRK-d-PROP-v-MV021",
+        "programId": "RPCD-v-TLTMSTN-d-PROP-v-MV021",
+        "customerId": "846558855426",
+        "guaranteeCode": "CC",
+        "specialRequests": [
+            "COMPONENTCD-v-PARKING-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-PP3"
+        ],
+        "profile": {
+            "id": 846558855426,
+            "mlifeNo": 0,
+            "firstName": "Uttam",
+            "lastName": "Ghorai",
+            "addresses": [
+                {
+                    "type": "Home",
+                    "preferred": true,
+                    "street1": "100 St",
+                    "street2": null,
+                    "city": "Las Vegas",
+                    "state": "NV",
+                    "country": "US",
+                    "postalCode": "89102"
+                }
+            ]
+        },
+        "tripDetails": {
+            "checkInDate": "2024-09-16",
+            "checkOutDate": "2024-09-18",
+            "numAdults": 1,
+            "numChildren": 0,
+            "numRooms": 1
+        },
+        "chargesAndTaxes": {
+            "charges": [
+                {
+                    "date": "2024-09-16",
+                    "amount": 222,
+                    "itemized": [
+                        {
+                            "itemType": "RoomCharge",
+                            "amount": 180,
+                            "item": "RoomCharge"
+                        },
+                        {
+                            "itemType": "ResortFee",
+                            "amount": 42,
+                            "item": "RSFEE"
+                        },
+                        {
+                            "itemType": "ComponentCharge",
+                            "amount": 0,
+                            "item": "RoomCharge"
+                        }
+                    ]
+                },
+                {
+                    "date": "2024-09-17",
+                    "amount": 222,
+                    "itemized": [
+                        {
+                            "itemType": "RoomCharge",
+                            "amount": 180,
+                            "item": "RoomCharge"
+                        },
+                        {
+                            "itemType": "ResortFee",
+                            "amount": 42,
+                            "item": "RSFEE"
+                        },
+                        {
+                            "itemType": "ComponentCharge",
+                            "amount": 0,
+                            "item": "RoomCharge"
+                        }
+                    ]
+                }
+            ],
+            "taxesAndFees": [
+                {
+                    "date": "2024-09-16",
+                    "amount": 29.7,
+                    "itemized": [
+                        {
+                            "itemType": "RoomChargeTax",
+                            "amount": 24.08,
+                            "item": "OCTAX"
+                        },
+                        {
+                            "itemType": "ResortFeeTax",
+                            "amount": 5.62,
+                            "item": "RSFTX"
+                        },
+                        {
+                            "shortDescription": "[Non Room Product 0 Tax]",
+                            "pricingApplied": "NIGHTLY",
+                            "itemType": "ComponentChargeTax",
+                            "amount": 0,
+                            "item": "Non Room Product 0 Tax"
+                        }
+                    ]
+                },
+                {
+                    "date": "2024-09-17",
+                    "amount": 29.7,
+                    "itemized": [
+                        {
+                            "itemType": "RoomChargeTax",
+                            "amount": 24.08,
+                            "item": "OCTAX"
+                        },
+                        {
+                            "itemType": "ResortFeeTax",
+                            "amount": 5.62,
+                            "item": "RSFTX"
+                        },
+                        {
+                            "shortDescription": "[Non Room Product 0 Tax]",
+                            "pricingApplied": "NIGHTLY",
+                            "itemType": "ComponentChargeTax",
+                            "amount": 0,
+                            "item": "Non Room Product 0 Tax"
+                        }
+                    ]
+                }
+            ]
+        },
+        "bookings": [
+            {
+                "date": "2024-09-16",
+                "basePrice": 0,
+                "customerPrice": 0,
+                "price": 180,
+                "programIdIsRateTable": false,
+                "overridePrice": -1,
+                "overrideProgramIdIsRateTable": false,
+                "resortFeeIsSpecified": false,
+                "resortFee": 42,
+                "programId": "RPCD-v-TLTMSTN-d-PROP-v-MV021",
+                "isComp": false
+            },
+            {
+                "date": "2024-09-17",
+                "basePrice": 0,
+                "customerPrice": 0,
+                "price": 180,
+                "programIdIsRateTable": false,
+                "overridePrice": -1,
+                "overrideProgramIdIsRateTable": false,
+                "resortFeeIsSpecified": false,
+                "resortFee": 42,
+                "programId": "RPCD-v-TLTMSTN-d-PROP-v-MV021",
+                "isComp": false
+            }
+        ],
+        "ratesSummary": {
+            "roomSubtotal": 0,
+            "programDiscount": -360,
+            "discountedSubtotal": 360,
+            "discountedAveragePrice": 180,
+            "roomRequestsTotal": 0,
+            "adjustedRoomSubtotal": 360,
+            "resortFee": 84,
+            "resortFeePerNight": 42,
+            "tripSubtotal": 444,
+            "resortFeeAndTax": 95.24,
+            "roomChargeTax": 48.16,
+            "occupancyFee": 0,
+            "tourismFee": 0,
+            "tourismFeeAndTax": 0,
+            "casinoSurcharge": 0,
+            "casinoSurchargeAndTax": 0,
+            "reservationTotal": 503.4,
+            "depositDue": 204.08,
+            "balanceUponCheckIn": 299.32
+        },
+        "depositDetails": {
+            "dueDate": "2024-08-20",
+            "amount": 204.08,
+            "forfeitDate": "2024-09-13",
+            "forfeitAmount": 204.08,
+            "overrideAmount": -1
+        },
+        "amountDue": 204.08,
+        "depositPolicy": {
+            "depositRequired": true,
+            "creditCardRequired": false
+        },
+        "perpetualPricing": false,
+        "markets": null,
+        "confirmationNumber": "79Q0HYZYD2",
+        "availableComponents": null,
+        "promo": null,
+        "itineraryId": "1234",
+        "state": "Booked",
+        "billing": [
+            {
+                "payment": {
+                    "cardHolder": "Uttam Ghorai",
+                    "firstName": "Uttam",
+                    "lastName": "Ghorai",
+                    "ccToken": "5555550A0017Y0M59GYH3G7X4444",
+                    "encryptedccToken": "5555550A0012ZTSHUFMXCCUW4444",
+                    "maskedNumber": "XXXXXXXXXXXXXXXXXXXXXXXX4444",
+                    "amount": 204.08,
+                    "expiry": "01/2025",
+                    "type": "Diners Club"
+                },
+                "address": {
+                    "street1": "5353 W Desert Inn",
+                    "street2": null,
+                    "city": "Las Vegas",
+                    "state": "NV",
+                    "postalCode": "89146",
+                    "country": "US"
+                }
+            }
+        ]
+    }
+}

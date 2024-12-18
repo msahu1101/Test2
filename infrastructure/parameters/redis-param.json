@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "type": "string",
+      "value": "booking-uw-rc-r"
+    },
+    "location": {
+      "type": "string",
+      "value": "West US"
+    },
+    "skuName": {
+      "type": "string",
+      "value": "Premium"
+    },
+    "skuFamily": {
+      "type": "string",
+      "value": "P"
+    },
+    "skuCapacity": {
+      "type": "int",
+      "value": 1
+    },
+    "enableNonSSLPort": {
+      "type": "bool",
+      "value": true
+    },
+    "shardCount": {
+      "type": "int",
+      "value": 1
+    },
+    "subnetId": {
+      "type": "string",
+      "value": "/subscriptions/25766e68-d36a-4050-ba9e-3a737a6022eb/resourceGroups/bookingvnets-uw-rg-p/providers/Microsoft.Network/virtualNetworks/booking-uw-vnet-p/subnets/appservice-private-sn-p"
+    }
+  }
+}

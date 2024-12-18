@@ -1,0 +1,20 @@
+{
+	"id": "7cbd1975-8c9d-4c1f-9f40-355e1f02179b",
+	"name": "Transient BAR Offer",
+	"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+	"active": true,
+	"shortDescription": "Transient BAR Offer Desc",
+	"termsConditions": "<font face=\"Arial, Verdana\"><span style=\"font-size: 13.3333px;\">Transient BAR Offer terms and conditions...RK</span></font>",
+	"promoCode": "TRANSBAR",
+	"minNights": 1,
+	"maxNights": 8,
+	"viewableOnline": "true",
+	"bookableOnline": "true",
+	"viewableByProperty": "false",
+	"bookableByProperty": "false",
+	"bookStartDate": "2020-12-06",
+	"bookEndDate": "2021-12-31",
+	"travelPeriodStartDate": "2021-03-01",
+	"travelPeriodEndDate": "2022-12-31",
+	"hdePackage": "false"
+}

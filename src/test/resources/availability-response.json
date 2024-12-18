@@ -1,0 +1,193 @@
+[
+	{
+		"roomTypeId": "ddeca6cb-894d-4325-9c26-782b4f11e39c",
+		"resortFee": 37,
+		"price": {
+			"baseAveragePrice": 10014.99,
+			"discountedAveragePrice": 45,
+			"baseSubtotal": 20029.98,
+			"discountedSubtotal": 18029.98,
+			"itemized": [
+				{
+					"date": "2020-09-07",
+					"basePrice": 10014.99,
+					"discountedPrice": 9014.99,
+					"programId": "4eccc742-8a65-4ef9-9a35-03fead2c3833",
+					"pricingRuleId": "a39efac3-9d9a-450a-9639-22c7c3b78347",
+					"programIdIsRateTable": false,
+					"isComp": false
+				},
+				{
+					"date": "2020-09-08",
+					"basePrice": 10014.99,
+					"discountedPrice": 9014.99,
+					"programId": "4eccc742-8a65-4ef9-9a35-03fead2c3833",
+					"pricingRuleId": "a39efac3-9d9a-450a-9639-22c7c3b78347",
+					"programIdIsRateTable": false,
+					"isComp": false
+				}
+			],
+			"isComp": false
+		},
+		"unavailable": false
+	},
+	{
+		"roomTypeId": "5a8e6554-34d4-473a-b082-27c5b6c50a0a",
+		"resortFee": 37,
+		"price": {
+			"baseAveragePrice": 100014.99,
+			"discountedAveragePrice": 52,
+			"baseSubtotal": 200029.98,
+			"discountedSubtotal": 180029.98,
+			"itemized": [
+				{
+					"date": "2020-09-07",
+					"basePrice": 100014.99,
+					"discountedPrice": 90014.99,
+					"programId": "4eccc742-8a65-4ef9-9a35-03fead2c3833",
+					"pricingRuleId": "a39efac3-9d9a-450a-9639-22c7c3b78347",
+					"programIdIsRateTable": false,
+					"isComp": false
+				},
+				{
+					"date": "2020-09-08",
+					"basePrice": 100014.99,
+					"discountedPrice": 90014.99,
+					"programId": "4eccc742-8a65-4ef9-9a35-03fead2c3833",
+					"pricingRuleId": "a39efac3-9d9a-450a-9639-22c7c3b78347",
+					"programIdIsRateTable": false,
+					"isComp": false
+				}
+			],
+			"isComp": false
+		},
+		"unavailable": false
+	},
+	{
+		"roomTypeId": "9a77cc5b-f06e-4e73-b847-24433f623f23",
+		"resortFee": 37,
+		"price": {
+			"baseAveragePrice": 100014.99,
+			"discountedAveragePrice": 45,
+			"baseSubtotal": 200029.98,
+			"discountedSubtotal": 180029.98,
+			"itemized": [
+				{
+					"date": "2020-09-07",
+					"basePrice": 100014.99,
+					"discountedPrice": 90014.99,
+					"programId": "4eccc742-8a65-4ef9-9a35-03fead2c3833",
+					"pricingRuleId": "a39efac3-9d9a-450a-9639-22c7c3b78347",
+					"programIdIsRateTable": false,
+					"isComp": false
+				},
+				{
+					"date": "2020-09-08",
+					"basePrice": 100014.99,
+					"discountedPrice": 90014.99,
+					"programId": "4eccc742-8a65-4ef9-9a35-03fead2c3833",
+					"pricingRuleId": "a39efac3-9d9a-450a-9639-22c7c3b78347",
+					"programIdIsRateTable": false,
+					"isComp": false
+				}
+			],
+			"isComp": false
+		},
+		"unavailable": false
+	},
+	{
+		"roomTypeId": "766c066d-d28e-40cc-8ac3-926bc1f309d5",
+		"price": {
+			"itemized": [
+				{
+					"date": "2020-09-07",
+					"unavailabilityReason": "SO"
+				},
+				{
+					"date": "2020-09-08",
+					"unavailabilityReason": "SO"
+				}
+			],
+			"isComp": false
+		},
+		"unavailable": true
+	},
+	{
+		"roomTypeId": "e93ab7f0-f086-486a-95b8-26712d14615e",
+		"price": {
+			"itemized": [
+				{
+					"date": "2020-09-07",
+					"basePrice": 100014.99,
+					"discountedPrice": 90014.99,
+					"programId": "4eccc742-8a65-4ef9-9a35-03fead2c3833",
+					"pricingRuleId": "a39efac3-9d9a-450a-9639-22c7c3b78347",
+					"programIdIsRateTable": false,
+					"isComp": false
+				},
+				{
+					"date": "2020-09-08",
+					"unavailabilityReason": "SO"
+				}
+			],
+			"isComp": false
+		},
+		"unavailable": true
+	},
+	{
+		"roomTypeId": "5873c8fe-d110-4628-a155-f2adbdf842d9",
+		"price": {
+			"itemized": [
+				{
+					"date": "2020-09-07",
+					"unavailabilityReason": "SO"
+				},
+				{
+					"date": "2020-09-08",
+					"unavailabilityReason": "SO"
+				}
+			],
+			"isComp": false
+		},
+		"unavailable": true
+	},
+	{
+		"roomTypeId": "b2135b7f-7172-4d53-b39d-217de6f5c970",
+		"price": {
+			"itemized": [
+				{
+					"date": "2020-09-07",
+					"basePrice": 100014.99,
+					"discountedPrice": 90014.99,
+					"programId": "4eccc742-8a65-4ef9-9a35-03fead2c3833",
+					"pricingRuleId": "a39efac3-9d9a-450a-9639-22c7c3b78347",
+					"programIdIsRateTable": false,
+					"isComp": false
+				},
+				{
+					"date": "2020-09-08",
+					"unavailabilityReason": "SO"
+				}
+			],
+			"isComp": false
+		},
+		"unavailable": true
+	},
+	{
+		"roomTypeId": "2369dc93-7336-46bd-b61b-5d46f8133bc7",
+		"price": {
+			"itemized": [
+				{
+					"date": "2020-09-07",
+					"unavailabilityReason": "SO"
+				},
+				{
+					"date": "2020-09-08",
+					"unavailabilityReason": "SO"
+				}
+			],
+			"isComp": false
+		},
+		"unavailable": true
+	}
+]

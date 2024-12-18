@@ -1,0 +1,24 @@
+{
+	"profile": {
+		"firstName": "Test",
+		"lastName": "Test",
+		"email": "testrandom@mailinator.com",
+		"phone": "7023264108"
+	},
+	"billing":{
+		"payment": {
+			"cardNumber": "5555555555554444",
+			"cardHolder": "Ravi Kiran Ganji",
+			"cvv": "345",
+			"type": "Mastercard",
+			"expiry": "10/23"
+		},
+		"address": {
+			"street1": "2715 W P R",
+			"city": "LV",
+			"state": "NV",
+			"country": "US",
+			"postalCode": "89123"
+		}
+	}
+}

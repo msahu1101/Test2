@@ -1,0 +1,186 @@
+{
+    "data": [
+        {
+            "status": "ACTIVE",
+            "hasCards": true,
+            "emailAddress": "test@amadeus.com",
+            "phoneNumber": {
+                "countryCode": "52",
+                "number": "5718589464",
+                "areaCode": "55"
+            },
+            "source": "1",
+            "uniqueId": "1eb5228b-99fb-4b34-9faf-8a2bb61f121f",
+            "primaryRole": "NOT-AGENCY",
+            "shortName": "Amadeus",
+            "address": {
+                "stateCode": "PA-1",
+                "countryCode": "BR",
+                "lines": [
+                    "string"
+                ],
+                "postalCode": "06600",
+                "cityName": "Panama City"
+            },
+            "iataCodes": [
+                "1A"
+            ]
+        },
+        {
+            "status": "ACTIVE",
+            "hasCards": true,
+            "emailAddress": "test@amadeus.com",
+            "phoneNumber": {
+                "countryCode": "52",
+                "number": "5718589464",
+                "areaCode": "55"
+            },
+            "source": "1",
+            "uniqueId": "247a0adf-f408-46c6-a95b-304168fab806",
+            "primaryRole": "NOT-AGENCY",
+            "shortName": "Amadeus",
+            "address": {
+                "stateCode": "PA-1",
+                "countryCode": "BR",
+                "lines": [
+                    "string"
+                ],
+                "postalCode": "06600",
+                "cityName": "Panama City"
+            },
+            "iataCodes": [
+                "1A"
+            ]
+        },
+        {
+            "status": "ACTIVE",
+            "hasCards": true,
+            "emailAddress": "test@amadeus.com",
+            "phoneNumber": {
+                "countryCode": "52",
+                "number": "5718589464",
+                "areaCode": "55"
+            },
+            "source": "1",
+            "uniqueId": "259b1957-91a1-48b0-b2b1-2f290037d949",
+            "primaryRole": "NOT-AGENCY",
+            "shortName": "Amadeus",
+            "address": {
+                "stateCode": "PA-1",
+                "countryCode": "BR",
+                "lines": [
+                    "string"
+                ],
+                "postalCode": "06600",
+                "cityName": "Panama City"
+            },
+            "iataCodes": [
+                "1A"
+            ]
+        },
+        {
+            "status": "ACTIVE",
+            "hasCards": true,
+            "emailAddress": "test@amadeus.com",
+            "phoneNumber": {
+                "countryCode": "52",
+                "number": "5718589464",
+                "areaCode": "55"
+            },
+            "source": "1",
+            "uniqueId": "2aadfdb9-df0d-4862-a4ac-35df42142a7d",
+            "primaryRole": "NOT-AGENCY",
+            "shortName": "Amadeus",
+            "address": {
+                "stateCode": "PA-1",
+                "countryCode": "BR",
+                "lines": [
+                    "string"
+                ],
+                "postalCode": "06600",
+                "cityName": "Panama City"
+            },
+            "iataCodes": [
+                "1A"
+            ]
+        },
+        {
+            "status": "ACTIVE",
+            "hasCards": true,
+            "emailAddress": "test@amadeus.com",
+            "phoneNumber": {
+                "countryCode": "52",
+                "number": "5718589464",
+                "areaCode": "55"
+            },
+            "source": "1",
+            "uniqueId": "5d03946e-0a28-404d-93e2-5975eb5ba57f",
+            "primaryRole": "NOT-AGENCY",
+            "shortName": "Amadeus",
+            "address": {
+                "stateCode": "PA-1",
+                "countryCode": "BR",
+                "lines": [
+                    "string"
+                ],
+                "postalCode": "06600",
+                "cityName": "Panama City"
+            },
+            "iataCodes": [
+                "1A"
+            ]
+        },
+        {
+            "status": "ACTIVE",
+            "hasCards": true,
+            "emailAddress": "test@amadeus.com",
+            "phoneNumber": {
+                "countryCode": "52",
+                "number": "5718589464",
+                "areaCode": "55"
+            },
+            "source": "1",
+            "uniqueId": "5d3501ae-4503-4353-9956-99ddcaaae1e0",
+            "primaryRole": "NOT-AGENCY",
+            "shortName": "Amadeus",
+            "address": {
+                "stateCode": "PA-1",
+                "countryCode": "BR",
+                "lines": [
+                    "string"
+                ],
+                "postalCode": "06600",
+                "cityName": "Panama City"
+            },
+            "iataCodes": [
+                "1A"
+            ]
+        },
+        {
+            "status": "ACTIVE",
+            "hasCards": true,
+            "emailAddress": "test@amadeus.com",
+            "phoneNumber": {
+                "countryCode": "52",
+                "number": "5718589464",
+                "areaCode": "55"
+            },
+            "source": "1",
+            "uniqueId": "786f11c2-dfa3-447e-b712-9cb514747bdd",
+            "primaryRole": "NOT-AGENCY",
+            "shortName": "Amadeus",
+            "address": {
+                "stateCode": "PA-1",
+                "countryCode": "BR",
+                "lines": [
+                    "string"
+                ],
+                "postalCode": "06600",
+                "cityName": "Panama City"
+            },
+            "iataCodes": [
+                "1A"
+            ]
+        }
+    ]
+}

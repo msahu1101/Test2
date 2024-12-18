@@ -1,0 +1,1153 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"appName": {
+			"defaultValue": "rbs-uw-wa-d",
+			"type": "String"
+		},
+		"sharedServicesVnetId": {
+			"defaultValue": "/subscriptions/a07a1ed6-22e4-4781-b58e-aa1685bc93b2/resourceGroups/digengsharedservicesvnets-uw-rg-p/providers/Microsoft.Network/virtualNetworks/digengsharedservices-uw-vnet-p",
+			"type": "String"
+		}
+	},
+	"variables": {
+		
+	},
+	"resources": [
+		{
+			"type": "Microsoft.Web/sites/config",
+			"apiVersion": "2021-01-15",
+			"name": "[concat(parameters('appName'), '/web')]",
+			"location": "West US",
+			"properties": {
+				"ipSecurityRestrictions": [
+					{
+						"ipAddress": "69.162.0.0/23",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 112,
+						"name": "MGM ARIN",
+						"description": "69.162.0.0/23"
+					},
+					{
+						"ipAddress": "40.81.13.246/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 120,
+						"name": "IPs for Azure Pri PAN nic0",
+						"description": "40.81.13.246/32"
+					},
+					{
+						"ipAddress": "40.81.14.21/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 121,
+						"name": "IPs for Azure Pri PAN nic1",
+						"description": "40.81.14.21/32"
+					},
+					{
+						"ipAddress": "40.81.14.22/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 122,
+						"name": "IPs for Azure Sec PAN nic0",
+						"description": "40.81.14.22/32"
+					},
+					{
+						"ipAddress": "40.81.14.184/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 123,
+						"name": "IPs for Azure Sec PAN nic1",
+						"description": "40.81.14.184/32"
+					},
+					{
+						"vnetSubnetResourceId": "[concat(parameters('sharedServicesVnetId'), '/subnets/apimngt-uw-sn-p')]",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 110,
+						"name": "APIM-FunctionApp-Allow",
+						"description": "APIM to Function App communication"
+					},
+					{
+						"ipAddress": "35.237.211.44/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 200,
+						"name": "US East 1 Apigee IP Address"
+					},
+					{
+						"ipAddress": "35.190.186.218/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 201,
+						"name": "US East 2 Apigee IP Address"
+					},
+					{
+						"ipAddress": "35.233.217.232/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 202,
+						"name": "US west 1 Apigee IP Address"
+					},
+					{
+						"ipAddress": "34.83.84.50/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 203,
+						"name": "US west 2 Apigee IP Address"
+					},
+					{
+						"ipAddress": "13.52.159.171/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 300,
+						"name": "Cloud VPN-US West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "13.52.159.172/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 300,
+						"name": "Cloud VPN-US West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.76.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 300,
+						"name": "Cloud VPN-US West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "13.52.159.94/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 300,
+						"name": "Cloud VPN-US West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "13.52.158.5/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 300,
+						"name": "Cloud VPN-US West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.76.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 300,
+						"name": "Cloud VPN-US West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.112.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 301,
+						"name": "Cloud VPN-US Southeast",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.112.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 301,
+						"name": "Cloud VPN-US Southeast",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.92.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 302,
+						"name": "Cloud VPN-US South",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.92.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 302,
+						"name": "Cloud VPN-US South",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.64.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 303,
+						"name": "Cloud VPN-US East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "168.149.241.215/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 303,
+						"name": "Cloud VPN-US East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.64.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 303,
+						"name": "Cloud VPN-US East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.64.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 303,
+						"name": "Cloud VPN-US East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "168.149.241.213/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 303,
+						"name": "Cloud VPN-US East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "139.180.244.246/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 303,
+						"name": "Cloud VPN-US East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.84.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 304,
+						"name": "Cloud VPN-Canada East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "35.183.192.156/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 304,
+						"name": "Cloud VPN-Canada East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "35.183.193.155/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 304,
+						"name": "Cloud VPN-Canada East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.84.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 304,
+						"name": "Cloud VPN-Canada East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.98.200.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 305,
+						"name": "Cloud VPN-India South",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.98.200.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 305,
+						"name": "Cloud VPN-India South",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.98.204.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 305,
+						"name": "Cloud VPN-India West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "13.234.105.95/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 305,
+						"name": "Cloud VPN-India West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "13.234.104.5/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 305,
+						"name": "Cloud VPN-India West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.98.204.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 305,
+						"name": "Cloud VPN-India West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.80.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 306,
+						"name": "Cloud VPN-Canada Central",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.80.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 306,
+						"name": "Cloud VPN-Canada Central",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.80.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 307,
+						"name": "Cloud VPN-Canada West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.80.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 307,
+						"name": "Cloud VPN-Canada West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.72.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 308,
+						"name": "Cloud VPN-US Southwest",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.72.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 308,
+						"name": "Cloud VPN-US Southwest",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.68.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 309,
+						"name": "Cloud VPN-US Northeast",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.68.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 309,
+						"name": "Cloud VPN-US Northeast",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.88.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 310,
+						"name": "Cloud VPN-US Central",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "168.149.243.80/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 310,
+						"name": "Cloud VPN-US Central",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "139.180.246.157/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 310,
+						"name": "Cloud VPN-US Central",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.88.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 310,
+						"name": "Cloud VPN-US Central",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "168.149.243.141/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 310,
+						"name": "Cloud VPN-US Central",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.88.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 311,
+						"name": "Cloud VPN-US Northwest",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "168.149.245.132/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 311,
+						"name": "Cloud VPN-US Northwest",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "168.149.245.80/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 311,
+						"name": "Cloud VPN-US Northwest",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.88.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 311,
+						"name": "Cloud VPN-US Northwest",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "13.107.6.0/24",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps 1",
+						"description": "Azure DevOps"
+					},
+					{
+						"ipAddress": "13.107.9.0/24",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps 2",
+						"description": "Azure DevOps"
+					},
+					{
+						"ipAddress": "13.107.42.0/24",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps 3",
+						"description": "Azure DevOps"
+					},
+					{
+						"ipAddress": "13.107.43.0/24",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps 4",
+						"description": "Azure DevOps"
+					},
+					{
+						"ipAddress": "13.107.6.175/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 1",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.6.176/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 2",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.6.183/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 3",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.9.175/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 4",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.9.176/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 5",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.9.183/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 6",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.42.18/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 7",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.42.19/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 8",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.42.20/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 9",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.43.18/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 10",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.43.19/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 11",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.43.20/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 12",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "Any",
+						"action": "Deny",
+						"priority": 2147483647,
+						"name": "Deny all",
+						"description": "Deny all access"
+					}
+				],
+				"scmIpSecurityRestrictions": [],
+				"scmIpSecurityRestrictionsUseMain": false
+			}
+		},
+		{
+			"type": "Microsoft.Web/sites/slots/config",
+			"apiVersion": "2021-01-15",
+			"name": "[concat(parameters('appName'), '/staging/web')]",
+			"location": "West US",
+			"properties": {
+				"ipSecurityRestrictions": [
+					{
+						"ipAddress": "13.234.105.95/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 305,
+						"name": "Cloud VPN-India West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "13.234.104.5/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 305,
+						"name": "Cloud VPN-India West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.98.204.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 305,
+						"name": "Cloud VPN-India West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.80.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 306,
+						"name": "Cloud VPN-Canada Central",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.80.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 306,
+						"name": "Cloud VPN-Canada Central",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.80.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 307,
+						"name": "Cloud VPN-Canada West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.80.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 307,
+						"name": "Cloud VPN-Canada West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.72.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 308,
+						"name": "Cloud VPN-US Southwest",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.72.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 308,
+						"name": "Cloud VPN-US Southwest",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.68.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 309,
+						"name": "Cloud VPN-US Northeast",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.68.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 309,
+						"name": "Cloud VPN-US Northeast",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.88.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 310,
+						"name": "Cloud VPN-US Central",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "168.149.243.80/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 310,
+						"name": "Cloud VPN-US Central",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "139.180.246.157/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 310,
+						"name": "Cloud VPN-US Central",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.88.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 310,
+						"name": "Cloud VPN-US Central",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "168.149.243.141/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 310,
+						"name": "Cloud VPN-US Central",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.88.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 311,
+						"name": "Cloud VPN-US Northwest",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "168.149.245.132/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 311,
+						"name": "Cloud VPN-US Northwest",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "168.149.245.80/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 311,
+						"name": "Cloud VPN-US Northwest",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.88.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 311,
+						"name": "Cloud VPN-US Northwest",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "13.107.6.0/24",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps 1",
+						"description": "Azure DevOps"
+					},
+					{
+						"ipAddress": "13.107.9.0/24",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps 2",
+						"description": "Azure DevOps"
+					},
+					{
+						"ipAddress": "13.107.42.0/24",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps 3",
+						"description": "Azure DevOps"
+					},
+					{
+						"ipAddress": "13.107.43.0/24",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps 4",
+						"description": "Azure DevOps"
+					},
+					{
+						"ipAddress": "13.107.6.175/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 1",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.6.176/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 2",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.6.183/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 3",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.9.175/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 4",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.9.176/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 5",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.9.183/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 6",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.42.18/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 7",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.42.19/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 8",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.42.20/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 9",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.43.18/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 10",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.43.19/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 11",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "13.107.43.20/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 315,
+						"name": "DevOps Express Route 12",
+						"description": "Azure DevOps - Express Route"
+					},
+					{
+						"ipAddress": "69.162.0.0/23",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 112,
+						"name": "MGM ARIN",
+						"description": "69.162.0.0/23"
+					},
+					{
+						"ipAddress": "40.81.13.246/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 120,
+						"name": "IPs for Azure Pri PAN nic0",
+						"description": "40.81.13.246/32"
+					},
+					{
+						"ipAddress": "40.81.14.21/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 121,
+						"name": "IPs for Azure Pri PAN nic1",
+						"description": "40.81.14.21/32"
+					},
+					{
+						"ipAddress": "40.81.14.22/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 122,
+						"name": "IPs for Azure Sec PAN nic0",
+						"description": "40.81.14.22/32"
+					},
+					{
+						"ipAddress": "40.81.14.184/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 123,
+						"name": "IPs for Azure Sec PAN nic1",
+						"description": "40.81.14.184/32"
+					},
+					{
+						"vnetSubnetResourceId": "[concat(parameters('sharedServicesVnetId'), '/subnets/apimngt-uw-sn-p')]",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 110,
+						"name": "APIM-FunctionApp-Allow",
+						"description": "APIM to Function App communication"
+					},
+					{
+						"ipAddress": "13.52.159.171/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 300,
+						"name": "Cloud VPN-US West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "35.237.211.44/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 200,
+						"name": "US East 1 Apigee IP Address"
+					},
+					{
+						"ipAddress": "35.190.186.218/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 201,
+						"name": "US East 2 Apigee IP Address"
+					},
+					{
+						"ipAddress": "35.233.217.232/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 202,
+						"name": "US west 1 Apigee IP Address"
+					},
+					{
+						"ipAddress": "34.83.84.50/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 203,
+						"name": "US west 2 Apigee IP Address"
+					},
+					{
+						"ipAddress": "13.52.159.172/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 300,
+						"name": "Cloud VPN-US West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.76.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 300,
+						"name": "Cloud VPN-US West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "13.52.159.94/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 300,
+						"name": "Cloud VPN-US West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "13.52.158.5/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 300,
+						"name": "Cloud VPN-US West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.76.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 300,
+						"name": "Cloud VPN-US West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.112.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 301,
+						"name": "Cloud VPN-US Southeast",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.112.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 301,
+						"name": "Cloud VPN-US Southeast",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.92.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 302,
+						"name": "Cloud VPN-US South",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.92.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 302,
+						"name": "Cloud VPN-US South",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.64.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 303,
+						"name": "Cloud VPN-US East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "168.149.241.215/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 303,
+						"name": "Cloud VPN-US East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.64.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 303,
+						"name": "Cloud VPN-US East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.100.64.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 303,
+						"name": "Cloud VPN-US East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "168.149.241.213/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 303,
+						"name": "Cloud VPN-US East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "139.180.244.246/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 303,
+						"name": "Cloud VPN-US East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.84.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 304,
+						"name": "Cloud VPN-Canada East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "35.183.192.156/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 304,
+						"name": "Cloud VPN-Canada East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "35.183.193.155/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 304,
+						"name": "Cloud VPN-Canada East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.99.84.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 304,
+						"name": "Cloud VPN-Canada East",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.98.200.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 305,
+						"name": "Cloud VPN-India South",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.98.200.25/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 305,
+						"name": "Cloud VPN-India South",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "34.98.204.26/32",
+						"action": "Allow",
+						"tag": "Default",
+						"priority": 305,
+						"name": "Cloud VPN-India West",
+						"description": "MGM VPN Connections"
+					},
+					{
+						"ipAddress": "Any",
+						"action": "Deny",
+						"priority": 2147483647,
+						"name": "Deny all",
+						"description": "Deny all access"
+					}
+				],
+				"scmIpSecurityRestrictions": [],
+				"scmIpSecurityRestrictionsUseMain": false
+			}
+		}
+	]
+}

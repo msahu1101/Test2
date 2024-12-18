@@ -1,0 +1,47 @@
+[
+	{
+		"date": 1553583600000,
+		"comp": false,
+		"status": "AVAILABLE",
+		"closeToArrival": false,
+		"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+		"roomTypeId": "91dc7d4e-d531-4a73-8b1b-a92ed0d73b14",
+		"basePrice": 10089.99,
+		"discountedPrice": 8999.99100000001,
+		"baseMemberPrice": 9089.99,
+		"discountedMemberPrice": 7890.45,
+		"programId": "1795e3c6-8e06-4baf-b1df-c09b20fbe1de",
+		"memberProgramId": "def64735-d34f-4daa-afd3-bcab36a318f0",
+		"resortFee": 40
+	},
+	{
+		"date": 1553670000000,
+		"comp": false,
+		"status": "AVAILABLE",
+		"closeToArrival": false,
+		"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+		"roomTypeId": "91dc7d4e-d531-4a73-8b1b-a92ed0d73b14",
+		"basePrice": 10089.99,
+		"discountedPrice": 7999.99100000001,
+		"baseMemberPrice": 9089.99,
+		"discountedMemberPrice": 7890.45,
+		"programId": "1795e3c6-8e06-4baf-b1df-c09b20fbe1de",
+		"memberProgramId": "def64735-d34f-4daa-afd3-bcab36a318f0",
+		"resortFee": 40
+	},
+	{
+		"date": 1553756400000,
+		"comp": false,
+		"status": "AVAILABLE",
+		"closeToArrival": false,
+		"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+		"roomTypeId": "91dc7d4e-d531-4a73-8b1b-a92ed0d73b14",
+		"basePrice": 10089.99,
+		"discountedPrice": 6999.99100000001,
+		"baseMemberPrice": 9089.99,
+		"discountedMemberPrice": 6999.99100000001,
+		"programId": "1795e3c6-8e06-4baf-b1df-c09b20fbe1de",
+		"memberProgramId": "def64735-d34f-4daa-afd3-bcab36a318f0",
+		"resortFee": 40
+	}
+]

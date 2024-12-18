@@ -1,0 +1,261 @@
+{
+  "customer": {
+    "identity": {
+      "corporateCustomerId": "122164586",
+      "mlifeNo": "92010498",
+      "mlifeTier": "Pearl"
+    },
+    "customerValues": [
+      {
+        "property": "020",
+        "gsePropertyIds": [],
+        "value": {
+          "customerGrade": {
+            "powerRank": 11,
+            "segment": 0,
+            "dominantPlay": "Table"
+          }
+        }
+      },
+      {
+        "property": "005",
+        "gsePropertyIds": [
+          "1f3ed672-3f8f-44d8-9215-81da3c845d83"
+        ],
+        "value": {
+          "customerGrade": {
+            "powerRank": 12,
+            "segment": 0,
+            "dominantPlay": "Table"
+          }
+        }
+      },
+      {
+        "property": "025",
+        "gsePropertyIds": [],
+        "value": {
+          "customerGrade": {
+            "powerRank": 11,
+            "segment": 0,
+            "dominantPlay": "Table"
+          }
+        }
+      },
+      {
+        "property": "018",
+        "gsePropertyIds": [],
+        "value": {
+          "customerGrade": {
+            "powerRank": 12,
+            "segment": 0,
+            "dominantPlay": "Table"
+          }
+        }
+      },
+      {
+        "property": "014",
+        "gsePropertyIds": [],
+        "value": {
+          "customerGrade": {
+            "powerRank": 10,
+            "segment": 0,
+            "dominantPlay": "Table"
+          }
+        }
+      },
+      {
+        "property": "008",
+        "gsePropertyIds": [],
+        "value": {
+          "customerGrade": {
+            "powerRank": 12,
+            "segment": 0,
+            "dominantPlay": "Table"
+          }
+        }
+      },
+      {
+        "property": "019",
+        "gsePropertyIds": [],
+        "value": {
+          "customerGrade": {
+            "powerRank": 13,
+            "segment": 0,
+            "dominantPlay": "Table"
+          }
+        }
+      },
+      {
+        "property": "306",
+        "gsePropertyIds": [
+          "40b61feb-750a-45df-ae68-e23e6272b16b"
+        ],
+        "value": {
+          "customerGrade": {
+            "powerRank": 8,
+            "segment": 0,
+            "dominantPlay": "Table"
+          }
+        }
+      },
+      {
+        "property": "016",
+        "gsePropertyIds": [
+          "4a65a92a-962b-433e-841c-37e18dc5d68d"
+        ],
+        "value": {
+          "customerGrade": {
+            "powerRank": 10,
+            "segment": 0,
+            "dominantPlay": "Table"
+          }
+        }
+      },
+      {
+        "property": "304",
+        "gsePropertyIds": [
+          "773000cc-468a-4d86-a38f-7ae78ecfa6aa"
+        ],
+        "value": {
+          "customerGrade": {
+            "powerRank": 10,
+            "segment": 0,
+            "dominantPlay": "Table"
+          }
+        }
+      },
+      {
+        "property": "307",
+        "gsePropertyIds": [
+          "0990fdce-7fc8-41b1-b8b6-9a25dce3db55"
+        ],
+        "value": {
+          "customerGrade": {
+            "powerRank": 11,
+            "segment": 0,
+            "dominantPlay": "Table"
+          }
+        }
+      },
+      {
+        "property": "308",
+        "gsePropertyIds": [],
+        "value": {
+          "customerGrade": {
+            "powerRank": 8,
+            "segment": 0,
+            "dominantPlay": "Table"
+          }
+        }
+      },
+      {
+        "property": "180",
+        "gsePropertyIds": [
+          "13b178b0-8beb-43d5-af25-1738b7267e63"
+        ],
+        "value": {
+          "customerGrade": {
+            "powerRank": 10,
+            "segment": 0,
+            "dominantPlay": "Table"
+          }
+        }
+      },
+      {
+        "property": "190",
+        "gsePropertyIds": [
+          "44e610ab-c209-4232-8bb4-51f7b9b13a75"
+        ],
+        "value": {
+          "customerGrade": {
+            "powerRank": 0,
+            "segment": 31,
+            "dominantPlay": "Slots"
+          }
+        }
+      },
+      {
+        "property": "938",
+        "gsePropertyIds": [
+          "6c5cff3f-f01a-4f9b-87ab-8395ae8108db"
+        ],
+        "value": {
+          "customerGrade": {
+            "powerRank": 0,
+            "segment": 31,
+            "dominantPlay": "Slots"
+          }
+        }
+      },
+      {
+        "property": "021",
+        "gsePropertyIds": [
+          "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad"
+        ],
+        "value": {
+          "customerGrade": {
+            "powerRank": 0,
+            "segment": 31,
+            "dominantPlay": "Slots"
+          }
+        }
+      },
+      {
+        "property": "290",
+        "gsePropertyIds": [
+          "bee81f88-286d-43dd-91b5-3917d9d62a68",
+          "2159252c-60d3-47db-bbae-b1db6bb15072"
+        ],
+        "value": {
+          "customerGrade": {
+            "powerRank": 0,
+            "segment": 31,
+            "dominantPlay": "Slots"
+          }
+        }
+      },
+      {
+        "property": "001",
+        "gsePropertyIds": [
+          "66964e2b-2550-4476-84c3-1a4c0c5c067f"
+        ],
+        "value": {
+          "customerGrade": {
+            "powerRank": 0,
+            "segment": 31,
+            "dominantPlay": "Slots"
+          }
+        }
+      },
+      {
+        "property": "285",
+        "gsePropertyIds": [
+          "f8d6a944-7816-412f-a39a-9a63aad26833"
+        ],
+        "value": {
+          "customerGrade": {
+            "powerRank": 0,
+            "segment": 31,
+            "dominantPlay": "Slots"
+          }
+        }
+      },
+      {
+        "property": "275",
+        "gsePropertyIds": [
+          "e0f70eb3-7e27-4c33-8bcd-f30bf3b1103a",
+          "8bf670c2-3e89-412b-9372-6c87a215e442"
+        ],
+        "value": {
+          "customerGrade": {
+            "powerRank": 0,
+            "segment": 31,
+            "dominantPlay": "Slots"
+          }
+        }
+      }
+    ]
+  },
+  "customerGradeByPropertyMap": {},
+  "rankByPropertyIdMap": {}
+}

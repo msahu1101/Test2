@@ -1,0 +1,212 @@
+{
+	"customerId": 923600551937,
+	"numRooms": 1,
+	"bookDate": "2021-05-03",
+	"checkInDate": "2021-06-17",
+	"checkOutDate": "2021-06-18",
+	"numAdults": 2,
+	"billingType": "CustomerCreditCard",
+	"state": "Booked",
+	"postingFlow": "ModifyProfile",
+	"postingState": "Success",
+	"postingStartedAt": 1620671380360,
+	"postingEndedAt": 0,
+	"amountDue": 0.0,
+	"createdAt": 1620054034223,
+	"updatedAt": 1620671383734,
+	"syncFromOperaAt": 0,
+	"nrgStatus": false,
+	"id": "1620054032",
+	"itineraryId": "7857808385",
+	"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+	"roomTypeId": "23f5bef8-63ea-4ba9-a290-13b5a3056595",
+	"guaranteeCode": "CC",
+	"profile": {
+		"id": 923600551937,
+		"mlifeNo": 79950292,
+		"modifiable": false,
+		"createdAt": 0,
+		"updatedAt": 0,
+		"refreshedAt": 0,
+		"stale": false,
+		"externalSyncAt": 0,
+		"caslOptin": false,
+		"operaId": "815851772",
+		"firstName": "Lakshmi",
+		"lastName": "T",
+		"addresses": [
+			{
+				"type": "Home",
+				"preferred": false,
+				"street1": "234 W Main St",
+				"street2": "Unit 415",
+				"city": "Las Vegas",
+				"state": "NV",
+				"country": "US",
+				"postalCode": "12345"
+			}
+		]
+	},
+	"bookings": [
+		{
+			"date": "2021-06-17",
+			"basePrice": 10024.99,
+			"customerPrice": 5513.74,
+			"price": 5513.74,
+			"programIdIsRateTable": false,
+			"overridePrice": -1.0,
+			"overrideProgramIdIsRateTable": false,
+			"resortFeeIsSpecified": false,
+			"resortFee": 0.0,
+			"programId": "3664901f-ca40-4a68-a1d9-41d2e3fe8877",
+			"pricingRuleId": "861f212f-f2e8-4408-bce7-7b41dfe0fbeb",
+			"isComp": false
+		}
+	],
+	"markets": [
+		{
+			"date": "2021-06-17",
+			"marketCode": "TFIT",
+			"sourceCode": "TFITIC"
+		}
+	],
+	"chargesAndTaxesCalc": {
+		"charges": [
+			{
+				"date": "2021-06-17",
+				"amount": 5550.74,
+				"itemized": [
+					{
+						"itemType": "RoomCharge",
+						"amount": 5513.74,
+						"item": "Room Charge"
+					},
+					{
+						"itemType": "ExtraGuestCharge",
+						"amount": 40.0,
+						"item": "Extra Guest Charge"
+					},
+					{
+						"itemType": "ResortFee",
+						"amount": 37.0,
+						"item": "Resort Fee"
+					}
+				]
+			}
+		],
+		"taxesAndFees": [
+			{
+				"date": "2021-06-17",
+				"amount": 742.69,
+				"itemized": [
+					{
+						"itemType": "RoomChargeTax",
+						"amount": 737.74,
+						"item": "Room Tax"
+					},
+					{
+						"itemType": "ExtraGuestChargeTax",
+						"amount": 5.35,
+						"item": "Extra Guest Tax"
+					},
+					{
+						"itemType": "ResortFeeTax",
+						"amount": 4.95,
+						"item": "Resort Fee Tax"
+					}
+				]
+			}
+		]
+	},
+	"depositPolicyCalc": {
+		"depositRequired": true,
+		"creditCardRequired": true
+	},
+	"depositCalc": {
+		"dueDate": "2021-05-03",
+		"amountPolicy": "Nights",
+		"amount": 6251.48,
+		"forfeitDate": "2021-06-14",
+		"forfeitAmount": 6251.48,
+		"overrideAmount": 0.0,
+		"depositRuleCode": "1NT",
+		"cancellationRuleCode": "72H",
+		"itemized": [
+			{
+				"itemType": "RoomCharge",
+				"amount": 5513.74,
+				"item": "Room Charge"
+			},
+			{
+				"itemType": "RoomChargeTax",
+				"amount": 737.74,
+				"item": "Room Tax"
+			}
+		]
+	},
+	"channelId": "5525aed4-cb83-4e81-b13e-6f1ae4c5e28c",
+	"origin": "ice",
+	"source": "ice",
+	"specialRequests": [],
+	"creditCardCharges": [
+		{
+			"amount": 0.0,
+			"expiry": "2022-10-01",
+			"holder": "John doe",
+			"number": "LXM8dmG5n4Q/vcxr2RI3INxrHJkyRbwncs7AhDGc+YC/uXGHoatACqkVWNTUuRKoSBReazxuYfCpsGDeO0ydsA==",
+			"decryptedNumber": "5555555555554444",
+			"maskedNumber": "XXXXXXXXXXXX4444",
+			"type": "Mastercard",
+			"holderProfile": {
+				"firstName": "John",
+				"lastName": "Doe",
+				"address": {
+					"type": "Home",
+					"preferred": true,
+					"street1": "234 W Main St",
+					"street2": "Unit 415",
+					"city": "Las Vegas",
+					"state": "NV",
+					"country": "US",
+					"postalCode": "12345"
+				}
+			},
+			"fxAmount": 0.0,
+			"fxExchangeRate": 0.0
+		}
+	],
+	"confirmationNumber": "M03D68C81",
+	"payments": [
+		{
+			"reservationInstance": 1,
+			"chargeAmount": 0.0,
+			"chargeCardExpiry": "2022-10-01",
+			"status": "DCCChecked",
+			"chargeCardHolder": "John doe",
+			"chargeCurrencyCode": "USD",
+			"chargeCardType": "Mastercard",
+			"chargeCardMaskedNumber": "XXXXXXXXXXXX4444",
+			"chargeCardNumber": "LXM8dmG5n4Q/vcxr2RI3INxrHJkyRbwncs7AhDGc+YC/uXGHoatACqkVWNTUuRKoSBReazxuYfCpsGDeO0ydsA==",
+			"fxChecked": true,
+			"fxEligible": false,
+			"fxTransDate": "2021-05-03",
+			"fxAmount": 0.0,
+			"fxRate": 0.0,
+			"fxSettleAmount": 0.0,
+			"fxCurrencyCode": "USD",
+			"fxAcceptMessage": "Approved",
+			"isExternal": false,
+			"isDeposit": false
+		}
+	],
+	"customerRank": 0,
+	"customerSegment": 0,
+	"operaState": "RESERVED",
+	"operaConfirmationNumber": "798161613",
+	"numChildren": 1,
+	"isGroupCode": false,
+	"perpetualPricing": false,
+	"ignoreChannelMargins": false,
+	"excludeNonOffer": false,
+	"pendingReservation": false
+}

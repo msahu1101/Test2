@@ -1,0 +1,920 @@
+{
+	"info": {
+		"_postman_id": "a64daa69-b420-4355-8949-5dee307e12c8",
+		"name": "RBS-V3.0-SanityTests Copy",
+		"description": "This collection will contain V2 services of Room Booking Services APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Resorts price and availability",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-mgm-source",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "x-mgm-channel",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"type": "text",
+						"value": "rbs-sanity-{{$timestamp}}"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/booking/room/v2/availability/resorts?checkInDate={{todayPlus45}}&checkOutDate={{todayPlus46}}&numAdults=2",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"room",
+						"v2",
+						"availability",
+						"resorts"
+					],
+					"query": [
+						{
+							"key": "checkInDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "checkOutDate",
+							"value": "{{todayPlus46}}"
+						},
+						{
+							"key": "numAdults",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Availability Trip V3",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Single Availability with Checkin Date, Checkout Date, Property Id and Number of Adults\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"  pm.expect(null).not.eq(jsonData.ratePlans[0]);\r",
+							"  if(jsonData.ratePlans.length){\r",
+							"      var ratePlanIndex =0;\r",
+							"      \r",
+							"    var itemizedList = jsonData.ratePlans[ratePlanIndex].rooms[0].price.itemized\r",
+							"  pm.expect(0).not.equal(itemizedList.length);\r",
+							"  //save booking object\r",
+							"  var bookings = [];\r",
+							"    for (var i = 0; i < itemizedList.length; i++) {\r",
+							"        var itemized = itemizedList[i];\r",
+							"        var booking = {};\r",
+							"        booking.date = itemized.date;\r",
+							"        booking.price = itemized.basePrice;\r",
+							"        booking.programId =itemized.programId; \r",
+							"        booking.overridePrice= -1;\r",
+							"        bookings[i] = booking;\r",
+							"    }\r",
+							"   \r",
+							"   postman.setEnvironmentVariable(\"useCaseRoomTypeId\",jsonData.ratePlans[ratePlanIndex].rooms[0].roomTypeId);\r",
+							"   postman.setEnvironmentVariable(\"useCaseProgramId\",jsonData.ratePlans[ratePlanIndex].programId);\r",
+							"     postman.setEnvironmentVariable(\"useCaseBookings\",JSON.stringify(bookings)); \r",
+							"  }else{\r",
+							"       pm.expect(1).not.equal(jsonData.ratePlans.length);\r",
+							"  }\r",
+							" \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-mgm-source",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "x-mgm-channel",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"value": "rbs-sanity-{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/booking/room/v3/availability/trip?propertyId={{propertyId}}&checkInDate={{todayPlus45}}&checkOutDate={{todayPlus46}}&numAdults=2",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"room",
+						"v3",
+						"availability",
+						"trip"
+					],
+					"query": [
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "programId",
+							"value": "{{programId}}",
+							"disabled": true
+						},
+						{
+							"key": "checkInDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "checkOutDate",
+							"value": "{{todayPlus46}}"
+						},
+						{
+							"key": "numAdults",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Charge before create",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Charges Before Reservation with Profile, Booking, TripDetails, Billing and AgentInfo\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"    var jsonData = JSON.parse(pm.response.stream);\r",
+							"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"    pm.expect(null).not.eq(jsonData);\r",
+							"    pm.expect(0).not.equal(jsonData.length);\r",
+							"    //save response to  reservation Request in env for create reservation\r",
+							"     postman.setEnvironmentVariable(\"reservationCreateReq\",JSON.stringify(jsonData));\r",
+							"\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-mgm-source",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "x-mgm-channel",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"value": "rbs-sanity-{{$timestamp}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"propertyId\": \"{{propertyId}}\",\r\n    \"roomTypeId\": \"{{useCaseRoomTypeId}}\",\r\n    \"programId\": \"{{useCaseProgramId}}\",\r\n    \"itineraryId\": \"9323708418\",\r\n    \"customerId\": \"846558855426\",\r\n    \"guaranteeCode\": null,\r\n    \"tripDetails\": {\r\n        \"checkInDate\": \"{{todayPlus45}}\",\r\n        \"checkOutDate\": \"{{todayPlus46}}\",\r\n        \"numAdults\": 1,\r\n        \"numChildren\": 0,\r\n        \"numRooms\": 1\r\n    },\r\n    \"bookings\": {{useCaseBookings}},\r\n    \"profile\": {\r\n        \"id\": 846558855426,\r\n        \"operaId\": null,\r\n        \"firstName\": \"Uttam\",\r\n        \"lastName\": \"Ghorai\",\r\n        \"phoneNumbers\": null,\r\n        \"emailAddress1\": null,\r\n        \"emailAddress2\": null,\r\n        \"dateOfBirth\": null,\r\n        \"hgpNo\": null,\r\n        \"swrrNo\": null,\r\n        \"addresses\": [\r\n            {\r\n                \"preferred\": false,\r\n                \"street1\": \"100 St\",\r\n                \"street2\": null,\r\n                \"city\": \"Las Vegas\",\r\n                \"state\": \"NV\",\r\n                \"country\": \"US\",\r\n                \"postalCode\": \"89102\",\r\n                \"type\": \"Home\"\r\n            }\r\n        ],\r\n        \"title\": null,\r\n        \"mlifeNo\": 0\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/booking/room/v2/reservation/charges",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"room",
+						"v2",
+						"reservation",
+						"charges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Reservation",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"    //Create reservation Request and save in env\r",
+							"    // get response from charges before create saved into env\r",
+							"     jsonData = JSON.parse(postman.getEnvironmentVariable(\"reservationCreateReq\"));\r",
+							"    //set itinerary id\r",
+							"    jsonData.itineraryId=\"1234\";\r",
+							"    //set billing\r",
+							"    billing = JSON.parse(postman.getEnvironmentVariable(\"SingleVISACard\"));\r",
+							"    billing[0].payment.amount=jsonData.depositDetails.amount;\r",
+							"    jsonData.billing = [];\r",
+							"    //set profile\r",
+							"    jsonData.customerId = postman.getEnvironmentVariable(\"customerId\")\r",
+							"    jsonData.profile = JSON.parse(postman.getEnvironmentVariable(\"profile\"));\r",
+							"    //set depositPolicy\r",
+							"    depositPolicy = JSON.parse(postman.getEnvironmentVariable(\"depositPolicy\"));\r",
+							"    jsonData.depositPolicy = depositPolicy;\r",
+							"    // again save to same variable\r",
+							"    postman.setEnvironmentVariable(\"reservationCreateReq\",JSON.stringify(jsonData));"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Create Transient Reservation with Profile, Booking, TripDetails, Billing \", function () {\r",
+							"    pm.globals.set(\"variable_key\", \"variable_value\");  \r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"    var jsonData = JSON.parse(pm.response.stream);\r",
+							"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"    pm.expect(null).not.eq(jsonData);\r",
+							"    pm.expect(0).not.equal(jsonData.length);\r",
+							"    pm.expect(null).not.eq(jsonData.booked);    \r",
+							"    var confirmationNumber = jsonData.roomReservation.confirmationNumber;\r",
+							"    var itineraryId = jsonData.roomReservation.itineraryId;\r",
+							"    var reservationId = jsonData.roomReservation.id;\r",
+							"    pm.expect(confirmationNumber).not.eq(null);\r",
+							"    pm.expect(itineraryId).not.eq(null);\r",
+							"    pm.expect(reservationId).not.eq(null);\r",
+							"    postman.setEnvironmentVariable('useCaseConfirmationNumber',  confirmationNumber);\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-mgm-source",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "x-mgm-channel",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"value": "rbs-sanity-{{$timestamp}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"roomReservation\":{{reservationCreateReq}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/booking/room/v2/reservation",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"room",
+						"v2",
+						"reservation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Reservation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Find Reservation \", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-mgm-source",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "x-mgm-channel",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"value": "rbs-sanity-{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/booking/room/v2/reservation?confirmationNumber={{useCaseConfirmationNumber}}&cacheOnly=false",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"room",
+						"v2",
+						"reservation"
+					],
+					"query": [
+						{
+							"key": "confirmationNumber",
+							"value": "{{useCaseConfirmationNumber}}"
+						},
+						{
+							"key": "cacheOnly",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel room reservation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Cancel Reservation \", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-mgm-source",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "x-mgm-channel",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"value": "rbs-sanity-{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"confirmationNumber\": \"{{useCaseConfirmationNumber}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/booking/room/v3/reservation/cancel",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"room",
+						"v3",
+						"reservation",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calendar-Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Calendar Price with Start Date, End Date, Property Id, Number of Adults and Number of Rooms\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"    var jsonData = JSON.parse(pm.response.stream);\r",
+							"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"    pm.expect(null).not.eq(jsonData);\r",
+							"    pm.expect(0).not.equal(jsonData.length);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-mgm-source",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "x-mgm-channel",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+						"key": "Authorization",
+						"value": "{{WEB_JWT_Token}}",
+						"type": "text"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"value": "rbs-v2-integration-{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/booking/room/v2/availability/calendar?startDate={{todayPlus30}}&endDate={{todayPlus45}}&propertyId={{propertyId}}&numAdults=2&numRooms=2 ",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"room",
+						"v2",
+						"availability",
+						"calendar"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "{{todayPlus30}}"
+						},
+						{
+							"key": "endDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "numAdults",
+							"value": "2"
+						},
+						{
+							"key": "numRooms",
+							"value": "2 "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Offer-Validate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Offer validate with ProgramId, PropertyId and Mlife Number\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-mgm-source",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "x-mgm-channel",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{JWT_Token}}"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"type": "text",
+						"value": "rbs-v2-integration-{{$timestamp}}"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/booking/room/v2/offer/validate?propertyId=dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad&programId=RPCD-v-LDMLB-d-PROP-v-MV021&mlifeNumber=80662215",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"room",
+						"v2",
+						"offer",
+						"validate"
+					],
+					"query": [
+						{
+							"key": "propertyId",
+							"value": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad"
+						},
+						{
+							"key": "programId",
+							"value": "RPCD-v-LDMLB-d-PROP-v-MV021"
+						},
+						{
+							"key": "mlifeNumber",
+							"value": "80662215"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CustomerOffer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Transient Customer Offer with Property Id\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  pm.expect(0).not.equal(jsonData.length);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-mgm-source",
+						"type": "text",
+						"value": "{{source}}"
+					},
+					{
+						"key": "x-mgm-channel",
+						"type": "text",
+						"value": "{{channel}}"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{JWT_Token}}"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"type": "text",
+						"value": "rbs-v2-integration-{{$timestamp}}"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/booking/room/v3/customer/offers?customerId=1024321257473",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"room",
+						"v3",
+						"customer",
+						"offers"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1024321257473"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{NYNY_PropertyId}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Component-Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Component with Checkin Date, Checkout Date, Property Id and Room Id\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+							"\r",
+							"  var jsonData = JSON.parse(pm.response.stream);\r",
+							"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+							"  pm.expect(null).not.eq(jsonData);\r",
+							"  //pm.expect(0).not.equal(jsonData.length);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-mgm-source",
+						"value": "{{source}}",
+						"type": "text"
+					},
+					{
+						"key": "x-mgm-channel",
+						"value": "{{channel}}",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{ICE_JWT_Token}}",
+						"type": "text"
+					},
+					{
+						"key": "x-mgm-transaction-id",
+						"value": "rbs-v2-integration-{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{env}}/booking/room/v2/availability/components?roomTypeId=ROOMCD-v-DPRK-d-PROP-v-MV021&propertyId={{propertyId}}&checkInDate={{todayPlus45}}&checkOutDate={{todayPlus46}}",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"booking",
+						"room",
+						"v2",
+						"availability",
+						"components"
+					],
+					"query": [
+						{
+							"key": "roomTypeId",
+							"value": "ROOMCD-v-DPRK-d-PROP-v-MV021"
+						},
+						{
+							"key": "propertyId",
+							"value": "{{propertyId}}"
+						},
+						{
+							"key": "checkInDate",
+							"value": "{{todayPlus45}}"
+						},
+						{
+							"key": "checkOutDate",
+							"value": "{{todayPlus46}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{Authorization}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const moment = require('moment')",
+					"// setting global variables",
+					"pm.globals.set(\"propertyId\", \"66964e2b-2550-4476-84c3-1a4c0c5c067f\");",
+					"pm.globals.set(\"partialProgramId\", \"5467d989-24f5-4188-a177-daa715763c59\")",
+					"// dates",
+					"pm.globals.set(\"todayMinus3\", moment().subtract(3, 'day').format(\"YYYY-MM-DD\")) //pastDate",
+					"pm.globals.set(\"today\", moment().format(\"YYYY-MM-DD\")) //presentDate",
+					"pm.globals.set(\"todayPlus2\", moment().add(2, 'day').format(\"YYYY-MM-DD\")) //futureDate",
+					"pm.globals.set(\"todayPlus5\", moment().add(5, 'day').format(\"YYYY-MM-DD\"))",
+					"pm.globals.set(\"todayPlus30\", moment().add(30, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus30",
+					"pm.globals.set(\"todayPlus45\", moment().add(45, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus45",
+					"pm.globals.set(\"todayPlus46\", moment().add(46, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus46",
+					"pm.globals.set(\"todayPlus47\", moment().add(47, 'day').format(\"YYYY-MM-DD\"))//futureDatePlus47",
+					"pm.globals.set(\"todayPlus48\", moment().add(48, 'day').format(\"YYYY-MM-DD\"))",
+					"pm.globals.set(\"numAdults\", 2)",
+					"pm.globals.set(\"numChildren\", 1)",
+					"",
+					"let getAccessTokenRequest = {",
+					"  ",
+					"  method: 'POST',",
+					"  url: pm.variables.get(\"idmsUrl\"),",
+					"  header: [",
+					"      {key: 'Content-Type', value: 'application/x-www-form-urlencoded'}      ",
+					"      ],",
+					"      ",
+					"  body: {",
+					"     mode: 'urlencoded',",
+					"     urlencoded: [",
+					"          {key: 'grant_type', value: pm.variables.get(\"grantType\")},",
+					"          {key: 'client_id', value: pm.variables.get(\"clientId\")},",
+					"          {key: 'client_secret', value: pm.variables.get(\"clientSecret\")},",
+					"          {key: 'scope', value: pm.variables.get(\"scope\")}",
+					"         ],   ",
+					"      ",
+					"  },",
+					"      ",
+					"  };",
+					"",
+					"pm.sendRequest(getAccessTokenRequest, function (err, response) {",
+					"    console.log(response.json());",
+					"    ",
+					"    let jsonResponse = response.json(),",
+					"        newAuthHeaderToken = jsonResponse.access_token;",
+					"        ",
+					"    console.log({ err, jsonResponse, newAuthHeaderToken });",
+					"    ",
+					"    pm.environment.set(\"Authorization\", newAuthHeaderToken);   ",
+					"    ",
+					"    console.log('Authorization token..['+ pm.environment.get(\"Authorization\") +']');",
+					"    ",
+					"});",
+					"",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 sp2 (x64) (http://www.altova.com) by ehoarau (AMADEUS) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://xml.amadeus.com/ahp/rates" xmlns:altova="http://www.altova.com/xml-schema-extensions" targetNamespace="http://xml.amadeus.com/ahp/rates" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="AMA_HotelRateAndTaxCommonTypesOTA2011A.xsd"/>
+	<xs:include schemaLocation="AMA_ProfileTypes.xsd"/>
+	<xs:element name="AMA_HotelGroupSearchRQ">
+		<xs:annotation>
+			<xs:documentation>request to search list of groups or retrieve a specific group.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="POS" type="POS_Type" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">Point of sale object. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ExternalChannelProfile" type="AMA_ProfileType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>ExternalChannelProfile defines channel data related to the originating entity.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Criteria">
+					<xs:annotation>
+						<xs:documentation>Group can be search within giving property.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Scope">
+								<xs:complexType>
+									<xs:attribute name="ChainCode" type="ChainCodeType" use="required">
+										<xs:annotation>
+											<xs:documentation>Unique Code of a Chain/Corporation</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="PropertyCode" type="PropertyCodeType" use="required">
+										<xs:annotation>
+											<xs:documentation>Unique code assigned to a particular hotel.  Unique at brand level.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="GroupExternalID" use="optional">
+										<xs:annotation>
+											<xs:documentation>To be use only with  Retrieve. External Group ID may be used for identify the group along with Property and Group Code.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:long">
+												<xs:minInclusive value="0"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="PreviousFirstArrivalDate" type="xs:date" use="optional">
+										<xs:annotation>
+											<xs:documentation>Set and used by PMS to identify group with Groups Code and Property Code. On creation equal to First Arrival Date, on Modification equal to Previous First Arrival Date.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="GroupInternalID" type="RatePlanCodeType">
+										<xs:annotation>
+											<xs:documentation>To be use only with  Retrieve. Internal Group ID create by the system and used to identify the group within AHP. </xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Content" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Additional filters to make the search more specific.  </xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="GroupCode" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Can be use in search and retrieve. For Retrieve must use "FullMatch"</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="MatchCriteria" use="required">
+															<xs:annotation>
+																<xs:documentation>Matching criteria. supporting: StartsWith, FullMatch.</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="StartsWith"/>
+																	<xs:enumeration value="Contains"/>
+																	<xs:enumeration value="FullMatch"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="StayOverPeriod" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Returns all groups that the defined period overlap with their Inventory week.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="StartDate" type="xs:date" use="required"/>
+												<xs:attribute name="EndDate" type="xs:date" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="CorporateID" type="CorporateID_Type" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>To be use with Search only. Narrow the search for Group associated with specific Corporate ID.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="GroupName" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>To be use with search only. Include Group name </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="MatchCriteria" use="required">
+															<xs:annotation>
+																<xs:documentation>Matching criteria. supporting: Contains, StartsWith, FullMatch.</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="StartsWith"/>
+																	<xs:enumeration value="Contains"/>
+																	<xs:enumeration value="FullMatch"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Alert" type="xs:boolean" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Specify if Inventory Alerts are included (true) or excluded (false) from the search. Applicable only in "Detail" SearchMode. Default or undefined should be false.</xs:documentation>
+												<xs:appinfo>
+													<altova:exampleValues>
+														<altova:example value="true"/>
+														<altova:example value="false"/>
+													</altova:exampleValues>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="DailySummaryGroupData" type="xs:boolean" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>If set, the search response include room's daily summary information (Rates, Allocation and Currency)</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="GroupReferenceData" type="xs:boolean" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>If set, the search response include Group's Reference data that used in the group creation process but is not part of the group.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="MarketSegmentation" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>To be use with search only. Include Market Segmentation</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="MatchCriteria" use="required">
+															<xs:annotation>
+																<xs:documentation>Matching criteria. supporting: Contains, StartsWith, FullMatch.</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="StartsWith"/>
+																	<xs:enumeration value="Contains"/>
+																	<xs:enumeration value="FullMatch"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="IndustryType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>To be use with search only. Include Industry type </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="MatchCriteria" use="required">
+															<xs:annotation>
+																<xs:documentation>Matching criteria. supporting: Contains, StartsWith, FullMatch.</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="StartsWith"/>
+																	<xs:enumeration value="Contains"/>
+																	<xs:enumeration value="FullMatch"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attributeGroup ref="SearchCriteriaGroup"/>
+						<xs:attributeGroup ref="SearchSortingGroup"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attributeGroup ref="OTA_PayloadStdAttributes"/>
+			<xs:attribute name="SearchMode" use="required">
+				<xs:annotation>
+					<xs:documentation>This determines the type of search and the amount of information returned in the response</xs:documentation>
+					<xs:appinfo>
+						<altova:exampleValues>
+							<altova:example value="Summary"/>
+							<altova:example value="Detail"/>
+						</altova:exampleValues>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

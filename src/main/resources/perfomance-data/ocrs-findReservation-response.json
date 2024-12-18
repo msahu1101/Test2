@@ -1,0 +1,117 @@
+[
+    {
+        "hotelReference": {
+            "hotelCode": "285"
+        },
+        "reservationID": "907243304",
+        "resGuests": {
+            "resGuest": [
+                {
+                    "profileRPHs": "0",
+                    "reservationID": "907243304",
+                    "reservationReferences": {
+                        "reservationReference": [
+                            {
+                                "type": "AURORA",
+                                "referenceNumber": "M07728302"
+                            },
+                            {
+                                "type": "GUESTID",
+                                "referenceNumber": "M07728302"
+                            },
+                            {
+                                "type": "PMSID",
+                                "referenceNumber": "907243304"
+                            },
+                            {
+                                "type": "TIBCOBUS",
+                                "referenceNumber": "M07728302"
+                            }
+                        ]
+                    },
+                    "arrivalTime": 1687910400000,
+                    "departureTime": 1687996800000
+                }
+            ]
+        },
+        "resProfiles": {
+            "resProfile": [
+                {
+                    "profile": {
+                        "mfResortProfileID": "902805167",
+                        "profileType": "GUEST",
+                        "individualName": {
+                            "nameFirst": "Test333",
+                            "nameSur": "Test444"
+                        },
+                        "phoneNumbers": {
+                            "phoneNumber": []
+                        },
+                        "electronicAddresses": {
+                            "electronicAddress": [
+                                {
+                                    "eaddress": "tres33@yopmail.com",
+                                    "mfPrimaryYN": "Y"
+                                }
+                            ]
+                        },
+                        "postalAddresses": {
+                            "postalAddress": [
+                                {
+                                    "addressType": "HOME",
+                                    "mfPrimaryYN": "Y",
+                                    "countryCode": "US"
+                                }
+                            ]
+                        }
+                    },
+                    "resProfileRPH": 0,
+                    "mfInactiveDate": 0
+                }
+            ]
+        },
+        "mgmProfile": {
+            "additionalGuests": []
+        },
+        "roomStays": {
+            "roomStay": [
+                {
+                    "roomInventoryCode": "DGWK",
+                    "reservationStatusType": "RESERVED",
+                    "guestCounts": {
+                        "guestCount": [
+                            {
+                                "ageQualifyingCode": "ADULT",
+                                "mfCount": 3
+                            },
+                            {
+                                "ageQualifyingCode": "CHILD",
+                                "mfCount": 0
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "originalBookingDate": "06/26/2023",
+        "mfImage": {
+            "numRooms": 1
+        },
+        "selectedMemberships": {
+            "selectedMembership": [
+                {
+                    "accountID": "M07728302",
+                    "programCode": "GP",
+                    "levelCode": "MEMBER",
+                    "expireDate": 17282837,
+                    "startDate": 2217812832,
+                    "nameOnCard": "Kevin Lineback",
+                    "displaySequence": 1,
+                    "pointIndicator": false,
+                    "enrollmentSource": "N",
+                    "enrolledAt": "N"
+                }
+            ]
+        }
+    }
+]

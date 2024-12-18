@@ -1,0 +1,18 @@
+{
+  "confirmationNumber": "59B14Q47DK",
+  "tripDetails": {
+    "checkInDate": "2024-09-20",
+    "checkOutDate": "2024-09-22",
+    "numAdults": 0,
+    "numChildren": 0,
+    "numRooms": 1
+  },
+  "roomRequests": [
+    "COMPONENTCD-v-LATECO-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-MLCOP06"
+  ],
+  "firstName": "Uttam",
+  "lastName": "Ghorai",
+  "source": "mgmri",
+  "customerId": -1,
+  "perpetualPricing": false
+}

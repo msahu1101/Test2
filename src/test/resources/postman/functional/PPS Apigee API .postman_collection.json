@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "6a7cf94b-3363-400e-8089-35fe6afeef84",
+		"name": "PPS Apigee API ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "JWT auth Payment Scope",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"JWT auth | Status code is 200 with valid response body\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.response.to.have.status(200);",
+							"    pm.expect(jsonData).to.have.property(\"token_type\");",
+							"    pm.expect(jsonData).to.have.property(\"access_token\");",
+							"});",
+							"",
+							"postman.setEnvironmentVariable(\"JWT_Payment_Token\", pm.response.json().access_token);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var moment = require('moment');\r",
+							"\r",
+							"/*Construct Random Dates [for availability] from 60 days to 360*/\r",
+							"start = new Date(moment().add(60, 'days'));\r",
+							"end = new Date(moment().add(360, 'days'));\r",
+							"\r",
+							"options = { day: '2-digit', month: '2-digit', year: 'numeric' };\r",
+							"//setting options to overcome single digit for dates/month.\r",
+							"\r",
+							"checkInDate = randomDate(start, end).toLocaleDateString(\"en-US\", options);\r",
+							"checkOutDate = moment(checkInDate).add(2, 'days').format('MM/DD/YYYY');\r",
+							"\r",
+							"postman.setEnvironmentVariable('checkInDate',  checkInDate);\r",
+							"postman.setEnvironmentVariable('checkOutDate',  checkOutDate);\r",
+							"\r",
+							"postman.setEnvironmentVariable('invalidCheckInDate',   moment().add(-1, 'days').format('MM/DD/YYYY'));\r",
+							"postman.setEnvironmentVariable('invalidCheckOutDate',  moment().add(-2, 'days').format('MM/DD/YYYY'));\r",
+							"\r",
+							"checkInDate_v2 = randomDate(start, end).toLocaleDateString(\"fr-CA\", options);\r",
+							"checkInDate_v2_format = moment(checkInDate_v2).format('YYYY-MM-DD');\r",
+							"checkOutDate_v2 = moment(checkInDate_v2_format).add(2, 'days').format('YYYY-MM-DD');\r",
+							"\r",
+							"postman.setEnvironmentVariable('checkInDate_v2',  checkInDate_v2_format);\r",
+							"postman.setEnvironmentVariable('checkOutDate_v2',  checkOutDate_v2);\r",
+							"\r",
+							"postman.setEnvironmentVariable('invalidCheckInDate_v2',   moment().add(-1, 'days').format('YYYY-MM-DD'));\r",
+							"postman.setEnvironmentVariable('invalidCheckOutDate_v2',  moment().add(-2, 'days').format('YYYY-MM-DD'));\r",
+							"\r",
+							"function randomDate(start, end) {\r",
+							"    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))\r",
+							"}\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "{{IDMS_grantType}}",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{IDMS_clientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{IDMS_clientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "payments.processor:payment payments.processor:refund",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{APIM_Endpoint}}{{IDMS_authEndpoint}}",
+					"protocol": "https",
+					"host": [
+						"{{APIM_Endpoint}}{{IDMS_authEndpoint}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apigge Authorize",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJtZ0NzNEE5R3VpSmsxcVRQQmNkcW1BYlNfcGwyMmVvVU1PSnFzM3hQOVh3IiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULmYwdXh4bnZyY3BtT0NKRlBKdVhjcUVtT3BOSG02amFVbnNZUjhlVFpNZlkiLCJpc3MiOiJodHRwczovL2lhbS5tcmdyZXMuY29tL29hdXRoMi9hdXNwaDdlenAzR2trazhXTjBoNyIsImF1ZCI6Imh0dHBzOi8vYXBpLm1nbXJlc29ydHMuY29tIiwiaWF0IjoxNjI1NzgxMDI4LCJleHAiOjE2MjU4Njc0MjgsImNpZCI6InJvb21fYm9va2luZ19zZXJ2aWNlIiwic2NwIjpbInBheW1lbnRzLnByb2Nlc3NvcjpyZWZ1bmQiLCJwYXltZW50cy5wcm9jZXNzb3I6cGF5bWVudCJdLCJzdWIiOiJyb29tX2Jvb2tpbmdfc2VydmljZSIsImdyb3VwcyI6WyJtZ21fc2VydmljZSJdfQ.uY0l_6E6p03Qv-b9OWTOXAMv0QljNRExn2J7W_wqJ6o1q-B8Nnm1mGT4WO3W8mcxaJ6rZdBzlxa5jV47b3GoZcXBzb7ljdPlNMDOXMy1yrsxJzmwZqDE0KmcNLNBajNM9Vw-Ay6DERmpq43cQWFN2Lq8sLoYhcBy9jOPjDp_Rr87tHLBlGsUY6tInBQM0Y39fpN7DsLOCIPhge4I2Ah83YJHohu-s6NrexIrFDOns2zTKo7ej2HV4T60SrxzmC1kcdB2-oy-RBkqXzrqgl2SzgIKEqFLagn2CRR0kv4jSqqYe1oxUCXV5JAkMsbsZgDEYTyKFW_1pFmXFP7yTUiTeQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"merchantID\": \"TriggerAmount\",  \r\n    \"transactionRefCode\": \"3287837898\",    \r\n    \"billTo\": \r\n        {\r\n            \"firstName\": \"\",\r\n            \"lastName\": \"\",\r\n            \"street1\": \"\",\r\n            \"city\": \"\",\r\n            \"state\": \"\",\r\n            \"postalCode\": \"\"\r\n        },\r\n    \"paymentMethods\": \r\n        {   \"card\": \r\n                {\r\n                    \"paymentToken\": \"5555550A0019BT461VB6TWIG4444\",\r\n                    \"cvv\": \"123\",\r\n                    \"expirationMonth\": \"\",\r\n                    \"expirationYear\": \"\"\r\n                }\r\n        },\r\n    \"amount\": \"44.05\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://mgm-nonprod-qa.apigee.net/pps/v1/payment/authorize",
+					"protocol": "https",
+					"host": [
+						"mgm-nonprod-qa",
+						"apigee",
+						"net"
+					],
+					"path": [
+						"pps",
+						"v1",
+						"payment",
+						"authorize"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

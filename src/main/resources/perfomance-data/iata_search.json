@@ -1,0 +1,1607 @@
+{
+    "data": [
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "US",
+                "cityName": "Panama City"
+            },
+            "organizationalDiscountNumbers": [
+                {
+                    "discountNumber": "1234567890"
+                }
+            ],
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "02d3945a-7fea-4718-a7c0-a3f62089f906"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "05e72b51-60cf-4a00-bfd0-16393df8d520"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "0a20c0ac-1e27-46f1-be37-9d7a8110c57a"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "US",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "1dc64605-d4c0-48db-bb4f-e5b5571c3310"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "1eb5228b-99fb-4b34-9faf-8a2bb61f121f"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "237b2c13-37c2-4bd7-baa1-4a50b3e80342"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "237f8ba0-b86f-414e-9d33-54f4e3347e68"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "Amadeus IT Group SA ",
+            "uniqueId": "247a0adf-f408-46c6-a95b-304168fab806"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "259b1957-91a1-48b0-b2b1-2f290037d949"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "2aadfdb9-df0d-4862-a4ac-35df42142a7d"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "US",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "313ce70e-8d1d-43ac-81c8-0e949c33689d"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "3150d8c5-d10c-43cf-9bb2-9006916899f3"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "35f42456-6439-45c7-9462-2c30ece130c8"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "US",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "3acdf294-9a2c-4b55-9f29-03006cccacc8"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "3b238658-d145-499a-bc26-f823b3fc7fe2"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "3d673fa6-485f-4ea1-bba3-a8a770c5dce6"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "3dae1c28-b8b9-432c-9f14-90d46f503f24"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "423d54d9-a516-46c1-a0ab-b0823a2f454f"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "49631a0f-fe07-4ad0-8061-bb8720337df9"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "A2345"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "4eeb39eb-adf6-4f8c-aa49-3a5ce82630ec"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "527e77bb-1b3f-43ac-8936-ef99aae9884b"
+        },
+        {
+            "address": {
+                "postalCode": "06700",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "5664d9c1-72cd-4177-8ce1-a7324cbbfa47"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "576b9562-e378-4684-a3b9-46d341e3ec87"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "5a3bd8c7-6cfa-40cb-b524-e28ea79d6729"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "5d03946e-0a28-404d-93e2-5975eb5ba57f"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "5d3501ae-4503-4353-9956-99ddcaaae1e0"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "5f54b778-64bc-40a1-b878-acf2b1fb3599"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "US",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "602a6ab5-c31f-450a-915e-a7f942c38131"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "68f91af2-2306-40cb-8f47-145cf1197509"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "69a47d3f-2b05-46d8-a9ac-7877dc7c3d8d"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "US",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "6e48c4fd-2f4d-46c5-985d-2ea98e33056a"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "US",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "TATO"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "75d1ec4e-289c-405c-abe7-04eefeb36ec4"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "786f11c2-dfa3-447e-b712-9cb514747bdd"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "7fd7c9da-80dc-410e-8df9-a43434f42bd5"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "US",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "824e0db6-db78-4e62-ac2e-118bc86d9fb7"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "85a4f3ed-fbde-4d66-b94a-d7dd07408840"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "8b8bb1da-e2a5-423a-b6ff-0cf81144a2e9"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "8c363dd6-f91b-4e68-b4e4-4d0351d271a5"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "8d5727ca-6a95-4cd9-a8cc-3c5555ec2cea"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "908d1d17-12b9-4928-ac6c-c369b61e677a"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "95e9edc3-df00-44c9-8ef4-e95fcbd43c4c"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "98f6103f-dc2c-4a3e-b04f-d827f9797fa3"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "US",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "a137721c-7184-4567-ba6b-e6a36eff48cf"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "a7152326-0bba-481a-9974-297205786a58"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "US",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "ae6e389a-2d8a-4b53-a02d-fbe5f3c97868"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "b43c6d9e-49c2-47db-978a-54801565a06a"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "bfe6f23a-56da-485e-9cf7-b49233932d46"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "c96962bf-bd1f-4a46-8b6a-17956e35e14b"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "US",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "c9aea38b-ea22-4831-af8e-7eb919696ee8"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "US",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "d2b74735-4a69-4158-b087-1f4691022413"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "A2345"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "d2bd5694-40d3-4b7b-bb06-b88fab35a094"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "US",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "d3e001f8-fb8d-4f46-8ede-aa302b1a58d0"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "d3ebec1d-4303-4bcb-93f3-a2e84157edb2"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "dd4e56fb-48a2-4512-a62d-ed2a53de0bd7"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "dfa7c0f7-6dd9-4d37-8e22-202ca2b106f9"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "dfcb0349-5f49-4245-aceb-5387824e3afb"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "e0a780ec-4454-4895-a60f-79b18178bf42"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "US",
+                "cityName": "Panama City"
+            },
+            "organizationalDiscountNumbers": [
+                {
+                    "discountNumber": "123456789",
+                    "rank": 1
+                }
+            ],
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "e38a3cd5-9bf1-4a0c-b55b-8258368a7a65"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "e5920c65-9c97-42c3-8a48-b5bc03f0b6ab"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "US",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "e8a4da4e-c47e-4468-9de4-e5c79847c8c9"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1A"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "f3a2df88-e9bb-4f86-b1bd-9a2c5eddb7fe"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "organizationalDiscountNumbers": [
+                {
+                    "discountNumber": "123456"
+                }
+            ],
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "f3fa911e-3fbd-41ff-8b61-1d64e2ac4027"
+        },
+        {
+            "address": {
+                "postalCode": "06600",
+                "lines": [
+                    "string"
+                ],
+                "countryCode": "BR",
+                "stateCode": "PA-1",
+                "cityName": "Panama City"
+            },
+            "source": "1",
+            "status": "ACTIVE",
+            "phoneNumber": {
+                "number": "5718589464",
+                "countryCode": "52",
+                "areaCode": "55"
+            },
+            "hasCards": true,
+            "primaryRole": "NOT-AGENCY",
+            "emailAddress": "test@amadeus.com",
+            "iataCodes": [
+                "1B"
+            ],
+            "shortName": "Amadeus",
+            "fullName": "© Amadeus IT Group SA ",
+            "uniqueId": "f7beb836-8ac5-47d8-9fc0-7169d94005ec"
+        }
+    ]
+}

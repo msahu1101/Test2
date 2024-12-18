@@ -1,0 +1,275 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "svcPlanName": {
+            "type": "string",
+            "defaultValue": "SampleAppServicePlan",
+            "metadata": {
+                "description": "The name of the App Service plan."
+            }
+        },
+        "sku": {
+            "type": "string",
+            "defaultValue": "PremiumV2",
+            "metadata": {
+                "description": "The pricing tier for the App Service plan."
+            }
+        },
+        "svcPlanSize": {
+            "defaultValue": "P1v1",
+            "type": "string",
+            "metadata": {
+                "description": "The instance size of the app."
+            }
+        },
+        "skuFamily": {
+            "defaultValue": "Pv1",
+            "type": "string",
+            "metadata": {
+                "description": "The instance size of the app."
+            }
+        },
+        "appName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the App Service."
+            }
+        },
+        "autoscaleName": {
+            "type": "string"
+        },
+        "minimumCapacity": {
+            "type": "Int",
+            "defaultValue": 2,
+            "metadata": {
+                "description": "The minimum capacity.  Autoscale engine will ensure the instance count is at least this value."
+            }
+        },
+        "maximumCapacity": {
+            "type": "Int",
+            "defaultValue": 10,
+            "metadata": {
+                "description": "The maximum capacity.  Autoscale engine will ensure the instance count is not greater than this value."
+            }
+        },
+        "defaultCapacity": {
+            "type": "Int",
+            "defaultValue": 2,
+            "metadata": {
+                "description": "The default capacity.  Autoscale engine will preventively set the instance count to be this value if it can not find any metric data."
+            }
+        },
+        "cpuMetricThresholdToScaleOut": {
+            "type": "Int",
+            "defaultValue": 70,
+            "metadata": {
+                "description": "The CPU metric upper threshold.  If the metric value is above this threshold then autoscale engine will initiate scale out action."
+            }
+        },
+        "cpuMetricThresholdToScaleIn": {
+            "type": "Int",
+            "defaultValue": 35,
+            "metadata": {
+                "description": "The CPU metric lower threshold.  If the metric value is below this threshold then autoscale engine will initiate scale in action."
+            }
+        },
+        "memoryMetricThresholdToScaleOut": {
+            "type": "Int",
+            "defaultValue": 70,
+            "metadata": {
+                "description": "The Memory metric upper threshold.  If the metric value is above this threshold then autoscale engine will initiate scale out action."
+            }
+        },
+        "memoryMetricThresholdToScaleIn": {
+            "type": "Int",
+            "defaultValue": 35,
+            "metadata": {
+                "description": "The Memory metric lower threshold.  If the metric value is below this threshold then autoscale engine will initiate scale in action."
+            }
+        },
+        "threadsMetricThresholdToScaleOut": {
+            "type": "Int",
+            "defaultValue": 400,
+            "metadata": {
+                "description": "The threads metric upper threshold.  If the metric value is above this threshold then autoscale engine will initiate scale out action."
+            }
+        },
+        "threadsMetricThresholdToScaleIn": {
+            "type": "Int",
+            "defaultValue": 300,
+            "metadata": {
+                "description": "The threads metric lower threshold.  If the metric value is below this threshold then autoscale engine will initiate scale in action."
+            }
+        },
+        "autoscaleEnabled": {
+            "type": "Bool",
+            "metadata": {
+                "description": "A boolean to indicate whether the autoscale policy is enabled or disabled."
+            }
+        }
+    },
+    "variables": {
+        "targetResourceId": "[resourceId('Microsoft.Web/serverFarms/', parameters('svcPlanName'))]",
+        "appResourceId": "[resourceId('Microsoft.Web/sites', parameters('appName'))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2018-02-01",
+            "name": "[parameters('svcPlanName')]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "[parameters('svcPlanSize')]",
+                "tier": "[parameters('sku')]",
+                "size": "[parameters('svcPlanSize')]",
+                "family": "[parameters('skuFamily')]",
+                "capacity": "[parameters('minimumCapacity')]"
+            }
+        },
+        {
+            "type": "Microsoft.Insights/autoscalesettings",
+            "name": "[parameters('autoscaleName')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('svcPlanName'))]"
+            ],
+            "apiVersion": "2015-04-01",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "profiles": [
+                    {
+                        "name": "DefaultAutoscaleProfile",
+                        "capacity": {
+                            "minimum": "[parameters('minimumCapacity')]",
+                            "maximum": "[parameters('maximumCapacity')]",
+                            "default": "[parameters('defaultCapacity')]"
+                        },
+                        "rules": [
+                            {
+                                "metricTrigger": {
+                                    "metricName": "CpuPercentage",
+                                    "metricNamespace": "",
+                                    "metricResourceUri": "[variables('targetResourceId')]",
+                                    "timeGrain": "PT5M",
+                                    "statistic": "Average",
+                                    "timeWindow": "PT5M",
+                                    "timeAggregation": "Average",
+                                    "operator": "GreaterThan",
+                                    "threshold": "[parameters('cpuMetricThresholdToScaleOut')]"
+                                },
+                                "scaleAction": {
+                                    "direction": "Increase",
+                                    "type": "ChangeCount",
+                                    "value": "1",
+                                    "cooldown": "PT5M"
+                                }
+                            },
+                            {
+                                "metricTrigger": {
+                                    "metricName": "CpuPercentage",
+                                    "metricNamespace": "",
+                                    "metricResourceUri": "[variables('targetResourceId')]",
+                                    "timeGrain": "PT5M",
+                                    "statistic": "Average",
+                                    "timeWindow": "PT5M",
+                                    "timeAggregation": "Average",
+                                    "operator": "LessThan",
+                                    "threshold": "[parameters('cpuMetricThresholdToScaleIn')]"
+                                },
+                                "scaleAction": {
+                                    "direction": "Decrease",
+                                    "type": "ChangeCount",
+                                    "value": "1",
+                                    "cooldown": "PT10M"
+                                }
+                            },
+                            {
+                                "metricTrigger": {
+                                    "metricName": "MemoryPercentage",
+                                    "metricNamespace": "",
+                                    "metricResourceUri": "[variables('targetResourceId')]",
+                                    "timeGrain": "PT5M",
+                                    "statistic": "Average",
+                                    "timeWindow": "PT5M",
+                                    "timeAggregation": "Average",
+                                    "operator": "GreaterThan",
+                                    "threshold": "[parameters('memoryMetricThresholdToScaleOut')]"
+                                },
+                                "scaleAction": {
+                                    "direction": "Increase",
+                                    "type": "ChangeCount",
+                                    "value": "1",
+                                    "cooldown": "PT5M"
+                                }
+                            },
+                            {
+                                "metricTrigger": {
+                                    "metricName": "MemoryPercentage",
+                                    "metricNamespace": "",
+                                    "metricResourceUri": "[variables('targetResourceId')]",
+                                    "timeGrain": "PT5M",
+                                    "statistic": "Average",
+                                    "timeWindow": "PT5M",
+                                    "timeAggregation": "Average",
+                                    "operator": "LessThan",
+                                    "threshold": "[parameters('memoryMetricThresholdToScaleIn')]"
+                                },
+                                "scaleAction": {
+                                    "direction": "Decrease",
+                                    "type": "ChangeCount",
+                                    "value": "1",
+                                    "cooldown": "PT10M"
+                                }
+                            },
+                            {
+                                "scaleAction": {
+                                    "direction": "Increase",
+                                    "type": "ChangeCount",
+                                    "value": "1",
+                                    "cooldown": "PT10M"
+                                },
+                                "metricTrigger": {
+                                    "metricName": "Threads",
+                                    "metricNamespace": "microsoft.web/sites",
+                                    "metricResourceUri": "[variables('appResourceId')]",
+                                    "operator": "GreaterThan",
+                                    "statistic": "Average",
+                                    "threshold": "[parameters('threadsMetricThresholdToScaleOut')]",
+                                    "timeAggregation": "Average",
+                                    "timeGrain": "PT1M",
+                                    "timeWindow": "PT5M",
+                                    "Dimensions": [],
+                                    "dividePerInstance": false
+                                }
+                            },
+                            {
+                                "scaleAction": {
+                                    "direction": "Decrease",
+                                    "type": "ChangeCount",
+                                    "value": "1",
+                                    "cooldown": "PT10M"
+                                },
+                                "metricTrigger": {
+                                    "metricName": "Threads",
+                                    "metricNamespace": "microsoft.web/sites",
+                                    "metricResourceUri": "[variables('appResourceId')]",
+                                    "operator": "LessThan",
+                                    "statistic": "Average",
+                                    "threshold": "[parameters('threadsMetricThresholdToScaleIn')]",
+                                    "timeAggregation": "Average",
+                                    "timeGrain": "PT1M",
+                                    "timeWindow": "PT5M",
+                                    "Dimensions": [],
+                                    "dividePerInstance": false
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "enabled": "[parameters('autoscaleEnabled')]",
+                "targetResourceUri": "[variables('targetResourceId')]"
+            }
+        }
+    ],
+    "outputs": {}
+}

@@ -1,0 +1,227 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appServiceName": {
+      "type": "string",
+      "metadata": {
+        "description": "The name of the app service that you wish to create."
+      }
+    },
+    "appServiceSlotName": {
+      "type": "string",
+      "metadata": {
+        "description": "The name of the app service slot that you wish to create."
+      }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Location of the resource group."
+      }
+    },
+    "appInsightsName": {
+      "type": "string",
+      "metadata": {
+        "description": "The created name of the app insight."
+      }
+    },
+    "appServiceResourceGroupName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the App Service Group."
+      }
+    },
+    "appServicePlanName": {
+      "type": "string",
+      "metadata": {
+        "description": "The created name of the app service plan."
+      }
+    },
+    "vnetResourceGroupName": {
+      "type": "string",
+      "metadata": {
+        "description": "Resource Group of the vnet which gets associated with app service."
+      }
+    },
+    "vnetName": {
+      "type": "string",
+      "metadata": {
+        "description": "vnet Name which gets associated with app service."
+      }
+    },
+    "subnetName": {
+      "type": "string",
+      "metadata": {
+        "description": "app service subnetName."
+      }
+    },
+    "springProfile": {
+      "type": "string",
+      "metadata": {
+        "description": "Spring Profile required for this service."
+      }
+    },
+    "environment": {
+      "type": "string",
+      "metadata": {
+        "description": "Application Environment."
+      }
+    },
+    "javaContainer": {
+      "type": "string",
+      "metadata": {
+        "description": "java Container."
+      }
+    },
+    "javaVersion": {
+      "type": "string",
+      "metadata": {
+        "description": "java version."
+      }
+    },
+    "javaContainerVersion": {
+      "type": "string",
+      "metadata": {
+        "description": "java Container Version."
+      }
+    }
+  },
+  "variables": {
+    "appServicePlanId": "[resourceId(parameters('appServiceResourceGroupName') ,'Microsoft.Web/serverfarms',parameters('appServicePlanName'))]",
+    "subnetId": "[resourceId(parameters('vnetResourceGroupName') ,'Microsoft.Network/virtualNetworks/subnets',parameters('vnetName'),parameters('subnetName'))]"
+  },
+  "resources": [
+    {
+      "apiVersion": "2015-05-01",
+      "name": "[parameters('appInsightsName')]",
+      "type": "Microsoft.Insights/components",
+      "location": "[parameters('location')]",
+      "properties": {
+        "ApplicationId": "[parameters('appInsightsName')]"
+      },
+      "tags": {
+        "creator": "Booking Team",
+        "Name": "[parameters('appServiceName')]",
+        "compliance": "none",
+        "supportTeam": "Cloud Engineering",
+        "monitoringLevel": "NA",
+        "application": "room-booking-services",
+        "businessSponsor": "Kemen Penev",
+        "businessCostCenter": "516-800-80182 Digital Engineering",
+        "environment": "[parameters('environment')]"
+      }
+    },
+    {
+      "type": "Microsoft.Web/sites",
+      "apiVersion": "2018-11-01",
+      "name": "[parameters('appServiceName')]",
+      "location": "[parameters('location')]",
+      "identity": {
+				"type": "SystemAssigned"
+	   },
+      "kind": "app",
+      "tags": {
+        "creator": "Booking Team",
+        "Name": "[parameters('appServiceName')]",
+        "compliance": "none",
+        "supportTeam": "Cloud Engineering",
+        "monitoringLevel": "NA",
+        "application": "room-booking-services",
+        "businessSponsor": "Kemen Penev",
+        "businessCostCenter": "516-800-80182 Digital Engineering",
+        "environment": "[parameters('environment')]"
+      },
+      "properties": {
+        "enabled": true,
+        "serverFarmId": "[variables('appServicePlanId')]",
+        "reserved": false,
+        "isXenon": false,
+        "hyperV": false,
+        "scmSiteAlsoStopped": false,
+        "clientAffinityEnabled": false,
+        "clientCertEnabled": false,
+        "hostNamesDisabled": false,
+        "containerSize": 0,
+        "dailyMemoryTimeQuota": 0,
+        "httpsOnly": true,
+        "redundancyMode": "None"
+      },
+      "resources": [
+        {
+          "type": "config",
+          "apiVersion": "2018-02-01",
+          "name": "virtualNetwork",
+          "location": "[parameters('location')]",
+          "dependsOn": [
+            "[concat('Microsoft.Web/sites/', parameters('appServiceName'))]"
+          ],
+          "properties": {
+            "subnetResourceId": "[variables('subnetId')]",
+            "swiftSupported": true
+          }
+        },
+        {
+          "apiVersion": "2018-02-01",
+          "name": "web",
+          "type": "config",
+          "dependsOn": [
+            "[concat('Microsoft.Web/sites/', parameters('appServiceName'))]"
+          ],
+          "properties": {
+            "javaVersion": "[parameters('javaVersion')]",
+            "javaContainer": "[parameters('javaContainer')]",
+            "javaContainerVersion": "[parameters('javaContainerVersion')]",
+            "alwaysOn": true
+          }
+        },
+        {
+          "name": "appsettings",
+          "type": "config",
+          "apiVersion": "2015-08-01",
+          "dependsOn": [
+            "[resourceId('Microsoft.Web/sites', parameters('appServiceName'))]",
+            "[resourceId('Microsoft.Insights/components', parameters('appInsightsName'))]"
+          ],
+          "properties": {
+            "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(resourceId('Microsoft.Insights/components', parameters('appInsightsName')), '2014-04-01').InstrumentationKey]",
+            "ApplicationInsightsAgent_EXTENSION_VERSION":"~2",
+            "XDT_MicrosoftApplicationInsights_Mode":"recommended",
+            "InstrumentationEngine_EXTENSION_VERSION":"disabled",
+            "SnapshotDebugger_EXTENSION_VERSION":"disabled",
+            "DiagnosticServices_EXTENSION_VERSION":"~3",
+            "APPINSIGHTS_SNAPSHOTFEATURE_VERSION":"1.0.0",
+            "APPINSIGHTS_PROFILERFEATURE_VERSION":"1.0.0",
+            "XDT_MicrosoftApplicationInsights_BaseExtensions":"disabled",
+            "XDT_MicrosoftApplicationInsights_PreemptSdk":"1",
+            "spring.profiles.active": "[parameters('springProfile')]"
+          }
+        },
+        {       
+          "name": "[parameters('appServiceSlotName')]",
+          "type": "slots",
+          "apiVersion": "2015-08-01",
+          "location": "[parameters('location')]",
+          "tags": {
+            "creator": "Booking Team",
+	        "Name": "[parameters('appServiceSlotName')]",
+	        "compliance": "none",
+	        "supportTeam": "Cloud Engineering",
+	        "monitoringLevel": "NA",
+	        "application": "room-booking-services",
+	        "businessSponsor": "Kemen Penev",
+	        "businessCostCenter": "516-800-80182 Digital Engineering",
+	        "environment": "[parameters('environment')]"
+          },
+          "dependsOn": [
+            "[resourceId('Microsoft.Web/Sites', parameters('appServiceName'))]"
+          ],
+          "properties": {
+          },
+          "resources": []
+        }
+      ]
+    }
+  ]
+}

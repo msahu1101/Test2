@@ -1,0 +1,36 @@
+[
+  {
+    "type": "ALERT_CODE",
+    "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+    "elements": [
+      {
+        "id": "-75BVCRD-021-dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+        "phoenixId": "f7e7ad34-159e-8b9b-e043-2901fe0aa3df",
+        "code": "$75BVCRD"
+      }
+    ]
+  },
+  {
+    "type": "ALERT_AREA_CODE",
+    "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+    "elements": [
+      {
+        "id": "Reservation-021-Reservation-dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+        "phoenixId": "f2627473-47d0-cf96-e043-2901fe0abf33",
+        "code": "Reservation"
+      }
+    ]
+  },
+  {
+    "type": "ROOM_FEATURE_SPECIAL_REQUEST",
+    "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+    "elements": [
+      {
+        "id": "COMPONENTCD-v-DE-d-TYP-v-ROOM-FEATURE-d-PROP-v-dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad-d-NRPCD-v-NONE",
+        "phoenixId": "b3f872e9-3e89-4f52-bb88-38dfa951ea3c",
+        "description": "Electronic Drapes",
+        "code": "DE"
+      }
+    ]
+  }
+]

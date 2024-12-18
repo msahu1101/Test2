@@ -1,0 +1,164 @@
+{
+	"roomReservation": {
+		"customerId": 923600551937,
+		"propertyId": "773000cc-468a-4d86-a38f-7ae78ecfa6aa",
+		"itineraryId": "7863215105",
+		"roomTypeId": "14ebf50a-c104-49c3-828c-c49221ebb50a",
+		"profile": {
+			"id": 923600551937,
+			"mlifeNo": 79950292,
+            "title": "DR",
+			"firstName": "Lakshmi",
+			"lastName": "Test",
+			"phoneNumbers": [
+				{
+					"type": "Home",
+					"number": "9611877004"
+				}
+			],
+			"emailAddress1": "tlntest3@yopmail.com",
+			"emailAddress2": "tlntest3@yopmail.com",
+			"dateOfBirth": "1985-01-01",
+			"addresses": [
+				{
+					"type": "Home",
+					"preferred": true,
+					"street1": "234 W Main St",
+					"street2": "Unit 415",
+					"city": "Las Vegas",
+					"state": "NV",
+					"postalCode": "12345",
+					"country": "US"
+				}
+			]
+		},
+		"billing": [
+			{
+				"payment": {
+					"amount": 0,
+					"cardHolder": "John doe",
+					"firstName": "John",
+					"lastName": "Doe",
+					"maskedNumber": "XXXXXXXXXXXX1111",
+					"ccToken": "4111110A001DQXFHY79D9XCZ1111",
+					"cvv": 123,
+					"type": "Visa",
+					"expiry": "10/2023"
+				},
+				"address": {
+					"street1": "234 W Main St",
+					"street2": "Unit 415",
+					"city": "Las Vegas",
+					"state": "NV",
+					"postalCode": "12345",
+					"country": "US"
+				}
+			}
+		],
+		"tripDetails": {
+			"checkInDate": "2021-03-20",
+			"checkOutDate": "2021-03-21",
+			"numAdults": 2,
+			"numChildren": 2,
+			"numRooms": 1
+		},
+		"bookings": [
+			{
+				"date": "2021-03-20",
+				"basePrice": 10024.99,
+				"customerPrice": 5513.7445,
+				"price": 5513.7445,
+				"programIdIsRateTable": false,
+				"overridePrice": -1.0,
+				"overrideProgramIdIsRateTable": false,
+				"isComp": false,
+				"resortFeeIsSpecified": false,
+				"resortFee": 0.0,
+				"programId": "34a27a98-c367-4732-a059-c7ead4b1ec9b"
+			}
+		],
+		"chargesAndTaxes": {
+			"charges": [
+				{
+					"date": "2021-03-20",
+					"amount": 5548.7445,
+					"itemized": [
+						{
+							"itemType": "RoomCharge",
+							"amount": 5548.7445,
+							"item": "Room Charge"
+                        },
+                        {
+                            "id": "78e56314-8aba-4107-b376-59a148f23b34",
+                            "shortDescription": "Occupancy Fee",
+                            "active": true,
+                            "pricingApplied": "NIGHTLY",
+                            "itemType": "ComponentCharge",
+                            "amount": 3,
+                            "item": "OCC"
+                        },
+                        {
+                            "id": "3e205a63-84f7-41b6-a7e8-b83be9b72e80",
+                            "shortDescription": "Tourism Fee",
+                            "active": true,
+                            "pricingApplied": "NIGHTLY",
+                            "itemType": "ComponentCharge",
+                            "amount": 2,
+                            "item": "TOR"
+                        }
+					]
+				}
+			],
+			"taxesAndFees": [
+				{
+					"date": "2021-03-20",
+					"amount": 111.32489,
+					"itemized": [
+						{
+							"itemType": "RoomChargeTax",
+							"amount": 110.27489,
+							"item": "Room Tax"
+                        },
+                        {
+                            "id": "78e56314-8aba-4107-b376-59a148f23b34",
+                            "shortDescription": "Occupancy Fee",
+                            "active": true,
+                            "pricingApplied": "NIGHTLY",
+                            "itemType": "ComponentChargeTax",
+                            "amount": 0,
+                            "item": "OCC"
+                        },
+                        {
+                            "id": "3e205a63-84f7-41b6-a7e8-b83be9b72e80",
+                            "shortDescription": "Tourism Fee",
+                            "active": true,
+                            "pricingApplied": "NIGHTLY",
+                            "itemType": "ComponentChargeTax",
+                            "amount": 0.27,
+                            "item": "TOR"
+                        }
+					]
+				}
+			]
+		},
+		"depositDetails": {
+			"dueDate": "2021-03-20",
+			"amountPolicy": "PercentAmount",
+			"amount": 0,
+			"forfeitDate": "2021-03-20",
+			"forfeitAmount": 0,
+			"overrideAmount": 0,
+			"depositRuleCode": "string",
+			"cancellationRuleCode": "string",
+			"itemized": [
+				{
+					"itemType": "RoomCharge",
+					"amount": 0,
+					"item": "string"
+				}
+			]
+		},
+		"amountDue": 5624.02,
+		"guaranteeCode": "CC"
+	}
+}

@@ -1,0 +1,86 @@
+{
+    "stage": "Checkout",
+    "calcsOnly": false,
+    "propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+    "roomTypeId": "23f5bef8-63ea-4ba9-a290-13b5a3056595",
+    "programId": "4eccc742-8a65-4ef9-9a35-03fead2c3833",
+    "customerId": null,
+    "guaranteeCode": "CG",
+    "specialRequests": [],
+    "profile": null,
+    "tripDetails": {
+        "numAdults": 2,
+        "numChildren": 0,
+		"checkInDate": "2020-08-15",
+		"checkOutDate": "2020-08-16",
+        "numGuests": 2,
+        "nights": 1,
+        "numRooms": 1
+    },
+    "billing": [
+        {
+            "payment": {
+                "amount": 0.0,
+                "cardHolder": "Tapan Ray",
+                "cardNumber": "",
+                "maskedNumber": null,
+                "cvv": 0,
+                "type": "Cash",
+                "ccToken": null,
+                "firstname": null,
+                "lastname": null,
+                "expiry": "09/2022"
+            },
+            "address": {
+                "street1": null,
+                "street2": null,
+                "city": null,
+                "state": null,
+                "postalCode": null,
+                "country": null
+            }
+        }
+    ],
+    "bookings": [
+        {
+            "overrideProgramIdIsRateTable": false,
+            "resortFeeIsSpecified": false,
+            "programIdIsRateTable": false,
+            "customerPrice": 0.0,
+            "resortFee": 0.0,
+            "basePrice": 430.65,
+            "price": 861.3,
+            "overridePrice": -1.0,
+            "programId": "4eccc742-8a65-4ef9-9a35-03fead2c3833",
+            "pricingRuleId": null,
+            "overrideProgramId": null,
+            "overridePricingRuleId": null,
+            "date": "2020-09-15",
+            "isComp": true
+        }
+    ],
+    "depositDetails": {
+		"dueDate": "2020-10-20",
+		"amountPolicy": "Nights",
+		"amount": 0,
+		"forfeitDate": "2020-10-12",
+		"forfeitAmount": 0,
+		"overrideAmount": -1,
+		"depositRuleCode": "1NT",
+		"cancellationRuleCode": "72H",
+		"itemized": [
+			{
+				"itemType": "RoomCharge",
+				"amount": 0,
+				"item": "Room Charge"
+			},
+			{
+				"itemType": "RoomChargeTax",
+				"amount": 0,
+				"item": "Room Tax"
+			}
+		]
+	},
+    "markets": null,
+    "priceOverride": false
+}

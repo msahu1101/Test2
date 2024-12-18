@@ -1,0 +1,77 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    
+    "parameters": {
+        "appInsight": {
+			"value": "rbs-uw-ai-q"	
+		},
+		"environment": {
+			"value": "qa"	
+		},
+		"appName":{
+			"value": "RBS | Non Prod"
+		},
+		"actionGroup": {
+			"value" : {
+				"resourceGroup": "rbs-uw-rg-d",
+				"names" : [
+					"RoomBookingNonProdAG"
+				]
+			}
+		},
+		"alertData": {
+			"type": "array", 
+            "value": [
+				{
+					"name": "Http error status code 500 breached threshold " ,
+					"webAppName": "rbs-uw-wa-q",
+					"severity" : 3,
+					"query": "requests | where resultCode == 500 and cloud_RoleName == \"rbs-uw-wa-q\"",
+					"operator": "GreaterThan",
+					"threshold": 10
+				},
+				{
+					"name": "Http error status code 500 breached threshold " ,
+					"webAppName": "rbs-uw-wa-q",
+					"severity" : 2,
+					"query": "requests | where resultCode == 500 and cloud_RoleName == \"rbs-uw-wa-q\"",
+					"operator": "GreaterThan",
+					"threshold": 20
+				},
+				{
+					"name": "Http error status code 500 breached threshold " ,
+					"webAppName": "rbs-uw-wa-q",
+					"severity" : 1,
+					"query": "requests | where resultCode == 500 and cloud_RoleName == \"rbs-uw-wa-q\"",
+					"operator": "GreaterThan",
+					"threshold": 30
+				},
+				{
+					"name": "Http error status code 400 breached threshold " ,
+					"webAppName": "rbs-uw-wa-q",
+					"severity" : 3,
+					"query": "requests | where resultCode == 400 and cloud_RoleName == \"rbs-uw-wa-q\"",
+					"operator": "GreaterThan",
+					"threshold": 10
+				},
+				{
+					"name": "Itinerary service update calls breached threshold" ,
+					"webAppName": "rbs-uw-wa-q",
+					"severity" : 3,
+					"query": "exceptions | where tostring(customDimensions.['Logger Message']) contains \"Unable to send request to itinerary service\"",
+					"operator": "GreaterThan",
+					"threshold": 5
+				},
+				{
+					"name": "Reservation publish events breached threshold" ,
+					"webAppName": "rbs-uw-wa-q",
+					"severity" : 3,
+					"query": "exceptions | where tostring(customDimensions.['Logger Message']) contains \"Failed to publish event of type\"",
+					"operator": "GreaterThan",
+					"threshold": 5
+				}
+			]
+        }
+    }
+}

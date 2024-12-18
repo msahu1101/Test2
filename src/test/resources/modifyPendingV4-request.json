@@ -1,0 +1,246 @@
+{
+	"roomReservation": {
+    "instance": 0,
+    "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+    "roomTypeId": "ROOMCD-v-DPRK-d-PROP-v-MV021",
+    "programId": "RPCD-v-BAR-d-PROP-v-MV021",
+    "customerId": "846558855426",
+    "guaranteeCode": "DD",
+    "specialRequests": ["COMPONENTCD-v-CFBP2-d-TYP-v-COMPONENT-d-PROP-v-MV021-d-NRPCD-v-CFBP2"],
+    "profile": {
+        "id": 1434797277441,
+        "mlifeNo": 0,
+        "firstName": "John",
+        "lastName": "Doe",
+        "emailAddress1": "johndoe@mail.com",
+        "phoneNumbers": [
+            {
+                "type": "Home",
+                "number": "12345678901"
+            }
+        ],
+        "addresses": [
+            {
+                "type": "Home",
+                "preferred": true,
+                "street1": "100 St",
+                "street2": null,
+                "city": "Las Vegas",
+                "state": "NV",
+                "country": "US",
+                "postalCode": "89102"
+            }
+        ]
+    },
+    "tripDetails": {
+        "checkInDate": "2024-09-19",
+        "checkOutDate": "2024-09-30",
+        "numAdults": 2,
+        "numChildren": 0,
+        "numRooms": 1
+    },
+    "chargesAndTaxes": {
+        "charges": [
+            {
+                "date": "2024-09-19",
+                "amount": 321,
+                "itemized": [
+                    {
+                        "itemType": "RoomCharge",
+                        "amount": 79,
+                        "item": "RoomCharge"
+                    },
+                    {
+                        "itemType": "ResortFee",
+                        "amount": 42,
+                        "item": "RSFEE"
+                    },
+                    {
+                        "itemType": "ComponentCharge",
+                        "amount": 50,
+                        "item": "RoomCharge"
+                    },
+                    {
+                        "itemType": "ComponentCharge",
+                        "amount": 50,
+                        "item": "RoomCharge"
+                    },
+                    {
+                        "itemType": "ComponentCharge",
+                        "amount": 50,
+                        "item": "RoomCharge"
+                    },
+                    {
+                        "itemType": "ComponentCharge",
+                        "amount": 50,
+                        "item": "RoomCharge"
+                    }
+                ]
+            },
+            {
+                "date": "2024-09-20",
+                "amount": 521,
+                "itemized": [
+                    {
+                        "itemType": "RoomCharge",
+                        "amount": 329,
+                        "item": "RoomCharge"
+                    },
+                    {
+                        "itemType": "ResortFee",
+                        "amount": 42,
+                        "item": "RSFEE"
+                    },
+                    {
+                        "itemType": "ComponentCharge",
+                        "amount": 50,
+                        "item": "RoomCharge"
+                    },
+                    {
+                        "itemType": "ComponentCharge",
+                        "amount": 50,
+                        "item": "RoomCharge"
+                    },
+                    {
+                        "itemType": "ComponentCharge",
+                        "amount": 50,
+                        "item": "RoomCharge"
+                    }
+                ]
+            }
+        ],
+        "taxesAndFees": [
+            {
+                "date": "2024-09-19",
+                "amount": 42.95,
+                "itemized": [
+                    {
+                        "itemType": "RoomChargeTax",
+                        "amount": 10.57,
+                        "item": "OCTAX"
+                    },
+                    {
+                        "itemType": "ResortFeeTax",
+                        "amount": 5.62,
+                        "item": "RSFTX"
+                    },
+                    {
+                        "shortDescription": "[Non Room Product 0 Tax]",
+                        "pricingApplied": "NIGHTLY",
+                        "itemType": "ComponentChargeTax",
+                        "amount": 6.69,
+                        "item": "Non Room Product 0 Tax"
+                    },
+                    {
+                        "shortDescription": "[Non Room Product 0 Tax]",
+                        "pricingApplied": "NIGHTLY",
+                        "itemType": "ComponentChargeTax",
+                        "amount": 6.69,
+                        "item": "Non Room Product 0 Tax"
+                    },
+                    {
+                        "shortDescription": "[Non Room Product 0 Tax]",
+                        "pricingApplied": "NIGHTLY",
+                        "itemType": "ComponentChargeTax",
+                        "amount": 6.69,
+                        "item": "Non Room Product 0 Tax"
+                    },
+                    {
+                        "shortDescription": "[Non Room Product 0 Tax]",
+                        "pricingApplied": "NIGHTLY",
+                        "itemType": "ComponentChargeTax",
+                        "amount": 6.69,
+                        "item": "Non Room Product 0 Tax"
+                    }
+                ]
+            },
+            {
+                "date": "2024-09-20",
+                "amount": 69.71,
+                "itemized": [
+                    {
+                        "itemType": "RoomChargeTax",
+                        "amount": 44.02,
+                        "item": "OCTAX"
+                    },
+                    {
+                        "itemType": "ResortFeeTax",
+                        "amount": 5.62,
+                        "item": "RSFTX"
+                    },
+                    {
+                        "shortDescription": "[Non Room Product 0 Tax]",
+                        "pricingApplied": "NIGHTLY",
+                        "itemType": "ComponentChargeTax",
+                        "amount": 6.69,
+                        "item": "Non Room Product 0 Tax"
+                    },
+                    {
+                        "shortDescription": "[Non Room Product 0 Tax]",
+                        "pricingApplied": "NIGHTLY",
+                        "itemType": "ComponentChargeTax",
+                        "amount": 6.69,
+                        "item": "Non Room Product 0 Tax"
+                    },
+                    {
+                        "shortDescription": "[Non Room Product 0 Tax]",
+                        "pricingApplied": "NIGHTLY",
+                        "itemType": "ComponentChargeTax",
+                        "amount": 6.69,
+                        "item": "Non Room Product 0 Tax"
+                    }
+                ]
+            }
+        ]
+    },
+    "bookings": [
+        {
+            "date": "2024-10-03",
+            "price": 119,
+            "programId": "RPCD-v-TDFBP-d-PROP-v-MV021",
+            "overridePrice": -1
+        }
+    ],
+    "ratesSummary": {
+        "roomSubtotal": 0,
+        "programDiscount": -408,
+        "discountedSubtotal": 408,
+        "discountedAveragePrice": 204,
+        "roomRequestsTotal": 350,
+        "adjustedRoomSubtotal": 758,
+        "resortFee": 84,
+        "resortFeePerNight": 42,
+        "tripSubtotal": 492,
+        "resortFeeAndTax": 95.24,
+        "roomChargeTax": 101.42,
+        "occupancyFee": 0,
+        "tourismFee": 0,
+        "tourismFeeAndTax": 0,
+        "casinoSurcharge": 0,
+        "casinoSurchargeAndTax": 0,
+        "reservationTotal": 954.66,
+        "depositDue": 316.33,
+        "balanceUponCheckIn": 638.33
+    },
+    "depositDetails": {
+        "dueDate": "2024-09-05",
+        "amount": 316.33,
+        "forfeitDate": "2024-09-16",
+        "forfeitAmount": 316.33,
+        "overrideAmount": -1
+    },
+    "amountDue": 0,
+    "depositPolicy": {
+        "depositRequired": true,
+        "creditCardRequired": false
+    },
+    "perpetualPricing": false,
+    "markets": null,
+    "confirmationNumber": "7XU1U0Y3XO",
+    "availableComponents": null,
+    "promo": null,
+    "itineraryId": "1234",
+    "state": "Booked",
+    "billing": []
+}
+}

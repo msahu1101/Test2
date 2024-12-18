@@ -1,0 +1,162 @@
+{
+"swagger": "2.0",
+"info": {
+    "version": "7.6.0",
+    "title": "1A_REST_JSON_Reservation",
+    "description": "The Reservations API of the Amadeus Hospitality CRS application.\nIt comprises how to create, modify, reinstate, cancel, migrate, retrieve, commit and ignore reservations\n"
+  
+},
+   "paths": {},
+"definitions": {
+	"partnerCustomerSearchResponse": {
+		"type": "object",
+		"properties": {
+			"resultCount": {
+				"type": "integer",
+				"format": "int32"
+			},
+			"limitApplied": {
+				"type": "boolean"
+			},
+			"customers": {
+				"type": "array",
+				"items": {
+					"type": "object",
+					"properties": {
+						"customerType": {
+							"type": "string"
+						},
+						"profile": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "object",
+									"properties": {
+										"title": {
+											"type": "string"
+										},
+										"firstName": {
+											"type": "string"
+										},
+										"middleName": {
+											"type": "string"
+										},
+										"lastName": {
+											"type": "string"
+										},
+										"suffix": {
+											"type": "string"
+										}
+									}
+								},
+								"address": {
+									"type": "object",
+									"properties": {
+										"addresses": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string"
+													},
+													"addressDetail": {
+														"type": "object",
+														"properties": {
+															"primary": {
+																"type": "boolean"
+															},
+															"line1": {
+																"type": "string"
+															},
+															"line2": {
+																"type": "string"
+															},
+															"line3": {
+																"type": "string"
+															},
+															"city": {
+																"type": "string"
+															},
+															"stateProvinceCode": {
+																"type": "string"
+															},
+															"countryCode": {
+																"type": "string"
+															},
+															"postalCode": {
+																"type": "string"
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								},
+								"email": {
+									"type": "object",
+									"properties": {
+										"address": {
+											"type": "string"
+										}
+									}
+								},
+								"phone": {
+									"type": "object",
+									"properties": {
+										"phones": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string"
+													},
+													"phoneDetail": {
+														"type": "object",
+														"properties": {
+															"countryCode": {
+																"type": "string"
+															},
+															"number": {
+																"type": "string"
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								},
+								"profileStatus": {
+									"type": "object",
+									"properties": {
+										"profileStatusCode": {
+											"type": "string"
+										},
+										"active": {
+											"type": "boolean"
+										}
+									}
+								}
+							}
+						},
+						"customerIdentifiers": {
+							"type": "object",
+							"properties": {
+								"customerId": {
+									"type": "string"
+								},
+								"altCustomerId": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+}

@@ -1,0 +1,10 @@
+{
+	"source": "ice",
+	"customerId": 0,
+	"mlifeNumber": null,
+	"propertyId": "111-2222-333",
+	"roomTypeIds": null,
+	"ignoreChannelMargins": false,
+	"numAdults": 1,
+	"numRooms": 1
+}

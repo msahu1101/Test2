@@ -1,0 +1,191 @@
+{
+  "productType": "hotel",
+  "curatedOffersList": [
+    {
+      "title": "LasVegas Hotel Offers",
+      "category": "hotel-offers-lv",
+      "offers": [
+        {
+          "subCategoryLabel": "MGM Grand Las Vegas",
+          "id": "ee7a7d6d-98a3-4a7a-ab77-b3900df1058b",
+          "image": {},
+          "publicName": "Make your summer sizzle in Vegas!",
+          "primaryAction": {
+            "label": "View Offer Details",
+            "url": "/hotel-offer-id/ee7a7d6d-98a3-4a7a-ab77-b3900df1058b",
+            "target": "_self"
+          },
+          "bookableOnline": false,
+          "showSecondaryCTA": true,
+          "termsAndConditions": "Guest must book by May 2, 2015.  A daily resort fee will be added to your room account, which includes select hotel amenities. Guests must be at least 21 years of age to check in. Offers are subject to availability and are non-commissionable; blackout dates apply, and are not available to groups or persons attending meetings or conventions. Not available for existing or consecutive reservations. Early departures will not be refunded. This offer is non-transferable and may not be used in conjunction with any other public promotion, excluding rate promotions. This promotional rate is available only when purchased at signaturemgmgrand.com. Telephone rates are higher. A valid credit card must be presented upon check-in and you will be required to charge the buffet to your room for redemption. Unused buffet credit will not be refunded and has no cash value. Any additional charges will be the responsibly of the guest at check out and will be applied to the credit card on file. Management reserves the right to cancel or change this promotion at its discretion without prior notice. ©2015 MGM Resorts International®.",
+          "memberOffer": true,
+          "propertyShortName": "MGM Grand",
+          "multiOffer": false,
+          "descriptions": {
+            "learnMore": "Add a little spice to your summer. Book your Vegas getaway now and receive:\n\n• Rooms from $70\n• 2 Daily Buffets \n\nBook now. Best Rates Guaranteed.",
+            "short": "DPRPO Rates &amp; 2 Daily Buffets"
+          },
+          "propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f"
+        },
+        {
+          "subCategoryLabel": "New York New York",
+          "id": "d4bc1cb6-4890-40aa-b083-85624c2fb71e",
+          "image": {},
+          "publicName": "New York-New York's Exclusive SMS Offer!",
+          "primaryAction": {
+            "label": "Book Offer",
+            "url": "/hotel-offer-id/d4bc1cb6-4890-40aa-b083-85624c2fb71e",
+            "target": "_self"
+          },
+          "bookableOnline": true,
+          "showSecondaryCTA": true,
+          "termsAndConditions": "Must be at least 21 years of age to check in. Beverage credit valid at Nine Fine Irishmen, Center Bar, Pour24, High Limit Lounge and Lobby Bar only. Beverage credit only valid per room, per visit. A valid credit card must be presented upon check-in. You will be required to charge the beverage credit to your room for redemption. Offers are subject to availability. Must book online. Two night stay minimum required. A Daily Resort Fee will be added to the guest room account. Offer is not valid on existing reservations and is non-transferable. Not available for guests attending meetings or conventions. This offer may not be used with any other offer, package or promotion. Nightly rates are non-commissionable to travel agents/tour operators. Offer may be modified or discontinued without notice. Credit Card or Cash deposit required upon check-in. Other restrictions may apply. If you or someone you know has a problem gaming responsibly, please call the 24-hour Problem Gamblers Help Line at 800.522.4700.\r\n©2016 MGM Resorts International™.\r\n",
+          "memberOffer": true,
+          "propertyShortName": "New York-New York",
+          "multiOffer": false,
+          "descriptions": {
+            "learnMore": "Book your Exclusive Offer and get up to 15% off Suites PLUS a $25 Beverage Credit!",
+            "short": "New York-New York's Exclusive SMS Offer! - H1HC1603"
+          },
+          "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad"
+        },
+        {
+          "id": "aaa",
+          "image": {
+            "src": "aws-qa-static.mgmresorts.com/content/dam/MGM/mgm-grand/casino/table-games/mgm-grand-casino-table-games-01@2x.jpg"
+          },
+          "primaryAction": {
+            "label": "Book Offer",
+            "url": "/redirect/hotel-multi-offer-id/aaa",
+            "target": "_self"
+          },
+          "bookableOnline": true,
+          "showSecondaryCTA": false,
+          "memberOffer": true,
+          "propertyShortName": "Multiple Resorts",
+          "multiOffer": true,
+          "descriptions": {
+            "learnMore": "&lt;p&gt;AAA learn more desc&lt;/p&gt;\r\n",
+            "short": "AAA"
+          },
+          "propertyId": "mgmresorts"
+        },
+        {
+          "subCategoryLabel": "New York New York",
+          "id": "RPCD-v-ADVPM-d-PROP-v-MV021",
+          "image": {},
+          "publicName": "ADVANCE BOOKING FOR MLIFE",
+          "primaryAction": {
+            "label": "Book Offer",
+            "url": "/redirect/hotel-multi-offer-id/RPCD-v-ADVPM-d-PROP-v-MV021",
+            "target": "_self"
+          },
+          "bookableOnline": true,
+          "showSecondaryCTA": false,
+          "memberOffer": true,
+          "propertyShortName": "New York-New York",
+          "multiOffer": false,
+          "descriptions": {},
+          "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad"
+        },
+        {
+          "subCategoryLabel": "MGM Grand Las Vegas",
+          "id": "f675ed90-2c05-4785-981f-d304d1aaf49c",
+          "image": {},
+          "publicName": "Cisco GSX 2015 - Suites",
+          "primaryAction": {
+            "label": "View Offer Details",
+            "url": "/hotel-offer-id/f675ed90-2c05-4785-981f-d304d1aaf49c",
+            "target": "_self"
+          },
+          "bookableOnline": true,
+          "showSecondaryCTA": true,
+          "memberOffer": false,
+          "propertyShortName": "MGM Grand",
+          "multiOffer": false,
+          "descriptions": {},
+          "propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f"
+        }
+      ]
+    },
+    {
+      "title": "Non LasVegas Hotel Offers",
+      "category": "hotel-offers-non-lv",
+      "offers": [
+        {
+          "subCategoryLabel": "MGM Grand Detroit",
+          "id": "54abe38e-99dd-47a2-bdb2-1734f3d4c036",
+          "image": {},
+          "publicName": "Johnson Kimpson Wedding",
+          "primaryAction": {
+            "label": "View Offer Details",
+            "url": "/hotel-offer-id/54abe38e-99dd-47a2-bdb2-1734f3d4c036",
+            "target": "_self"
+          },
+          "bookableOnline": false,
+          "showSecondaryCTA": true,
+          "memberOffer": true,
+          "propertyShortName": "MGM Grand Detroit",
+          "multiOffer": false,
+          "descriptions": {},
+          "propertyId": "4a65a92a-962b-433e-841c-37e18dc5d68d"
+        },
+        {
+          "subCategoryLabel": "MGM National Harbor",
+          "id": "5aa84634-65ce-40be-b3d9-902bcc2a5e0b",
+          "image": {},
+          "publicName": "M life Exclusive Discount",
+          "primaryAction": {
+            "label": "Book Offer",
+            "url": "/hotel-offer-id/5aa84634-65ce-40be-b3d9-902bcc2a5e0b",
+            "target": "_self"
+          },
+          "bookableOnline": true,
+          "showSecondaryCTA": true,
+          "memberOffer": true,
+          "propertyShortName": "MGM National Harbor",
+          "multiOffer": false,
+          "descriptions": {
+            "learnMore": "Thank you for being an M life member, please enjoy your discount at this resort!",
+            "short": "Special Rates for Platinum Members"
+          },
+          "propertyId": "0990fdce-7fc8-41b1-b8b6-9a25dce3db55"
+        },
+        {
+          "id": "47bf7f5d-6165-49f1-87d6-0ca0ed87f2d5",
+          "image": {},
+          "primaryAction": {
+            "label": "View Offer Details",
+            "url": "/hotel-offer-id/47bf7f5d-6165-49f1-87d6-0ca0ed87f2d5",
+            "target": "_self"
+          },
+          "bookableOnline": true,
+          "showSecondaryCTA": true,
+          "memberOffer": false,
+          "multiOffer": false,
+          "descriptions": {}
+        },
+        {
+          "subCategoryLabel": "Borgata Hotel Casino &amp; Spa",
+          "id": "0e0089e0-26b6-4e48-b839-d39c102c44fd",
+          "image": {},
+          "publicName": "MGM59",
+          "primaryAction": {
+            "label": "View Offer Details",
+            "url": "/hotel-offer-id/0e0089e0-26b6-4e48-b839-d39c102c44fd",
+            "target": "_self"
+          },
+          "bookableOnline": true,
+          "showSecondaryCTA": true,
+          "memberOffer": false,
+          "propertyShortName": "Borgata",
+          "multiOffer": false,
+          "descriptions": {
+            "short": "MGM Sun-Thurs $59 rate offer"
+          },
+          "propertyId": "773000cc-468a-4d86-a38f-7ae78ecfa6aa"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+	"confirmationNumber": "M03D5C0E1",
+	"firstName": "RBSv2",
+	"lastName": "UnitTest",
+	"tripDetails": {
+		"checkInDate": "2021-05-24",
+		"checkOutDate": "2021-05-25",
+		"numAdults": 2,
+		"numRooms": 1
+	},
+	"previewReservationTotal":6844.74,
+	"previewReservationDeposit":6802.79,
+	"cvv": 123
+}

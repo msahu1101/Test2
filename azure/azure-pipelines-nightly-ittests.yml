@@ -1,0 +1,27 @@
+schedules:
+- cron: "0 7 * * *"
+  displayName: Run QA nightly functional tests
+  branches:
+    include:
+    - qa
+  always: true    
+
+pool:
+  vmImage: "windows-latest"
+  
+steps:
+- task: CopyFiles@2
+  displayName: Copy artifacts to stage location
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: |
+        **postman-scripts/IntegrationTests/**
+        **azure/**
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    OverWrite: true
+    
+- task: PublishBuildArtifacts@1
+  displayName: Publish artifacts  
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/'
+    ArtifactName: 'room-booking-services-postman'

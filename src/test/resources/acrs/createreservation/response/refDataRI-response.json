@@ -1,0 +1,32 @@
+[
+  {
+    "routingAuthDataEntity": {
+      "id": "BGONZALES-6283037-021-dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+      "phoenixId": "306c7753-b691-4588-8ca5-c2b3ff99454c",
+      "addressId": "10278046",
+      "appUserId": "BGONZALES",
+      "authorizer": "6841",
+      "externalId": "010|104268",
+      "fullName": "Barbara Gonzales-Dent",
+      "nameId": "6283037",
+      "resort": "021",
+      "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+      "lastModifiedByUser": "cloudservice",
+      "lastModifiedByTime": "12-11-2020 07:58:11"
+    },
+    "routingCodesDataEntity": {
+      "id": "SPA-53814-10000-dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+      "phoenixId": "1c8ad7fe-b6c2-41eb-8a78-aae78ad3bcc0",
+      "arrangementId": "53814",
+      "authorizer": "10000",
+      "code": "SPA",
+      "dailyYesNo": false,
+      "description": "Spa Services & Admissions(no Regis)",
+      "name": "SPA",
+      "operaPropertyCode": "021",
+      "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+      "lastModifiedByTime": "03-22-2022 05:18:34",
+      "lastModifiedByUser": "cloudservice"
+    }
+  }
+]

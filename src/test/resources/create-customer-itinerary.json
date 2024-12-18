@@ -1,0 +1,12 @@
+{
+	"itinerary": {
+		"itineraryName": "rbs-it-test",
+		"customerId": "",
+		"tripParams": {
+			"numAdults": 2,
+			"numChildren": 0,
+			"arrivalDate": "",
+			"departureDate": ""
+		}
+	}
+}

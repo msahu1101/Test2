@@ -1,0 +1,1868 @@
+{
+	"info": {
+		"_postman_id": "89b8101b-0a7d-4dd4-a06d-85c890e81853",
+		"name": "RBS-Functional Tests-ACRS-V1",
+		"description": "RBS-ACRS-Functional Test ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "token",
+			"item": [
+				{
+					"name": "Token V1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1d5a63ae-39a8-4b89-989a-f035ea417633",
+								"exec": [
+									"if (!pm.environment.get(\"retryCount\")) {",
+									"    pm.environment.set(\"retryCount\", 1);",
+									"}",
+									"retryCount = parseInt(pm.environment.get(\"retryCount\"));",
+									"maxRetryCount = parseInt(pm.environment.get(\"maxRetryCount\"));",
+									"",
+									"if ((pm.response.code !== 204) ) {",
+									"    if(retryCount < maxRetryCount){",
+									"        console.log(\"retry again\", +retryCount);",
+									"        pm.environment.set(\"retryCount\", retryCount + 1);",
+									"        postman.setNextRequest(\"Token V1\");",
+									"    }else if(retryCount >= maxRetryCount){",
+									"        console.log(\"Token generation failed. Aborting the tests.\");",
+									"        postman.setNextRequest(null);",
+									"    }",
+									"}",
+									"postman.setEnvironmentVariable(\"x-state-token\", postman.getResponseHeader(\"x-state-token\"));"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a5d26f40-398b-4cd7-a12d-7fcba8317b24",
+								"exec": [
+									"var moment = require('moment');",
+									"",
+									"/*Construct Random Dates [for availability] from 60 days to 360*/",
+									"start = new Date(moment().add(60, 'days'));",
+									"end = new Date(moment().add(360, 'days'));",
+									"",
+									"options = { day: '2-digit', month: '2-digit', year: 'numeric' };",
+									"//setting options to overcome single digit for dates/month.",
+									"",
+									"checkInDate = randomDate(start, end).toLocaleDateString(\"en-US\", options);",
+									"checkOutDate = moment(checkInDate).add(2, 'days').format('MM/DD/YYYY');",
+									"",
+									"postman.setEnvironmentVariable('checkInDate',  checkInDate);",
+									"postman.setEnvironmentVariable('checkOutDate',  checkOutDate);",
+									"",
+									"postman.setEnvironmentVariable('invalidCheckInDate',   moment().add(-1, 'days').format('MM/DD/YYYY'));",
+									"postman.setEnvironmentVariable('invalidCheckOutDate',  moment().add(-2, 'days').format('MM/DD/YYYY'));",
+									"",
+									"checkInDate_v2 = randomDate(start, end).toLocaleDateString(\"fr-CA\", options);",
+									"checkInDate_v2_format = moment(checkInDate_v2).format('YYYY-MM-DD');",
+									"checkOutDate_v2 = moment(checkInDate_v2_format).add(2, 'days').format('YYYY-MM-DD');",
+									"",
+									"postman.setEnvironmentVariable('checkInDate_v2',  checkInDate_v2_format);",
+									"postman.setEnvironmentVariable('checkOutDate_v2',  checkOutDate_v2);",
+									"",
+									"postman.setEnvironmentVariable('invalidCheckInDate_v2',   moment().add(-1, 'days').format('YYYY-MM-DD'));",
+									"postman.setEnvironmentVariable('invalidCheckOutDate_v2',  moment().add(-2, 'days').format('YYYY-MM-DD'));",
+									"",
+									"function randomDate(start, end) {",
+									"    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))",
+									"}",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{api_key}}"
+							},
+							{
+								"key": "channel",
+								"type": "text",
+								"value": "{{channel}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": \"0oakcvjl1h2qeeaSD0h7\",\n\t\"client_secret\": \"WLyyHTJ8aqTKCNM00l-MYIRfdruR_eLO0Qul1EUs\",\n\t\"transient\": true\n}"
+						},
+						"url": {
+							"raw": "{{env}}/v1/authorize",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v1",
+								"authorize"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "offers",
+			"item": [
+				{
+					"name": "Single Availability - Functional Test Cases",
+					"item": [
+						{
+							"name": "Single Availability - Success",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e4344fd8-6dc6-48e0-9f4e-7f909dc6f132",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 01 : Single Availability with Checkin Date, Checkout Date, Property Id and Number of Adults\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"  pm.response.to.have.header(\"Content-Type\");\r",
+											"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"   \r",
+											"  var jsonData = JSON.parse(pm.response.stream);\r",
+											"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"  pm.expect(null).not.eq(jsonData);\r",
+											"  pm.expect(0).not.equal(jsonData.length);\r",
+											"  pm.expect(null).not.eq(jsonData[0].price);\r",
+											"  pm.expect(0).not.equal(jsonData[0].price.itemized.length);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "0af17209-780b-43ea-ab50-4dd7059e63c4",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"value": "ARI",
+										"type": "text"
+									},
+									{
+										"key": "channel",
+										"value": "{{channel}}",
+										"type": "text"
+									},
+									{
+										"key": "x-state-token",
+										"value": "{{x-state-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{env}}/v1/room/availability?checkInDate={{checkInDate}}&checkOutDate={{checkOutDate}}&propertyId={{validCalendarPropertyCode}}&numGuests=1",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"room",
+										"availability"
+									],
+									"query": [
+										{
+											"key": "checkInDate",
+											"value": "{{checkInDate}}"
+										},
+										{
+											"key": "checkOutDate",
+											"value": "{{checkOutDate}}"
+										},
+										{
+											"key": "propertyId",
+											"value": "{{validCalendarPropertyCode}}"
+										},
+										{
+											"key": "numGuests",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Single Availability - Invalid property code"
+							},
+							"response": []
+						},
+						{
+							"name": "Single Availability - Invalid property code",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c90fa8bd-ed04-4159-8d9d-8d4cf0beb04a",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 02 : Single Availability with Checkin Date, Checkout Date, Invalid Property Id and Number of Adults\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"  pm.response.to.have.header(\"Content-Type\");\r",
+											"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"  var jsonData = JSON.parse(pm.response.stream);\r",
+											"  pm.expect(\"error\").to.equal(jsonData.type);\r",
+											"  pm.expect(\"_runtime_error\").to.equal(jsonData.code);\r",
+											"  pm.expect(null).to.equal(jsonData.msg);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"value": "ARI",
+										"type": "text"
+									},
+									{
+										"key": "channel",
+										"value": "{{channel}}",
+										"type": "text"
+									},
+									{
+										"key": "x-state-token",
+										"value": "{{x-state-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{env}}/v1/room/availability?checkInDate={{checkInDate}}&checkOutDate={{checkOutDate}}&propertyId=e2704b04-d515-45b0-8afd-4fa1424ff010&numGuests=2",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"room",
+										"availability"
+									],
+									"query": [
+										{
+											"key": "checkInDate",
+											"value": "{{checkInDate}}"
+										},
+										{
+											"key": "checkOutDate",
+											"value": "{{checkOutDate}}"
+										},
+										{
+											"key": "propertyId",
+											"value": "e2704b04-d515-45b0-8afd-4fa1424ff010"
+										},
+										{
+											"key": "numGuests",
+											"value": "2"
+										}
+									]
+								},
+								"description": "Single Availability - Invalid property code"
+							},
+							"response": []
+						},
+						{
+							"name": "Single Availability - No availability for property",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0e85672f-d25f-4e27-b6c7-d17c980d15da",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 03 : Single Availability with Checkin Date, Checkout Date, No Availability Property and Number of Adults\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"  pm.response.to.have.header(\"Content-Type\");\r",
+											"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"  var jsonData = JSON.parse(pm.response.stream);\r",
+											"  pm.expect(\"error\").to.equal(jsonData.type);\r",
+											"  pm.expect(\"_invalid_property\").to.equal(jsonData.code);\r",
+											"  pm.expect(\"No property id or invalid property id to retrieve prices\").to.equal(jsonData.msg);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "ARI"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									}
+								],
+								"url": {
+									"raw": "{{env}}/v1/room/availability?checkInDate={{checkInDate}}&checkOutDate={{checkOutDate}}&propertyId=noavailabilityproperty&numGuests=2",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"room",
+										"availability"
+									],
+									"query": [
+										{
+											"key": "checkInDate",
+											"value": "{{checkInDate}}"
+										},
+										{
+											"key": "checkOutDate",
+											"value": "{{checkOutDate}}"
+										},
+										{
+											"key": "propertyId",
+											"value": "noavailabilityproperty"
+										},
+										{
+											"key": "numGuests",
+											"value": "2"
+										}
+									]
+								},
+								"description": "Single Availability - Invalid property code"
+							},
+							"response": []
+						},
+						{
+							"name": "Single Availability - Min and max los of the property are not respected",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1092938e-b54a-45a5-bb55-e554d13b1908",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 04 : Single Availability with Checkin Date & Checkout Date (not matching with los), Property Id and Number of Adults\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"  pm.response.to.have.header(\"Content-Type\");\r",
+											"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"  var jsonData = JSON.parse(pm.response.stream);\r",
+											"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"  pm.expect(null).not.eq(jsonData);\r",
+											"  pm.expect(0).not.equal(jsonData.length);\r",
+											"  pm.expect(null).not.eq(jsonData[0].price);\r",
+											"  pm.expect(0).not.equal(jsonData[0].price.itemized.length);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "ARI"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									}
+								],
+								"url": {
+									"raw": "{{env}}/v1/room/availability?checkInDate={{checkInDate}}&checkOutDate={{checkOutDate}}&propertyId={{validCalendarPropertyCode}}&numGuests=2",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"room",
+										"availability"
+									],
+									"query": [
+										{
+											"key": "checkInDate",
+											"value": "{{checkInDate}}"
+										},
+										{
+											"key": "checkOutDate",
+											"value": "{{checkOutDate}}"
+										},
+										{
+											"key": "propertyId",
+											"value": "{{validCalendarPropertyCode}}"
+										},
+										{
+											"key": "numGuests",
+											"value": "2"
+										}
+									]
+								},
+								"description": "Single Availability - Invalid property code"
+							},
+							"response": []
+						},
+						{
+							"name": "Single Availability - Closed restriction on property",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2c7f4959-f27d-4764-bc3d-33c6b2dd5b78",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 05 : Single Availability with Checkin Date & Checkout Date (with restrictions on date), Property Id and Number of Adults\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"  pm.response.to.have.header(\"Content-Type\");\r",
+											"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"    \r",
+											"  var jsonData = JSON.parse(pm.response.stream);\r",
+											"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"  pm.expect(null).not.eq(jsonData);\r",
+											"  pm.expect(0).not.equal(jsonData.length);\r",
+											"  pm.expect(null).not.eq(jsonData[0].price);\r",
+											"  pm.expect(0).not.equal(jsonData[0].price.itemized.length);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "ARI"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									}
+								],
+								"url": {
+									"raw": "{{env}}/v1/room/availability?checkInDate={{checkInDate}}&checkOutDate={{checkOutDate}}&propertyId={{validCalendarPropertyCode}}&numGuests=2",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"room",
+										"availability"
+									],
+									"query": [
+										{
+											"key": "checkInDate",
+											"value": "{{checkInDate}}"
+										},
+										{
+											"key": "checkOutDate",
+											"value": "{{checkOutDate}}"
+										},
+										{
+											"key": "propertyId",
+											"value": "{{validCalendarPropertyCode}}"
+										},
+										{
+											"key": "numGuests",
+											"value": "2"
+										}
+									]
+								},
+								"description": "Single Availability - Invalid property code"
+							},
+							"response": []
+						},
+						{
+							"name": "Single Availability - Invalid property format",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "33d16e3d-5cf7-49b5-aa2f-d856cf72cdf3",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 06 : Single Availability with Checkin Date, Checkout Date, Invalid Property Format and Number of Adults\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"error\").to.equal(jsonData.type);\r",
+											"    pm.expect(\"_invalid_property\").to.equal(jsonData.code);\r",
+											"    pm.expect(\"No property id or invalid property id to retrieve prices\").to.equal(jsonData.msg);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "ARI"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									}
+								],
+								"url": {
+									"raw": "{{env}}/v1/room/availability?checkInDate={{checkInDate}}&checkOutDate={{checkOutDate}}&propertyId=invalidpropertyformat?&numGuests=2",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"room",
+										"availability"
+									],
+									"query": [
+										{
+											"key": "checkInDate",
+											"value": "{{checkInDate}}"
+										},
+										{
+											"key": "checkOutDate",
+											"value": "{{checkOutDate}}"
+										},
+										{
+											"key": "propertyId",
+											"value": "invalidpropertyformat?"
+										},
+										{
+											"key": "numGuests",
+											"value": "2"
+										}
+									]
+								},
+								"description": "Single Availability - Invalid property code"
+							},
+							"response": []
+						},
+						{
+							"name": "Single Availability - Invalid number of guest adult",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e3a4bc5a-8b01-462b-9821-298312a6d3d9",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 07 : Single Availability with Checkin Date, Checkout Date, Property Id and Invalid Number of Adults\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"error\").to.equal(jsonData.type);\r",
+											"    pm.expect(\"_unable_to_price_trip\").to.equal(jsonData.code);\r",
+											"    pm.expect(\"Unable to price room for modified dates\").to.equal(jsonData.msg);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "ARI"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									}
+								],
+								"url": {
+									"raw": "{{env}}/v1/room/availability?checkInDate={{checkInDate}}&checkOutDate={{checkOutDate}}&propertyId={{validCalendarPropertyCode}}&numGuests=-1",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"room",
+										"availability"
+									],
+									"query": [
+										{
+											"key": "checkInDate",
+											"value": "{{checkInDate}}"
+										},
+										{
+											"key": "checkOutDate",
+											"value": "{{checkOutDate}}"
+										},
+										{
+											"key": "propertyId",
+											"value": "{{validCalendarPropertyCode}}"
+										},
+										{
+											"key": "numGuests",
+											"value": "-1"
+										}
+									]
+								},
+								"description": "Single Availability - Invalid property code"
+							},
+							"response": []
+						},
+						{
+							"name": "Single Availability - Invalid checkin date",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5e2262be-999a-40cf-8887-09e58e54ded2",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 08 : Single Availability with Invalid Checkin Date, Checkout Date, Property Id and Number of Adults\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"error\").to.equal(jsonData.type);\r",
+											"    pm.expect(\"_invalid_dates\").to.equal(jsonData.code);\r",
+											"    pm.expect(\"CheckIn/Start or CheckOut/end date is invalid\").to.equal(jsonData.msg);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "ARI"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									}
+								],
+								"url": {
+									"raw": "{{env}}/v1/room/availability?checkInDate={{invalidCheckInDate}}&checkOutDate={{invalidCheckOutDate}}&propertyId={{validCalendarPropertyCode}}&numGuests=2",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"room",
+										"availability"
+									],
+									"query": [
+										{
+											"key": "checkInDate",
+											"value": "{{invalidCheckInDate}}"
+										},
+										{
+											"key": "checkOutDate",
+											"value": "{{invalidCheckOutDate}}"
+										},
+										{
+											"key": "propertyId",
+											"value": "{{validCalendarPropertyCode}}"
+										},
+										{
+											"key": "numGuests",
+											"value": "2"
+										}
+									]
+								},
+								"description": "Single Availability - Invalid property code"
+							},
+							"response": []
+						},
+						{
+							"name": "Single Availability - Invalid channel",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6fecc3ad-fc55-4c3f-b8c7-674b9ac80752",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 09 : Single Availability with Checkin Date, Checkout Date, Property Id, Number of Adults and Invalid Channel\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json;charset=ISO-8859-1\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"error\").to.equal(jsonData.type);\r",
+											"    pm.expect(\"_invalid_channel_header\").to.equal(jsonData.code);\r",
+											"    pm.expect(\"Channel header is invalid or empty.\").to.equal(jsonData.msg);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "ARI"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "invalidchannel"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									}
+								],
+								"url": {
+									"raw": "{{env}}/v1/room/availability?checkInDate={{invalidCheckInDate}}&checkOutDate={{invalidCheckOutDate}}&propertyId={{validCalendarPropertyCode}}&numGuests=2",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"room",
+										"availability"
+									],
+									"query": [
+										{
+											"key": "checkInDate",
+											"value": "{{invalidCheckInDate}}"
+										},
+										{
+											"key": "checkOutDate",
+											"value": "{{invalidCheckOutDate}}"
+										},
+										{
+											"key": "propertyId",
+											"value": "{{validCalendarPropertyCode}}"
+										},
+										{
+											"key": "numGuests",
+											"value": "2"
+										}
+									]
+								},
+								"description": "Single Availability - Invalid property code"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Multi Availability - Functional Test Cases",
+					"item": [
+						{
+							"name": "Multi Availability - Success",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "68b959fe-8959-47ff-b0ab-f261b5fef15a",
+										"exec": [
+											"setTimeout(function(){}, [1000]);\r",
+											"pm.test(\"RBS_ACRS_V1 | Test case 01 : Multi Availability with Checkin Date, Checkout Date and Valid Multi Avail Property Id\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"    pm.expect(null).not.eq(jsonData[0].price);\r",
+											"    pm.expect(null).not.eq(jsonData[0].propertyId);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "18cb8149-b5e4-4a3e-8875-42934c5d4917",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"value": "{{validPropertyCode}}",
+										"type": "text"
+									},
+									{
+										"key": "channel",
+										"value": "{{channel}}",
+										"type": "text"
+									},
+									{
+										"key": "x-state-token",
+										"value": "{{x-state-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{env}}/v1/resorts/room-price?checkInDate={{checkInDate}}&checkOutDate={{checkOutDate}}&propertyId={{validPropertyCode}}",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"resorts",
+										"room-price"
+									],
+									"query": [
+										{
+											"key": "checkInDate",
+											"value": "{{checkInDate}}"
+										},
+										{
+											"key": "checkOutDate",
+											"value": "{{checkOutDate}}"
+										},
+										{
+											"key": "propertyId",
+											"value": "{{validPropertyCode}}"
+										}
+									]
+								},
+								"description": "Multi Availability - Success"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Calendar price",
+					"item": [
+						{
+							"name": "Calendar Price V1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "41ed7ccd-ea0c-4192-a089-0f4a84a08e18",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 01 : Calendar Price with Start Date, End Date, Property Id and Number of Adults\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"    pm.expect(null).not.eq(jsonData[1].programId);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "181eb287-7f9a-480d-8242-229640cad367",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"value": "{{source}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{api_key}}",
+										"type": "text"
+									},
+									{
+										"key": "x-state-token",
+										"value": "{{x-state-token}}",
+										"type": "text"
+									},
+									{
+										"key": "channel",
+										"value": "{{channel}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{env}}/v1/room/calendar/price?propertyId={{validCalendarPropertyCode}}&endDate={{checkOutDate}}&startDate={{checkInDate}}&numAdults=2",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"room",
+										"calendar",
+										"price"
+									],
+									"query": [
+										{
+											"key": "promoCode",
+											"value": "AK Casino Offer",
+											"disabled": true
+										},
+										{
+											"key": "excludeNonOffer",
+											"value": "true",
+											"disabled": true
+										},
+										{
+											"key": "propertyId",
+											"value": "{{validCalendarPropertyCode}}"
+										},
+										{
+											"key": "endDate",
+											"value": "{{checkOutDate}}"
+										},
+										{
+											"key": "startDate",
+											"value": "{{checkInDate}}"
+										},
+										{
+											"key": "numAdults",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"description": "Functional Tests for offer related API's",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "reservations",
+			"item": [
+				{
+					"name": "Create Reservation",
+					"item": [
+						{
+							"name": "AddRoomToCart",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "60e268c6-8da3-4ae4-b3b1-c6c8eedece3e",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 01 : Add Room To Cart with Checkin Date, Checkout Date, Property Id, RoomType Id, Program Id, Promo Code and Number of Adults\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);  \r",
+											"    pm.expect(null).not.eq(jsonData.bookDate);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "3a6e36d3-9ff0-4477-8d71-bc0645fada5b",
+										"exec": [
+											"firstName = \"functionaltest\" + Math.random().toString(36).substring(5);\r",
+											"postman.setEnvironmentVariable('firstName',  firstName);\r",
+											"\r",
+											"phone = Math.floor(Math.random() * 9000000000) + 1000000000;\r",
+											"postman.setEnvironmentVariable('phone',  phone);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "{{source}}"
+									},
+									{
+										"key": "x-api-key",
+										"type": "text",
+										"value": "{{api_key}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"checkInDate\": \"{{checkInDate}}\",\r\n  \"checkOutDate\": \"{{checkOutDate}}\",\r\n  \"numGuests\": 2,\r\n  \"propertyId\": \"{{validCalendarPropertyCode}}\",\r\n  \"roomTypeId\": \"2b85caa0-1113-4517-b851-46da7f21ad22\",\r\n  \"programId\": null,\r\n  \"promoCode\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{env}}/v1/cart/room",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"cart",
+										"room"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllCartItems",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "914019a4-2316-489b-8e7b-b3c4ac249346",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 02 : Retrieve All Cart Items with Checkin Date, Checkout Date, Property Id, RoomType Id, Program Id, Promo Code and Number of Adults\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"    pm.expect(null).not.eq(jsonData.bookDate);   \r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "{{source}}"
+									},
+									{
+										"key": "x-api-key",
+										"type": "text",
+										"value": "{{api_key}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"checkInDate\": \"{{checkInDate}}\",\r\n  \"checkOutDate\": \"{{checkOutDate}}\",\r\n  \"numGuests\": 2,\r\n  \"propertyId\": \"{{validCalendarPropertyCode}}\",\r\n  \"roomTypeId\": \"7715e5b7-4ed7-4779-a0bf-a8e6939f8369\",\r\n  \"programId\": null,\r\n  \"promoCode\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{env}}/v1/cart/room",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"cart",
+										"room"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ReserveReservationInCart",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ebbd224d-2f2e-422a-9980-78ece89e7643",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 03 : Reserve Reservation in Cart with Profile, FullPayment and Billing\", function () {\r",
+											"    pm.globals.set(\"variable_key\", \"variable_value\");  pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"    pm.expect(null).not.eq(jsonData.booked);    \r",
+											"    var confirmationNumber = jsonData.booked[0].confirmationNumber;\r",
+											"    pm.expect(confirmationNumber).not.eq(null);\r",
+											"    postman.setEnvironmentVariable('validConfirmationNumber',  confirmationNumber);\r",
+											"    pm.globals.set(\"bookedConfirmationNumber\", confirmationNumber);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "001d4b0b-d17b-4fbc-84b9-9e65a15ed802",
+										"exec": [
+											"firstName = \"functionaltest\" + Math.random().toString(36).substring(5);",
+											"postman.setEnvironmentVariable('firstName',  firstName);",
+											"postman.setEnvironmentVariable('lastName',  \"pman\");",
+											"",
+											"phone = Math.floor(Math.random() * 9000000000) + 1000000000;",
+											"postman.setEnvironmentVariable('phone',  phone);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "{{source}}"
+									},
+									{
+										"key": "x-api-key",
+										"type": "text",
+										"value": "{{api_key}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fullPayment\": false,\n  \"profile\": {\n    \"firstName\": \"{{firstName}}\",\n    \"lastName\": \"{{lastName}}\",\n    \"phone\": \"{{phone}}\",\n    \"email\": \"{{firstName}}@mgmresorts.com\"\n  },\n  \"billing\": {\n    \"payment\": {\n      \"cardHolder\": \"{{firstName}} pman\",\n      \"cardNumber\": \"5555555555554444\",\n      \"cvv\": 123,\n      \"type\": \"Mastercard\",\n      \"expiry\": \"10/2022\"\n    },\n    \"address\": {\n      \"street1\": \"234 W Main St\",\n      \"street2\": \"Unit 415\",\n      \"city\": \"Las Vegas\",\n      \"state\": \"NV\",\n      \"postalCode\": \"12345\",\n      \"country\": \"US\"\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{env}}/v1/reserve/room",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"reserve",
+										"room"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3ef2dad5-ed33-48d5-b720-53e0b66cf1dd",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8be4795d-6f0c-49a5-8645-4357c424534a",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Retrieve Reservation",
+					"item": [
+						{
+							"name": "Retrieve Reservation - Success",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "80e062d6-1745-4c75-9218-245696103d01",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 01 : Retrieve Reservation with Confirmation Number, First Name and Last Name\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"    var value= pm.variables.get(\"validConfirmationNumber\");\r",
+											"    pm.expect(value).eq(jsonData.confirmationNumber);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "{{source}}"
+									},
+									{
+										"key": "x-api-key",
+										"type": "text",
+										"value": "{{api_key}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									}
+								],
+								"url": {
+									"raw": "{{env}}/v1/reserve/room?confirmationNumber={{validConfirmationNumber}}&firstName={{firstName}}&lastName={{lastName}}",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"reserve",
+										"room"
+									],
+									"query": [
+										{
+											"key": "confirmationNumber",
+											"value": "{{validConfirmationNumber}}"
+										},
+										{
+											"key": "firstName",
+											"value": "{{firstName}}"
+										},
+										{
+											"key": "lastName",
+											"value": "{{lastName}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RetrieveReservation - No reservation available for the input confirmation number.",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "adb32ecc-f526-4950-84c9-4399e64f0063",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 02 : Retrieve Reservation with Invalid Confirmation Number, First Name and Last Name\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"error\").to.equal(jsonData.type);\r",
+											"    pm.expect(\"_unable_to_price_trip\").to.equal(jsonData.code);\r",
+											"    pm.expect(\"Unable to price room for modified dates\").to.equal(jsonData.msg);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "{{source}}"
+									},
+									{
+										"key": "x-api-key",
+										"type": "text",
+										"value": "{{api_key}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									}
+								],
+								"url": {
+									"raw": "{{env}}/v1/reserve/room?confirmationNumber=12315464879&firstName=firstName&lastName=lastName",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"reserve",
+										"room"
+									],
+									"query": [
+										{
+											"key": "confirmationNumber",
+											"value": "12315464879"
+										},
+										{
+											"key": "firstName",
+											"value": "firstName"
+										},
+										{
+											"key": "lastName",
+											"value": "lastName"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Modify Reservation",
+					"item": [
+						{
+							"name": "preModifyWIP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2df8b935-0de9-44f0-9871-919b49f024da",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 01 : Pre Modify Reservation with Confirmation Number, Change - First Name, Last Name and Trip Details\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"  pm.response.to.have.header(\"Content-Type\");\r",
+											"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"  var jsonData = JSON.parse(pm.response.stream);\r",
+											"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"  pm.expect(null).not.eq(jsonData);\r",
+											"  pm.expect(0).not.equal(jsonData.length);\r",
+											"  var value = pm.variables.get(\"bookedConfirmationNumber\");\r",
+											"  pm.expect(value).eq(jsonData.confirmationNumber);\r",
+											"  pm.globals.set(\"validItemId\", jsonData.itemId);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "c3a93897-785f-4e2f-a4c8-91021eb04d6f",
+										"exec": [
+											"var moment = require('moment');\r",
+											"\r",
+											"preModifyCheckInDate = moment(pm.variables.get(\"checkInDate\")).format('YYYY-MM-DD');\r",
+											"preModifyCheckOutDate = moment(pm.variables.get(\"checkOutDate\")).format('YYYY-MM-DD');\r",
+											"\r",
+											"postman.setEnvironmentVariable('preModifyCheckInDate',  preModifyCheckInDate);\r",
+											"postman.setEnvironmentVariable('preModifyCheckOutDate',  preModifyCheckOutDate);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "{{source}}"
+									},
+									{
+										"key": "x-api-key",
+										"type": "text",
+										"value": "{{api_key}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"confirmationNumber\": \"{{bookedConfirmationNumber}}\",\r\n  \"firstName\": \"{{firstName}}\",\r\n  \"lastName\": \"{{lastName}}\",\r\n  \"tripDetails\": {\r\n    \"checkInDate\": \"{{checkInDate}}\",\r\n    \"checkOutDate\": \"{{checkOutDate}}\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{env}}/v1/reserve/room/pre-modify",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"reserve",
+										"room",
+										"pre-modify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ModifyReservationWIP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1d6603f3-c38a-422f-bf52-0578cd1a6122",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 02 : Modify Reservation with Reservation Id\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"    var jsonData = JSON.parse(pm.response.stream);\r",
+											"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"    pm.expect(null).not.eq(jsonData);\r",
+											"    pm.expect(0).not.equal(jsonData.length);\r",
+											"    pm.expect(null).not.eq(jsonData.booked);    \r",
+											"    var confirmationNumber = jsonData.confirmationNumber;\r",
+											"    var bookedConfirmationNumber = pm.variables.get(\"bookedConfirmationNumber\");\r",
+											"    pm.expect(null).not.eq(confirmationNumber);\r",
+											"    pm.expect(bookedConfirmationNumber).eq(confirmationNumber)\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "{{source}}"
+									},
+									{
+										"key": "x-api-key",
+										"type": "text",
+										"value": "{{api_key}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"reservationId\":\"{{validItemId}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{env}}/v1/reserve/room",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"reserve",
+										"room"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "de082801-3bf3-4ae3-807f-efeead8b605f",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "a7849391-8140-461c-9930-63674a0a8d76",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Cancel Reservation",
+					"item": [
+						{
+							"name": "Cancel Room Validate",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "a279606f-01d7-4dc3-b5f6-7f4edcf18128",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "c5c5de9b-ec17-48a8-be0a-b5eb8f872414",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 01 : Cancel Validate Reservation with Confirmation Number, First Name and Last Name\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"  pm.response.to.have.header(\"Content-Type\");\r",
+											"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"  var jsonData = JSON.parse(pm.response.stream);\r",
+											"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"  pm.expect(null).not.eq(jsonData);\r",
+											"  pm.expect(0).not.equal(jsonData.length);\r",
+											"  pm.expect(0).not.eq(jsonData.reservationTotal);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"value": "{{source}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{api_key}}",
+										"type": "text"
+									},
+									{
+										"key": "x-state-token",
+										"value": "{{x-state-token}}",
+										"type": "text"
+									},
+									{
+										"key": "channel",
+										"value": "{{channel}}",
+										"type": "text"
+									},
+									{
+										"key": "source",
+										"value": "mgmri",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{env}}/v1/reserve/room/cancel/validate?confirmationNumber={{validConfirmationNumber}}&firstName={{firstName}}&lastName={{lastName}}",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"reserve",
+										"room",
+										"cancel",
+										"validate"
+									],
+									"query": [
+										{
+											"key": "confirmationNumber",
+											"value": "{{validConfirmationNumber}}"
+										},
+										{
+											"key": "firstName",
+											"value": "{{firstName}}"
+										},
+										{
+											"key": "lastName",
+											"value": "{{lastName}}"
+										},
+										{
+											"key": "source",
+											"value": "mgmri",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cancel Reservation",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cb67df59-a301-4928-8f1f-7256ca92d7d0",
+										"exec": [
+											"pm.test(\"RBS_ACRS_V1 | Test case 02 : Cancel Reservation with Confirmation Number, First Name and Last Name\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"  pm.response.to.have.header(\"Content-Type\");\r",
+											"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"  var jsonData = JSON.parse(pm.response.stream);\r",
+											"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"  pm.expect(null).not.eq(jsonData);\r",
+											"  pm.expect(0).not.equal(jsonData.length);\r",
+											"  var value = pm.variables.get(\"validConfirmationNumber\");\r",
+											"  pm.expect(value).eq(jsonData.confirmationNumber);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "source",
+										"value": "{{source}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{api_key}}",
+										"type": "text"
+									},
+									{
+										"key": "x-state-token",
+										"value": "{{x-state-token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "channel",
+										"value": "{{channel}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"firstName\": \"{{firstName}}\",\n\t\"lastName\": \"{{lastName}}\",\n\t\"confirmationNumber\": \"{{validConfirmationNumber}}\"\n}"
+								},
+								"url": {
+									"raw": "{{env}}/v1/reserve/room/cancel",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"reserve",
+										"room",
+										"cancel"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a73ddde5-e808-4abf-9993-fef112c173db",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "046d5bdf-8f27-41ee-99dc-5eb700241f7f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

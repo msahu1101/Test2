@@ -1,0 +1,972 @@
+{
+	"info": {
+		"_postman_id": "fb7c30a9-71fb-4db9-a67e-f1993d0956bc",
+		"name": "RBS-Functional Tests - GSE-Updated",
+		"description": "RBS-ACRS-Functional Test ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "token",
+			"item": [
+				{
+					"name": "Token V1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ecbb268b-7766-42bb-9f15-e6a19e608b88",
+								"exec": [
+									"if (pm.response.code !== 204) {",
+									"    console.log(\"retry again\")",
+									"    postman.setNextRequest(\"Token V1\");",
+									"}",
+									"postman.setEnvironmentVariable(\"x-state-token\", postman.getResponseHeader(\"x-state-token\"));",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f37241f3-06b5-4311-95a9-ce1dbd03028c",
+								"exec": [
+									"var moment = require('moment');",
+									"",
+									"/*Construct Random Dates [for availability] from 60 days to 360*/",
+									"start = new Date(moment().add(60, 'days'));",
+									"end = new Date(moment().add(360, 'days'));",
+									"",
+									"options = { day: '2-digit', month: '2-digit', year: 'numeric' };",
+									"//setting options to overcome single digit for dates/month.",
+									"",
+									"checkInDate = randomDate(start, end).toLocaleDateString(\"en-US\", options);",
+									"checkOutDate = moment(checkInDate).add(2, 'days').format('MM/DD/YYYY');",
+									"",
+									"postman.setEnvironmentVariable('checkInDate',  checkInDate);",
+									"postman.setEnvironmentVariable('checkOutDate',  checkOutDate);",
+									"",
+									"postman.setEnvironmentVariable('invalidCheckInDate',   moment().add(-1, 'days').format('MM/DD/YYYY'));",
+									"postman.setEnvironmentVariable('invalidCheckOutDate',  moment().add(-2, 'days').format('MM/DD/YYYY'));",
+									"",
+									"function randomDate(start, end) {",
+									"    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))",
+									"}",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{api_key}}"
+							},
+							{
+								"key": "channel",
+								"type": "text",
+								"value": "{{channel}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": \"0oakcvjl1h2qeeaSD0h7\",\n\t\"client_secret\": \"WLyyHTJ8aqTKCNM00l-MYIRfdruR_eLO0Qul1EUs\",\n\t\"transient\": true\n}"
+						},
+						"url": {
+							"raw": "{{env}}/v1/authorize",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"v1",
+								"authorize"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "reservations",
+			"item": [
+				{
+					"name": "Create Reservation",
+					"item": [
+						{
+							"name": "Create Reservation - Success",
+							"item": [
+								{
+									"name": "Single Availability - Success",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "33154cf1-717d-453d-bc86-cd65c3cf520e",
+												"exec": [
+													"if (pm.response.code == 200 && pm.response.stream !== null) {\r",
+													"    var jsonData = JSON.parse(pm.response.stream);\r",
+													"    if(jsonData.length == 0){  \r",
+													"      //Retry again if no availbility    \r",
+													"      postman.setNextRequest(\"Token V1\");\r",
+													"    }\r",
+													"}\r",
+													"\r",
+													"pm.test(\"RBS_GSE_V1 | Test case 01 : Single Availability with Checkin Date, Checkout Date, Property Id and Number of Adults\", function () {\r",
+													"  pm.response.to.have.status(200);\r",
+													"  pm.response.to.have.header(\"Content-Type\");\r",
+													"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+													"\r",
+													"  var jsonData = JSON.parse(pm.response.stream);\r",
+													"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+													"  pm.expect(null).not.eq(jsonData);\r",
+													"  pm.expect(0).not.equal(jsonData.length);\r",
+													"  pm.expect(null).not.eq(jsonData[0].price);\r",
+													"  pm.expect(0).not.equal(jsonData[0].price.itemized.length);\r",
+													"  postman.setEnvironmentVariable(\"validRoomTypeId\", jsonData[0].roomTypeId);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "fb2f1495-aa95-499d-9672-c2524e241b5e",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "source",
+												"type": "text",
+												"value": "{{source}}"
+											},
+											{
+												"key": "channel",
+												"type": "text",
+												"value": "{{channel}}"
+											},
+											{
+												"key": "x-state-token",
+												"type": "text",
+												"value": "{{x-state-token}}"
+											}
+										],
+										"url": {
+											"raw": "{{env}}/v1/room/availability?checkInDate={{checkInDate}}&checkOutDate={{checkOutDate}}&propertyId={{validPropertyCode}}&numGuests=2",
+											"host": [
+												"{{env}}"
+											],
+											"path": [
+												"v1",
+												"room",
+												"availability"
+											],
+											"query": [
+												{
+													"key": "checkInDate",
+													"value": "{{checkInDate}}"
+												},
+												{
+													"key": "checkOutDate",
+													"value": "{{checkOutDate}}"
+												},
+												{
+													"key": "propertyId",
+													"value": "{{validPropertyCode}}"
+												},
+												{
+													"key": "numGuests",
+													"value": "2"
+												}
+											]
+										},
+										"description": "Single Availability - Invalid property code"
+									},
+									"response": []
+								},
+								{
+									"name": "AddRoomToCart",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "d15f48a2-01f6-4db7-be8a-9e44526d822d",
+												"exec": [
+													"pm.test(\"RBS_GSE_V1 | Test case 01 : Add Room To Cart with Checkin Date, Checkout Date, Property Id, RoomType Id, Program Id, Promo Code and Number of Adults\", function () {\r",
+													"  pm.response.to.have.status(200);\r",
+													"  pm.response.to.have.header(\"Content-Type\");\r",
+													"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+													"\r",
+													"  var jsonData = JSON.parse(pm.response.stream);\r",
+													"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+													"  pm.expect(null).not.eq(jsonData);\r",
+													"  pm.expect(0).not.equal(jsonData.length);  \r",
+													"  pm.expect(null).not.eq(jsonData.bookDate);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "49471040-9a70-4510-a4a7-e2bf28351e7c",
+												"exec": [
+													"firstName = \"functionaltest\" + Math.random().toString(36).substring(5);\r",
+													"postman.setEnvironmentVariable('firstName',  firstName);\r",
+													"\r",
+													"phone = Math.floor(Math.random() * 9000000000) + 1000000000;\r",
+													"postman.setEnvironmentVariable('phone',  phone);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "source",
+												"type": "text",
+												"value": "66964e2b-2550-4476-84c3-1a4c0c5c067f"
+											},
+											{
+												"key": "x-api-key",
+												"type": "text",
+												"value": "{{api_key}}"
+											},
+											{
+												"key": "x-state-token",
+												"type": "text",
+												"value": "{{x-state-token}}"
+											},
+											{
+												"key": "channel",
+												"type": "text",
+												"value": "{{channel}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"checkInDate\": \"{{checkInDate}}\",\r\n  \"checkOutDate\": \"{{checkOutDate}}\",\r\n  \"numGuests\": 2,\r\n  \"propertyId\": \"{{validPropertyCode}}\",\r\n  \"roomTypeId\": \"{{validRoomTypeId}}\",\r\n  \"programId\": null,\r\n  \"promoCode\": null\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{env}}/v1/cart/room",
+											"host": [
+												"{{env}}"
+											],
+											"path": [
+												"v1",
+												"cart",
+												"room"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getAllCartItems",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "0fc01679-61a8-469f-8c2a-e98d571c1918",
+												"exec": [
+													"pm.test(\"RBS_GSE_V1 | Test case 02 : Retrieve All Cart Items with Checkin Date, Checkout Date, Property Id, RoomType Id, Program Id, Promo Code and Number of Adults\", function () {\r",
+													"  pm.response.to.have.status(200);\r",
+													"  pm.response.to.have.header(\"Content-Type\");\r",
+													"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+													"\r",
+													"  var jsonData = JSON.parse(pm.response.stream);\r",
+													"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+													"  pm.expect(null).not.eq(jsonData);\r",
+													"  pm.expect(0).not.equal(jsonData.length);\r",
+													"  pm.expect(null).not.eq(jsonData.bookDate);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "source",
+												"type": "text",
+												"value": "{{source}}"
+											},
+											{
+												"key": "x-api-key",
+												"type": "text",
+												"value": "{{api_key}}"
+											},
+											{
+												"key": "x-state-token",
+												"type": "text",
+												"value": "{{x-state-token}}"
+											},
+											{
+												"key": "channel",
+												"type": "text",
+												"value": "{{channel}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"checkInDate\": \"{{checkInDate}}\",\r\n  \"checkOutDate\": \"{{checkOutDate}}\",\r\n  \"numGuests\": 2,\r\n  \"propertyId\": \"{{validPropertyCode}}\",\r\n  \"roomTypeId\": \"{{validRoomTypeId}}\",\r\n  \"programId\": null,\r\n  \"promoCode\": null\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{env}}/v1/cart/room",
+											"host": [
+												"{{env}}"
+											],
+											"path": [
+												"v1",
+												"cart",
+												"room"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ReserveReservationInCart",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "d1e14527-5cbd-421a-a5c5-5b4b8c12419d",
+												"exec": [
+													"pm.test(\"RBS_GSE_V1 | Test case 03 : Reserve Reservation in Cart with Profile, FullPayment and Billing\", function () {\r",
+													"    pm.globals.set(\"variable_key\", \"variable_value\");  pm.response.to.have.status(200);\r",
+													"    pm.response.to.have.header(\"Content-Type\");\r",
+													"    pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+													"\r",
+													"    var jsonData = JSON.parse(pm.response.stream);\r",
+													"    pm.expect(\"OK\").to.equal(pm.response.status);\r",
+													"    pm.expect(null).not.eq(jsonData);\r",
+													"    pm.expect(0).not.equal(jsonData.length);\r",
+													"    pm.expect(null).not.eq(jsonData.booked);    \r",
+													"    var confirmationNumber = jsonData.booked[0].confirmationNumber;\r",
+													"    pm.expect(confirmationNumber).not.eq(null);\r",
+													"    postman.setEnvironmentVariable('validConfirmationNumber',  confirmationNumber);\r",
+													"    pm.globals.set(\"bookedConfirmationNumber\", confirmationNumber);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "70ba1c26-d7d7-49a8-96dd-ec322c9c70e0",
+												"exec": [
+													"firstName = \"functionaltest\" + Math.random().toString(36).substring(5);",
+													"postman.setEnvironmentVariable('firstName',  firstName);",
+													"postman.setEnvironmentVariable('lastName',  \"pman\");",
+													"",
+													"phone = Math.floor(Math.random() * 9000000000) + 1000000000;",
+													"postman.setEnvironmentVariable('phone',  phone);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "source",
+												"type": "text",
+												"value": "{{source}}"
+											},
+											{
+												"key": "x-api-key",
+												"type": "text",
+												"value": "{{api_key}}"
+											},
+											{
+												"key": "x-state-token",
+												"type": "text",
+												"value": "{{x-state-token}}"
+											},
+											{
+												"key": "channel",
+												"type": "text",
+												"value": "{{channel}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"fullPayment\": false,\n  \"profile\": {\n    \"firstName\": \"{{firstName}}\",\n    \"lastName\": \"{{lastName}}\",\n    \"phone\": \"{{phone}}\",\n    \"email\": \"{{firstName}}@mgmresorts.com\"\n  },\n  \"billing\": {\n    \"payment\": {\n      \"cardHolder\": \"{{firstName}} pman\",\n      \"cardNumber\": \"5555555555554444\",\n      \"cvv\": 123,\n      \"type\": \"Mastercard\",\n      \"expiry\": \"10/2022\"\n    },\n    \"address\": {\n      \"street1\": \"234 W Main St\",\n      \"street2\": \"Unit 415\",\n      \"city\": \"Las Vegas\",\n      \"state\": \"NV\",\n      \"postalCode\": \"12345\",\n      \"country\": \"US\"\n    }\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{env}}/v1/reserve/room",
+											"host": [
+												"{{env}}"
+											],
+											"path": [
+												"v1",
+												"reserve",
+												"room"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d52d86bb-1969-41a4-aa92-4bebcdd4bc21",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "5412c9d9-aee4-4e5b-a843-65a1935e1ddb",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Retrieve Reservation",
+					"item": [
+						{
+							"name": "Retrieve Reservation - Success",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "97a2192f-b9ce-4edc-a2d9-c6d8403ed74e",
+										"exec": [
+											"pm.test(\"RBS_GSE_V1 | Test case 01 : Retrieve Reservation with Confirmation Number, First Name and Last Name\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"  pm.response.to.have.header(\"Content-Type\");\r",
+											"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"  var jsonData = JSON.parse(pm.response.stream);\r",
+											"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"  pm.expect(null).not.eq(jsonData);\r",
+											"  pm.expect(0).not.equal(jsonData.length);\r",
+											"  var value= pm.variables.get(\"validConfirmationNumber\");\r",
+											"  pm.expect(value).eq(jsonData.confirmationNumber);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "{{source}}"
+									},
+									{
+										"key": "x-api-key",
+										"type": "text",
+										"value": "{{api_key}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									}
+								],
+								"url": {
+									"raw": "{{env}}/v1/reserve/room?confirmationNumber={{validConfirmationNumber}}&firstName={{firstName}}&lastName={{lastName}}",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"reserve",
+										"room"
+									],
+									"query": [
+										{
+											"key": "confirmationNumber",
+											"value": "{{validConfirmationNumber}}"
+										},
+										{
+											"key": "firstName",
+											"value": "{{firstName}}"
+										},
+										{
+											"key": "lastName",
+											"value": "{{lastName}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Modify Reservation",
+					"item": [
+						{
+							"name": "preModifyWIP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "02ea9474-b647-4b8b-86e2-a5a272c51a2b",
+										"exec": [
+											"pm.test(\"RBS_GSE_V1 | Test case 01 : Pre Modify Reservation with Confirmation Number, Change - First Name, Last Name and Trip Details\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"  pm.response.to.have.header(\"Content-Type\");\r",
+											"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"  var jsonData = JSON.parse(pm.response.stream);\r",
+											"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"  pm.expect(null).not.eq(jsonData);\r",
+											"  pm.expect(0).not.equal(jsonData.length);\r",
+											"  var value = pm.variables.get(\"bookedConfirmationNumber\");\r",
+											"  pm.expect(value).eq(jsonData.confirmationNumber);\r",
+											"  pm.globals.set(\"validItemId\", jsonData.itemId);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "b1359cf8-19d6-4b7e-ad3b-0f825355b4ec",
+										"exec": [
+											"setTimeout(function(){}, [62000]);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "{{source}}"
+									},
+									{
+										"key": "x-api-key",
+										"type": "text",
+										"value": "{{api_key}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"confirmationNumber\": \"{{bookedConfirmationNumber}}\",\r\n  \"firstName\": \"{{firstName}}\",\r\n  \"lastName\": \"{{lastName}}\",\r\n  \"tripDetails\": {\r\n    \"checkInDate\": \"{{checkInDate}}\",\r\n    \"checkOutDate\": \"{{checkOutDate}}\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{env}}/v1/reserve/room/pre-modify",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"reserve",
+										"room",
+										"pre-modify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ModifyReservationWIP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1ccfa47a-c18e-43d7-a5c8-7a71aa48e04f",
+										"exec": [
+											"pm.test(\"RBS_GSE_V1 | Test case 02 : Modify Reservation with Reservation Id\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"  pm.response.to.have.header(\"Content-Type\");\r",
+											"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+											"\r",
+											"  var jsonData = JSON.parse(pm.response.stream);\r",
+											"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+											"  pm.expect(null).not.eq(jsonData);\r",
+											"  pm.expect(0).not.equal(jsonData.length);\r",
+											"  pm.expect(null).not.eq(jsonData.booked);    \r",
+											"  var confirmationNumber = jsonData.confirmationNumber;\r",
+											"  var bookedConfirmationNumber = pm.variables.get(\"bookedConfirmationNumber\");\r",
+											"  pm.expect(null).not.eq(confirmationNumber);\r",
+											"  pm.expect(bookedConfirmationNumber).eq(confirmationNumber);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "source",
+										"type": "text",
+										"value": "{{source}}"
+									},
+									{
+										"key": "x-api-key",
+										"type": "text",
+										"value": "{{api_key}}"
+									},
+									{
+										"key": "x-state-token",
+										"type": "text",
+										"value": "{{x-state-token}}"
+									},
+									{
+										"key": "channel",
+										"type": "text",
+										"value": "{{channel}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"reservationId\":\"{{validItemId}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{env}}/v1/reserve/room",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"v1",
+										"reserve",
+										"room"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "21285388-f9f3-4a3e-b107-808b0d5a2d69",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "5f5e9fd0-e551-4aad-859b-b4d22440d334",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Cancel Reservation",
+					"item": [
+						{
+							"name": "Cancel Reservation - Success",
+							"item": [
+								{
+									"name": "Cancel Room Validate",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "23595acc-5540-4990-a3c0-65598d948d9f",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "4ddefab2-5a2e-4e6a-a593-08475a56bf95",
+												"exec": [
+													"pm.test(\"RBS_GSE_V1 | Test case 01 : Cancel Validate Reservation with Confirmation Number, First Name and Last Name\", function () {\r",
+													"  pm.response.to.have.status(200);\r",
+													"  pm.response.to.have.header(\"Content-Type\");\r",
+													"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+													"\r",
+													"  var jsonData = JSON.parse(pm.response.stream);\r",
+													"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+													"  pm.expect(null).not.eq(jsonData);\r",
+													"  pm.expect(0).not.equal(jsonData.length);\r",
+													"  pm.expect(0).not.eq(jsonData.reservationTotal);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "source",
+												"value": "{{source}}",
+												"type": "text"
+											},
+											{
+												"key": "x-api-key",
+												"value": "{{api_key}}",
+												"type": "text"
+											},
+											{
+												"key": "x-state-token",
+												"value": "{{x-state-token}}",
+												"type": "text"
+											},
+											{
+												"key": "channel",
+												"value": "{{channel}}",
+												"type": "text"
+											},
+											{
+												"key": "source",
+												"value": "mgmri",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{env}}/v1/reserve/room/cancel/validate?confirmationNumber={{validConfirmationNumber}}&firstName={{firstName}}&lastName={{lastName}}",
+											"host": [
+												"{{env}}"
+											],
+											"path": [
+												"v1",
+												"reserve",
+												"room",
+												"cancel",
+												"validate"
+											],
+											"query": [
+												{
+													"key": "confirmationNumber",
+													"value": "{{validConfirmationNumber}}"
+												},
+												{
+													"key": "firstName",
+													"value": "{{firstName}}"
+												},
+												{
+													"key": "lastName",
+													"value": "{{lastName}}"
+												},
+												{
+													"key": "source",
+													"value": "mgmri",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Cancel Reservation",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "66ff3da2-b59d-456c-bd4e-5250dadf705a",
+												"exec": [
+													"pm.test(\"RBS_GSE_V1 | Test case 02 : Cancel Reservation with Confirmation Number, First Name and Last Name\", function () {\r",
+													"  pm.response.to.have.status(200);\r",
+													"  pm.response.to.have.header(\"Content-Type\");\r",
+													"  pm.expect(postman.getResponseHeader(\"Content-Type\")).to.equal(\"application/json\");\r",
+													"\r",
+													"  var jsonData = JSON.parse(pm.response.stream);\r",
+													"  pm.expect(\"OK\").to.equal(pm.response.status);\r",
+													"  pm.expect(null).not.eq(jsonData);\r",
+													"  pm.expect(0).not.equal(jsonData.length);\r",
+													"  var value = pm.variables.get(\"validConfirmationNumber\");\r",
+													"  pm.expect(value).eq(jsonData.confirmationNumber);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "source",
+												"value": "{{source}}",
+												"type": "text"
+											},
+											{
+												"key": "x-api-key",
+												"value": "{{api_key}}",
+												"type": "text"
+											},
+											{
+												"key": "x-state-token",
+												"value": "{{x-state-token}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "channel",
+												"value": "{{channel}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"firstName\": \"{{firstName}}\",\n\t\"lastName\": \"{{lastName}}\",\n\t\"confirmationNumber\": \"{{validConfirmationNumber}}\"\n}"
+										},
+										"url": {
+											"raw": "{{env}}/v1/reserve/room/cancel",
+											"host": [
+												"{{env}}"
+											],
+											"path": [
+												"v1",
+												"reserve",
+												"room",
+												"cancel"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "57eb0421-6694-4910-88c1-75a1774837ee",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "dcc41bc8-e8d0-43c2-afa2-b29730950d7a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

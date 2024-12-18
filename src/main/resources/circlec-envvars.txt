@@ -1,0 +1,68 @@
+#  **** This file has no impact on circle ci workflows and/or jobs ******
+# This file describes all Circle CI environment variables and what they are used for..
+
+#format=<branch-name>:<EB-Environment-name>:<spring-profile-name>:<restapi-id-in-apigtwy>:<stg-name-in-apigtwy>
+CI_EB_ENVIRONMENT_NAME="feature_xray:DevEnv:dev:qh636cvvm0:dev-rbs|develop:DevEnv:dev:qh636cvvm0:dev-rbs|qa:QaEnv:mgmqa:qh636cvvm0:qa-rbs|qa4:Qa4Env:qa4:qh636cvvm0:qa4-rbs|staging:StagingEnv:staging:qh636cvvm0:staging-rbs|preprod:PreprodEnv:preprod:qh636cvvm0:preprod-rbs|prod:production:prod:n91gwvftrd:prod"
+
+#Production OKTA IAM Role ARN
+CI_ASSUMED_PROD_ROLE_ARN=arn:aws:iam::143757183630:role/AccountOwnerPowerUser
+
+#Non Production OKTA IAM Role ARN
+CI_ASSUMED_ROLE_ARN=arn:aws:iam::705869507755:role/AccountOwnerPowerUser
+
+# Timeout Value for EB deploy commands in minutes
+CI_EB_DEPLOY_TIMEOUT=20
+
+# Okta APP AWS URL
+CI_OKTA_AWS_APP_URL=https://mgmresorts.okta.com/home/amazon_aws/0oa1f262mogTgEyJb1d8/272
+
+# Okta User password
+CI_OKTA_PASSWORD_CMD=<password-for-oka-user-who-assumed-role-in-aws>
+
+# Okta Username
+CI_OKTA_USERNAME=<username-for-oka-user-who-assumed-role-in-aws>
+
+#Flag for IT tests to execute or skip. takes true or false values
+EXEC_ITTESTS_FLAG=true or false
+
+#Production IT tests execution enviroment values. follows same format as in it-tests-env.txt file
+#<passthrough-api-gtwy>:<api-key>:<api-version>:<api-gtwy-url>
+PROD_IT_TESTS_EXEC_ENV=yes|<secured-check-in-aws-console>|1.0|<secured-check-in-aws-console>
+
+#Time to sleep in secs after deployment is done in EB. 
+#This will ensure other environment components like NLB etc are warmed up and be ready.
+SLEEP_TIME=60
+
+# sonar github repo. url
+SONAR_GITHUB_REPO=MGMResorts/room-booking-services
+
+#sonar host
+SONAR_HOST=http://10.191.96.46:8080
+
+#java library directory for running sonar
+SONAR_JAVA_LIB=/home/circleci/.m2/repository/*
+
+#java source path for running sonar
+SONAR_JAVA_SOURCE=1.8
+
+#sonar project
+SONAR_PROJECT=ROOM-BOOKING-SERVICES
+
+#api token for trigger perfomance tests from another repo.
+CI_API_TOKEN=<personal-api-token-from-circleci-account-dashboard-page>
+
+#branch to be used for triggering perfomance tests from another repo.
+CI_PERFTEST_BRANCH=<takes-branch-name-from-perfomance-test-repo>
+
+# x-ray upload environment variables
+TEST_RESULTS_DIRECTORY=/home/circleci/test-results/junit
+XRAY_CLIENT_ID=<redacted>
+XRAY_CLIENT_SECRET=<redacted>
+XRAY_PROJECT_KEY=BOOKSVC
+XRAY_TEST_PLAN_KEY=BOOKSVC-1250
+XRAY_TEST_ENV_develop=BOOKING-DEV
+XRAY_TEST_ENV_preprod=BOOKING-PREPROD
+XRAY_TEST_ENV_prod=BOOKING-PROD
+XRAY_TEST_ENV_qa=BOOKING-INT
+XRAY_TEST_ENV_staging=BOOKING-STG
+XRAY_TEST_ENV_feature_xray=BOOKING-DEV

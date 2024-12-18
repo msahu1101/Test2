@@ -1,0 +1,163 @@
+{
+	"iataCode": "3531500",
+	"oktaUserMlifeNumber": "76005781",
+	"oktaUserCustomerId": 47132246017,
+	"testItineraryId": "7871217153",
+	"source": "mgmresorts",
+	"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+	"roomId": "b1fed3fd-4934-4cab-949d-90575ccfb9de",
+	"programId": "5467d989-24f5-4188-a177-daa715763c59",
+	"partialProgramId": "5467d989-24f5-4188-a177-daa715763c59",
+	"patronProgramId": "74fd80f9-5831-4038-8949-9abacf39dc24",
+	"patronMlifeNumber": "80533208",
+	"roomTypeId": "ddeca6cb-894d-4325-9c26-782b4f11e39c",
+	"promoCode": "DMPSLOTS041",
+	"mlifeNumber": "76303027",
+	"firstName": "Test",
+	"lastName": "Test",
+	"customerId": "923391623169",
+	"v2CustomerId": "923391623169",
+	"perpetualMlifeNumber": "76303027",
+	"perpetualCustomerId": "923391623169",
+	"myVegasRedemptionCode":"26Q7S6",
+	"myVegasMlifeNumber":"79957249",
+	"myVegasCustomerId":"931428499457",
+	"myVegasProgramId":"d540ca3a-9047-4bf3-ad95-b14aa270d5d5",
+	"myVegasProgramId2":"d881e81b-74c2-4c5b-8605-41aadfa856cd",
+	"rotatingMyVegasRedemptionCode":"T2ZQLB,NHNNQB,25AHQH,KT4XRF,22P3KA,26YDC9,CKPL7Y,3HYY6D,TQ85JL,84AY1H",
+	"transientProgramId": "55204b8f-6d58-4dab-894c-e79dda626c85",
+	"transientPropertyId": "f8d6a944-7816-412f-a39a-9a63aad26833",
+	"transientPromoCode": "ZAAART",
+	"casinoProgramId": "845b92c4-9394-4b35-802f-6c02f3db25fe",
+	"casinoPropertyId": "f8d6a944-7816-412f-a39a-9a63aad26833",
+	"casinoPromoCode": "DMPSLOTS045",
+	"invalidCreditCard": "4111123490021001",
+	"numAdults": 2,
+	"numChildren": 1,
+	"numRooms": 2,
+	"customerDominantPlay": "Slot",
+	"operaConfirmationNumber": "790291063",
+	"specialRequests": "03ca81ad-b895-4e04-8993-aaed5b80c605,a8f0b450-dcf2-46e5-b06e-4006d4f619d1",
+	"programPartOfSegment": "1b143e7a-27af-4666-9aa4-6e13fcd8e049",
+	"programEligibility": {
+		"nonMemberProgramTransientUser": {
+			"programId": "81c0ce15-7c42-4ee0-a031-5b02d7c5d15f",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"expectedResult": true
+		},
+		"nonMemberProgramMlifeUser": {
+			"programId": "81c0ce15-7c42-4ee0-a031-5b02d7c5d15f",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"customerId": "931428499457",
+			"expectedResult": false
+		},
+		"transientProgramTransientUser": {
+			"programId": "7cbd1975-8c9d-4c1f-9f40-355e1f02179b",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"promoCode": "TRANSBAR",
+			"expectedResult": true
+		},
+		"transientProgramMlifeUser": {
+			"programId": "7cbd1975-8c9d-4c1f-9f40-355e1f02179b",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"promoCode": "TRANSBAR",
+			"customerId": "931428499457",
+			"expectedResult": true
+		},
+		"casinoProgramTransientUser": {
+			"programId": "0d852d40-ca27-47d5-bf78-998de4f95740",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"promoCode": "NOTBOOKPC",
+			"expectedResult": false
+		},
+		"casinoProgramMlifeUser": {
+			"programId": "0d852d40-ca27-47d5-bf78-998de4f95740",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"promoCode": "NOTBOOKPC",
+			"mlifeNumber": "79957249",
+			"customerId": "931428499457",
+			"expectedResult": true
+		},
+		"casinoSapphireProgramSapphireMlifeUser": {
+			"programId": "59b47280-8701-498f-99fb-f4014a3ece48",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"customerId": "931428499457",
+			"expectedResult": true
+		},
+		"casinoGoldProgramSapphireMlifeUser": {
+			"programId": "f45172dd-e332-4b59-a142-54c87b050277",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"customerId": "931428499457",
+			"expectedResult": false
+		},
+		"patronProgramTransientUser": {
+			"programId": "74fd80f9-5831-4038-8949-9abacf39dc24",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"expectedResult": false
+		},
+		"patronProgramNonListedMlifeUser": {
+			"programId": "74fd80f9-5831-4038-8949-9abacf39dc24",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"customerId": "931428499457",
+			"expectedResult": false
+		},
+		"patronProgramListedMlifeUser": {
+			"programId": "74fd80f9-5831-4038-8949-9abacf39dc24",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"customerId": "923639152641",
+			"expectedResult": true
+		},
+		"perpetualProgramTransientUser": {
+			"programId": "7a1d729c-a722-41f5-b2b0-7b8e68ae3049",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"expectedResult": false
+		},
+		"perpetualProgramDiffSegmentMlifeUser": {
+			"programId": "7a1d729c-a722-41f5-b2b0-7b8e68ae3049",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"customerId": "931428499457",
+			"expectedResult": false
+		},
+		"perpetualProgramSameSegmentMlifeUser": {
+			"programId": "7a1d729c-a722-41f5-b2b0-7b8e68ae3049",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"customerId": "923391623169",
+			"expectedResult": true
+		},
+		"myvegasProgramTransientUser": {
+			"programId": "d540ca3a-9047-4bf3-ad95-b14aa270d5d5",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"expectedResult": false
+		},
+		"myvegasProgramMlifeUser": {
+			"programId": "d540ca3a-9047-4bf3-ad95-b14aa270d5d5",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"customerId": "931428499457",
+			"expectedResult": true
+		},
+		"casinoProgramJwbFlow" : {
+			"programId": "d806f576-15d5-44d6-bb46-f68a03d1d52b",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+			"expectedResult": true
+		},
+		"hdePackageFlow" : {
+			"programId": "e29c7f0b-557d-44da-a7a2-9859ced81411",
+			"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f"
+		}
+	},
+	"tokenDetails": "Visa|4111110A001DQXFHY79D9XCZ1111",
+	"foreignCCTokenDetails": "Mastercard|4242420A00112RAB7JP54JGF4242|HKD",
+	"totalNights": 2,
+	"segmentId": "fc2a1926-23fb-460f-877d-d441dc48dd74",
+	"segmentCode": "ZAAART",
+	"perpetualEmailId": "rkganji@mgmresorts.com",
+	"perpetualEmailPass": "Sapient@123",
+	"nonPerpetualEmailId": "testres2@mailinator.com",
+	"nonPerpetualEmailPass": "Mlife1234",
+	"resvWithMgmId": "M03D8AA01",
+	"partyReservation": "M03DA68D1",
+	"shareWithReservation": {
+		"primaryOperaConfNumber": "",
+		"secondaryOperaConfNumber": ""
+	}
+}

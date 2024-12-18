@@ -1,0 +1,130 @@
+{
+	"roomReservation": {
+		"customerId": 923984855041,
+		"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+		"itineraryId": "7847517697",
+		"roomTypeId": "23f5bef8-63ea-4ba9-a290-13b5a3056595",
+		"profile": {
+			"firstName": "Lakshmi",
+			"lastName": "Test"
+			},
+		"billing": [
+			{
+				"payment": {
+					"amount": 6802.793197200001,
+					"cardHolder": "John doe",
+					"firstName": "John",
+					"lastName": "Doe",
+					"maskedNumber": "XXXXXXXXXXXX1111",
+					"ccToken": "4111110A001DQXFHY79D9XCZ1111",
+					"cvv": 123,
+					"type": "Visa",
+					"expiry": "10/2022"
+				},
+				"address": {
+					"street1": "234 W Main St",
+					"street2": "Unit 415",
+					"city": "Las Vegas",
+					"state": "NV",
+					"postalCode": "12345",
+					"country": "US"
+				}
+			}
+		],
+		"tripDetails": {
+			"checkInDate": "2020-08-15",
+			"checkOutDate": "2020-08-16",
+			"numAdults": 2,
+			"numChildren": 2,
+			"numRooms": 1
+		},
+		"bookings": [
+			{
+				"date": "2020-08-15",
+				"basePrice": 9999.99,
+				"customerPrice": 5999.994000000001,
+				"price": 5999.994000000001,
+				"programIdIsRateTable": false,
+				"overridePrice": -1.0,
+				"overrideProgramIdIsRateTable": false,
+				"isComp": false,
+				"resortFeeIsSpecified": false,
+				"resortFee": 0.0,
+				"programId": "7cbd1975-8c9d-4c1f-9f40-355e1f02179b",
+				"pricingRuleId": "7e9367a5-fa5b-488f-9296-469aec95be9c"
+			}
+		],
+		"chargesAndTaxes": {
+			"charges": [
+				{
+					"date": "2020-08-15",
+					"amount": 6036.994000000001,
+					"itemized": [
+						{
+							"itemType": "RoomCharge",
+							"amount": 5999.994000000001,
+							"item": "Room Charge"
+						},
+						{
+							"itemType": "ExtraGuestCharge",
+							"amount": 0.0,
+							"item": "Extra Guest Charge"
+						},
+						{
+							"itemType": "ResortFee",
+							"amount": 37.0,
+							"item": "Resort Fee"
+						}
+					]
+				}
+			],
+			"taxesAndFees": [
+				{
+					"date": "2020-08-15",
+					"amount": 807.7497972000002,
+					"itemized": [
+						{
+							"itemType": "RoomChargeTax",
+							"amount": 802.7991972000002,
+							"item": "Room Tax"
+						},
+						{
+							"itemType": "ExtraGuestChargeTax",
+							"amount": 0.0,
+							"item": "Extra Guest Tax"
+						},
+						{
+							"itemType": "ResortFeeTax",
+							"amount": 4.9506,
+							"item": "Resort Fee Tax"
+						}
+					]
+				}
+			]
+		},
+		"depositDetails": {
+			"dueDate": "2020-08-15",
+			"amountPolicy": "Nights",
+			"amount": 6802.793197200001,
+			"forfeitDate": "2020-08-18",
+			"forfeitAmount": 6802.793197200001,
+			"overrideAmount": -1.0,
+			"depositRuleCode": "1NT",
+			"cancellationRuleCode": "72H",
+			"itemized": [
+				{
+					"itemType": "RoomCharge",
+					"amount": 5999.994000000001,
+					"item": "Room Charge"
+				},
+				{
+					"itemType": "RoomChargeTax",
+					"amount": 802.7991972000002,
+					"item": "Room Tax"
+				}
+			]
+		},
+		"amountDue": 0.0,
+		"guaranteeCode": "CC"
+	}
+}

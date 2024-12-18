@@ -1,0 +1,34 @@
+{
+	"reservationId": "1598617982555",
+	"itineraryId": "7850557953",
+	"userProfile": {
+		"id": 923984855041,
+		"operaId": "815746796",
+		"firstName": "Us",
+		"lastName": "Person",
+		"phoneNumbers": [
+			{
+				"type": "Other",
+				"number": "9232813254"
+			}
+		],
+		"emailAddress1": "someorg@dsg.com",
+		"emailAddress2": null,
+		"dateOfBirth": null,
+		"mlifeNo": "",
+		"hgpNo": null,
+		"swrrNo": null,
+		"addresses": [
+			{
+                "type": "Home",
+                "preferred": false,
+                "street1": "8834 Annadale Street,",
+                "street2": null,
+                "city": "Frederick",
+                "state": "IA",
+                "country": "US",
+                "postalCode": "21701"
+			}
+		]
+	}
+}

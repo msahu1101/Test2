@@ -1,0 +1,23 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [
+        {
+            "name": "[parameters('name')]",
+            "location": "[parameters('location')]",
+            "properties": {
+                "sku": {
+                    "name": "[parameters('skuName')]",
+                    "family": "[parameters('skuFamily')]",
+                    "capacity": "[parameters('skuCapacity')]"
+                },
+                "redisConfiguration": {},
+                "enableNonSslPort": "[parameters('enableNonSSLPort')]",
+                "shardCount": "[parameters('shardCount')]",
+                "subnetId": "[parameters('subnetId')]"
+            },
+            "apiVersion": "2019-07-01",
+            "type": "Microsoft.Cache/Redis"
+        }
+    ]    
+}

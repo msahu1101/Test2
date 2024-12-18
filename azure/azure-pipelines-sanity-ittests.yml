@@ -1,0 +1,30 @@
+schedules:
+- cron: "0 0,3,6,9,12,15,18,21 * * *"
+  displayName: Run 3 hourly sanity tests
+  branches:
+    include:
+    - develop
+    - qa
+    - qa4
+    - preprod
+  always: true    
+
+pool:
+  vmImage: "windows-latest"
+  
+steps:
+- task: CopyFiles@2
+  displayName: Copy artifacts to stage location
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: |
+        **postman-scripts/sanity-tests/**
+        **azure/**
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    OverWrite: true
+    
+- task: PublishBuildArtifacts@1
+  displayName: Publish artifacts  
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/'
+    ArtifactName: 'room-booking-services-postman'

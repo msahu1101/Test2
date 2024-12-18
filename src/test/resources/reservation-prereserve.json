@@ -1,0 +1,193 @@
+{
+	"inSessionReservationId": "5521b517-16c2-4d74-a481-bdcd1cc53522",
+	"numRooms": 1,
+	"bookDate": null,
+	"checkInDate": 1551168000000,
+	"checkOutDate": 1551340800000,
+	"numAdults": 2,
+	"billingType": null,
+	"state": null,
+	"postingFlow": null,
+	"postingState": null,
+	"postingStartedAt": 0,
+	"postingEndedAt": 0,
+	"amountDue": 0.0,
+	"createdAt": 0,
+	"updatedAt": 0,
+	"syncFromOperaAt": 0,
+	"nrgStatus": false,
+	"id": null,
+	"itineraryId": null,
+	"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+	"programId": null,
+	"roomTypeId": "f44d10c3-aeaa-4aa1-8d94-1d0df9017437",
+	"guaranteeCode": "CC",
+	"profile": null,
+	"bookings": [
+		{
+			"date": 1551168000000,
+			"basePrice": 10024.99,
+			"customerPrice": 5012.495,
+			"price": 5012.495,
+			"programIdIsRateTable": false,
+			"overridePrice": -1.0,
+			"overrideProgramIdIsRateTable": false,
+			"resortFeeIsSpecified": false,
+			"resortFee": 0.0,
+			"programId": "2e44c1cf-097c-4b0b-a86f-7993d239b055",
+			"pricingRuleId": "57ec1333-c889-4af8-b0b2-dc24dab6163a",
+			"isComp": false
+		},
+		{
+			"date": 1551254400000,
+			"basePrice": 10024.99,
+			"customerPrice": 5012.495,
+			"price": 5012.495,
+			"programIdIsRateTable": false,
+			"overridePrice": -1.0,
+			"overrideProgramIdIsRateTable": false,
+			"resortFeeIsSpecified": false,
+			"resortFee": 0.0,
+			"programId": "2e44c1cf-097c-4b0b-a86f-7993d239b055",
+			"pricingRuleId": "57ec1333-c889-4af8-b0b2-dc24dab6163a",
+			"isComp": false
+		}
+	],
+	"markets": [
+		{
+			"date": 1551168000000,
+			"marketCode": "CSLI",
+			"sourceCode": "CSMLIFE"
+		},
+		{
+			"date": 1551254400000,
+			"marketCode": "CSLI",
+			"sourceCode": "CSMLIFE"
+		}
+	],
+	"chargesAndTaxesCalc": {
+		"charges": [
+			{
+				"date": 1551168000000,
+				"amount": 5047.495,
+				"itemized": [
+					{
+						"itemType": "RoomCharge",
+						"amount": 5012.495,
+						"item": "Room Charge"
+					},
+					{
+						"itemType": "ExtraGuestCharge",
+						"amount": 0.0,
+						"item": "Extra Guest Charge"
+					},
+					{
+						"itemType": "ResortFee",
+						"amount": 35.0,
+						"item": "Resort Fee"
+					}
+				]
+			},
+			{
+				"date": 1551254400000,
+				"amount": 5047.495,
+				"itemized": [
+					{
+						"itemType": "RoomCharge",
+						"amount": 5012.495,
+						"item": "Room Charge"
+					},
+					{
+						"itemType": "ExtraGuestCharge",
+						"amount": 0.0,
+						"item": "Extra Guest Charge"
+					},
+					{
+						"itemType": "ResortFee",
+						"amount": 35.0,
+						"item": "Resort Fee"
+					}
+				]
+			}
+		],
+		"taxesAndFees": [
+			{
+				"date": 1551168000000,
+				"amount": 101.2999,
+				"itemized": [
+					{
+						"itemType": "RoomChargeTax",
+						"amount": 100.2499,
+						"item": "Room Tax"
+					},
+					{
+						"itemType": "ExtraGuestChargeTax",
+						"amount": 0.0,
+						"item": "Extra Guest Tax"
+					},
+					{
+						"itemType": "ResortFeeTax",
+						"amount": 1.05,
+						"item": "Resort Fee Tax"
+					}
+				]
+			},
+			{
+				"date": 1551254400000,
+				"amount": 101.2999,
+				"itemized": [
+					{
+						"itemType": "RoomChargeTax",
+						"amount": 100.2499,
+						"item": "Room Tax"
+					},
+					{
+						"itemType": "ExtraGuestChargeTax",
+						"amount": 0.0,
+						"item": "Extra Guest Tax"
+					},
+					{
+						"itemType": "ResortFeeTax",
+						"amount": 1.05,
+						"item": "Resort Fee Tax"
+					}
+				]
+			}
+		]
+	},
+	"depositPolicyCalc": {
+		"depositRequired": true,
+		"creditCardRequired": true
+	},
+	"depositCalc": {
+		"dueDate": 1550182695800,
+		"amountPolicy": "Nights",
+		"amount": 5112.7449,
+		"forfeitDate": 1551081600000,
+		"forfeitAmount": 5112.7449,
+		"overrideAmount": -1.0,
+		"depositRuleCode": "1NT",
+		"cancellationRuleCode": "24H",
+		"itemized": [
+			{
+				"itemType": "RoomCharge",
+				"amount": 5012.495,
+				"item": "Room Charge"
+			},
+			{
+				"itemType": "RoomChargeTax",
+				"amount": 100.2499,
+				"item": "Room Tax"
+			}
+		]
+	},
+	"channelId": null,
+	"origin": null,
+	"source": "mgmresorts",
+	"specialRequests": [
+		"b1fed3fd-4934-4cab-949d-90575ccfb9de"
+	],
+	"creditCardCharges": null,
+	"confirmationNumber": null,
+	"payments": null
+}

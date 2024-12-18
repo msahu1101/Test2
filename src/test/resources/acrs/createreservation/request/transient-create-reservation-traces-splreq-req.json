@@ -1,0 +1,170 @@
+{
+  "instance": 0,
+  "customerId": 1031873822977,
+  "numRooms": 1,
+  "checkInDate": "2022-11-13",
+  "checkOutDate": "2022-11-14",
+  "numAdults": 2,
+  "postingStartedAt": 0,
+  "postingEndedAt": 0,
+  "amountDue": 0,
+  "createdAt": 0,
+  "updatedAt": 0,
+  "syncFromOperaAt": 0,
+  "nrgStatus": false,
+  "id": "81f9df49-b008-472c-bba0-4f968d4e05ca",
+  "itineraryId": "10507283457",
+  "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+  "programId": "RPCD-v-PREVL-d-PROP-v-MV021",
+  "roomTypeId": "ROOMCD-v-DWVK-d-PROP-v-MV021",
+  "guaranteeCode": "CC",
+  "profile": {
+    "id": 1031873822977,
+    "mlifeNo": 0,
+    "modifiable": false,
+    "createdAt": 0,
+    "updatedAt": 0,
+    "refreshedAt": 0,
+    "stale": false,
+    "externalSyncAt": 0,
+    "caslOptin": false,
+    "firstName": "Temp111",
+    "lastName": "Temp222",
+    "emailAddress1": "hjghg@gmail.com",
+    "phoneNumbers": [
+      {
+        "type": "Home",
+        "number": "8888888888"
+      }
+    ],
+    "addresses": [
+      {
+        "type": "Home",
+        "preferred": false,
+        "street1": "409yyy",
+        "street2": "Gada",
+        "city": "Mississauga",
+        "state": "ON",
+        "country": "CA",
+        "postalCode": "L5B4M8"
+      }
+    ]
+  },
+  "bookings": [
+    {
+      "date": "2022-11-13",
+      "basePrice": 25,
+      "customerPrice": 0,
+      "price": 25,
+      "programIdIsRateTable": false,
+      "overridePrice": -1,
+      "overrideProgramIdIsRateTable": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 0,
+      "programId": "RPCD-v-PREVL-d-PROP-v-MV021",
+      "isComp": false
+    }
+  ],
+  "chargesAndTaxesCalc": {
+    "charges": [
+      {
+        "date": "2022-11-13",
+        "amount": 62,
+        "itemized": [
+          {
+            "active": false,
+            "itemType": "RoomCharge",
+            "amount": 25
+          },
+          {
+            "active": false,
+            "itemType": "ResortFee",
+            "amount": 37,
+            "item": "RSFEE"
+          }
+        ]
+      }
+    ],
+    "taxesAndFees": [
+      {
+        "date": "2022-11-13",
+        "amount": 3.35,
+        "itemized": [
+          {
+            "active": false,
+            "itemType": "RoomChargeTax",
+            "amount": 0,
+            "item": "OCTAX"
+          },
+          {
+            "active": false,
+            "itemType": "ResortFeeTax",
+            "amount": 3.35,
+            "item": "RSFTX"
+          }
+        ]
+      }
+    ]
+  },
+  "depositCalc": {
+    "dueDate": "2022-10-06",
+    "amount": 62,
+    "forfeitDate": "2022-10-05",
+    "forfeitAmount": 62,
+    "overrideAmount": -1
+  },
+  "source": "ice",
+  "specialRequests": [
+    "b3f872e9-3e89-4f52-bb88-38dfa951ea3c"
+  ],
+  "creditCardCharges": [
+    {
+      "amount": 62,
+      "cvv": "123",
+      "ccToken": "5555550A001H97UBWWDJ2WEV4444",
+      "expiry": "2022-12-01",
+      "holder": "temp111 temp222",
+      "number": "5555550A001H97UBWWDJ2WEV4444",
+      "type": "Mastercard",
+      "holderProfile": {
+        "firstName": "Temp111",
+        "lastName": "Temp222",
+        "address": {
+          "type": "Home",
+          "preferred": true,
+          "street1": "409yyy",
+          "street2": "Gada",
+          "city": "Mississauga",
+          "state": "ON",
+          "country": "CA",
+          "postalCode": "L5B4M8"
+        }
+      },
+      "fxAmount": 0,
+      "fxExchangeRate": 0
+    }
+  ],
+  "confirmationNumber": "",
+  "additionalComments": [],
+  "customerRank": 0,
+  "customerSegment": 0,
+  "operaState": "",
+  "operaConfirmationNumber": "",
+  "rrUpSell": "",
+  "numChildren": 0,
+  "alerts": [
+    {
+      "alertCodeId": "f7e7ad34-159e-8b9b-e043-2901fe0aa3df",
+      "description": "Guest receives $75 beverage credit and Bar Crawl collateral (guest must charge back to room)",
+      "alertAreaId": "f2627473-47d0-cf96-e043-2901fe0abf33"
+    }
+  ],
+  "routingInstructions": [],
+  "isGroupCode": false,
+  "perpetualPricing": false,
+  "ignoreChannelMargins": false,
+  "excludeNonOffer": false,
+  "thirdParty": false,
+  "f1Package": false,
+  "pendingReservation": false
+}

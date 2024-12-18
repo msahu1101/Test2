@@ -1,0 +1,184 @@
+{
+  "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+  "roomTypeId": "6a82104c-153a-4caf-9cda-91ccea9739c6",
+  "programId": "3cd8e260-8f0b-4598-85cc-cce2221fca8a",
+  "customerId": "0",
+  "guaranteeCode": null,
+  "specialRequests": [],
+  "profile": {
+    "id": -1,
+    "mlifeNo": 76303027,
+    "firstName": "John",
+    "lastName": "Doe",
+    "emailAddress1": "johndoe777@nomail.com",
+    "emailAddress2": "johndoe888@nomail.com",
+    "phoneNumbers": [
+      {
+        "type": "Home",
+        "number": "9952051456"
+      }
+    ],
+    "addresses": [
+      {
+        "type": "Home",
+        "preferred": true,
+        "street1": "234 W Main St",
+        "street2": "Unit 415",
+        "city": "Las Vegas",
+        "state": "NV",
+        "country": "US",
+        "postalCode": "12336"
+      }
+    ]
+  },
+  "tripDetails": {
+    "checkInDate": "2021-04-19",
+    "checkOutDate": "2021-04-22",
+    "numAdults": 3,
+    "numChildren": 1,
+    "numRooms": 1
+  },
+  "chargesAndTaxes": {
+    "charges": [
+      {
+        "date": "2021-04-19",
+        "amount": 89.91,
+        "itemized": [
+          {
+            "itemType": "RoomCharge",
+            "amount": 89.91,
+            "item": null
+          }
+        ]
+      },
+      {
+        "date": "2021-04-20",
+        "amount": 90.91,
+        "itemized": [
+          {
+            "itemType": "RoomCharge",
+            "amount": 89.91,
+            "item": null
+          }
+        ]
+      },
+      {
+        "date": "2021-04-21",
+        "amount": 89.91,
+        "itemized": [
+          {
+            "itemType": "RoomCharge",
+            "amount": 89.91,
+            "item": null
+          }
+        ]
+      }
+    ],
+    "taxesAndFees": [
+      {
+        "date": "2021-04-19",
+        "amount": 103.07,
+        "itemized": [
+          {
+            "itemType": "ResortFeeTax",
+            "amount": 6.95,
+            "item": null
+          },
+          {
+            "itemType": "RoomChargeTax",
+            "amount": 35,
+            "item": null
+          }
+        ]
+      },
+      {
+        "date": "2021-04-20",
+        "amount": 37,
+        "itemized": [
+          {
+            "itemType": "ResortFeeTax",
+            "amount": 6.95,
+            "item": null
+          },
+          {
+            "itemType": "RoomChargeTax",
+            "amount": 35,
+            "item": null
+          }
+        ]
+      },
+      {
+        "date": "2021-04-21",
+        "amount": 37,
+        "itemized": [
+          {
+            "itemType": "ResortFeeTax",
+            "amount": 6.95,
+            "item": null
+          },
+          {
+            "itemType": "RoomChargeTax",
+            "amount": 35,
+            "item": null
+          }
+        ]
+      }
+    ]
+  },
+  "bookings": [
+    {
+      "date": "2021-04-19",
+      "basePrice": 0,
+      "customerPrice": 0,
+      "price": 89.91,
+      "programIdIsRateTable": false,
+      "overridePrice": 89.91,
+      "overrideProgramIdIsRateTable": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 0,
+      "programId": "3cd8e260-8f0b-4598-85cc-cce2221fca8a",
+      "isComp": false
+    },
+    {
+      "date": "2021-04-20",
+      "basePrice": 0,
+      "customerPrice": 0,
+      "price": 89.91,
+      "programIdIsRateTable": false,
+      "overridePrice": 89.91,
+      "overrideProgramIdIsRateTable": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 0,
+      "programId": "3cd8e260-8f0b-4598-85cc-cce2221fca8a",
+      "isComp": false
+    },
+    {
+      "date": "2021-04-21",
+      "basePrice": 0,
+      "customerPrice": 0,
+      "price": 89.91,
+      "programIdIsRateTable": false,
+      "overridePrice": 89.91,
+      "overrideProgramIdIsRateTable": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 0,
+      "programId": "3cd8e260-8f0b-4598-85cc-cce2221fca8a",
+      "isComp": false
+    }
+  ],
+  "depositDetails": {
+    "dueDate": "2020-10-03",
+    "amountPolicy": null,
+    "amount": 26.98,
+    "forfeitDate": "2021-04-18",
+    "forfeitAmount": 319.89,
+    "overrideAmount": 26.98,
+    "depositRuleCode": null,
+    "cancellationRuleCode": null,
+    "itemized": null
+  },
+  "amountDue": 26.98,
+  "depositPolicy": null,
+  "markets": null,
+  "confirmationNumber": "9153131255"
+}

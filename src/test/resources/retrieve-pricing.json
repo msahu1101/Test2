@@ -1,0 +1,2222 @@
+{
+    "data": {
+        "hotel": {
+            "chainCode": "IHG",
+            "brandCode": "IC",
+            "propertyCode": "DALAL",
+            "propertyCurrency": "USD",
+            "responseCurrency": "USD",
+            "factLines": {
+                "en": [
+                    "Free access to swimming pools",
+                    "49USD overnight valet parking",
+                    "No pet fee. Kennels nearby"
+                ]
+            },
+            "marketingLines": {
+                "en": [
+                    "BT Pricing Mkt Txt 27Apr-06Mar"
+                ]
+            },
+            "taxDefinitions": [
+                {
+                    "id": 4,
+                    "code": "SCFNB",
+                    "name": "Service Charge",
+                    "OTAcode": "FTT14",
+                    "chargeFrequency": "PerNight",
+                    "chargeUnit": "PerProduct",
+                    "value": "15",
+                    "valueType": "Percent",
+                    "taxOn": "Rate",
+                    "dow": "MTWTFSS",
+                    "isInclusive": false,
+                    "start": "2020-12-10",
+                    "end": "2020-12-12"
+                },
+                {
+                    "id": 3,
+                    "code": "SREX1",
+                    "name": "Resort Fee",
+                    "OTAcode": "FTT12",
+                    "chargeFrequency": "PerNight",
+                    "chargeUnit": "PerPerson",
+                    "value": "35.00",
+                    "valueType": "Flat",
+                    "currency": "USD",
+                    "taxOn": "Rate",
+                    "dow": "MTWTFSS",
+                    "isInclusive": false,
+                    "start": "2020-12-10",
+                    "end": "2020-12-12"
+                },
+                {
+                    "id": 5,
+                    "code": "TNEX1",
+                    "name": "State Tax",
+                    "OTAcode": "FTT15",
+                    "chargeFrequency": "PerStay",
+                    "chargeUnit": "PerProduct",
+                    "value": "10",
+                    "valueType": "Percent",
+                    "taxOn": "Net",
+                    "dow": "MTWTFSS",
+                    "isInclusive": false,
+                    "start": "2020-12-10",
+                    "end": "2020-12-12"
+                },
+                {
+                    "id": 0,
+                    "code": "TAX01",
+                    "name": "Bed Tax",
+                    "OTAcode": "FTT1",
+                    "chargeFrequency": "PerNight",
+                    "chargeUnit": "PerProduct",
+                    "value": "7",
+                    "valueType": "Percent",
+                    "taxOn": "Rate",
+                    "dow": "MTWTFSS",
+                    "isInclusive": false,
+                    "start": "2020-12-10",
+                    "end": "2020-12-12"
+                },
+                {
+                    "id": 2,
+                    "code": "TTEX1",
+                    "name": "County Tax",
+                    "OTAcode": "FTT4",
+                    "chargeFrequency": "PerNight",
+                    "chargeUnit": "PerProduct",
+                    "value": "10",
+                    "valueType": "Percent",
+                    "taxOn": "Net",
+                    "dow": "MTWTFSS",
+                    "isInclusive": false,
+                    "start": "2020-12-10",
+                    "end": "2020-12-12"
+                },
+                {
+                    "id": 1,
+                    "code": "TREX1",
+                    "name": "City Tax",
+                    "OTAcode": "FTT3",
+                    "chargeFrequency": "PerNight",
+                    "chargeUnit": "PerProduct",
+                    "value": "15",
+                    "valueType": "Percent",
+                    "taxOn": "Tax",
+                    "dow": "MTWTFSS",
+                    "isInclusive": false,
+                    "start": "2020-12-10",
+                    "end": "2020-12-12"
+                },
+                {
+                    "id": 6,
+                    "code": "TOTAL",
+                    "name": "Total Tax",
+                    "OTAcode": "FTT17",
+                    "chargeFrequency": "PerNight",
+                    "chargeUnit": "PerProduct",
+                    "value": "20.00",
+                    "valueType": "Flat",
+                    "currency": "USD",
+                    "taxOn": "Rate",
+                    "dow": "MTWTFSS",
+                    "isInclusive": false,
+                    "start": "2020-12-10",
+                    "end": "2020-12-12"
+                },
+                {
+                    "id": 7,
+                    "code": "FNBTX",
+                    "name": "F & B Tax",
+                    "OTAcode": "FTT7",
+                    "chargeFrequency": "PerStay",
+                    "chargeUnit": "PerProduct",
+                    "value": "3",
+                    "valueType": "Percent",
+                    "taxOn": "Rate",
+                    "dow": "MTWTFSS",
+                    "isInclusive": false,
+                    "start": "2020-12-10",
+                    "end": "2020-12-12"
+                }
+            ]
+        },
+        "start": "2020-12-10",
+        "duration": "2D",
+        "ratePlans": [
+            {
+                "code": "IGCOR",
+                "name": {
+                    "en": [
+                        "BEST FLEXIBLE RATE"
+                    ]
+                },
+                "types": [
+                    "RPT4",
+                    "RPT12"
+                ],
+                "isCommissionable": true,
+                "isFreeNight": false,
+                "isLoyaltyIdRequired": true,
+                "isRewardEarned": false,
+                "isAwardAccepted": false,
+                "isVoucherRequired": false,
+                "isIdRequired": false,
+                "areAmtsConfidential": false,
+                "isTentativeAllowed": true,
+                "advanceBooking": {
+                    "isAdvancePurchase": false
+                }
+            },
+            {
+                "code": "SN004",
+                "name": {
+                    "en": [
+                        "GOLF RATEPLAN"
+                    ]
+                },
+                "isCommissionable": false,
+                "isFreeNight": false,
+                "isLoyaltyIdRequired": false,
+                "isRewardEarned": true,
+                "isAwardAccepted": false,
+                "isVoucherRequired": false,
+                "isIdRequired": false,
+                "areAmtsConfidential": false,
+                "isTentativeAllowed": false,
+                "advanceBooking": {
+                    "isAdvancePurchase": true,
+                    "minDays": 2
+                }
+            },
+            {
+                "code": "SN006",
+                "name": {
+                    "en": [
+                        "PARKING RATE PLAN"
+                    ]
+                },
+                "isCommissionable": false,
+                "isFreeNight": false,
+                "isLoyaltyIdRequired": false,
+                "isRewardEarned": true,
+                "isAwardAccepted": false,
+                "isVoucherRequired": false,
+                "isIdRequired": false,
+                "areAmtsConfidential": false,
+                "isTentativeAllowed": false,
+                "advanceBooking": {
+                    "isAdvancePurchase": false
+                }
+            },
+            {
+                "code": "AZ002",
+                "name": {
+                    "en": [
+                        "BKT GOODIE RATE CATZ"
+                    ]
+                },
+                "isCommissionable": false,
+                "isFreeNight": false,
+                "isLoyaltyIdRequired": true,
+                "isRewardEarned": true,
+                "isAwardAccepted": false,
+                "isVoucherRequired": false,
+                "isIdRequired": false,
+                "areAmtsConfidential": true,
+                "isTentativeAllowed": false,
+                "advanceBooking": {
+                    "isAdvancePurchase": false
+                }
+            },
+            {
+                "code": "AZ001",
+                "name": {
+                    "en": [
+                        "DABBA RATE CATEGORY"
+                    ]
+                },
+                "isCommissionable": false,
+                "isFreeNight": false,
+                "isLoyaltyIdRequired": true,
+                "isRewardEarned": true,
+                "isAwardAccepted": false,
+                "isVoucherRequired": false,
+                "isIdRequired": false,
+                "areAmtsConfidential": false,
+                "isTentativeAllowed": false,
+                "advanceBooking": {
+                    "isAdvancePurchase": false
+                }
+            },
+            {
+                "code": "SN002",
+                "name": {
+                    "en": [
+                        "RP FOR NON-ROOM"
+                    ]
+                },
+                "isCommissionable": false,
+                "isFreeNight": false,
+                "isLoyaltyIdRequired": false,
+                "isRewardEarned": true,
+                "isAwardAccepted": false,
+                "isVoucherRequired": false,
+                "isIdRequired": false,
+                "areAmtsConfidential": false,
+                "isTentativeAllowed": false,
+                "advanceBooking": {
+                    "isAdvancePurchase": true,
+                    "minDays": 2
+                }
+            },
+            {
+                "code": "IGCAT",
+                "name": {
+                    "en": [
+                        "CHAMPAGNE& TRUFFLES"
+                    ]
+                },
+                "isCommissionable": false,
+                "isFreeNight": false,
+                "isLoyaltyIdRequired": false,
+                "isRewardEarned": true,
+                "isAwardAccepted": false,
+                "isVoucherRequired": false,
+                "isIdRequired": false,
+                "areAmtsConfidential": false,
+                "isTentativeAllowed": false,
+                "advanceBooking": {
+                    "isAdvancePurchase": false
+                }
+            }
+        ],
+        "products": [
+            {
+                "inventoryTypeCode": "KNGN",
+                "productCode": "SR",
+                "pacCode": "TLMQ",
+                "productName": "Sleeping Room",
+                "otaCode": "GRI42",
+                "inventoryTypeName": {
+                    "en": [
+                        "1 KING BED NON - SMOKING ( KNGN ) Huge Luxury Suite Room"
+                    ]
+                },
+                "maxNbParticipant": 1,
+                "extraPersonStart": 2,
+                "isDisplayable": true,
+                "isPremium": true,
+                "isFlowThrough": true,
+                "isFlowThrough": true
+            },
+            {
+                "inventoryTypeCode": "GLFH",
+                "productCode": "GOLF",
+                "pacCode": "L2RC",
+                "productName": "18 Holes of Golf",
+                "productClass": "NRI",
+                "inventoryTypeName": {
+                    "en": [
+                        "Golf Clubedd"
+                    ]
+                },
+                "maxNbParticipant": 1
+            },
+            {
+                "inventoryTypeCode": "D9HK",
+                "productCode": "PARK",
+                "pacCode": "2P4X",
+                "productName": "Parking",
+                "inventoryTypeName": {
+                    "en": [
+                        "Parking new"
+                    ]
+                }
+            },
+            {
+                "inventoryTypeCode": "GOODIE01",
+                "productCode": "GOODIE",
+                "pacCode": "YLKO",
+                "productName": "Booking Goodie Bag",
+                "inventoryTypeName": {
+                    "en": [
+                        "BKT Goodie Inv Type"
+                    ]
+                }
+            },
+            {
+                "inventoryTypeCode": "DABBA01",
+                "productCode": "DABBA",
+                "pacCode": "84NS",
+                "productName": "BKT Dabba service",
+                "inventoryTypeName": {
+                    "en": [
+                        "Dabba service by BKT"
+                    ]
+                }
+            },
+            {
+                "inventoryTypeCode": "BRKF",
+                "productCode": "BRK",
+                "pacCode": "VE5T",
+                "productName": "Breakfast",
+                "productClass": "BRK",
+                "inventoryTypeName": {
+                    "en": [
+                        "Continental Breakfast"
+                    ]
+                }
+            },
+            {
+                "inventoryTypeCode": "2BIQ",
+                "productCode": "AMENITY",
+                "pacCode": "0RCQ",
+                "productName": "Champagne & Truffles",
+                "inventoryTypeName": {
+                    "en": [
+                        "Truffling"
+                    ]
+                }
+            },
+            {
+                "inventoryTypeCode": "BRK",
+                "productCode": "BRK",
+                "productClass": "BRK",
+                "productName": "Breakfast"
+            },
+            {
+                "inventoryTypeCode": "DIN",
+                "productCode": "DIN",
+                "productClass": "DIN",
+                "productName": "Dinner Included"
+            }
+        ],
+        "requestedOffer": {
+            "availStatus": "available",
+            "policies": {
+                "isRefundable": false,
+                "cancellationNoShow": {
+                    "feeType": "LastNight",
+                    "amt": "322.00",
+                    "amtCurrency": "USD",
+                    "feeCurrency": "USD",
+                    "deadline": {
+                        "deadlineType": "numberOfDaysBeforeCheckin",
+                        "deadlineValue": 0,
+                        "dateTime": "2020-12-10T10:00:00"
+                    },
+                    "isGracePeriod": true
+                },
+                "checkinTime": "15:00:00",
+                "checkoutTime": "11:00:00"
+            },
+            "ratePlanCode": "IGCOR",
+            "productUses": [
+                {
+                    "period": {
+                        "start": "2020-12-10",
+                        "end": "2020-12-12"
+                    },
+                    "inventoryTypeCode": "KNGN",
+                    "isMainProduct": true,
+                    "quantity": 1,
+                    "numberOfAvailableProducts": 35,
+                    "guestCounts": [
+                        {
+                            "guestType": "ADULT",
+                            "count": 1
+                        }
+                    ],
+                    "rates": {
+                        "isDefaultPricingBased": true,
+                        "pricingFrequency": "PerNight",
+                        "pricingMethod": "PerProduct",
+                        "taxInclusionMode": "followHouse",
+                        "totalRate": {
+                            "bsAmt": "400.00",
+                            "amtBfTx": "400.00",
+                            "amtAfTx": "684.00",
+                            "avg": {
+                                "amtAfTx": "342.00",
+                                "bsAmt": "200.00",
+                                "subTtlTxExc": "63.00",
+                                "subTtlSvcChgExc": "65.00"
+                            },
+                            "checkin": {
+                                "bsAmt": "200.00",
+                                "subTtlTxExc": "83.00",
+                                "subTtlSvcChgExc": "65.00"
+                            },
+                            "subTotalServiceCharges": [
+                                {
+                                    "amt": "130.00",
+                                    "isIncludedInRate": false
+                                }
+                            ],
+                            "subTotalTaxes": [
+                                {
+                                    "amt": "126.00",
+                                    "isIncludedInRate": false
+                                }
+                            ],
+                            "taxGroups": [
+                                {
+                                    "taxDefIds": [
+                                        0
+                                    ],
+                                    "code": "TAX01",
+                                    "OTAcode": "FTT1",
+                                    "amt": "28.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        1
+                                    ],
+                                    "code": "TREX1",
+                                    "OTAcode": "FTT3",
+                                    "amt": "6.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        2
+                                    ],
+                                    "code": "TTEX1",
+                                    "OTAcode": "FTT4",
+                                    "amt": "40.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        3
+                                    ],
+                                    "code": "SREX1",
+                                    "OTAcode": "FTT12",
+                                    "amt": "70.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        4
+                                    ],
+                                    "code": "SCFNB",
+                                    "OTAcode": "FTT14",
+                                    "amt": "60.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        5
+                                    ],
+                                    "code": "TNEX1",
+                                    "OTAcode": "FTT15",
+                                    "amt": "40.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        6
+                                    ],
+                                    "code": "TOTAL",
+                                    "OTAcode": "FTT17",
+                                    "amt": "40.00",
+                                    "isIncludedInRate": false
+                                }
+                            ],
+                            "totalTaxes": "284.00"
+                        },
+                        "totalBaseOccRate": {
+                            "bsAmt": "400.00",
+                            "amtBfTx": "400.00",
+                            "amtAfTx": "684.00",
+                            "avg": {
+                                "amtAfTx": "342.00",
+                                "bsAmt": "200.00",
+                                "subTtlTxExc": "63.00",
+                                "subTtlSvcChgExc": "65.00"
+                            },
+                            "checkin": {
+                                "bsAmt": "200.00",
+                                "subTtlTxExc": "83.00",
+                                "subTtlSvcChgExc": "65.00"
+                            },
+                            "subTotalServiceCharges": [
+                                {
+                                    "amt": "130.00",
+                                    "isIncludedInRate": false
+                                }
+                            ],
+                            "subTotalTaxes": [
+                                {
+                                    "amt": "126.00",
+                                    "isIncludedInRate": false
+                                }
+                            ],
+                            "taxGroups": [
+                                {
+                                    "taxDefIds": [
+                                        0
+                                    ],
+                                    "code": "TAX01",
+                                    "OTAcode": "FTT1",
+                                    "amt": "28.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        1
+                                    ],
+                                    "code": "TREX1",
+                                    "OTAcode": "FTT3",
+                                    "amt": "6.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        2
+                                    ],
+                                    "code": "TTEX1",
+                                    "OTAcode": "FTT4",
+                                    "amt": "40.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        3
+                                    ],
+                                    "code": "SREX1",
+                                    "OTAcode": "FTT12",
+                                    "amt": "70.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        4
+                                    ],
+                                    "code": "SCFNB",
+                                    "OTAcode": "FTT14",
+                                    "amt": "60.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        5
+                                    ],
+                                    "code": "TNEX1",
+                                    "OTAcode": "FTT15",
+                                    "amt": "40.00",
+                                    "isIncludedInRate": false
+                                },
+                                {
+                                    "taxDefIds": [
+                                        6
+                                    ],
+                                    "code": "TOTAL",
+                                    "OTAcode": "FTT17",
+                                    "amt": "40.00",
+                                    "isIncludedInRate": false
+                                }
+                            ],
+                            "totalTaxes": "284.00"
+                        },
+                        "hasRateChange": false,
+                        "ratesDef": {
+                            "rateChanges": [
+                                {
+                                    "id": 0,
+                                    "start": "2020-12-10",
+                                    "end": "2020-12-12",
+                                    "amt": "200.00"
+                                }
+                            ],
+                            "avg": "200.00",
+                            "checkin": "200.00",
+                            "dailyExtraPersonCharge": "20.00"
+                        },
+                        "dailyRates": [
+                            {
+                                "start": "2020-12-10",
+                                "end": "2020-12-11",
+                                "dailyTotalRate": {
+                                    "bsAmt": "200.00",
+                                    "amtBfTx": "200.00",
+                                    "amtAfTx": "362.00",
+                                    "rateDefId": 0,
+                                    "taxList": [
+                                        {
+                                            "taxDefIds": [
+                                                0
+                                            ],
+                                            "code": "TAX01",
+                                            "OTAcode": "FTT1",
+                                            "amt": "14.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                1
+                                            ],
+                                            "code": "TREX1",
+                                            "OTAcode": "FTT3",
+                                            "amt": "3.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                2
+                                            ],
+                                            "code": "TTEX1",
+                                            "OTAcode": "FTT4",
+                                            "amt": "20.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                3
+                                            ],
+                                            "code": "SREX1",
+                                            "OTAcode": "FTT12",
+                                            "amt": "35.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                4
+                                            ],
+                                            "code": "SCFNB",
+                                            "OTAcode": "FTT14",
+                                            "amt": "30.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                5
+                                            ],
+                                            "code": "TNEX1",
+                                            "OTAcode": "FTT15",
+                                            "amt": "40.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                6
+                                            ],
+                                            "code": "TOTAL",
+                                            "OTAcode": "FTT17",
+                                            "amt": "20.00",
+                                            "isIncludedInRate": false
+                                        }
+                                    ],
+                                    "totalTaxes": "162.00",
+                                    "subTotalServiceCharges": [
+                                        {
+                                            "amt": "65.00",
+                                            "isIncludedInRate": false
+                                        }
+                                    ],
+                                    "subTotalTaxes": [
+                                        {
+                                            "amt": "83.00",
+                                            "isIncludedInRate": false
+                                        }
+                                    ]
+                                },
+                                "dailyBaseOccRate": {
+                                    "bsAmt": "200.00",
+                                    "amtBfTx": "200.00",
+                                    "amtAfTx": "362.00",
+                                    "taxList": [
+                                        {
+                                            "taxDefIds": [
+                                                0
+                                            ],
+                                            "code": "TAX01",
+                                            "OTAcode": "FTT1",
+                                            "amt": "14.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                1
+                                            ],
+                                            "code": "TREX1",
+                                            "OTAcode": "FTT3",
+                                            "amt": "3.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                2
+                                            ],
+                                            "code": "TTEX1",
+                                            "OTAcode": "FTT4",
+                                            "amt": "20.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                3
+                                            ],
+                                            "code": "SREX1",
+                                            "OTAcode": "FTT12",
+                                            "amt": "35.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                4
+                                            ],
+                                            "code": "SCFNB",
+                                            "OTAcode": "FTT14",
+                                            "amt": "30.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                5
+                                            ],
+                                            "code": "TNEX1",
+                                            "OTAcode": "FTT15",
+                                            "amt": "40.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                6
+                                            ],
+                                            "code": "TOTAL",
+                                            "OTAcode": "FTT17",
+                                            "amt": "20.00",
+                                            "isIncludedInRate": false
+                                        }
+                                    ],
+                                    "totalTaxes": "162.00",
+                                    "subTotalServiceCharges": [
+                                        {
+                                            "amt": "65.00",
+                                            "isIncludedInRate": false
+                                        }
+                                    ],
+                                    "subTotalTaxes": [
+                                        {
+                                            "amt": "83.00",
+                                            "isIncludedInRate": false
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "start": "2020-12-11",
+                                "end": "2020-12-12",
+                                "dailyTotalRate": {
+                                    "bsAmt": "200.00",
+                                    "amtBfTx": "200.00",
+                                    "amtAfTx": "322.00",
+                                    "rateDefId": 0,
+                                    "taxList": [
+                                        {
+                                            "taxDefIds": [
+                                                0
+                                            ],
+                                            "code": "TAX01",
+                                            "OTAcode": "FTT1",
+                                            "amt": "14.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                1
+                                            ],
+                                            "code": "TREX1",
+                                            "OTAcode": "FTT3",
+                                            "amt": "3.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                2
+                                            ],
+                                            "code": "TTEX1",
+                                            "OTAcode": "FTT4",
+                                            "amt": "20.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                3
+                                            ],
+                                            "code": "SREX1",
+                                            "OTAcode": "FTT12",
+                                            "amt": "35.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                4
+                                            ],
+                                            "code": "SCFNB",
+                                            "OTAcode": "FTT14",
+                                            "amt": "30.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                5
+                                            ],
+                                            "code": "TNEX1",
+                                            "OTAcode": "FTT15",
+                                            "amt": "0.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                6
+                                            ],
+                                            "code": "TOTAL",
+                                            "OTAcode": "FTT17",
+                                            "amt": "20.00",
+                                            "isIncludedInRate": false
+                                        }
+                                    ],
+                                    "totalTaxes": "122.00",
+                                    "subTotalServiceCharges": [
+                                        {
+                                            "amt": "65.00",
+                                            "isIncludedInRate": false
+                                        }
+                                    ],
+                                    "subTotalTaxes": [
+                                        {
+                                            "amt": "43.00",
+                                            "isIncludedInRate": false
+                                        }
+                                    ]
+                                },
+                                "dailyBaseOccRate": {
+                                    "bsAmt": "200.00",
+                                    "amtBfTx": "200.00",
+                                    "amtAfTx": "322.00",
+                                    "taxList": [
+                                        {
+                                            "taxDefIds": [
+                                                0
+                                            ],
+                                            "code": "TAX01",
+                                            "OTAcode": "FTT1",
+                                            "amt": "14.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                1
+                                            ],
+                                            "code": "TREX1",
+                                            "OTAcode": "FTT3",
+                                            "amt": "3.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                2
+                                            ],
+                                            "code": "TTEX1",
+                                            "OTAcode": "FTT4",
+                                            "amt": "20.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                3
+                                            ],
+                                            "code": "SREX1",
+                                            "OTAcode": "FTT12",
+                                            "amt": "35.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                4
+                                            ],
+                                            "code": "SCFNB",
+                                            "OTAcode": "FTT14",
+                                            "amt": "30.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                5
+                                            ],
+                                            "code": "TNEX1",
+                                            "OTAcode": "FTT15",
+                                            "amt": "0.00",
+                                            "isIncludedInRate": false
+                                        },
+                                        {
+                                            "taxDefIds": [
+                                                6
+                                            ],
+                                            "code": "TOTAL",
+                                            "OTAcode": "FTT17",
+                                            "amt": "20.00",
+                                            "isIncludedInRate": false
+                                        }
+                                    ],
+                                    "totalTaxes": "122.00",
+                                    "subTotalServiceCharges": [
+                                        {
+                                            "amt": "65.00",
+                                            "isIncludedInRate": false
+                                        }
+                                    ],
+                                    "subTotalTaxes": [
+                                        {
+                                            "amt": "43.00",
+                                            "isIncludedInRate": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "period": {
+                        "start": "2020-12-10",
+                        "end": "2020-12-12"
+                    },
+                    "inventoryTypeCode": "BRK",
+                    "isMainProduct": false,
+                    "isOptional": false
+                },
+                {
+                    "period": {
+                        "start": "2020-12-10",
+                        "end": "2020-12-12"
+                    },
+                    "inventoryTypeCode": "DIN",
+                    "isMainProduct": false,
+                    "isOptional": false
+                }
+            ],
+            "totalRate": {
+                "bsAmt": "400.00",
+                "amtBfTx": "400.00",
+                "amtAfTx": "684.00",
+                "avg": {
+                    "amtAfTx": "342.00",
+                    "bsAmt": "200.00",
+                    "subTtlTxExc": "63.00",
+                    "subTtlSvcChgExc": "65.00"
+                },
+                "checkin": {
+                    "bsAmt": "200.00",
+                    "subTtlTxExc": "83.00",
+                    "subTtlSvcChgExc": "65.00"
+                },
+                "subTotalServiceCharges": [
+                    {
+                        "amt": "130.00",
+                        "isIncludedInRate": false
+                    }
+                ],
+                "subTotalTaxes": [
+                    {
+                        "amt": "126.00",
+                        "isIncludedInRate": false
+                    }
+                ],
+                "taxGroups": [
+                    {
+                        "taxDefIds": [
+                            0
+                        ],
+                        "code": "TAX01",
+                        "OTAcode": "FTT1",
+                        "amt": "28.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            1
+                        ],
+                        "code": "TREX1",
+                        "OTAcode": "FTT3",
+                        "amt": "6.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            2
+                        ],
+                        "code": "TTEX1",
+                        "OTAcode": "FTT4",
+                        "amt": "40.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            3
+                        ],
+                        "code": "SREX1",
+                        "OTAcode": "FTT12",
+                        "amt": "70.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            4
+                        ],
+                        "code": "SCFNB",
+                        "OTAcode": "FTT14",
+                        "amt": "60.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            5
+                        ],
+                        "code": "TNEX1",
+                        "OTAcode": "FTT15",
+                        "amt": "40.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            6
+                        ],
+                        "code": "TOTAL",
+                        "OTAcode": "FTT17",
+                        "amt": "40.00",
+                        "isIncludedInRate": false
+                    }
+                ],
+                "totalTaxes": "284.00"
+            },
+            "totalBaseOccRate": {
+                "bsAmt": "400.00",
+                "amtBfTx": "400.00",
+                "amtAfTx": "684.00",
+                "avg": {
+                    "amtAfTx": "342.00",
+                    "bsAmt": "200.00",
+                    "subTtlTxExc": "63.00",
+                    "subTtlSvcChgExc": "65.00"
+                },
+                "checkin": {
+                    "bsAmt": "200.00",
+                    "subTtlTxExc": "83.00",
+                    "subTtlSvcChgExc": "65.00"
+                },
+                "subTotalServiceCharges": [
+                    {
+                        "amt": "130.00",
+                        "isIncludedInRate": false
+                    }
+                ],
+                "subTotalTaxes": [
+                    {
+                        "amt": "126.00",
+                        "isIncludedInRate": false
+                    }
+                ],
+                "taxGroups": [
+                    {
+                        "taxDefIds": [
+                            0
+                        ],
+                        "code": "TAX01",
+                        "OTAcode": "FTT1",
+                        "amt": "28.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            1
+                        ],
+                        "code": "TREX1",
+                        "OTAcode": "FTT3",
+                        "amt": "6.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            2
+                        ],
+                        "code": "TTEX1",
+                        "OTAcode": "FTT4",
+                        "amt": "40.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            3
+                        ],
+                        "code": "SREX1",
+                        "OTAcode": "FTT12",
+                        "amt": "70.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            4
+                        ],
+                        "code": "SCFNB",
+                        "OTAcode": "FTT14",
+                        "amt": "60.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            5
+                        ],
+                        "code": "TNEX1",
+                        "OTAcode": "FTT15",
+                        "amt": "40.00",
+                        "isIncludedInRate": false
+                    },
+                    {
+                        "taxDefIds": [
+                            6
+                        ],
+                        "code": "TOTAL",
+                        "OTAcode": "FTT17",
+                        "amt": "40.00",
+                        "isIncludedInRate": false
+                    }
+                ],
+                "totalTaxes": "284.00"
+            }
+        },
+        "additionalOffers": [
+            {
+                "policies": {
+                    "isPrepaid": false,
+                    "deposit": {
+                        "isRequired": true,
+                        "feeType": "StayPercent",
+                        "amt": "7.76",
+                        "amtCurrency": "USD",
+                        "feeValue": "15.00",
+                        "feeCurrency": "USD",
+                        "desc": {
+                            "en": [
+                                "DEPOSIT METHOD: ACCEPTED CREDIT CARDS"
+                            ]
+                        },
+                        "deadline": {
+                            "deadlineType": "atBooking",
+                            "dateTime": "2020-11-19T00:25:35"
+                        }
+                    },
+                    "cancellation": {
+                        "feeType": "StayPercent",
+                        "amt": "5.18",
+                        "amtCurrency": "USD",
+                        "feeValue": "10.00",
+                        "feeCurrency": "USD",
+                        "deadline": {
+                            "deadlineType": "atBooking",
+                            "dateTime": "2020-11-19T00:25:35"
+                        },
+                        "isGracePeriod": false
+                    },
+                    "isRefundable": false,
+                    "cancellationNoShow": {
+                        "feeType": "StayPercent",
+                        "amt": "5.69",
+                        "amtCurrency": "USD",
+                        "feeValue": "11.00",
+                        "feeCurrency": "USD",
+                        "deadline": {
+                            "deadlineType": "numberOfDaysBeforeCheckin",
+                            "deadlineValue": 0,
+                            "dateTime": "2020-12-10T10:00:00"
+                        },
+                        "isGracePeriod": true
+                    },
+                    "checkinTime": "15:00:00",
+                    "checkoutTime": "11:00:00"
+                },
+                "ratePlanCode": "SN004",
+                "productUses": [
+                    {
+                        "period": {
+                            "start": "2020-12-10",
+                            "end": "2020-12-12"
+                        },
+                        "inventoryTypeCode": "GLFH",
+                        "isMainProduct": true,
+                        "quantity": 1,
+                        "guestCounts": [
+                            {
+                                "guestType": "ADULT",
+                                "count": 1
+                            }
+                        ],
+                        "rates": {
+                            "isDefaultPricingBased": true,
+                            "pricingFrequency": "PerStay",
+                            "pricingMethod": "PerProduct",
+                            "taxInclusionMode": "excluded",
+                            "hasRateChange": true,
+                            "ratesDef": {
+                                "rateChanges": [
+                                    {
+                                        "id": 0,
+                                        "start": "2020-12-10",
+                                        "end": "2020-12-11",
+                                        "amt": "45.00"
+                                    },
+                                    {
+                                        "id": 1,
+                                        "start": "2020-12-11",
+                                        "end": "2020-12-12",
+                                        "amt": "0.00"
+                                    }
+                                ],
+                                "avg": "22.50",
+                                "checkin": "45.00"
+                            },
+                            "dailyRates": [
+                                {
+                                    "start": "2020-12-10",
+                                    "end": "2020-12-11",
+                                    "dailyTotalRate": {
+                                        "bsAmt": "45.00",
+                                        "amtBfTx": "45.00",
+                                        "amtAfTx": "51.75",
+                                        "rateDefId": 0,
+                                        "taxList": [
+                                            {
+                                                "taxDefIds": [
+                                                    4
+                                                ],
+                                                "code": "SCFNB",
+                                                "OTAcode": "FTT14",
+                                                "amt": "6.75",
+                                                "isIncludedInRate": false
+                                            }
+                                        ],
+                                        "totalTaxes": "6.75",
+                                        "subTotalServiceCharges": [
+                                            {
+                                                "amt": "6.75",
+                                                "isIncludedInRate": false
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "start": "2020-12-11",
+                                    "end": "2020-12-12",
+                                    "dailyTotalRate": {
+                                        "bsAmt": "0.00",
+                                        "amtBfTx": "0.00",
+                                        "amtAfTx": "0.00",
+                                        "rateDefId": 1,
+                                        "taxList": [
+                                            {
+                                                "taxDefIds": [
+                                                    4
+                                                ],
+                                                "code": "SCFNB",
+                                                "OTAcode": "FTT14",
+                                                "amt": "0.00",
+                                                "isIncludedInRate": false
+                                            }
+                                        ],
+                                        "totalTaxes": "0.00",
+                                        "subTotalServiceCharges": [
+                                            {
+                                                "amt": "0.00",
+                                                "isIncludedInRate": false
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "availablePeriods": [
+                            {
+                                "start": "2020-12-10",
+                                "end": "2020-12-11"
+                            }
+                        ]
+                    }
+                ],
+                "totalRate": {
+                    "bsAmt": "45.00",
+                    "amtBfTx": "45.00",
+                    "amtAfTx": "51.75",
+                    "avg": {
+                        "amtAfTx": "25.88",
+                        "bsAmt": "22.50",
+                        "subTtlTxExc": "63.00",
+                        "subTtlSvcChgExc": "65.00"
+                    },
+                    "checkin": {
+                        "bsAmt": "45.00",
+                        "subTtlTxExc": "83.00",
+                        "subTtlSvcChgExc": "65.00"
+                    },
+                    "taxGroups": [
+                        {
+                            "taxDefIds": [
+                                4
+                            ],
+                            "code": "SCFNB",
+                            "OTAcode": "FTT14",
+                            "amt": "6.75",
+                            "isIncludedInRate": false
+                        }
+                    ],
+                    "subTotalServiceCharges": [
+                        {
+                            "amt": "6.75",
+                            "isIncludedInRate": false
+                        }
+                    ],
+                    "totalTaxes": "6.75"
+                }
+            },
+            {
+                "policies": {
+                    "isRefundable": false,
+                    "cancellationNoShow": {
+                        "feeType": "LastNight",
+                        "amt": "23.00",
+                        "amtCurrency": "USD",
+                        "feeCurrency": "USD",
+                        "deadline": {
+                            "deadlineType": "numberOfDaysBeforeCheckin",
+                            "deadlineValue": 0,
+                            "dateTime": "2020-12-10T10:00:00"
+                        },
+                        "isGracePeriod": true
+                    },
+                    "checkinTime": "15:00:00",
+                    "checkoutTime": "11:00:00"
+                },
+                "ratePlanCode": "SN006",
+                "productUses": [
+                    {
+                        "period": {
+                            "start": "2020-12-10",
+                            "end": "2020-12-12"
+                        },
+                        "inventoryTypeCode": "D9HK",
+                        "isMainProduct": true,
+                        "quantity": 1,
+                        "guestCounts": [
+                            {
+                                "guestType": "ADULT",
+                                "count": 1
+                            }
+                        ],
+                        "rates": {
+                            "isDefaultPricingBased": true,
+                            "pricingFrequency": "PerNight",
+                            "pricingMethod": "PerProduct",
+                            "taxInclusionMode": "followHouse",
+                            "hasRateChange": false,
+                            "ratesDef": {
+                                "rateChanges": [
+                                    {
+                                        "id": 0,
+                                        "start": "2020-12-10",
+                                        "end": "2020-12-12",
+                                        "amt": "20.00"
+                                    }
+                                ],
+                                "avg": "20.00",
+                                "checkin": "20.00"
+                            },
+                            "dailyRates": [
+                                {
+                                    "start": "2020-12-10",
+                                    "end": "2020-12-12",
+                                    "dailyTotalRate": {
+                                        "bsAmt": "20.00",
+                                        "amtBfTx": "20.00",
+                                        "amtAfTx": "23.00",
+                                        "rateDefId": 0,
+                                        "taxList": [
+                                            {
+                                                "taxDefIds": [
+                                                    4
+                                                ],
+                                                "code": "SCFNB",
+                                                "OTAcode": "FTT14",
+                                                "amt": "3.00",
+                                                "isIncludedInRate": false
+                                            }
+                                        ],
+                                        "totalTaxes": "3.00",
+                                        "subTotalServiceCharges": [
+                                            {
+                                                "amt": "3.00",
+                                                "isIncludedInRate": false
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "availablePeriods": [
+                            {
+                                "start": "2020-12-10",
+                                "end": "2020-12-11",
+                                "availCounters": [
+                                    45,
+                                    45
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "totalRate": {
+                    "bsAmt": "40.00",
+                    "amtBfTx": "40.00",
+                    "amtAfTx": "46.00",
+                    "avg": {
+                        "amtAfTx": "23.00",
+                        "bsAmt": "20.00",
+                        "subTtlTxExc": "63.00",
+                        "subTtlSvcChgExc": "65.00"
+                    },
+                    "checkin": {
+                        "bsAmt": "20.00",
+                        "subTtlTxExc": "83.00",
+                        "subTtlSvcChgExc": "65.00"
+                    },
+                    "taxGroups": [
+                        {
+                            "taxDefIds": [
+                                4
+                            ],
+                            "code": "SCFNB",
+                            "OTAcode": "FTT14",
+                            "amt": "6.00",
+                            "isIncludedInRate": false
+                        }
+                    ],
+                    "subTotalServiceCharges": [
+                        {
+                            "amt": "6.00",
+                            "isIncludedInRate": false
+                        }
+                    ],
+                    "totalTaxes": "6.00"
+                }
+            },
+            {
+                "policies": {
+                    "checkinTime": "15:00:00",
+                    "checkoutTime": "11:00:00"
+                },
+                "ratePlanCode": "AZ002",
+                "productUses": [
+                    {
+                        "period": {
+                            "start": "2020-12-10",
+                            "end": "2020-12-12"
+                        },
+                        "inventoryTypeCode": "GOODIE01",
+                        "isMainProduct": true,
+                        "quantity": 1,
+                        "guestCounts": [
+                            {
+                                "guestType": "ADULT",
+                                "count": 1
+                            }
+                        ],
+                        "rates": {
+                            "isDefaultPricingBased": true,
+                            "pricingFrequency": "PerStay",
+                            "pricingMethod": "PerProduct",
+                            "taxInclusionMode": "included",
+                            "hasRateChange": true,
+                            "ratesDef": {
+                                "rateChanges": [
+                                    {
+                                        "id": 0,
+                                        "start": "2020-12-10",
+                                        "end": "2020-12-11",
+                                        "amt": "36.00"
+                                    },
+                                    {
+                                        "id": 1,
+                                        "start": "2020-12-11",
+                                        "end": "2020-12-12",
+                                        "amt": "0.00"
+                                    }
+                                ],
+                                "avg": "18.00",
+                                "checkin": "36.00"
+                            },
+                            "dailyRates": [
+                                {
+                                    "start": "2020-12-10",
+                                    "end": "2020-12-11",
+                                    "dailyTotalRate": {
+                                        "bsAmt": "36.00",
+                                        "amtBfTx": "36.00",
+                                        "amtAfTx": "39.60",
+                                        "rateDefId": 0,
+                                        "taxList": [
+                                            {
+                                                "taxDefIds": [
+                                                    1
+                                                ],
+                                                "code": "TREX1",
+                                                "OTAcode": "FTT3",
+                                                "amt": "0.47",
+                                                "isIncludedInRate": true
+                                            },
+                                            {
+                                                "taxDefIds": [
+                                                    2
+                                                ],
+                                                "code": "TTEX1",
+                                                "OTAcode": "FTT4",
+                                                "amt": "3.60",
+                                                "isIncludedInRate": false
+                                            }
+                                        ],
+                                        "totalTaxes": "3.60",
+                                        "subTotalTaxes": [
+                                            {
+                                                "amt": "3.60",
+                                                "isIncludedInRate": false
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "start": "2020-12-11",
+                                    "end": "2020-12-12",
+                                    "dailyTotalRate": {
+                                        "bsAmt": "0.00",
+                                        "amtBfTx": "0.00",
+                                        "amtAfTx": "0.00",
+                                        "rateDefId": 1,
+                                        "taxList": [
+                                            {
+                                                "taxDefIds": [
+                                                    1
+                                                ],
+                                                "code": "TREX1",
+                                                "OTAcode": "FTT3",
+                                                "amt": "0.00",
+                                                "isIncludedInRate": true
+                                            },
+                                            {
+                                                "taxDefIds": [
+                                                    2
+                                                ],
+                                                "code": "TTEX1",
+                                                "OTAcode": "FTT4",
+                                                "amt": "0.00",
+                                                "isIncludedInRate": false
+                                            }
+                                        ],
+                                        "totalTaxes": "0.00",
+                                        "subTotalTaxes": [
+                                            {
+                                                "amt": "0.00",
+                                                "isIncludedInRate": false
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "availablePeriods": [
+                            {
+                                "start": "2020-12-10",
+                                "end": "2020-12-11",
+                                "availCounters": [
+                                    10,
+                                    10
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "totalRate": {
+                    "bsAmt": "36.00",
+                    "amtBfTx": "36.00",
+                    "amtAfTx": "39.60",
+                    "avg": {
+                        "amtAfTx": "19.80",
+                        "bsAmt": "18.00",
+                        "subTtlTxExc": "63.00",
+                        "subTtlSvcChgExc": "65.00"
+                    },
+                    "checkin": {
+                        "bsAmt": "36.00",
+                        "subTtlTxExc": "83.00",
+                        "subTtlSvcChgExc": "65.00"
+                    },
+                    "taxGroups": [
+                        {
+                            "taxDefIds": [
+                                1
+                            ],
+                            "code": "TREX1",
+                            "OTAcode": "FTT3",
+                            "amt": "0.47",
+                            "isIncludedInRate": true
+                        },
+                        {
+                            "taxDefIds": [
+                                2
+                            ],
+                            "code": "TTEX1",
+                            "OTAcode": "FTT4",
+                            "amt": "3.60",
+                            "isIncludedInRate": false
+                        }
+                    ],
+                    "subTotalTaxes": [
+                        {
+                            "amt": "3.60",
+                            "isIncludedInRate": false
+                        }
+                    ],
+                    "totalTaxes": "3.60"
+                }
+            },
+            {
+                "policies": {
+                    "isRefundable": false,
+                    "cancellationNoShow": {
+                        "feeType": "LastNight",
+                        "amt": "99.00",
+                        "amtCurrency": "USD",
+                        "feeCurrency": "USD",
+                        "deadline": {
+                            "deadlineType": "numberOfDaysBeforeCheckin",
+                            "deadlineValue": 0,
+                            "dateTime": "2020-12-10T10:00:00"
+                        },
+                        "isGracePeriod": true
+                    },
+                    "checkinTime": "15:00:00",
+                    "checkoutTime": "11:00:00"
+                },
+                "ratePlanCode": "AZ001",
+                "productUses": [
+                    {
+                        "period": {
+                            "start": "2020-12-10",
+                            "end": "2020-12-12"
+                        },
+                        "inventoryTypeCode": "DABBA01",
+                        "isMainProduct": true,
+                        "quantity": 1,
+                        "guestCounts": [
+                            {
+                                "guestType": "ADULT",
+                                "count": 1
+                            }
+                        ],
+                        "rates": {
+                            "isDefaultPricingBased": true,
+                            "pricingFrequency": "PerNight",
+                            "pricingMethod": "PerProduct",
+                            "taxInclusionMode": "followHouse",
+                            "hasRateChange": false,
+                            "ratesDef": {
+                                "rateChanges": [
+                                    {
+                                        "id": 0,
+                                        "start": "2020-12-10",
+                                        "end": "2020-12-12",
+                                        "amt": "99.00"
+                                    }
+                                ],
+                                "avg": "99.00",
+                                "checkin": "99.00"
+                            },
+                            "dailyRates": [
+                                {
+                                    "start": "2020-12-10",
+                                    "end": "2020-12-11",
+                                    "dailyTotalRate": {
+                                        "bsAmt": "99.00",
+                                        "amtBfTx": "99.00",
+                                        "amtAfTx": "124.74",
+                                        "rateDefId": 0,
+                                        "taxList": [
+                                            {
+                                                "taxDefIds": [
+                                                    5
+                                                ],
+                                                "code": "TNEX1",
+                                                "OTAcode": "FTT15",
+                                                "amt": "19.80",
+                                                "isIncludedInRate": false
+                                            },
+                                            {
+                                                "taxDefIds": [
+                                                    7
+                                                ],
+                                                "code": "FNBTX",
+                                                "OTAcode": "FTT7",
+                                                "amt": "5.94",
+                                                "isIncludedInRate": false
+                                            }
+                                        ],
+                                        "totalTaxes": "25.74",
+                                        "subTotalTaxes": [
+                                            {
+                                                "amt": "25.74",
+                                                "isIncludedInRate": false
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "start": "2020-12-11",
+                                    "end": "2020-12-12",
+                                    "dailyTotalRate": {
+                                        "bsAmt": "99.00",
+                                        "amtBfTx": "99.00",
+                                        "amtAfTx": "99.00",
+                                        "rateDefId": 0,
+                                        "taxList": [
+                                            {
+                                                "taxDefIds": [
+                                                    5
+                                                ],
+                                                "code": "TNEX1",
+                                                "OTAcode": "FTT15",
+                                                "amt": "0.00",
+                                                "isIncludedInRate": false
+                                            },
+                                            {
+                                                "taxDefIds": [
+                                                    7
+                                                ],
+                                                "code": "FNBTX",
+                                                "OTAcode": "FTT7",
+                                                "amt": "0.00",
+                                                "isIncludedInRate": false
+                                            }
+                                        ],
+                                        "totalTaxes": "0.00",
+                                        "subTotalTaxes": [
+                                            {
+                                                "amt": "0.00",
+                                                "isIncludedInRate": false
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "availablePeriods": [
+                            {
+                                "start": "2020-12-10",
+                                "end": "2020-12-11",
+                                "availCounters": [
+                                    30,
+                                    30
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "totalRate": {
+                    "bsAmt": "198.00",
+                    "amtBfTx": "198.00",
+                    "amtAfTx": "223.74",
+                    "avg": {
+                        "amtAfTx": "111.87",
+                        "bsAmt": "99.00",
+                        "subTtlTxExc": "63.00",
+                        "subTtlSvcChgExc": "65.00"
+                    },
+                    "checkin": {
+                        "bsAmt": "99.00",
+                        "subTtlTxExc": "83.00",
+                        "subTtlSvcChgExc": "65.00"
+                    },
+                    "taxGroups": [
+                        {
+                            "taxDefIds": [
+                                7
+                            ],
+                            "code": "FNBTX",
+                            "OTAcode": "FTT7",
+                            "amt": "5.94",
+                            "isIncludedInRate": false
+                        },
+                        {
+                            "taxDefIds": [
+                                5
+                            ],
+                            "code": "TNEX1",
+                            "OTAcode": "FTT15",
+                            "amt": "19.80",
+                            "isIncludedInRate": false
+                        }
+                    ],
+                    "subTotalTaxes": [
+                        {
+                            "amt": "25.74",
+                            "isIncludedInRate": false
+                        }
+                    ],
+                    "totalTaxes": "25.74"
+                }
+            },
+            {
+                "policies": {
+                    "isPrepaid": true,
+                    "deposit": {
+                        "isRequired": true,
+                        "feeType": "FullStay",
+                        "amt": "23.60",
+                        "amtCurrency": "USD",
+                        "feeCurrency": "USD",
+                        "desc": {
+                            "en": [
+                                "DEPOSIT METHOD: ACCEPTED CREDIT CARDS"
+                            ]
+                        },
+                        "deadline": {
+                            "deadlineType": "atBooking",
+                            "dateTime": "2020-11-19T00:25:35"
+                        }
+                    },
+                    "isRefundable": false,
+                    "cancellationNoShow": {
+                        "feeType": "FullStay",
+                        "amt": "23.60",
+                        "amtCurrency": "USD",
+                        "feeCurrency": "USD",
+                        "deadline": {
+                            "deadlineType": "atBooking",
+                            "dateTime": "2020-11-19T00:25:35"
+                        },
+                        "isGracePeriod": false
+                    },
+                    "checkinTime": "15:00:00",
+                    "checkoutTime": "11:00:00"
+                },
+                "ratePlanCode": "SN002",
+                "productUses": [
+                    {
+                        "period": {
+                            "start": "2020-12-10",
+                            "end": "2020-12-12"
+                        },
+                        "inventoryTypeCode": "BRKF",
+                        "isMainProduct": true,
+                        "quantity": 1,
+                        "guestCounts": [
+                            {
+                                "guestType": "ADULT",
+                                "count": 1
+                            }
+                        ],
+                        "rates": {
+                            "isDefaultPricingBased": true,
+                            "pricingFrequency": "PerNight",
+                            "pricingMethod": "PerProduct",
+                            "taxInclusionMode": "followHouse",
+                            "hasRateChange": false,
+                            "ratesDef": {
+                                "rateChanges": [
+                                    {
+                                        "id": 0,
+                                        "start": "2020-12-10",
+                                        "end": "2020-12-12",
+                                        "amt": "10.00"
+                                    }
+                                ],
+                                "avg": "10.00",
+                                "checkin": "10.00"
+                            },
+                            "dailyRates": [
+                                {
+                                    "start": "2020-12-10",
+                                    "end": "2020-12-11",
+                                    "dailyTotalRate": {
+                                        "bsAmt": "10.00",
+                                        "amtBfTx": "10.00",
+                                        "amtAfTx": "12.10",
+                                        "rateDefId": 0,
+                                        "taxList": [
+                                            {
+                                                "taxDefIds": [
+                                                    4
+                                                ],
+                                                "code": "SCFNB",
+                                                "OTAcode": "FTT14",
+                                                "amt": "1.50",
+                                                "isIncludedInRate": false
+                                            },
+                                            {
+                                                "taxDefIds": [
+                                                    7
+                                                ],
+                                                "code": "FNBTX",
+                                                "OTAcode": "FTT7",
+                                                "amt": "0.60",
+                                                "isIncludedInRate": false
+                                            }
+                                        ],
+                                        "totalTaxes": "2.10",
+                                        "subTotalServiceCharges": [
+                                            {
+                                                "amt": "1.50",
+                                                "isIncludedInRate": false
+                                            }
+                                        ],
+                                        "subTotalTaxes": [
+                                            {
+                                                "amt": "0.60",
+                                                "isIncludedInRate": false
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "start": "2020-12-11",
+                                    "end": "2020-12-12",
+                                    "dailyTotalRate": {
+                                        "bsAmt": "10.00",
+                                        "amtBfTx": "10.00",
+                                        "amtAfTx": "11.50",
+                                        "rateDefId": 0,
+                                        "taxList": [
+                                            {
+                                                "taxDefIds": [
+                                                    4
+                                                ],
+                                                "code": "SCFNB",
+                                                "OTAcode": "FTT14",
+                                                "amt": "1.50",
+                                                "isIncludedInRate": false
+                                            },
+                                            {
+                                                "taxDefIds": [
+                                                    7
+                                                ],
+                                                "code": "FNBTX",
+                                                "OTAcode": "FTT7",
+                                                "amt": "0.00",
+                                                "isIncludedInRate": false
+                                            }
+                                        ],
+                                        "totalTaxes": "1.50",
+                                        "subTotalServiceCharges": [
+                                            {
+                                                "amt": "1.50",
+                                                "isIncludedInRate": false
+                                            }
+                                        ],
+                                        "subTotalTaxes": [
+                                            {
+                                                "amt": "0.00",
+                                                "isIncludedInRate": false
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "availablePeriods": [
+                            {
+                                "start": "2020-12-10",
+                                "end": "2020-12-11"
+                            }
+                        ]
+                    }
+                ],
+                "totalRate": {
+                    "bsAmt": "20.00",
+                    "amtBfTx": "20.00",
+                    "amtAfTx": "23.60",
+                    "avg": {
+                        "amtAfTx": "11.80",
+                        "bsAmt": "10.00",
+                        "subTtlTxExc": "63.00",
+                        "subTtlSvcChgExc": "65.00"
+                    },
+                    "checkin": {
+                        "bsAmt": "10.00",
+                        "subTtlTxExc": "83.00",
+                        "subTtlSvcChgExc": "65.00"
+                    },
+                    "taxGroups": [
+                        {
+                            "taxDefIds": [
+                                7
+                            ],
+                            "code": "FNBTX",
+                            "OTAcode": "FTT7",
+                            "amt": "0.60",
+                            "isIncludedInRate": false
+                        },
+                        {
+                            "taxDefIds": [
+                                4
+                            ],
+                            "code": "SCFNB",
+                            "OTAcode": "FTT14",
+                            "amt": "3.00",
+                            "isIncludedInRate": false
+                        }
+                    ],
+                    "subTotalServiceCharges": [
+                        {
+                            "amt": "3.00",
+                            "isIncludedInRate": false
+                        }
+                    ],
+                    "subTotalTaxes": [
+                        {
+                            "amt": "0.60",
+                            "isIncludedInRate": false
+                        }
+                    ],
+                    "totalTaxes": "3.60"
+                }
+            },
+            {
+                "policies": {
+                    "isRefundable": false,
+                    "cancellationNoShow": {
+                        "feeType": "LastNight",
+                        "amt": "164.45",
+                        "amtCurrency": "USD",
+                        "feeCurrency": "USD",
+                        "deadline": {
+                            "deadlineType": "numberOfDaysBeforeCheckin",
+                            "deadlineValue": 0,
+                            "dateTime": "2020-12-10T10:00:00"
+                        },
+                        "isGracePeriod": true
+                    },
+                    "checkinTime": "15:00:00",
+                    "checkoutTime": "11:00:00"
+                },
+                "ratePlanCode": "IGCAT",
+                "productUses": [
+                    {
+                        "period": {
+                            "start": "2020-12-10",
+                            "end": "2020-12-12"
+                        },
+                        "inventoryTypeCode": "2BIQ",
+                        "isMainProduct": true,
+                        "quantity": 1,
+                        "guestCounts": [
+                            {
+                                "guestType": "ADULT",
+                                "count": 1
+                            }
+                        ],
+                        "rates": {
+                            "isDefaultPricingBased": true,
+                            "pricingFrequency": "PerNight",
+                            "pricingMethod": "PerProduct",
+                            "taxInclusionMode": "excluded",
+                            "hasRateChange": false,
+                            "ratesDef": {
+                                "rateChanges": [
+                                    {
+                                        "id": 0,
+                                        "start": "2020-12-10",
+                                        "end": "2020-12-12",
+                                        "amt": "143.00"
+                                    }
+                                ],
+                                "avg": "143.00",
+                                "checkin": "143.00"
+                            },
+                            "dailyRates": [
+                                {
+                                    "start": "2020-12-10",
+                                    "end": "2020-12-12",
+                                    "dailyTotalRate": {
+                                        "bsAmt": "143.00",
+                                        "amtBfTx": "143.00",
+                                        "amtAfTx": "164.45",
+                                        "rateDefId": 0,
+                                        "taxList": [
+                                            {
+                                                "taxDefIds": [
+                                                    4
+                                                ],
+                                                "code": "SCFNB",
+                                                "OTAcode": "FTT14",
+                                                "amt": "21.45",
+                                                "isIncludedInRate": false
+                                            }
+                                        ],
+                                        "totalTaxes": "21.45",
+                                        "subTotalServiceCharges": [
+                                            {
+                                                "amt": "21.45",
+                                                "isIncludedInRate": false
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "availablePeriods": [
+                            {
+                                "start": "2020-12-10",
+                                "end": "2020-12-11"
+                            }
+                        ]
+                    }
+                ],
+                "totalRate": {
+                    "bsAmt": "286.00",
+                    "amtBfTx": "286.00",
+                    "amtAfTx": "328.90",
+                    "avg": {
+                        "amtAfTx": "164.45",
+                        "bsAmt": "143.00",
+                        "subTtlTxExc": "63.00",
+                        "subTtlSvcChgExc": "65.00"
+                    },
+                    "checkin": {
+                        "bsAmt": "143.00",
+                        "subTtlTxExc": "83.00",
+                        "subTtlSvcChgExc": "65.00"
+                    },
+                    "taxGroups": [
+                        {
+                            "taxDefIds": [
+                                4
+                            ],
+                            "code": "SCFNB",
+                            "OTAcode": "FTT14",
+                            "amt": "42.90",
+                            "isIncludedInRate": false
+                        }
+                    ],
+                    "subTotalServiceCharges": [
+                        {
+                            "amt": "42.90",
+                            "isIncludedInRate": false
+                        }
+                    ],
+                    "totalTaxes": "42.90"
+                }
+            }
+        ]
+    }
+}

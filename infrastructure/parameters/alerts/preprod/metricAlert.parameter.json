@@ -1,0 +1,95 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "isEnabled": {
+            "value": true
+        },
+		"environment": {
+			"value": "preprod"	
+		},
+		"appName":{
+			"value": "RBS | Non Prod"
+		},
+		"actionGroup": {
+			"value" : {
+				"resourceGroup": "rbs-uw-rg-d",
+				"names" : [
+					"RoomBookingNonProdAG"
+				]
+			}
+		},
+		"alertData": {
+			"type": "array", 
+            "value": [
+				{
+					"name": "Percentage CPU greater than ",
+					"severity" : 3,
+					"metricName": "CpuPercentage",
+					"metricNamespace": "Microsoft.Web/serverFarms",
+					"resource": "rbs-uw-asp-r",
+					"dimensions": [{"name": "Instance", "operator": "Include", "values": ["*"]}],
+					"operator": "GreaterThan",
+					"threshold": 70,
+					"timeAggregation" : "Average"
+				},
+				{
+					"name": "Percentage CPU greater than ",
+					"severity" : 2,
+					"metricName": "CpuPercentage",
+					"metricNamespace": "Microsoft.Web/serverFarms",
+					"resource": "rbs-uw-asp-r",
+					"dimensions": [{"name": "Instance", "operator": "Include", "values": ["*"]}],
+					"operator": "GreaterThan",
+					"threshold": 80,
+					"timeAggregation" : "Average"
+				},
+				{
+					"name": "Percentage CPU greater than ",
+					"severity" : 1,
+					"metricName": "CpuPercentage",
+					"metricNamespace": "Microsoft.Web/serverFarms",
+					"resource": "rbs-uw-asp-r",
+					"dimensions": [{"name": "Instance", "operator": "Include", "values": ["*"]}],
+					"operator": "GreaterThan",
+					"threshold": 90,
+					"timeAggregation" : "Average"
+				},
+				{
+					"name": "Percentage Memory greater than ",
+					"severity" : 3,
+					"metricName": "MemoryPercentage",
+					"metricNamespace": "Microsoft.Web/serverFarms",
+					"resource": "rbs-uw-asp-r",
+					"dimensions": [{"name": "Instance", "operator": "Include", "values": ["*"]}],
+					"operator": "GreaterThan",
+					"threshold": 70,
+					"timeAggregation" : "Average"
+				},
+				{
+					"name": "Percentage Memory greater than ",
+					"severity" : 2,
+					"metricName": "MemoryPercentage",
+					"metricNamespace": "Microsoft.Web/serverFarms",
+					"resource": "rbs-uw-asp-r",
+					"dimensions": [{"name": "Instance", "operator": "Include", "values": ["*"]}],
+					"operator": "GreaterThan",
+					"threshold": 80,
+					"timeAggregation" : "Average"
+				},
+				{
+					"name": "Percentage Memory greater than ",
+					"severity" : 1,
+					"metricName": "MemoryPercentage",
+					"metricNamespace": "Microsoft.Web/serverFarms",
+					"resource": "rbs-uw-asp-r",
+					"dimensions": [{"name": "Instance", "operator": "Include", "values": ["*"]}],
+					"operator": "GreaterThan",
+					"threshold": 90,
+					"timeAggregation" : "Average"
+				}
+			]
+        }
+        
+    }
+}

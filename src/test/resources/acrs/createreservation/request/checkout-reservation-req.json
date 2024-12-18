@@ -1,0 +1,160 @@
+{
+  "instance": 0,
+  "customerId": 850097078274,
+  "numRooms": 1,
+  "checkInDate": "2022-11-24",
+  "checkOutDate": "2022-11-25",
+  "numAdults": 2,
+  "postingStartedAt": 0,
+  "postingEndedAt": 0,
+  "amountDue": 0,
+  "createdAt": 0,
+  "updatedAt": 0,
+  "syncFromOperaAt": 0,
+  "nrgStatus": false,
+  "id": "36d9add0-159b-40c0-8cdf-a4efe4436ff5",
+  "itineraryId": "9666425858",
+  "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+  "programId": "CASHT002",
+  "roomTypeId": "SSPA",
+  "guaranteeCode": "CG",
+  "profile": {
+    "id": 850097078274,
+    "mlifeNo": 79134871,
+    "dateOfBirth": "1985-07-04",
+    "modifiable": false,
+    "createdAt": 0,
+    "updatedAt": 0,
+    "refreshedAt": 0,
+    "stale": false,
+    "externalSyncAt": 0,
+    "caslOptin": false,
+    "tier": "SAPPHIRE",
+    "firstName": "John",
+    "lastName": "Smith",
+    "emailAddress1": "test-drakyvkq@test.com",
+    "phoneNumbers": [
+      {
+        "type": "Other",
+        "number": "+27270535141"
+      }
+    ],
+    "addresses": [
+      {
+        "type": "Home",
+        "preferred": true,
+        "street1": "1111 Ny Lane",
+        "street2": "111",
+        "city": "Dne",
+        "state": "CA",
+        "country": "US",
+        "postalCode": "89014"
+      }
+    ]
+  },
+  "bookings": [
+    {
+      "date": "2022-11-24",
+      "basePrice": 0,
+      "customerPrice": 0,
+      "price": 121,
+      "programIdIsRateTable": false,
+      "overridePrice": -1,
+      "overrideProgramIdIsRateTable": false,
+      "resortFeeIsSpecified": false,
+      "resortFee": 0,
+      "programId": "CASHT002",
+      "isDiscounted": false,
+      "isComp": false
+    }
+  ],
+  "chargesAndTaxesCalc": {
+    "charges": [
+      {
+        "date": "2022-11-24",
+        "amount": 121,
+        "itemized": [
+          {
+            "itemType": "RoomCharge",
+            "amount": 121,
+            "item": "RoomCharge"
+          },
+          {
+            "itemType": "ResortFee",
+            "amount": 0,
+            "item": "RSFEE"
+          }
+        ]
+      }
+    ],
+    "taxesAndFees": [
+      {
+        "date": "2022-11-24",
+        "amount": 16.19,
+        "itemized": [
+          {
+            "itemType": "RoomChargeTax",
+            "amount": 16.19,
+            "item": "OCTAX"
+          },
+          {
+            "itemType": "ResortFeeTax",
+            "amount": 0,
+            "item": "RSFTX"
+          }
+        ]
+      }
+    ]
+  },
+  "depositPolicyCalc": {
+    "depositRequired": false,
+    "creditCardRequired": false
+  },
+  "depositCalc": {
+    "amount": 0,
+    "forfeitDate": "2022-11-21",
+    "forfeitAmount": 137.19,
+    "overrideAmount": -1
+  },
+  "source": "mgmri",
+  "specialRequests": [],
+  "creditCardCharges": [
+    {
+      "amount": 0,
+      "cvv": "123",
+      "ccToken": "5555550A001EGU1AEA6RMWVA4444",
+      "expiry": "2024-05-01",
+      "holder": "John Smith",
+      "number": "5555550A001EGU1AEA6RMWVA4444",
+      "type": "Mastercard",
+      "holderProfile": {
+        "firstName": "John",
+        "lastName": "Smith",
+        "address": {
+          "type": "Home",
+          "preferred": true,
+          "street1": "1111 Ny Lane",
+          "street2": "111",
+          "city": "Dne",
+          "state": "CA",
+          "country": "US",
+          "postalCode": "89014"
+        }
+      },
+      "fxAmount": 0,
+      "fxExchangeRate": 0
+    }
+  ],
+  "confirmationNumber": "6OYHO32GGS",
+  "customerRank": 0,
+  "customerSegment": 0,
+  "numChildren": 0,
+  "routingInstructions": [],
+  "isGroupCode": false,
+  "perpetualPricing": true,
+  "ignoreChannelMargins": false,
+  "excludeNonOffer": false,
+  "thirdParty": false,
+  "f1Package": false,
+  "pendingReservation": false
+}

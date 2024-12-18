@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "frontDoorName": {
+      "type": "string",
+      "value": "rbs-gb-fd-$(Environment)"
+    },
+    "wafResourceGroup": {
+      "type": "string",
+      "value": "rbs-uw-rg-$(Environment)"
+    },
+	"wafPolicy": {
+      "type": "string",
+      "value": "RoomBookingServicesWhitelistWAFRules"
+    },
+	"wafSubscriptionId": {
+      "type": "string",
+      "value": "3c3bd594-e3c9-4762-88cf-558073ff00dd"
+    },
+    "rbsWestWebApp": {
+      "type": "string",
+      "value": "rbs-uw-wa-$(Environment)"
+    },
+    "rbsEastWebApp": {
+      "type": "string",
+      "value": "rbs-ue-wa-$(Environment)"
+    }
+  }
+}

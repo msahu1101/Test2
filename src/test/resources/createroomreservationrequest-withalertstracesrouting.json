@@ -1,0 +1,175 @@
+{
+	"roomReservation": {
+		"customerId": 923984592897,
+		"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+		"itineraryId": "7847517697",
+		"roomTypeId": "23f5bef8-63ea-4ba9-a290-13b5a3056595",
+		"profile": {
+			"id": 923984592897,
+			"title": "Mr",
+			"dateOfBirth": "1985-01-01",
+			"mlifeNo": 80517681,
+			"firstName": "Lakshmi",
+			"lastName": "T",
+			"emailAddress1": "testres6@mailinator.com",
+			"phoneNumbers": [
+				{
+					"type": "Home",
+					"number": "9611877004"
+				}
+			],
+			"addresses": [
+				{
+					"type": "Home",
+					"preferred": true,
+					"street1": "Add1",
+					"city": "Las Vegas",
+					"state": "NV",
+					"postalCode": "89103",
+					"country": "US"
+				}
+			]
+		},
+		"billing": [
+			{
+				"payment": {
+					"amount": 0,
+					"cardHolder": "John doe",
+					"firstName": "John",
+					"lastName": "Doe",
+					"maskedNumber": "XXXXXXXXXXXX4444",
+					"ccToken": "5555550A001C7ZON5DRYV7UB4444",
+					"cvv": 123,
+					"type": "Mastercard",
+					"expiry": "10/2023"
+				},
+				"address": {
+					"street1": "234 W Main St",
+					"street2": "Unit 415",
+					"city": "Las Vegas",
+					"state": "NV",
+					"postalCode": "12345",
+					"country": "US"
+				}
+			}
+		],
+		"tripDetails": {
+			"checkInDate": "2020-08-15",
+			"checkOutDate": "2020-08-16",
+			"numAdults": 2,
+			"numChildren": 2,
+			"numRooms": 1
+		},
+		"bookings": [
+			{
+				"date": "2020-08-15",
+				"basePrice": 10024.99,
+				"customerPrice": 5513.7445,
+				"price": 5513.7445,
+				"programIdIsRateTable": false,
+				"overridePrice": -1.0,
+				"overrideProgramIdIsRateTable": false,
+				"isComp": false,
+				"resortFeeIsSpecified": false,
+				"resortFee": 0.0,
+				"programId": "4eccc742-8a65-4ef9-9a35-03fead2c3833"
+			}
+		],
+		"chargesAndTaxes": {
+			"charges": [
+				{
+					"date": "2020-08-15",
+					"amount": 5548.7445,
+					"itemized": [
+						{
+							"itemType": "RoomCharge",
+							"amount": 5548.7445,
+							"item": "Room Charge"
+						}
+					]
+				}
+			],
+			"taxesAndFees": [
+				{
+					"date": "2020-08-15",
+					"amount": 111.32489,
+					"itemized": [
+						{
+							"itemType": "RoomChargeTax",
+							"amount": 110.27489,
+							"item": "Room Tax"
+						}
+					]
+				}
+			]
+		},
+		"depositDetails": {
+			"dueDate": "2020-08-15",
+			"amountPolicy": "PercentAmount",
+			"amount": 0,
+			"forfeitDate": "2020-08-18",
+			"forfeitAmount": 0,
+			"overrideAmount": 0,
+			"depositRuleCode": "string",
+			"cancellationRuleCode": "string",
+			"itemized": [
+				{
+					"itemType": "RoomCharge",
+					"amount": 0,
+					"item": "string"
+				}
+			]
+		},
+		"amountDue": 5624.02,
+		"guaranteeCode": "CC",
+		"alerts": [
+			{
+				"alertCodeId": "f7e7ad34-19c7-8b9b-e043-2901fe0aa3df",
+				"description": "Contact Host on Arrival",
+				"alertAreaId": "f2627473-473f-cf96-e043-2901fe0abf33"
+			},
+			{
+				"alertCodeId": "f7e7ad34-19a9-8b9b-e043-2901fe0aa3df",
+				"description": "Issue Coupons Upon Arrival",
+				"alertAreaId": "f2627473-473f-cf96-e043-2901fe0abf33"
+			}
+		],
+		"traces": [
+			{
+				"date": "2020-08-15",
+				"departmentId": "f7e7ad34-3704-8b9b-e043-2901fe0aa3df",
+				"text": "Transportation/Limo"
+			},
+			{
+				"date": "2020-08-15",
+				"departmentId": "f7e7ad34-36b4-8b9b-e043-2901fe0aa3df",
+				"text": "Pool & Cabana"
+			}
+		],
+		"routingInstructions": [
+			{
+				"authorizerId": "bb6f6787-64f0-4f37-9584-1d5ff5880152",
+				"source": "Client",
+				"membershipNumber": "60238935",
+				"routingCodes": [
+					"42810"
+				],
+				"window": "101",
+				"limitType": "Value",
+				"limit": "10",
+				"dailyYesNo": false,
+				"applicableSunday": true,
+				"applicableMonday": true,
+				"applicableTuesday": true,
+				"applicableWednesday": true,
+				"applicableThursday": true,
+				"applicableFriday": true,
+				"applicableSaturday": true,
+				"startDate": "2020-05-14",
+				"endDate": "2020-05-15",
+				"comments": "",
+				"isSystemRouting": true
+			}
+		]
+	}
+}

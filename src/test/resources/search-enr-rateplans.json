@@ -1,0 +1,566 @@
+[
+    {
+        "ratePlanId": "RPCD-v-EXPLD-d-PROP-v-MV021",
+        "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+        "status": "NoChange",
+        "isActive": true,
+        "bookableOnline": true,
+        "rateCode": "EXPLD",
+        "name": "EXPEDIA LAND & DERBYSOFT RATE",
+        "loyaltyNumberRequired": false,
+        "propertyCode": "MV021",
+        "roomTypes": [
+            {
+                "code": "DGWK"
+            },
+            {
+                "code": "DGWQ"
+            },
+            {
+                "code": "DMAC"
+            },
+            {
+                "code": "DMAD"
+            },
+            {
+                "code": "DMAQ"
+            },
+            {
+                "code": "DMDQ"
+            },
+            {
+                "code": "DMLQ"
+            },
+            {
+                "code": "DMVK"
+            },
+            {
+                "code": "DMVQ"
+            },
+            {
+                "code": "DMWD"
+            },
+            {
+                "code": "DMWQ"
+            },
+            {
+                "code": "DMWV"
+            },
+            {
+                "code": "DPAC"
+            },
+            {
+                "code": "DPAQ"
+            },
+            {
+                "code": "DPAW"
+            },
+            {
+                "code": "DPLK"
+            },
+            {
+                "code": "DPRK"
+            },
+            {
+                "code": "DPRQ"
+            },
+            {
+                "code": "DPSQ"
+            },
+            {
+                "code": "DPSV"
+            },
+            {
+                "code": "DPVQ"
+            },
+            {
+                "code": "DQAW"
+            },
+            {
+                "code": "DWAK"
+            },
+            {
+                "code": "DWAQ"
+            },
+            {
+                "code": "DWVK"
+            },
+            {
+                "code": "DWVQ"
+            },
+            {
+                "code": "L1PE"
+            },
+            {
+                "code": "L1PL"
+            },
+            {
+                "code": "L1XL"
+            },
+            {
+                "code": "L1XS"
+            },
+            {
+                "code": "L2PE"
+            },
+            {
+                "code": "S1PC"
+            },
+            {
+                "code": "SMAC"
+            },
+            {
+                "code": "SMAR"
+            },
+            {
+                "code": "SMAW"
+            },
+            {
+                "code": "SMLK"
+            },
+            {
+                "code": "SPLW"
+            },
+            {
+                "code": "SPLY"
+            },
+            {
+                "code": "SSAC"
+            },
+            {
+                "code": "SSPA"
+            },
+            {
+                "code": "SSPW"
+            }
+        ],
+        "travelStartDate": "2021-01-22",
+        "travelEndDate": null,
+        "bookingStartDate": "2021-01-22",
+        "bookingEndDate": null,
+        "ratePlanTags": []
+    },
+    {
+        "ratePlanId": "RPCD-v-AAA10-d-PROP-v-MV021",
+        "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+        "status": "NoChange",
+        "isActive": true,
+        "bookableOnline": true,
+        "rateCode": "AAA10",
+        "name": "AAA MEMBER DISCOUNT",
+        "loyaltyNumberRequired": false,
+        "propertyCode": "MV021",
+        "roomTypes": [
+            {
+                "code": "DGWK"
+            },
+            {
+                "code": "DGWQ"
+            },
+            {
+                "code": "DMAC"
+            },
+            {
+                "code": "DMAD"
+            },
+            {
+                "code": "DMAQ"
+            },
+            {
+                "code": "DMDQ"
+            },
+            {
+                "code": "DMLQ"
+            },
+            {
+                "code": "DMVK"
+            },
+            {
+                "code": "DMVQ"
+            },
+            {
+                "code": "DMWD"
+            },
+            {
+                "code": "DMWQ"
+            },
+            {
+                "code": "DMWV"
+            },
+            {
+                "code": "DPAC"
+            },
+            {
+                "code": "DPAQ"
+            },
+            {
+                "code": "DPAW"
+            },
+            {
+                "code": "DPLK"
+            },
+            {
+                "code": "DPRK"
+            },
+            {
+                "code": "DPRQ"
+            },
+            {
+                "code": "DPSQ"
+            },
+            {
+                "code": "DPSV"
+            },
+            {
+                "code": "DPVQ"
+            },
+            {
+                "code": "DQAW"
+            },
+            {
+                "code": "DWAK"
+            },
+            {
+                "code": "DWAQ"
+            },
+            {
+                "code": "DWVK"
+            },
+            {
+                "code": "DWVQ"
+            },
+            {
+                "code": "L1PE"
+            },
+            {
+                "code": "L1PL"
+            },
+            {
+                "code": "L1XL"
+            },
+            {
+                "code": "L1XS"
+            },
+            {
+                "code": "L2PE"
+            },
+            {
+                "code": "S1PC"
+            },
+            {
+                "code": "SMAC"
+            },
+            {
+                "code": "SMAR"
+            },
+            {
+                "code": "SMAW"
+            },
+            {
+                "code": "SMLK"
+            },
+            {
+                "code": "SPLW"
+            },
+            {
+                "code": "SPLY"
+            },
+            {
+                "code": "SSAC"
+            },
+            {
+                "code": "SSPA"
+            },
+            {
+                "code": "SSPW"
+            }
+        ],
+        "travelStartDate": "2020-10-11",
+        "travelEndDate": "2040-02-29",
+        "bookingStartDate": "2020-10-11",
+        "bookingEndDate": "2040-02-29",
+        "ratePlanTags": []
+    },
+    {
+        "ratePlanId": "RPCD-v-MILTR-d-PROP-v-MV021",
+        "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+        "status": "NoChange",
+        "isActive": true,
+        "bookableOnline": true,
+        "rateCode": "MILTR",
+        "name": "QUALIFIED DISC MILITARY RATE",
+        "loyaltyNumberRequired": false,
+        "propertyCode": "MV021",
+        "roomTypes": [
+            {
+                "code": "DGWK"
+            },
+            {
+                "code": "DGWQ"
+            },
+            {
+                "code": "DMAC"
+            },
+            {
+                "code": "DMAD"
+            },
+            {
+                "code": "DMAQ"
+            },
+            {
+                "code": "DMDQ"
+            },
+            {
+                "code": "DMLQ"
+            },
+            {
+                "code": "DMVK"
+            },
+            {
+                "code": "DMVQ"
+            },
+            {
+                "code": "DMWD"
+            },
+            {
+                "code": "DMWQ"
+            },
+            {
+                "code": "DMWV"
+            },
+            {
+                "code": "DPAC"
+            },
+            {
+                "code": "DPAQ"
+            },
+            {
+                "code": "DPAW"
+            },
+            {
+                "code": "DPLK"
+            },
+            {
+                "code": "DPRK"
+            },
+            {
+                "code": "DPRQ"
+            },
+            {
+                "code": "DPSQ"
+            },
+            {
+                "code": "DPSV"
+            },
+            {
+                "code": "DPVQ"
+            },
+            {
+                "code": "DQAW"
+            },
+            {
+                "code": "DWAK"
+            },
+            {
+                "code": "DWAQ"
+            },
+            {
+                "code": "DWVK"
+            },
+            {
+                "code": "DWVQ"
+            },
+            {
+                "code": "L1PE"
+            },
+            {
+                "code": "L1PL"
+            },
+            {
+                "code": "L1XL"
+            },
+            {
+                "code": "L1XS"
+            },
+            {
+                "code": "L2PE"
+            },
+            {
+                "code": "S1PC"
+            },
+            {
+                "code": "SMAC"
+            },
+            {
+                "code": "SMAR"
+            },
+            {
+                "code": "SMAW"
+            },
+            {
+                "code": "SMLK"
+            },
+            {
+                "code": "SPLW"
+            },
+            {
+                "code": "SPLY"
+            },
+            {
+                "code": "SSAC"
+            },
+            {
+                "code": "SSPA"
+            },
+            {
+                "code": "SSPW"
+            }
+        ],
+        "travelStartDate": "2020-10-14",
+        "travelEndDate": null,
+        "bookingStartDate": "2020-10-14",
+        "bookingEndDate": null,
+        "ratePlanTags": []
+    },
+    {
+        "ratePlanId": "RPCD-v-SENRT-d-PROP-v-MV021",
+        "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+        "status": "NoChange",
+        "isActive": true,
+        "bookableOnline": true,
+        "rateCode": "SENRT",
+        "name": "QUALIFIED DISC SNR",
+        "loyaltyNumberRequired": false,
+        "propertyCode": "MV021",
+        "roomTypes": [
+            {
+                "code": "DGWK"
+            },
+            {
+                "code": "DGWQ"
+            },
+            {
+                "code": "DMAC"
+            },
+            {
+                "code": "DMAD"
+            },
+            {
+                "code": "DMAQ"
+            },
+            {
+                "code": "DMDQ"
+            },
+            {
+                "code": "DMLQ"
+            },
+            {
+                "code": "DMVK"
+            },
+            {
+                "code": "DMVQ"
+            },
+            {
+                "code": "DMWD"
+            },
+            {
+                "code": "DMWQ"
+            },
+            {
+                "code": "DMWV"
+            },
+            {
+                "code": "DPAC"
+            },
+            {
+                "code": "DPAQ"
+            },
+            {
+                "code": "DPAW"
+            },
+            {
+                "code": "DPLK"
+            },
+            {
+                "code": "DPRK"
+            },
+            {
+                "code": "DPRQ"
+            },
+            {
+                "code": "DPSQ"
+            },
+            {
+                "code": "DPSV"
+            },
+            {
+                "code": "DPVQ"
+            },
+            {
+                "code": "DQAW"
+            },
+            {
+                "code": "DWAK"
+            },
+            {
+                "code": "DWAQ"
+            },
+            {
+                "code": "DWVK"
+            },
+            {
+                "code": "DWVQ"
+            },
+            {
+                "code": "L1PE"
+            },
+            {
+                "code": "L1PL"
+            },
+            {
+                "code": "L1XL"
+            },
+            {
+                "code": "L1XS"
+            },
+            {
+                "code": "L2PE"
+            },
+            {
+                "code": "S1PC"
+            },
+            {
+                "code": "SMAC"
+            },
+            {
+                "code": "SMAR"
+            },
+            {
+                "code": "SMAW"
+            },
+            {
+                "code": "SMLK"
+            },
+            {
+                "code": "SPLW"
+            },
+            {
+                "code": "SPLY"
+            },
+            {
+                "code": "SSAC"
+            },
+            {
+                "code": "SSPA"
+            },
+            {
+                "code": "SSPW"
+            }
+        ],
+        "travelStartDate": "2020-10-14",
+        "travelEndDate": null,
+        "bookingStartDate": "2020-10-14",
+        "bookingEndDate": null,
+        "ratePlanTags": []
+    }
+]

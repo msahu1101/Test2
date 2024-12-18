@@ -1,0 +1,409 @@
+{
+    "data": {
+        "reservationCount": 2,
+        "hotelReservations": [
+            {
+                "status": "MY",
+                "type": "Individual",
+                "reservationIds": {
+                    "cfNumber": "3938152666",
+                    "extCfNumber": {
+                        "number": "PRTY_3938152666",
+                        "source": "CC"
+                    },
+                    "pmsCfNumber": "890118846"
+                },
+                "creator": {
+                    "reportingData": {
+                        "channelClass": "Voice",
+                        "channelType": "Branded",
+                        "channel": "Contact Center",
+                        "subChannel": "Contact Center"
+                    }
+                },
+                "creationDateTime": "2021-07-05T10:39:56",
+                "hotels": [
+                    {
+                        "chainCode": "MGM",
+                        "brandCode": "MV",
+                        "propertyCode": "MV021",
+                        "propertyCurrency": "USD"
+                    }
+                ],
+                "userProfiles": [
+                    {
+                        "id": 1,
+                        "age": 48,
+                        "personName": {
+                            "givenName": "Rajesh999",
+                            "surname": "Deshmukh"
+                        },
+                        "guestProfileId": "80570074",
+                        "loyaltyProgram": {
+                            "loyaltyId": "80570074",
+                            "programs": [
+                                {
+                                    "programName": "PC"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "segments": [
+                    {
+                        "id": 1,
+                        "matchedSearchCriteria": true,
+                        "start": "2021-07-17",
+                        "end": "2021-07-18",
+                        "synchroNumber": 1,
+                        "segmentStatus": "BK",
+                        "consolidatedSegmentStatus": "Guaranteed",
+                        "segmentHolderId": 1,
+                        "bookerId": 1,
+                        "hasAddOns": false,
+                        "creationDateTime": "2021-07-05T10:39:56",
+                        "propertyCode": "MV021",
+                        "creator": {
+                            "vendorCode": "ICECC",
+                            "reportingData": {
+                                "channelClass": "Voice",
+                                "channelType": "Branded",
+                                "channel": "Contact Center",
+                                "subChannel": "Contact Center"
+                            }
+                        },
+                        "requestor": {
+                            "vendorCode": "ICECC"
+                        },
+                        "areAmountsConfidential": false,
+                        "isAccessibleByWeb": true,
+                        "checkInRate": "1025.00",
+                        "offer": {
+                            "productUses": [
+                                {
+                                    "id": 1,
+                                    "period": {
+                                        "start": "2021-07-17",
+                                        "end": "2021-07-18"
+                                    },
+                                    "ratePlanCode": "PREVL",
+                                    "inventoryTypeCode": "DPRK",
+                                    "isOptional": true,
+                                    "isMainProduct": true,
+                                    "inventoryTypeName": {
+                                        "en": [
+                                            "Park Avenue King"
+                                        ]
+                                    },
+                                    "quantity": 1,
+                                    "guestCounts": [
+                                        {
+                                            "otaCode": "AQC10",
+                                            "count": 2,
+                                            "guestType": "ADULT"
+                                        }
+                                    ],
+                                    "totalGuestCounts": [
+                                        {
+                                            "otaCode": "AQC10",
+                                            "count": 2,
+                                            "guestType": "ADULT"
+                                        }
+                                    ],
+                                    "productCode": "SR"
+                                },
+                                {
+                                    "id": 2,
+                                    "period": {
+                                        "start": "2021-07-17",
+                                        "end": "2021-07-18"
+                                    },
+                                    "ratePlanCode": "PREVL",
+                                    "inventoryTypeCode": "BRK",
+                                    "isOptional": true,
+                                    "inventoryTypeName": {
+                                        "en": [
+                                            "BRK"
+                                        ]
+                                    },
+                                    "quantity": 1,
+                                    "guestCounts": [],
+                                    "totalGuestCounts": [],
+                                    "isProductIncludedInOffer": true,
+                                    "productCode": "BRK"
+                                }
+                            ],
+                            "nightlyCorpMarketSegments": [
+                                {
+                                    "start": "2021-07-17",
+                                    "end": "2021-07-18",
+                                    "value": "TFIT"
+                                }
+                            ],
+                            "corpMarketSegment": "TFIT",
+                            "policyTypeCode": "CC"
+                        },
+                        "formOfPayment": {
+                            "paymentInfo": {
+                                "amount": "3500.00",
+                                "paymentStatus": "Payment received",
+                                "paymentType": 5,
+                                "paymentCard": {
+                                    "cardCode": "DC",
+                                    "expireDate": "0122",
+                                    "cardNumber": {
+                                        "token": "26021612810854"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "products": [
+                    {
+                        "inventoryTypeCode": "DPRK",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Park Avenue King"
+                            ]
+                        },
+                        "maximumNumberParticipant": 6,
+                        "description": {
+                            "en": [
+                                "Base King room"
+                            ]
+                        },
+                        "productCode": "SR",
+                        "pacCode": "6UDM",
+                        "attributeCodes": [
+                            "1KING",
+                            "MAX6"
+                        ]
+                    },
+                    {
+                        "inventoryTypeCode": "BRK",
+                        "otaCode": "RMA189",
+                        "inventoryTypeName": {
+                            "en": [
+                                "BRK"
+                            ]
+                        },
+                        "productCode": "BRK"
+                    }
+                ],
+                "ratePlans": [
+                    {
+                        "code": "PREVL",
+                        "name": {
+                            "en": [
+                                "PREVAILING/BAR/BFR T"
+                            ]
+                        },
+                        "isCommissionable": false
+                    }
+                ]
+            },
+            {
+                "status": "MY",
+                "type": "Individual",
+                "reservationIds": {
+                    "cfNumber": "5498755564",
+                    "extCfNumber": {
+                        "number": "PRTY_3938152666",
+                        "source": "CC"
+                    },
+                    "pmsCfNumber": "890118847"
+                },
+                "creator": {
+                    "reportingData": {
+                        "channelClass": "Voice",
+                        "channelType": "Branded",
+                        "channel": "Contact Center",
+                        "subChannel": "Contact Center"
+                    }
+                },
+                "creationDateTime": "2021-07-05T10:39:59",
+                "hotels": [
+                    {
+                        "chainCode": "MGM",
+                        "brandCode": "MV",
+                        "propertyCode": "MV021",
+                        "propertyCurrency": "USD"
+                    }
+                ],
+                "userProfiles": [
+                    {
+                        "id": 1,
+                        "age": 48,
+                        "personName": {
+                            "givenName": "Rajesh999",
+                            "surname": "Deshmukh"
+                        },
+                        "guestProfileId": "80570074",
+                        "loyaltyProgram": {
+                            "loyaltyId": "80570074",
+                            "programs": [
+                                {
+                                    "programName": "PC"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "segments": [
+                    {
+                        "id": 1,
+                        "matchedSearchCriteria": true,
+                        "start": "2021-07-17",
+                        "end": "2021-07-18",
+                        "synchroNumber": 1,
+                        "segmentStatus": "BK",
+                        "consolidatedSegmentStatus": "Guaranteed",
+                        "segmentHolderId": 1,
+                        "bookerId": 1,
+                        "hasAddOns": false,
+                        "creationDateTime": "2021-07-05T10:39:59",
+                        "propertyCode": "MV021",
+                        "creator": {
+                            "vendorCode": "ICECC",
+                            "reportingData": {
+                                "channelClass": "Voice",
+                                "channelType": "Branded",
+                                "channel": "Contact Center",
+                                "subChannel": "Contact Center"
+                            }
+                        },
+                        "requestor": {
+                            "vendorCode": "ICECC"
+                        },
+                        "areAmountsConfidential": false,
+                        "isAccessibleByWeb": true,
+                        "checkInRate": "1025.00",
+                        "offer": {
+                            "productUses": [
+                                {
+                                    "id": 1,
+                                    "period": {
+                                        "start": "2021-07-17",
+                                        "end": "2021-07-18"
+                                    },
+                                    "ratePlanCode": "PREVL",
+                                    "inventoryTypeCode": "DPRK",
+                                    "isOptional": true,
+                                    "isMainProduct": true,
+                                    "inventoryTypeName": {
+                                        "en": [
+                                            "Park Avenue King"
+                                        ]
+                                    },
+                                    "quantity": 1,
+                                    "guestCounts": [
+                                        {
+                                            "otaCode": "AQC10",
+                                            "count": 2,
+                                            "guestType": "ADULT"
+                                        }
+                                    ],
+                                    "totalGuestCounts": [
+                                        {
+                                            "otaCode": "AQC10",
+                                            "count": 2,
+                                            "guestType": "ADULT"
+                                        }
+                                    ],
+                                    "productCode": "SR"
+                                },
+                                {
+                                    "id": 2,
+                                    "period": {
+                                        "start": "2021-07-17",
+                                        "end": "2021-07-18"
+                                    },
+                                    "ratePlanCode": "PREVL",
+                                    "inventoryTypeCode": "BRK",
+                                    "isOptional": true,
+                                    "inventoryTypeName": {
+                                        "en": [
+                                            "BRK"
+                                        ]
+                                    },
+                                    "quantity": 1,
+                                    "guestCounts": [],
+                                    "totalGuestCounts": [],
+                                    "isProductIncludedInOffer": true,
+                                    "productCode": "BRK"
+                                }
+                            ],
+                            "nightlyCorpMarketSegments": [
+                                {
+                                    "start": "2021-07-17",
+                                    "end": "2021-07-18",
+                                    "value": "TFIT"
+                                }
+                            ],
+                            "corpMarketSegment": "TFIT",
+                            "policyTypeCode": "DD"
+                        },
+                        "formOfPayment": {
+                            "paymentInfo": {
+                                "amount": "3500.00",
+                                "paymentStatus": "Payment received",
+                                "paymentType": 5,
+                                "paymentCard": {
+                                    "cardCode": "DC",
+                                    "expireDate": "0122",
+                                    "cardNumber": {
+                                        "token": "26021612810854"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "products": [
+                    {
+                        "inventoryTypeCode": "DPRK",
+                        "inventoryTypeName": {
+                            "en": [
+                                "Park Avenue King"
+                            ]
+                        },
+                        "maximumNumberParticipant": 6,
+                        "description": {
+                            "en": [
+                                "Base King room"
+                            ]
+                        },
+                        "productCode": "SR",
+                        "pacCode": "6UDM",
+                        "attributeCodes": [
+                            "1KING",
+                            "MAX6"
+                        ]
+                    },
+                    {
+                        "inventoryTypeCode": "BRK",
+                        "otaCode": "RMA189",
+                        "inventoryTypeName": {
+                            "en": [
+                                "BRK"
+                            ]
+                        },
+                        "productCode": "BRK"
+                    }
+                ],
+                "ratePlans": [
+                    {
+                        "code": "PREVL",
+                        "name": {
+                            "en": [
+                                "PREVAILING/BAR/BFR T"
+                            ]
+                        },
+                        "isCommissionable": false
+                    }
+                ]
+            }
+        ]
+    }
+}

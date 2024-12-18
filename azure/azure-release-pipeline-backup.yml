@@ -1,0 +1,12 @@
+steps:
+
+- task: AzureResourceManagerTemplateDeployment@3
+  displayName: 'Create/Update App Service and App Insight'
+  inputs:
+    azureResourceManagerConnection: 'Digital Engineering Booking Development Service Connection'
+    subscriptionId: '3c3bd594-e3c9-4762-88cf-558073ff00dd'
+    resourceGroupName: 'rbs-uw-rg-d'
+    location: 'West US'
+    csmFile: '$(System.DefaultWorkingDirectory)/_booking-room-service-infra/room-booking-services-infra/infrastructure/templates/app-service-template.json'
+    csmParametersFile: '$(System.DefaultWorkingDirectory)/_booking-room-service/drop/infrastructure/parameters/app-service-param.json'
+

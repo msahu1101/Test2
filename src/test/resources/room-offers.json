@@ -1,0 +1,18 @@
+[
+    {
+        "id": "def64735-d34f-4daa-afd3-bcab36a318f0",
+        "type": "PROGRAM"
+    },
+    {
+        "id": "075f9f68-1d1b-41a6-9bb9-23f7f872d904",
+        "type": "SEGMENT"
+    },
+    {
+        "id": "ff5f7ab2-55fe-42ba-8775-96649668ac71",
+        "type": "SEGMENT"
+    },
+    {
+        "id": "b10a48ff-19cc-45c0-95a6-db4a436789e5",
+        "type": "PROGRAM"
+    }
+]

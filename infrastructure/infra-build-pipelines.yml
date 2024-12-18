@@ -1,0 +1,44 @@
+# This pipeline copies the files from defaultworkingdirectory to ArtifactStagingDirectory.
+# Runs the AZSK ARM Template Checker and publishes the artifacts.
+
+trigger:
+  branches:
+    include:
+    - master
+    - staging
+    - develop
+    - qa
+    - qa4 
+  paths:
+    include:
+    - infrastructure/*
+    
+pr:
+  branches:
+    include:
+    - master
+    - staging
+    - develop
+    - qa
+    - qa4
+  paths:
+    include:
+    - infrastructure/*
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: CopyFiles@2
+  displayName: Copy artifacts to stage location
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: '**/infrastructure/**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    OverWrite: true
+
+- task: PublishBuildArtifacts@1
+  displayName: Publish artifacts  
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/'
+    ArtifactName: 'room-booking-services-infra'

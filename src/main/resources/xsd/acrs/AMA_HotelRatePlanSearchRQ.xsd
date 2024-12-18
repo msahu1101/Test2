@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 sp2 (x64) (http://www.altova.com) by Abha Kulkarni (AMADEUS) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://xml.amadeus.com/ahp/rates" xmlns:altova="http://www.altova.com/xml-schema-extensions" targetNamespace="http://xml.amadeus.com/ahp/rates" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="AMA_HotelRateAndTaxCommonTypesOTA2011A.xsd"/>
+	<xs:include schemaLocation="AMA_ProfileTypes.xsd"/>
+	<xs:element name="AMA_HotelRatePlanSearchRQ">
+		<xs:annotation>
+			<xs:documentation>request to search the rate plans</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="POS" type="POS_Type" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">Point of sale object. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ExternalChannelProfile" type="AMA_ProfileType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>ExternalChannelProfile defines channel data related to the originating entity.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Criteria">
+					<xs:annotation>
+						<xs:documentation>Rate plans can be searched at chain level or property level</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Scope" type="RateScopeSearchType"/>
+							<xs:element name="StayPeriod" type="SearchCriteriaDateType" minOccurs="0"/>
+							<xs:element name="Content" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Name" minOccurs="0">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="Text" type="RatePlanNameType" use="required">
+															<xs:annotation>
+																<xs:documentation>the partial or full name of the Rate Plan</xs:documentation>
+															</xs:annotation>
+														</xs:attribute>
+														<xs:attribute name="MatchCriteria" use="required">
+															<xs:annotation>
+																<xs:documentation>The different type of matching criteria</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="StartsWith"/>
+																	<xs:enumeration value="Contains"/>
+																	<xs:enumeration value="FullMatch"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="RatePlanCodeList" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>List of Rate Plan codes to return. This will act like retrieve on one or several rate plans. Search type starts with: 2-8 characters</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="RatePlanCode" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:attribute name="Text" use="required">
+																<xs:annotation>
+																	<xs:documentation>the partial or full code of the Rate Plan</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:minLength value="2"/>
+																		<xs:maxLength value="8"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="MatchCriteria" use="required">
+																<xs:annotation>
+																	<xs:documentation>The different type of matching criteria</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:enumeration value="StartsWith"/>
+																		<xs:enumeration value="Contains"/>
+																		<xs:enumeration value="FullMatch"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="OTA_Category" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Rate Plan can belong to one or several OTA Rate categories Type.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="OTACode" use="required">
+													<xs:annotation>
+														<xs:documentation>OTA code RPT</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:int">
+															<xs:minInclusive value="0"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="PriceGrid" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Can be only one Price Grid code associate with Rate Plan at the time. Note:  A Rate Plan without a Price Grid is not sellable.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="IsPriceGridDefined" type="xs:boolean">
+													<xs:annotation>
+														<xs:documentation>If set to "false" should return all Rate Plans without price grid defined. If Undefined or set to "true" the Price grid code is mandatory. </xs:documentation>
+														<xs:appinfo>
+															<altova:exampleValues>
+																<altova:example value="true"/>
+																<altova:example value="false"/>
+															</altova:exampleValues>
+														</xs:appinfo>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="PriceGridCode" type="PriceGridCodeType">
+													<xs:annotation>
+														<xs:documentation>Price Grid code associated with Rate Plan. This is the either a standalone Price Grid code or it is the primary Price Tier Code if it is part of a Price Grid Tier Groping. This attribute should only be defined when "IsPriceGridDefined" is Undefined or set to "true".  </xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="PriceGridType" type="PriceGridTypeType">
+													<xs:annotation>
+														<xs:documentation>Defines the type of Price Grid. Options are:                         - Standalone            - Tier grouping If nothing is requested then it will return everything and this is the default behavior. This attribute should only be defined when "IsPriceGridDefined" is Undefined or set to "true".  </xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="CorporateDetails" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="AccountTypeList" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>If not specified, system will return all account types</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="AccountType" maxOccurs="unbounded">
+																	<xs:annotation>
+																		<xs:documentation>To be retrieved by the system based on the Corporate ID and assigned to this attribute.     </xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="LocalNegotiatedRate"/>
+																			<xs:enumeration value="CorporateGold"/>
+																			<xs:enumeration value="KeyNegotiatedRate"/>
+																			<xs:enumeration value="None"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="CorporateID_List" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="CorporateID" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:attribute name="Text" type="CorporateID_Type" use="required">
+																			<xs:annotation>
+																				<xs:documentation>the partial or full text of the Corporate ID</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																		<xs:attribute name="MatchCriteria" use="required">
+																			<xs:annotation>
+																				<xs:documentation>The different type of matching criteria</xs:documentation>
+																			</xs:annotation>
+																			<xs:simpleType>
+																				<xs:restriction base="xs:string">
+																					<xs:enumeration value="StartsWith"/>
+																					<xs:enumeration value="Contains"/>
+																					<xs:enumeration value="FullMatch"/>
+																				</xs:restriction>
+																			</xs:simpleType>
+																		</xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="AdvanceSearch" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="RatePlanSecurity" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="IsSellStrategyAllowed">
+																<xs:annotation>
+																	<xs:documentation>Indicates whether or not this Rate Plan can be included in Sell Strategies.</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="SupportUndefinedReturn">
+																		<xs:enumeration value="true"/>
+																		<xs:enumeration value="false"/>
+																		<xs:enumeration value="none"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="AreRatePropertiesAllowed" type="xs:string">
+																<xs:annotation>
+																	<xs:documentation>Filter whether or not hotels can choose to associate rate properties with this rate plan. Possible values are true, false or none.</xs:documentation>
+																	<xs:appinfo>
+																		<altova:exampleValues>
+																			<altova:example value="true"/>
+																			<altova:example value="false"/>
+																			<altova:example value="none"/>
+																		</altova:exampleValues>
+																	</xs:appinfo>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="IsDeleteAtHotelAllowed" type="xs:boolean">
+																<xs:annotation>
+																	<xs:documentation>Deactivation=Deletion at Hotel Level
+If set to “Yes”, the Hotel user can delete it only if there are no future active reservations.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="QualifiedRate" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="IsLoyaltyNumberRequired">
+																<xs:annotation>
+																	<xs:documentation>"true"= Customer needs to give a Loyalty number in order to see availability and book this rate plan.     - Default = "false"</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="SupportUndefinedReturn">
+																		<xs:enumeration value="true"/>
+																		<xs:enumeration value="false"/>
+																		<xs:enumeration value="none"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="IsID_RequiredAtCheckIn">
+																<xs:annotation>
+																	<xs:documentation>"true" = Customer needs to present a valid ID at check-in in order to access this rate plan.      - Default = "false"</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="SupportUndefinedReturn">
+																		<xs:enumeration value="true"/>
+																		<xs:enumeration value="false"/>
+																		<xs:enumeration value="none"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="IsCouponRequired">
+																<xs:annotation>
+																	<xs:documentation>"true"= Customer needs to present a coupon or voucher at check-in in order to access this rate plan.                       - Default = "false"</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="SupportUndefinedReturn">
+																		<xs:enumeration value="true"/>
+																		<xs:enumeration value="false"/>
+																		<xs:enumeration value="none"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="DisplayAttributes" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="MarketingDisplay" type="xs:string">
+																<xs:annotation>
+																	<xs:documentation>Indicator returned to external system in the availability response;  (Common Values = B, M, T or E)     Can be any alphanumeric value.       Default is "empty string" (nothing entered)</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="IsRateAmountDisplayed">
+																<xs:annotation>
+																	<xs:documentation>Indicates whether or not the rate amounts must be displayed to the customer or not.                          </xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="SupportUndefinedReturn">
+																		<xs:enumeration value="true"/>
+																		<xs:enumeration value="false"/>
+																		<xs:enumeration value="none"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="AreAmenitiesDisplayed" type="xs:boolean">
+																<xs:annotation>
+																	<xs:documentation>Indicator returned to channels (GDS) that determines whether or not amenities are described in the Rate Plan description.                  </xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="AllocationAttributes" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="IsRatePlanAtLeastAtMostAllowed">
+																<xs:annotation>
+																	<xs:documentation>Defines whether or not the rate plan can have At-Least and/or At-Most definitions. The actual value definitions will be done via inventory rules. </xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="SupportUndefinedReturn">
+																		<xs:enumeration value="true"/>
+																		<xs:enumeration value="false"/>
+																		<xs:enumeration value="none"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="LoyaltyAttributes" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="LoyaltyPointsApply">
+																<xs:annotation>
+																	<xs:documentation>"true" = Customer can earn points by booking this rate. 
+</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="SupportUndefinedReturn">
+																		<xs:enumeration value="true"/>
+																		<xs:enumeration value="false"/>
+																		<xs:enumeration value="none"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="FreeNight" type="xs:boolean">
+																<xs:annotation>
+																	<xs:documentation>Indicates whether or not the rate plan is part of a free night promotion. 
+</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="LoyaltyAwards" type="xs:boolean">
+																<xs:annotation>
+																	<xs:documentation>Yes = Customer can pay part or the entire stay with loyalty points. 
+</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="PriceGridData" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Can be only one Price Grid code associate with Rate Plan at the time. Note:  A Rate Plan without a Price Grid is not sellable.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:attribute name="IsPriceGridOneToOne">
+																<xs:annotation>
+																	<xs:documentation>If set to “true”, the Price Grid associated to this Rate Plan cannot be linked to another Rate Plan.
+Default = "false"</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="SupportUndefinedReturn">
+																		<xs:enumeration value="true"/>
+																		<xs:enumeration value="false"/>
+																		<xs:enumeration value="none"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="HasExtraPersonCharge">
+																<xs:annotation>
+																	<xs:documentation>If set to “true”, the extra person charge set at Price Grid level will be used for the total charge calculation  in case there are extra persons.
+Default = "false"</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="SupportUndefinedReturn">
+																		<xs:enumeration value="true"/>
+																		<xs:enumeration value="false"/>
+																		<xs:enumeration value="none"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="IsPriceGridWithAllocationAllowed">
+																<xs:annotation>
+																	<xs:documentation>Defines whether or not the price grid with allocation can be associated with this rate plan. The actual value definitions will be done via inventory rules.          Default = "true"     .</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="SupportUndefinedReturn">
+																		<xs:enumeration value="true"/>
+																		<xs:enumeration value="false"/>
+																		<xs:enumeration value="none"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="ChannelTypeList" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation> Booking Source:  5 different booking sources can be associated to the Rate Plan.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="ChannelType" type="xs:int" maxOccurs="unbounded">
+																	<xs:annotation>
+																		<xs:documentation>1 = Own hotel – PMS
+2 = Call center / hotel to hotel – Booking Tool
+3 = Brand website 
+4 = GDS/Third Party websites – Other
+5 = Mobile channel
+6 = Unused</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="CorporateMarketSegmentationList" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="CorporateMarketSegmentation" type="xs:string" maxOccurs="999">
+																	<xs:annotation>
+																		<xs:documentation>Indicates the market segmentation for the rate plan.</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="IsCommissionable" type="SupportUndefinedReturn">
+													<xs:annotation>
+														<xs:documentation> - "true" = Rate Plan is commissionable     - "false" = Rate Plan is not commissionable</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="IsAutoDeleteAllowed" type="SupportUndefinedReturn">
+													<xs:annotation>
+														<xs:documentation> "true" = Rate Plan will automatically be deleted after end of the last Stay date.      "false" = Rate Plan will not automatically be deleted     </xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="BlackoutParticipationStatusType" type="BlackoutParticipationStatusType">
+													<xs:annotation>
+														<xs:documentation>Determines what blackout / participation status type is allowed for this rate plan</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="GroupRateIndicator" type="xs:boolean">
+													<xs:annotation>
+														<xs:documentation>If set to "Yes", then this is a group rate.  </xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="PackageIndicator" type="xs:boolean">
+													<xs:annotation>
+														<xs:documentation>If set to "Yes", then this is a package.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="MustContainMandatoryProduct" type="xs:boolean">
+													<xs:annotation>
+														<xs:documentation>Indicates whether the rate plan should be represented as a pre-defined package at the Hotel. Default is false.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="PolicyTypeCode" type="xs:string">
+													<xs:annotation>
+														<xs:documentation>Indicates the Policy Type code associated to the Rate Plan to determine what Policy applies.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="IsCustomizationAllowed" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>- Indicates whether or not the hotel can customize this rate plan.
+- If nothing sent the search will return both customizable and non- customizable rate plans</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="IsBestFlexibleRate" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Filter the rate plan(s) by whether the rate plan is best flexible rate (BFR) or not. True - only returns rate plan that is BFR; False - only returns rate plan that is not BFR.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ActivationStatus" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="Status" use="required">
+										<xs:annotation>
+											<xs:documentation>The status of the rate plan, whether active, inactive (based on the creation/activation at chain or hotel level)</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="Active"/>
+												<xs:enumeration value="Inactive"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="IsDerived" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>In order to search for only Derived Rate Plans or only non Derived ones</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="BypassVisibilityRule" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Applicable to search of rate plans at property level. Set to true so that the system will return the rate plan data at corporate level bypassing visibility rule if the rate plan is not activated.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="IsVisible" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>If set to true only the visible price grids are returned. If set to false only the non-visible price grids are returned.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Features" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>If 'None', return all Rate Plans with no extended features.                            If 'Any', return all Rate Plans with one or more extended features through search.                             </xs:documentation>
+									<xs:appinfo>
+										<altova:exampleValues>
+											<altova:example value="None"/>
+											<altova:example value="Any"/>
+											<altova:example value="SellableInventory"/>
+										</altova:exampleValues>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="MatchCriteria">
+												<xs:annotation>
+													<xs:documentation>If set to 'false' will return rate plans not having the value specified in Features. Default = 'true'.  </xs:documentation>
+												</xs:annotation>
+											</xs:attribute>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Products" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Product" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>In order to search for products with specific attributes</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="ProductCategoryCode" type="xs:string" use="optional">
+													<xs:annotation>
+														<xs:appinfo>
+															<altova:exampleValues>
+																<altova:example value="SR"/>
+																<altova:example value="NR"/>
+															</altova:exampleValues>
+														</xs:appinfo>
+														<xs:documentation>Product category to which the product belongs in the Rate Plan</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="ProductCode" type="ProductCodeType" use="optional">
+													<xs:annotation>
+														<xs:documentation>Product code that will be used as a search attribute</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="PriceGridCode" type="PriceGridCodeType" use="optional">
+													<xs:annotation>
+														<xs:documentation>Search by price grid associated to the product code linked to the rate plan</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="Usage" type="xs:string" use="optional">
+													<xs:annotation>
+														<xs:appinfo>
+															<altova:exampleValues>
+																<altova:example value="Main"/>
+																<altova:example value="Mandatory"/>
+																<altova:example value="Excluded"/>
+																<altova:example value="Optional"/>
+															</altova:exampleValues>
+														</xs:appinfo>
+														<xs:documentation>Usage of the product when defined as part of the package</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attributeGroup ref="SearchCriteriaGroup"/>
+						<xs:attributeGroup ref="SearchSortingGroup"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ExtraReturnData" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>In order to return extra data of rules linked to the rate plan. If not asked in the request, it will not be returned</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CorporateID" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Come's from the Viewership rule of the Rate plan</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:boolean">
+										<xs:pattern value="false"/>
+										<xs:pattern value="true"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="AdvanceBookingPeriod" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Comes from the Advance Booking Restriction of the Rate Plan</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="IsDerived" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Retruens the flag to say if a rate plan is derived or not, if derived, also return the base rate plan that is applicable for that rate plan</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="RateConfigurationRules" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Set to true to return the rate configuration rules of this rate plan</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="BlackoutDetails" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Set to true to return the blackout details of the rate plan (including blackout setting and blackout dates)</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="LengthOfStayPriceGridGroup" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Set to true to return the LOS price grid group information</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="TagDetails" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>If set, the system returns alll the tags attached to a given rate plan (and its information) in the search response</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="HotelCurrency" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Set to true to return the hotel Currency Code</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="FeaturesInUse" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Determines if features in use should be returned in the search.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="RateID" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>If set to true, the system returns the RateID in the search response </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="SellableInventory" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>If set to true, return sellable inventory. </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ExclusionRules" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>If set to true, return exclusion rules on the rate plan. </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attributeGroup ref="OTA_PayloadStdAttributes"/>
+			<xs:attribute name="SearchMode" use="required">
+				<xs:annotation>
+					<xs:documentation>This determines the type of search and the amount of information returned in the response</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

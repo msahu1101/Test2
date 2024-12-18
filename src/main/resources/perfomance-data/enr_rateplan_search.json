@@ -1,0 +1,16 @@
+[
+	{
+        "ratePlanId": "RPCD-v-ADVPM-d-PROP-v-MV021",
+        "propertyId": "dc00e77f-d6bb-4dd7-a8ea-dc33ee9675ad",
+        "status": "Update",
+        "rateCode": "ADVPM",
+        "name": "ADVANCE BOOKING FOR MLIFE",
+        "loyaltyNumberRequired": false,
+        "propertyCode": "MV021",
+        "roomTypes": null,
+        "travelStartDate": "2020-10-19",
+        "travelEndDate": null,
+        "bookingStartDate": "2020-10-19",
+        "bookingEndDate": null
+	}
+]

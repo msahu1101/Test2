@@ -1,0 +1,16 @@
+{
+  "workflowResponse": [
+    {
+      "functionName": "PPSAuthorize",
+      "statusCode": 200,
+      "statusDesc": "OK",
+      "body": {
+        "statusMessage": "APPROVED",
+        "decision": "APPROVED",
+        "amount": "253.97",
+        "authRequestId": "01Z6JCR5AF01U6A35OL9S5G2C6EE0AKS",
+        "reasonCode": "100"
+      }
+    }
+  ]
+}

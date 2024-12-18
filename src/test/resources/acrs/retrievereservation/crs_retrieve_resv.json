@@ -1,0 +1,1822 @@
+{
+    "data": {
+        "creator": {
+            "hotelSource": "MV021",
+            "vendorCode": "MGMWB",
+            "vendorTypes": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "channelCode": "CC",
+            "metricsCode": "M02"
+        },
+        "requestor": {
+            "hotelSource": "ARIA1",
+            "vendorCode": "MGMWB",
+            "vendorTypes": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "channelCode": "CC",
+            "metricsCode": "M02"
+        },
+        "hotelReservation": {
+            "authenticatedUser": {
+                "userId": "WSMGM00ICE",
+                "userFirstName": "Robotic user for ICE",
+                "userLastName": "WSMGM00ICE"
+            },
+            "status": "MY",
+            "lastUpdateDateTime": "2020-09-24T07:04:55",
+            "lastUpdateDateTimeHotelLocalTime": "2020-09-24T00:04:55",
+            "imageStatus": "Committed",
+            "creationDateTime": "2020-09-07T10:56:54",
+            "reservationIds": {
+                "cfNumber": "1271274619",
+                "imageId": 100,
+                "committedSequenceNumber": 54
+            },
+            "hotels": [
+                {
+                    "chainCode": "MGM",
+                    "brandCode": "MV",
+                    "propertyCode": "MV021",
+                    "propertyName": "New York New York",
+                    "countryCode": "US",
+                    "cityCode": "LAS",
+                    "regionCode": "01",
+                    "propertyCurrency": "USD"
+                }
+            ],
+            "type": "Individual",
+            "ratePlans": [
+                {
+                    "code": "TDAAA",
+                    "name": {
+                        "en": [
+                            "AAA Member Discount"
+                        ]
+                    },
+                    "areAmountsConfidential": false,
+                    "isIdRequired": false,
+                    "isLoyaltyIdRequired": false,
+                    "isVoucherRequired": false,
+                    "isRewardEarned": true,
+                    "isTentativeAllowed": false,
+                    "isGroupRatePlan": false,
+                    "isFreeNight": false,
+                    "isAwardAccepted": false,
+                    "isPackage": false,
+                    "isCommissionable": false,
+                    "isHouseUse": false,
+                    "isComplimentary": false,
+                    "sellStrategyCode": "MV1",
+                    "priceGridCode": "TDAAA"
+                }
+            ],
+            "products": [
+                {
+                    "inventoryTypeCode": "DMLQ",
+                    "productCode": "SR",
+                    "maximumNumberParticipant": 4,
+                    "yieldClass": "02",
+                    "inventoryTypeName": {
+                        "en": [
+                            "Madison Avenue Two Queen Accessible Roll-in"
+                        ]
+                    },
+                    "pacCode": "F1JQ",
+                    "attributeCodes": [
+                        "2QUEEN",
+                        "450SQFT",
+                        "AR",
+                        "MAX4",
+                        "SROLLIN"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "code": "2QUEEN",
+                    "name": {
+                        "en": [
+                            "2 Queen bed type"
+                        ]
+                    },
+                    "description": {
+                        "en": [
+                            "2 Queen bed type"
+                        ]
+                    }
+                },
+                {
+                    "code": "450SQFT",
+                    "name": {
+                        "en": [
+                            "450 square feet"
+                        ]
+                    },
+                    "description": {
+                        "en": [
+                            "450 square feet"
+                        ]
+                    }
+                },
+                {
+                    "code": "AR",
+                    "name": {
+                        "en": [
+                            "Accessible Room"
+                        ]
+                    },
+                    "description": {
+                        "en": [
+                            "Accessible room"
+                        ]
+                    }
+                },
+                {
+                    "code": "MAX4",
+                    "name": {
+                        "en": [
+                            "Max occupancy of 4"
+                        ]
+                    },
+                    "description": {
+                        "en": [
+                            "Max occupancy of 4"
+                        ]
+                    }
+                },
+                {
+                    "code": "SROLLIN",
+                    "name": {
+                        "en": [
+                            "Roll in shower"
+                        ]
+                    },
+                    "description": {
+                        "en": [
+                            "Roll in shower"
+                        ]
+                    }
+                }
+            ],
+            "segments": [
+                {
+                    "propertyCode": "MV021",
+                    "synchroNumber": 7,
+                    "id": 1,
+                    "bookerId": 1,
+                    "creationDateTime": "2020-09-07T10:56:54",
+                    "createDateTimeHotelLocalTime": "2020-09-07T03:56:54",
+                    "lastUpdateDateTime": "2020-09-24T07:04:55",
+                    "lastUpdateDateTimeHotelLocalTime": "2020-09-24T00:04:55",
+                    "start": "2020-11-29",
+                    "end": "2020-12-08",
+                    "segmentHolderId": 1,
+                    "actionStatus": "NS",
+                    "formOfPayment": {
+                        "paymentInfo": {
+                            "amount": "166.00",
+                            "paymentType": 5,
+                            "paymentCard": {
+                                "cardCode": "MC",
+                                "expireDate": "1022",
+                                "cardNumber": {
+                                    "token": "5555555555554444"
+                                },
+                                "cardHolderName": "John doe",
+                                "isCNP": false,
+                                "billingAddress": {
+                                    "addressLines": [
+                                        "234 W Main St",
+                                        "Unit 415"
+                                    ],
+                                    "cityName": "Las Vegas",
+                                    "postalCode": "12345",
+                                    "stateProv": "NV",
+                                    "countryCode": "US"
+                                }
+                            },
+                            "paymentIntent": "Guarantee"
+                        },
+                        "depositPayments": [
+                            {
+                                "id": 1,
+                                "amount": "166.00",
+                                "informerVendorCode": "MGMWB",
+                                "paymentStatus": "Payment received",
+                                "paymentType": 5,
+                                "paymentCard": {
+                                    "cardCode": "MC",
+                                    "expireDate": "1022",
+                                    "cardNumber": {
+                                        "token": "5555555555554444"
+                                    },
+                                    "cardHolderName": "John doe",
+                                    "isCNP": false,
+                                    "billingAddress": {
+                                        "addressLines": [
+                                            "234 W Main St",
+                                            "Unit 415"
+                                        ],
+                                        "cityName": "Las Vegas",
+                                        "postalCode": "12345",
+                                        "stateProv": "NV",
+                                        "countryCode": "US"
+                                    }
+                                },
+                                "paymentIntent": "Deposit",
+                                "channelSubUser": "********",
+                                "transactionDate": "2020-09-22T21:10:58"
+                            },
+                            {
+                                "id": 2,
+                                "amount": "166.00",
+                                "informerVendorCode": "MGMWB",
+                                "paymentStatus": "Payment received",
+                                "paymentType": 5,
+                                "paymentCard": {
+                                    "cardCode": "MC",
+                                    "expireDate": "1022",
+                                    "cardNumber": {
+                                        "token": "5555555555554444"
+                                    },
+                                    "cardHolderName": "John doe",
+                                    "isCNP": false,
+                                    "billingAddress": {
+                                        "addressLines": [
+                                            "234 W Main St",
+                                            "Unit 415"
+                                        ],
+                                        "cityName": "Las Vegas",
+                                        "postalCode": "12345",
+                                        "stateProv": "NV",
+                                        "countryCode": "US"
+                                    }
+                                },
+                                "paymentIntent": "Deposit",
+                                "channelSubUser": "********",
+                                "transactionDate": "2020-09-22T21:12:08"
+                            },
+                            {
+                                "id": 3,
+                                "amount": "166.00",
+                                "informerVendorCode": "MGMWB",
+                                "paymentStatus": "Payment received",
+                                "paymentType": 5,
+                                "paymentCard": {
+                                    "cardCode": "MC",
+                                    "expireDate": "1022",
+                                    "cardNumber": {
+                                        "token": "5555555555554444"
+                                    },
+                                    "cardHolderName": "John doe",
+                                    "isCNP": false,
+                                    "billingAddress": {
+                                        "addressLines": [
+                                            "234 W Main St",
+                                            "Unit 415"
+                                        ],
+                                        "cityName": "Las Vegas",
+                                        "postalCode": "12345",
+                                        "stateProv": "NV",
+                                        "countryCode": "US"
+                                    }
+                                },
+                                "paymentIntent": "Deposit",
+                                "channelSubUser": "********",
+                                "transactionDate": "2020-09-22T21:16:16"
+                            },
+                            {
+                                "id": 4,
+                                "amount": "166.00",
+                                "informerVendorCode": "MGMWB",
+                                "paymentStatus": "Payment received",
+                                "paymentType": 5,
+                                "paymentCard": {
+                                    "cardCode": "MC",
+                                    "expireDate": "1022",
+                                    "cardNumber": {
+                                        "token": "5555555555554444"
+                                    },
+                                    "cardHolderName": "John doe",
+                                    "isCNP": false,
+                                    "billingAddress": {
+                                        "addressLines": [
+                                            "234 W Main St",
+                                            "Unit 415"
+                                        ],
+                                        "cityName": "Las Vegas",
+                                        "postalCode": "12345",
+                                        "stateProv": "NV",
+                                        "countryCode": "US"
+                                    }
+                                },
+                                "paymentIntent": "Deposit",
+                                "channelSubUser": "********",
+                                "transactionDate": "2020-09-22T22:37:06"
+                            },
+                            {
+                                "id": 5,
+                                "amount": "166.00",
+                                "informerVendorCode": "MGMWB",
+                                "paymentStatus": "Payment received",
+                                "paymentType": 5,
+                                "paymentCard": {
+                                    "cardCode": "MC",
+                                    "expireDate": "1022",
+                                    "cardNumber": {
+                                        "token": "5555555555554444"
+                                    },
+                                    "cardHolderName": "John doe",
+                                    "isCNP": false,
+                                    "billingAddress": {
+                                        "addressLines": [
+                                            "234 W Main St",
+                                            "Unit 415"
+                                        ],
+                                        "cityName": "Las Vegas",
+                                        "postalCode": "12345",
+                                        "stateProv": "NV",
+                                        "countryCode": "US"
+                                    }
+                                },
+                                "paymentIntent": "Deposit",
+                                "channelSubUser": "********",
+                                "transactionDate": "2020-09-22T22:38:51"
+                            },
+                            {
+                                "id": 6,
+                                "amount": "166.00",
+                                "informerVendorCode": "MGMWB",
+                                "paymentStatus": "Payment received",
+                                "paymentType": 5,
+                                "paymentCard": {
+                                    "cardCode": "MC",
+                                    "expireDate": "1022",
+                                    "cardNumber": {
+                                        "token": "5555555555554444"
+                                    },
+                                    "cardHolderName": "John doe",
+                                    "isCNP": false,
+                                    "billingAddress": {
+                                        "addressLines": [
+                                            "234 W Main St",
+                                            "Unit 415"
+                                        ],
+                                        "cityName": "Las Vegas",
+                                        "postalCode": "12345",
+                                        "stateProv": "NV",
+                                        "countryCode": "US"
+                                    }
+                                },
+                                "paymentIntent": "Deposit",
+                                "channelSubUser": "********",
+                                "transactionDate": "2020-09-22T22:42:52"
+                            }
+                        ]
+                    },
+                    "offer": {
+                        "productUses": [
+                            {
+                                "ratePlanCode": "TDAAA",
+                                "id": 1,
+                                "period": {
+                                    "start": "2020-11-29",
+                                    "end": "2020-12-08"
+                                },
+                                "inventoryTypeCode": "DMLQ",
+                                "productRates": {
+                                    "hasRateChange": true,
+                                    "dailyRates": [
+                                        {
+                                            "start": "2020-11-29",
+                                            "end": "2020-11-30",
+                                            "dailyBaseOccRate": {
+                                                "bsAmt": "98.01",
+                                                "amtBfTx": "98.01",
+                                                "amtAfTx": "378.94"
+                                            },
+                                            "dailyExtraOccRate": {
+                                                "bsAmt": "0.00",
+                                                "amtBfTx": "0.00",
+                                                "amtAfTx": "0.00"
+                                            },
+                                            "dailyTotalRate": {
+                                                "bsAmt": "98.01",
+                                                "amtBfTx": "98.01",
+                                                "amtAfTx": "378.94",
+                                                "totalTaxes": "280.93",
+                                                "taxList": [
+                                                    {
+                                                        "amount": "154.01",
+                                                        "taxCode": "OCTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT10",
+                                                        "taxDefIds": [
+                                                            0
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "44.56",
+                                                        "taxCode": "RSFTX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT12",
+                                                        "taxDefIds": [
+                                                            2
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "3.33",
+                                                        "taxCode": "RFOTX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT10",
+                                                        "taxDefIds": [
+                                                            5
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "12.07",
+                                                        "taxCode": "STTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT15",
+                                                        "taxDefIds": [
+                                                            3
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "29.97",
+                                                        "taxCode": "CTTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT3",
+                                                        "taxDefIds": [
+                                                            4
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "37.00",
+                                                        "taxCode": "RSFEE",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT12",
+                                                        "taxDefIds": [
+                                                            1
+                                                        ]
+                                                    }
+                                                ],
+                                                "rateDefId": 0
+                                            }
+                                        },
+                                        {
+                                            "start": "2020-11-30",
+                                            "end": "2020-12-01",
+                                            "dailyBaseOccRate": {
+                                                "bsAmt": "98.01",
+                                                "amtBfTx": "98.01",
+                                                "amtAfTx": "135.01"
+                                            },
+                                            "dailyExtraOccRate": {
+                                                "bsAmt": "0.00",
+                                                "amtBfTx": "0.00",
+                                                "amtAfTx": "0.00"
+                                            },
+                                            "dailyTotalRate": {
+                                                "bsAmt": "98.01",
+                                                "amtBfTx": "98.01",
+                                                "amtAfTx": "135.01",
+                                                "totalTaxes": "37.00",
+                                                "taxList": [
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "OCTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT10",
+                                                        "taxDefIds": [
+                                                            0
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "RSFTX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT12",
+                                                        "taxDefIds": [
+                                                            2
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "RFOTX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT10",
+                                                        "taxDefIds": [
+                                                            5
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "STTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT15",
+                                                        "taxDefIds": [
+                                                            3
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "CTTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT3",
+                                                        "taxDefIds": [
+                                                            4
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "37.00",
+                                                        "taxCode": "RSFEE",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT12",
+                                                        "taxDefIds": [
+                                                            1
+                                                        ]
+                                                    }
+                                                ],
+                                                "rateDefId": 0
+                                            }
+                                        },
+                                        {
+                                            "start": "2020-12-01",
+                                            "end": "2020-12-02",
+                                            "dailyBaseOccRate": {
+                                                "bsAmt": "106.11",
+                                                "amtBfTx": "106.11",
+                                                "amtAfTx": "143.11"
+                                            },
+                                            "dailyExtraOccRate": {
+                                                "bsAmt": "0.00",
+                                                "amtBfTx": "0.00",
+                                                "amtAfTx": "0.00"
+                                            },
+                                            "dailyTotalRate": {
+                                                "bsAmt": "106.11",
+                                                "amtBfTx": "106.11",
+                                                "amtAfTx": "143.11",
+                                                "totalTaxes": "37.00",
+                                                "taxList": [
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "OCTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT10",
+                                                        "taxDefIds": [
+                                                            0
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "RSFTX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT12",
+                                                        "taxDefIds": [
+                                                            2
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "RFOTX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT10",
+                                                        "taxDefIds": [
+                                                            5
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "STTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT15",
+                                                        "taxDefIds": [
+                                                            3
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "CTTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT3",
+                                                        "taxDefIds": [
+                                                            4
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "37.00",
+                                                        "taxCode": "RSFEE",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT12",
+                                                        "taxDefIds": [
+                                                            1
+                                                        ]
+                                                    }
+                                                ],
+                                                "rateDefId": 1
+                                            }
+                                        },
+                                        {
+                                            "start": "2020-12-02",
+                                            "end": "2020-12-04",
+                                            "dailyBaseOccRate": {
+                                                "bsAmt": "170.91",
+                                                "amtBfTx": "170.91",
+                                                "amtAfTx": "207.91"
+                                            },
+                                            "dailyExtraOccRate": {
+                                                "bsAmt": "0.00",
+                                                "amtBfTx": "0.00",
+                                                "amtAfTx": "0.00"
+                                            },
+                                            "dailyTotalRate": {
+                                                "bsAmt": "170.91",
+                                                "amtBfTx": "170.91",
+                                                "amtAfTx": "207.91",
+                                                "totalTaxes": "37.00",
+                                                "taxList": [
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "OCTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT10",
+                                                        "taxDefIds": [
+                                                            0
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "RSFTX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT12",
+                                                        "taxDefIds": [
+                                                            2
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "RFOTX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT10",
+                                                        "taxDefIds": [
+                                                            5
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "STTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT15",
+                                                        "taxDefIds": [
+                                                            3
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "CTTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT3",
+                                                        "taxDefIds": [
+                                                            4
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "37.00",
+                                                        "taxCode": "RSFEE",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT12",
+                                                        "taxDefIds": [
+                                                            1
+                                                        ]
+                                                    }
+                                                ],
+                                                "rateDefId": 2
+                                            }
+                                        },
+                                        {
+                                            "start": "2020-12-04",
+                                            "end": "2020-12-05",
+                                            "dailyBaseOccRate": {
+                                                "bsAmt": "151.47",
+                                                "amtBfTx": "151.47",
+                                                "amtAfTx": "188.47"
+                                            },
+                                            "dailyExtraOccRate": {
+                                                "bsAmt": "0.00",
+                                                "amtBfTx": "0.00",
+                                                "amtAfTx": "0.00"
+                                            },
+                                            "dailyTotalRate": {
+                                                "bsAmt": "151.47",
+                                                "amtBfTx": "151.47",
+                                                "amtAfTx": "188.47",
+                                                "totalTaxes": "37.00",
+                                                "taxList": [
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "OCTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT10",
+                                                        "taxDefIds": [
+                                                            0
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "RSFTX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT12",
+                                                        "taxDefIds": [
+                                                            2
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "RFOTX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT10",
+                                                        "taxDefIds": [
+                                                            5
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "STTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT15",
+                                                        "taxDefIds": [
+                                                            3
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "CTTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT3",
+                                                        "taxDefIds": [
+                                                            4
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "37.00",
+                                                        "taxCode": "RSFEE",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT12",
+                                                        "taxDefIds": [
+                                                            1
+                                                        ]
+                                                    }
+                                                ],
+                                                "rateDefId": 3
+                                            }
+                                        },
+                                        {
+                                            "start": "2020-12-05",
+                                            "end": "2020-12-06",
+                                            "dailyBaseOccRate": {
+                                                "bsAmt": "175.77",
+                                                "amtBfTx": "175.77",
+                                                "amtAfTx": "212.77"
+                                            },
+                                            "dailyExtraOccRate": {
+                                                "bsAmt": "0.00",
+                                                "amtBfTx": "0.00",
+                                                "amtAfTx": "0.00"
+                                            },
+                                            "dailyTotalRate": {
+                                                "bsAmt": "175.77",
+                                                "amtBfTx": "175.77",
+                                                "amtAfTx": "212.77",
+                                                "totalTaxes": "37.00",
+                                                "taxList": [
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "OCTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT10",
+                                                        "taxDefIds": [
+                                                            0
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "RSFTX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT12",
+                                                        "taxDefIds": [
+                                                            2
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "RFOTX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT10",
+                                                        "taxDefIds": [
+                                                            5
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "STTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT15",
+                                                        "taxDefIds": [
+                                                            3
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "CTTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT3",
+                                                        "taxDefIds": [
+                                                            4
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "37.00",
+                                                        "taxCode": "RSFEE",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT12",
+                                                        "taxDefIds": [
+                                                            1
+                                                        ]
+                                                    }
+                                                ],
+                                                "rateDefId": 4
+                                            }
+                                        },
+                                        {
+                                            "start": "2020-12-06",
+                                            "end": "2020-12-08",
+                                            "dailyBaseOccRate": {
+                                                "bsAmt": "89.91",
+                                                "amtBfTx": "89.91",
+                                                "amtAfTx": "126.91"
+                                            },
+                                            "dailyExtraOccRate": {
+                                                "bsAmt": "0.00",
+                                                "amtBfTx": "0.00",
+                                                "amtAfTx": "0.00"
+                                            },
+                                            "dailyTotalRate": {
+                                                "bsAmt": "89.91",
+                                                "amtBfTx": "89.91",
+                                                "amtAfTx": "126.91",
+                                                "totalTaxes": "37.00",
+                                                "taxList": [
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "OCTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT10",
+                                                        "taxDefIds": [
+                                                            0
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "RSFTX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT12",
+                                                        "taxDefIds": [
+                                                            2
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "RFOTX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT10",
+                                                        "taxDefIds": [
+                                                            5
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "STTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT15",
+                                                        "taxDefIds": [
+                                                            3
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "0.00",
+                                                        "taxCode": "CTTAX",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT3",
+                                                        "taxDefIds": [
+                                                            4
+                                                        ]
+                                                    },
+                                                    {
+                                                        "amount": "37.00",
+                                                        "taxCode": "RSFEE",
+                                                        "isIncludedInRate": false,
+                                                        "otaCode": "FTT12",
+                                                        "taxDefIds": [
+                                                            1
+                                                        ]
+                                                    }
+                                                ],
+                                                "rateDefId": 5
+                                            }
+                                        }
+                                    ],
+                                    "requestedRates": [
+                                        {
+                                            "start": "2020-11-29",
+                                            "end": "2020-11-30",
+                                            "base": {
+                                                "amount": "98.01"
+                                            }
+                                        },
+                                        {
+                                            "start": "2020-11-30",
+                                            "end": "2020-12-01",
+                                            "base": {
+                                                "amount": "98.01"
+                                            }
+                                        },
+                                        {
+                                            "start": "2020-12-01",
+                                            "end": "2020-12-02",
+                                            "base": {
+                                                "amount": "106.11"
+                                            }
+                                        },
+                                        {
+                                            "start": "2020-12-02",
+                                            "end": "2020-12-04",
+                                            "base": {
+                                                "amount": "170.91"
+                                            }
+                                        },
+                                        {
+                                            "start": "2020-12-04",
+                                            "end": "2020-12-05",
+                                            "base": {
+                                                "amount": "151.47"
+                                            }
+                                        },
+                                        {
+                                            "start": "2020-12-05",
+                                            "end": "2020-12-06",
+                                            "base": {
+                                                "amount": "175.77"
+                                            }
+                                        },
+                                        {
+                                            "start": "2020-12-06",
+                                            "end": "2020-12-08",
+                                            "base": {
+                                                "amount": "89.91"
+                                            }
+                                        }
+                                    ],
+                                    "ratesDefinition": {
+                                        "rateChanges": [
+                                            {
+                                                "id": 5,
+                                                "start": "2020-12-06",
+                                                "end": "2020-12-08",
+                                                "amount": "89.91"
+                                            }
+                                        ]
+                                    },
+                                    "taxInclusionMode": "followHouse",
+                                    "pricingFrequency": "PerNight",
+                                    "pricingMethod": "PerProduct",
+                                    "totalRate": {
+                                        "daily": [
+                                            {
+                                                "amtBfTx": "127.89",
+                                                "amtAfTx": "191.99",
+                                                "bsAmt": "127.89",
+                                                "amtType": "Average"
+                                            },
+                                            {
+                                                "amtBfTx": "98.01",
+                                                "amtAfTx": "378.94",
+                                                "bsAmt": "98.01",
+                                                "amtType": "Checkin"
+                                            }
+                                        ],
+                                        "payableAmtAfTx": "1727.94",
+                                        "amtBfTx": "1151.01",
+                                        "amtAfTx": "1727.94",
+                                        "bsAmt": "1151.01",
+                                        "totalTaxes": "576.93",
+                                        "taxGroups": [
+                                            {
+                                                "amount": "29.97",
+                                                "taxCode": "CTTAX",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT3",
+                                                "taxDefIds": [
+                                                    4
+                                                ]
+                                            },
+                                            {
+                                                "amount": "154.01",
+                                                "taxCode": "OCTAX",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT10",
+                                                "taxDefIds": [
+                                                    0
+                                                ]
+                                            },
+                                            {
+                                                "amount": "3.33",
+                                                "taxCode": "RFOTX",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT10",
+                                                "taxDefIds": [
+                                                    5
+                                                ]
+                                            },
+                                            {
+                                                "amount": "333.00",
+                                                "taxCode": "RSFEE",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT12",
+                                                "taxDefIds": [
+                                                    1
+                                                ]
+                                            },
+                                            {
+                                                "amount": "44.56",
+                                                "taxCode": "RSFTX",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT12",
+                                                "taxDefIds": [
+                                                    2
+                                                ]
+                                            },
+                                            {
+                                                "amount": "12.07",
+                                                "taxCode": "STTAX",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT15",
+                                                "taxDefIds": [
+                                                    3
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "totalBaseOccRate": {
+                                        "daily": [
+                                            {
+                                                "amtBfTx": "127.89",
+                                                "amtAfTx": "191.99",
+                                                "bsAmt": "127.89",
+                                                "amtType": "Average"
+                                            },
+                                            {
+                                                "amtBfTx": "98.01",
+                                                "amtAfTx": "378.94",
+                                                "bsAmt": "98.01",
+                                                "amtType": "Checkin"
+                                            }
+                                        ],
+                                        "payableAmtAfTx": "1727.94",
+                                        "amtAfTx": "1727.94",
+                                        "amtBfTx": "1151.01",
+                                        "totalTaxes": "576.93",
+                                        "taxGroups": [
+                                            {
+                                                "amount": "29.97",
+                                                "taxCode": "CTTAX",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT3",
+                                                "taxDefIds": [
+                                                    4
+                                                ]
+                                            },
+                                            {
+                                                "amount": "154.01",
+                                                "taxCode": "OCTAX",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT10",
+                                                "taxDefIds": [
+                                                    0
+                                                ]
+                                            },
+                                            {
+                                                "amount": "3.33",
+                                                "taxCode": "RFOTX",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT10",
+                                                "taxDefIds": [
+                                                    5
+                                                ]
+                                            },
+                                            {
+                                                "amount": "333.00",
+                                                "taxCode": "RSFEE",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT12",
+                                                "taxDefIds": [
+                                                    1
+                                                ]
+                                            },
+                                            {
+                                                "amount": "44.56",
+                                                "taxCode": "RSFTX",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT12",
+                                                "taxDefIds": [
+                                                    2
+                                                ]
+                                            },
+                                            {
+                                                "amount": "12.07",
+                                                "taxCode": "STTAX",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT15",
+                                                "taxDefIds": [
+                                                    3
+                                                ]
+                                            }
+                                        ],
+                                        "bsAmt": "1151.01"
+                                    },
+                                    "totalExtraOccRate": {
+                                        "payableAmtAfTx": "0.00",
+                                        "amtAfTx": "0.00",
+                                        "amtBfTx": "0.00",
+                                        "totalTaxes": "0.00",
+                                        "taxGroups": [
+                                            {
+                                                "amount": "0.00",
+                                                "taxCode": "CTTAX",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT3",
+                                                "taxDefIds": [
+                                                    4
+                                                ]
+                                            },
+                                            {
+                                                "amount": "0.00",
+                                                "taxCode": "OCTAX",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT10",
+                                                "taxDefIds": [
+                                                    0
+                                                ]
+                                            },
+                                            {
+                                                "amount": "0.00",
+                                                "taxCode": "RFOTX",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT10",
+                                                "taxDefIds": [
+                                                    5
+                                                ]
+                                            },
+                                            {
+                                                "amount": "0.00",
+                                                "taxCode": "RSFEE",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT12",
+                                                "taxDefIds": [
+                                                    1
+                                                ]
+                                            },
+                                            {
+                                                "amount": "0.00",
+                                                "taxCode": "RSFTX",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT12",
+                                                "taxDefIds": [
+                                                    2
+                                                ]
+                                            },
+                                            {
+                                                "amount": "0.00",
+                                                "taxCode": "STTAX",
+                                                "isIncludedInRate": false,
+                                                "otaCode": "FTT15",
+                                                "taxDefIds": [
+                                                    3
+                                                ]
+                                            }
+                                        ],
+                                        "bsAmt": "0.00"
+                                    }
+                                },
+                                "quantity": 1,
+                                "guestCounts": [
+                                    {
+                                        "otaCode": "AQC10",
+                                        "count": 1
+                                    },
+                                    {
+                                        "otaCode": "AQC8",
+                                        "count": 1
+                                    }
+                                ],
+                                "totalGuestCounts": [
+                                    {
+                                        "otaCode": "AQC10",
+                                        "count": 1
+                                    },
+                                    {
+                                        "otaCode": "AQC8",
+                                        "count": 1
+                                    }
+                                ],
+                                "isMainProduct": true
+                            }
+                        ],
+                        "policies": {
+                            "checkinTime": "00:00:00",
+                            "checkoutTime": "00:00:00",
+                            "deposit": {
+                                "isRequired": true,
+                                "acceptedDeposits": {
+                                    "acceptedFops": [
+                                        "travelAgencyIata",
+                                        "paymentCard"
+                                    ],
+                                    "creditCards": [
+                                        "AX",
+                                        "CU",
+                                        "DC",
+                                        "DS",
+                                        "JC",
+                                        "MC",
+                                        "VI"
+                                    ]
+                                },
+                                "amount": "378.94",
+                                "feeType": "FirstNight",
+                                "deadline": {
+                                    "dateTime": "2020-09-20T04:31:12",
+                                    "deadlineType": "atBooking"
+                                }
+                            },
+                            "cancellationNoShow": {
+                                "deadline": {
+                                    "dateTime": "2020-11-29T00:00:00",
+                                    "deadlineType": "numberOfDaysBeforeCheckin",
+                                    "deadlineValue": 0
+                                },
+                                "isGracePeriod": true,
+                                "amount": "505.85",
+                                "feeType": "FirstLast"
+                            },
+                            "cancellation": {
+                                "deadline": {
+                                    "dateTime": "2020-11-27T00:00:00",
+                                    "deadlineType": "numberOfDaysBeforeCheckin",
+                                    "deadlineValue": 2
+                                },
+                                "isGracePeriod": true,
+                                "amount": "378.94",
+                                "feeType": "FirstNight"
+                            }
+                        },
+                        "totalRate": {
+                            "daily": [
+                                {
+                                    "amtBfTx": "127.89",
+                                    "amtAfTx": "191.99",
+                                    "bsAmt": "127.89",
+                                    "amtType": "Average"
+                                },
+                                {
+                                    "amtBfTx": "98.01",
+                                    "amtAfTx": "378.94",
+                                    "bsAmt": "98.01",
+                                    "amtType": "Checkin"
+                                }
+                            ],
+                            "payableAmtAfTx": "1727.94",
+                            "amtBfTx": "1151.01",
+                            "amtAfTx": "1727.94",
+                            "bsAmt": "1151.01",
+                            "totalTaxes": "576.93",
+                            "taxGroups": [
+                                {
+                                    "amount": "29.97",
+                                    "taxCode": "CTTAX",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT3",
+                                    "taxDefIds": [
+                                        4
+                                    ]
+                                },
+                                {
+                                    "amount": "154.01",
+                                    "taxCode": "OCTAX",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT10",
+                                    "taxDefIds": [
+                                        0
+                                    ]
+                                },
+                                {
+                                    "amount": "3.33",
+                                    "taxCode": "RFOTX",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT10",
+                                    "taxDefIds": [
+                                        5
+                                    ]
+                                },
+                                {
+                                    "amount": "333.00",
+                                    "taxCode": "RSFEE",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT12",
+                                    "taxDefIds": [
+                                        1
+                                    ]
+                                },
+                                {
+                                    "amount": "44.56",
+                                    "taxCode": "RSFTX",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT12",
+                                    "taxDefIds": [
+                                        2
+                                    ]
+                                },
+                                {
+                                    "amount": "12.07",
+                                    "taxCode": "STTAX",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT15",
+                                    "taxDefIds": [
+                                        3
+                                    ]
+                                }
+                            ]
+                        },
+                        "totalBaseOccRate": {
+                            "daily": [
+                                {
+                                    "amtBfTx": "127.89",
+                                    "amtAfTx": "191.99",
+                                    "bsAmt": "127.89",
+                                    "amtType": "Average"
+                                },
+                                {
+                                    "amtBfTx": "98.01",
+                                    "amtAfTx": "378.94",
+                                    "bsAmt": "98.01",
+                                    "amtType": "Checkin"
+                                }
+                            ],
+                            "payableAmtAfTx": "1727.94",
+                            "amtAfTx": "1727.94",
+                            "amtBfTx": "1151.01",
+                            "totalTaxes": "576.93",
+                            "taxGroups": [
+                                {
+                                    "amount": "29.97",
+                                    "taxCode": "CTTAX",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT3",
+                                    "taxDefIds": [
+                                        4
+                                    ]
+                                },
+                                {
+                                    "amount": "154.01",
+                                    "taxCode": "OCTAX",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT10",
+                                    "taxDefIds": [
+                                        0
+                                    ]
+                                },
+                                {
+                                    "amount": "3.33",
+                                    "taxCode": "RFOTX",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT10",
+                                    "taxDefIds": [
+                                        5
+                                    ]
+                                },
+                                {
+                                    "amount": "333.00",
+                                    "taxCode": "RSFEE",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT12",
+                                    "taxDefIds": [
+                                        1
+                                    ]
+                                },
+                                {
+                                    "amount": "44.56",
+                                    "taxCode": "RSFTX",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT12",
+                                    "taxDefIds": [
+                                        2
+                                    ]
+                                },
+                                {
+                                    "amount": "12.07",
+                                    "taxCode": "STTAX",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT15",
+                                    "taxDefIds": [
+                                        3
+                                    ]
+                                }
+                            ],
+                            "bsAmt": "1151.01"
+                        },
+                        "totalExtraOccRate": {
+                            "payableAmtAfTx": "0.00",
+                            "amtAfTx": "0.00",
+                            "amtBfTx": "0.00",
+                            "totalTaxes": "0.00",
+                            "taxGroups": [
+                                {
+                                    "amount": "0.00",
+                                    "taxCode": "CTTAX",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT3",
+                                    "taxDefIds": [
+                                        4
+                                    ]
+                                },
+                                {
+                                    "amount": "0.00",
+                                    "taxCode": "OCTAX",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT10",
+                                    "taxDefIds": [
+                                        0
+                                    ]
+                                },
+                                {
+                                    "amount": "0.00",
+                                    "taxCode": "RFOTX",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT10",
+                                    "taxDefIds": [
+                                        5
+                                    ]
+                                },
+                                {
+                                    "amount": "0.00",
+                                    "taxCode": "RSFEE",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT12",
+                                    "taxDefIds": [
+                                        1
+                                    ]
+                                },
+                                {
+                                    "amount": "0.00",
+                                    "taxCode": "RSFTX",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT12",
+                                    "taxDefIds": [
+                                        2
+                                    ]
+                                },
+                                {
+                                    "amount": "0.00",
+                                    "taxCode": "STTAX",
+                                    "isIncludedInRate": false,
+                                    "otaCode": "FTT15",
+                                    "taxDefIds": [
+                                        3
+                                    ]
+                                }
+                            ],
+                            "bsAmt": "0.00"
+                        }
+                    },
+                    "creator": {
+                        "hotelSource": "MV021",
+                        "vendorCode": "MGMWB",
+                        "vendorTypes": [
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ],
+                        "channelCode": "CC",
+                        "metricsCode": "M02"
+                    },
+                    "requestor": {
+                        "hotelSource": "ARIA1",
+                        "vendorCode": "MGMWB",
+                        "vendorTypes": [
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ],
+                        "channelCode": "CC",
+                        "metricsCode": "M02"
+                    },
+                    "indicators": {
+                        "isConfirmed": true,
+                        "isPaidByPoints": false
+                    },
+                    "comments": [
+                        {
+                            "type": "supplementary info",
+                            "text": [
+                                "add 1",
+                                "add 2",
+                                "custom comments"
+                            ]
+                        }
+                    ],
+                    "owner": {
+                        "agencyDetails": {
+                            "identifiers": [
+                                {
+                                    "id": "12345675",
+                                    "type": "IATA"
+                                }
+                            ],
+                            "isValid": true,
+                            "isTrusted": true,
+                            "email": {
+                                "address": "travelagent@bcdtravel.com",
+                                "type": 2
+                            },
+                            "agencyProfileId": "99976a53-99a-7bc6-81ce-9a88a777c666"
+                        }
+                    },
+                    "lateArrivalTime": "00:00:00",
+                    "consolidatedSegmentStatus": "Guaranteed",
+                    "segmentStatus": "MY",
+                    "channelPreferredRate": "Check-in",
+                    "channelExtraPersonChargeIncluded": false,
+                    "taxDefinitions": [
+                        {
+                            "id": 0,
+                            "taxTypeCode": "FTT10",
+                            "description": {
+                                "en": [
+                                    "Occupancy Tax"
+                                ]
+                            },
+                            "longDescription": {
+                                "en": [
+                                    "Occupancy Tax"
+                                ]
+                            },
+                            "chargeUnit": "PerProduct",
+                            "chargeFrequency": "PerStay",
+                            "values": [
+                                {
+                                    "value": "13.38"
+                                }
+                            ],
+                            "computationType": "Percentage",
+                            "isIncluded": false,
+                            "name": "Occupancy Tax",
+                            "start": "2020-11-29",
+                            "end": "2020-12-08",
+                            "code": "OCTAX",
+                            "computationMode": "TaxOnRate"
+                        },
+                        {
+                            "id": 1,
+                            "taxTypeCode": "FTT12",
+                            "description": {
+                                "en": [
+                                    "Resort Fee Tax"
+                                ]
+                            },
+                            "longDescription": {
+                                "en": [
+                                    "Resort Fee Tax"
+                                ]
+                            },
+                            "chargeUnit": "PerProduct",
+                            "chargeFrequency": "PerDay",
+                            "values": [
+                                {
+                                    "value": "37.00"
+                                }
+                            ],
+                            "computationType": "Flat",
+                            "currency": "USD",
+                            "isIncluded": false,
+                            "name": "Resort Fee",
+                            "start": "2020-11-29",
+                            "end": "2020-12-08",
+                            "code": "RSFEE",
+                            "computationMode": "TaxOnRate"
+                        },
+                        {
+                            "id": 2,
+                            "taxTypeCode": "FTT12",
+                            "description": {
+                                "en": [
+                                    "Resort Fee Tax"
+                                ]
+                            },
+                            "longDescription": {
+                                "en": [
+                                    "Resort Fee Tax"
+                                ]
+                            },
+                            "chargeUnit": "PerProduct",
+                            "chargeFrequency": "PerStay",
+                            "values": [
+                                {
+                                    "value": "13.38"
+                                }
+                            ],
+                            "computationType": "Percentage",
+                            "isIncluded": false,
+                            "name": "Resort Fee Tax",
+                            "start": "2020-11-29",
+                            "end": "2020-12-08",
+                            "code": "RSFTX",
+                            "computationMode": "TaxOnTax"
+                        },
+                        {
+                            "id": 3,
+                            "taxTypeCode": "FTT15",
+                            "description": {
+                                "en": [
+                                    "State Tax"
+                                ]
+                            },
+                            "longDescription": {
+                                "en": [
+                                    "Resort Fee State Tax"
+                                ]
+                            },
+                            "chargeUnit": "PerProduct",
+                            "chargeFrequency": "PerStay",
+                            "values": [
+                                {
+                                    "value": "3.63"
+                                }
+                            ],
+                            "computationType": "Percentage",
+                            "isIncluded": false,
+                            "name": "Resort Fee State Tax",
+                            "start": "2020-11-29",
+                            "end": "2020-12-08",
+                            "code": "STTAX",
+                            "computationMode": "TaxOnTax"
+                        },
+                        {
+                            "id": 4,
+                            "taxTypeCode": "FTT3",
+                            "description": {
+                                "en": [
+                                    "Resort Fee City Tax"
+                                ]
+                            },
+                            "longDescription": {
+                                "en": [
+                                    "Resort Fee City Tax"
+                                ]
+                            },
+                            "chargeUnit": "PerProduct",
+                            "chargeFrequency": "PerStay",
+                            "values": [
+                                {
+                                    "value": "9.00"
+                                }
+                            ],
+                            "computationType": "Percentage",
+                            "isIncluded": false,
+                            "name": "Resort Fee City Tax",
+                            "start": "2020-11-29",
+                            "end": "2020-12-08",
+                            "code": "CTTAX",
+                            "computationMode": "TaxOnTax"
+                        },
+                        {
+                            "id": 5,
+                            "taxTypeCode": "FTT10",
+                            "description": {
+                                "en": [
+                                    "Resort Fee - Occupancy Tax"
+                                ]
+                            },
+                            "longDescription": {
+                                "en": [
+                                    "Resort Fee - Occupancy Tax"
+                                ]
+                            },
+                            "chargeUnit": "PerProduct",
+                            "chargeFrequency": "PerStay",
+                            "values": [
+                                {
+                                    "value": "1.00"
+                                }
+                            ],
+                            "computationType": "Percentage",
+                            "isIncluded": false,
+                            "name": "Resort Fee Occupancy Tax",
+                            "start": "2020-11-29",
+                            "end": "2020-12-08",
+                            "code": "RFOTX",
+                            "computationMode": "TaxOnTax"
+                        }
+                    ],
+                    "cancelByHotelOnly": false,
+                    "totalSegment": {
+                        "finalPriceAmt": "1727.94"
+                    }
+                }
+            ],
+            "userProfiles": [
+                {
+                    "id": 1,
+                    "guestProfileId": "1122334",
+                    "personName": {
+                        "surname": "Doe",
+                        "givenName": "John"
+                    },
+                    "addresses": [
+                        {
+                            "addressLines": [
+                                "234 W Main St",
+                                "Unit 415"
+                            ],
+                            "cityName": "Las Vegas",
+                            "postalCode": "12335",
+                            "stateProv": "NV",
+                            "countryCode": "US",
+                            "type": 1
+                        }
+                    ],
+                    "telephones": [
+                        {
+                            "number": "9952051456",
+                            "locationType": 6,
+                            "deviceType": 1
+                        }
+                    ],
+                    "emails": [
+                        {
+                            "address": "johndoe456@nomail.com",
+                            "type": 1
+                        }
+                    ],
+                    "loyaltyProgram": {
+                        "loyaltyId": "0"
+                    }
+                }
+            ],
+            "totalReservation": [
+                {
+                    "bsAmt": "1151.01",
+                    "finalPriceAmt": "1727.94",
+                    "amtBfTx": "1151.01",
+                    "amtAfTx": "1727.94",
+                    "totalTaxes": "576.93",
+                    "currency": "USD"
+                }
+            ],
+            "totalOfActiveSegments": [
+                {
+                    "bsAmt": "1151.01",
+                    "finalPriceAmt": "1727.94",
+                    "amtBfTx": "1151.01",
+                    "amtAfTx": "1727.94",
+                    "totalTaxes": "576.93",
+                    "currency": "USD"
+                }
+            ],
+            "comments": [
+                {
+                    "type": "supplementary info",
+                    "text": [
+                        "add 1",
+                        "add 2",
+                        "custom comments"
+                    ]
+                }
+            ]
+        }
+    }
+}

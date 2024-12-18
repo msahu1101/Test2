@@ -1,0 +1,245 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Payment Orchestration Service
+  description:
+    Service to dynamically call different api's within the payments domain
+    <ul>
+        <li>
+            Payment - calls different api's/functions within the payments domain depending on the payload given. You supply the workflow arguments in the order that you need them called. It supports the following functions ...
+              <ul>
+                  <li>
+                      Payment Processing Service - (DCC, Authorize, Capture, Refund)
+                  </li>
+                  <li>
+                      Anti Fraud Service - (Authorize)
+                  </li>
+                  <li>
+                      Payment Exchange Token - (PET-checkin)
+                  </li>
+              </ul>
+        </li>
+        <li>
+          One general rules
+          <ul>
+                  <li>
+                      The order size has to equal the defintion size
+                  </li>
+              </ul>
+        </li>
+    </ul>
+servers:
+  - url: https://mgm-nonprod-dev.apigee.net/mpay
+    description: dev
+  - url: https://mgm-nonprod-qa.apigee.net/mpay
+    description: qa
+  - url: https://mgm-nonprod-preprod.apigee.net/mpay
+    description: preprod
+  - url: https://mgm-prod-prod.apigee.net/mpay
+    description: prod
+paths:
+  /v1/health:
+    get:
+      summary: Payments Orchestration Health Check
+      description: Health Check for Orchestration svc
+      tags:
+        - Health Check
+      responses:
+        '200':
+          description: Success Response
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "success"
+  /v1/payment:
+    post:
+      summary: Payments Orchestration API
+      description: >-
+        Takes in workflow arguments and definitions. Under arguments you supply the order you want the functions called. In definitions, you supply the function name and its associated body, headers, and query parameters if any. If you supply query parameters they must url encoded.
+      tags:
+        - Payment API
+      parameters:
+        - $ref: "#/components/parameters/authorization"
+        - $ref: "#/components/parameters/x-correlation-id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Workflow'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+      security:
+        - oauth2: []
+components:
+  schemas:
+    Workflow:
+      type: object
+      required: 
+       - arguments
+       - definitions
+      properties:
+        arguments:
+          $ref: '#/components/schemas/WorkflowArgs'
+        definitions: 
+          $ref: '#/components/schemas/WorkflowDef'
+    WorkflowArgs:
+      type: object
+      required: 
+       - order
+      properties:
+        order:
+          type: array
+          items: 
+            type: string
+            description: "This is the order the functions will be executed in"
+            enum:
+            - AFSAuthorize
+            - PETCheckin
+            - PPSAuthorize
+            - PPSDCC
+            - PPSCapture
+            - PPSRefund
+          example: ["AFSAuthorize","PETCheckin"]
+    WorkflowDef:
+      type: array
+      items:
+        required: 
+        - functionName
+        - body
+        - headers
+        properties:
+          functionName:
+            type: string
+            description: The name of the function/api you want to call. If you want to call PET checkin provide a stringified xml as first element in the body.
+            enum: 
+            - AFSAuthorize
+            - PETCheckin
+            - PPSAuthorize
+            - PPSDCC
+            - PPSCapture
+            - PPSRefund
+          body:
+            type: object
+          headers:
+            type: object
+          queryParams:
+            type: object
+      example: 
+        - functionName: AFSAuthorize
+          body: {}
+          headers: {}
+          queryParams: {}
+        - functionName: PETCheckin
+          body: xml string
+          headers: {}
+          queryParams: {}
+    Response: 
+      type: object
+      properties:
+        workflowResponse:
+          type: array
+          items:
+            properties:
+              functionName:
+                type: string
+                description: "Name of fucntion/api call"
+                example: "AFSAuthorize"
+              statusCode: 
+                type: integer
+                description: "HTTP status code"
+                example: 200
+              statusDesc:
+                type: string
+                description: "Description of status code"
+                example: "Success"
+              body:
+                type: object
+                description: "Response from that api call"
+          example:  
+          - functionName: AFSAuthorize
+            statusCode: 200
+            statusDesc: Success
+            body: {}
+          - functionName: PETCheckin
+            statusCode: 200
+            statusDesc: Success
+            body: "xml response"
+    BadRequest:
+      type: object
+      description: "This is a Bad Request response regarding only the orchestration svc. If a Bad Request comes from an api call, that response will be thrown in the Response schema."
+      properties:
+        functionName:
+          type: string
+          description: "Name of fucntion/api call"
+          example: "PaymentOrchestration"
+        statusCode: 
+          type: integer
+          description: "HTTP status code"
+          example: 400
+        statusDesc:
+          type: string
+          description: "Description of status code"
+          example: "Bad Request"
+        body:
+          type: object
+          description: "Response from that api call"
+    InternalServerError:
+      type: object
+      description: "This is an Internal Server Error response regarding only the orchestration svc. If an Internal Server Error comes from an api call, that response will be thrown in the Response schema."
+      properties:
+        functionName:
+          type: string
+          description: "Name of fucntion/api call"
+          example: "PaymentOrchestration"
+        statusCode: 
+          type: integer
+          description: "HTTP status code"
+          example: 500
+        statusDesc:
+          type: string
+          description: "Description of status code"
+          example: "Internal Server Error"
+        body:
+          type: object
+          description: "Response from that api call"
+  parameters:
+    authorization:
+      name: "authorization"
+      in: "header"
+      required: true
+      schema:
+        type: "string"
+      description: "jwt token with correct scope to call AFS/PPS/PET API's"
+    x-correlation-id:
+      in: header
+      name: "x-correlation-id"
+      schema:
+        type: string
+      description: "Correlation Id is used to track transactions end to end. It is optional if one is not supplied one will be genearted"
+      required: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://azdeapi-dev.mgmresorts.com/rc/identity/authorization/v1/linebuster/token
+          scopes: {}

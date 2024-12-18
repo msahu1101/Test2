@@ -1,0 +1,14 @@
+{
+	"confirmationNumber": "M03D7F581",
+	"firstName": "Ravi Kiran",
+	"lastName": "Ganji",
+	"tripDetails": {
+		"checkInDate": "2021-11-12",
+		"checkOutDate": "2021-11-13",
+		"numAdults": 2,
+		"numRooms": 1
+	},
+	"previewReservationTotal":68069.94,
+	"previewReservationDeposit":68027.99,
+	"cvv": 123
+}

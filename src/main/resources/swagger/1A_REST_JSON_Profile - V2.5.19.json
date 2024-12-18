@@ -1,0 +1,1090 @@
+swagger: '2.0'
+info:
+  version: 2.5.19
+  title: ACRS_JSON_Profile
+  description: |-
+    This document aims at describing how to use the Amadeus CGI REST API to manage Hotel Profiles
+
+    ## Disclaimer:  
+
+     The CGI API is under construction and will progress in the coming months to integrate new resources and functionalities. New features will be backward compatible with the current CGI API version
+
+    ## Introduction: 
+
+     The CGI component allows to gather preferences, tendencies and historical information from guests and organizations by integrating data from multiple sources (Amadeus internal or External), in order to generate holistic insights. The information stated bellow serve as both, the functional documentation and the technical guidelines for Amadeus CGI-API consumers. In particular the standard Hypertext Transfer Protocol (HTTP) used to perform various operations on customer profiles:
+
+     â€¢ Create profiles and profile data in Amadeus CGI system
+
+     â€¢ Retrieve the content associated to one or several profiles
+
+     â€¢ Update the content of existing profiles
+
+     â€¢ Delete the existing and redundant profiles
+
+     Profiles Resource: 
+
+     The CGI component supports different profile types, each one of them is associated to a guest category. The CGI system supports two profile types:
+
+    ## Guests: 
+
+     This profile resource corresponds to the management operations performed on one or multiple of guests, which can contain information captured by Amadeus or by any external system
+
+    ## Organizations: 
+
+     This profile resource corresponds to the management operations performed on one or multiple profiles associated to companies and can include hierarchical information, specific organizational benefits and behaviors
+
+    ## Search: 
+
+     This profile resource corresponds to the search procedures for guest and organizational profiles using one or more criteria. Please bear in mind that minimal criteria can be required.
+  x-release-note:
+    2.3.0:
+      - organization-shared-notes parameter added for organization section services
+      - accounts-receivables section added in organizational profile
+      - external loyalty program added in guest
+      - allowanceCodeType and quantity added in organization allowance
+      - Confirmation number added in Search organization
+      - Array of reservations, PMS segment status added to the guest search response
+    2.3.1:
+      - Ama-Pos header in services creating profiles
+      - points in membership object
+      - partial update and delete of shared notes
+    2.3.2:
+      - Ama-Pos header in services searching profiles
+      - Reservation object removed from the guest search response
+    2.3.3:
+      - 'PTR18675256: memberId not marked as mandatory'
+    2.4.0:
+      - External membership ID as search criterion for guest profiles
+      - New phone number format
+      - modifications-counter query parameter for concurrency detection
+    2.4.1:
+      - CardCustomData DEPRECATED
+    2.4.2:
+      - Default value for pagination is 50 elements (instead of 200)
+      - New Guest Upsert service
+      - New Qualifier section in Guest profiles
+      - CompanionRef and type LINKED_ACCOUNT in CompanionInformation
+      - No required section in Organizational Upsert
+    2.5.0:
+      - '####### ADDED ##############'
+      - 'New operation: GET /customer-relationship/chains/{chainCode}/guests/{id}/history to retrieve full Guest profile history'
+      - 'New operation: GET /customer-relationship/chains/{chainCode}/organizations/{org_id}/history to retrieve full Organizational profile history'
+      - 'New operation: GET /customer-relationship/chains/{chainCode}/guests/{id}/counters'
+      - Added Ama-Pos in Retrieve Guest section, Organizational section, Guest profile and Organizational profile
+      - agencyInformation section in Organizational profile to comprise IATA tape fields
+      - '####### REMOVED ##############'
+      - Predefined Header parameter Ama-Api-Version from all service
+      - Predefined Header parameter Authorization from all services parameters
+      - Removed unused objects like OrganizationalExportResponse, POSAgencyAddress, POSAgencyDetails, POSAgencyEmail, POSAgencyIdentifiers, POSAgencyTelephone, POSCallCenterInfo, PosHeader, RoomAllowance, Title, Version, companionData, detailType
+      - '####### MODIFIED ##############'
+      - Contact-information is not mandatory anymore in Organizational Create and Upsert
+      - Service descriptions re-written in a more comprehensive manner
+      - Increased Address lines maxLength from 100 to 150
+      - 'Upsert Organizational profile: put back required sections (identityInformation and categorization) removed my mistake in 2.4. Also, corrected OrganizationalIdentityForUpsert/names'
+      - 'Search Organizational profile: new search criterion: full name (case insensitive)'
+      - 'Upsert Guest: service description change from full override to sections override'
+    2.5.1:
+      - 'New operation: POST /customer-relationship/chains/{chainCode}/guests/bulk-retrieve to retrieve multiple Guest profile data'
+    2.5.2:
+      - '##############New in Response##############'
+      - OrganizationalAgencyID.code - search
+      - OrganizationalAgencyID.codeContext - search
+      - '##############New feature##############'
+      - 'Search Organizational profile: Introduced flattened search criteria'
+      - '##############New in Request##############'
+      - data.FilterType.simpleFilters - search
+      - OrganizationalSummaryArray.properties.filters - search
+      - data.Filter.properties.key - search
+      - data.Filter.properties.value - search
+      - data.Filter.properties.operator - search
+    2.5.3:
+      - '##############New feature##############'
+      - New field in Guest profile Categorization section, in order to store a list of consents
+      - '##############New in Response##############'
+      - categorization.consents - Get Guest/Get Guest Section/Bulk Retrieve/Get Guest history
+      - '##############New in Request##############'
+      - categorization.consents - Create/Update/Upsert Guest Profile
+    2.5.4:
+      - '##############New Operation##############'
+      - GET /customer-relationship/chains/{chainCode}/guests/{individualGuestID}/loyalty
+    2.5.5:
+      - '##############New Operation##############'
+      - POST /customer-relationship/chains/{chainCode}/guest-loyalty
+    2.5.6:
+      - '############## New in Request and Response ##############'
+      - guarantees added as new section in organization profile
+      - data.guarantees (new section in organization profile)
+      - data.guarantees.guaranteeToCompany (Organization profile)
+      - data.guarantees.guaranteeToIATA  (Organization profile)
+      - ' GET /hotel/organizations/{chainCode}/{org_id}/{org_section}/guarantees'
+      - ' PUT /hotel/organizations/{chainCode}/{org_id}/{org_section}/guarantees'
+      - ' DELETE /hotel/organizations/{chainCode}/{org_id}/{org_section}/guarantees'
+      - '############## modified ##############'
+      - Increased allergyCode maxLength from 10 to 50 (healthAndSafety.allergies[*].allergyCode)
+    2.5.7:
+      - '##############New Operation##############'
+      - GET/customer-relationship/chains/{chainCode}/organizations/{externalOrgId}/external-system to retrieve organizational information based on a functional profile identifier; agency or corporate ID
+    2.5.8:
+      - '##############Other Changes##############'
+      - 'PrimaryOrganizationalRole - reverted backward incompatible format change of enum values : Changed the format of enum values from UpperCamelCase to ALL-UPPER-CASE'
+    2.5.9:
+      - '############## New in Response ##############'
+      - Offer.IsOneOffOffer - retrieve-aggregated-guest-transactions
+      - Offer.isPerpetualOffer - retrieve-aggregated-guest-transactions
+      - Offer.promoCode added - retrieve-aggregated-guest-transactions
+    2.5.10:
+      - '############## New in Request and Response ##############'
+      - data.contactInformation.romanizedAddresses - create, retrieve, search,update, bulk-retrieve,aggregate, upsert and test proxy
+      - data.loyaltyPrograms.memberships.contact.romanizedAddresses - create, retrieve, search,update, bulk-retrieve,aggregate, upsert and test proxy
+      - data.contactInformation.romanizedAddresses - create, retrieve,update ,history, external-systems and search
+      - data.identityInformation.names.romanizedFullName - create, retrieve,update ,history, external-systems and search
+      - data.identityInformation.names.romanizedShortName - create, retrieve,update ,history, external-systems and search
+      - data.loyaltyPrograms.memberships.contact.romanizedAddresses - -create, retrieve,update ,history, external-systems and search
+      - data.ContactInfoForRetrieval.romanizedAddresses - Aggregate,History,Bulk-retrieve,Loyalty/Search
+      - data.ContactInfo.romanizedAddresses - Aggregate,History,Bulk-retrieve,Loyalty,Search Guest profile
+      - data.OrganizationalContactInfo.romanizedAddresses - Search,History/External-systems Organization profile
+      - OrganizationalName.romanizedFullName - Search,History,External-systems Organization profile
+      - OrganizationalName.romanizedShortName - Search,History,External-systems Organization profile
+    2.5.11:
+      - '############## New in Request ##############'
+      - GuestAdditionalInformation.hashInformation - update-guest-profile, update-guest-profile-section
+      - GuestAdditionalInformationForCreation.hashInformation - create-guest-profile, upsert-guest-profile
+      - '############## New in Response ##############'
+      - GuestAdditionalInformationForRetrieval.hashInformation - retrieve-guest-profile, retrieve-guest-profile-section, retrieve-guest-profile-history, Bulk retrieve services for the guest
+      - '############## New feature ##############'
+      - New field HashInformation that consists of HashAlgorithmInformation, HashField, HashVersion (removed later as part of version 2.5.12) that are defined in hashed format in order to anonymize personal guest information are added in update, update section, create, upsert, retrieve, retrieve section, retrieve history, bulk-retrieve-individuals
+    2.5.12:
+      - '############## New Operation ##############'
+      - POST/customer-relationship/chains/{chainCode}/guests/merge to merge a winner profile and a victim profile
+      - '############## New in Response ##############'
+      - GuestHistoryResponse.GuestResponsePlain.Access.MergeInformation - retrieve-guest-profile-history
+      - '##############Other Changes##############'
+      - 'HashInformation - removed the field hashAlgorithmVersion that was added in the version 2.5.11 : It adds extra restrictions and takes unnecessary storage'
+      - HashInformation - renamed the fields hashName, hashSurname to hashFirstName and hashLastName
+      - Added hash-Information in section_for_delete
+    2.5.13:
+      - '############## New in Response ##############'
+      - organizationalDiscountNumbers.primaryCorporateNumber - retrieve-organization-profile-from-external-system
+      - organizationalDiscountNumbers.businessChoiceCode - retrieve-organization-profile-from-external-system
+    2.5.14:
+      - '############## New in Response ##############'
+      - data - get-individuals-profile
+      - '############## Renamed ##############'
+      - data.loyaltyProgramsForRetrieval to data.loyaltyProgramsInformation - get-individuals-profile
+    2.5.15:
+      - '############## Other Changes ##############'
+      - data.loyaltyId - data type changed from integer to string - create-individuals-profile
+      - OrganizationalAllowanceForCreation.allowanceCodeType - description update - create-organization-profile
+    2.5.16:
+      - '############## New in Response ##############'
+      - data.romanizedFirstName - search-guest-profile
+      - data.romanizedLastName - search-guest-profile
+    2.5.17:
+      - '############## Other Changes ##############'
+      - ExternalID simple filter sample added to organization search - search-organization-profile
+    2.5.18:
+      - '############## Description Update ##############'
+      - Phone number and text filtering considered in Guest and Organizational Profile Search
+    2.5.19:
+      - '############## Other Changes ##############'
+      - romanizedAddresses array minItems aligned with universal one, setting it to 1
+      - RomanizedFullName string maxLength aligned with universal one, setting it to 200
+      - RomanizedShortName string maxLength aligned with universal one, setting it to 100
+  contact:
+    name: Amadeus Hospitality Systems Integration Support
+  license:
+    name: Amadeus IT Group SA
+    url: https://www.amadeus.com
+consumes:
+  - application/json
+produces:
+  - application/json
+schemes:
+  - https
+tags:
+  - name: Guests
+  - name: Organizations
+  - name: Search
+  - name: Push
+parameters:
+  chainCode:
+    name: chainCode
+    in: path
+    required: true
+    description: code that identifies a hotel chain or management group
+    type: string
+    pattern: ^[A-Z0-9]{2,3}$
+  cursor:
+    name: cursor
+    in: query
+    type: string
+    required: false
+    description: 'when cursor is used, only matching profiles whose identifiers follow the cursor in lexical order are returned, and profiles are ordered by profile identifiers. It is necessary to use this parameter if the number of results returned per page is not sufficient. The url of the next result page including the next cursor to use is returned in the response. Important note: if no cursor is used, then only a subset of profiles are returned, in no specified order, and no cursor information is provided in the response. So a client system that needs more results than what is returned in a page should use the cursor parameter from the first request, with value 0'
+  limit:
+    name: limit
+    in: query
+    description: 'maximum number of results per page. Maximum value: 500. If not defined in Guest Search, it is set to 50 by default. In Organizational profile Search, it is set to 200'
+    type: integer
+    maximum: 500
+    default: 50
+    minimum: 1
+    required: false
+  Ama-Pos:
+    name: Ama-Pos
+    in: header
+    description: optional header. Point of sale information
+    type: string
+    format: ^{.*}$
+    required: false
+paths:
+  /hotel/organizations/{chainCode}/search:
+    post:
+      tags:
+        - Search
+      description: |-
+        This service gives the possibility to CGI-API users to search organizational profiles from the Hotel-CGI system
+
+         This operation is subject to access control. In order to execute it successfully, the user has to be granted with the required access rights
+
+         If the user does not have the required access rights for one or more SECTIONS, the request is not processed, and an error is raised.
+      summary: search-organization-profile
+      operationId: searchOrganizationalProfiles
+      parameters:
+        - $ref: '#/parameters/chainCode'
+        - $ref: '#/parameters/Ama-Pos'
+        - name: searchMessage
+          in: body
+          required: true
+          description: the body of searchMessage
+          schema:
+            $ref: '#/definitions/OrganizationalSearchRequest'
+        - $ref: '#/parameters/limit'
+        - $ref: '#/parameters/cursor'
+      responses:
+        '200':
+          description: matching profiles found
+          schema:
+            $ref: '#/definitions/OrganizationalSearchResponse'
+        '400':
+          description: invalid CGI request
+          schema:
+            $ref: '#/definitions/ResponseError'
+        '401':
+          description: unauthorized. User can't perform requested CGI action
+          schema:
+            $ref: '#/definitions/ResponseError'
+        '403':
+          description: forbidden. The requested CGI action is not allowed
+          schema:
+            $ref: '#/definitions/ResponseError'
+        '404':
+          description: not Found. The request action was not found on the server
+          schema:
+            $ref: '#/definitions/ResponseError'
+        '406':
+          description: not Acceptable request
+          schema:
+            $ref: '#/definitions/ResponseError'
+        '408':
+          description: search timeout
+          schema:
+            $ref: '#/definitions/ResponseError'
+        '429':
+          description: too Many CGI Requests
+        '500':
+          description: internal CGI server error
+          schema:
+            $ref: '#/definitions/ResponseError'
+        '504':
+          description: response timeout
+definitions:
+  ARAttributes:
+    minProperties: 1
+    properties:
+      numbers:
+        items:
+          $ref: '#/definitions/AccountsReceivableNumber'
+        minItems: 1
+        type: array
+      types:
+        items:
+          $ref: '#/definitions/AccountsReceivableType'
+        minItems: 1
+        type: array
+    type: object
+  AccountsReceivableForCreation:
+    description: section for the AR information of the Organization
+    minProperties: 1
+    properties:
+      billingContact:
+        $ref: '#/definitions/UniqueId'
+      creditLimit:
+        minProperties: 1
+        properties:
+          amount:
+            $ref: '#/definitions/Value'
+          currency:
+            $ref: '#/definitions/Currency'
+          isMonitored:
+            description: indicates if the credit limit monitoring is enabled
+            example: true
+            type: boolean
+        type: object
+      dueDays:
+        description: due days of the receivable
+        example: 30
+        type: integer
+      email:
+        $ref: '#/definitions/EmailAddress'
+      isActive:
+        description: indicates if the AR is active
+        example: true
+        type: boolean
+      modifiedAt:
+        $ref: '#/definitions/DateTime'
+      modifiedBy:
+        description: corresponds to the USER ID/name of the last user updating this AR. This field is managed by the UI
+        example: John Doe
+        minLength: 1
+        type: string
+      number:
+        $ref: '#/definitions/AccountsReceivableNumber'
+      type:
+        example: TBD
+        minLength: 1
+        type: string
+    type: object
+  AccountsReceivableForSearch:
+    description: search criteria for Organizational profiles with Accounts Receivable information
+    maxProperties: 1
+    minProperties: 1
+    properties:
+      attributes:
+        $ref: '#/definitions/ARAttributes'
+      hasARInfo:
+        example: true
+        type: boolean
+    type: object
+  AccountsReceivableNumber:
+    description: accounts Receivable number is an internal identifier for the Organization. This number is unique per Property (for Property profiles) or per Chain (for Chain profiles). Once this number is used in the Property, it cannot be assigned to any other Organizational Profile in the same Property (for Property profiles) or Chain (for Chain profiles). If not provided in input, CGI generates it
+    example: '123456789'
+    pattern: ^[1-9]{1}[0-9]{0,8}$
+    type: string
+  AccountsReceivableType:
+    description: 'accounts Receivable type. Ex: Accounts, Credit Cards, Individuals..)'
+    example: TBD
+    minLength: 1
+    type: string
+  AddressBase:
+    allOf:
+      - $ref: '#/definitions/AddressCore'
+      - minProperties: 1
+        properties:
+          countryCode:
+            $ref: '#/definitions/CountryCode'
+          lines:
+            description: line 1 = Street address, Line 2 = Apartment, suite, unit, building, floor, etc
+            items:
+              maxLength: 150
+              type: string
+            maxItems: 5
+            minItems: 1
+            type: array
+          postalBox:
+            description: a post-office box or post office box (P.O. box or a postal box), is to be used when no door-to-door postal service is available. It provides the postal office box number (e.g. BP 220)
+            example: BP220
+            maxLength: 30
+            minLength: 2
+            type: string
+        required:
+          - countryCode
+        type: object
+    description: base address information
+    type: object
+  AddressCore:
+    description: base address information
+    minProperties: 1
+    properties:
+      cityName:
+        $ref: '#/definitions/CityName'
+      countyCode:
+        $ref: '#/definitions/CountyCode'
+      postalCode:
+        $ref: '#/definitions/PostalCode'
+      stateCode:
+        $ref: '#/definitions/StateCode'
+    type: object
+  AddressCriteria:
+    allOf:
+      - minProperties: 1
+        properties:
+          countryCode:
+            $ref: '#/definitions/CountryCode'
+        type: object
+      - $ref: '#/definitions/AddressCore'
+    type: object
+  CityName:
+    description: full city name (e.g. Panama City)
+    example: Panama City
+    maxLength: 100
+    minLength: 2
+    type: string
+  ConfirmationNumber:
+    description: reservation Confirmation Number
+    example: RESA0001
+    pattern: ^[A-Z0-9]{5,12}$
+    maxLength: 12
+    type: string
+  CountryCode:
+    description: country code using ISO 3166-1 standard. ISO conformity not enforced by CGI system
+    example: BR
+    pattern: ^[a-zA-Z]{2}$
+    maxLength: 2
+    type: string
+  CountyCode:
+    description: county code, the use of ISO 3166-2 standard is STRONGLY RECOMMENDED
+    example: GB-BKM
+    maxLength: 25
+    minLength: 1
+    type: string
+  CreditLineInfoForCreation:
+    description: deprecated - Contains Credit Line information of a profile
+    minProperties: 1
+    properties:
+      isCreditStatusHealthy:
+        description: indicates whether the Credit Status of the profile is healthy
+        example: false
+        type: boolean
+      salesLedgerArea:
+        $ref: '#/definitions/SalesLedgerArea'
+    type: object
+  Currency:
+    description: currency codes using - ISO 4217 standard. ISO conformity not enforced by CGI system
+    example: EUR
+    maxLength: 3
+    minLength: 2
+    type: string
+  Date:
+    description: common date and time element with format <YYYY-MM-DD> (ISO8601 date extended)
+    example: '2017-12-31'
+    format: date
+    type: string
+  DateTime:
+    description: common date and time element with format <YYYY-MM-DDThh:mm:ss.sTZD> (ISO8601 date-time extended)
+    example: '1997-07-16T19:20:30.45+01:00'
+    format: date-time
+    type: string
+  DetailType:
+    minProperties: 1
+    properties:
+      code:
+        description: the source does not match any of the enumeration options
+        example: 77000
+        type: integer
+    required:
+      - code
+    type: object
+  DeviceType:
+    enum:
+      - FAX
+      - LANDLINE
+      - MOBILE
+    example: MOBILE
+    type: string
+  DiscountNumber:
+    description: discount Code or number for employees, students, members, on-line shoppers or top retailers/distributors
+    example: AMA50OFF
+    maxLength: 30
+    minLength: 2
+    type: string
+  EmailAddress:
+    description: provides the e-mail address
+    example: test@amadeus.com
+    format: email
+    minLength: 1
+    type: string
+  Error:
+    description: error response message
+    minProperties: 1
+    properties:
+      code:
+        description: error code
+        example: 77000
+        type: integer
+      details:
+        items:
+          $ref: '#/definitions/DetailType'
+        type: array
+      httpStatus:
+        description: the HTTP status code of the response
+        example: 400
+        type: integer
+      message:
+        description: error description message
+        example: Invalid <PARAMETER> on request
+        type: string
+      origin:
+        description: identifies the originator of the error
+        example: Invalid Request
+        type: string
+      path:
+        description: identifies the faulty path
+        example: /hotel/wrong path/CGI/CC/
+        type: string
+    type: object
+  Filter:
+    properties:
+      key:
+        description: path to the search criterion
+        example: identityInformation.shortName
+        minLength: 1
+        type: string
+      values:
+        description: 'values to look for. When more than one are provided, OR relationship will be used for the search. The maximum items that can be used depends on the key (e.g: 100 for corporateID, 10 for IATA code)'
+        items:
+          type: string
+          minLength: 1
+        minItems: 1
+        maxItems: 100
+        type: array
+      operator:
+        description: partial (contains, starts with, ends with) or Exact search is supported in some of the search criteria
+        enum:
+          - Contains
+          - StartsWith
+          - EndsWith
+          - Equals
+        example: StartsWith
+        type: string
+    required:
+      - key
+      - values
+      - operator
+    type: object
+  FiltersType:
+    description: |-
+      indicates which filter type is used at profile search, simple or complex 
+       providing more than one simple filters must be done in the same simpleFilters array. Multiple simpleFilters are not supported by the System
+    properties:
+      simpleFilters:
+        description: flattened list of filter items that have a logical AND conjunction
+        items:
+          $ref: '#/definitions/Filter'
+        minItems: 1
+        type: array
+    minProperties: 1
+    type: object
+  FormattedPhoneNumber:
+    description: |-
+      formatted phone number USED FOR SEARCH (case insensitive).
+      ##Note: Only number and text are considered by the operation. Any other phone filters are not considered. By default, the system checks only the last 6 characters (with EndsWith). When defined, the corresponding FCAM value overrides the default number of characters. Entering number or text with less characters is not allowed
+    minProperties: 1
+    properties:
+      areaCode:
+        description: DEPRECATED. Corresponds to a regional code or a city code. The length of the field varies depending on the area
+        example: '55'
+        pattern: ^[0-9]{1,8}$
+        maxLength: 8
+        type: string
+      countryCode:
+        description: DEPRECATED. Country code of the phone number, as defined by the International Communication Union (E.123 and E.164 standards). E.123 and E.164 standards conformity not enforced by CGI system. Examples - "1" for US, "371" for Latvia
+        example: '52'
+        pattern: ^[0-9]{1,4}$
+        maxLength: 4
+        type: string
+      extension:
+        description: DEPRECATED. Refers to the telephone extension to an internal line number attached to a private branch exchange (PBX) or Centrex system
+        example: '357'
+        pattern: ^[0-9]{1,5}$
+        type: string
+      number:
+        description: formatted phone number arrangement
+        example: '5718589464'
+        pattern: ^[0-9]{1,57}$
+        maxLength: 57
+        type: string
+    type: object
+  IataCode:
+    description: a IATA code provides a unique code for airlines, airports, travel agents and other sales intermediaries, freight forwarders and industry suppliers. This can be used to describe location equipment company or time zone. It is highly recommended for IATA codes to not exceed 16 characters length to avoid interoperability issues with other modules
+    example: IATA
+    maxLength: 30
+    type: string
+  OrganizationalAgencyID:
+    description: provides information related to the organization affiliation data (Agency code and codeContext)
+    minProperties: 1
+    properties:
+      code:
+        description: company code (e.g. 1A). When used with codeContext=IATA, IATA code should be written here! It is highly recommended for IATA codes to not exceed 16 characters length to avoid interoperability issues with other modules
+        example: 1A
+        maxLength: 30
+        minLength: 1
+        type: string
+      codeContext:
+        description: provides contextual information related to the company code. Additionally, this element is used by the CGI system to determine if a code is to be used for search/indexed or not. (e.g. IATA)
+        example: IATA
+        maxLength: 30
+        minLength: 1
+        type: string
+    type: object
+  OrganizationalDiscountForCreation:
+    description: specifies an organizations discount code and rank
+    minProperties: 1
+    properties:
+      discountNumber:
+        $ref: '#/definitions/DiscountNumber'
+      rank:
+        $ref: '#/definitions/Rank'
+    required:
+      - discountNumber
+    type: object
+  OrganizationalReservationForAPI:
+    properties:
+      confirmationNumber:
+        $ref: '#/definitions/ConfirmationNumber'
+      firstSegmentCheckIn:
+        $ref: '#/definitions/Date'
+      organizationIsInSegments:
+        description: the IDs of the Segments where the organization is present
+        items:
+          type: integer
+        minItems: 1
+        type: array
+    type: object
+  OrganizationalReservationSearch:
+    description: when a reservation is used as search criterion, the matching reservations are returned in the search response. If no reservation is used in the search criteria, no reservations are returned in the search response. Appears on demand basis only
+    properties:
+      checkIn:
+        $ref: '#/definitions/Date'
+      confirmationNumber:
+        $ref: '#/definitions/ConfirmationNumber'
+    required:
+      - confirmationNumber
+    type: object
+  OrganizationalSearchRequest:
+    description: organizational search criteria. Minimal field criteria is REQUIRED
+    properties:
+      data:
+        $ref: '#/definitions/OrganizationalSummaryArray'
+    required:
+      - data
+    type: object
+  OrganizationalSearchResponse:
+    description: resulting set of profiles matching the search criteria. The profiles here listed are considered viable candidates for the searched organizational profile based on the given search criteria. Elements are sorted by the system based on the given search criteria. Response order is not guaranteed. If the number of results is too large please consider adding more relevant criteria
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/OrganizationalSummary'
+        maxItems: 200
+        type: array
+      warnings:
+        items:
+          $ref: '#/definitions/Warning'
+        maxItems: 50
+        type: array
+    required:
+      - data
+    type: object
+  OrganizationalSummary:
+    description: contains a brief summary of the organizational data of a profile PLUS its unique ID. This elements is intended to discern organizational profiles apart. If the profile is identified using the summary information, used the given UniqueId to retrieve the full profile
+    minProperties: 1
+    properties:
+      accountsReceivables:
+        items:
+          $ref: '#/definitions/AccountsReceivableForCreation'
+        maxItems: 50
+        minItems: 1
+        type: array
+      address:
+        $ref: '#/definitions/AddressBase'
+      creditLineInformation:
+        items:
+          $ref: '#/definitions/CreditLineInfoForCreation'
+        minItems: 1
+        type: array
+      emailAddress:
+        $ref: '#/definitions/EmailAddress'
+      fullName:
+        description: full company name (e.g. Amadeus IT Group SA)
+        example: Amadeus IT Group SA
+        type: string
+      hasCards:
+        description: this flag indicates if the profile contains cards in its BillingInformation section
+        example: false
+        type: boolean
+      iataCodes:
+        description: the IATA codes of the organization. Returned only if the Organizational profile has a IATA code context
+        items:
+          $ref: '#/definitions/IataCode'
+        maxItems: 10
+        minItems: 1
+        type: array
+      agencyID:
+        description: agency code of the organization
+        items:
+          $ref: '#/definitions/OrganizationalAgencyID'
+        maxItems: 10
+        minItems: 1
+        type: array
+        uniqueItems: true
+      organizationalDiscountNumbers:
+        items:
+          $ref: '#/definitions/OrganizationalDiscountForCreation'
+        maxItems: 100
+        minItems: 1
+        type: array
+      phoneNumber:
+        $ref: '#/definitions/PhoneNumberForSummary'
+      primaryRole:
+        description: defines the main undertakings performed with the profile. When used in an organization with IATA code, this field main objective is to be able to identify profiles from travel agents and other sales intermediaries (AGENCY) from other Organizations with IATA codes (NOT-AGENCY)
+        enum:
+          - AGENCY
+          - NOT-AGENCY
+        example: NOT-AGENCY
+        type: string
+      reservations:
+        description: reservation info associated to the Organization
+        items:
+          $ref: '#/definitions/OrganizationalReservationForAPI'
+        minItems: 1
+        type: array
+      romanizedAddress:
+        $ref: '#/definitions/AddressBase'
+      romanizedFullName:
+        $ref: '#/definitions/RomanizedFullName'
+      romanizedShortName:
+        $ref: '#/definitions/RomanizedShortName'
+      salesLedgerAreas:
+        description: sales Ledger Areas used in search. This field is compared using Exact Pattern matching
+        items:
+          $ref: '#/definitions/SalesLedgerArea'
+        maxItems: 4
+        minItems: 1
+        type: array
+        uniqueItems: true
+      shortName:
+        description: short company name (e.g. Amadeus)
+        example: Amadeus
+        maxLength: 50
+        type: string
+      source:
+        $ref: '#/definitions/Source'
+      specialRates:
+        description: special rates available to the organization
+        items:
+          $ref: '#/definitions/RateIdentifierForCreation'
+        maxItems: 10
+        minItems: 1
+        type: array
+      status:
+        $ref: '#/definitions/Status'
+      uniqueId:
+        $ref: '#/definitions/UniqueId'
+    type: object
+  OrganizationalSummaryArray:
+    description: search criteria for organizational profiles. Please bear in mind that at least ONE of the following criteria MUST BE USED when searching (short Name, Organizational Discount Numbers, IATA code)
+    minProperties: 1
+    properties:
+      filters:
+        description: filters used in search and using a flattened format. The system returns only matching results without checking the format of the input
+        items:
+          $ref: '#/definitions/FiltersType'
+        example:
+          - simpleFilters:
+              - key: org-identityInformation-externalID
+                operator: Equals
+                values:
+                  - ID1234567
+              - key: identityInformation.shortName
+                values:
+                  - shortN1
+                  - shortN2
+                operator: StartsWith
+              - key: identityInformation.fullName
+                values:
+                  - Name1
+                  - Name2
+                operator: EndsWith
+              - key: loyaltyPrograms.corporateID
+                values:
+                  - discountNumber2
+                operator: Equals
+              - key: identityInformation.code
+                values:
+                  - code1
+                  - code2
+                operator: Contains
+              - key: identityInformation.IATAcode
+                values:
+                  - IATAcode1
+                operator: StartsWith
+        minItems: 1
+        type: array
+      accountsReceivable:
+        $ref: '#/definitions/AccountsReceivableForSearch'
+      addresses:
+        description: addresses used in search. These fields are compared using Exact matching (case insensitive)
+        items:
+          $ref: '#/definitions/AddressCriteria'
+        maxItems: 10
+        minItems: 1
+        type: array
+        uniqueItems: true
+      emailAddresses:
+        description: email address used in search. This field is compared using Exact matching
+        items:
+          $ref: '#/definitions/EmailAddress'
+        maxItems: 10
+        minItems: 1
+        type: array
+        uniqueItems: true
+      fullNames:
+        description: organization full-names used in search. This field is compared using Like Pattern matching (Starts with) and the search is case insensitive
+        items:
+          description: full company name (e.g. Amadeus IT Group S.A. North America)
+          example: Amadeus IT Group S.A
+          maxLength: 200
+          type: string
+        maxItems: 10
+        minItems: 1
+        type: array
+        uniqueItems: true
+      iataCodes:
+        description: the IATA code of the organization used in search. This field is compared using using Like Pattern matching (Starts with). Only available for organizations with IATA code
+        items:
+          $ref: '#/definitions/IataCode'
+        maxItems: 10
+        minItems: 1
+        type: array
+        uniqueItems: true
+      organizationalDiscountNumbers:
+        description: organizational discount Numbers (A.K.A. CD#) used in search. This field is compared using exact matching
+        items:
+          $ref: '#/definitions/DiscountNumber'
+        maxItems: 100
+        minItems: 1
+        type: array
+        uniqueItems: true
+      phoneNumbers:
+        description: 'phone numbers used in search. Search is case insensitive. ##Note: Only number and text are considered by the operation. Any other phone filters are not considered. By default, the system checks only the last 6 characters (with EndsWith). When defined, the corresponding FCAM value overrides the default number of characters. Entering number or text with less characters is not allowed'
+        items:
+          $ref: '#/definitions/PhoneNumberForSearch'
+        maxItems: 10
+        minItems: 1
+        type: array
+        uniqueItems: true
+      primaryRoles:
+        description: organization role used in search. This field is compared using Exact matching (case insensitive)
+        items:
+          $ref: '#/definitions/PrimaryOrganizationalRole'
+        maxItems: 2
+        minItems: 1
+        type: array
+        uniqueItems: true
+      reservation:
+        $ref: '#/definitions/OrganizationalReservationSearch'
+      salesLedgerAreas:
+        description: sales Ledger Areas used in search. This field is compared using Exact Pattern matching
+        items:
+          $ref: '#/definitions/SalesLedgerArea'
+        maxItems: 4
+        minItems: 1
+        type: array
+        uniqueItems: true
+      shortNames:
+        description: organization names used in search. This field is compared using Like Pattern matching (Starts with)
+        items:
+          description: short company name (e.g. Amadeus)
+          example: Amadeus
+          maxLength: 50
+          type: string
+        maxItems: 10
+        minItems: 1
+        type: array
+        uniqueItems: true
+      sources:
+        description: sources in which search is performed. If the user don't have access to one of the sources, CGI respond with an error message
+        items:
+          $ref: '#/definitions/Source'
+        minItems: 1
+        type: array
+        uniqueItems: true
+      specialRates:
+        description: special rates available to the organization used in search. This field is compared using Exact matching
+        items:
+          $ref: '#/definitions/RateIdentifierForCreation'
+        maxItems: 10
+        minItems: 1
+        type: array
+        uniqueItems: true
+      statuses:
+        description: profiles statuses used in search. This field is compared using Exact matching. If not present only ACTIVE profiles are returned
+        items:
+          $ref: '#/definitions/Status'
+        maxItems: 5
+        minItems: 1
+        type: array
+        uniqueItems: true
+    type: object
+  PhoneNumberForSearch:
+    allOf:
+      - $ref: '#/definitions/FormattedPhoneNumber'
+      - properties:
+          text:
+            $ref: '#/definitions/UnformattedPhoneNumber'
+        type: object
+    minProperties: 1
+    type: object
+  PhoneNumberForSummary:
+    allOf:
+      - $ref: '#/definitions/FormattedPhoneNumber'
+      - properties:
+          deviceType:
+            $ref: '#/definitions/DeviceType'
+          purposes:
+            items:
+              $ref: '#/definitions/Purpose'
+            maxItems: 5
+            minItems: 1
+            type: array
+          text:
+            $ref: '#/definitions/UnformattedPhoneNumber'
+        type: object
+    minProperties: 1
+    type: object
+  PostalCode:
+    description: also known as a postcode, post code, PIN Code or ZIP Code. Series of letters or digits or both, sometimes including spaces or punctuation, with the purpose of sorting mail
+    example: '06600'
+    maxLength: 30
+    minLength: 2
+    type: string
+  PrimaryOrganizationalRole:
+    description: defines the main undertakings performed with the profile
+    enum:
+      - AGENCY
+      - NOT-AGENCY
+    example: NOT-AGENCY
+    type: string
+  Purpose:
+    description: defines functional intent of an element in the CGI profile (e.g. The telephone number +5718675557 is intended for EMERGENCY contact)
+    enum:
+      - MARKETING
+      - NOTIFICATION
+      - OPERATIONAL
+      - EMERGENCY
+      - BILLING
+      - BOOKING
+      - OTHER
+      - ANY
+    example: MARKETING
+    type: string
+  Rank:
+    description: if several elements of same type are provided (document, contact, preferences, etc.), the rank indicates which element should be considered in priority. Rank "1" indicates the highest priority. Rank "100" indicates the lowest priority.100. RANK "0" OR ABSENCE OF RANK (VOID) INDICATES NO PREFERENCE. Please consider that the rank will affect the result on the search and aggregated feature. Rank overwrites the search request data
+    example: 1
+    maximum: 100
+    minimum: 0
+    type: integer
+  RateIdentifierForCreation:
+    description: describes the Guest subscription box services used to increase customer/guest retention and satisfaction
+    minProperties: 1
+    properties:
+      rank:
+        $ref: '#/definitions/Rank'
+      rateCode:
+        description: rate plan code
+        example: ICOR
+        maxLength: 10
+        minLength: 1
+        type: string
+    required:
+      - rateCode
+    type: object
+  ResponseError:
+    properties:
+      error:
+        $ref: '#/definitions/Error'
+    type: object
+  RomanizedFullName:
+    description: 'romanized full company name (e.g. Amadeus IT Group S.A. North America) '
+    example: Amadeus IT Group S.A.
+    maxLength: 200
+    minLength: 1
+    type: string
+  RomanizedShortName:
+    description: 'romanized short company name (e.g. Amadeus) '
+    example: Amadeus
+    maxLength: 100
+    minLength: 1
+    type: string
+  SalesLedgerArea:
+    description: indicates the area where a Sales Ledger is applicable
+    example: IE
+    maxLength: 200
+    minLength: 1
+    type: string
+  Source:
+    description: generic numeric codes associated to a logical, technical or distribution source. Special permissions are associated to it. (e.g. 1 - Call center)
+    example: '3'
+    pattern: ^[0-9a-zA-Z]{1,10}$
+    maxLength: 10
+    type: string
+  StateCode:
+    description: state code, the use of ISO 3166-2 standard is STRONGLY RECOMMENDED
+    example: PA-1
+    maxLength: 25
+    type: string
+  Status:
+    description: common status element for profiles. SUSPENDED, UNACTIVATED and CANCELLED are deprecated and will not be present in future versions
+    enum:
+      - ACTIVE
+      - CANCELLED
+      - SUSPENDED
+      - INACTIVE
+      - UNACTIVATED
+    example: ACTIVE
+    type: string
+  UnformattedPhoneNumber:
+    description: unformatted phone number can be composed of digits, spaces and symbols
+    example: + 57 1 858 94 64
+    maxLength: 50
+    minLength: 1
+    type: string
+  UniqueId:
+    description: the unique alphanumeric value identifier for a profile
+    example: 99976a53-99a-7bc6-81ce-9a88a777c666
+    pattern: ^[a-zA-Z0-9-]{1,50}$
+    maxLength: 50
+    type: string
+  Value:
+    description: generic value container. Needs to be used with currency for meaning
+    example: '267.99'
+    pattern: ^[0,.-9]{1,50}$
+    maxLength: 50
+    type: string
+  Warning:
+    properties:
+      code:
+        description: warning code
+        example: 12345
+        type: integer
+      details:
+        description: list of sub warning codes (internal)
+        items:
+          $ref: '#/definitions/DetailType'
+        type: array
+      httpStatus:
+        description: the HTTP status code of the response
+        example: 200
+        type: integer
+      id:
+        description: id of the warning, used to link the warning to a specific element in the response
+        example: 56789
+        type: integer
+      message:
+        description: warning description message
+        type: string
+    required:
+      - message
+      - code
+    type: object
+x-metadata:
+  status: 0

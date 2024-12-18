@@ -1,0 +1,11 @@
+{
+	"confirmationNumber": "M03D1E2A1",
+	"firstName": "Lakshmi",
+	"lastName": "Test",
+	"tripDetails": {
+		"checkInDate": "2021-02-15",
+		"checkOutDate": "2021-02-16",
+        "numAdults": 2,
+        "numRooms": 1
+	}
+}

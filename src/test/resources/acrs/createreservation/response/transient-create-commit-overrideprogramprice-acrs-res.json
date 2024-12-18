@@ -1,0 +1,766 @@
+{
+  "data": {
+    "creator": {
+      "hotelSource": "MV021",
+      "vendorCode": "ICECC",
+      "vendorName": "ICE Call center",
+      "vendorTypes": [
+        2
+      ],
+      "channelCode": "CC",
+      "metricsCode": "M02",
+      "reportingData": {
+        "channel": "Contact Center",
+        "channelClass": "Voice",
+        "channelType": "Branded",
+        "subChannel": "Contact Center",
+        "code": "TFITIC"
+      },
+      "metricsName": "ICE metrics"
+    },
+    "requestor": {
+      "vendorCode": "OPERA",
+      "vendorName": "OPERA PMS",
+      "vendorTypes": [
+        1
+      ],
+      "channelCode": "PM",
+      "metricsCode": "M01",
+      "reportingData": {
+        "code": "TFITIC"
+      },
+      "metricsName": "PMS metrics"
+    },
+    "hotelReservation": {
+      "authenticatedUser": {
+        "userId": "WSMGM00OPA",
+        "userFirstName": "Robotic user for Ope",
+        "userLastName": "WSMGM00OPA"
+      },
+      "status": "MY",
+      "lastUpdateDateTime": "2022-10-04T21:34:31",
+      "lastUpdateDateTimeHotelLocalTime": "2022-10-04T14:34:31",
+      "imageStatus": "Committed",
+      "creationDateTime": "2022-10-04T21:33:03",
+      "reservationIds": {
+        "cfNumber": "2ESQWOH4XJ",
+        "imageId": 2,
+        "pmsCfNumber": "890556357",
+        "committedSequenceNumber": 2
+      },
+      "hotels": [
+        {
+          "chainCode": "MGM",
+          "brandCode": "MV",
+          "propertyCode": "MV021",
+          "propertyName": "New York New York",
+          "countryCode": "US",
+          "cityCode": "LAS",
+          "regionCode": "01",
+          "propertyCurrency": "USD",
+          "guestTypeDefinitions": [
+            {
+              "code": "CHILD",
+              "startAge": 0,
+              "endAge": 20
+            },
+            {
+              "code": "ADULT",
+              "startAge": 21
+            }
+          ]
+        }
+      ],
+      "type": "Individual",
+      "ratePlans": [
+        {
+          "code": "AAA10",
+          "name": {
+            "en": [
+              "AAA Member Discount"
+            ]
+          },
+          "areAmountsConfidential": false,
+          "isIdRequired": true,
+          "isLoyaltyIdRequired": false,
+          "isVoucherRequired": false,
+          "isRewardEarned": false,
+          "isTentativeAllowed": false,
+          "isGroupRatePlan": false,
+          "isFreeNight": false,
+          "isAwardAccepted": false,
+          "isPackage": false,
+          "isHouseUse": false,
+          "isComplimentary": false,
+          "types": [
+            "RPT1"
+          ],
+          "priceGridCode": "LTO10",
+          "bookingMessage": {
+            "en": [
+              "Testing"
+            ]
+          },
+          "maxLOS": 14,
+          "isCommissionable": false
+        }
+      ],
+      "products": [
+        {
+          "inventoryTypeCode": "DWVK",
+          "productCode": "SR",
+          "maximumNumberParticipant": 3,
+          "yieldClass": "03",
+          "inventoryTypeName": {
+            "en": [
+              "Stay Well Park Avenue King View"
+            ]
+          },
+          "pacCode": "PU5R",
+          "attributeCodes": [
+            "1KING",
+            "350SQFT",
+            "MAX3",
+            "STAYWELL",
+            "VIEW"
+          ],
+          "description": {
+            "en": [
+              "Stay Well Park Avenue King View"
+            ]
+          }
+        }
+      ],
+      "attributes": [
+        {
+          "code": "1KING",
+          "name": {
+            "en": [
+              "1 King bed type"
+            ]
+          },
+          "description": {
+            "en": [
+              "1 King bed type"
+            ]
+          }
+        },
+        {
+          "code": "350SQFT",
+          "name": {
+            "en": [
+              "350 Square Feet"
+            ]
+          },
+          "description": {
+            "en": [
+              "350 Square Feet"
+            ]
+          }
+        },
+        {
+          "code": "MAX3",
+          "name": {
+            "en": [
+              "Max occupancy of 3"
+            ]
+          },
+          "description": {
+            "en": [
+              "Max occupancy of 3"
+            ]
+          }
+        },
+        {
+          "code": "STAYWELL",
+          "name": {
+            "en": [
+              "Stay well amenities"
+            ]
+          },
+          "description": {
+            "en": [
+              "Stay well amenities"
+            ]
+          }
+        },
+        {
+          "code": "VIEW",
+          "name": {
+            "en": [
+              "Floor to ceiling window"
+            ]
+          },
+          "description": {
+            "en": [
+              "Floor to ceiling window"
+            ]
+          }
+        }
+      ],
+      "segments": [
+        {
+          "propertyCode": "MV021",
+          "synchroNumber": 1,
+          "id": 1,
+          "bookerId": 1,
+          "creationDateTime": "2022-10-04T21:33:03",
+          "creationDateTimeHotelLocalTime": "2022-10-04T14:33:03",
+          "lastUpdateDateTime": "2022-10-04T21:33:09",
+          "lastUpdateDateTimeHotelLocalTime": "2022-10-04T14:33:09",
+          "start": "2022-10-16",
+          "end": "2022-10-17",
+          "segmentHolderId": 1,
+          "customData": {
+            "pp": "PREVL",
+            "b": [
+              {
+                "p": "PREVL",
+                "d": "2022-10-16",
+                "r": 25.0
+              }
+            ]
+          },
+          "actionStatus": "FH",
+          "formOfPayment": {
+            "paymentInfo": {
+              "amount": "22.68",
+              "informerVendorCode": "ICECC",
+              "paymentStatus": "Payment received",
+              "paymentIntent": "Deposit"
+            },
+            "depositPayments": [
+              {
+                "id": 1,
+                "amount": "22.68",
+                "paymentStatus": "Payment received",
+                "paymentType": 5,
+                "paymentCard": {
+                  "cardCode": "MC",
+                  "expireDate": "1222",
+                  "cardNumber": {
+                    "token": "5555555555554444"
+                  },
+                  "cardHolderName": "temp111 temp222",
+                  "isCNP": false,
+                  "billingAddress": {
+                    "addressLines": [
+                      "409yyy",
+                      "Gada"
+                    ],
+                    "cityName": "Murrieta",
+                    "postalCode": "L5B4M8",
+                    "stateProv": "CA",
+                    "countryCode": "CA"
+                  }
+                },
+                "paymentIntent": "Deposit",
+                "paymentRecordId": "01Z6KEPNGL97U6C356EBB6HI2MSQGERW",
+                "transactionDate": "2022-10-04T21:33:06"
+              }
+            ]
+          },
+          "offer": {
+            "productUses": [
+              {
+                "id": 1,
+                "period": {
+                  "start": "2022-10-16",
+                  "end": "2022-10-17"
+                },
+                "inventoryTypeCode": "DWVK",
+                "productRates": {
+                  "hasRateChange": false,
+                  "dailyRates": [
+                    {
+                      "start": "2022-10-16",
+                      "end": "2022-10-17",
+                      "dailyTotalRate": {
+                        "bsAmt": "20.00",
+                        "amtBfTx": "20.00",
+                        "amtAfTx": "22.68",
+                        "payableAmtAfTx": "22.68",
+                        "totalTaxes": "2.68",
+                        "taxList": [
+                          {
+                            "amount": "2.68",
+                            "taxCode": "OCTAX",
+                            "isIncludedInRate": false,
+                            "otaCode": "FTT10",
+                            "taxDefIds": [
+                              0
+                            ]
+                          },
+                          {
+                            "amount": "0.00",
+                            "taxCode": "RSFTX",
+                            "isIncludedInRate": false,
+                            "otaCode": "FTT10",
+                            "taxDefIds": [
+                              2
+                            ]
+                          },
+                          {
+                            "amount": "0.00",
+                            "taxCode": "RSFEE",
+                            "isIncludedInRate": false,
+                            "otaCode": "FTT12",
+                            "taxDefIds": [
+                              1
+                            ]
+                          }
+                        ],
+                        "subTotalServiceCharges": [
+                          {
+                            "amount": "0.00",
+                            "isIncludedInRate": false
+                          }
+                        ],
+                        "subTotalTaxes": [
+                          {
+                            "amount": "2.68",
+                            "isIncludedInRate": false,
+                            "payHotelAmount": "0.00",
+                            "payableAmount": "2.68"
+                          }
+                        ],
+                        "rateDefId": 0
+                      }
+                    }
+                  ],
+                  "requestedRates": [
+                    {
+                      "start": "2022-10-16",
+                      "end": "2022-10-17",
+                      "base": {
+                        "amount": "20.00",
+                        "overrideInd": true,
+                        "originalBaseRates": [
+                          {
+                            "start": "2022-10-16",
+                            "end": "2022-10-17",
+                            "bsAmt": "22.50"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "ratesDefinition": {
+                    "rateChanges": [
+                      {
+                        "id": 0,
+                        "start": "2022-10-16",
+                        "end": "2022-10-17",
+                        "amount": "20.00"
+                      }
+                    ]
+                  },
+                  "taxInclusionMode": "followHouse",
+                  "pricingFrequency": "PerNight",
+                  "pricingMethod": "PerProductPerOcc",
+                  "totalRate": {
+                    "daily": [
+                      {
+                        "bsAmt": "20.00",
+                        "amtBfTx": "20.00",
+                        "payableAmtAfTx": "22.68",
+                        "amtAfTx": "22.68",
+                        "amtType": "Average"
+                      },
+                      {
+                        "bsAmt": "20.00",
+                        "amtBfTx": "20.00",
+                        "payableAmtAfTx": "22.68",
+                        "amtAfTx": "22.68",
+                        "amtType": "Checkin"
+                      }
+                    ],
+                    "payableAmtAfTx": "22.68",
+                    "taxGroups": [
+                      {
+                        "amount": "2.68",
+                        "taxCode": "OCTAX",
+                        "isIncludedInRate": false,
+                        "otaCode": "FTT10",
+                        "taxDefIds": [
+                          0
+                        ]
+                      },
+                      {
+                        "amount": "0.00",
+                        "taxCode": "RSFTX",
+                        "isIncludedInRate": false,
+                        "otaCode": "FTT10",
+                        "taxDefIds": [
+                          2
+                        ]
+                      },
+                      {
+                        "amount": "0.00",
+                        "taxCode": "RSFEE",
+                        "isIncludedInRate": false,
+                        "otaCode": "FTT12",
+                        "taxDefIds": [
+                          1
+                        ]
+                      }
+                    ],
+                    "bsAmt": "20.00",
+                    "amtBfTx": "20.00",
+                    "totalTaxes": "2.68",
+                    "amtAfTx": "22.68",
+                    "payableTotalTaxes": "2.68",
+                    "payHotelTotalTaxes": "0.00",
+                    "subTotalServiceCharges": [
+                      {
+                        "amount": "0.00",
+                        "isIncludedInRate": false
+                      }
+                    ],
+                    "subTotalTaxes": [
+                      {
+                        "amount": "2.68",
+                        "isIncludedInRate": false,
+                        "payHotelAmount": "0.00",
+                        "payableAmount": "2.68"
+                      }
+                    ]
+                  }
+                },
+                "quantity": 1,
+                "guestCounts": [
+                  {
+                    "count": 2,
+                    "otaCode": "AQC10",
+                    "guestType": "ADULT"
+                  }
+                ],
+                "totalGuestCounts": [
+                  {
+                    "count": 2,
+                    "otaCode": "AQC10",
+                    "guestType": "ADULT"
+                  }
+                ],
+                "specialRateInd": "R",
+                "isMainProduct": true,
+                "ratePlanCode": "AAA10"
+              }
+            ],
+            "policyTypeCode": "CC",
+            "policies": {
+              "checkinTime": "15:00:00",
+              "checkoutTime": "11:00:00",
+              "isPrepaid": true,
+              "deposit": {
+                "isRequired": true,
+                "acceptedDeposits": {
+                  "acceptedFops": [
+                    "travelAgencyIata",
+                    "paymentCard"
+                  ],
+                  "creditCards": [
+                    "AX",
+                    "CU",
+                    "DC",
+                    "DS",
+                    "JC",
+                    "MC",
+                    "VI"
+                  ]
+                },
+                "amount": "22.68",
+                "feeType": "Nights",
+                "feeValue": 1,
+                "deadline": {
+                  "dateTime": "2022-10-04T14:33:03",
+                  "deadlineType": "atBooking"
+                }
+              },
+              "cancellationNoShow": {
+                "deadline": {
+                  "dateTime": "2022-10-04T00:00:00",
+                  "deadlineType": "atBooking"
+                },
+                "isGracePeriod": false,
+                "amount": "22.68",
+                "feeType": "Nights",
+                "feeValue": "1"
+              }
+            },
+            "totalRate": {
+              "daily": [
+                {
+                  "bsAmt": "20.00",
+                  "amtBfTx": "20.00",
+                  "payableAmtAfTx": "22.68",
+                  "amtAfTx": "22.68",
+                  "amtType": "Average"
+                },
+                {
+                  "bsAmt": "20.00",
+                  "amtBfTx": "20.00",
+                  "payableAmtAfTx": "22.68",
+                  "amtAfTx": "22.68",
+                  "amtType": "Checkin"
+                }
+              ],
+              "payableAmtAfTx": "22.68",
+              "taxGroups": [
+                {
+                  "amount": "2.68",
+                  "taxCode": "OCTAX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT10",
+                  "taxDefIds": [
+                    0
+                  ]
+                },
+                {
+                  "amount": "0.00",
+                  "taxCode": "RSFTX",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT10",
+                  "taxDefIds": [
+                    2
+                  ]
+                },
+                {
+                  "amount": "0.00",
+                  "taxCode": "RSFEE",
+                  "isIncludedInRate": false,
+                  "otaCode": "FTT12",
+                  "taxDefIds": [
+                    1
+                  ]
+                }
+              ],
+              "bsAmt": "20.00",
+              "amtBfTx": "20.00",
+              "totalTaxes": "2.68",
+              "amtAfTx": "22.68",
+              "payableTotalTaxes": "2.68",
+              "payHotelTotalTaxes": "0.00",
+              "subTotalServiceCharges": [
+                {
+                  "amount": "0.00",
+                  "isIncludedInRate": false
+                }
+              ],
+              "subTotalTaxes": [
+                {
+                  "amount": "2.68",
+                  "isIncludedInRate": false,
+                  "payHotelAmount": "0.00",
+                  "payableAmount": "2.68"
+                }
+              ]
+            },
+            "nightlyCorpMarketSegments": [
+              {
+                "start": "2022-10-16",
+                "end": "2022-10-17",
+                "value": "TPKG"
+              }
+            ],
+            "corpMarketSegment": "TPKG"
+          },
+          "creator": {
+            "hotelSource": "MV021",
+            "vendorCode": "ICECC",
+            "vendorName": "ICE Call center",
+            "vendorTypes": [
+              2
+            ],
+            "channelCode": "CC",
+            "metricsCode": "M02",
+            "reportingData": {
+              "channel": "Contact Center",
+              "channelClass": "Voice",
+              "channelType": "Branded",
+              "subChannel": "Contact Center",
+              "code": "TFITIC"
+            },
+            "metricsName": "ICE metrics"
+          },
+          "requestor": {
+            "hotelSource": "MV021",
+            "vendorCode": "ICECC",
+            "vendorName": "ICE Call center",
+            "vendorTypes": [
+              2
+            ],
+            "channelCode": "CC",
+            "metricsCode": "M02",
+            "reportingData": {
+              "code": "TFITIC"
+            },
+            "metricsName": "ICE metrics"
+          },
+          "indicators": {
+            "isConfirmed": true,
+            "isPaidByPoints": false,
+            "hasRateOverride": true
+          },
+          "lateArrivalTime": "00:00:00",
+          "consolidatedSegmentStatus": "Guaranteed",
+          "segmentStatus": "BK",
+          "channelPreferredRate": "Check-in",
+          "channelExtraPersonChargeIncluded": true,
+          "taxDefinitions": [
+            {
+              "id": 0,
+              "taxTypeCode": "FTT10",
+              "description": {
+                "en": [
+                  "Occupancy Tax 1"
+                ]
+              },
+              "longDescription": {
+                "en": [
+                  "Occupancy Tax"
+                ]
+              },
+              "chargeUnit": "PerProduct",
+              "chargeFrequency": "PerDay",
+              "values": [
+                {
+                  "value": "13.38"
+                }
+              ],
+              "computationType": "Percentage",
+              "isIncluded": false,
+              "name": "Occupancy Tax",
+              "start": "2022-10-16",
+              "end": "2022-10-17",
+              "code": "OCTAX",
+              "computationMode": "TaxOnRate"
+            },
+            {
+              "id": 1,
+              "taxTypeCode": "FTT12",
+              "description": {
+                "en": [
+                  "Resort Fee"
+                ]
+              },
+              "longDescription": {
+                "en": [
+                  "Resort Fee"
+                ]
+              },
+              "chargeUnit": "PerProduct",
+              "chargeFrequency": "PerDay",
+              "values": [
+                {
+                  "value": "0.00"
+                }
+              ],
+              "computationType": "Flat",
+              "currency": "USD",
+              "isIncluded": false,
+              "name": "Resort Fee",
+              "start": "2022-10-16",
+              "end": "2022-10-17",
+              "code": "RSFEE",
+              "computationMode": "TaxOnRate"
+            },
+            {
+              "id": 2,
+              "taxTypeCode": "FTT10",
+              "description": {
+                "en": [
+                  "Resort Fee Tax"
+                ]
+              },
+              "longDescription": {
+                "en": [
+                  "Resort Fee Tax"
+                ]
+              },
+              "chargeUnit": "PerProduct",
+              "chargeFrequency": "PerDay",
+              "values": [
+                {
+                  "value": "0.00"
+                }
+              ],
+              "computationType": "Percentage",
+              "isIncluded": false,
+              "name": "Resort Fee Tax",
+              "start": "2022-10-16",
+              "end": "2022-10-17",
+              "code": "RSFTX",
+              "computationMode": "TaxOnRate",
+              "isPaidAtHotel": true
+            }
+          ],
+          "cancelByHotelOnly": false,
+          "totalSegment": {
+            "finalPriceAmt": "22.68"
+          }
+        }
+      ],
+      "userProfiles": [
+        {
+          "id": 1,
+          "personName": {
+            "surname": "Temp222",
+            "givenName": "Temp111"
+          },
+          "addresses": [
+            {
+              "addressLines": [
+                "409yyy",
+                "Gada"
+              ],
+              "cityName": "Murrieta",
+              "postalCode": "L5B4M8",
+              "stateProv": "CA",
+              "countryCode": "CA",
+              "type": 1
+            }
+          ],
+          "telephones": [
+            {
+              "number": "8888888888",
+              "locationType": 6,
+              "deviceType": 1
+            }
+          ],
+          "emails": [
+            {
+              "address": "hjghg@gmail.com",
+              "type": 1
+            }
+          ]
+        }
+      ],
+      "totalReservation": [
+        {
+          "bsAmt": "20.00",
+          "finalPriceAmt": "22.68",
+          "amtBfTx": "20.00",
+          "amtAfTx": "22.68",
+          "totalTaxes": "2.68",
+          "currency": "USD",
+          "payableTotalTaxes": "2.68",
+          "payHotelTotalTaxes": "0.00"
+        }
+      ],
+      "totalOfActiveSegments": [
+        {
+          "bsAmt": "20.00",
+          "finalPriceAmt": "22.68",
+          "amtBfTx": "20.00",
+          "amtAfTx": "22.68",
+          "totalTaxes": "2.68",
+          "currency": "USD",
+          "payableTotalTaxes": "2.68",
+          "payHotelTotalTaxes": "0.00"
+        }
+      ],
+      "printRate": true
+    }
+  }
+}

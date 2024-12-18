@@ -1,0 +1,1490 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "contact": {
+      "name": "Amadeus Hospitality Systems Integration Support"
+    },
+    "description": "The group API of the Amadeus Hospitality CRS application.\nIt comprises how to create, modify, cancel, migrate, retrieve, commit and ignore group.\n",
+    "license": {
+      "name": "Amadeus IT Group SA",
+      "url": "https://www.amadeus.com"
+    },
+    "termsOfService": "https://developers.amadeus.com",
+    "title": "1A_REST_JSON_Group",
+    "x-release-note": {
+      "1.0.2": [
+        "########## Other Changes ##########",
+        "data.group.offer becomes optional in the reply",
+        "data.group.products becomes optional in the reply"
+      ],
+      "1.0.1": [
+        "########## Other Changes ##########",
+        ".data.offer.productUses - link fixed in request API"
+      ],
+      "1.0.0": "New API"
+    },
+    "version": "1.0.2"
+  },
+  "basePath": "/v1",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "tags": [
+    {
+      "name": "Retrieve Operations"
+    },
+    {
+      "name": "1-Step Operations"
+    }
+  ],
+  "paths": {
+    "/group-and-allotments/chains/{chainCode}/groups/search": {
+      "post": {
+        "tags": [
+          "Retrieve Operations"
+        ],
+        "operationId": "postSearchGroups",
+        "summary": "search",
+        "description": "This service gives the possibility to the API users to search for any Group. The request must include the criteria used to identify the groups wished. \n\n The system responds to the users with the list of group images corresponding to the criteria.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/Ama-Pos"
+          },
+          {
+            "$ref": "#/parameters/Ama-Reservation-Owner"
+          },
+          {
+            "$ref": "#/parameters/Ama-Channel-Identifiers"
+          },
+          {
+            "$ref": "#/parameters/Ama-Remote-Jump-Data"
+          },
+          {
+            "$ref": "#/parameters/searchGroup"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/groupSearchResponse-groupBookingReservationSearch"
+          },
+          "400": {
+            "$ref": "#/responses/400"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "403": {
+            "$ref": "#/responses/403"
+          },
+          "404": {
+            "$ref": "#/responses/404"
+          },
+          "500": {
+            "$ref": "#/responses/500"
+          },
+          "504": {
+            "$ref": "#/responses/504"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/parameters/ChainCode"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "corporateAccountInfoSearchRes": {
+      "type": "object",
+      "title": "corporateAccountInfoSearchRes",
+      "properties": {
+        "accountName": {
+          "$ref": "#/definitions/accountName"
+        }
+      }
+    },
+    "groupOfferSearchRes": {
+      "type": "object",
+      "title": "groupOfferSearchRes",
+      "description": "details about the selected offer",
+      "required": [
+        "productUses"
+      ],
+      "properties": {
+        "productUses": {
+          "$ref": "#/definitions/productUseSearchRes"
+        }
+      }
+    },
+    "businessSource": {
+      "description": "Business source of the group contract",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "reservationMethod": {
+      "description": "Reservation method to create the pickUp reservations",
+      "example": "Call-In, List import",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "GroupCode": {
+      "description": "Group code, identifies the product in case the reservation is for a group. Group code and rate plan code are mutually exclusive",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "groupSearchReq": {
+      "type": "object",
+      "title": "groupSearchReq",
+      "properties": {
+        "agencyName": {
+          "description": "Name of the agency. For inputs, the service searches for groups with agency name's starting with, ending with or containing characters using wildcard expression (STA*, *END, *CONT*). For inputs where wildcard expression (*) is not used, the service searches for groups with exact match of agency name.",
+          "type": "string"
+        },
+        "arrivalDate": {
+          "description": "Date range of arrival date (group Start date)",
+          "$ref": "#/definitions/searchPeriod"
+        },
+        "bookerFirstName": {
+          "description": "First name of the booker. For inputs, the service searches for groups with booker first name's starting with, ending with or containing characters using wildcard expression (STA*, *END, *CONT*). For inputs where wildcard expression (*) is not used, the service searches for groups with exact match of booker first name.",
+          "type": "string"
+        },
+        "bookerLastName": {
+          "description": "Last name of the booker. For inputs, the service searches for groups with booker last name's starting with, ending with or containing characters using wildcard expression (STA*, *END, *CONT*). For inputs where wildcard expression (*) is not used, the service searches for groups with exact match of booker last name.",
+          "type": "string"
+        },
+        "cdNumber": {
+          "description": "Corporate discount Number entered for group",
+          "type": "string",
+          "pattern": "[A-Za-z0-9]{1,20}",
+          "minLength": 1,
+          "maxLength": 20
+        },
+        "corporateAccountName": {
+          "description": "Name of the corporate account. For inputs, the service searches for groups with corporate account name's starting with, ending with or containing characters using wildcard expression (STA*, END*, *CONT*). For inputs where wildcard expression (*) is not used, the service searches for groups with exact match of corporate account name.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 35
+        },
+        "departureDate": {
+          "description": "Date range of departure date (group end date)",
+          "$ref": "#/definitions/searchPeriod"
+        },
+        "firstName": {
+          "description": "First name of the guest. For inputs, the service searches for groups with guest first name's starting with, ending with or containing characters using wildcard expression (STA*, *END, *CONT*). For inputs where wildcard expression (*) is not used, the service searches for groups with exact match of first name.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 56
+        },
+        "groupCode": {
+          "description": "It is the identifier code of a group. For inputs, the service searches for groups with group code's starting with, ending with or containing characters using wildcard expression (STA*, *END, *CONT*). For inputs where wildcard expression (*) is not used, the service searches for groups with exact match of group code. The wildcard expression could be used if the criteria is used along with other criteria. If it is the only criteria, exact match must be used.",
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 51
+        },
+        "groupContractSaleStatus": {
+          "description": "Sale status of the group contract. The list of accepted values are configurable in the system.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "groupName": {
+          "description": "It is a name of a group. For inputs, the service searches for groups with group name's starting with, ending with or containing characters using wildcard expression (STA*, *END, *CONT*). For inputs where wildcard expression (*) is not used, the service searches for groups with exact match of group name.",
+          "type": "string"
+        },
+        "lastName": {
+          "description": "Last name of the guest. For inputs, the service searches for groups with guest first name's starting with, ending with or containing characters using wildcard expression (STA*, *END, *CONT*). For inputs where wildcard expression (*) is not used, the service searches for groups with exact match of last name.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 57
+        },
+        "loyaltyId": {
+          "description": "Loyalty identifier of the group holder.",
+          "type": "string",
+          "pattern": "[A-Za-z0-9]{1,28}",
+          "minLength": 1,
+          "maxLength": 28
+        },
+        "industryType": {
+          "description": "Determines the industry type of the group",
+          "type": "string"
+        },
+        "inventoryTypeCode": {
+          "description": "Product type of the group.",
+          "type": "string"
+        },
+        "propertyCodes": {
+          "type": "array",
+          "description": "Property codes.",
+          "items": {
+            "$ref": "#/definitions/propertyCode"
+          }
+        },
+        "groupPmsStatus": {
+          "type": "array",
+          "description": "group status on PMS side",
+          "items": {
+            "type": "string",
+            "enum": [
+              "In-house",
+              "Checked out",
+              "No-show"
+            ]
+          }
+        },
+        "groupStatus": {
+          "description": "Status of the groups expected in result booked (BK), modified (MY) or cancelled (CL)",
+          "type": "array",
+          "items": {
+            "enum": [
+              "BK",
+              "MY",
+              "CL"
+            ],
+            "type": "string"
+          }
+        },
+        "retrieveMode": {
+          "description": "Type of result expected for the search, displayList to return the list of groups, checkOneFound to check if at least one group matches the criteria.",
+          "enum": [
+            "displayList",
+            "checkOneFound"
+          ]
+        },
+        "stayPeriod": {
+          "description": "Date situated within the stay period, between group StartDate (included) and group EndDate (excluded)",
+          "$ref": "#/definitions/searchPeriod"
+        },
+        "policyTypeCodes": {
+          "description": "Policy type Code. Exact match only.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20
+          }
+        },
+        "marketSegments": {
+          "description": "market segment, either corporate Market segment or property market segment e.g. GOVERNMENT, CORPORATE, LEISURE etc.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          }
+        },
+        "businessSources": {
+          "description": "Business Sources. For inputs, the service searches for groups with business Sources starting with, ending with or containing characters using wildcard expression (STA*, *END, *CONT*). For inputs where wildcard expression (*) is not used, the service searches for groups with exact match of business Source.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          }
+        },
+        "reportingCode": {
+          "$ref": "#/definitions/reportingCode"
+        }
+      }
+    },
+    "searchTravelAgencyInformation": {
+      "description": "the travel agency details",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Name of the travel agency",
+          "type": "string"
+        }
+      }
+    },
+    "Comments": {
+      "description": "List the comments.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "comment",
+        "required": [
+          "type",
+          "text"
+        ],
+        "properties": {
+          "type": {
+            "$ref": "#/definitions/typeOfComments"
+          },
+          "language": {
+            "$ref": "#/definitions/language"
+          },
+          "text": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/commentText"
+            }
+          }
+        }
+      }
+    },
+    "typeOfComments": {
+      "description": "Type of the comment, ['supplementary info' or 'confidential remark' or 'OriginatorChannelViewable']. [confidential remark] is not visible by the guest. [OriginatorChannelViewable] is only valid at reservation level (not segment)",
+      "type": "string",
+      "enum": [
+        "supplementary info",
+        "confidential remark",
+        "OriginatorChannelViewable"
+      ]
+    },
+    "commentText": {
+      "description": "Free flow text in the comment. If the comment type is [supplementary info], the comment text is truncated after 51 characters. If the comment type is [confidential remark], the comment text is truncated after 57 characters.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1200
+    },
+    "SegmentPmsStatus": {
+      "description": "Segment status on PMS side",
+      "type": "string",
+      "enum": [
+        "In-house",
+        "Checked out",
+        "No-show",
+        "Waitlisted",
+        "Pre-Checkin"
+      ]
+    },
+    "BookerId": {
+      "type": "integer",
+      "description": "Determine the person who booked the group. It references a guest id."
+    },
+    "groupCount": {
+      "type": "integer",
+      "description": "Total number of groups in the search response"
+    },
+    "language": {
+      "description": "ISO 639-1 code, like EN",
+      "type": "string",
+      "pattern": "[A-Za-z]{2}",
+      "minLength": 2,
+      "maxLength": 2
+    },
+    "loyaltyProgram": {
+      "description": "Loyalty program of the guests with hotel provider",
+      "type": "object",
+      "required": [
+        "loyaltyId"
+      ],
+      "properties": {
+        "loyaltyId": {
+          "description": "Identifier of the guest in the loyalty system",
+          "type": "string",
+          "pattern": "[A-Za-z0-9]{1,28}",
+          "minLength": 1,
+          "maxLength": 28
+        },
+        "programs": {
+          "description": "List of the associated programs",
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "title": "program",
+            "properties": {
+              "programName": {
+                "description": "Name of the program",
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 5
+              },
+              "tierLevel": {
+                "description": "Level within the program",
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 5
+              }
+            }
+          }
+        }
+      }
+    },
+    "SegmentHolderId": {
+      "description": "Reference to the holder",
+      "type": "integer"
+    },
+    "searchPeriod": {
+      "type": "object",
+      "required": [
+        "start"
+      ],
+      "properties": {
+        "start": {
+          "description": "Search period start date",
+          "type": "string",
+          "format": "date"
+        },
+        "end": {
+          "description": "Search period end date",
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "ProductUseId": {
+      "description": "Unique ID, generated by the CRS, identifying a product use. Included services are also assigned IDs. This ID is required when modifying an existing requested product use and should not specified at creation time.",
+      "type": "integer",
+      "format": "int32"
+    },
+    "StartEnd": {
+      "title": "Period",
+      "minProperties": 1,
+      "properties": {
+        "start": {
+          "description": "start date",
+          "type": "string",
+          "format": "date",
+          "example": "2019-11-22"
+        },
+        "end": {
+          "description": "end date",
+          "type": "string",
+          "format": "date",
+          "example": "2019-12-20"
+        }
+      }
+    },
+    "accountName": {
+      "description": "Corporate account name",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 35
+    },
+    "propertyCode": {
+      "description": "The property code",
+      "type": "string",
+      "pattern": "[A-Z0-9]{1,10}",
+      "minLength": 1,
+      "maxLength": 10
+    },
+    "vendorCode": {
+      "maxLength": 5,
+      "minLength": 5,
+      "pattern": "[A-Z0-9]{5,5}",
+      "type": "string",
+      "description": "vendor code.",
+      "example": "ABCDE"
+    },
+    "age": {
+      "description": "Identifies the age of the user.",
+      "type": "integer"
+    },
+    "personName": {
+      "description": "Container for structured details of the guest name",
+      "type": "object",
+      "required": [
+        "firstName",
+        "lastName"
+      ],
+      "properties": {
+        "namePrefix": {
+          "$ref": "#/definitions/namePrefix"
+        },
+        "firstName": {
+          "$ref": "#/definitions/givenName"
+        },
+        "lastName": {
+          "$ref": "#/definitions/surname"
+        },
+        "middleName": {
+          "$ref": "#/definitions/middleName"
+        },
+        "nameSuffix": {
+          "$ref": "#/definitions/nameSuffix"
+        },
+        "title": {
+          "$ref": "#/definitions/title"
+        }
+      }
+    },
+    "namePrefix": {
+      "description": "Name prefix",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 9
+    },
+    "nameSuffix": {
+      "description": "Name suffix",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 9
+    },
+    "givenName": {
+      "description": "First Name",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 56
+    },
+    "surname": {
+      "description": "Last Name",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 57
+    },
+    "middleName": {
+      "description": "Middle Name",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 56
+    },
+    "title": {
+      "description": "Title. It is a free text and can take any value",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20
+    },
+    "guestProfileId": {
+      "description": "Guest identifier on the profile system.",
+      "type": "string",
+      "maxLength": 36
+    },
+    "GroupSecurityFlags": {
+      "properties": {
+        "isExcludedFromGroupsList": {
+          "description": "indicate if the Group excluded from Search Groups List",
+          "type": "boolean"
+        },
+        "isRateSecuredFromSNB": {
+          "description": "indicates if the Group’s Rates secured from shopping and booking",
+          "type": "boolean"
+        },
+        "isRateSecuredFromReporting": {
+          "description": "indicates if the Group's Rates secured from Groups List and Reports",
+          "type": "boolean"
+        },
+        "isGroupDescriptionSecured": {
+          "description": "indicates if the Group’s Description Secured from Groups List and Reports",
+          "type": "boolean"
+        },
+        "isBookingProcedureSecured": {
+          "description": "indicates if the Group Booking Procedures secured from Groups List and Reports",
+          "type": "boolean"
+        },
+        "isRateVisibleForCorporateId": {
+          "description": "applicable only if a corporate id is provided. Indicates if the rate is visible",
+          "type": "boolean"
+        }
+      }
+    },
+    "PricePlanCode": {
+      "description": "price plan code",
+      "type": "string",
+      "pattern": "[A-Z0-9]{2,50}",
+      "minLength": 2,
+      "maxLength": 50
+    },
+    "ratePlanCode": {
+      "description": "Rate plan code",
+      "type": "string",
+      "pattern": "[A-Z0-9]{1,50}",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "RatePlanCode": {
+      "description": "Rate plan code",
+      "type": "string",
+      "pattern": "[A-Z0-9]{1,50}",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "priceGridCode": {
+      "description": "Price grid code",
+      "type": "string",
+      "pattern": "[A-Z0-9]{1,50}",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "CreateDateTimeHotelLocalTime": {
+      "description": "Date and Time of creation, expressed in hotel local time",
+      "type": "string",
+      "pattern": "(\\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2]\\d|3[0-1])T([0-1]\\d|2[0-4]):([0-5]\\d):([0-5]\\d)",
+      "example": "2018-05-26T22:00:00"
+    },
+    "hotelSearchRes": {
+      "required": [
+        "chainCode",
+        "propertyCode"
+      ],
+      "type": "object",
+      "title": "hotelSearchRes",
+      "properties": {
+        "chainCode": {
+          "$ref": "#/definitions/chainCode"
+        },
+        "propertyCode": {
+          "$ref": "#/definitions/propertyCode"
+        },
+        "propertyCurrency": {
+          "$ref": "#/definitions/currency"
+        }
+      },
+      "description": "The property info provides the unique identification of the property"
+    },
+    "chainCode": {
+      "description": "unique identifier of a Chain in the CRS",
+      "type": "string",
+      "maxLength": 3,
+      "pattern": "[A-Z0-9]{2,3}",
+      "example": "INT"
+    },
+    "currency": {
+      "description": "Indicates the currency [ISO4217]",
+      "type": "string",
+      "pattern": "[A-Z]{3,3}",
+      "minLength": 3,
+      "maxLength": 3,
+      "example": "USD"
+    },
+    "IsOptional": {
+      "description": "Defines whether or not the productUse is optional (if not, then it is part of a pre-defined package)",
+      "type": "boolean",
+      "default": false
+    },
+    "isMainProduct": {
+      "description": "Defines whether or not the productUse contains the main product of the offer",
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "description": "BK if all segments are in BK state, CL if all segments have been cancelled, MY otherwise.",
+      "type": "string",
+      "enum": [
+        "BK",
+        "MY",
+        "CL"
+      ]
+    },
+    "groupBodyIdsRes": {
+      "type": "object",
+      "title": "groupBodyIdsRes",
+      "description": "Container for structured details of the ids for groups",
+      "required": [
+        "groupCfNumber",
+        "imageId",
+        "groupCode"
+      ],
+      "properties": {
+        "groupCfNumber": {
+          "$ref": "#/definitions/CfNumber"
+        },
+        "groupCxNumber": {
+          "$ref": "#/definitions/CxNumber"
+        },
+        "imageId": {
+          "$ref": "#/definitions/ImageId"
+        },
+        "committedSequenceNumber": {
+          "$ref": "#/definitions/CommittedSequenceNumber"
+        },
+        "groupCode": {
+          "$ref": "#/definitions/GroupCode"
+        }
+      }
+    },
+    "guestSearchRes": {
+      "type": "array",
+      "description": "List of user profiles, at least one is mandatory for a 1 step",
+      "items": {
+        "title": "userProfileSearchRes",
+        "required": [
+          "id",
+          "personName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Identifies a guest within the group. This id (unique for each guest) can be used to cross-referenced a guest from the segmentHolderId, bookerId or guestOccIds."
+          },
+          "age": {
+            "$ref": "#/definitions/age"
+          },
+          "personName": {
+            "$ref": "#/definitions/personName"
+          },
+          "guestProfileId": {
+            "$ref": "#/definitions/guestProfileId"
+          },
+          "loyaltyProgram": {
+            "$ref": "#/definitions/loyaltyProgram"
+          }
+        }
+      }
+    },
+    "productUseSearchRes": {
+      "type": "array",
+      "description": "List of products (w/o attributes) with associated dates that are part of the offer",
+      "items": {
+        "title": "groupProductUseSearch",
+        "required": [
+          "period",
+          "inventoryTypeCode",
+          "productCode"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/ProductUseId"
+          },
+          "period": {
+            "$ref": "#/definitions/StartEnd"
+          },
+          "inventoryTypeCode": {
+            "$ref": "#/definitions/inventoryTypeCode"
+          },
+          "isOptional": {
+            "$ref": "#/definitions/IsOptional"
+          },
+          "isMainProduct": {
+            "$ref": "#/definitions/isMainProduct"
+          },
+          "productCode": {
+            "type": "string",
+            "description": "Code defining the product type (Sleeping room, meeting room or any service)."
+          }
+        }
+      }
+    },
+    "groupReleaseRules": {
+      "title": "groupReleaseRules",
+      "description": "Full representation of group Release",
+      "type": "object",
+      "required": [
+        "isRolling"
+      ],
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "days": {
+          "type": "integer"
+        },
+        "isRolling": {
+          "type": "boolean"
+        }
+      }
+    },
+    "groupInventoryReleaseRules": {
+      "properties": {
+        "release": {
+          "$ref": "#/definitions/groupReleaseRules"
+        }
+      }
+    },
+    "inventoryTypeCode": {
+      "description": "Business code representing an inventory type",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "CfNumber": {
+      "description": "Hotel Confirmation Number. It is a ACRS confirmation number.",
+      "type": "string",
+      "pattern": "[A-Z0-9]{8,10}",
+      "minLength": 8,
+      "maxLength": 10,
+      "example": "41771771"
+    },
+    "CxNumber": {
+      "description": "Hotel Cancellation Number. Mandatory if the action concerns a cancel",
+      "type": "string",
+      "pattern": "[A-Z0-9]{8,11}",
+      "minLength": 8,
+      "maxLength": 11,
+      "example": "31771771"
+    },
+    "ImageId": {
+      "description": "Image ID (unique per confirmation number)",
+      "type": "integer"
+    },
+    "CommittedSequenceNumber": {
+      "type": "integer",
+      "description": "Sequence number of this image among all the committed images in the group"
+    },
+    "responseError_400": {
+      "type": "object",
+      "required": [
+        "errors"
+      ],
+      "properties": {
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/error"
+          }
+        },
+        "data": {
+          "type": "object",
+          "title": "dataErrorRes",
+          "properties": {
+            "denials": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/denial"
+              }
+            }
+          }
+        }
+      },
+      "example": {
+        "errors": [
+          {
+            "status": 400,
+            "code": 320,
+            "title": "Exception at decoding",
+            "detail": "Error returned when the request could not be decoded"
+          }
+        ]
+      }
+    },
+    "responseError_401": {
+      "type": "object",
+      "required": [
+        "errors"
+      ],
+      "properties": {
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/error"
+          }
+        },
+        "data": {
+          "type": "object",
+          "title": "dataErrorRes",
+          "properties": {
+            "denials": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/denial"
+              }
+            }
+          }
+        }
+      },
+      "example": {
+        "errors": [
+          {
+            "status": 401,
+            "code": 71,
+            "title": "Wrong authentication credentials"
+          }
+        ]
+      }
+    },
+    "responseError_403": {
+      "type": "object",
+      "required": [
+        "errors"
+      ],
+      "properties": {
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/error"
+          }
+        },
+        "data": {
+          "type": "object",
+          "title": "dataErrorRes",
+          "properties": {
+            "denials": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/denial"
+              }
+            }
+          }
+        }
+      },
+      "example": {
+        "errors": [
+          {
+            "status": 403,
+            "code": 400,
+            "title": "The property does not exist in the CRS."
+          }
+        ]
+      }
+    },
+    "responseError_404": {
+      "type": "object",
+      "required": [
+        "errors"
+      ],
+      "properties": {
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/error"
+          }
+        },
+        "data": {
+          "type": "object",
+          "title": "dataErrorRes",
+          "properties": {
+            "denials": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/denial"
+              }
+            }
+          }
+        }
+      },
+      "example": {
+        "errors": [
+          {
+            "status": 404,
+            "code": 97,
+            "title": "No group available for the input group Id"
+          }
+        ]
+      }
+    },
+    "responseError_500": {
+      "type": "object",
+      "required": [
+        "errors"
+      ],
+      "properties": {
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/error"
+          }
+        },
+        "data": {
+          "type": "object",
+          "title": "dataErrorRes",
+          "properties": {
+            "denials": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/denial"
+              }
+            }
+          }
+        }
+      },
+      "example": {
+        "errors": [
+          {
+            "status": 500,
+            "code": 448,
+            "title": "System error"
+          }
+        ]
+      }
+    },
+    "responseError_504": {
+      "type": "object",
+      "required": [
+        "errors"
+      ],
+      "properties": {
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/error"
+          }
+        },
+        "data": {
+          "type": "object",
+          "title": "dataErrorRes",
+          "properties": {
+            "denials": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/denial"
+              }
+            }
+          }
+        }
+      },
+      "example": {
+        "error": [
+          {
+            "status": 504,
+            "code": 15346,
+            "title": "ESPINV Message too old"
+          }
+        ]
+      }
+    },
+    "error": {
+      "type": "object",
+      "title": "Issue",
+      "properties": {
+        "status": {
+          "description": "The HTTP status code applicable to this error",
+          "type": "integer",
+          "example": 400
+        },
+        "code": {
+          "description": "An application-specific error code",
+          "type": "integer",
+          "example": 14453
+        },
+        "title": {
+          "description": "A short summary of the error",
+          "type": "string"
+        },
+        "detail": {
+          "description": "Explanation of the error",
+          "type": "string"
+        },
+        "source": {
+          "type": "object",
+          "title": "IssueSource",
+          "description": "An object containing references to the source of the error",
+          "properties": {
+            "pointer": {
+              "description": "A JSON Pointer [RFC6901] to the associated entity in the request document",
+              "type": "string"
+            },
+            "parameter": {
+              "description": "A string indicating which URI query parameter caused the issue",
+              "type": "string"
+            },
+            "example": {
+              "type": "string",
+              "description": "A sample input to guide the user when resolving this issue"
+            }
+          }
+        }
+      }
+    },
+    "warning": {
+      "type": "object",
+      "title": "Warning",
+      "properties": {
+        "status": {
+          "description": "the HTTP status code applicable to this warning.",
+          "type": "integer",
+          "example": 200
+        },
+        "code": {
+          "description": "an application-specific warning code.",
+          "type": "integer",
+          "example": 14353
+        },
+        "id": {
+          "description": "Id of the warning, used to link the warning to a specific element in the response",
+          "type": "integer"
+        },
+        "isPreventingCommit": {
+          "description": "Boolean to indicate if the warning will prevent the commit action.",
+          "type": "boolean"
+        },
+        "title": {
+          "description": "a short summary of the warning.",
+          "type": "string"
+        },
+        "detail": {
+          "description": "explanation of the warning.",
+          "type": "string"
+        },
+        "source": {
+          "type": "object",
+          "title": "WarningSource",
+          "description": "an object containing references to the source of the warning",
+          "minProperties": 1,
+          "properties": {
+            "pointer": {
+              "description": "a JSON Pointer [RFC6901] to the associated entity in the request document",
+              "type": "string"
+            },
+            "parameter": {
+              "description": "a string indicating which URI query parameter caused the warning",
+              "type": "string"
+            },
+            "example": {
+              "type": "string",
+              "description": "A sample input to guide the user when resolving this warning"
+            }
+          }
+        }
+      }
+    },
+    "denial": {
+      "type": "object",
+      "required": [
+        "identifier",
+        "type",
+        "reason",
+        "date",
+        "isHouseLevel"
+      ],
+      "properties": {
+        "identifier": {
+          "description": "Unique identifier of the denial returned",
+          "type": "integer"
+        },
+        "type": {
+          "description": "The denial type",
+          "type": "string",
+          "example": "HSO"
+        },
+        "reason": {
+          "description": "Description of the denial reason",
+          "type": "string",
+          "example": "No Rates/Rooms Available"
+        },
+        "date": {
+          "description": "Represents the first date that caused the denial. For date-driven denials, it is either a date within the stay, or the check-in date. For non-date-driven denials, it is the transaction date",
+          "type": "string",
+          "format": "date"
+        },
+        "isHouseLevel": {
+          "description": "set to true if the denial is of House Level type, false otherwise.",
+          "type": "boolean"
+        },
+        "ratePlanCode": {
+          "description": "In case of Rate Category denials, represents the rate category causing the denial.",
+          "$ref": "#/definitions/ratePlanCode"
+        },
+        "priceGridCode": {
+          "description": "In case of Rate Category/Price Grid denials. Represents the price grid causing the denial or the price grid linked to the rate category causing the denial.",
+          "$ref": "#/definitions/priceGridCode"
+        },
+        "sellStrategyCode": {
+          "description": "Represents the code of the Hotel Sell Strategy taken into account in the process",
+          "type": "string",
+          "pattern": "[A-Za-z0-9]{1,7}",
+          "minLength": 1,
+          "maxLength": 7
+        }
+      }
+    },
+    "reportingCode": {
+      "description": "The reporting code is attached to a reservation record(inclusing Group reservation) in order to track and provide reporting capabilities for customers in their own ecosystem(e.g. TIBKLND, TIEXLND)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20
+    },
+    "RateReferenceInGroup-groupBookingReservationSearch": {
+      "properties": {
+        "ratePlanCode": {
+          "$ref": "#/definitions/RatePlanCode"
+        },
+        "pricePlanCode": {
+          "$ref": "#/definitions/PricePlanCode"
+        },
+        "relationship": {
+          "type": "string",
+          "enum": [
+            "AttachedPlan",
+            "BasePlan"
+          ]
+        }
+      },
+      "title": "RateReferenceInGroup-groupBookingReservationSearch"
+    },
+    "GroupContract-groupBookingReservationSearch": {
+      "title": "GroupContract-groupBookingReservationSearch",
+      "type": "object",
+      "description": "Group Contract Data Model",
+      "properties": {
+        "name": {
+          "description": "group name",
+          "type": "string"
+        },
+        "externalId": {
+          "description": "external group ID may be used to identify a Group along with Property and Group Code. Set on the PMS only and stored with the group",
+          "type": "string"
+        },
+        "isAllotment": {
+          "description": "indicates if the contract corresponds to an allotment (isAllotment = true) or to a \"normal\" group (isAllotment = false)",
+          "type": "boolean",
+          "default": false
+        },
+        "saleStatus": {
+          "description": "for identification of a group sale status so that the group can be picked up",
+          "type": "string"
+        },
+        "propertyMarketSegment": {
+          "description": "determines the market segmentation for the group as defined for the property",
+          "type": "string"
+        },
+        "corporateMarketSegment": {
+          "description": "determines the market segmentation for the group as defined for the corporate",
+          "type": "string"
+        },
+        "industryType": {
+          "description": "determines the industry type for the group",
+          "type": "string"
+        },
+        "policyTypeCode": {
+          "description": "policy type code associated to the group",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20
+        },
+        "corporateId": {
+          "description": "corporate Id",
+          "type": "string"
+        },
+        "isHousing": {
+          "description": "indicates if group booking is limited to the hotel associated with the group or accepted from any hotel or reservation office",
+          "type": "boolean"
+        },
+        "isElastic": {
+          "description": "indicates if the group is Elastic or not. By default, a group is not elastic.",
+          "type": "boolean"
+        },
+        "period": {
+          "$ref": "#/definitions/StartEnd"
+        },
+        "corePeriod": {
+          "$ref": "#/definitions/StartEnd"
+        },
+        "rateReferences": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RateReferenceInGroup-groupBookingReservationSearch"
+          }
+        },
+        "security": {
+          "$ref": "#/definitions/GroupSecurityFlags"
+        }
+      }
+    },
+    "groupContractAndReleaseRules-groupBookingReservationSearch": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/GroupContract-groupBookingReservationSearch"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "inventory": {
+              "$ref": "#/definitions/groupInventoryReleaseRules"
+            }
+          }
+        }
+      ],
+      "title": "groupContractAndReleaseRules-groupBookingReservationSearch"
+    },
+    "reportingData-groupBookingReservationSearch": {
+      "description": "Contains information conveyed for Reporting use only",
+      "type": "object",
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/reportingCode"
+        }
+      },
+      "title": "reportingData-groupBookingReservationSearch"
+    },
+    "searchPointOfSale-groupBookingReservationSearch": {
+      "type": "object",
+      "properties": {
+        "travelAgencyInfo": {
+          "$ref": "#/definitions/searchTravelAgencyInformation"
+        },
+        "vendorCode": {
+          "description": "the vendor code of the creator of the reservation or the requestor of the transaction",
+          "$ref": "#/definitions/vendorCode"
+        },
+        "reportingData": {
+          "$ref": "#/definitions/reportingData-groupBookingReservationSearch"
+        }
+      },
+      "title": "searchPointOfSale-groupBookingReservationSearch"
+    },
+    "groupBodySearchRes-groupBookingReservationSearch": {
+      "title": "groupBodySearchRes-groupBookingReservationSearch",
+      "type": "object",
+      "required": [
+        "status",
+        "groupIds",
+        "hotel"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/definitions/status"
+        },
+        "groupIds": {
+          "$ref": "#/definitions/groupBodyIdsRes"
+        },
+        "hotel": {
+          "$ref": "#/definitions/hotelSearchRes"
+        },
+        "groupContract": {
+          "$ref": "#/definitions/groupContractAndReleaseRules-groupBookingReservationSearch"
+        },
+        "userProfiles": {
+          "$ref": "#/definitions/guestSearchRes"
+        },
+        "corporateAccountInfo": {
+          "maxItems": 2,
+          "type": "array",
+          "description": "List of corporate accounts (up to 2 from different sources)",
+          "items": {
+            "$ref": "#/definitions/corporateAccountInfoSearchRes"
+          }
+        },
+        "businessSource": {
+          "$ref": "#/definitions/businessSource"
+        },
+        "comments": {
+          "$ref": "#/definitions/Comments"
+        },
+        "reservationMethod": {
+          "$ref": "#/definitions/reservationMethod"
+        },
+        "offer": {
+          "$ref": "#/definitions/groupOfferSearchRes"
+        },
+        "creationDateTimeHotelLocalTime": {
+          "$ref": "#/definitions/CreateDateTimeHotelLocalTime"
+        },
+        "bookerId": {
+          "$ref": "#/definitions/BookerId"
+        },
+        "groupHolderId": {
+          "$ref": "#/definitions/SegmentHolderId"
+        },
+        "groupPmsStatus": {
+          "$ref": "#/definitions/SegmentPmsStatus"
+        },
+        "creator": {
+          "description": "Contains the details of the channel which created the group",
+          "$ref": "#/definitions/searchPointOfSale-groupBookingReservationSearch"
+        },
+        "requestor": {
+          "description": "Contains the details of the channel which requested the transaction",
+          "$ref": "#/definitions/searchPointOfSale-groupBookingReservationSearch"
+        },
+        "owner": {
+          "description": "Contains the details of the channel owner of the group",
+          "$ref": "#/definitions/searchPointOfSale-groupBookingReservationSearch"
+        }
+      }
+    },
+    "groupSearchRes-groupBookingReservationSearch": {
+      "type": "object",
+      "title": "groupSearchRes-groupBookingReservationSearch",
+      "description": "Search group",
+      "properties": {
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/warning"
+          }
+        },
+        "groupCount": {
+          "$ref": "#/definitions/groupCount"
+        },
+        "data": {
+          "title": "dataSearchRes",
+          "type": "array",
+          "description": "List of groups matching the search criteria. Returned in case retrieve_mode in request is set to displayList.",
+          "items": {
+            "$ref": "#/definitions/groupBodySearchRes-groupBookingReservationSearch"
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "ChainCode": {
+      "description": "Chain code identifier",
+      "in": "path",
+      "name": "chainCode",
+      "required": true,
+      "type": "string"
+    },
+    "Ama-Pos": {
+      "description": "Schema must match with Ama-Pos definition.",
+      "in": "header",
+      "name": "Ama-Pos",
+      "type": "string"
+    },
+    "Ama-Reservation-Owner": {
+      "description": "Schema must match with Ama-Reservation-Owner definition.",
+      "in": "header",
+      "name": "Ama-Reservation-Owner",
+      "type": "string"
+    },
+    "Ama-Channel-Identifiers": {
+      "description": "Schema must match with Ama-Channel-Identifiers definition.",
+      "in": "header",
+      "name": "Ama-Channel-Identifiers",
+      "type": "string"
+    },
+    "Ama-Remote-Jump-Data": {
+      "description": "Schema must match with Ama-Remote-Jump-Data definition.",
+      "in": "header",
+      "name": "Ama-Remote-Jump-Data",
+      "type": "string"
+    },
+    "searchGroup": {
+      "name": "searchGroup",
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/groupSearchReq"
+      }
+    }
+  },
+  "responses": {
+    "400": {
+      "description": "Bad Request - Client sent a request that is not conforming to API. Client has to modify the request so that it passes. Most of functional error responses fall under this category.\n\nExamples of functional error codes (not exhaustive list):\n\ncode    | title\n------- | -------------------\n320     | Exception at decoding\n",
+      "schema": {
+        "$ref": "#/definitions/responseError_400"
+      }
+    },
+    "401": {
+      "description": "Unauthorized - The request requires user authentication.\n\nExamples of functional error codes (not exhaustive list):\n\ncode    | title\n------- | -------------------\n701      | Wrong authentication credentials\n",
+      "schema": {
+        "$ref": "#/definitions/responseError_401"
+      }
+    },
+    "403": {
+      "description": "Forbidden - Server refuses to fulfil request for functional or security reasons. If it is for security reasons, the authentication will not solve the issue.\n\nExamples of functional error codes (not exhaustive list):\n\ncode    | title\n------- | -------------------\n400     | The property does not exist in the CRS.\n",
+      "schema": {
+        "$ref": "#/definitions/responseError_403"
+      }
+    },
+    "404": {
+      "description": "Not Found - Client requested resource that does not exist.\n\nExamples of functional error codes (not exhaustive list):\n\ncode    | title\n------- | -------------------\n97      | No group available for the input group Id\n",
+      "schema": {
+        "$ref": "#/definitions/responseError_404"
+      }
+    },
+    "500": {
+      "description": "Internal Server Error - Server was unable to process request due to unexpected problem that can't be corrected by client. This error is not used to describe functional problems.\n\nExamples of functional error codes (not exhaustive list):\n\ncode    | title\n------- | -------------------\n448     | System error\n450     | Unable to process\n",
+      "schema": {
+        "$ref": "#/definitions/responseError_500"
+      }
+    },
+    "504": {
+      "description": "Gateway Timeout - This status code is returned by the Enterprise Service Bus in case of timeout on backend side.\n\nExamples of functional error codes (not exhaustive list):\n\ncode    | title\n------- | -------------------\n15345   | ESPINV RTO occurred\n15346   | ESPINV Message too old\n",
+      "schema": {
+        "$ref": "#/definitions/responseError_504"
+      }
+    },
+    "groupSearchResponse-groupBookingReservationSearch": {
+      "description": "Successful operation.",
+      "schema": {
+        "$ref": "#/definitions/groupSearchRes-groupBookingReservationSearch"
+      }
+    }
+  }
+}

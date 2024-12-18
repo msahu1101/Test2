@@ -1,0 +1,44 @@
+{
+   "data":[
+      {
+         "accountsReceivables":null,
+         "address":{
+            "cityName":"Panama City",
+            "countyCode":null,
+            "postalCode":"0****",
+            "stateCode":"PA-1",
+            "countryCode":"BR",
+            "lines":[
+               "string"
+            ],
+            "postalBox":null
+         },
+         "creditLineInformation":null,
+         "emailAddress":"l******************",
+         "fullName":"© Amadeus IT Group SA ",
+         "hasCards":true,
+         "iataCodes":[
+            "1A"
+         ],
+         "organizationalDiscountNumbers":null,
+         "phoneNumber":{
+            "areaCode":"55",
+            "countryCode":"52",
+            "extension":null,
+            "number":"5*********",
+            "deviceType":null,
+            "purposes":null,
+            "text":null
+         },
+         "primaryRole":"NOT-AGENCY",
+         "reservations":null,
+         "salesLedgerAreas":null,
+         "shortName":"Amadeus",
+         "source":"1",
+         "specialRates":null,
+         "status":"ACTIVE",
+         "uniqueId":"00ecc131-94be-4327-967a-cc2c3bc01808"
+      }
+   ],
+   "warnings":null
+}

@@ -1,0 +1,147 @@
+{
+	"roomReservation": {
+		"customerId": 923984396289,
+		"propertyId": "66964e2b-2550-4476-84c3-1a4c0c5c067f",
+		"itineraryId": "7847517697",
+		"roomTypeId": "23f5bef8-63ea-4ba9-a290-13b5a3056595",
+		"profile": {
+			"id": 923984396289,
+			"title": "Mr",
+			"dateOfBirth": "1985-01-01",
+			"mlifeNo": 80517675,
+			"firstName": "Lakshmi",
+			"lastName": "T",
+			"emailAddress1": "testres3@mailinator.com",
+			"phoneNumbers": [
+				{
+					"type": "Home",
+					"number": "9611877004"
+				}
+			],
+			"addresses": [
+				{
+					"type": "Home",
+					"preferred": true,
+					"street1": "Add1",
+					"city": "Las Vegas",
+					"state": "NV",
+					"postalCode": "89103",
+					"country": "US"
+				}
+			]
+		},
+		"billing": [
+			{
+				"payment": {
+					"amount": 0,
+					"cardHolder": "John doe",
+					"firstName": "John",
+					"lastName": "Doe",
+					"maskedNumber": "XXXXXXXXXXXX4444",
+					"ccToken": "5555550A001C7ZON5DRYV7UB4444",
+					"cvv": 123,
+					"type": "Mastercard",
+					"expiry": "10/2023"
+				},
+				"address": {
+					"street1": "234 W Main St",
+					"street2": "Unit 415",
+					"city": "Las Vegas",
+					"state": "NV",
+					"postalCode": "12345",
+					"country": "US"
+				}
+			},
+			{
+				"payment": {
+					"amount": 0,
+					"cardHolder": "John doe",
+					"firstName": "John",
+					"lastName": "Doe",
+					"maskedNumber": "XXXXXXXXXXXX1111",
+					"ccToken": "4111110A001DQXFHY79D9XCZ1111",
+					"cvv": 234,
+					"type": "Visa",
+					"expiry": "11/2022"
+				},
+				"address": {
+					"street1": "234 W Main St",
+					"street2": "Unit 415",
+					"city": "Las Vegas",
+					"state": "NV",
+					"postalCode": "12345",
+					"country": "US"
+				}
+			}
+		],
+		"tripDetails": {
+			"checkInDate": "2020-08-15",
+			"checkOutDate": "2020-08-16",
+			"numAdults": 2,
+			"numChildren": 2,
+			"numRooms": 1
+		},
+		"bookings": [
+			{
+				"date": "2020-08-15",
+				"basePrice": 10024.99,
+				"customerPrice": 5513.7445,
+				"price": 5513.7445,
+				"programIdIsRateTable": false,
+				"overridePrice": -1.0,
+				"overrideProgramIdIsRateTable": false,
+				"isComp": false,
+				"resortFeeIsSpecified": false,
+				"resortFee": 0.0,
+				"programId": "4eccc742-8a65-4ef9-9a35-03fead2c3833"
+			}
+		],
+		"chargesAndTaxes": {
+			"charges": [
+				{
+					"date": "2020-08-15",
+					"amount": 5548.7445,
+					"itemized": [
+						{
+							"itemType": "RoomCharge",
+							"amount": 5548.7445,
+							"item": "Room Charge"
+						}
+					]
+				}
+			],
+			"taxesAndFees": [
+				{
+					"date": "2020-08-15",
+					"amount": 111.32489,
+					"itemized": [
+						{
+							"itemType": "RoomChargeTax",
+							"amount": 110.27489,
+							"item": "Room Tax"
+						}
+					]
+				}
+			]
+		},
+		"depositDetails": {
+			"dueDate": "2020-08-15",
+			"amountPolicy": "PercentAmount",
+			"amount": 0,
+			"forfeitDate": "2020-08-18",
+			"forfeitAmount": 0,
+			"overrideAmount": 0,
+			"depositRuleCode": "string",
+			"cancellationRuleCode": "string",
+			"itemized": [
+				{
+					"itemType": "RoomCharge",
+					"amount": 0,
+					"item": "string"
+				}
+			]
+		},
+		"amountDue": 5624.02,
+		"guaranteeCode": "CC"
+	}
+}
